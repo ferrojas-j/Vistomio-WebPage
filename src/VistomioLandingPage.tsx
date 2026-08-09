@@ -43,8 +43,11 @@ import {
 // --- Custom Icons ---
 const BoutiqueLogoIcon = ({ className = "w-6 h-6", strokeWidth = 1.5 }: { className?: string, strokeWidth?: number }) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <rect x="5" y="5" width="14" height="14" rx="2" transform="rotate(45 12 12)" />
-    <path d="M9 9l3 6 3-6" />
+    <path d="M12 2L8 10v9l4 2 4-2v-9L12 2z" />
+    <path d="M8 14L4 18v2l4-1" />
+    <path d="M16 14l4 4v2l-4-1" />
+    <circle cx="12" cy="11" r="1.5" />
+    <path d="M12 21v2" />
   </svg>
 );
 
