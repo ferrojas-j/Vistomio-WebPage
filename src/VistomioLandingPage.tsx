@@ -69,7 +69,7 @@ const translations = {
       badge: 'Tecnología boutique para negocios boutique',
       title: 'La gestión de tu hotel',
       titleHighlight: 'revolucionada.',
-      subtitle: 'La excelencia en la hospitalidad empieza desde adentro. Centraliza reservas, operaciones y finanzas en una herramienta diseñada para el lujo, el detalle y el servicio excepcional.',
+      subtitle: 'La excelencia en la hospitalidad empieza desde adentro. Centraliza reservas, operaciones y finanzas en una herramienta diseñada para el detalle y el servicio excepcional.',
       ctaPrimary: 'Explorar la plataforma',
       ctaSecondary: 'Agenda entrevista gratuita con nuestro equipo'
     },
