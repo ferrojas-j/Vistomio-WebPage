@@ -1322,7 +1322,7 @@ const VistomioLandingPage: React.FC = () => {
                 </div>
 
                 <div className="space-y-4">
-                  <button className="w-full bg-white text-[#0B1121] font-bold text-lg py-5 rounded-2xl flex items-center justify-center gap-3 hover:bg-slate-100 transition-colors shadow-xl">
+                  <button onClick={() => setContactModalView('calendar')} className="w-full bg-white text-[#0B1121] font-bold text-lg py-5 rounded-2xl flex items-center justify-center gap-3 hover:bg-slate-100 transition-colors shadow-xl">
                     <Calendar size={24} />
                     Agendar Entrevista Gratuita
                   </button>
@@ -1359,7 +1359,7 @@ const VistomioLandingPage: React.FC = () => {
                   </div>
                 </div>
               </div>
-            ) : (
+            ) : contactModalView === 'email' ? (
               <div className="animate-[fade-in_0.3s_ease-out]">
                 <button 
                   onClick={() => setContactModalView('options')}
@@ -1409,6 +1409,47 @@ const VistomioLandingPage: React.FC = () => {
                     Enviar Correo
                   </button>
                 </form>
+              </div>
+            ) : (
+              <div className="animate-[fade-in_0.3s_ease-out]">
+                <button 
+                  onClick={() => setContactModalView('options')}
+                  className="absolute top-6 left-6 w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-slate-400 hover:text-white transition-colors z-10"
+                >
+                  <ArrowLeft size={20} />
+                </button>
+                <div className="text-center mb-8">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#D4AF37] to-[#FCE69B] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-amber-900/30">
+                    <Calendar size={32} className="text-[#0B1121]" />
+                  </div>
+                  <h3 className="text-3xl font-bold text-white mb-2">Agenda tu Demo</h3>
+                  <p className="text-slate-400 text-sm">Selecciona una fecha y hora disponible.</p>
+                </div>
+                
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="text-sm font-semibold text-slate-300 mb-3">Días Disponibles</h4>
+                    <div className="flex gap-3 overflow-x-auto custom-scrollbar pb-2">
+                      {['Lun 14', 'Mar 15', 'Mié 16', 'Jue 17', 'Vie 18', 'Sáb 19', 'Dom 20'].map((day, i) => (
+                        <button key={i} className={`flex-shrink-0 w-20 py-3 rounded-xl border ${i === 2 ? 'border-[#D4AF37] bg-[#D4AF37]/10 text-[#D4AF37]' : 'border-slate-700 bg-slate-800 text-slate-400 hover:bg-slate-700'} flex flex-col items-center justify-center gap-1 transition-colors`}>
+                          <span className="text-xs uppercase">{`${day.split(' ')[0]}`}</span>
+                          <span className="text-lg font-bold">{`${day.split(' ')[1]}`}</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="text-sm font-semibold text-slate-300 mb-3">Horarios (Mié 16)</h4>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                      {['09:00', '10:00', '11:30', '14:00', '15:30', '17:00'].map((time, i) => (
+                        <button key={i} onClick={() => { alert("Reunión agendada para Mié 16 a las " + time + " exitosamente. Pronto recibirás un correo con la liga."); setIsContactModalOpen(false); setContactModalView('options'); }} className="py-2.5 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 font-medium hover:border-[#D4AF37] hover:text-[#D4AF37] hover:bg-[#D4AF37]/5 transition-colors flex items-center justify-center gap-2">
+                          <Clock size={16} /> {time}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
             )}
           </div>
