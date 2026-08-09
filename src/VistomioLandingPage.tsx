@@ -264,7 +264,7 @@ const translations = {
       enterprise: {
         title: '¿Necesitas algo a la medida?',
         desc: 'Construimos una arquitectura de software única para cadenas boutique o propiedades con operaciones complejas.',
-        cta: 'Hablar con un experto'
+        cta: '¡Hablemos!'
       }
     },
     ctaFinal: {
@@ -490,7 +490,7 @@ const translations = {
       enterprise: {
         title: 'Need a custom solution?',
         desc: 'We build unique software architectures for boutique chains or properties with complex operations.',
-        cta: 'Talk to an expert'
+        cta: "Let's talk!"
       }
     },
     ctaFinal: {
@@ -716,7 +716,7 @@ const translations = {
       enterprise: {
         title: 'Besoin de sur-mesure ?',
         desc: 'Nous construisons des architectures logicielles uniques pour les chaînes boutique ou les propriétés aux opérations complexes.',
-        cta: 'Parler à un expert'
+        cta: 'Parlons-en !'
       }
     },
     ctaFinal: {
