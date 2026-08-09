@@ -741,14 +741,14 @@ const VistomioLandingPage: React.FC = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-24">
             <a 
               href="https://demo.vistomio.com" 
-              className="w-full sm:w-auto bg-gradient-to-r from-[#D4AF37] to-[#FCE69B] hover:from-[#FCE69B] hover:to-[#D4AF37] text-white font-bold text-lg px-8 py-4 rounded-2xl shadow-[0_0_30px_rgba(212,175,55,0.4)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] hover:-translate-y-1 transition-all flex items-center justify-center gap-3 group"
+              className="w-full sm:w-auto bg-gradient-to-r from-[#D4AF37] to-[#FCE69B] hover:from-[#FCE69B] hover:to-[#D4AF37] text-[#0B1121] font-bold text-lg px-8 py-4 rounded-2xl shadow-[0_0_30px_rgba(212,175,55,0.4)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] hover:-translate-y-1 transition-all flex items-center justify-center gap-3 group"
             >
               {t.hero.ctaPrimary}
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <a 
               href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} 
-              className="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 text-white font-semibold text-lg px-8 py-4 rounded-2xl border border-slate-700 shadow-sm hover:border-slate-600 hover:shadow hover:-translate-y-1 transition-all backdrop-blur-sm"
+              className="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 text-white font-semibold text-lg px-8 py-4 rounded-2xl border border-slate-700 shadow-sm hover:border-[#D4AF37]/50 hover:shadow-lg hover:shadow-amber-900/20 hover:-translate-y-1 transition-all backdrop-blur-sm"
             >
               {t.hero.ctaSecondary}
             </a>
