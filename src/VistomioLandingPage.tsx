@@ -636,6 +636,16 @@ const translations = {
 
 type Language = 'es' | 'en' | 'fr';
 
+
+const GalloAzulLogo: React.FC<{size?: number, className?: string}> = ({ size = 28, className = "" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M12 2v4M15 3v3M9 3v3" />
+    <path d="M12 6a4 4 0 0 1 4 4v3l-4 6-4-6V10a4 4 0 0 1 4-4Z" />
+    <path d="M16 10h4l-3 2" />
+    <circle cx="13" cy="9" r="1" fill="currentColor" />
+  </svg>
+);
+
 const VistomioLandingPage: React.FC = () => {
   const [lang, setLang] = useState<Language>('es');
   const [isScrolled, setIsScrolled] = useState(false);
@@ -1130,18 +1140,33 @@ const VistomioLandingPage: React.FC = () => {
           <p className="text-center text-sm font-semibold text-slate-400 uppercase tracking-widest mb-10">
             {t.socialProof}
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10 lg:gap-20 opacity-60 hover:opacity-100 transition-all duration-500">
-            <div className="flex items-center gap-3 text-2xl font-bold text-slate-200">
-              <span className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-sm border border-slate-700 shadow-sm text-slate-300">HN</span> Noga
+          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-14 lg:gap-24 opacity-60 hover:opacity-100 transition-all duration-500">
+            <div className="flex flex-col items-center gap-2">
+              <div className="flex items-center gap-3 text-2xl font-bold text-slate-200">
+                <span className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-sm border border-slate-700 shadow-sm text-slate-300">HN</span> Noga
+              </div>
+              <span className="text-[10px] font-medium text-slate-500 uppercase tracking-widest">Tulum, MX</span>
             </div>
-            <div className="flex items-center gap-2 text-2xl font-bold text-slate-200 italic">
-              <Utensils className="text-[#D4AF37]" size={28} /> Gallo Azul
+
+            <div className="flex flex-col items-center gap-2">
+              <div className="flex items-center gap-2 text-2xl font-bold text-slate-200 italic">
+                <GalloAzulLogo className="text-blue-500" size={28} /> Gallo Azul
+              </div>
+              <span className="text-[10px] font-medium text-slate-500 uppercase tracking-widest">Barcelona, ES</span>
             </div>
-            <div className="flex items-center gap-2 text-2xl font-black text-slate-200 tracking-[0.2em]">
-              LA MORA
+
+            <div className="flex flex-col items-center gap-2">
+              <div className="flex items-center gap-2 text-2xl font-black text-slate-200 tracking-[0.2em]">
+                LA MORA
+              </div>
+              <span className="text-[10px] font-medium text-slate-500 uppercase tracking-widest">Bogotá, CO</span>
             </div>
-            <div className="flex items-center gap-3 text-2xl font-bold text-slate-200">
-              <span className="border-2 border-[#D4AF37] p-1.5 text-[#D4AF37] text-sm">JC</span> Hoteles
+
+            <div className="flex flex-col items-center gap-2">
+              <div className="flex items-center gap-3 text-2xl font-bold text-slate-200">
+                <span className="border-2 border-[#D4AF37] p-1.5 text-[#D4AF37] text-sm">JC</span> Hoteles
+              </div>
+              <span className="text-[10px] font-medium text-slate-500 uppercase tracking-widest">Madrid, ES</span>
             </div>
           </div>
         </div>
