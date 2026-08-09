@@ -43,13 +43,8 @@ import {
 // --- Custom Icons ---
 const BoutiqueLogoIcon = ({ className = "w-6 h-6", strokeWidth = 1.5 }: { className?: string, strokeWidth?: number }) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <path d="M3 21h18" />
-    <path d="M12 4L8 18h8L12 4z" />
-    <path d="M4 11l4 7" />
-    <path d="M20 11l-4 7" />
-    <circle cx="12" cy="2" r="1.5" />
-    <circle cx="3" cy="9" r="1.5" />
-    <circle cx="21" cy="9" r="1.5" />
+    <rect x="5" y="5" width="14" height="14" rx="2" transform="rotate(45 12 12)" />
+    <path d="M9 9l3 6 3-6" />
   </svg>
 );
 
@@ -61,7 +56,7 @@ const translations = {
       pricing: 'Precios',
       contact: 'Contacto',
       demo: 'Ver Demo',
-      logoSubtitle: 'Tecnología boutique para negocios boutique'
+      logoSubtitle: 'Tecnología a tu medida'
     },
     hero: {
       badge: 'Tecnología boutique para negocios boutique',
@@ -247,7 +242,7 @@ const translations = {
       pricing: 'Pricing',
       contact: 'Contact',
       demo: 'View Demo',
-      logoSubtitle: 'Boutique technology for boutique businesses'
+      logoSubtitle: 'Technology tailored to you'
     },
     hero: {
       badge: 'Boutique technology for boutique businesses',
@@ -433,7 +428,7 @@ const translations = {
       pricing: 'Tarifs',
       contact: 'Contact',
       demo: 'Voir Démo',
-      logoSubtitle: 'Technologie boutique pour entreprises boutique'
+      logoSubtitle: 'La technologie sur mesure'
     },
     hero: {
       badge: 'Technologie boutique pour entreprises boutique',
