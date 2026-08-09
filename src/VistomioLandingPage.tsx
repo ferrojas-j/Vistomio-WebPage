@@ -769,7 +769,7 @@ const VistomioLandingPage: React.FC = () => {
           <div className="relative mx-auto w-full max-w-5xl rounded-2xl md:rounded-[2rem] border border-slate-200/50 bg-white/40 p-2 md:p-3 shadow-2xl shadow-amber-900/10 backdrop-blur-xl transform-gpu perspective-[2000px]">
              
              {/* Floating Hotel Elements */}
-             <div className="absolute top-1/4 -left-12 md:-left-16 bg-slate-800/90 backdrop-blur-md p-4 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-4 animate-[bounce_4s_infinite] hidden lg:flex z-30">
+             <div className="absolute bottom-24 -left-12 md:-left-16 bg-slate-800/90 backdrop-blur-md p-4 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-4 animate-[bounce_4s_infinite] hidden lg:flex z-30">
                <div className="w-12 h-12 bg-emerald-500/10 rounded-full flex items-center justify-center text-emerald-400">
                  <CalendarCheck size={24} />
                </div>
@@ -779,7 +779,7 @@ const VistomioLandingPage: React.FC = () => {
                </div>
              </div>
              
-             <div className="absolute bottom-1/4 -right-12 md:-right-16 bg-slate-800/90 backdrop-blur-md p-4 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-4 animate-[bounce_5s_infinite] hidden lg:flex z-30">
+             <div className="absolute top-24 -right-12 md:-right-16 bg-slate-800/90 backdrop-blur-md p-4 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-4 animate-[bounce_5s_infinite] hidden lg:flex z-30">
                <div className="w-12 h-12 bg-orange-500/10 rounded-full flex items-center justify-center text-orange-400">
                  <Utensils size={24} />
                </div>
