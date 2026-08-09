@@ -60,7 +60,8 @@ const translations = {
     },
     hero: {
       badge: 'Tecnología boutique para negocios boutique',
-      title: 'La gestión de tu hotel, evolucionada.',
+      title: 'La gestión de tu hotel,',
+      titleHighlight: 'evolucionada.',
       subtitle: 'La excelencia en la hospitalidad empieza desde adentro. Centraliza reservas, operaciones y finanzas en una herramienta diseñada para el lujo, el detalle y el servicio excepcional.',
       ctaPrimary: 'Explorar la plataforma',
       ctaSecondary: 'Agenda entrevista gratuita con nuestro equipo'
@@ -246,7 +247,8 @@ const translations = {
     },
     hero: {
       badge: 'Boutique technology for boutique businesses',
-      title: 'Hotel management, evolved.',
+      title: 'Hotel management,',
+      titleHighlight: 'evolved.',
       subtitle: 'The most modern and disruptive PMS and ERP. Centralize everything in a modular, cloud-native, and ridiculously fast platform.',
       ctaPrimary: 'Explore the platform',
       ctaSecondary: 'Schedule a free interview with our team'
@@ -432,7 +434,8 @@ const translations = {
     },
     hero: {
       badge: 'Technologie boutique pour entreprises boutique',
-      title: 'La gestion hôtelière, évoluée.',
+      title: 'La gestion hôtelière,',
+      titleHighlight: 'évoluée.',
       subtitle: 'Le PMS et ERP le plus moderne et disruptif. Centralisez tout dans une plateforme modulaire, native cloud et incroyablement rapide.',
       ctaPrimary: 'Explorer la plateforme',
       ctaSecondary: 'Planifier un entretien gratuit avec notre équipe'
@@ -642,18 +645,30 @@ const VistomioLandingPage: React.FC = () => {
   useEffect(() => {
     const fetchCountryAndSetLang = async () => {
       try {
-        const response = await fetch('https://ipapi.co/json/');
-        if (!response.ok) return;
-        const data = await response.json();
-        const country = data.country_code;
-        
-        if (['FR', 'BE'].includes(country)) {
-          setLang('fr');
-        } else if (['US', 'CA', 'AU', 'NZ', 'IE', 'GB'].includes(country)) {
-          setLang('en');
+        const response = await fetch('https://get.geojs.io/v1/ip/country.json');
+        if (response.ok) {
+          const data = await response.json();
+          const country = data.country;
+          
+          if (['FR', 'BE'].includes(country)) {
+            setLang('fr');
+          } else if (['US', 'CA', 'AU', 'NZ', 'IE', 'GB'].includes(country)) {
+            setLang('en');
+          } else if (navigator.language) {
+            // Fallback to browser language if IP is from a country not in the specific lists
+            if (navigator.language.startsWith('fr')) setLang('fr');
+            else if (navigator.language.startsWith('en')) setLang('en');
+          }
+          return;
         }
       } catch (error) {
         console.error('Failed to fetch IP location', error);
+      }
+      
+      // Fallback to browser language if API completely fails
+      if (navigator.language) {
+        if (navigator.language.startsWith('fr')) setLang('fr');
+        else if (navigator.language.startsWith('en')) setLang('en');
       }
     };
     fetchCountryAndSetLang();
