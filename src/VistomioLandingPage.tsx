@@ -60,7 +60,7 @@ const translations = {
     },
     hero: {
       badge: 'Tecnología boutique para negocios boutique',
-      title: 'La gestión de tu hotel,',
+      title: 'La gestión de tu hotel',
       titleHighlight: 'evolucionada.',
       subtitle: 'La excelencia en la hospitalidad empieza desde adentro. Centraliza reservas, operaciones y finanzas en una herramienta diseñada para el lujo, el detalle y el servicio excepcional.',
       ctaPrimary: 'Explorar la plataforma',
@@ -247,7 +247,7 @@ const translations = {
     },
     hero: {
       badge: 'Boutique technology for boutique businesses',
-      title: 'Hotel management,',
+      title: 'Hotel management',
       titleHighlight: 'evolved.',
       subtitle: 'The most modern and disruptive PMS and ERP. Centralize everything in a modular, cloud-native, and ridiculously fast platform.',
       ctaPrimary: 'Explore the platform',
@@ -434,7 +434,7 @@ const translations = {
     },
     hero: {
       badge: 'Technologie boutique pour entreprises boutique',
-      title: 'La gestion hôtelière,',
+      title: 'La gestion hôtelière',
       titleHighlight: 'évoluée.',
       subtitle: 'Le PMS et ERP le plus moderne et disruptif. Centralisez tout dans une plateforme modulaire, native cloud et incroyablement rapide.',
       ctaPrimary: 'Explorer la plateforme',
