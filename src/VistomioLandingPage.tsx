@@ -1456,10 +1456,6 @@ const VistomioLandingPage: React.FC = () => {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
-              <Bot size={16} />
-              <span>{t.chatbotPlans.badge}</span>
-            </div>
             <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
               {t.chatbotPlans.title}
             </h2>
