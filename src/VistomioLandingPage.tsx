@@ -1051,14 +1051,14 @@ const VistomioLandingPage: React.FC = () => {
       </section>
 
       {/* --- SOCIAL PROOF --- */}
-      <section className="py-12 border-y border-slate-200 bg-slate-900 relative z-10">
+      <section className="py-12 border-y border-slate-800 bg-slate-900 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-sm font-semibold text-slate-400 uppercase tracking-widest mb-10">
             {t.socialProof}
           </p>
           <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20 opacity-60 hover:opacity-100 transition-all duration-500">
             <div className="flex items-center gap-3 text-2xl font-bold text-slate-200">
-              <span className="w-10 h-10 rounded-xl bg-slate-200/50 flex items-center justify-center text-sm border border-slate-300 shadow-sm">HN</span> Noga
+              <span className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-sm border border-slate-700 shadow-sm text-slate-300">HN</span> Noga
             </div>
             <div className="flex items-center gap-2 text-2xl font-bold text-slate-200 italic">
               <Utensils className="text-indigo-500" size={28} /> Gallo Azul
@@ -1076,7 +1076,7 @@ const VistomioLandingPage: React.FC = () => {
       {/* --- BOUTIQUE NICHE SECTION (NEW) --- */}
       <section className="py-24 bg-slate-900 border-b border-slate-800 relative overflow-hidden">
         {/* Subtle background flair */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-amber-100/50 blur-[100px] rounded-full pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-amber-900/20 blur-[100px] rounded-full pointer-events-none"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="flex flex-col lg:flex-row items-center gap-16">
@@ -1091,7 +1091,7 @@ const VistomioLandingPage: React.FC = () => {
               <ul className="space-y-6">
                 {t.boutiqueNiche.cards.map((card, idx) => (
                   <li key={idx} className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-100 text-indigo-600 flex items-center justify-center shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-indigo-900/40 border border-indigo-500/30 text-indigo-400 flex items-center justify-center shrink-0">
                       <card.icon size={24} />
                     </div>
                     <div>
@@ -1164,8 +1164,8 @@ const VistomioLandingPage: React.FC = () => {
       </section>
 
       {/* --- BENEFITS --- */}
-      <section className="py-32 bg-slate-50 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-[400px] bg-indigo-100/50 blur-[120px] rounded-full pointer-events-none"></div>
+      <section className="py-32 bg-slate-900 relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-[400px] bg-indigo-900/20 blur-[120px] rounded-full pointer-events-none"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20">
@@ -1174,8 +1174,8 @@ const VistomioLandingPage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {t.benefits.map((benefit, idx) => (
-              <div key={idx} className="p-10 rounded-[2rem] bg-slate-800/60 backdrop-blur-xl border border-slate-700 hover:border-indigo-300 hover:shadow-xl transition-all shadow-sm">
-                <div className="w-16 h-16 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-8 border border-indigo-100">
+              <div key={idx} className="p-10 rounded-[2rem] bg-slate-800/60 backdrop-blur-xl border border-slate-700 hover:border-indigo-500/50 hover:shadow-xl hover:shadow-indigo-900/20 transition-all shadow-sm">
+                <div className="w-16 h-16 rounded-2xl bg-indigo-900/40 text-indigo-400 flex items-center justify-center mb-8 border border-indigo-500/30">
                   <benefit.icon size={32} strokeWidth={1.5} />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4">{benefit.title}</h3>
@@ -1196,7 +1196,7 @@ const VistomioLandingPage: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
             {t.pricing.plans.map((plan, idx) => (
-              <div key={idx} className={`rounded-[2.5rem] p-10 bg-slate-800/80 backdrop-blur-xl border ${plan.highlight ? 'border-indigo-500 shadow-2xl shadow-indigo-900/50 lg:scale-105 z-10 relative' : 'border-slate-200 hover:border-indigo-200 shadow-sm hover:shadow-xl relative'} overflow-hidden transition-all duration-300 flex flex-col`}>
+              <div key={idx} className={`rounded-[2.5rem] p-10 bg-slate-800/80 backdrop-blur-xl border ${plan.highlight ? 'border-indigo-500 shadow-2xl shadow-indigo-900/50 lg:scale-105 z-10 relative' : 'border-slate-700 hover:border-indigo-500/50 shadow-sm hover:shadow-xl hover:shadow-indigo-900/20 relative'} overflow-hidden transition-all duration-300 flex flex-col`}>
                 {plan.highlight && (
                   <div className="absolute top-0 right-0 bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-xs font-bold px-6 py-2 rounded-bl-2xl uppercase tracking-wider">
                     MÁS POPULAR
@@ -1204,7 +1204,7 @@ const VistomioLandingPage: React.FC = () => {
                 )}
                 
                 <h3 className={`text-2xl font-bold ${plan.highlight ? 'text-indigo-900' : 'text-white'} mb-2 pr-24`}>{plan.name}</h3>
-                <div className="text-sm font-semibold text-slate-500 mb-6 bg-slate-50 inline-block px-3 py-1 rounded-lg border border-slate-100 self-start">{plan.setupPrice}</div>
+                <div className="text-sm font-semibold text-slate-500 mb-6 bg-slate-800 inline-block px-3 py-1 rounded-lg border border-slate-700 self-start">{plan.setupPrice}</div>
                 
                 <div className="flex items-baseline gap-1 mb-8">
                   <div className={`text-5xl font-extrabold ${plan.highlight ? 'text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-indigo-600' : 'text-white'}`}>
@@ -1222,7 +1222,7 @@ const VistomioLandingPage: React.FC = () => {
                   ))}
                 </div>
                 
-                <button className={`w-full py-4 rounded-2xl font-bold text-lg transition-colors ${plan.highlight ? 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-lg shadow-indigo-600/30' : 'bg-slate-50 text-slate-200 border border-slate-200 hover:bg-slate-100'}`}>
+                <button onClick={() => setIsContactModalOpen(true)} className="w-full py-4 rounded-2xl font-bold text-lg transition-colors bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 hover:border-slate-600 shadow-lg hover:shadow-xl">
                   {plan.cta}
                 </button>
               </div>
