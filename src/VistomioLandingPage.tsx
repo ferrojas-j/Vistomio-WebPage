@@ -156,6 +156,12 @@ const translations = {
         icon: PieChart
       }
     ],
+    mockupBadges: {
+      leftTop: 'Nueva Reserva',
+      leftBottom: '+$1,200 · Suite Terraza',
+      rightTop: 'Restaurante POS',
+      rightBottom: 'Mesa 4 · Pagada'
+    },
     mockupCalendar: {
       newBooking: 'NUEVA RESERVA',
       rooms: 'HABITACIONES',
@@ -336,6 +342,12 @@ const translations = {
         icon: PieChart
       }
     ],
+    mockupBadges: {
+      leftTop: 'New Booking',
+      leftBottom: '+$1,200 · Terrace Suite',
+      rightTop: 'Restaurant POS',
+      rightBottom: 'Table 4 · Paid'
+    },
     mockupCalendar: {
       newBooking: 'NEW BOOKING',
       rooms: 'ROOMS',
@@ -516,6 +528,12 @@ const translations = {
         icon: PieChart
       }
     ],
+    mockupBadges: {
+      leftTop: 'Nouvelle Réservation',
+      leftBottom: '+$1,200 · Suite Terrasse',
+      rightTop: 'POS Restaurant',
+      rightBottom: 'Table 4 · Payée'
+    },
     mockupCalendar: {
       newBooking: 'NOUVELLE RÉSERVATION',
       rooms: 'CHAMBRES',
@@ -759,22 +777,22 @@ const VistomioLandingPage: React.FC = () => {
              
              {/* Floating Hotel Elements */}
              <div className="absolute top-1/4 -left-12 md:-left-16 bg-slate-800/90 backdrop-blur-md p-4 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-4 animate-[bounce_4s_infinite] hidden lg:flex z-30">
-               <div className="w-12 h-12 bg-[#D4AF37]/10 rounded-full flex items-center justify-center text-[#D4AF37]">
-                 <ConciergeBell size={24} />
+               <div className="w-12 h-12 bg-emerald-500/10 rounded-full flex items-center justify-center text-emerald-400">
+                 <CalendarCheck size={24} />
                </div>
                <div className="text-left">
-                 <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Servicio</div>
-                 <div className="text-sm font-bold text-slate-200">VIP Check-in Listo</div>
+                 <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{t.mockupBadges.leftTop}</div>
+                 <div className="text-sm font-bold text-slate-200">{t.mockupBadges.leftBottom}</div>
                </div>
              </div>
              
              <div className="absolute bottom-1/4 -right-12 md:-right-16 bg-slate-800/90 backdrop-blur-md p-4 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-4 animate-[bounce_5s_infinite] hidden lg:flex z-30">
-               <div className="w-12 h-12 bg-amber-50 rounded-full flex items-center justify-center text-amber-600">
-                 <Wine size={24} />
+               <div className="w-12 h-12 bg-orange-500/10 rounded-full flex items-center justify-center text-orange-400">
+                 <Utensils size={24} />
                </div>
                <div className="text-left">
-                 <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Room Service</div>
-                 <div className="text-sm font-bold text-slate-200">Suite 402 Solicitó</div>
+                 <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{t.mockupBadges.rightTop}</div>
+                 <div className="text-sm font-bold text-slate-200">{t.mockupBadges.rightBottom}</div>
                </div>
              </div>
 
