@@ -639,6 +639,26 @@ const VistomioLandingPage: React.FC = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  useEffect(() => {
+    const fetchCountryAndSetLang = async () => {
+      try {
+        const response = await fetch('https://ipapi.co/json/');
+        if (!response.ok) return;
+        const data = await response.json();
+        const country = data.country_code;
+        
+        if (['FR', 'BE'].includes(country)) {
+          setLang('fr');
+        } else if (['US', 'CA', 'AU', 'NZ', 'IE', 'GB'].includes(country)) {
+          setLang('en');
+        }
+      } catch (error) {
+        console.error('Failed to fetch IP location', error);
+      }
+    };
+    fetchCountryAndSetLang();
+  }, []);
+
   return (
     <div className="min-h-screen bg-slate-900 font-sans text-slate-300 selection:bg-slate-800 border border-slate-700 selection:text-white overflow-x-hidden bg-noise">
       
