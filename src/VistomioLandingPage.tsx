@@ -755,10 +755,10 @@ const VistomioLandingPage: React.FC = () => {
           </div>
 
           {/* REALISTIC UI MOCKUP BASED ON ACTUAL SCREENSHOTS */}
-          <div className="relative mx-auto w-full max-w-5xl rounded-2xl md:rounded-[2rem] border border-slate-200/50 bg-white/40 p-2 md:p-3 shadow-2xl shadow-indigo-900/10 backdrop-blur-xl overflow-hidden transform-gpu perspective-[2000px]">
+          <div className="relative mx-auto w-full max-w-5xl rounded-2xl md:rounded-[2rem] border border-slate-200/50 bg-white/40 p-2 md:p-3 shadow-2xl shadow-indigo-900/10 backdrop-blur-xl transform-gpu perspective-[2000px]">
              
              {/* Floating Hotel Elements */}
-             <div className="absolute top-1/4 -left-12 md:-left-16 bg-slate-800/90 backdrop-blur-md p-4 rounded-2xl shadow-2xl border border-white flex items-center gap-4 animate-[bounce_4s_infinite] hidden lg:flex z-30">
+             <div className="absolute top-1/4 -left-12 md:-left-16 bg-slate-800/90 backdrop-blur-md p-4 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-4 animate-[bounce_4s_infinite] hidden lg:flex z-30">
                <div className="w-12 h-12 bg-indigo-50 rounded-full flex items-center justify-center text-indigo-600">
                  <ConciergeBell size={24} />
                </div>
@@ -768,7 +768,7 @@ const VistomioLandingPage: React.FC = () => {
                </div>
              </div>
              
-             <div className="absolute bottom-1/4 -right-12 md:-right-16 bg-slate-800/90 backdrop-blur-md p-4 rounded-2xl shadow-2xl border border-white flex items-center gap-4 animate-[bounce_5s_infinite] hidden lg:flex z-30">
+             <div className="absolute bottom-1/4 -right-12 md:-right-16 bg-slate-800/90 backdrop-blur-md p-4 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-4 animate-[bounce_5s_infinite] hidden lg:flex z-30">
                <div className="w-12 h-12 bg-amber-50 rounded-full flex items-center justify-center text-amber-600">
                  <Wine size={24} />
                </div>
@@ -778,7 +778,9 @@ const VistomioLandingPage: React.FC = () => {
                </div>
              </div>
 
-             <div className="absolute inset-0 bg-gradient-to-br from-violet-500/20 via-transparent to-indigo-500/20 opacity-50 pointer-events-none"></div>
+             <div className="absolute inset-0 rounded-2xl md:rounded-[2rem] overflow-hidden pointer-events-none">
+               <div className="absolute inset-0 bg-gradient-to-br from-violet-500/20 via-transparent to-indigo-500/20 opacity-50 pointer-events-none"></div>
+             </div>
              
              {/* Main App Container */}
              <div className="rounded-xl md:rounded-2xl overflow-hidden border border-slate-200/10 bg-[#f4f7f9] shadow-inner aspect-[16/10] relative flex text-left relative z-10">
