@@ -1,0 +1,1349 @@
+import React, { useState, useEffect, useRef } from 'react';
+import { 
+  Globe, 
+  CalendarCheck, 
+  CreditCard, 
+  Utensils, 
+  Smartphone, 
+  MessageSquareText,
+  Mail, 
+  PieChart, 
+  Users,
+  CheckCircle2,
+  ArrowRight,
+  Menu,
+  X,
+  Play,
+  Zap,
+  Globe2,
+  ChevronDown,
+  Sparkles,
+  Wine,
+  ConciergeBell,
+  BedDouble,
+  BarChart3,
+  Search,
+  Bell,
+  LayoutGrid,
+  ClipboardCheck,
+  Package,
+  CircleDollarSign,
+  Bot,
+  LineChart,
+  Plus,
+  Calendar,
+  DollarSign,
+  ChevronLeft,
+  ChevronRight,
+  Clock,
+  Home,
+  Briefcase
+} from 'lucide-react';
+
+// --- Custom Icons ---
+const BoutiqueLogoIcon = ({ className = "w-6 h-6", strokeWidth = 1.5 }: { className?: string, strokeWidth?: number }) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M3 21h18" />
+    <path d="M12 4L8 18h8L12 4z" />
+    <path d="M4 11l4 7" />
+    <path d="M20 11l-4 7" />
+    <circle cx="12" cy="2" r="1.5" />
+    <circle cx="3" cy="9" r="1.5" />
+    <circle cx="21" cy="9" r="1.5" />
+  </svg>
+);
+
+// --- Translations Data ---
+const translations = {
+  es: {
+    nav: {
+      products: 'Productos',
+      pricing: 'Precios',
+      contact: 'Contacto',
+      demo: 'Ver Demo',
+      logoSubtitle: 'Tecnología boutique para negocios boutique'
+    },
+    hero: {
+      badge: 'Tecnología boutique para negocios boutique',
+      title: 'La gestión de tu hotel, evolucionada.',
+      subtitle: 'El PMS y ERP más moderno y disruptivo. Centraliza todo en una plataforma modular, nativa en la nube y ridículamente rápida.',
+      ctaPrimary: 'Explorar la plataforma',
+      ctaSecondary: 'Agenda entrevista gratuita con nuestro equipo'
+    },
+    socialProof: 'Negocios que ya confían en Vistomio',
+    boutiqueNiche: {
+      tag: 'JÓVENES, VALIENTES Y PRAGMÁTICOS',
+      title: 'Diseñado para propiedades con alma',
+      subtitle: 'No somos un software corporativo aburrido y gris. Creamos tecnología vibrante para hoteles y restaurantes boutique que quieren destacar, optimizar sin fricciones y dar un servicio excepcional.',
+      cards: [
+        {
+          title: 'Experiencia Personalizada',
+          desc: 'Anticípate a los deseos de tu huésped. Perfiles detallados y preferencias integradas.',
+          icon: ConciergeBell
+        },
+        {
+          title: 'Fusión Hotel & Restaurante',
+          desc: 'El POS del restaurante habla directamente con la cuenta de la habitación. Cero errores.',
+          icon: Wine
+        },
+        {
+          title: 'Automatización Inteligente',
+          desc: 'Deja que la IA optimice tus tarifas y detecte vacíos en tu ocupación.',
+          icon: Sparkles
+        }
+      ]
+    },
+    featuresTitle: 'Módulos diseñados para el futuro',
+    features: [
+      {
+        title: 'Dashboard Inteligente',
+        desc: 'Métricas en tiempo real, KPIs de ocupación y control total en una interfaz limpia y sin distracciones.',
+        icon: PieChart
+      },
+      {
+        title: 'Motor & Channel Manager',
+        desc: 'Sincronización instantánea de disponibilidad y tarifas. Nunca más un overbooking.',
+        icon: CalendarCheck
+      },
+      {
+        title: 'Pagos y Facturación',
+        desc: 'Automatiza cobros, reembolsos y facturas con integraciones oficiales de pasarelas.',
+        icon: CreditCard
+      },
+      {
+        title: 'Kiosko Auto Check-in',
+        desc: 'Adiós a las filas. Permite a tus huéspedes registrarse desde su móvil o en recepción al instante.',
+        icon: Smartphone
+      },
+      {
+        title: 'Punto de Venta (POS)',
+        desc: 'Sincroniza el restaurante y el bar directamente a la habitación del huésped sin fricciones.',
+        icon: Utensils
+      },
+      {
+        title: 'Finanzas e Inventario',
+        desc: 'Control de almacén, contabilidad automatizada y reportes que realmente entiendes.',
+        icon: BarChart3
+      },
+      {
+        title: 'Chatbot IA Nativo',
+        desc: 'Un agente virtual que vende habitaciones y responde dudas 24/7 en cualquier idioma.',
+        icon: MessageSquareText
+      },
+      {
+        title: 'App Staff & Nóminas',
+        desc: 'Gestión de personal, turnos, limpieza de habitaciones y control de RRHH en un solo lugar.',
+        icon: Users
+      }
+    ],
+    benefitsTitle: 'Eleva la experiencia de cada estancia',
+    benefits: [
+      {
+        title: 'Paga lo que usas',
+        desc: 'Arquitectura 100% modular. Conecta Vistomio a tus sistemas actuales vía API o utiliza la suite completa.',
+        icon: Zap
+      },
+      {
+        title: 'Multilenguaje Real',
+        desc: 'Tu equipo y tus huéspedes merecen comunicarse en su idioma. Todo el sistema se adapta automáticamente.',
+        icon: Globe2
+      },
+      {
+        title: 'Nube de Alto Rendimiento',
+        desc: 'Sin servidores locales, sin instalaciones complejas. Fluidez absoluta desde cualquier dispositivo, en cualquier lugar.',
+        icon: PieChart
+      }
+    ],
+    mockupCalendar: {
+      newBooking: 'NUEVA RESERVA',
+      rooms: 'HABITACIONES',
+      channels: 'CANALES',
+      title: 'Calendario de Reservas',
+      reservations: 'Reservas',
+      rates: 'Tarifas',
+      today: 'HOY',
+      legend: {
+        paid: 'PAGADO',
+        toPay: 'POR PAGAR',
+        inProgress: 'EN CURSO',
+        confirmed: 'CONFIRMADA',
+        checkout: 'CHECK-OUT'
+      },
+      room: 'ROOM',
+      channelsTitle: 'Canales Conectados',
+      sync: 'Sincronizado',
+      active: 'Activo',
+      manual: 'Manual',
+      days: { sat: 'SÁB', sun: 'DOM', mon: 'LUN', tue: 'MAR', wed: 'MIÉ', thu: 'JUE', fri: 'VIE' },
+      month: 'Agosto',
+      roomTypes: {
+        suiteTerraza: 'Suite Delux Terraza',
+        suiteJardin: 'Suite Delux Jardín',
+        hab301: 'Hab. Delux 301',
+        hab302: 'Hab. Delux 302',
+        doble201: 'Hab. Doble 201',
+        doble202: 'Hab. Doble 202'
+      }
+    },
+    pricing: {
+      title: 'Paquetes Estándar',
+      subtitle: 'Inversión clara. Sin sorpresas. Escala según las necesidades de tu negocio.',
+      plans: [
+        {
+          name: 'Gastronomía Boutique',
+          setupPrice: 'Setup Inicial: $299',
+          monthlyPrice: '$89',
+          period: '/mes',
+          features: ['POS Operativo Avanzado', 'Módulo Restaurante y Bar', 'Finanzas y Caja'],
+          cta: 'Contactar Ventas',
+          highlight: false
+        },
+        {
+          name: 'Hotel Starter',
+          setupPrice: 'Setup Inicial: $499',
+          monthlyPrice: '$149',
+          period: '/mes',
+          features: ['Booking Engine & Channel Manager', 'Check-in y Recepción', 'App de Personal', 'Finanzas Básicas', 'Chatbot Estándar'],
+          cta: 'Contactar Ventas',
+          highlight: false
+        },
+        {
+          name: 'Suite All-in-One',
+          setupPrice: 'Setup Inicial: $899',
+          monthlyPrice: '$299',
+          period: '/mes',
+          features: ['Todos los módulos Starter', 'POS Gastronomía Integrado', 'Chatbot IA Avanzado', 'Analítica Predictiva', 'Soporte VIP 24/7'],
+          cta: 'Contactar Ventas',
+          highlight: false
+        }
+      ],
+      enterprise: {
+        title: '¿Necesitas algo a la medida?',
+        desc: 'Construimos una arquitectura de software única para cadenas boutique o propiedades con operaciones complejas.',
+        cta: 'Hablar con un experto'
+      }
+    },
+    ctaFinal: {
+      title: 'El futuro de tu hotel empieza hoy',
+      subtitle: 'Deja atrás los sistemas obsoletos. Únete a la revolución de la hospitalidad.',
+      button: 'Comenzar ahora'
+    },
+    footer: {
+      rights: '© 2026 Vistomio. Todos los derechos reservados.',
+      legal: 'Aviso Legal',
+      privacy: 'Privacidad',
+      contact: 'Contacto'
+    }
+  },
+  en: {
+    nav: {
+      products: 'Products',
+      pricing: 'Pricing',
+      contact: 'Contact',
+      demo: 'View Demo',
+      logoSubtitle: 'Boutique technology for boutique businesses'
+    },
+    hero: {
+      badge: 'Boutique technology for boutique businesses',
+      title: 'Hotel management, evolved.',
+      subtitle: 'The most modern and disruptive PMS and ERP. Centralize everything in a modular, cloud-native, and ridiculously fast platform.',
+      ctaPrimary: 'Explore the platform',
+      ctaSecondary: 'Schedule a free interview with our team'
+    },
+    socialProof: 'Businesses that already trust Vistomio',
+    boutiqueNiche: {
+      tag: 'YOUNG, BOLD AND PRAGMATIC',
+      title: 'Designed for properties with a soul',
+      subtitle: 'We are not a boring, gray corporate software. We build vibrant technology for boutique hotels and restaurants that want to stand out, optimize without friction, and provide exceptional service.',
+      cards: [
+        {
+          title: 'Personalized Experience',
+          desc: 'Anticipate your guest\'s desires. Detailed profiles and integrated preferences.',
+          icon: ConciergeBell
+        },
+        {
+          title: 'Hotel & Restaurant Fusion',
+          desc: 'The restaurant POS talks directly to the room folio. Zero mistakes.',
+          icon: Wine
+        },
+        {
+          title: 'Smart Automation',
+          desc: 'Let AI optimize your rates and detect occupancy gaps automatically.',
+          icon: Sparkles
+        }
+      ]
+    },
+    featuresTitle: 'Modules designed for the future',
+    features: [
+      {
+        title: 'Smart Dashboard',
+        desc: 'Real-time metrics, occupancy KPIs, and total control in a clean, distraction-free interface.',
+        icon: PieChart
+      },
+      {
+        title: 'Booking & Channel Manager',
+        desc: 'Instant synchronization of availability and rates. Never experience overbooking again.',
+        icon: CalendarCheck
+      },
+      {
+        title: 'Payments & Billing',
+        desc: 'Automate collections, refunds, and invoices with official payment gateway integrations.',
+        icon: CreditCard
+      },
+      {
+        title: 'Auto Check-in Kiosk',
+        desc: 'Goodbye lines. Allow guests to check in from their mobile or at the front desk instantly.',
+        icon: Smartphone
+      },
+      {
+        title: 'Point of Sale (POS)',
+        desc: 'Seamlessly sync restaurant and bar charges directly to the guest\'s room folio.',
+        icon: Utensils
+      },
+      {
+        title: 'Finance & Inventory',
+        desc: 'Warehouse control, automated accounting, and reports you can actually understand.',
+        icon: BarChart3
+      },
+      {
+        title: 'Native AI Chatbot',
+        desc: 'A virtual agent that sells rooms and answers questions 24/7 in any language.',
+        icon: MessageSquareText
+      },
+      {
+        title: 'Staff & Payroll App',
+        desc: 'Personnel management, shifts, housekeeping, and HR control in one place.',
+        icon: Users
+      }
+    ],
+    benefitsTitle: 'Elevate every guest experience',
+    benefits: [
+      {
+        title: 'Pay for what you use',
+        desc: '100% modular architecture. Connect Vistomio to your current systems via API or use the full suite.',
+        icon: Zap
+      },
+      {
+        title: 'True Multilanguage',
+        desc: 'Your team and guests deserve to communicate in their language. The entire system adapts automatically.',
+        icon: Globe2
+      },
+      {
+        title: 'High-Performance Cloud',
+        desc: 'No local servers, no complex installations. Absolute fluidity from any device, anywhere.',
+        icon: PieChart
+      }
+    ],
+    mockupCalendar: {
+      newBooking: 'NEW BOOKING',
+      rooms: 'ROOMS',
+      channels: 'CHANNELS',
+      title: 'Booking Calendar',
+      reservations: 'Bookings',
+      rates: 'Rates',
+      today: 'TODAY',
+      legend: {
+        paid: 'PAID',
+        toPay: 'TO PAY',
+        inProgress: 'IN PROGRESS',
+        confirmed: 'CONFIRMED',
+        checkout: 'CHECK-OUT'
+      },
+      room: 'ROOM',
+      channelsTitle: 'Connected Channels',
+      sync: 'Synchronized',
+      active: 'Active',
+      manual: 'Manual',
+      days: { sat: 'SAT', sun: 'SUN', mon: 'MON', tue: 'TUE', wed: 'WED', thu: 'THU', fri: 'FRI' },
+      month: 'August',
+      roomTypes: {
+        suiteTerraza: 'Deluxe Terrace Suite',
+        suiteJardin: 'Deluxe Garden Suite',
+        hab301: 'Deluxe Rm 301',
+        hab302: 'Deluxe Rm 302',
+        doble201: 'Double Rm 201',
+        doble202: 'Double Rm 202'
+      }
+    },
+    pricing: {
+      title: 'Standard Packages',
+      subtitle: 'Clear investment. No surprises. Scale according to your business needs.',
+      plans: [
+        {
+          name: 'Boutique Gastronomy',
+          setupPrice: 'Setup Fee: $299',
+          monthlyPrice: '$89',
+          period: '/mo',
+          features: ['Advanced POS', 'Restaurant & Bar Module', 'Finance & Cashier'],
+          cta: 'Contact Sales',
+          highlight: false
+        },
+        {
+          name: 'Hotel Starter',
+          setupPrice: 'Setup Fee: $499',
+          monthlyPrice: '$149',
+          period: '/mo',
+          features: ['Booking Engine & Channel Manager', 'Check-in & Front Desk', 'Staff App', 'Basic Finance', 'Standard Chatbot'],
+          cta: 'Contact Sales',
+          highlight: false
+        },
+        {
+          name: 'All-in-One Suite',
+          setupPrice: 'Setup Fee: $899',
+          monthlyPrice: '$299',
+          period: '/mo',
+          features: ['All Starter modules', 'Integrated F&B POS', 'Advanced AI Chatbot', 'Predictive Analytics', '24/7 VIP Support'],
+          cta: 'Contact Sales',
+          highlight: false
+        }
+      ],
+      enterprise: {
+        title: 'Need a custom solution?',
+        desc: 'We build unique software architectures for boutique chains or properties with complex operations.',
+        cta: 'Talk to an expert'
+      }
+    },
+    ctaFinal: {
+      title: 'The future of your hotel starts today',
+      subtitle: 'Leave obsolete systems behind. Join the hospitality revolution.',
+      button: 'Get started now'
+    },
+    footer: {
+      rights: '© 2026 Vistomio. All rights reserved.',
+      legal: 'Legal Notice',
+      privacy: 'Privacy',
+      contact: 'Contact'
+    }
+  },
+  fr: {
+    nav: {
+      products: 'Produits',
+      pricing: 'Tarifs',
+      contact: 'Contact',
+      demo: 'Voir Démo',
+      logoSubtitle: 'Technologie boutique pour entreprises boutique'
+    },
+    hero: {
+      badge: 'Technologie boutique pour entreprises boutique',
+      title: 'La gestion hôtelière, évoluée.',
+      subtitle: 'Le PMS et ERP le plus moderne et disruptif. Centralisez tout dans une plateforme modulaire, native cloud et incroyablement rapide.',
+      ctaPrimary: 'Explorer la plateforme',
+      ctaSecondary: 'Planifier un entretien gratuit avec notre équipe'
+    },
+    socialProof: 'Les entreprises qui font déjà confiance à Vistomio',
+    boutiqueNiche: {
+      tag: 'JEUNES, AUDACIEUX ET PRAGMATIQUES',
+      title: 'Conçu pour les propriétés avec une âme',
+      subtitle: 'Nous ne sommes pas un logiciel d\'entreprise ennuyeux. Nous créons une technologie vibrante pour les hôtels et restaurants boutique qui veulent se démarquer et offrir un service exceptionnel.',
+      cards: [
+        {
+          title: 'Expérience Personnalisée',
+          desc: 'Anticipez les désirs de vos clients. Profils détaillés et préférences intégrées.',
+          icon: ConciergeBell
+        },
+        {
+          title: 'Fusion Hôtel & Restaurant',
+          desc: 'Le POS du restaurant communique directement avec la note de la chambre. Zéro erreur.',
+          icon: Wine
+        },
+        {
+          title: 'Automatisation Intelligente',
+          desc: 'Laissez l\'IA optimiser vos tarifs et détecter les vides d\'occupation automatiquement.',
+          icon: Sparkles
+        }
+      ]
+    },
+    featuresTitle: 'Des modules conçus pour l\'avenir',
+    features: [
+      {
+        title: 'Tableau de bord intelligent',
+        desc: 'Métriques en temps réel, KPIs d\'occupation et contrôle total dans une interface épurée.',
+        icon: PieChart
+      },
+      {
+        title: 'Moteur & Channel Manager',
+        desc: 'Synchronisation instantanée des disponibilités et des tarifs. Fini le surbooking.',
+        icon: CalendarCheck
+      },
+      {
+        title: 'Paiements et Facturation',
+        desc: 'Automatisez les encaissements, remboursements et factures avec des passerelles officielles.',
+        icon: CreditCard
+      },
+      {
+        title: 'Borne Auto Check-in',
+        desc: 'Adieu les files d\'attente. Permettez aux clients de s\'enregistrer depuis leur mobile instantanément.',
+        icon: Smartphone
+      },
+      {
+        title: 'Point de Vente (POS)',
+        desc: 'Synchronisez le restaurant et le bar directement avec la note de la chambre sans friction.',
+        icon: Utensils
+      },
+      {
+        title: 'Finances et Inventaire',
+        desc: 'Contrôle des stocks, comptabilité automatisée et rapports que vous comprenez vraiment.',
+        icon: BarChart3
+      },
+      {
+        title: 'Chatbot IA Natif',
+        desc: 'Un agent virtuel qui vend des chambres et répond aux questions 24/7 dans n\'importe quelle langue.',
+        icon: MessageSquareText
+      },
+      {
+        title: 'App Staff & Paie',
+        desc: 'Gestion du personnel, horaires, nettoyage des chambres et RH en un seul endroit.',
+        icon: Users
+      }
+    ],
+    benefitsTitle: 'Élevez chaque expérience client',
+    benefits: [
+      {
+        title: 'Payez ce que vous utilisez',
+        desc: 'Architecture 100% modulaire. Connectez Vistomio à vos systèmes actuels via API ou utilisez la suite.',
+        icon: Zap
+      },
+      {
+        title: 'Vrai Multilingue',
+        desc: 'Votre équipe et vos clients méritent de communiquer dans leur langue. Le système s\'adapte.',
+        icon: Globe2
+      },
+      {
+        title: 'Cloud Haute Performance',
+        desc: 'Pas de serveurs locaux, fluidité absolue depuis n\'importe quel appareil, n\'importe où.',
+        icon: PieChart
+      }
+    ],
+    mockupCalendar: {
+      newBooking: 'NOUVELLE RÉSERVATION',
+      rooms: 'CHAMBRES',
+      channels: 'CANAUX',
+      title: 'Calendrier des Réservations',
+      reservations: 'Réservations',
+      rates: 'Tarifs',
+      today: 'AUJ.',
+      legend: {
+        paid: 'PAYÉ',
+        toPay: 'À PAYER',
+        inProgress: 'EN COURS',
+        confirmed: 'CONFIRMÉE',
+        checkout: 'DÉPART'
+      },
+      room: 'CHAMBRE',
+      channelsTitle: 'Canaux Connectés',
+      sync: 'Synchronisé',
+      active: 'Actif',
+      manual: 'Manuel',
+      days: { sat: 'SAM', sun: 'DIM', mon: 'LUN', tue: 'MAR', wed: 'MER', thu: 'JEU', fri: 'VEN' },
+      month: 'Août',
+      roomTypes: {
+        suiteTerraza: 'Suite Terrasse Deluxe',
+        suiteJardin: 'Suite Jardin Deluxe',
+        hab301: 'Ch. Deluxe 301',
+        hab302: 'Ch. Deluxe 302',
+        doble201: 'Ch. Double 201',
+        doble202: 'Ch. Double 202'
+      }
+    },
+    pricing: {
+      title: 'Forfaits Standard',
+      subtitle: 'Investissement clair. Sans surprises. Évoluez selon les besoins de votre entreprise.',
+      plans: [
+        {
+          name: 'Gastronomie Boutique',
+          setupPrice: 'Frais de Setup: $299',
+          monthlyPrice: '$89',
+          period: '/mois',
+          features: ['POS Avancé', 'Module Restaurant & Bar', 'Finances et Caisse'],
+          cta: 'Contacter les Ventes',
+          highlight: false
+        },
+        {
+          name: 'Hotel Starter',
+          setupPrice: 'Frais de Setup: $499',
+          monthlyPrice: '$149',
+          period: '/mois',
+          features: ['Moteur de Réservation & Channel Manager', 'Check-in et Réception', 'App Personnel', 'Finances de Base', 'Chatbot Standard'],
+          cta: 'Contacter les Ventes',
+          highlight: false
+        },
+        {
+          name: 'Suite All-in-One',
+          setupPrice: 'Frais de Setup: $899',
+          monthlyPrice: '$299',
+          period: '/mois',
+          features: ['Tous les modules Starter', 'POS F&B Intégré', 'Chatbot IA Avancé', 'Analytique Prédictive', 'Support VIP 24/7'],
+          cta: 'Contacter les Ventes',
+          highlight: false
+        }
+      ],
+      enterprise: {
+        title: 'Besoin de sur-mesure ?',
+        desc: 'Nous construisons des architectures logicielles uniques pour les chaînes boutique ou les propriétés aux opérations complexes.',
+        cta: 'Parler à un expert'
+      }
+    },
+    ctaFinal: {
+      title: 'L\'avenir de votre hôtel commence aujourd\'hui',
+      subtitle: 'Laissez derrière vous les systèmes obsolètes. Rejoignez la révolution hôtelière.',
+      button: 'Commencer maintenant'
+    },
+    footer: {
+      rights: '© 2026 Vistomio. Tous droits réservés.',
+      legal: 'Mentions légales',
+      privacy: 'Confidentialité',
+      contact: 'Contact'
+    }
+  }
+};
+
+type Language = 'es' | 'en' | 'fr';
+
+const VistomioLandingPage: React.FC = () => {
+  const [lang, setLang] = useState<Language>('es');
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [langMenuOpen, setLangMenuOpen] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  
+  const langMenuRef = useRef<HTMLDivElement>(null);
+  const t = translations[lang];
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (langMenuRef.current && !langMenuRef.current.contains(event.target as Node)) {
+        setLangMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-slate-900 font-sans text-slate-300 selection:bg-violet-600 selection:text-white overflow-x-hidden bg-noise">
+      
+      {/* --- NAVBAR --- */}
+      <nav className={`fixed w-full z-50 transition-all duration-300 border-b border-slate-200/50 ${isScrolled ? 'bg-slate-900/90 backdrop-blur-xl py-4 shadow-xl shadow-slate-200/50' : 'bg-transparent py-6'}`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+          
+          {/* Logo */}
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#D4AF37] to-[#FCE69B] flex items-center justify-center shadow-[0_0_20px_rgba(212,175,55,0.4)]">
+              <BoutiqueLogoIcon className="text-[#0B1121] w-6 h-6" strokeWidth={2} />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-2xl font-bold tracking-tight text-white leading-none">Vistomio</span>
+              <span className="text-[0.65rem] font-bold tracking-widest text-violet-400 mt-1 uppercase whitespace-nowrap">{t.nav.logoSubtitle}</span>
+            </div>
+          </div>
+
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center gap-8">
+            <a href="#productos" className="text-sm font-medium text-slate-300 hover:text-indigo-600 transition-colors">{t.nav.products}</a>
+            <a href="#precios" className="text-sm font-medium text-slate-300 hover:text-indigo-600 transition-colors">{t.nav.pricing}</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="text-sm font-medium text-slate-300 hover:text-indigo-600 transition-colors">{t.nav.contact}</a>
+            
+            {/* Custom Language Selector */}
+            <div className="relative border-l border-slate-200 pl-6" ref={langMenuRef}>
+              <button 
+                onClick={() => setLangMenuOpen(!langMenuOpen)}
+                className="flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-indigo-600 transition-colors group"
+              >
+                <Globe size={16} className="text-violet-400 group-hover:text-violet-300 transition-colors" />
+                <span>{lang.toUpperCase()}</span>
+                <ChevronDown size={14} className={`text-slate-500 transition-transform duration-300 ${langMenuOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {/* Dropdown Menu */}
+              <div className={`absolute top-full right-0 mt-4 w-32 bg-slate-800/60 backdrop-blur-xl border border-slate-700 rounded-xl shadow-xl overflow-hidden transition-all duration-200 origin-top-right ${langMenuOpen ? 'opacity-100 scale-100 translate-y-0 visible' : 'opacity-0 scale-95 -translate-y-2 invisible'}`}>
+                <div className="p-1 flex flex-col gap-1">
+                  {(['es', 'en', 'fr'] as Language[]).map((l) => (
+                    <button
+                      key={l}
+                      onClick={() => { setLang(l); setLangMenuOpen(false); }}
+                      className={`w-full text-left px-4 py-2 rounded-lg text-sm font-medium transition-colors ${lang === l ? 'bg-indigo-50 text-indigo-600' : 'text-slate-300 hover:bg-slate-50 hover:text-indigo-600'}`}
+                    >
+                      {l === 'es' ? 'Español' : l === 'en' ? 'English' : 'Français'}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <a href="https://demo.vistomio.com" className="bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-all shadow-[0_0_15px_rgba(139,92,246,0.5)] hover:shadow-[0_0_25px_rgba(139,92,246,0.7)] flex items-center gap-2">
+              {t.nav.demo} <ArrowRight size={16} />
+            </a>
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <button className="md:hidden text-slate-300 hover:text-indigo-600" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+
+        {/* Mobile Menu Dropdown */}
+        {mobileMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 w-full bg-[#0B1121]/95 backdrop-blur-xl border-b border-white/10 py-6 px-6 flex flex-col gap-6 shadow-2xl">
+            <a href="#productos" className="text-lg font-medium text-white" onClick={() => setMobileMenuOpen(false)}>{t.nav.products}</a>
+            <a href="#precios" className="text-lg font-medium text-white" onClick={() => setMobileMenuOpen(false)}>{t.nav.pricing}</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="text-lg font-medium text-white" onClick={() => setMobileMenuOpen(false)}>{t.nav.contact}</a>
+            <div className="h-px bg-white/10 w-full my-2"></div>
+            <div className="flex gap-4">
+               <button onClick={() => {setLang('es'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg ${lang === 'es' ? 'bg-violet-600/20 text-violet-400' : 'text-slate-400'}`}>ES</button>
+               <button onClick={() => {setLang('en'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg ${lang === 'en' ? 'bg-violet-600/20 text-violet-400' : 'text-slate-400'}`}>EN</button>
+               <button onClick={() => {setLang('fr'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg ${lang === 'fr' ? 'bg-violet-600/20 text-violet-400' : 'text-slate-400'}`}>FR</button>
+            </div>
+            <a href="https://demo.vistomio.com" className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-center font-bold px-5 py-4 rounded-xl mt-4 shadow-[0_0_20px_rgba(139,92,246,0.3)]">
+              {t.nav.demo}
+            </a>
+          </div>
+        )}
+      </nav>
+
+      {/* --- HERO SECTION --- */}
+      <section className="relative pt-40 pb-20 lg:pt-52 lg:pb-32 overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden flex justify-center">
+          {/* Symmetrical Elegant Ambient Glows */}
+          <div className="absolute top-[-10%] w-[1000px] h-[700px] bg-amber-200/20 blur-[180px] rounded-[100%]"></div>
+          <div className="absolute top-[30%] left-[-15%] w-[800px] h-[600px] bg-indigo-200/20 blur-[150px] rounded-full"></div>
+          <div className="absolute top-[30%] right-[-15%] w-[800px] h-[600px] bg-purple-200/20 blur-[150px] rounded-full"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          
+          <div className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-sm font-bold shadow-sm backdrop-blur-md uppercase tracking-widest">
+            {t.hero.badge}
+          </div>
+
+          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-tight mb-8">
+            {t.hero.title.split('evolucionada.').map((part, i, arr) => (
+              <React.Fragment key={i}>
+                {part}
+                {i === 0 && <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-indigo-600"> evolucionada.</span>}
+              </React.Fragment>
+            )).slice(0, 1)}
+          </h1>
+          
+          <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+            {t.hero.subtitle}
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-24">
+            <a 
+              href="https://demo.vistomio.com" 
+              className="w-full sm:w-auto bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-bold text-lg px-8 py-4 rounded-2xl shadow-[0_0_30px_rgba(139,92,246,0.4)] hover:shadow-[0_0_40px_rgba(139,92,246,0.6)] hover:-translate-y-1 transition-all flex items-center justify-center gap-3 group"
+            >
+              {t.hero.ctaPrimary}
+              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            </a>
+            <a 
+              href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} 
+              className="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 text-white font-semibold text-lg px-8 py-4 rounded-2xl border border-slate-700 shadow-sm hover:border-slate-600 hover:shadow hover:-translate-y-1 transition-all backdrop-blur-sm"
+            >
+              {t.hero.ctaSecondary}
+            </a>
+          </div>
+
+          {/* REALISTIC UI MOCKUP BASED ON ACTUAL SCREENSHOTS */}
+          <div className="relative mx-auto w-full max-w-5xl rounded-2xl md:rounded-[2rem] border border-slate-200/50 bg-white/40 p-2 md:p-3 shadow-2xl shadow-indigo-900/10 backdrop-blur-xl overflow-hidden transform-gpu perspective-[2000px]">
+             
+             {/* Floating Hotel Elements */}
+             <div className="absolute top-1/4 -left-12 md:-left-16 bg-slate-800/90 backdrop-blur-md p-4 rounded-2xl shadow-2xl border border-white flex items-center gap-4 animate-[bounce_4s_infinite] hidden lg:flex z-30">
+               <div className="w-12 h-12 bg-indigo-50 rounded-full flex items-center justify-center text-indigo-600">
+                 <ConciergeBell size={24} />
+               </div>
+               <div className="text-left">
+                 <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Servicio</div>
+                 <div className="text-sm font-bold text-slate-200">VIP Check-in Listo</div>
+               </div>
+             </div>
+             
+             <div className="absolute bottom-1/4 -right-12 md:-right-16 bg-slate-800/90 backdrop-blur-md p-4 rounded-2xl shadow-2xl border border-white flex items-center gap-4 animate-[bounce_5s_infinite] hidden lg:flex z-30">
+               <div className="w-12 h-12 bg-amber-50 rounded-full flex items-center justify-center text-amber-600">
+                 <Wine size={24} />
+               </div>
+               <div className="text-left">
+                 <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Room Service</div>
+                 <div className="text-sm font-bold text-slate-200">Suite 402 Solicitó</div>
+               </div>
+             </div>
+
+             <div className="absolute inset-0 bg-gradient-to-br from-violet-500/20 via-transparent to-indigo-500/20 opacity-50 pointer-events-none"></div>
+             
+             {/* Main App Container */}
+             <div className="rounded-xl md:rounded-2xl overflow-hidden border border-slate-200/10 bg-[#f4f7f9] shadow-inner aspect-[16/10] relative flex text-left relative z-10">
+                
+                {/* App Sidebar (Dark) */}
+                <div className="w-64 hidden md:flex flex-col bg-[#111827] text-slate-300 border-r border-slate-800">
+                  <div className="flex items-center gap-3 mb-8 px-6 pt-6">
+                     <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#D4AF37] to-[#FCE69B] flex items-center justify-center text-white">
+                        <BoutiqueLogoIcon className="w-5 h-5" strokeWidth={1.5} />
+                     </div>
+                     <div className="text-white font-bold text-lg">Vistomio</div>
+                  </div>
+                  
+                  <div className="px-6 mb-6">
+                    <div className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Active Property</div>
+                    <div className="text-white font-semibold text-sm">Hotel Vistomio <span className="text-slate-500 font-normal">Demo</span></div>
+                  </div>
+                  
+                  <div className="flex flex-col gap-1.5 px-4 overflow-y-auto pb-6 custom-scrollbar">
+                    <div className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-white/5 cursor-pointer group">
+                      <LayoutGrid size={20} className="shrink-0 text-slate-500 group-hover:text-slate-300" strokeWidth={1.5} /> 
+                      <span className="text-[13px] leading-snug font-medium">Dashboard General</span>
+                    </div>
+                    {/* Active State */}
+                    <div className="flex items-center gap-3 px-3 py-2 text-violet-300 bg-[#1e1b4b]/80 border border-violet-800/60 rounded-xl cursor-pointer mt-1 mb-1 shadow-inner relative overflow-hidden">
+                      <div className="absolute left-0 top-0 bottom-0 w-1 bg-violet-500 rounded-l-xl"></div>
+                      <CalendarCheck size={20} className="shrink-0 text-violet-400" strokeWidth={1.5} /> 
+                      <span className="text-[13px] font-semibold leading-snug">Motor de Reservas y<br/>Channel Manager</span>
+                    </div>
+                    <div className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-white/5 cursor-pointer group">
+                      <CreditCard size={20} className="shrink-0 text-slate-500 group-hover:text-slate-300" strokeWidth={1.5} /> 
+                      <span className="text-[13px] leading-snug font-medium">Pagos y Facturación</span>
+                    </div>
+                    <div className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-white/5 cursor-pointer group">
+                      <ClipboardCheck size={20} className="shrink-0 text-slate-500 group-hover:text-slate-300" strokeWidth={1.5} /> 
+                      <span className="text-[13px] leading-snug font-medium">Check-in y Gestión de<br/>Huéspedes</span>
+                    </div>
+                    <div className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-white/5 cursor-pointer group">
+                      <Utensils size={20} className="shrink-0 text-slate-500 group-hover:text-slate-300" strokeWidth={1.5} /> 
+                      <span className="text-[13px] leading-snug font-medium">Restaurante / Bar</span>
+                    </div>
+                    <div className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-white/5 cursor-pointer group">
+                      <Package size={20} className="shrink-0 text-slate-500 group-hover:text-slate-300" strokeWidth={1.5} /> 
+                      <span className="text-[13px] leading-snug font-medium">Operaciones Diarias y<br/>Recursos</span>
+                    </div>
+                    <div className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-white/5 cursor-pointer group">
+                      <CircleDollarSign size={20} className="shrink-0 text-slate-500 group-hover:text-slate-300" strokeWidth={1.5} /> 
+                      <span className="text-[13px] leading-snug font-medium">Administración y Finanzas</span>
+                    </div>
+                    <div className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-white/5 cursor-pointer group">
+                      <Bot size={20} className="shrink-0 text-slate-500 group-hover:text-slate-300" strokeWidth={1.5} /> 
+                      <span className="text-[13px] leading-snug font-medium">Chatbot IA</span>
+                    </div>
+                    <div className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-white/5 cursor-pointer group">
+                      <LineChart size={20} className="shrink-0 text-slate-500 group-hover:text-slate-300" strokeWidth={1.5} /> 
+                      <span className="text-[13px] leading-snug font-medium">Reportes</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* App Content Area (Light) */}
+                <div className="flex-1 flex flex-col bg-slate-50 overflow-hidden text-slate-200">
+                  
+                  {/* Header */}
+                  <div className="h-20 px-6 flex items-center justify-between border-b border-slate-200 bg-white shrink-0">
+                    <div>
+                      <h2 className="text-2xl font-bold text-slate-200">{t.mockupCalendar.title}</h2>
+                      <p className="text-sm text-slate-500 hidden sm:block">Control centralizado de canales y disponibilidad</p>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <button className="bg-indigo-600 text-white px-3 py-1.5 rounded-lg font-bold text-xs flex items-center gap-2 hover:bg-indigo-700 transition-colors shadow-md shadow-indigo-200">
+                        <Plus size={16} strokeWidth={3} className="shrink-0" /> 
+                        <div className="text-left leading-tight w-16 whitespace-normal">{t.mockupCalendar.newBooking}</div>
+                      </button>
+                      <div className="flex items-center gap-2 ml-2">
+                        <span className="bg-emerald-50 text-emerald-600 border border-emerald-200 px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider whitespace-nowrap">8 {t.mockupCalendar.rooms}</span>
+                        <span className="bg-indigo-50 text-indigo-600 border border-indigo-200 px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider whitespace-nowrap">5 {t.mockupCalendar.channels}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Dashboard Content */}
+                  <div className="p-4 flex-1 flex flex-col gap-4 overflow-y-auto custom-scrollbar">
+                    
+                    {/* Calendar Card */}
+                    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm flex flex-col min-h-[400px] overflow-hidden">
+                      {/* Calendar Header Controls */}
+                      <div className="p-3 border-b border-slate-100 flex items-center justify-between bg-white shrink-0 overflow-x-auto custom-scrollbar">
+                        <div className="flex items-center gap-2 shrink-0">
+                          <div className="flex items-center gap-2 font-bold text-slate-200 mr-2">
+                            <Calendar size={16} className="text-indigo-500"/> <span className="hidden sm:inline">{t.mockupCalendar.title}</span>
+                          </div>
+                          <div className="flex bg-slate-100 p-1 rounded-lg">
+                            <button className="bg-white text-indigo-600 px-2 py-1 rounded-md text-xs font-bold shadow-sm flex items-center gap-1"><Calendar size={12}/> {t.mockupCalendar.reservations}</button>
+                            <button className="text-slate-500 px-2 py-1 rounded-md text-xs font-bold hover:text-slate-700 flex items-center gap-1"><DollarSign size={12}/> {t.mockupCalendar.rates}</button>
+                          </div>
+                          <div className="flex items-center gap-1 ml-2 text-xs font-bold text-slate-700 bg-slate-50 border border-slate-200 px-2 py-1 rounded-lg">
+                            {t.mockupCalendar.month} <ChevronDown size={12} className="text-slate-400" />
+                          </div>
+                          <div className="flex items-center gap-1 text-xs font-bold text-slate-700 bg-slate-50 border border-slate-200 px-2 py-1 rounded-lg">
+                            2026 <ChevronDown size={12} className="text-slate-400" />
+                          </div>
+                          <div className="flex items-center gap-1 ml-1">
+                            <button className="p-1 hover:bg-slate-100 rounded text-slate-400"><ChevronLeft size={14}/></button>
+                            <span className="text-[10px] font-bold text-slate-500">{t.mockupCalendar.today}</span>
+                            <button className="p-1 hover:bg-slate-100 rounded text-slate-400"><ChevronRight size={14}/></button>
+                          </div>
+                        </div>
+
+                        {/* Legends */}
+                        <div className="flex items-center gap-3 text-[9px] font-bold text-slate-500 uppercase tracking-wider shrink-0 ml-4">
+                          <div className="flex items-center gap-1"><CheckCircle2 size={10} className="text-emerald-500"/> {t.mockupCalendar.legend.paid}</div>
+                          <div className="flex items-center gap-1"><Clock size={10} className="text-red-500"/> {t.mockupCalendar.legend.toPay}</div>
+                          <div className="w-px h-3 bg-slate-300"></div>
+                          <div className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500"></div> {t.mockupCalendar.legend.inProgress}</div>
+                          <div className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div> {t.mockupCalendar.legend.confirmed}</div>
+                          <div className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full bg-slate-400"></div> {t.mockupCalendar.legend.checkout}</div>
+                        </div>
+                      </div>
+
+                      {/* Calendar Grid */}
+                      <div className="flex-1 overflow-x-auto overflow-y-hidden custom-scrollbar">
+                        <div className="min-w-[800px] h-full flex flex-col">
+                          {/* Header Row */}
+                          <div className="flex border-b border-slate-100 text-xs font-bold text-slate-400 text-center uppercase tracking-wider bg-slate-50/50">
+                            <div className="w-40 shrink-0 p-3 text-left flex items-end">{t.mockupCalendar.room}</div>
+                            {/* Days columns */}
+                            {[
+                              {d: t.mockupCalendar.days.sat, n: 8, o: '38%', h: false},
+                              {d: t.mockupCalendar.days.sun, n: 9, o: '75%', h: true},
+                              {d: t.mockupCalendar.days.mon, n: 10, o: '88%', h: false},
+                              {d: t.mockupCalendar.days.tue, n: 11, o: '75%', h: false},
+                              {d: t.mockupCalendar.days.wed, n: 12, o: '88%', h: false},
+                              {d: t.mockupCalendar.days.thu, n: 13, o: '63%', h: false},
+                              {d: t.mockupCalendar.days.fri, n: 14, o: '63%', h: false},
+                              {d: t.mockupCalendar.days.sat, n: 15, o: '63%', h: false},
+                              {d: t.mockupCalendar.days.sun, n: 16, o: '75%', h: false},
+                              {d: t.mockupCalendar.days.mon, n: 17, o: '50%', h: false},
+                              {d: t.mockupCalendar.days.tue, n: 18, o: '38%', h: false},
+                              {d: t.mockupCalendar.days.wed, n: 19, o: '63%', h: false}
+                            ].map((day, i) => (
+                              <div key={i} className={`flex-1 flex flex-col items-center justify-center p-1.5 border-l border-slate-100 ${day.h ? 'bg-amber-50/50 text-amber-600' : ''}`}>
+                                <span className="text-[10px]">{day.d}</span>
+                                <span className={`text-sm my-0.5 ${day.h ? 'text-amber-600' : 'text-slate-700'}`}>{day.n}</span>
+                                <span className={`text-[9px] ${day.h ? 'text-amber-500' : 'text-indigo-400'}`}>{day.o}</span>
+                              </div>
+                            ))}
+                          </div>
+
+                          {/* Rows */}
+                          <div className="relative flex-1 flex flex-col pb-4">
+                            {/* Grid Lines (Background) */}
+                            <div className="absolute inset-0 flex pointer-events-none">
+                              <div className="w-40 shrink-0 border-r border-slate-100"></div>
+                              {[...Array(12)].map((_, i) => (
+                                <div key={i} className={`flex-1 border-r border-slate-100 ${i === 1 ? 'bg-amber-50/30' : ''}`}></div>
+                              ))}
+                            </div>
+
+                            {/* Data Rows */}
+                            {[
+                              { 
+                                name: t.mockupCalendar.roomTypes.suiteTerraza, 
+                                bars: [
+                                  { start: 1, span: 3, color: 'bg-emerald-500', name: 'Luis P.', status: 'paid' },
+                                  { start: 7, span: 2, color: 'bg-blue-400', name: 'Javier S.', status: 'paid' },
+                                  { start: 11, span: 1, color: 'bg-blue-400', name: 'Javier S.', status: 'toPay' }
+                                ]
+                              },
+                              { 
+                                name: t.mockupCalendar.roomTypes.suiteJardin, 
+                                bars: [
+                                  { start: 1, span: 2, color: 'bg-emerald-500', name: 'Pedro H.', status: 'paid' },
+                                  { start: 4, span: 4, color: 'bg-blue-400', name: 'Diego F.', status: 'toPay' },
+                                  { start: 10, span: 2, color: 'bg-blue-400', name: 'Pedro H.', status: 'paid' }
+                                ]
+                              },
+                              { 
+                                name: t.mockupCalendar.roomTypes.hab301, 
+                                bars: [
+                                  { start: 0, span: 2, color: 'bg-emerald-500', name: 'Roberto C.', status: 'paid' },
+                                  { start: 2, span: 2, color: 'bg-emerald-500', name: 'Raúl B.', status: 'paid' },
+                                  { start: 6, span: 3, color: 'bg-blue-400', name: 'Roberto C.', status: 'toPay' },
+                                  { start: 10, span: 2, color: 'bg-blue-400', name: 'Raúl B.', status: 'paid' }
+                                ]
+                              },
+                              { 
+                                name: t.mockupCalendar.roomTypes.hab302, 
+                                bars: [
+                                  { start: 0, span: 3, color: 'bg-emerald-500', name: 'Marta G.', status: 'paid' },
+                                  { start: 4, span: 4, color: 'bg-blue-400', name: 'Marta G.', status: 'paid' },
+                                  { start: 9, span: 3, color: 'bg-blue-400', name: 'Sofia L.', status: 'toPay' }
+                                ]
+                              },
+                              { 
+                                name: t.mockupCalendar.roomTypes.doble201, 
+                                bars: [
+                                  { start: 1, span: 4, color: 'bg-emerald-500', name: 'Valentina C.', status: 'paid' },
+                                  { start: 7, span: 1, color: 'bg-blue-400', name: 'D', status: 'toPay', icon: true },
+                                  { start: 9, span: 3, color: 'bg-blue-400', name: 'Roberto C.', status: 'toPay' }
+                                ]
+                              },
+                              { 
+                                name: t.mockupCalendar.roomTypes.doble202, 
+                                bars: [
+                                  { start: 3, span: 4, color: 'bg-blue-400', name: 'Valentina C.', status: 'paid' },
+                                  { start: 8, span: 1, color: 'bg-blue-400', name: 'Javier S.', status: 'paid' },
+                                  { start: 10, span: 2, color: 'bg-blue-400', name: 'Emilia V.', status: 'toPay', icon: true }
+                                ]
+                              },
+                            ].map((row, rIdx) => (
+                              <div key={rIdx} className="flex border-b border-slate-100 relative h-12 items-center z-10 hover:bg-slate-50/50">
+                                <div className="w-40 shrink-0 px-3 text-[11px] font-bold text-slate-300 bg-white/50">{row.name}</div>
+                                
+                                <div className="flex-1 relative h-full">
+                                  {row.bars.map((bar, bIdx) => (
+                                    <div key={bIdx} 
+                                         className={`absolute top-1.5 bottom-1.5 ${bar.color} rounded-md text-white text-[10px] flex items-center px-1.5 font-semibold shadow-sm overflow-hidden whitespace-nowrap`}
+                                         style={{ left: `calc((100% / 12) * ${bar.start} + 2px)`, width: `calc((100% / 12) * ${bar.span} - 4px)` }}>
+                                      {bar.icon ? <Home size={10} className="mr-1 shrink-0"/> : <Home size={10} className="mr-1 shrink-0 opacity-70"/>}
+                                      <span className="truncate flex-1">{bar.name}</span>
+                                      <div className="absolute right-1 w-3 h-3 bg-white/20 rounded-full flex items-center justify-center shrink-0">
+                                        {bar.status === 'paid' ? <CheckCircle2 size={8} className="text-white"/> : <Clock size={8} className="text-white"/>}
+                                      </div>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Canales Conectados */}
+                    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-3 shrink-0">
+                       <div className="flex items-center gap-2 font-bold text-slate-200 mb-3 text-sm">
+                         <Globe size={16} className="text-indigo-500"/> {t.mockupCalendar.channelsTitle}
+                       </div>
+                       <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+                         {[
+                           { name: 'Booking.com', status: t.mockupCalendar.sync, color: 'text-blue-600', bg: 'bg-blue-900', icon: Briefcase },
+                           { name: 'Airbnb', status: t.mockupCalendar.sync, color: 'text-emerald-600', bg: 'bg-rose-500', icon: Home },
+                           { name: 'Expedia', status: t.mockupCalendar.sync, color: 'text-emerald-600', bg: 'bg-black', icon: Briefcase },
+                           { name: 'Web Directa', status: t.mockupCalendar.active, color: 'text-indigo-600', bg: 'bg-indigo-600', icon: Globe },
+                           { name: 'Venta Directa', status: t.mockupCalendar.manual, color: 'text-amber-500', bg: 'bg-amber-500', icon: Users }
+                         ].map((channel, idx) => (
+                           <div key={idx} className="flex items-center gap-2 p-2 rounded-xl bg-slate-50 border border-slate-100 hover:border-indigo-100 transition-colors">
+                             <div className={`w-7 h-7 rounded-lg ${channel.bg} flex items-center justify-center text-white shrink-0 shadow-sm`}>
+                               <channel.icon size={12}/>
+                             </div>
+                             <div className="min-w-0">
+                               <div className="text-[11px] font-bold text-slate-200 whitespace-nowrap overflow-hidden text-ellipsis">{channel.name}</div>
+                               <div className={`text-[9px] font-semibold ${channel.color} whitespace-nowrap overflow-hidden text-ellipsis`}>{channel.status}</div>
+                             </div>
+                           </div>
+                         ))}
+                       </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                {/* Overlay Text on Hover */}
+                <div className="absolute inset-0 bg-white/70 backdrop-blur-md flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 z-20">
+                   <a href="https://demo.vistomio.com" className="bg-slate-900 text-white font-bold px-8 py-4 rounded-full shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:scale-105 transition-transform flex items-center gap-2">
+                     <Play fill="currentColor" size={18} /> Interactuar con el Demo
+                   </a>
+                </div>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- SOCIAL PROOF --- */}
+      <section className="py-12 border-y border-slate-200 bg-slate-900 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-center text-sm font-semibold text-slate-400 uppercase tracking-widest mb-10">
+            {t.socialProof}
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20 opacity-60 hover:opacity-100 transition-all duration-500">
+            <div className="flex items-center gap-3 text-2xl font-bold text-slate-200">
+              <span className="w-10 h-10 rounded-xl bg-slate-200/50 flex items-center justify-center text-sm border border-slate-300 shadow-sm">HN</span> Noga
+            </div>
+            <div className="flex items-center gap-2 text-2xl font-bold text-slate-200 italic">
+              <Utensils className="text-indigo-500" size={28} /> Gallo Azul
+            </div>
+            <div className="flex items-center gap-2 text-2xl font-black text-slate-200 tracking-[0.2em]">
+              LA MORA
+            </div>
+            <div className="flex items-center gap-3 text-2xl font-bold text-slate-200">
+              <span className="border-2 border-indigo-500 p-1.5 text-indigo-600 text-sm">JC</span> Hoteles
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- BOUTIQUE NICHE SECTION (NEW) --- */}
+      <section className="py-24 bg-slate-900 border-b border-slate-800 relative overflow-hidden">
+        {/* Subtle background flair */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-amber-100/50 blur-[100px] rounded-full pointer-events-none"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <div className="lg:w-1/2">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                {t.boutiqueNiche.title}
+              </h2>
+              <p className="text-lg text-slate-300 leading-relaxed mb-8">
+                {t.boutiqueNiche.subtitle}
+              </p>
+              
+              <ul className="space-y-6">
+                {t.boutiqueNiche.cards.map((card, idx) => (
+                  <li key={idx} className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-100 text-indigo-600 flex items-center justify-center shrink-0">
+                      <card.icon size={24} />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-white mb-1">{card.title}</h4>
+                      <p className="text-slate-300">{card.desc}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div className="lg:w-1/2 relative w-full">
+               {/* Decorative Element mimicking a boutique menu/tablet */}
+               <div className="w-full aspect-square md:aspect-[4/3] rounded-3xl bg-gradient-to-tr from-[#0B1121] to-[#171E32] border border-white/10 shadow-2xl p-8 flex flex-col justify-between relative overflow-hidden group">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-fuchsia-600/20 blur-[80px] rounded-full mix-blend-screen group-hover:bg-fuchsia-600/30 transition-colors"></div>
+                  
+                  <div className="flex justify-between items-start relative z-10">
+                    <div className="w-12 h-12 bg-white/5 backdrop-blur-md rounded-2xl flex items-center justify-center border border-white/10">
+                      <BedDouble className="text-white" size={24}/>
+                    </div>
+                    <div className="px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-full text-sm font-bold border border-emerald-500/30">
+                      VIP Guest Arriving
+                    </div>
+                  </div>
+                  
+                  <div className="relative z-10">
+                    <div className="text-5xl font-bold text-white mb-4">Suite 402</div>
+                    <div className="w-full h-px bg-white/10 mb-4"></div>
+                    <div className="flex justify-between text-slate-300">
+                      <span>Preferencias:</span>
+                      <span className="font-semibold text-white">Vino Tinto, Almohadas extra</span>
+                    </div>
+                    <div className="flex justify-between text-slate-300 mt-2">
+                      <span>Reserva Cena:</span>
+                      <span className="font-semibold text-violet-300">20:30 hrs - Terraza</span>
+                    </div>
+                  </div>
+               </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* --- FEATURES / MODULES --- */}
+      <section id="productos" className="py-32 relative bg-slate-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">{t.featuresTitle}</h2>
+            <p className="text-lg text-slate-300">Ecosistema interconectado. Utiliza un módulo o despliega la suite completa en minutos.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {t.features.map((feature, idx) => (
+              <div 
+                key={idx} 
+                className="bg-slate-800/50 backdrop-blur-xl rounded-3xl p-8 border border-slate-700 hover:border-indigo-500/50 hover:shadow-lg hover:shadow-indigo-900/20 transition-all duration-300 group cursor-default relative overflow-hidden"
+              >
+                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-indigo-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                
+                <div className="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:text-white group-hover:bg-indigo-600 group-hover:shadow-[0_0_20px_rgba(79,70,229,0.3)] transition-all duration-300 border border-indigo-100 group-hover:border-transparent relative z-10">
+                  <feature.icon size={26} strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3 relative z-10">{feature.title}</h3>
+                <p className="text-slate-300 text-sm leading-relaxed relative z-10">{feature.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* --- BENEFITS --- */}
+      <section className="py-32 bg-slate-50 relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-[400px] bg-indigo-100/50 blur-[120px] rounded-full pointer-events-none"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-20">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">{t.benefitsTitle}</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {t.benefits.map((benefit, idx) => (
+              <div key={idx} className="p-10 rounded-[2rem] bg-slate-800/60 backdrop-blur-xl border border-slate-700 hover:border-indigo-300 hover:shadow-xl transition-all shadow-sm">
+                <div className="w-16 h-16 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-8 border border-indigo-100">
+                  <benefit.icon size={32} strokeWidth={1.5} />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">{benefit.title}</h3>
+                <p className="text-slate-300 leading-relaxed text-lg">{benefit.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* --- PRICING --- */}
+      <section id="precios" className="py-32 relative bg-slate-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">{t.pricing.title}</h2>
+            <p className="text-lg text-slate-300">{t.pricing.subtitle}</p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+            {t.pricing.plans.map((plan, idx) => (
+              <div key={idx} className={`rounded-[2.5rem] p-10 bg-slate-800/80 backdrop-blur-xl border ${plan.highlight ? 'border-indigo-500 shadow-2xl shadow-indigo-900/50 lg:scale-105 z-10 relative' : 'border-slate-200 hover:border-indigo-200 shadow-sm hover:shadow-xl relative'} overflow-hidden transition-all duration-300 flex flex-col`}>
+                {plan.highlight && (
+                  <div className="absolute top-0 right-0 bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-xs font-bold px-6 py-2 rounded-bl-2xl uppercase tracking-wider">
+                    MÁS POPULAR
+                  </div>
+                )}
+                
+                <h3 className={`text-2xl font-bold ${plan.highlight ? 'text-indigo-900' : 'text-white'} mb-2 pr-24`}>{plan.name}</h3>
+                <div className="text-sm font-semibold text-slate-500 mb-6 bg-slate-50 inline-block px-3 py-1 rounded-lg border border-slate-100 self-start">{plan.setupPrice}</div>
+                
+                <div className="flex items-baseline gap-1 mb-8">
+                  <div className={`text-5xl font-extrabold ${plan.highlight ? 'text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-indigo-600' : 'text-white'}`}>
+                    {plan.monthlyPrice}
+                  </div>
+                  <span className="text-slate-500 font-medium">{plan.period}</span>
+                </div>
+                
+                <div className="space-y-4 mb-10 flex-grow">
+                  {plan.features.map((feat, i) => (
+                    <div key={i} className="flex items-start gap-4 text-slate-300">
+                      <CheckCircle2 className={`${plan.highlight ? 'text-indigo-600' : 'text-slate-400'} shrink-0 mt-0.5`} size={20} />
+                      <span className="text-base leading-snug">{feat}</span>
+                    </div>
+                  ))}
+                </div>
+                
+                <button className={`w-full py-4 rounded-2xl font-bold text-lg transition-colors ${plan.highlight ? 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-lg shadow-indigo-600/30' : 'bg-slate-50 text-slate-200 border border-slate-200 hover:bg-slate-100'}`}>
+                  {plan.cta}
+                </button>
+              </div>
+            ))}
+          </div>
+
+          {/* Enterprise Section */}
+          <div className="max-w-5xl mx-auto bg-[#0B1121] rounded-[2rem] p-10 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden border border-slate-800">
+             <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-500/10 blur-[80px] rounded-full pointer-events-none"></div>
+             <div className="relative z-10 md:w-2/3">
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">{t.pricing.enterprise.title}</h3>
+                <p className="text-slate-400 text-lg leading-relaxed">{t.pricing.enterprise.desc}</p>
+             </div>
+             <div className="relative z-10 md:w-1/3 flex justify-end w-full">
+                <button onClick={() => setIsContactModalOpen(true)} className="w-full md:w-auto px-8 py-4 bg-white text-[#0B1121] font-bold rounded-2xl hover:bg-slate-200 transition-colors shadow-lg">
+                  {t.pricing.enterprise.cta}
+                </button>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- CTA FINAL --- */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 to-slate-900 opacity-95"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[300px] bg-indigo-500/30 blur-[100px] rounded-full"></div>
+        
+        <div className="max-w-4xl mx-auto px-4 relative z-10 text-center text-white">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">{t.ctaFinal.title}</h2>
+          <p className="text-xl text-indigo-200 mb-12 max-w-2xl mx-auto font-light">{t.ctaFinal.subtitle}</p>
+          <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="inline-block bg-white text-indigo-900 font-bold text-xl px-12 py-5 rounded-full shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:shadow-[0_0_60px_rgba(255,255,255,0.4)] hover:scale-105 transition-all">
+            {t.ctaFinal.button}
+          </a>
+        </div>
+      </section>
+
+      {/* --- FOOTER --- */}
+      <footer id="contacto" className="bg-slate-900 text-slate-400 py-16 border-t border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#D4AF37] to-[#FCE69B] flex items-center justify-center text-white">
+               <BoutiqueLogoIcon className="w-5 h-5 text-slate-900" strokeWidth={1.5} />
+            </div>
+            <span className="text-2xl font-bold text-white tracking-tight">Vistomio</span>
+          </div>
+          
+          <div className="flex gap-8 text-sm font-medium">
+            <a href="#" className="hover:text-white transition-colors">{t.footer.legal}</a>
+            <a href="#" className="hover:text-white transition-colors">{t.footer.privacy}</a>
+            <a href="mailto:hola@vistomio.com" className="hover:text-white transition-colors">{t.footer.contact}</a>
+          </div>
+
+          <div className="text-sm text-slate-500">
+            {t.footer.rights}
+          </div>
+        </div>
+      </footer>
+
+      {/* Contact Modal */}
+      {isContactModalOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onClick={() => setIsContactModalOpen(false)}></div>
+          <div className="relative bg-slate-900 border border-slate-800 rounded-[2.5rem] p-8 md:p-12 shadow-2xl w-full max-w-xl animate-[translate-y-0_0.3s_ease-out]">
+            <button 
+              onClick={() => setIsContactModalOpen(false)}
+              className="absolute top-6 right-6 w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-slate-400 hover:text-white transition-colors"
+            >
+              <X size={20} />
+            </button>
+
+            <div className="text-center mb-10">
+              <div className="w-16 h-16 bg-gradient-to-br from-violet-600 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-indigo-600/30">
+                <Calendar size={32} className="text-white" />
+              </div>
+              <h3 className="text-3xl font-bold text-white mb-3">Conecta con Nosotros</h3>
+              <p className="text-slate-400">Agenda una entrevista o contáctanos directamente para descubrir cómo podemos elevar tu negocio.</p>
+            </div>
+
+            <div className="space-y-4">
+              <button className="w-full bg-white text-indigo-900 font-bold text-lg py-5 rounded-2xl flex items-center justify-center gap-3 hover:bg-slate-100 transition-colors shadow-xl">
+                <Calendar size={24} />
+                Agendar Entrevista Gratuita
+              </button>
+
+              <div className="relative py-4">
+                <div className="absolute inset-0 flex items-center">
+                  <div className="w-full border-t border-slate-800"></div>
+                </div>
+                <div className="relative flex justify-center">
+                  <span className="px-4 bg-slate-900 text-sm text-slate-500 font-medium">O contáctanos vía</span>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <a href="mailto:info@vistomio.com" className="bg-slate-800 hover:bg-slate-700 border border-slate-700 p-4 rounded-2xl flex flex-col items-center gap-3 transition-colors group">
+                  <div className="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center text-slate-400 group-hover:text-indigo-400 transition-colors">
+                    <Mail size={24} />
+                  </div>
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-white mb-1">Email</div>
+                    <div className="text-xs text-slate-400">info@vistomio.com</div>
+                  </div>
+                </a>
+                
+                <a href="https://wa.me/525540590054" target="_blank" rel="noreferrer" className="bg-slate-800 hover:bg-slate-700 border border-slate-700 p-4 rounded-2xl flex flex-col items-center gap-3 transition-colors group">
+                  <div className="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center text-slate-400 group-hover:text-emerald-400 transition-colors">
+                    <MessageSquareText size={24} />
+                  </div>
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-white mb-1">WhatsApp</div>
+                    <div className="text-xs text-slate-400">+52 55 40590054</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+
+export default VistomioLandingPage;
