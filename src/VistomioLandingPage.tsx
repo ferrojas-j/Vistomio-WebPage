@@ -803,12 +803,11 @@ const VistomioLandingPage: React.FC = () => {
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-tight mb-8">
-            {t.hero.title.split('evolucionada.').map((part, i) => (
-              <React.Fragment key={i}>
-                {part}
-                {i === 0 && <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#FCE69B]"> evolucionada.</span>}
-              </React.Fragment>
-            )).slice(0, 1)}
+            {t.hero.title}
+            <br className="hidden sm:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#FCE69B]">
+              {t.hero.titleHighlight}
+            </span>
           </h1>
           
           <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
