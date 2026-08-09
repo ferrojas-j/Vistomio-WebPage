@@ -198,7 +198,9 @@ const translations = {
       }
     },
     chatbotPlans: {
-      title: 'Elige tu nivel de automatización',
+      badge: 'Producto Independiente',
+      title: 'Potencia tu hotel con nuestro Chatbot IA',
+      subtitle: 'Integra nuestro agente inteligente a tu web o canales. Disponible como producto independiente o como parte de los paquetes Vistomio.',
       plans: [
         {
           name: 'Plan Estándar',
@@ -424,7 +426,9 @@ const translations = {
       }
     },
     chatbotPlans: {
-        title: 'Choose your level of automation',
+        badge: 'Standalone Product',
+        title: 'Power your hotel with our AI Chatbot',
+        subtitle: 'Integrate our intelligent agent into your website or channels. Available as a standalone product or bundled with Vistomio packages.',
         plans: [
           {
             name: 'Standard Plan',
@@ -650,7 +654,9 @@ const translations = {
       }
     },
     chatbotPlans: {
-        title: "Choisissez votre niveau d'automatisation",
+        badge: 'Produit Indépendant',
+        title: 'Propulsez votre hôtel avec notre Chatbot IA',
+        subtitle: 'Intégrez notre agent intelligent sur votre site ou vos canaux. Disponible séparément ou inclus dans les forfaits Vistomio.',
         plans: [
           {
             name: 'Plan Standard',
@@ -1450,9 +1456,16 @@ const VistomioLandingPage: React.FC = () => {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
+              <Bot size={16} />
+              <span>{t.chatbotPlans.badge}</span>
+            </div>
             <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
               {t.chatbotPlans.title}
             </h2>
+            <p className="text-lg text-slate-400">
+              {t.chatbotPlans.subtitle}
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
