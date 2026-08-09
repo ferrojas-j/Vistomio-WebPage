@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { 
-  Globe, 
-  CalendarCheck, 
   CreditCard, 
   Utensils, 
   Smartphone, 
@@ -17,6 +15,7 @@ import {
   X,
   Play,
   Zap,
+  Globe,
   Globe2,
   ChevronDown,
   Sparkles,
@@ -24,8 +23,6 @@ import {
   ConciergeBell,
   BedDouble,
   BarChart3,
-  Search,
-  Bell,
   LayoutGrid,
   ClipboardCheck,
   Package,
@@ -34,6 +31,7 @@ import {
   LineChart,
   Plus,
   Calendar,
+  CalendarCheck,
   DollarSign,
   ChevronLeft,
   ChevronRight,
@@ -713,7 +711,7 @@ const VistomioLandingPage: React.FC = () => {
           <div className="md:hidden absolute top-full left-0 w-full bg-[#0B1121]/95 backdrop-blur-xl border-b border-white/10 py-6 px-6 flex flex-col gap-6 shadow-2xl">
             <a href="#productos" className="text-lg font-medium text-white" onClick={() => setMobileMenuOpen(false)}>{t.nav.products}</a>
             <a href="#precios" className="text-lg font-medium text-white" onClick={() => setMobileMenuOpen(false)}>{t.nav.pricing}</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="text-lg font-medium text-white" onClick={() => setMobileMenuOpen(false)}>{t.nav.contact}</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); setMobileMenuOpen(false); }} className="text-lg font-medium text-white">{t.nav.contact}</a>
             <div className="h-px bg-white/10 w-full my-2"></div>
             <div className="flex gap-4">
                <button onClick={() => {setLang('es'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg ${lang === 'es' ? 'bg-slate-800 border border-slate-700/20 text-[#D4AF37]' : 'text-slate-400'}`}>ES</button>
@@ -744,7 +742,7 @@ const VistomioLandingPage: React.FC = () => {
           </div>
 
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-tight mb-8">
-            {t.hero.title.split('evolucionada.').map((part, i, arr) => (
+            {t.hero.title.split('evolucionada.').map((part, i) => (
               <React.Fragment key={i}>
                 {part}
                 {i === 0 && <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#FCE69B]"> evolucionada.</span>}
