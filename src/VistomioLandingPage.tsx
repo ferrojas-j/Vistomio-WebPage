@@ -736,7 +736,7 @@ const VistomioLandingPage: React.FC = () => {
             {t.hero.badge}
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-tight mb-8">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-tight mb-8">
             {t.hero.title.split('evolucionada.').map((part, i) => (
               <React.Fragment key={i}>
                 {part}
@@ -794,7 +794,8 @@ const VistomioLandingPage: React.FC = () => {
              </div>
              
              {/* Main App Container */}
-             <div className="rounded-xl md:rounded-2xl overflow-hidden border border-slate-200/10 bg-[#f4f7f9] shadow-inner aspect-[16/10] relative flex text-left relative z-10">
+             <div className="rounded-xl md:rounded-2xl overflow-x-auto overflow-y-hidden border border-slate-200/10 bg-[#f4f7f9] shadow-inner relative z-10 custom-scrollbar">
+               <div className="min-w-[900px] w-full aspect-[16/10] relative flex text-left">
                 
                 {/* App Sidebar (Dark) */}
                 <div className="w-64 hidden md:flex flex-col bg-[#111827] text-slate-300 border-r border-slate-800">
@@ -1061,6 +1062,7 @@ const VistomioLandingPage: React.FC = () => {
                      <Play fill="currentColor" size={18} /> Interactuar con el Demo
                    </a>
                 </div>
+               </div>
              </div>
           </div>
         </div>
@@ -1072,7 +1074,7 @@ const VistomioLandingPage: React.FC = () => {
           <p className="text-center text-sm font-semibold text-slate-400 uppercase tracking-widest mb-10">
             {t.socialProof}
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20 opacity-60 hover:opacity-100 transition-all duration-500">
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10 lg:gap-20 opacity-60 hover:opacity-100 transition-all duration-500">
             <div className="flex items-center gap-3 text-2xl font-bold text-slate-200">
               <span className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-sm border border-slate-700 shadow-sm text-slate-300">HN</span> Noga
             </div>
@@ -1095,7 +1097,7 @@ const VistomioLandingPage: React.FC = () => {
         <div className="absolute top-0 right-0 w-96 h-96 bg-amber-900/20 blur-[100px] rounded-full pointer-events-none"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
-          <div className="flex flex-col lg:flex-row items-center gap-16">
+          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
             <div className="lg:w-1/2">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
                 {t.boutiqueNiche.title}
@@ -1188,7 +1190,7 @@ const VistomioLandingPage: React.FC = () => {
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">{t.benefitsTitle}</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {t.benefits.map((benefit, idx) => (
               <div key={idx} className="p-10 rounded-[2rem] bg-slate-800/60 backdrop-blur-xl border border-slate-700 hover:border-[#D4AF37]/50 hover:shadow-xl hover:shadow-amber-900/20 transition-all shadow-sm">
                 <div className="w-16 h-16 rounded-2xl bg-[#D4AF37]/10 text-[#D4AF37] flex items-center justify-center mb-8 border border-[#D4AF37]/30">
