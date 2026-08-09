@@ -51,6 +51,13 @@ const BoutiqueLogoIcon = ({ className = "w-6 h-6", strokeWidth = 1.5 }: { classN
 // --- Translations Data ---
 const translations = {
   es: {
+    suiteMockup: {
+      status: 'Llegada Huésped VIP',
+      preferences: 'Preferencias:',
+      preferencesValue: 'Vino Tinto, Almohadas extra',
+      dinner: 'Reserva Cena:',
+      dinnerValue: '20:30 hrs - Terraza'
+    },
     nav: {
       products: 'Productos',
       pricing: 'Precios',
@@ -238,6 +245,13 @@ const translations = {
     }
   },
   en: {
+    suiteMockup: {
+      status: 'VIP Guest Arriving',
+      preferences: 'Preferences:',
+      preferencesValue: 'Red Wine, Extra pillows',
+      dinner: 'Dinner Reservation:',
+      dinnerValue: '8:30 PM - Terrace'
+    },
     nav: {
       products: 'Products',
       pricing: 'Pricing',
@@ -425,6 +439,13 @@ const translations = {
     }
   },
   fr: {
+    suiteMockup: {
+      status: 'Arrivée Client VIP',
+      preferences: 'Préférences :',
+      preferencesValue: 'Vin Rouge, Oreillers suppl.',
+      dinner: 'Réservation Dîner :',
+      dinnerValue: '20h30 - Terrasse'
+    },
     nav: {
       products: 'Produits',
       pricing: 'Tarifs',
@@ -1166,7 +1187,7 @@ const VistomioLandingPage: React.FC = () => {
                       <BedDouble className="text-white" size={24}/>
                     </div>
                     <div className="px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-full text-sm font-bold border border-emerald-500/30">
-                      VIP Guest Arriving
+                      {t.suiteMockup.status}
                     </div>
                   </div>
                   
@@ -1174,12 +1195,12 @@ const VistomioLandingPage: React.FC = () => {
                     <div className="text-5xl font-bold text-white mb-4">Suite 402</div>
                     <div className="w-full h-px bg-white/10 mb-4"></div>
                     <div className="flex justify-between text-slate-300">
-                      <span>Preferencias:</span>
-                      <span className="font-semibold text-white">Vino Tinto, Almohadas extra</span>
+                      <span>{t.suiteMockup.preferences}</span>
+                      <span className="font-semibold text-white">{t.suiteMockup.preferencesValue}</span>
                     </div>
                     <div className="flex justify-between text-slate-300 mt-2">
-                      <span>Reserva Cena:</span>
-                      <span className="font-semibold text-[#FCE69B]">20:30 hrs - Terraza</span>
+                      <span>{t.suiteMockup.dinner}</span>
+                      <span className="font-semibold text-[#FCE69B]">{t.suiteMockup.dinnerValue}</span>
                     </div>
                   </div>
                </div>
