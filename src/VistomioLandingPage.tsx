@@ -6,6 +6,8 @@ import {
   Utensils, 
   Smartphone, 
   MessageSquareText,
+  ArrowLeft,
+  Send,
   Mail, 
   PieChart, 
   Users,
@@ -605,6 +607,7 @@ const VistomioLandingPage: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langMenuOpen, setLangMenuOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [contactModalView, setContactModalView] = useState('options');
   
   const langMenuRef = useRef<HTMLDivElement>(null);
   const t = translations[lang];
@@ -1284,60 +1287,115 @@ const VistomioLandingPage: React.FC = () => {
       {/* Contact Modal */}
       {isContactModalOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-          <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onClick={() => setIsContactModalOpen(false)}></div>
-          <div className="relative bg-slate-900 border border-slate-800 rounded-[2.5rem] p-8 md:p-12 shadow-2xl w-full max-w-xl animate-[translate-y-0_0.3s_ease-out]">
+          <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onClick={() => { setIsContactModalOpen(false); setContactModalView('options'); }}></div>
+          <div className="relative bg-slate-900 border border-slate-800 rounded-[2.5rem] p-8 md:p-12 shadow-2xl w-full max-w-xl animate-[translate-y-0_0.3s_ease-out] overflow-hidden">
             <button 
-              onClick={() => setIsContactModalOpen(false)}
-              className="absolute top-6 right-6 w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-slate-400 hover:text-white transition-colors"
+              onClick={() => { setIsContactModalOpen(false); setContactModalView('options'); }}
+              className="absolute top-6 right-6 w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-slate-400 hover:text-white transition-colors z-10"
             >
               <X size={20} />
             </button>
 
-            <div className="text-center mb-10">
-              <div className="w-16 h-16 bg-gradient-to-br from-violet-600 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-indigo-600/30">
-                <Calendar size={32} className="text-white" />
-              </div>
-              <h3 className="text-3xl font-bold text-white mb-3">Conecta con Nosotros</h3>
-              <p className="text-slate-400">Agenda una entrevista o contáctanos directamente para descubrir cómo podemos elevar tu negocio.</p>
-            </div>
-
-            <div className="space-y-4">
-              <button className="w-full bg-white text-indigo-900 font-bold text-lg py-5 rounded-2xl flex items-center justify-center gap-3 hover:bg-slate-100 transition-colors shadow-xl">
-                <Calendar size={24} />
-                Agendar Entrevista Gratuita
-              </button>
-
-              <div className="relative py-4">
-                <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-slate-800"></div>
+            {contactModalView === 'options' ? (
+              <div className="animate-[fade-in_0.3s_ease-out]">
+                <div className="text-center mb-10">
+                  <div className="w-16 h-16 bg-gradient-to-br from-violet-600 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-indigo-600/30">
+                    <Calendar size={32} className="text-white" />
+                  </div>
+                  <h3 className="text-3xl font-bold text-white mb-3">Conecta con Nosotros</h3>
+                  <p className="text-slate-400">Agenda una entrevista o contáctanos directamente para descubrir cómo podemos elevar tu negocio.</p>
                 </div>
-                <div className="relative flex justify-center">
-                  <span className="px-4 bg-slate-900 text-sm text-slate-500 font-medium">O contáctanos vía</span>
+
+                <div className="space-y-4">
+                  <button className="w-full bg-white text-indigo-900 font-bold text-lg py-5 rounded-2xl flex items-center justify-center gap-3 hover:bg-slate-100 transition-colors shadow-xl">
+                    <Calendar size={24} />
+                    Agendar Entrevista Gratuita
+                  </button>
+
+                  <div className="relative py-4">
+                    <div className="absolute inset-0 flex items-center">
+                      <div className="w-full border-t border-slate-800"></div>
+                    </div>
+                    <div className="relative flex justify-center">
+                      <span className="px-4 bg-slate-900 text-sm text-slate-500 font-medium">O contáctanos vía</span>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <button onClick={() => setContactModalView('email')} className="bg-slate-800 hover:bg-slate-700 border border-slate-700 p-4 rounded-2xl flex flex-col items-center gap-3 transition-colors group">
+                      <div className="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center text-slate-400 group-hover:text-indigo-400 transition-colors">
+                        <Mail size={24} />
+                      </div>
+                      <div className="text-center">
+                        <div className="text-sm font-bold text-white mb-1">Email</div>
+                        <div className="text-xs text-slate-400">info@vistomio.com</div>
+                      </div>
+                    </button>
+                    
+                    <a href="https://wa.me/525540590054" target="_blank" rel="noreferrer" className="bg-slate-800 hover:bg-slate-700 border border-slate-700 p-4 rounded-2xl flex flex-col items-center gap-3 transition-colors group">
+                      <div className="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center text-slate-400 group-hover:text-emerald-400 transition-colors">
+                        <MessageSquareText size={24} />
+                      </div>
+                      <div className="text-center">
+                        <div className="text-sm font-bold text-white mb-1">WhatsApp</div>
+                        <div className="text-xs text-slate-400">+52 55 40590054</div>
+                      </div>
+                    </a>
+                  </div>
                 </div>
               </div>
+            ) : (
+              <div className="animate-[fade-in_0.3s_ease-out]">
+                <button 
+                  onClick={() => setContactModalView('options')}
+                  className="absolute top-6 left-6 w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-slate-400 hover:text-white transition-colors z-10"
+                >
+                  <ArrowLeft size={20} />
+                </button>
+                <div className="text-center mb-8">
+                  <div className="w-16 h-16 bg-gradient-to-br from-indigo-600 to-indigo-900 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-indigo-900/30">
+                    <Mail size={32} className="text-white" />
+                  </div>
+                  <h3 className="text-3xl font-bold text-white mb-2">Enviar Mensaje</h3>
+                  <p className="text-slate-400 text-sm">Te responderemos a la brevedad.</p>
+                </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <a href="mailto:info@vistomio.com" className="bg-slate-800 hover:bg-slate-700 border border-slate-700 p-4 rounded-2xl flex flex-col items-center gap-3 transition-colors group">
-                  <div className="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center text-slate-400 group-hover:text-indigo-400 transition-colors">
-                    <Mail size={24} />
+                <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); alert("Mensaje enviado exitosamente."); setIsContactModalOpen(false); setContactModalView('options'); }}>
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Para</label>
+                    <input 
+                      type="email" 
+                      value="info@vistomio.com" 
+                      disabled 
+                      className="w-full bg-slate-900/50 border border-slate-800 text-slate-500 rounded-xl px-4 py-3 cursor-not-allowed"
+                    />
                   </div>
-                  <div className="text-center">
-                    <div className="text-sm font-bold text-white mb-1">Email</div>
-                    <div className="text-xs text-slate-400">info@vistomio.com</div>
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Tu Email</label>
+                    <input 
+                      type="email" 
+                      required 
+                      placeholder="ejemplo@hotel.com"
+                      className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
+                    />
                   </div>
-                </a>
-                
-                <a href="https://wa.me/525540590054" target="_blank" rel="noreferrer" className="bg-slate-800 hover:bg-slate-700 border border-slate-700 p-4 rounded-2xl flex flex-col items-center gap-3 transition-colors group">
-                  <div className="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center text-slate-400 group-hover:text-emerald-400 transition-colors">
-                    <MessageSquareText size={24} />
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Mensaje</label>
+                    <textarea 
+                      required 
+                      rows={4}
+                      placeholder="¿En qué te podemos ayudar?"
+                      className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all resize-none"
+                    ></textarea>
                   </div>
-                  <div className="text-center">
-                    <div className="text-sm font-bold text-white mb-1">WhatsApp</div>
-                    <div className="text-xs text-slate-400">+52 55 40590054</div>
-                  </div>
-                </a>
+                  
+                  <button type="submit" className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-lg py-4 rounded-xl flex items-center justify-center gap-2 transition-colors shadow-lg shadow-indigo-600/20 mt-4">
+                    <Send size={20} />
+                    Enviar Correo
+                  </button>
+                </form>
               </div>
-            </div>
+            )}
           </div>
         </div>
       )}
