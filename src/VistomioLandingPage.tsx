@@ -859,7 +859,7 @@ const VistomioLandingPage: React.FC = () => {
                   {/* Header */}
                   <div className="h-20 px-6 flex items-center justify-between border-b border-slate-200 bg-white shrink-0">
                     <div>
-                      <h2 className="text-2xl font-bold text-slate-200">{t.mockupCalendar.title}</h2>
+                      <h2 className="text-2xl font-bold text-slate-800">{t.mockupCalendar.title}</h2>
                       <p className="text-sm text-slate-500 hidden sm:block">Control centralizado de canales y disponibilidad</p>
                     </div>
                     <div className="flex items-center gap-3">
@@ -882,7 +882,7 @@ const VistomioLandingPage: React.FC = () => {
                       {/* Calendar Header Controls */}
                       <div className="p-3 border-b border-slate-100 flex items-center justify-between bg-white shrink-0 overflow-x-auto custom-scrollbar">
                         <div className="flex items-center gap-2 shrink-0">
-                          <div className="flex items-center gap-2 font-bold text-slate-200 mr-2">
+                          <div className="flex items-center gap-2 font-bold text-slate-800 mr-2">
                             <Calendar size={16} className="text-[#D4AF37]"/> <span className="hidden sm:inline">{t.mockupCalendar.title}</span>
                           </div>
                           <div className="flex bg-slate-100 p-1 rounded-lg">
@@ -917,7 +917,7 @@ const VistomioLandingPage: React.FC = () => {
                       <div className="flex-1 overflow-x-auto overflow-y-hidden custom-scrollbar">
                         <div className="min-w-[800px] h-full flex flex-col">
                           {/* Header Row */}
-                          <div className="flex border-b border-slate-100 text-xs font-bold text-slate-400 text-center uppercase tracking-wider bg-slate-50/50">
+                          <div className="flex border-b border-slate-100 text-xs font-bold text-slate-500 text-center uppercase tracking-wider bg-slate-50/50">
                             <div className="w-40 shrink-0 p-3 text-left flex items-end">{t.mockupCalendar.room}</div>
                             {/* Days columns */}
                             {[
@@ -1005,7 +1005,7 @@ const VistomioLandingPage: React.FC = () => {
                               },
                             ].map((row, rIdx) => (
                               <div key={rIdx} className="flex border-b border-slate-100 relative h-12 items-center z-10 hover:bg-slate-700/50/50">
-                                <div className="w-40 shrink-0 px-3 text-[11px] font-bold text-slate-300 bg-white/50">{row.name}</div>
+                                <div className="w-40 shrink-0 px-3 text-[11px] font-bold text-slate-600 bg-white/50">{row.name}</div>
                                 
                                 <div className="flex-1 relative h-full">
                                   {row.bars.map((bar, bIdx) => (
@@ -1029,7 +1029,7 @@ const VistomioLandingPage: React.FC = () => {
 
                     {/* Canales Conectados */}
                     <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-3 shrink-0">
-                       <div className="flex items-center gap-2 font-bold text-slate-200 mb-3 text-sm">
+                       <div className="flex items-center gap-2 font-bold text-slate-800 mb-3 text-sm">
                          <Globe size={16} className="text-[#D4AF37]"/> {t.mockupCalendar.channelsTitle}
                        </div>
                        <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
@@ -1045,7 +1045,7 @@ const VistomioLandingPage: React.FC = () => {
                                <channel.icon size={12}/>
                              </div>
                              <div className="min-w-0">
-                               <div className="text-[11px] font-bold text-slate-200 whitespace-nowrap overflow-hidden text-ellipsis">{channel.name}</div>
+                               <div className="text-[11px] font-bold text-slate-700 whitespace-nowrap overflow-hidden text-ellipsis">{channel.name}</div>
                                <div className={`text-[9px] font-semibold ${channel.color} whitespace-nowrap overflow-hidden text-ellipsis`}>{channel.status}</div>
                              </div>
                            </div>
