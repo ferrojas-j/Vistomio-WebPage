@@ -648,15 +648,15 @@ const VistomioLandingPage: React.FC = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="#productos" className="text-sm font-medium text-slate-300 hover:text-[#D4AF37] transition-colors">{t.nav.products}</a>
-            <a href="#precios" className="text-sm font-medium text-slate-300 hover:text-[#D4AF37] transition-colors">{t.nav.pricing}</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="text-sm font-medium text-slate-300 hover:text-[#D4AF37] transition-colors">{t.nav.contact}</a>
+            <a href="#productos" className="text-sm font-medium text-slate-300 hover:text-[#FCE69B] transition-colors">{t.nav.products}</a>
+            <a href="#precios" className="text-sm font-medium text-slate-300 hover:text-[#FCE69B] transition-colors">{t.nav.pricing}</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="text-sm font-medium text-slate-300 hover:text-[#FCE69B] transition-colors">{t.nav.contact}</a>
             
             {/* Custom Language Selector */}
-            <div className="relative border-l border-slate-200 pl-6" ref={langMenuRef}>
+            <div className="relative border-l border-slate-700 pl-6" ref={langMenuRef}>
               <button 
                 onClick={() => setLangMenuOpen(!langMenuOpen)}
-                className="flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-[#D4AF37] transition-colors group"
+                className="flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-[#FCE69B] transition-colors group"
               >
                 <Globe size={16} className="text-[#D4AF37] group-hover:text-[#FCE69B] transition-colors" />
                 <span>{lang.toUpperCase()}</span>
@@ -670,7 +670,7 @@ const VistomioLandingPage: React.FC = () => {
                     <button
                       key={l}
                       onClick={() => { setLang(l); setLangMenuOpen(false); }}
-                      className={`w-full text-left px-4 py-2 rounded-lg text-sm font-medium transition-colors ${lang === l ? 'bg-[#D4AF37]/10 text-[#D4AF37]' : 'text-slate-300 hover:bg-slate-50 hover:text-[#D4AF37]'}`}
+                      className={`w-full text-left px-4 py-2 rounded-lg text-sm font-medium transition-colors ${lang === l ? 'bg-[#D4AF37]/10 text-[#D4AF37]' : 'text-slate-300 hover:bg-slate-700/50 hover:text-[#FCE69B]'}`}
                     >
                       {l === 'es' ? 'Español' : l === 'en' ? 'English' : 'Français'}
                     </button>
@@ -685,7 +685,7 @@ const VistomioLandingPage: React.FC = () => {
           </div>
 
           {/* Mobile Menu Toggle */}
-          <button className="md:hidden text-slate-300 hover:text-[#D4AF37]" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+          <button className="md:hidden text-slate-300 hover:text-[#FCE69B]" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
@@ -992,7 +992,7 @@ const VistomioLandingPage: React.FC = () => {
                                 ]
                               },
                             ].map((row, rIdx) => (
-                              <div key={rIdx} className="flex border-b border-slate-100 relative h-12 items-center z-10 hover:bg-slate-50/50">
+                              <div key={rIdx} className="flex border-b border-slate-100 relative h-12 items-center z-10 hover:bg-slate-700/50/50">
                                 <div className="w-40 shrink-0 px-3 text-[11px] font-bold text-slate-300 bg-white/50">{row.name}</div>
                                 
                                 <div className="flex-1 relative h-full">
@@ -1325,7 +1325,7 @@ const VistomioLandingPage: React.FC = () => {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <button onClick={() => setContactModalView('email')} className="bg-slate-800 hover:bg-slate-700 border border-slate-700 p-4 rounded-2xl flex flex-col items-center gap-3 transition-colors group">
-                      <div className="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center text-slate-400 group-hover:text-[#D4AF37] transition-colors">
+                      <div className="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center text-slate-400 group-hover:text-[#FCE69B] transition-colors">
                         <Mail size={24} />
                       </div>
                       <div className="text-center">
