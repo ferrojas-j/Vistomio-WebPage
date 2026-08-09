@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { 
+import {  
   CreditCard, 
   Utensils, 
   Smartphone, 
@@ -38,7 +38,7 @@ import {
   Clock,
   Home,
   Briefcase
-} from 'lucide-react';
+ } from 'lucide-react';
 
 // --- Custom Icons ---
 const BoutiqueLogoIcon = ({ className = "w-6 h-6", strokeWidth = 1.5 }: { className?: string, strokeWidth?: number }) => (
@@ -193,6 +193,38 @@ const translations = {
         doble201: 'Hab. Doble 201',
         doble202: 'Hab. Doble 202'
       }
+    },
+    chatbotPlans: {
+      title: 'Elige tu nivel de automatización',
+      plans: [
+        {
+          name: 'Plan Estándar',
+          features: [
+            'Conexión multicanal',
+            'Solo respuesta a preguntas frecuentes',
+            'Envíos de links, etc.',
+            'Solo puede responder (no envía mensajes proactivamente)'
+          ]
+        },
+        {
+          name: 'Plan Premium',
+          features: [
+            'Lo de estándar + capacidad de iniciar conversaciones proactivamente',
+            'Envío automatizado de campañas de marketing',
+            'Ofertas especiales',
+            'Fichas anticipadas de check-in, bienvenidas, etc.'
+          ]
+        },
+        {
+          name: 'Plan Autónomo',
+          features: [
+            'Todo lo anterior + agente de ventas proactivo',
+            'Sincronización con Booking Engine para ejecutar reservas',
+            'Cambiar fechas',
+            'Extender estancias, etc.'
+          ]
+        }
+      ]
     },
     pricing: {
       title: 'Paquetes Estándar',
@@ -388,7 +420,39 @@ const translations = {
         doble202: 'Double Rm 202'
       }
     },
-    pricing: {
+    chatbotPlans: {
+        title: 'Choose your level of automation',
+        plans: [
+          {
+            name: 'Standard Plan',
+            features: [
+              'Multi-channel connection',
+              'FAQ responses only',
+              'Sending links, etc.',
+              'Can only reply (no proactive messages)'
+            ]
+          },
+          {
+            name: 'Premium Plan',
+            features: [
+              'Standard features + proactive conversation initiation',
+              'Automated marketing campaigns',
+              'Special offers',
+              'Pre-arrival check-in cards, welcomes, etc.'
+            ]
+          },
+          {
+            name: 'Autonomous Plan',
+            features: [
+              'All the above + proactive sales agent',
+              'Synchronization with Booking Engine to execute reservations',
+              'Change dates',
+              'Extend stays, etc.'
+            ]
+          }
+        ]
+      },
+      pricing: {
       title: 'Standard Packages',
       subtitle: 'Clear investment. No surprises. Scale according to your business needs.',
       plans: [
@@ -582,7 +646,39 @@ const translations = {
         doble202: 'Ch. Double 202'
       }
     },
-    pricing: {
+    chatbotPlans: {
+        title: "Choisissez votre niveau d'automatisation",
+        plans: [
+          {
+            name: 'Plan Standard',
+            features: [
+              'Connexion multicanale',
+              'Réponses aux FAQ uniquement',
+              'Envoi de liens, etc.',
+              'Ne peut que répondre (pas de messages proactifs)'
+            ]
+          },
+          {
+            name: 'Plan Premium',
+            features: [
+              'Tout le standard + initiation proactive de conversations',
+              'Campagnes marketing automatisées',
+              'Offres spéciales',
+              'Fiches de check-in anticipées, bienvenues, etc.'
+            ]
+          },
+          {
+            name: 'Plan Autonome',
+            features: [
+              'Tout ce qui précède + agent de vente proactif',
+              'Synchronisation avec le moteur de réservation',
+              'Modifier les dates',
+              'Prolonger les séjours, etc.'
+            ]
+          }
+        ]
+      },
+      pricing: {
       title: 'Forfaits Standard',
       subtitle: 'Investissement clair. Sans surprises. Évoluez selon les besoins de votre entreprise.',
       plans: [
@@ -1342,6 +1438,75 @@ const VistomioLandingPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* --- CHATBOT AUTOMATION SECTION --- */}
+      <section className="py-24 bg-[#0B1121] relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-emerald-500/5 blur-[150px] rounded-[100%]"></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
+              {t.chatbotPlans.title}
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Standard Plan */}
+            <div className="bg-slate-900/50 border border-indigo-500/20 rounded-3xl p-8 flex flex-col h-full hover:border-indigo-500/40 transition-colors shadow-lg hover:shadow-indigo-500/5 relative overflow-hidden">
+              <div className="w-14 h-14 rounded-2xl bg-indigo-500/10 flex items-center justify-center border border-indigo-500/20 mb-6">
+                <MessageSquareText className="text-indigo-400" size={28} />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-8">{t.chatbotPlans.plans[0].name}</h3>
+              <div className="w-full h-px bg-white/5 mb-8"></div>
+              <ul className="flex flex-col gap-5 flex-grow">
+                {t.chatbotPlans.plans[0].features.map((feature, idx) => (
+                  <li key={idx} className="flex gap-4">
+                    <div className="mt-1 min-w-[20px] text-indigo-400"><CheckCircle2 size={20} /></div>
+                    <span className="text-slate-300 leading-relaxed">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Premium Plan */}
+            <div className="bg-slate-900/50 border border-amber-500/20 rounded-3xl p-8 flex flex-col h-full hover:border-amber-500/40 transition-colors shadow-lg hover:shadow-amber-500/5 relative overflow-hidden">
+              <div className="w-14 h-14 rounded-2xl bg-amber-500/10 flex items-center justify-center border border-amber-500/20 mb-6">
+                <Zap className="text-amber-400" size={28} />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-8">{t.chatbotPlans.plans[1].name}</h3>
+              <div className="w-full h-px bg-white/5 mb-8"></div>
+              <ul className="flex flex-col gap-5 flex-grow">
+                {t.chatbotPlans.plans[1].features.map((feature, idx) => (
+                  <li key={idx} className="flex gap-4">
+                    <div className="mt-1 min-w-[20px] text-amber-400"><CheckCircle2 size={20} /></div>
+                    <span className="text-slate-300 leading-relaxed">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Autonomous Plan */}
+            <div className="bg-slate-900/50 border border-emerald-500/20 rounded-3xl p-8 flex flex-col h-full hover:border-emerald-500/40 transition-colors shadow-lg hover:shadow-emerald-500/5 relative overflow-hidden">
+              <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20 mb-6">
+                <Bot className="text-emerald-400" size={28} />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-8">{t.chatbotPlans.plans[2].name}</h3>
+              <div className="w-full h-px bg-white/5 mb-8"></div>
+              <ul className="flex flex-col gap-5 flex-grow">
+                {t.chatbotPlans.plans[2].features.map((feature, idx) => (
+                  <li key={idx} className="flex gap-4">
+                    <div className="mt-1 min-w-[20px] text-emerald-400"><CheckCircle2 size={20} /></div>
+                    <span className="text-slate-300 leading-relaxed">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* --- CTA FINAL --- */}
       <section className="py-24 relative overflow-hidden">
