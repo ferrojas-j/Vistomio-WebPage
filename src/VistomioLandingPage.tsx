@@ -690,7 +690,7 @@ const VistomioLandingPage: React.FC = () => {
               </div>
             </div>
 
-            <a href="https://demo.vistomio.com" className="bg-gradient-to-r from-[#D4AF37] to-[#FCE69B] hover:from-[#FCE69B] hover:to-[#D4AF37] text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-all shadow-[0_0_15px_rgba(212,175,55,0.5)] hover:shadow-[0_0_25px_rgba(212,175,55,0.7)] flex items-center gap-2">
+            <a href="https://demo.vistomio.com" className="bg-gradient-to-r from-[#D4AF37] to-[#FCE69B] hover:from-[#FCE69B] hover:to-[#D4AF37] text-[#0B1121] text-sm font-semibold px-6 py-2.5 rounded-full transition-all shadow-[0_0_15px_rgba(212,175,55,0.5)] hover:shadow-[0_0_25px_rgba(212,175,55,0.7)] flex items-center gap-2">
               {t.nav.demo} <ArrowRight size={16} />
             </a>
           </div>
@@ -713,7 +713,7 @@ const VistomioLandingPage: React.FC = () => {
                <button onClick={() => {setLang('en'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg ${lang === 'en' ? 'bg-slate-800 border border-slate-700/20 text-[#D4AF37]' : 'text-slate-400'}`}>EN</button>
                <button onClick={() => {setLang('fr'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg ${lang === 'fr' ? 'bg-slate-800 border border-slate-700/20 text-[#D4AF37]' : 'text-slate-400'}`}>FR</button>
             </div>
-            <a href="https://demo.vistomio.com" className="bg-gradient-to-r from-[#D4AF37] to-[#FCE69B] text-white text-center font-bold px-5 py-4 rounded-xl mt-4 shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+            <a href="https://demo.vistomio.com" className="bg-gradient-to-r from-[#D4AF37] to-[#FCE69B] text-[#0B1121] text-center font-bold px-5 py-4 rounded-xl mt-4 shadow-[0_0_20px_rgba(212,175,55,0.3)]">
               {t.nav.demo}
             </a>
           </div>
@@ -799,7 +799,7 @@ const VistomioLandingPage: React.FC = () => {
                 {/* App Sidebar (Dark) */}
                 <div className="w-64 hidden md:flex flex-col bg-[#111827] text-slate-300 border-r border-slate-800">
                   <div className="flex items-center gap-3 mb-8 px-6 pt-6">
-                     <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#D4AF37] to-[#FCE69B] flex items-center justify-center text-white">
+                     <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#D4AF37] to-[#FCE69B] flex items-center justify-center text-[#0B1121]">
                         <BoutiqueLogoIcon className="w-5 h-5" strokeWidth={1.5} />
                      </div>
                      <div className="text-white font-bold text-lg">Vistomio</div>
@@ -1214,7 +1214,7 @@ const VistomioLandingPage: React.FC = () => {
             {t.pricing.plans.map((plan, idx) => (
               <div key={idx} className={`rounded-[2.5rem] p-10 bg-slate-800/80 backdrop-blur-xl border ${plan.highlight ? 'border-[#D4AF37] shadow-2xl shadow-amber-900/50 lg:scale-105 z-10 relative' : 'border-slate-700 hover:border-[#D4AF37]/50 shadow-sm hover:shadow-xl hover:shadow-amber-900/20 relative'} overflow-hidden transition-all duration-300 flex flex-col`}>
                 {plan.highlight && (
-                  <div className="absolute top-0 right-0 bg-gradient-to-r from-[#D4AF37] to-[#FCE69B] text-white text-xs font-bold px-6 py-2 rounded-bl-2xl uppercase tracking-wider">
+                  <div className="absolute top-0 right-0 bg-gradient-to-r from-[#D4AF37] to-[#FCE69B] text-[#0B1121] text-xs font-bold px-6 py-2 rounded-bl-2xl uppercase tracking-wider">
                     MÁS POPULAR
                   </div>
                 )}
@@ -1279,7 +1279,7 @@ const VistomioLandingPage: React.FC = () => {
       <footer id="contacto" className="bg-slate-900 text-slate-400 py-16 border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#D4AF37] to-[#FCE69B] flex items-center justify-center text-white">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#D4AF37] to-[#FCE69B] flex items-center justify-center text-[#0B1121]">
                <BoutiqueLogoIcon className="w-5 h-5 text-slate-900" strokeWidth={1.5} />
             </div>
             <span className="text-2xl font-bold text-white tracking-tight">Vistomio</span>
