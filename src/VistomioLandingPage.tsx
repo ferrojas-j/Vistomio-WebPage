@@ -68,7 +68,7 @@ const translations = {
     hero: {
       badge: 'Tecnología boutique para negocios boutique',
       title: 'La gestión de tu hotel, evolucionada.',
-      subtitle: 'El PMS y ERP más moderno y disruptivo. Centraliza todo en una plataforma modular, nativa en la nube y ridículamente rápida.',
+      subtitle: 'La excelencia en la hospitalidad empieza desde adentro. Centraliza reservas, operaciones y finanzas en una herramienta diseñada para el lujo, el detalle y el servicio excepcional.',
       ctaPrimary: 'Explorar la plataforma',
       ctaSecondary: 'Agenda entrevista gratuita con nuestro equipo'
     },
@@ -629,7 +629,7 @@ const VistomioLandingPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-slate-900 font-sans text-slate-300 selection:bg-violet-600 selection:text-white overflow-x-hidden bg-noise">
+    <div className="min-h-screen bg-slate-900 font-sans text-slate-300 selection:bg-slate-800 border border-slate-700 selection:text-white overflow-x-hidden bg-noise">
       
       {/* --- NAVBAR --- */}
       <nav className={`fixed w-full z-50 transition-all duration-300 border-b border-slate-200/50 ${isScrolled ? 'bg-slate-900/90 backdrop-blur-xl py-4 shadow-xl shadow-slate-200/50' : 'bg-transparent py-6'}`}>
@@ -642,23 +642,23 @@ const VistomioLandingPage: React.FC = () => {
             </div>
             <div className="flex flex-col">
               <span className="text-2xl font-bold tracking-tight text-white leading-none">Vistomio</span>
-              <span className="text-[0.65rem] font-bold tracking-widest text-violet-400 mt-1 uppercase whitespace-nowrap">{t.nav.logoSubtitle}</span>
+              <span className="text-[0.65rem] font-bold tracking-widest text-[#D4AF37] mt-1 uppercase whitespace-nowrap">{t.nav.logoSubtitle}</span>
             </div>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="#productos" className="text-sm font-medium text-slate-300 hover:text-indigo-600 transition-colors">{t.nav.products}</a>
-            <a href="#precios" className="text-sm font-medium text-slate-300 hover:text-indigo-600 transition-colors">{t.nav.pricing}</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="text-sm font-medium text-slate-300 hover:text-indigo-600 transition-colors">{t.nav.contact}</a>
+            <a href="#productos" className="text-sm font-medium text-slate-300 hover:text-[#D4AF37] transition-colors">{t.nav.products}</a>
+            <a href="#precios" className="text-sm font-medium text-slate-300 hover:text-[#D4AF37] transition-colors">{t.nav.pricing}</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="text-sm font-medium text-slate-300 hover:text-[#D4AF37] transition-colors">{t.nav.contact}</a>
             
             {/* Custom Language Selector */}
             <div className="relative border-l border-slate-200 pl-6" ref={langMenuRef}>
               <button 
                 onClick={() => setLangMenuOpen(!langMenuOpen)}
-                className="flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-indigo-600 transition-colors group"
+                className="flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-[#D4AF37] transition-colors group"
               >
-                <Globe size={16} className="text-violet-400 group-hover:text-violet-300 transition-colors" />
+                <Globe size={16} className="text-[#D4AF37] group-hover:text-[#FCE69B] transition-colors" />
                 <span>{lang.toUpperCase()}</span>
                 <ChevronDown size={14} className={`text-slate-500 transition-transform duration-300 ${langMenuOpen ? 'rotate-180' : ''}`} />
               </button>
@@ -670,7 +670,7 @@ const VistomioLandingPage: React.FC = () => {
                     <button
                       key={l}
                       onClick={() => { setLang(l); setLangMenuOpen(false); }}
-                      className={`w-full text-left px-4 py-2 rounded-lg text-sm font-medium transition-colors ${lang === l ? 'bg-indigo-50 text-indigo-600' : 'text-slate-300 hover:bg-slate-50 hover:text-indigo-600'}`}
+                      className={`w-full text-left px-4 py-2 rounded-lg text-sm font-medium transition-colors ${lang === l ? 'bg-[#D4AF37]/10 text-[#D4AF37]' : 'text-slate-300 hover:bg-slate-50 hover:text-[#D4AF37]'}`}
                     >
                       {l === 'es' ? 'Español' : l === 'en' ? 'English' : 'Français'}
                     </button>
@@ -679,13 +679,13 @@ const VistomioLandingPage: React.FC = () => {
               </div>
             </div>
 
-            <a href="https://demo.vistomio.com" className="bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-all shadow-[0_0_15px_rgba(139,92,246,0.5)] hover:shadow-[0_0_25px_rgba(139,92,246,0.7)] flex items-center gap-2">
+            <a href="https://demo.vistomio.com" className="bg-gradient-to-r from-[#D4AF37] to-[#FCE69B] hover:from-[#FCE69B] hover:to-[#D4AF37] text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-all shadow-[0_0_15px_rgba(212,175,55,0.5)] hover:shadow-[0_0_25px_rgba(212,175,55,0.7)] flex items-center gap-2">
               {t.nav.demo} <ArrowRight size={16} />
             </a>
           </div>
 
           {/* Mobile Menu Toggle */}
-          <button className="md:hidden text-slate-300 hover:text-indigo-600" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+          <button className="md:hidden text-slate-300 hover:text-[#D4AF37]" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
@@ -698,11 +698,11 @@ const VistomioLandingPage: React.FC = () => {
             <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="text-lg font-medium text-white" onClick={() => setMobileMenuOpen(false)}>{t.nav.contact}</a>
             <div className="h-px bg-white/10 w-full my-2"></div>
             <div className="flex gap-4">
-               <button onClick={() => {setLang('es'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg ${lang === 'es' ? 'bg-violet-600/20 text-violet-400' : 'text-slate-400'}`}>ES</button>
-               <button onClick={() => {setLang('en'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg ${lang === 'en' ? 'bg-violet-600/20 text-violet-400' : 'text-slate-400'}`}>EN</button>
-               <button onClick={() => {setLang('fr'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg ${lang === 'fr' ? 'bg-violet-600/20 text-violet-400' : 'text-slate-400'}`}>FR</button>
+               <button onClick={() => {setLang('es'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg ${lang === 'es' ? 'bg-slate-800 border border-slate-700/20 text-[#D4AF37]' : 'text-slate-400'}`}>ES</button>
+               <button onClick={() => {setLang('en'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg ${lang === 'en' ? 'bg-slate-800 border border-slate-700/20 text-[#D4AF37]' : 'text-slate-400'}`}>EN</button>
+               <button onClick={() => {setLang('fr'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg ${lang === 'fr' ? 'bg-slate-800 border border-slate-700/20 text-[#D4AF37]' : 'text-slate-400'}`}>FR</button>
             </div>
-            <a href="https://demo.vistomio.com" className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-center font-bold px-5 py-4 rounded-xl mt-4 shadow-[0_0_20px_rgba(139,92,246,0.3)]">
+            <a href="https://demo.vistomio.com" className="bg-gradient-to-r from-[#D4AF37] to-[#FCE69B] text-white text-center font-bold px-5 py-4 rounded-xl mt-4 shadow-[0_0_20px_rgba(212,175,55,0.3)]">
               {t.nav.demo}
             </a>
           </div>
@@ -715,13 +715,13 @@ const VistomioLandingPage: React.FC = () => {
         <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden flex justify-center">
           {/* Symmetrical Elegant Ambient Glows */}
           <div className="absolute top-[-10%] w-[1000px] h-[700px] bg-amber-200/20 blur-[180px] rounded-[100%]"></div>
-          <div className="absolute top-[30%] left-[-15%] w-[800px] h-[600px] bg-indigo-200/20 blur-[150px] rounded-full"></div>
+          <div className="absolute top-[30%] left-[-15%] w-[800px] h-[600px] bg-amber-500/10 blur-[150px] rounded-full"></div>
           <div className="absolute top-[30%] right-[-15%] w-[800px] h-[600px] bg-purple-200/20 blur-[150px] rounded-full"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           
-          <div className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-sm font-bold shadow-sm backdrop-blur-md uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/20 text-[#D4AF37] text-sm font-bold shadow-sm backdrop-blur-md uppercase tracking-widest">
             {t.hero.badge}
           </div>
 
@@ -729,7 +729,7 @@ const VistomioLandingPage: React.FC = () => {
             {t.hero.title.split('evolucionada.').map((part, i, arr) => (
               <React.Fragment key={i}>
                 {part}
-                {i === 0 && <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-indigo-600"> evolucionada.</span>}
+                {i === 0 && <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#FCE69B]"> evolucionada.</span>}
               </React.Fragment>
             )).slice(0, 1)}
           </h1>
@@ -741,7 +741,7 @@ const VistomioLandingPage: React.FC = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-24">
             <a 
               href="https://demo.vistomio.com" 
-              className="w-full sm:w-auto bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-bold text-lg px-8 py-4 rounded-2xl shadow-[0_0_30px_rgba(139,92,246,0.4)] hover:shadow-[0_0_40px_rgba(139,92,246,0.6)] hover:-translate-y-1 transition-all flex items-center justify-center gap-3 group"
+              className="w-full sm:w-auto bg-gradient-to-r from-[#D4AF37] to-[#FCE69B] hover:from-[#FCE69B] hover:to-[#D4AF37] text-white font-bold text-lg px-8 py-4 rounded-2xl shadow-[0_0_30px_rgba(212,175,55,0.4)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] hover:-translate-y-1 transition-all flex items-center justify-center gap-3 group"
             >
               {t.hero.ctaPrimary}
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -755,11 +755,11 @@ const VistomioLandingPage: React.FC = () => {
           </div>
 
           {/* REALISTIC UI MOCKUP BASED ON ACTUAL SCREENSHOTS */}
-          <div className="relative mx-auto w-full max-w-5xl rounded-2xl md:rounded-[2rem] border border-slate-200/50 bg-white/40 p-2 md:p-3 shadow-2xl shadow-indigo-900/10 backdrop-blur-xl transform-gpu perspective-[2000px]">
+          <div className="relative mx-auto w-full max-w-5xl rounded-2xl md:rounded-[2rem] border border-slate-200/50 bg-white/40 p-2 md:p-3 shadow-2xl shadow-amber-900/10 backdrop-blur-xl transform-gpu perspective-[2000px]">
              
              {/* Floating Hotel Elements */}
              <div className="absolute top-1/4 -left-12 md:-left-16 bg-slate-800/90 backdrop-blur-md p-4 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-4 animate-[bounce_4s_infinite] hidden lg:flex z-30">
-               <div className="w-12 h-12 bg-indigo-50 rounded-full flex items-center justify-center text-indigo-600">
+               <div className="w-12 h-12 bg-[#D4AF37]/10 rounded-full flex items-center justify-center text-[#D4AF37]">
                  <ConciergeBell size={24} />
                </div>
                <div className="text-left">
@@ -779,7 +779,7 @@ const VistomioLandingPage: React.FC = () => {
              </div>
 
              <div className="absolute inset-0 rounded-2xl md:rounded-[2rem] overflow-hidden pointer-events-none">
-               <div className="absolute inset-0 bg-gradient-to-br from-violet-500/20 via-transparent to-indigo-500/20 opacity-50 pointer-events-none"></div>
+               <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/20 via-transparent to-[#FCE69B]/20 opacity-50 pointer-events-none"></div>
              </div>
              
              {/* Main App Container */}
@@ -805,9 +805,9 @@ const VistomioLandingPage: React.FC = () => {
                       <span className="text-[13px] leading-snug font-medium">Dashboard General</span>
                     </div>
                     {/* Active State */}
-                    <div className="flex items-center gap-3 px-3 py-2 text-violet-300 bg-[#1e1b4b]/80 border border-violet-800/60 rounded-xl cursor-pointer mt-1 mb-1 shadow-inner relative overflow-hidden">
-                      <div className="absolute left-0 top-0 bottom-0 w-1 bg-violet-500 rounded-l-xl"></div>
-                      <CalendarCheck size={20} className="shrink-0 text-violet-400" strokeWidth={1.5} /> 
+                    <div className="flex items-center gap-3 px-3 py-2 text-[#FCE69B] bg-[#1B160C]/80 border border-[#D4AF37]/30 rounded-xl cursor-pointer mt-1 mb-1 shadow-inner relative overflow-hidden">
+                      <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#D4AF37] rounded-l-xl"></div>
+                      <CalendarCheck size={20} className="shrink-0 text-[#D4AF37]" strokeWidth={1.5} /> 
                       <span className="text-[13px] font-semibold leading-snug">Motor de Reservas y<br/>Channel Manager</span>
                     </div>
                     <div className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-white/5 cursor-pointer group">
@@ -851,13 +851,13 @@ const VistomioLandingPage: React.FC = () => {
                       <p className="text-sm text-slate-500 hidden sm:block">Control centralizado de canales y disponibilidad</p>
                     </div>
                     <div className="flex items-center gap-3">
-                      <button className="bg-indigo-600 text-white px-3 py-1.5 rounded-lg font-bold text-xs flex items-center gap-2 hover:bg-indigo-700 transition-colors shadow-md shadow-indigo-200">
+                      <button className="bg-slate-800 text-white border border-slate-700 px-3 py-1.5 rounded-lg font-bold text-xs flex items-center gap-2 hover:bg-slate-700 transition-colors shadow-md shadow-slate-900/50">
                         <Plus size={16} strokeWidth={3} className="shrink-0" /> 
                         <div className="text-left leading-tight w-16 whitespace-normal">{t.mockupCalendar.newBooking}</div>
                       </button>
                       <div className="flex items-center gap-2 ml-2">
                         <span className="bg-emerald-50 text-emerald-600 border border-emerald-200 px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider whitespace-nowrap">8 {t.mockupCalendar.rooms}</span>
-                        <span className="bg-indigo-50 text-indigo-600 border border-indigo-200 px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider whitespace-nowrap">5 {t.mockupCalendar.channels}</span>
+                        <span className="bg-[#D4AF37]/10 text-[#D4AF37] border border-[#D4AF37] px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider whitespace-nowrap">5 {t.mockupCalendar.channels}</span>
                       </div>
                     </div>
                   </div>
@@ -871,10 +871,10 @@ const VistomioLandingPage: React.FC = () => {
                       <div className="p-3 border-b border-slate-100 flex items-center justify-between bg-white shrink-0 overflow-x-auto custom-scrollbar">
                         <div className="flex items-center gap-2 shrink-0">
                           <div className="flex items-center gap-2 font-bold text-slate-200 mr-2">
-                            <Calendar size={16} className="text-indigo-500"/> <span className="hidden sm:inline">{t.mockupCalendar.title}</span>
+                            <Calendar size={16} className="text-[#D4AF37]"/> <span className="hidden sm:inline">{t.mockupCalendar.title}</span>
                           </div>
                           <div className="flex bg-slate-100 p-1 rounded-lg">
-                            <button className="bg-white text-indigo-600 px-2 py-1 rounded-md text-xs font-bold shadow-sm flex items-center gap-1"><Calendar size={12}/> {t.mockupCalendar.reservations}</button>
+                            <button className="bg-white text-[#D4AF37] px-2 py-1 rounded-md text-xs font-bold shadow-sm flex items-center gap-1"><Calendar size={12}/> {t.mockupCalendar.reservations}</button>
                             <button className="text-slate-500 px-2 py-1 rounded-md text-xs font-bold hover:text-slate-700 flex items-center gap-1"><DollarSign size={12}/> {t.mockupCalendar.rates}</button>
                           </div>
                           <div className="flex items-center gap-1 ml-2 text-xs font-bold text-slate-700 bg-slate-50 border border-slate-200 px-2 py-1 rounded-lg">
@@ -925,7 +925,7 @@ const VistomioLandingPage: React.FC = () => {
                               <div key={i} className={`flex-1 flex flex-col items-center justify-center p-1.5 border-l border-slate-100 ${day.h ? 'bg-amber-50/50 text-amber-600' : ''}`}>
                                 <span className="text-[10px]">{day.d}</span>
                                 <span className={`text-sm my-0.5 ${day.h ? 'text-amber-600' : 'text-slate-700'}`}>{day.n}</span>
-                                <span className={`text-[9px] ${day.h ? 'text-amber-500' : 'text-indigo-400'}`}>{day.o}</span>
+                                <span className={`text-[9px] ${day.h ? 'text-amber-500' : 'text-[#D4AF37]'}`}>{day.o}</span>
                               </div>
                             ))}
                           </div>
@@ -1018,17 +1018,17 @@ const VistomioLandingPage: React.FC = () => {
                     {/* Canales Conectados */}
                     <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-3 shrink-0">
                        <div className="flex items-center gap-2 font-bold text-slate-200 mb-3 text-sm">
-                         <Globe size={16} className="text-indigo-500"/> {t.mockupCalendar.channelsTitle}
+                         <Globe size={16} className="text-[#D4AF37]"/> {t.mockupCalendar.channelsTitle}
                        </div>
                        <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
                          {[
                            { name: 'Booking.com', status: t.mockupCalendar.sync, color: 'text-blue-600', bg: 'bg-blue-900', icon: Briefcase },
                            { name: 'Airbnb', status: t.mockupCalendar.sync, color: 'text-emerald-600', bg: 'bg-rose-500', icon: Home },
                            { name: 'Expedia', status: t.mockupCalendar.sync, color: 'text-emerald-600', bg: 'bg-black', icon: Briefcase },
-                           { name: 'Web Directa', status: t.mockupCalendar.active, color: 'text-indigo-600', bg: 'bg-indigo-600', icon: Globe },
+                           { name: 'Web Directa', status: t.mockupCalendar.active, color: 'text-[#D4AF37]', bg: 'bg-[#0B1121]', icon: Globe },
                            { name: 'Venta Directa', status: t.mockupCalendar.manual, color: 'text-amber-500', bg: 'bg-amber-500', icon: Users }
                          ].map((channel, idx) => (
-                           <div key={idx} className="flex items-center gap-2 p-2 rounded-xl bg-slate-50 border border-slate-100 hover:border-indigo-100 transition-colors">
+                           <div key={idx} className="flex items-center gap-2 p-2 rounded-xl bg-slate-50 border border-slate-100 hover:border-[#D4AF37]/20 transition-colors">
                              <div className={`w-7 h-7 rounded-lg ${channel.bg} flex items-center justify-center text-white shrink-0 shadow-sm`}>
                                <channel.icon size={12}/>
                              </div>
@@ -1066,13 +1066,13 @@ const VistomioLandingPage: React.FC = () => {
               <span className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-sm border border-slate-700 shadow-sm text-slate-300">HN</span> Noga
             </div>
             <div className="flex items-center gap-2 text-2xl font-bold text-slate-200 italic">
-              <Utensils className="text-indigo-500" size={28} /> Gallo Azul
+              <Utensils className="text-[#D4AF37]" size={28} /> Gallo Azul
             </div>
             <div className="flex items-center gap-2 text-2xl font-black text-slate-200 tracking-[0.2em]">
               LA MORA
             </div>
             <div className="flex items-center gap-3 text-2xl font-bold text-slate-200">
-              <span className="border-2 border-indigo-500 p-1.5 text-indigo-600 text-sm">JC</span> Hoteles
+              <span className="border-2 border-[#D4AF37] p-1.5 text-[#D4AF37] text-sm">JC</span> Hoteles
             </div>
           </div>
         </div>
@@ -1096,7 +1096,7 @@ const VistomioLandingPage: React.FC = () => {
               <ul className="space-y-6">
                 {t.boutiqueNiche.cards.map((card, idx) => (
                   <li key={idx} className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-indigo-900/40 border border-indigo-500/30 text-indigo-400 flex items-center justify-center shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] flex items-center justify-center shrink-0">
                       <card.icon size={24} />
                     </div>
                     <div>
@@ -1131,7 +1131,7 @@ const VistomioLandingPage: React.FC = () => {
                     </div>
                     <div className="flex justify-between text-slate-300 mt-2">
                       <span>Reserva Cena:</span>
-                      <span className="font-semibold text-violet-300">20:30 hrs - Terraza</span>
+                      <span className="font-semibold text-[#FCE69B]">20:30 hrs - Terraza</span>
                     </div>
                   </div>
                </div>
@@ -1153,11 +1153,11 @@ const VistomioLandingPage: React.FC = () => {
             {t.features.map((feature, idx) => (
               <div 
                 key={idx} 
-                className="bg-slate-800/50 backdrop-blur-xl rounded-3xl p-8 border border-slate-700 hover:border-indigo-500/50 hover:shadow-lg hover:shadow-indigo-900/20 transition-all duration-300 group cursor-default relative overflow-hidden"
+                className="bg-slate-800/50 backdrop-blur-xl rounded-3xl p-8 border border-slate-700 hover:border-[#D4AF37]/50 hover:shadow-lg hover:shadow-amber-900/20 transition-all duration-300 group cursor-default relative overflow-hidden"
               >
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-indigo-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#D4AF37]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 
-                <div className="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:text-white group-hover:bg-indigo-600 group-hover:shadow-[0_0_20px_rgba(79,70,229,0.3)] transition-all duration-300 border border-indigo-100 group-hover:border-transparent relative z-10">
+                <div className="w-14 h-14 rounded-2xl bg-[#D4AF37]/10 text-[#D4AF37] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:text-white group-hover:bg-[#D4AF37] group-hover:text-[#0B1121] group-hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] transition-all duration-300 border border-[#D4AF37]/20 group-hover:border-transparent relative z-10">
                   <feature.icon size={26} strokeWidth={1.5} />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3 relative z-10">{feature.title}</h3>
@@ -1170,7 +1170,7 @@ const VistomioLandingPage: React.FC = () => {
 
       {/* --- BENEFITS --- */}
       <section className="py-32 bg-slate-900 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-[400px] bg-indigo-900/20 blur-[120px] rounded-full pointer-events-none"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-[400px] bg-[#D4AF37]/10 blur-[120px] rounded-full pointer-events-none"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20">
@@ -1179,8 +1179,8 @@ const VistomioLandingPage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {t.benefits.map((benefit, idx) => (
-              <div key={idx} className="p-10 rounded-[2rem] bg-slate-800/60 backdrop-blur-xl border border-slate-700 hover:border-indigo-500/50 hover:shadow-xl hover:shadow-indigo-900/20 transition-all shadow-sm">
-                <div className="w-16 h-16 rounded-2xl bg-indigo-900/40 text-indigo-400 flex items-center justify-center mb-8 border border-indigo-500/30">
+              <div key={idx} className="p-10 rounded-[2rem] bg-slate-800/60 backdrop-blur-xl border border-slate-700 hover:border-[#D4AF37]/50 hover:shadow-xl hover:shadow-amber-900/20 transition-all shadow-sm">
+                <div className="w-16 h-16 rounded-2xl bg-[#D4AF37]/10 text-[#D4AF37] flex items-center justify-center mb-8 border border-[#D4AF37]/30">
                   <benefit.icon size={32} strokeWidth={1.5} />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4">{benefit.title}</h3>
@@ -1201,18 +1201,18 @@ const VistomioLandingPage: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
             {t.pricing.plans.map((plan, idx) => (
-              <div key={idx} className={`rounded-[2.5rem] p-10 bg-slate-800/80 backdrop-blur-xl border ${plan.highlight ? 'border-indigo-500 shadow-2xl shadow-indigo-900/50 lg:scale-105 z-10 relative' : 'border-slate-700 hover:border-indigo-500/50 shadow-sm hover:shadow-xl hover:shadow-indigo-900/20 relative'} overflow-hidden transition-all duration-300 flex flex-col`}>
+              <div key={idx} className={`rounded-[2.5rem] p-10 bg-slate-800/80 backdrop-blur-xl border ${plan.highlight ? 'border-[#D4AF37] shadow-2xl shadow-amber-900/50 lg:scale-105 z-10 relative' : 'border-slate-700 hover:border-[#D4AF37]/50 shadow-sm hover:shadow-xl hover:shadow-amber-900/20 relative'} overflow-hidden transition-all duration-300 flex flex-col`}>
                 {plan.highlight && (
-                  <div className="absolute top-0 right-0 bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-xs font-bold px-6 py-2 rounded-bl-2xl uppercase tracking-wider">
+                  <div className="absolute top-0 right-0 bg-gradient-to-r from-[#D4AF37] to-[#FCE69B] text-white text-xs font-bold px-6 py-2 rounded-bl-2xl uppercase tracking-wider">
                     MÁS POPULAR
                   </div>
                 )}
                 
-                <h3 className={`text-2xl font-bold ${plan.highlight ? 'text-indigo-900' : 'text-white'} mb-2 pr-24`}>{plan.name}</h3>
+                <h3 className={`text-2xl font-bold ${plan.highlight ? 'text-[#0B1121]' : 'text-white'} mb-2 pr-24`}>{plan.name}</h3>
                 <div className="text-sm font-semibold text-slate-500 mb-6 bg-slate-800 inline-block px-3 py-1 rounded-lg border border-slate-700 self-start">{plan.setupPrice}</div>
                 
                 <div className="flex items-baseline gap-1 mb-8">
-                  <div className={`text-5xl font-extrabold ${plan.highlight ? 'text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-indigo-600' : 'text-white'}`}>
+                  <div className={`text-5xl font-extrabold ${plan.highlight ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#FCE69B]' : 'text-white'}`}>
                     {plan.monthlyPrice}
                   </div>
                   <span className="text-slate-500 font-medium">{plan.period}</span>
@@ -1221,7 +1221,7 @@ const VistomioLandingPage: React.FC = () => {
                 <div className="space-y-4 mb-10 flex-grow">
                   {plan.features.map((feat, i) => (
                     <div key={i} className="flex items-start gap-4 text-slate-300">
-                      <CheckCircle2 className={`${plan.highlight ? 'text-indigo-600' : 'text-slate-400'} shrink-0 mt-0.5`} size={20} />
+                      <CheckCircle2 className={`${plan.highlight ? 'text-[#D4AF37]' : 'text-slate-400'} shrink-0 mt-0.5`} size={20} />
                       <span className="text-base leading-snug">{feat}</span>
                     </div>
                   ))}
@@ -1236,7 +1236,7 @@ const VistomioLandingPage: React.FC = () => {
 
           {/* Enterprise Section */}
           <div className="max-w-5xl mx-auto bg-[#0B1121] rounded-[2rem] p-10 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden border border-slate-800">
-             <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-500/10 blur-[80px] rounded-full pointer-events-none"></div>
+             <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/5 blur-[80px] rounded-full pointer-events-none"></div>
              <div className="relative z-10 md:w-2/3">
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">{t.pricing.enterprise.title}</h3>
                 <p className="text-slate-400 text-lg leading-relaxed">{t.pricing.enterprise.desc}</p>
@@ -1252,13 +1252,13 @@ const VistomioLandingPage: React.FC = () => {
 
       {/* --- CTA FINAL --- */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 to-slate-900 opacity-95"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[300px] bg-indigo-500/30 blur-[100px] rounded-full"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-950 opacity-95"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[300px] bg-amber-500/10 blur-[100px] rounded-full"></div>
         
         <div className="max-w-4xl mx-auto px-4 relative z-10 text-center text-white">
           <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">{t.ctaFinal.title}</h2>
-          <p className="text-xl text-indigo-200 mb-12 max-w-2xl mx-auto font-light">{t.ctaFinal.subtitle}</p>
-          <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="inline-block bg-white text-indigo-900 font-bold text-xl px-12 py-5 rounded-full shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:shadow-[0_0_60px_rgba(255,255,255,0.4)] hover:scale-105 transition-all">
+          <p className="text-xl text-[#FCE69B] mb-12 max-w-2xl mx-auto font-light">{t.ctaFinal.subtitle}</p>
+          <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="inline-block bg-white text-[#0B1121] font-bold text-xl px-12 py-5 rounded-full shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:shadow-[0_0_60px_rgba(255,255,255,0.4)] hover:scale-105 transition-all">
             {t.ctaFinal.button}
           </a>
         </div>
@@ -1301,7 +1301,7 @@ const VistomioLandingPage: React.FC = () => {
             {contactModalView === 'options' ? (
               <div className="animate-[fade-in_0.3s_ease-out]">
                 <div className="text-center mb-10">
-                  <div className="w-16 h-16 bg-gradient-to-br from-violet-600 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-indigo-600/30">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#D4AF37] to-[#FCE69B] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-amber-900/30">
                     <Calendar size={32} className="text-white" />
                   </div>
                   <h3 className="text-3xl font-bold text-white mb-3">Conecta con Nosotros</h3>
@@ -1309,7 +1309,7 @@ const VistomioLandingPage: React.FC = () => {
                 </div>
 
                 <div className="space-y-4">
-                  <button className="w-full bg-white text-indigo-900 font-bold text-lg py-5 rounded-2xl flex items-center justify-center gap-3 hover:bg-slate-100 transition-colors shadow-xl">
+                  <button className="w-full bg-white text-[#0B1121] font-bold text-lg py-5 rounded-2xl flex items-center justify-center gap-3 hover:bg-slate-100 transition-colors shadow-xl">
                     <Calendar size={24} />
                     Agendar Entrevista Gratuita
                   </button>
@@ -1325,7 +1325,7 @@ const VistomioLandingPage: React.FC = () => {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <button onClick={() => setContactModalView('email')} className="bg-slate-800 hover:bg-slate-700 border border-slate-700 p-4 rounded-2xl flex flex-col items-center gap-3 transition-colors group">
-                      <div className="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center text-slate-400 group-hover:text-indigo-400 transition-colors">
+                      <div className="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center text-slate-400 group-hover:text-[#D4AF37] transition-colors">
                         <Mail size={24} />
                       </div>
                       <div className="text-center">
@@ -1355,7 +1355,7 @@ const VistomioLandingPage: React.FC = () => {
                   <ArrowLeft size={20} />
                 </button>
                 <div className="text-center mb-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-indigo-600 to-indigo-900 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-indigo-900/30">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#D4AF37] to-[#FCE69B] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-amber-900/30">
                     <Mail size={32} className="text-white" />
                   </div>
                   <h3 className="text-3xl font-bold text-white mb-2">Enviar Mensaje</h3>
@@ -1378,7 +1378,7 @@ const VistomioLandingPage: React.FC = () => {
                       type="email" 
                       required 
                       placeholder="ejemplo@hotel.com"
-                      className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
+                      className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all"
                     />
                   </div>
                   <div>
@@ -1387,11 +1387,11 @@ const VistomioLandingPage: React.FC = () => {
                       required 
                       rows={4}
                       placeholder="¿En qué te podemos ayudar?"
-                      className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all resize-none"
+                      className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all resize-none"
                     ></textarea>
                   </div>
                   
-                  <button type="submit" className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-lg py-4 rounded-xl flex items-center justify-center gap-2 transition-colors shadow-lg shadow-indigo-600/20 mt-4">
+                  <button type="submit" className="w-full bg-gradient-to-br from-[#D4AF37] to-[#FCE69B] text-[#0B1121] hover:brightness-110 shadow-lg shadow-[#D4AF37]/30 border border-[#FCE69B]/50 font-bold text-lg py-4 rounded-xl flex items-center justify-center gap-2 transition-colors shadow-lg shadow-amber-900/20 mt-4">
                     <Send size={20} />
                     Enviar Correo
                   </button>
