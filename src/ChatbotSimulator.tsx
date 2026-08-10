@@ -248,13 +248,13 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
             <div className="flex-grow flex gap-2">
               <input 
                 type="text" 
-                disabled={true}
+                readOnly={true}
                 placeholder={t.labels.placeholder}
-                className="flex-grow bg-white border-none rounded-full px-4 py-2 text-sm text-slate-400 focus:outline-none shadow-sm cursor-not-allowed"
+                className="flex-grow bg-white border-none rounded-full px-4 py-2 text-sm text-slate-400 focus:outline-none shadow-sm cursor-default"
               />
               <button 
-                disabled={true}
-                className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-colors bg-slate-300 text-white cursor-not-allowed"
+                type="button"
+                className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-colors bg-slate-300 text-white cursor-default"
               >
                 <Send size={18} className="ml-1" />
               </button>
