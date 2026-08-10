@@ -109,6 +109,7 @@ const translations = {
       ]
     },
     featuresTitle: 'Módulos diseñados para el futuro',
+    featuresSubtitle: 'Ecosistema interconectado. Utiliza un módulo o despliega la suite completa en minutos.',
     standaloneBadge1: 'Disponible como',
     standaloneBadge2: 'app independiente',
     featureCategories: [
@@ -443,6 +444,7 @@ const translations = {
       ]
     },
     featuresTitle: 'Modules designed for the future',
+    featuresSubtitle: 'Interconnected ecosystem. Use a single module or deploy the full suite in minutes.',
     standaloneBadge1: 'Available as',
     standaloneBadge2: 'standalone app',
     featureCategories: [
@@ -778,6 +780,7 @@ const translations = {
       ]
     },
     featuresTitle: "Des modules conçus pour l'avenir",
+    featuresSubtitle: 'Écosystème interconnecté. Utilisez un seul module ou déployez la suite complète en quelques minutes.',
     standaloneBadge1: 'Disponible en',
     standaloneBadge2: 'app indépendante',
     featureCategories: [
@@ -1756,7 +1759,7 @@ const VistomioLandingPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">{t.featuresTitle}</h2>
-            <p className="text-lg text-slate-300">Ecosistema interconectado. Utiliza un módulo o despliega la suite completa en minutos.</p>
+            <p className="text-lg text-slate-300">{t.featuresSubtitle}</p>
           </div>
 
           <div className="flex flex-col gap-16">
