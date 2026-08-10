@@ -227,7 +227,7 @@ const translations = {
     },
     chatbotPlans: {
       badge: 'Producto Independiente',
-      title: 'Agentes de Inteligencia Artificial',
+      title: 'Chatbot IA Multicanal',
       subtitle: 'Automatiza la atención, incrementa reservas directas y ofrece servicio 24/7 en todos tus canales con nuestros agentes de IA.',
       plans: [
         {
@@ -490,7 +490,7 @@ const translations = {
     },
     chatbotPlans: {
         badge: 'Standalone Product',
-        title: 'Artificial Intelligence Agents',
+        title: 'Multichannel AI Chatbot',
         subtitle: 'Integrate our intelligent agent into your website or channels. Available as a standalone product or bundled with Vistomio packages.',
         plans: [
           {
@@ -1503,6 +1503,7 @@ const VistomioLandingPage: React.FC = () => {
                 ) : (
                   
                   <div className="mt-2">
+                    <h4 className="text-xl font-bold text-[#D4AF37] mb-2">{t.chatbotPlans.title}</h4>
                     <p className="text-slate-300 text-lg mb-10 max-w-4xl leading-relaxed">
                       {t.chatbotPlans.subtitle}
                     </p>
