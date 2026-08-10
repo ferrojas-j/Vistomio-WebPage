@@ -2112,7 +2112,7 @@ const VistomioLandingPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">{t.pricing.title}</h2>
-            <p className="text-lg text-slate-300">{t.pricing.subtitle}</p>
+            <p className="text-lg text-[#FCE69B] font-semibold">{t.pricing.subtitle}</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
