@@ -1253,21 +1253,24 @@ const VistomioLandingPage: React.FC = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
             {/* Productos Dropdown */}
-            <div className="relative flex items-center h-full" ref={productsMenuRef}>
+            <div 
+              className="relative flex items-center h-full py-2" 
+              ref={productsMenuRef}
+              onMouseEnter={() => setProductsMenuOpen(true)}
+              onMouseLeave={() => setProductsMenuOpen(false)}
+            >
               <button 
-                onMouseEnter={() => setProductsMenuOpen(true)}
                 onClick={() => setProductsMenuOpen(!productsMenuOpen)}
-                className="flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-[#FCE69B] transition-colors py-2"
+                className="flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-[#FCE69B] transition-colors"
               >
                 {t.nav.products}
                 <ChevronDown size={14} className={`text-slate-500 transition-transform duration-300 ${productsMenuOpen ? 'rotate-180' : ''}`} />
               </button>
               
               <div 
-                onMouseLeave={() => setProductsMenuOpen(false)}
-                className={`absolute top-[100%] left-0 mt-4 w-[650px] bg-slate-800/95 backdrop-blur-xl border border-slate-700 rounded-2xl shadow-2xl overflow-hidden transition-all duration-200 origin-top-left ${productsMenuOpen ? 'opacity-100 scale-100 translate-y-0 visible pointer-events-auto' : 'opacity-0 scale-95 -translate-y-2 invisible pointer-events-none'}`}
+                className={`absolute top-[100%] left-0 pt-4 w-[650px] transition-all duration-200 origin-top-left ${productsMenuOpen ? 'opacity-100 scale-100 translate-y-0 visible pointer-events-auto' : 'opacity-0 scale-95 -translate-y-2 invisible pointer-events-none'}`}
               >
-                <div className="p-6 grid grid-cols-2 gap-x-8 gap-y-6">
+                <div className="bg-slate-800/95 backdrop-blur-xl border border-slate-700 rounded-2xl shadow-2xl overflow-hidden p-6 grid grid-cols-2 gap-x-8 gap-y-6">
                   {t.featureCategories.map((category, catIdx) => (
                     <div key={catIdx} className="flex flex-col">
                       <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">{category.name}</h4>
@@ -1300,21 +1303,24 @@ const VistomioLandingPage: React.FC = () => {
             <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="text-sm font-medium text-slate-300 hover:text-[#FCE69B] transition-colors">{t.nav.contact}</a>
             
             {/* Demos Dropdown */}
-            <div className="relative flex items-center h-full" ref={demosMenuRef}>
+            <div 
+              className="relative flex items-center h-full py-2" 
+              ref={demosMenuRef}
+              onMouseEnter={() => setDemosMenuOpen(true)}
+              onMouseLeave={() => setDemosMenuOpen(false)}
+            >
               <button 
-                onMouseEnter={() => setDemosMenuOpen(true)}
                 onClick={() => setDemosMenuOpen(!demosMenuOpen)}
-                className="flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-[#FCE69B] transition-colors py-2"
+                className="flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-[#FCE69B] transition-colors"
               >
                 Demos
                 <ChevronDown size={14} className={`text-slate-500 transition-transform duration-300 ${demosMenuOpen ? 'rotate-180' : ''}`} />
               </button>
               
               <div 
-                onMouseLeave={() => setDemosMenuOpen(false)}
-                className={`absolute top-[100%] right-0 mt-4 w-80 bg-slate-800/90 backdrop-blur-xl border border-slate-700 rounded-xl shadow-2xl overflow-hidden transition-all duration-200 origin-top-right ${demosMenuOpen ? 'opacity-100 scale-100 translate-y-0 visible pointer-events-auto' : 'opacity-0 scale-95 -translate-y-2 invisible pointer-events-none'}`}
+                className={`absolute top-[100%] right-0 pt-4 w-80 transition-all duration-200 origin-top-right ${demosMenuOpen ? 'opacity-100 scale-100 translate-y-0 visible pointer-events-auto' : 'opacity-0 scale-95 -translate-y-2 invisible pointer-events-none'}`}
               >
-                <div className="flex flex-col p-2">
+                <div className="bg-slate-800/90 backdrop-blur-xl border border-slate-700 rounded-xl shadow-2xl overflow-hidden flex flex-col p-2">
                   <a href="https://demo.vistomio.com" target="_blank" rel="noopener noreferrer" onClick={() => setDemosMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 text-sm text-slate-300 hover:text-white hover:bg-slate-700/50 rounded-lg transition-colors group">
                     <div className="w-8 h-8 rounded-full bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-[#0B1121] transition-colors"><Sparkles size={14} /></div>
                     <span className="font-medium">Demo Suite Vistomio</span>
@@ -1336,7 +1342,12 @@ const VistomioLandingPage: React.FC = () => {
             </div>
             
             {/* Custom Language Selector */}
-            <div className="relative border-l border-slate-700 pl-6" ref={langMenuRef}>
+            <div 
+              className="relative border-l border-slate-700 pl-6 h-full flex items-center py-2" 
+              ref={langMenuRef}
+              onMouseEnter={() => setLangMenuOpen(true)}
+              onMouseLeave={() => setLangMenuOpen(false)}
+            >
               <button 
                 onClick={() => setLangMenuOpen(!langMenuOpen)}
                 className="flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-[#FCE69B] transition-colors group"
@@ -1347,8 +1358,8 @@ const VistomioLandingPage: React.FC = () => {
               </button>
               
               {/* Dropdown Menu */}
-              <div className={`absolute top-full right-0 mt-4 w-32 bg-slate-800/60 backdrop-blur-xl border border-slate-700 rounded-xl shadow-xl overflow-hidden transition-all duration-200 origin-top-right ${langMenuOpen ? 'opacity-100 scale-100 translate-y-0 visible' : 'opacity-0 scale-95 -translate-y-2 invisible'}`}>
-                <div className="p-1 flex flex-col gap-1">
+              <div className={`absolute top-full right-0 pt-4 w-32 transition-all duration-200 origin-top-right ${langMenuOpen ? 'opacity-100 scale-100 translate-y-0 visible' : 'opacity-0 scale-95 -translate-y-2 invisible'}`}>
+                <div className="bg-slate-800/60 backdrop-blur-xl border border-slate-700 rounded-xl shadow-xl overflow-hidden p-1 flex flex-col gap-1">
                   {(['es', 'en', 'fr'] as Language[]).map((l) => (
                     <button
                       key={l}
