@@ -2,11 +2,13 @@ import { useState } from 'react';
 import { 
   Sparkles, Users, AlertTriangle, 
   CheckSquare, X, Box, Plus, 
-  Info, ShieldAlert, DollarSign
+  Info, ShieldAlert, DollarSign, ChevronRight
 } from 'lucide-react';
 
 type Language = 'es' | 'en' | 'fr';
 type Tab = 'limpieza' | 'recepcion' | 'mantenimiento';
+type BottomTab = 'staff' | 'inventory';
+type InventoryArea = 'limpieza' | 'recepcion' | 'mantenimiento' | null;
 
 interface StaffAppSimulatorProps {
   currentLanguage: Language;
@@ -112,6 +114,44 @@ const translations = {
       suppliesReason: 'MOTIVO O ÁREA',
       suppliesReasonPlaceholder: 'Ej: Reparación fuga baño Hab 205',
       suppliesSubmit: 'Enviar Solicitud al Jefe de Área'
+    },
+    inventorySelection: {
+      title: 'Selecciona un Área',
+      limpieza: 'Limpieza',
+      limpiezaDesc: 'Actualizar insumos de limpieza',
+      limpiezaDate: 'Última act. 08/08/2026 por Ana',
+      recepcion: 'Recepción',
+      recepcionDesc: 'Actualizar suministros de oficina',
+      recepcionDate: 'Última act. 08/08/2026 por Carlos',
+      mantenimiento: 'Mantenimiento',
+      mantenimientoDesc: 'Actualizar repuestos y herramientas',
+      mantenimientoDate: 'Última act. 07/08/2026 por Luis',
+      modalTitle: 'Toma de Inventario',
+      saveBtn: 'Guardar y Actualizar',
+      itemsLimpieza: [
+        { name: 'Desengrasante Industrial (L)', qty: '15' },
+        { name: 'Bolsas de Basura (rollos)', qty: '50' },
+        { name: 'Detergente Lavavajillas (L)', qty: '8' },
+        { name: 'Limpiador Multiusos (L)', qty: '22' },
+        { name: 'Cloro (L)', qty: '30' },
+        { name: 'Esponjas de Fibra', qty: '45' }
+      ],
+      itemsRecepcion: [
+        { name: 'Tarjetas Llave Magnéticas', qty: '150' },
+        { name: 'Formularios Check-in impresos', qty: '400' },
+        { name: 'Bolígrafos Corporativos', qty: '85' },
+        { name: 'Sobres Membretados', qty: '320' },
+        { name: 'Papel Bond A4 (resmas)', qty: '12' },
+        { name: 'Caramelos Cortesía (kg)', qty: '2' }
+      ],
+      itemsMantenimiento: [
+        { name: 'Filtros Campana Extractora', qty: '1' },
+        { name: 'Termómetros de Cocina', qty: '3' },
+        { name: 'Focos Infrarrojos', qty: '2' },
+        { name: 'Juntas para Horno', qty: '4' },
+        { name: 'Mangueras de Gas Reforzadas', qty: '6' },
+        { name: 'Cuchillas para Licuadora Industrial', qty: '2' }
+      ]
     },
     mantenimiento: {
       advance: 'Avance Bitácora',
@@ -236,6 +276,44 @@ const translations = {
       suppliesReasonPlaceholder: 'Ex: Leak repair in room 205 bathroom',
       suppliesSubmit: 'Send Request to Area Manager'
     },
+    inventorySelection: {
+      title: 'Select an Area',
+      limpieza: 'Cleaning',
+      limpiezaDesc: 'Update cleaning supplies',
+      limpiezaDate: 'Last update 08/08/2026 by Ana',
+      recepcion: 'Front Desk',
+      recepcionDesc: 'Update office supplies',
+      recepcionDate: 'Last update 08/08/2026 by Carlos',
+      mantenimiento: 'Maintenance',
+      mantenimientoDesc: 'Update tools and parts',
+      mantenimientoDate: 'Last update 07/08/2026 by Luis',
+      modalTitle: 'Inventory Check',
+      saveBtn: 'Save and Update',
+      itemsLimpieza: [
+        { name: 'Industrial Degreaser (L)', qty: '15' },
+        { name: 'Trash Bags (rolls)', qty: '50' },
+        { name: 'Dishwasher Detergent (L)', qty: '8' },
+        { name: 'All-Purpose Cleaner (L)', qty: '22' },
+        { name: 'Bleach (L)', qty: '30' },
+        { name: 'Fiber Sponges', qty: '45' }
+      ],
+      itemsRecepcion: [
+        { name: 'Magnetic Key Cards', qty: '150' },
+        { name: 'Printed Check-in Forms', qty: '400' },
+        { name: 'Corporate Pens', qty: '85' },
+        { name: 'Letterhead Envelopes', qty: '320' },
+        { name: 'A4 Bond Paper (reams)', qty: '12' },
+        { name: 'Courtesy Candies (kg)', qty: '2' }
+      ],
+      itemsMantenimiento: [
+        { name: 'Extractor Hood Filters', qty: '1' },
+        { name: 'Kitchen Thermometers', qty: '3' },
+        { name: 'Infrared Bulbs', qty: '2' },
+        { name: 'Oven Seals', qty: '4' },
+        { name: 'Reinforced Gas Hoses', qty: '6' },
+        { name: 'Industrial Blender Blades', qty: '2' }
+      ]
+    },
     mantenimiento: {
       advance: 'Update Log',
       supplies: 'Order Supplies',
@@ -358,6 +436,44 @@ const translations = {
       suppliesReason: 'MOTIF OU ZONE',
       suppliesReasonPlaceholder: 'Ex: Réparation fuite salle de bain ch 205',
       suppliesSubmit: 'Envoyer Demande au Chef de Zone'
+    },
+    inventorySelection: {
+      title: 'Sélectionner une Zone',
+      limpieza: 'Ménage',
+      limpiezaDesc: 'Mettre à jour les fournitures',
+      limpiezaDate: 'Dernière MAJ 08/08/2026 par Ana',
+      recepcion: 'Réception',
+      recepcionDesc: 'Mettre à jour les fournitures de bureau',
+      recepcionDate: 'Dernière MAJ 08/08/2026 par Carlos',
+      mantenimiento: 'Maintenance',
+      mantenimientoDesc: 'Mettre à jour outils et pièces',
+      mantenimientoDate: 'Dernière MAJ 07/08/2026 par Luis',
+      modalTitle: 'Relevé d\'Inventaire',
+      saveBtn: 'Enregistrer et Mettre à jour',
+      itemsLimpieza: [
+        { name: 'Dégraissant Industriel (L)', qty: '15' },
+        { name: 'Sacs Poubelle (rouleaux)', qty: '50' },
+        { name: 'Détergent Lave-vaisselle (L)', qty: '8' },
+        { name: 'Nettoyant Multi-usages (L)', qty: '22' },
+        { name: 'Eau de Javel (L)', qty: '30' },
+        { name: 'Éponges en Fibre', qty: '45' }
+      ],
+      itemsRecepcion: [
+        { name: 'Cartes Clés Magnétiques', qty: '150' },
+        { name: 'Formulaires Check-in Imprimés', qty: '400' },
+        { name: 'Stylos d\'Entreprise', qty: '85' },
+        { name: 'Enveloppes à En-tête', qty: '320' },
+        { name: 'Papier A4 (rames)', qty: '12' },
+        { name: 'Bonbons d\'Accueil (kg)', qty: '2' }
+      ],
+      itemsMantenimiento: [
+        { name: 'Filtres Hotte Aspirante', qty: '1' },
+        { name: 'Thermomètres de Cuisine', qty: '3' },
+        { name: 'Ampoules Infrarouges', qty: '2' },
+        { name: 'Joints de Four', qty: '4' },
+        { name: 'Tuyaux de Gaz Renforcés', qty: '6' },
+        { name: 'Lames de Mixeur Industriel', qty: '2' }
+      ]
     },
     mantenimiento: {
       advance: 'Mettre à jour',
@@ -545,7 +661,18 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
   const [isNoveltyModalOpen, setIsNoveltyModalOpen] = useState(false);
   const [isLogbookModalOpen, setIsLogbookModalOpen] = useState(false);
   const [isSuppliesModalOpen, setIsSuppliesModalOpen] = useState(false);
+  const [activeBottomTab, setActiveBottomTab] = useState<BottomTab>('staff');
+  const [inventoryArea, setInventoryArea] = useState<InventoryArea>(null);
+  const [isInventoryModalOpen, setIsInventoryModalOpen] = useState(false);
   const t = translations[currentLanguage];
+
+  const inventoryItems = inventoryArea === 'limpieza' ? t.inventorySelection.itemsLimpieza : 
+                         inventoryArea === 'recepcion' ? t.inventorySelection.itemsRecepcion : 
+                         inventoryArea === 'mantenimiento' ? t.inventorySelection.itemsMantenimiento : [];
+  const inventoryTitleName = inventoryArea === 'limpieza' ? t.inventorySelection.limpieza :
+                             inventoryArea === 'recepcion' ? t.inventorySelection.recepcion :
+                             inventoryArea === 'mantenimiento' ? t.inventorySelection.mantenimiento : '';
+
   
   return (
     <div className="w-full max-w-[380px] mx-auto bg-slate-900 rounded-[3rem] p-3 shadow-2xl border-4 border-slate-800 relative shadow-indigo-500/20 shrink-0">
@@ -569,6 +696,8 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
         </div>
 
         {/* Top Tabs */}
+        {activeBottomTab === 'staff' && (
+        <>
         <div className="px-4 py-3 bg-white border-b border-slate-100 shrink-0">
           <div className="flex items-center justify-between gap-1">
             <button onClick={() => setActiveTab('limpieza')} className={`flex items-center justify-center gap-1.5 py-2 px-2 flex-1 rounded-xl text-[11px] font-bold transition-colors ${activeTab === 'limpieza' ? 'bg-indigo-50 text-indigo-600' : 'text-slate-500 hover:bg-slate-50'}`}>
@@ -589,6 +718,59 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
           {activeTab === 'recepcion' && <RecepcionView t={t} onOpenExpense={() => setIsExpenseModalOpen(true)} onOpenNovelty={() => setIsNoveltyModalOpen(true)} />}
           {activeTab === 'mantenimiento' && <MantenimientoView t={t} onOpenLogbook={() => setIsLogbookModalOpen(true)} onOpenSupplies={() => setIsSuppliesModalOpen(true)} />}
         </div>
+        </>
+        )}
+
+        {/* Inventory View */}
+        {activeBottomTab === 'inventory' && (
+          <div className="flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-2 duration-300 h-full p-4">
+            <h2 className="text-xl font-bold text-slate-800 mt-2">{t.inventorySelection.title}</h2>
+            
+            <div className="flex flex-col gap-4 mt-2">
+              <div onClick={() => { setInventoryArea('limpieza'); setIsInventoryModalOpen(true); }} className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm flex items-center justify-between cursor-pointer hover:bg-slate-50 transition-colors active:scale-[0.98]">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center shrink-0">
+                    <Sparkles size={24} />
+                  </div>
+                  <div className="flex flex-col">
+                    <h3 className="font-bold text-slate-800 text-lg leading-tight">{t.inventorySelection.limpieza}</h3>
+                    <p className="text-xs text-slate-400 font-medium">{t.inventorySelection.limpiezaDesc}</p>
+                    <span className="bg-emerald-50 text-emerald-600 text-[10px] font-bold px-2 py-0.5 rounded mt-1.5 w-fit">{t.inventorySelection.limpiezaDate}</span>
+                  </div>
+                </div>
+                <ChevronRight className="text-slate-300" size={20}/>
+              </div>
+
+              <div onClick={() => { setInventoryArea('recepcion'); setIsInventoryModalOpen(true); }} className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm flex items-center justify-between cursor-pointer hover:bg-slate-50 transition-colors active:scale-[0.98]">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-indigo-50 text-indigo-500 flex items-center justify-center shrink-0">
+                    <Users size={24} />
+                  </div>
+                  <div className="flex flex-col">
+                    <h3 className="font-bold text-slate-800 text-lg leading-tight">{t.inventorySelection.recepcion}</h3>
+                    <p className="text-xs text-slate-400 font-medium">{t.inventorySelection.recepcionDesc}</p>
+                    <span className="bg-indigo-50 text-indigo-600 text-[10px] font-bold px-2 py-0.5 rounded mt-1.5 w-fit">{t.inventorySelection.recepcionDate}</span>
+                  </div>
+                </div>
+                <ChevronRight className="text-slate-300" size={20}/>
+              </div>
+
+              <div onClick={() => { setInventoryArea('mantenimiento'); setIsInventoryModalOpen(true); }} className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm flex items-center justify-between cursor-pointer hover:bg-slate-50 transition-colors active:scale-[0.98]">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-amber-50 text-amber-500 flex items-center justify-center shrink-0">
+                    <Box size={24} />
+                  </div>
+                  <div className="flex flex-col">
+                    <h3 className="font-bold text-slate-800 text-lg leading-tight">{t.inventorySelection.mantenimiento}</h3>
+                    <p className="text-xs text-slate-400 font-medium">{t.inventorySelection.mantenimientoDesc}</p>
+                  </div>
+                </div>
+                <ChevronRight className="text-slate-300" size={20}/>
+              </div>
+            </div>
+          </div>
+        )}
+
         
         {/* Checklist Modal */}
         <div className={`absolute inset-0 bg-slate-900/40 backdrop-blur-[2px] z-30 transition-opacity duration-300 ${isChecklistOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsChecklistOpen(false)}>
@@ -783,13 +965,41 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
           </div>
         </div>
 
+
+        {/* Inventory Modal */}
+        <div className={`absolute inset-0 bg-slate-900/40 backdrop-blur-[2px] z-30 transition-opacity duration-300 ${isInventoryModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsInventoryModalOpen(false)}>
+          <div className={`absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl transition-transform duration-300 ease-out p-6 shadow-2xl flex flex-col h-[85%] ${isInventoryModalOpen ? 'translate-y-0' : 'translate-y-full'}`} onClick={e => e.stopPropagation()}>
+            <div className="flex justify-between items-center mb-5 pb-4 border-b border-slate-50 shrink-0">
+              <h3 className="font-bold text-indigo-900 text-base flex items-center gap-2"><Box size={18}/> {t.inventorySelection?.modalTitle || 'Toma de Inventario'}: {inventoryTitleName}</h3>
+              <button onClick={() => setIsInventoryModalOpen(false)} className="text-slate-400 hover:text-slate-600 transition-colors p-1">
+                <X size={20} />
+              </button>
+            </div>
+            
+            <div className="flex flex-col gap-3 overflow-y-auto pb-4 shrink">
+              {inventoryItems.map((item: any, i: number) => (
+                <div key={i} className="flex justify-between items-center bg-slate-50 border border-slate-100 rounded-xl p-4 gap-4">
+                  <span className="font-bold text-sm text-slate-700 leading-tight">{item.name}</span>
+                  <input type="text" defaultValue={item.qty} className="w-16 bg-white border border-slate-200 rounded-lg px-3 py-2 text-sm font-bold text-slate-900 text-center focus:outline-none focus:border-indigo-600 focus:ring-1 focus:ring-indigo-600 shadow-sm shrink-0" readOnly/>
+                </div>
+              ))}
+            </div>
+            
+            <div className="pt-2 mt-auto">
+              <button onClick={() => setIsInventoryModalOpen(false)} className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3.5 rounded-xl transition-colors active:scale-[0.98]">
+                {t.inventorySelection?.saveBtn || 'Guardar y Actualizar'}
+              </button>
+            </div>
+          </div>
+        </div>
+
         {/* Bottom Nav */}
         <div className="absolute bottom-0 w-full bg-white border-t border-slate-200 flex justify-around items-center py-4 px-6 z-20 pb-6 rounded-b-[2rem]">
-          <button className="flex flex-col items-center gap-1 text-indigo-600 cursor-default">
+          <button onClick={() => setActiveBottomTab('staff')} className={`flex flex-col items-center gap-1 cursor-pointer ${activeBottomTab === 'staff' ? 'text-indigo-600' : 'text-slate-400'}`}>
             <CheckSquare size={20} />
             <span className="text-[9px] font-bold tracking-wider uppercase">STAFF</span>
           </button>
-          <button className="flex flex-col items-center gap-1 text-slate-400 cursor-default">
+          <button onClick={() => setActiveBottomTab('inventory')} className={`flex flex-col items-center gap-1 cursor-pointer ${activeBottomTab === 'inventory' ? 'text-indigo-600' : 'text-slate-400'}`}>
             <Box size={20} />
             <span className="text-[9px] font-bold tracking-wider uppercase">INVENTARIO</span>
           </button>
