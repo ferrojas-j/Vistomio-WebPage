@@ -1363,7 +1363,10 @@ const VistomioLandingPage: React.FC = () => {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-tight mb-8">
             {t.hero.title}
             <br className="hidden sm:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#FCE69B]">
+            <span 
+              className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#FCE69B] tracking-normal inline-block transform -rotate-1 ml-2"
+              style={{ fontFamily: "'Permanent Marker', cursive" }}
+            >
               {t.hero.titleHighlight}
             </span>
           </h1>
