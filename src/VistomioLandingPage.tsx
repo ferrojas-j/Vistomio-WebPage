@@ -82,7 +82,7 @@ const translations = {
     socialProof: 'Negocios que ya confían en Vistomio',
     boutiqueNiche: {
       tag: 'JÓVENES, VALIENTES Y PRAGMÁTICOS',
-      title: 'Diseñado para propiedades con alma',
+      title: 'Diseñado para negocios con alma',
       subtitle: 'No somos un software corporativo aburrido y gris. Creamos tecnología vibrante para hoteles y restaurantes boutique que quieren destacar, optimizar sin fricciones y dar un servicio excepcional.',
       cards: [
         {
@@ -410,7 +410,7 @@ const translations = {
     socialProof: 'Businesses that already trust Vistomio',
     boutiqueNiche: {
       tag: 'YOUNG, BOLD AND PRAGMATIC',
-      title: 'Designed for properties with a soul',
+      title: 'Designed for businesses with a soul',
       subtitle: 'We are not a boring, gray corporate software. We build vibrant technology for boutique hotels and restaurants that want to stand out, optimize without friction, and provide exceptional service.',
       cards: [
         {
@@ -739,7 +739,7 @@ const translations = {
     socialProof: 'Les entreprises qui font déjà confiance à Vistomio',
     boutiqueNiche: {
       tag: 'JEUNES, AUDACIEUX ET PRAGMATIQUES',
-      title: 'Conçu pour les propriétés avec une âme',
+      title: 'Conçu pour les entreprises avec une âme',
       subtitle: 'Nous ne sommes pas un logiciel d\'entreprise ennuyeux. Nous créons une technologie vibrante pour les hôtels et restaurants boutique qui veulent se démarquer et offrir un service exceptionnel.',
       cards: [
         {
