@@ -289,18 +289,22 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
         </p>
 
         {/* Channels Icons Grid */}
-        <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-12">
-          <div className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center border border-slate-700/50 shadow-sm cursor-default">
-            <MessageCircle size={24} className="text-emerald-400" />
+        <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-12">
+          <div className="h-10 px-4 rounded-xl bg-slate-800/80 flex items-center gap-2 border border-slate-700/50 shadow-sm cursor-default">
+            <MessageCircle size={18} className="text-emerald-400" />
+            <span className="text-sm font-medium text-slate-300">WhatsApp</span>
           </div>
-          <div className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center border border-slate-700/50 shadow-sm cursor-default">
-            <Camera size={24} className="text-pink-400" />
+          <div className="h-10 px-4 rounded-xl bg-slate-800/80 flex items-center gap-2 border border-slate-700/50 shadow-sm cursor-default">
+            <Camera size={18} className="text-pink-400" />
+            <span className="text-sm font-medium text-slate-300">Instagram</span>
           </div>
-          <div className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center border border-slate-700/50 shadow-sm cursor-default">
-            <MessageCircle size={24} className="text-blue-400" />
+          <div className="h-10 px-4 rounded-xl bg-slate-800/80 flex items-center gap-2 border border-slate-700/50 shadow-sm cursor-default">
+            <MessageCircle size={18} className="text-blue-400" />
+            <span className="text-sm font-medium text-slate-300">Messenger</span>
           </div>
-          <div className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center border border-slate-700/50 shadow-sm cursor-default">
-            <Globe size={24} className="text-[#D4AF37]" />
+          <div className="h-10 px-4 rounded-xl bg-slate-800/80 flex items-center gap-2 border border-slate-700/50 shadow-sm cursor-default">
+            <Globe size={18} className="text-[#D4AF37]" />
+            <span className="text-sm font-medium text-slate-300">Web</span>
           </div>
         </div>
 
