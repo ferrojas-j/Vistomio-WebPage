@@ -22,7 +22,6 @@ import {
   Wine,
   ConciergeBell,
   BedDouble,
-  BarChart3,
   LayoutGrid,
   ClipboardCheck,
   Package,
@@ -100,46 +99,75 @@ const translations = {
       ]
     },
     featuresTitle: 'Módulos diseñados para el futuro',
-    features: [
+    standaloneBadge: 'Se vende por separado',
+    featureCategories: [
       {
-        title: 'Dashboard Inteligente',
-        desc: 'Métricas en tiempo real, KPIs de ocupación y control total en una interfaz limpia y sin distracciones.',
-        icon: PieChart
+        name: 'Operaciones Hoteleras',
+        items: [
+          {
+            title: 'Booking Engine & Channel Manager',
+            desc: 'Sincronización instantánea de disponibilidad y tarifas. Nunca más un overbooking.',
+            icon: CalendarCheck
+          },
+          {
+            title: 'Check-in Digital',
+            desc: 'Adiós a las filas. Permite a tus huéspedes registrarse desde su móvil o en recepción al instante.',
+            icon: Smartphone
+          },
+          {
+            title: 'App de Operaciones Diarias',
+            desc: 'Seguimiento de inventario, limpieza y mantenimiento directamente al móvil de tu staff.',
+            icon: ClipboardCheck
+          }
+        ]
       },
       {
-        title: 'Motor & Channel Manager',
-        desc: 'Sincronización instantánea de disponibilidad y tarifas. Nunca más un overbooking.',
-        icon: CalendarCheck
+        name: 'Operaciones Restaurante / Bar',
+        items: [
+          {
+            title: 'Módulo de Restaurante / Bar',
+            desc: 'Control de mesas, turnos y mermas en tiempo real.',
+            icon: Wine
+          },
+          {
+            title: 'POS App (Punto de Venta)',
+            desc: 'Sincroniza el restaurante y el bar directamente a la habitación del huésped sin fricciones.',
+            icon: Utensils,
+            standalone: true
+          }
+        ]
       },
       {
-        title: 'Pagos y Facturación',
-        desc: 'Automatiza cobros, reembolsos y facturas con integraciones oficiales de pasarelas.',
-        icon: CreditCard
+        name: 'Administración del Negocio',
+        items: [
+          {
+            title: 'Módulo de Administración y Finanzas',
+            desc: 'Métricas en tiempo real, KPIs de ocupación y control total.',
+            icon: LineChart
+          },
+          {
+            title: 'Nóminas y Personal',
+            desc: 'Seguimiento de equipo y turnos para el staff.',
+            icon: Users,
+            standalone: true
+          },
+          {
+            title: 'Pagos y Facturación Simplificada',
+            desc: 'Automatiza cobros, reembolsos y facturas con integraciones oficiales de pasarelas.',
+            icon: CreditCard
+          }
+        ]
       },
       {
-        title: 'Kiosko Auto Check-in',
-        desc: 'Adiós a las filas. Permite a tus huéspedes registrarse desde su móvil o en recepción al instante.',
-        icon: Smartphone
-      },
-      {
-        title: 'Punto de Venta (POS)',
-        desc: 'Sincroniza el restaurante y el bar directamente a la habitación del huésped sin fricciones.',
-        icon: Utensils
-      },
-      {
-        title: 'Finanzas e Inventario',
-        desc: 'Control de almacén, contabilidad automatizada y reportes que realmente entiendes.',
-        icon: BarChart3
-      },
-      {
-        title: 'Chatbot IA Nativo',
-        desc: 'Un agente virtual que vende habitaciones y responde dudas 24/7 en cualquier idioma.',
-        icon: MessageSquareText
-      },
-      {
-        title: 'App Staff & Nóminas',
-        desc: 'Gestión de personal, turnos, limpieza de habitaciones y control de RRHH en un solo lugar.',
-        icon: Users
+        name: 'Atención al Cliente y Ventas',
+        items: [
+          {
+            title: 'Chatbots IA (3 Niveles)',
+            desc: 'Respuestas automáticas, ventas proactivas y sincronización con reservaciones.',
+            icon: Bot,
+            standalone: true
+          }
+        ]
       }
     ],
     benefitsTitle: 'Eleva la experiencia de cada estancia',
@@ -328,46 +356,75 @@ const translations = {
       ]
     },
     featuresTitle: 'Modules designed for the future',
-    features: [
+    standaloneBadge: 'Standalone Product',
+    featureCategories: [
       {
-        title: 'Smart Dashboard',
-        desc: 'Real-time metrics, occupancy KPIs, and total control in a clean, distraction-free interface.',
-        icon: PieChart
+        name: 'Hotel Operations',
+        items: [
+          {
+            title: 'Booking Engine & Channel Manager',
+            desc: 'Instant synchronization of availability and rates. Never experience overbooking again.',
+            icon: CalendarCheck
+          },
+          {
+            title: 'Digital Check-in',
+            desc: 'Goodbye to lines. Allow guests to check-in from their mobile or at the front desk instantly.',
+            icon: Smartphone
+          },
+          {
+            title: 'Daily Operations App',
+            desc: 'Inventory tracking, housekeeping, and maintenance directly to your staff\'s mobile.',
+            icon: ClipboardCheck
+          }
+        ]
       },
       {
-        title: 'Booking & Channel Manager',
-        desc: 'Instant synchronization of availability and rates. Never experience overbooking again.',
-        icon: CalendarCheck
+        name: 'Restaurant / Bar Operations',
+        items: [
+          {
+            title: 'Restaurant / Bar Module',
+            desc: 'Table control, shifts, and real-time inventory management.',
+            icon: Wine
+          },
+          {
+            title: 'POS App',
+            desc: 'Sync the restaurant and bar directly to the guest\'s room without friction.',
+            icon: Utensils,
+            standalone: true
+          }
+        ]
       },
       {
-        title: 'Payments & Billing',
-        desc: 'Automate collections, refunds, and invoices with official payment gateway integrations.',
-        icon: CreditCard
+        name: 'Business Administration',
+        items: [
+          {
+            title: 'Administration & Finance Module',
+            desc: 'Real-time metrics, occupancy KPIs, and total control.',
+            icon: LineChart
+          },
+          {
+            title: 'Payroll & Staff Management',
+            desc: 'Team tracking and shifts for your staff.',
+            icon: Users,
+            standalone: true
+          },
+          {
+            title: 'Payments & Simplified Invoicing',
+            desc: 'Automate collections, refunds, and invoices with official gateway integrations.',
+            icon: CreditCard
+          }
+        ]
       },
       {
-        title: 'Auto Check-in Kiosk',
-        desc: 'Goodbye lines. Allow guests to check in from their mobile or at the front desk instantly.',
-        icon: Smartphone
-      },
-      {
-        title: 'Point of Sale (POS)',
-        desc: 'Seamlessly sync restaurant and bar charges directly to the guest\'s room folio.',
-        icon: Utensils
-      },
-      {
-        title: 'Finance & Inventory',
-        desc: 'Warehouse control, automated accounting, and reports you can actually understand.',
-        icon: BarChart3
-      },
-      {
-        title: 'Native AI Chatbot',
-        desc: 'A virtual agent that sells rooms and answers questions 24/7 in any language.',
-        icon: MessageSquareText
-      },
-      {
-        title: 'Staff & Payroll App',
-        desc: 'Personnel management, shifts, housekeeping, and HR control in one place.',
-        icon: Users
+        name: 'Customer Service & Sales Boosters',
+        items: [
+          {
+            title: 'AI Chatbots (3 Levels)',
+            desc: 'Automated responses, proactive sales, and reservation synchronization.',
+            icon: Bot,
+            standalone: true
+          }
+        ]
       }
     ],
     benefitsTitle: 'Elevate every guest experience',
@@ -555,47 +612,76 @@ const translations = {
         }
       ]
     },
-    featuresTitle: 'Des modules conçus pour l\'avenir',
-    features: [
+    featuresTitle: "Des modules conçus pour l'avenir",
+    standaloneBadge: 'Produit Indépendant',
+    featureCategories: [
       {
-        title: 'Tableau de bord intelligent',
-        desc: 'Métriques en temps réel, KPIs d\'occupation et contrôle total dans une interface épurée.',
-        icon: PieChart
+        name: 'Opérations Hôtelières',
+        items: [
+          {
+            title: 'Moteur de Réservation & Channel Manager',
+            desc: 'Synchronisation instantanée des disponibilités et tarifs. Fini le surbooking.',
+            icon: CalendarCheck
+          },
+          {
+            title: 'Check-in Digital',
+            desc: 'Adieu les files d\'attente. Permettez à vos clients de s\'enregistrer via mobile instantanément.',
+            icon: Smartphone
+          },
+          {
+            title: 'Application Opérations Quotidiennes',
+            desc: 'Suivi des stocks, ménage et maintenance directement sur le mobile de votre personnel.',
+            icon: ClipboardCheck
+          }
+        ]
       },
       {
-        title: 'Moteur & Channel Manager',
-        desc: 'Synchronisation instantanée des disponibilités et des tarifs. Fini le surbooking.',
-        icon: CalendarCheck
+        name: 'Opérations Restaurant / Bar',
+        items: [
+          {
+            title: 'Module Restaurant / Bar',
+            desc: 'Contrôle des tables, services et gestion des stocks en temps réel.',
+            icon: Wine
+          },
+          {
+            title: 'Application POS',
+            desc: 'Synchronisez le restaurant et le bar directement avec la chambre du client sans friction.',
+            icon: Utensils,
+            standalone: true
+          }
+        ]
       },
       {
-        title: 'Paiements et Facturation',
-        desc: 'Automatisez les encaissements, remboursements et factures avec des passerelles officielles.',
-        icon: CreditCard
+        name: 'Administration des Affaires',
+        items: [
+          {
+            title: 'Module Administration et Finances',
+            desc: 'Métriques en temps réel, KPI d\'occupation et contrôle total.',
+            icon: LineChart
+          },
+          {
+            title: 'Paie & Personnel',
+            desc: 'Suivi de l\'équipe et des services pour votre personnel.',
+            icon: Users,
+            standalone: true
+          },
+          {
+            title: 'Paiements & Facturation Simplifiée',
+            desc: 'Automatisez encaissements, remboursements et factures avec des passerelles officielles.',
+            icon: CreditCard
+          }
+        ]
       },
       {
-        title: 'Borne Auto Check-in',
-        desc: 'Adieu les files d\'attente. Permettez aux clients de s\'enregistrer depuis leur mobile instantanément.',
-        icon: Smartphone
-      },
-      {
-        title: 'Point de Vente (POS)',
-        desc: 'Synchronisez le restaurant et le bar directement avec la note de la chambre sans friction.',
-        icon: Utensils
-      },
-      {
-        title: 'Finances et Inventaire',
-        desc: 'Contrôle des stocks, comptabilité automatisée et rapports que vous comprenez vraiment.',
-        icon: BarChart3
-      },
-      {
-        title: 'Chatbot IA Natif',
-        desc: 'Un agent virtuel qui vend des chambres et répond aux questions 24/7 dans n\'importe quelle langue.',
-        icon: MessageSquareText
-      },
-      {
-        title: 'App Staff & Paie',
-        desc: 'Gestion du personnel, horaires, nettoyage des chambres et RH en un seul endroit.',
-        icon: Users
+        name: 'Service Client & Ventes',
+        items: [
+          {
+            title: 'Chatbots IA (3 Niveaux)',
+            desc: 'Réponses automatisées, ventes proactives et synchronisation des réservations.',
+            icon: Bot,
+            standalone: true
+          }
+        ]
       }
     ],
     benefitsTitle: 'Élevez chaque expérience client',
@@ -1347,19 +1433,36 @@ const VistomioLandingPage: React.FC = () => {
             <p className="text-lg text-slate-300">Ecosistema interconectado. Utiliza un módulo o despliega la suite completa en minutos.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {t.features.map((feature, idx) => (
-              <div 
-                key={idx} 
-                className="bg-slate-800/50 backdrop-blur-xl rounded-3xl p-8 border border-slate-700 hover:border-[#D4AF37]/50 hover:shadow-lg hover:shadow-amber-900/20 transition-all duration-300 group cursor-default relative overflow-hidden"
-              >
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#D4AF37]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                
-                <div className="w-14 h-14 rounded-2xl bg-[#D4AF37]/10 text-[#D4AF37] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:text-white group-hover:bg-[#D4AF37] group-hover:text-[#0B1121] group-hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] transition-all duration-300 border border-[#D4AF37]/20 group-hover:border-transparent relative z-10">
-                  <feature.icon size={26} strokeWidth={1.5} />
+          <div className="flex flex-col gap-16">
+            {t.featureCategories.map((category, catIdx) => (
+              <div key={catIdx} className="flex flex-col">
+                <div className="mb-8 flex items-center gap-4">
+                  <h3 className="text-2xl font-bold text-white tracking-tight">{category.name}</h3>
+                  <div className="h-px bg-slate-700 flex-grow"></div>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3 relative z-10">{feature.title}</h3>
-                <p className="text-slate-300 text-sm leading-relaxed relative z-10">{feature.desc}</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {category.items.map((feature, idx) => (
+                    <div 
+                      key={idx} 
+                      className="bg-slate-800/50 backdrop-blur-xl rounded-3xl p-8 border border-slate-700 hover:border-[#D4AF37]/50 hover:shadow-lg hover:shadow-amber-900/20 transition-all duration-300 group cursor-default relative overflow-hidden flex flex-col"
+                    >
+                      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#D4AF37]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                      
+                      <div className="flex justify-between items-start mb-6 relative z-10">
+                        <div className="w-14 h-14 rounded-2xl bg-[#D4AF37]/10 text-[#D4AF37] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#D4AF37] group-hover:text-[#0B1121] group-hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] transition-all duration-300 border border-[#D4AF37]/20 group-hover:border-transparent">
+                          <feature.icon size={26} strokeWidth={1.5} />
+                        </div>
+                        {feature.standalone && (
+                          <div className="px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 rounded-full text-emerald-400 text-xs font-semibold uppercase tracking-wider whitespace-nowrap ml-2 mt-1">
+                            {t.standaloneBadge}
+                          </div>
+                        )}
+                      </div>
+                      <h4 className="text-xl font-bold text-white mb-3 relative z-10">{feature.title}</h4>
+                      <p className="text-slate-300 text-sm leading-relaxed relative z-10 flex-grow">{feature.desc}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
