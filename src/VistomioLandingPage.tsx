@@ -41,7 +41,7 @@ import {
   Clock,
   Home,
   Briefcase
- , Wallet} from 'lucide-react';
+ , Wallet, ConciergeBell} from 'lucide-react';
 
 // --- Custom Icons ---
 const BoutiqueLogoIcon = ({ className = "w-6 h-6", strokeWidth = 1.5 }: { className?: string, strokeWidth?: number }) => (
@@ -1422,12 +1422,18 @@ const VistomioLandingPage: React.FC = () => {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-tight mb-8">
             {t.hero.title}
             <br className="hidden sm:block" />
-            <span 
-              className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#FCE69B] tracking-normal inline-block transform -rotate-1 ml-2 uppercase"
-              style={{ fontFamily: "'Permanent Marker', cursive", lineHeight: "1.2" }}
-            >
-              <span className="text-[1.3em]">{t.hero.titleHighlight.charAt(0)}</span>
-              {t.hero.titleHighlight.slice(1)}
+            <span className="inline-block relative ml-2">
+              <span 
+                className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#FCE69B] tracking-normal inline-block transform -rotate-1 uppercase"
+                style={{ fontFamily: "'Permanent Marker', cursive", lineHeight: "1.2" }}
+              >
+                <span className="text-[1.3em]">{t.hero.titleHighlight.charAt(0)}</span>
+                {t.hero.titleHighlight.slice(1)}
+              </span>
+              <ConciergeBell 
+                className="absolute -top-1 -right-6 w-6 h-6 sm:w-9 sm:h-9 sm:-top-3 sm:-right-10 text-[#FCE69B] transform rotate-12 drop-shadow-[0_0_8px_rgba(252,230,155,0.6)]" 
+                strokeWidth={2.5} 
+              />
             </span>
           </h1>
           
