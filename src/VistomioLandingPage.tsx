@@ -1767,19 +1767,6 @@ const VistomioLandingPage: React.FC = () => {
                       <ChatbotSimulator currentLanguage={lang} />
                     </div>
 
-                    {/* CTA Button */}
-                    <div className="mt-12 text-center relative z-10">
-                      <button 
-                        onClick={() => {
-                          setContactModalView('email');
-                          setIsContactModalOpen(true);
-                        }}
-                        className="px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold rounded-xl transition-all shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2 mx-auto active:scale-95"
-                      >
-                        <MessageSquareText size={20} />
-                        {t.chatbotPlans.talkBtn}
-                      </button>
-                    </div>
                   </div>
                 )}
               </div>
