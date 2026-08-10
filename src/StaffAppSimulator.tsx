@@ -336,12 +336,12 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
   const t = translations[currentLanguage];
   
   return (
-    <div className="w-[320px] h-[650px] bg-slate-900 rounded-[2.5rem] border-[8px] border-slate-800 shadow-2xl relative overflow-hidden flex flex-col font-sans shrink-0 mx-auto lg:mx-0">
-      {/* Notch */}
-      <div className="absolute top-0 inset-x-0 h-6 bg-slate-800 rounded-b-2xl w-32 mx-auto z-50"></div>
+    <div className="w-full max-w-[380px] mx-auto bg-slate-900 rounded-[3rem] p-3 shadow-2xl border-4 border-slate-800 relative shadow-indigo-500/20 shrink-0">
+      {/* Phone Notch */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-slate-900 rounded-b-2xl z-50"></div>
       
-      {/* Screen */}
-      <div className="flex-1 bg-slate-50 flex flex-col w-full h-full relative overflow-hidden">
+      {/* App Container */}
+      <div className="w-full h-[675px] bg-slate-50 rounded-[2.5rem] overflow-hidden flex flex-col relative font-sans">
         
         {/* Header */}
         <div className="pt-10 pb-4 px-5 bg-white flex items-center justify-between border-b border-slate-100 z-10 shrink-0">
