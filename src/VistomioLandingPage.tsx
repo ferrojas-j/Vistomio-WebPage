@@ -1406,7 +1406,7 @@ const VistomioLandingPage: React.FC = () => {
                     <div className="flex items-center gap-3">
                       <button className="bg-slate-800 text-white border border-slate-700 px-3 py-1.5 rounded-lg font-bold text-xs flex items-center gap-2 hover:bg-slate-700 transition-colors shadow-md shadow-slate-900/50">
                         <Plus size={16} strokeWidth={3} className="shrink-0" /> 
-                        <div className="text-left leading-tight w-16 whitespace-normal">{t.mockupCalendar.newBooking}</div>
+                        <div className="text-left leading-tight w-24 sm:w-20 whitespace-normal">{t.mockupCalendar.newBooking}</div>
                       </button>
                       <div className="flex items-center gap-2 ml-2">
                         <span className="bg-emerald-50 text-emerald-600 border border-emerald-200 px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider whitespace-nowrap">8 {t.mockupCalendar.rooms}</span>
