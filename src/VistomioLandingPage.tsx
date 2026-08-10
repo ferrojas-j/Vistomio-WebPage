@@ -1486,16 +1486,18 @@ const VistomioLandingPage: React.FC = () => {
                       <p className="text-slate-300 text-sm leading-relaxed relative z-10 flex-grow">{feature.desc}</p>
                     </div>
                   ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-
-      {/* --- CHATBOT AUTOMATION SECTION --- */}
-      <section className="py-24 bg-[#0B1121] relative overflow-hidden">
+                
+                {catIdx === t.featureCategories.length - 1 && (
+                  <div className="mt-16 pt-16 border-t border-slate-800 relative bg-[#0B1121]/50 rounded-b-[3rem] px-8 pb-16 mx-[-2rem]">
+                    {/* Visual Connector */}
+                    <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-slate-900 border border-slate-800 rounded-full flex items-center justify-center text-emerald-500 shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+                      <ChevronDown size={24} className="animate-bounce" />
+                    </div>
+                    
+                    {/* --- CHATBOT AUTOMATION SECTION --- */}
+                    <div className="relative overflow-hidden pt-12 rounded-[2rem]">
+                      {/* --- CHATBOT AUTOMATION SECTION --- */}
+      
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-emerald-500/5 blur-[150px] rounded-[100%]"></div>
         </div>
@@ -1563,7 +1565,19 @@ const VistomioLandingPage: React.FC = () => {
             </div>
           </div>
         </div>
+      
+                    </div>
+                  </div>
+                )}
+</div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
+
+
+      
 
 
       {/* --- BENEFITS --- */}
