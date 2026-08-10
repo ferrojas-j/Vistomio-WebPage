@@ -110,8 +110,8 @@ const translations = {
           icon: Wine
         },
         {
-          title: 'Automatización Inteligente',
-          desc: 'Deja que la IA optimice tus tarifas y detecte vacíos en tu ocupación.',
+          title: 'Recomendaciones Inteligentes',
+          desc: 'Una IA especializada analiza los datos de tu operación para sugerirte <span class="text-[#FCE69B] font-semibold">dinámicas de tarifas, campañas y ventas cruzadas.</span>',
           icon: Sparkles
         }
       ]
@@ -466,8 +466,8 @@ const translations = {
           icon: Wine
         },
         {
-          title: 'Smart Automation',
-          desc: 'Let AI optimize your rates and detect occupancy gaps automatically.',
+          title: 'Smart Recommendations',
+          desc: 'A specialized AI analyzes your operation data to suggest <span class="text-[#FCE69B] font-semibold">dynamic pricing, targeted campaigns, and cross-selling.</span>',
           icon: Sparkles
         }
       ]
@@ -822,8 +822,8 @@ const translations = {
           icon: Wine
         },
         {
-          title: 'Automatisation Intelligente',
-          desc: 'Laissez l\'IA optimiser vos tarifs et détecter les vides d\'occupation automatiquement.',
+          title: 'Recommandations Intelligentes',
+          desc: 'Une IA spécialisée analyse vos données d\'exploitation pour suggérer <span class="text-[#FCE69B] font-semibold">des tarifs dynamiques, des campagnes et des ventes croisées.</span>',
           icon: Sparkles
         }
       ]
