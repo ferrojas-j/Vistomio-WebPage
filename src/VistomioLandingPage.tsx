@@ -260,8 +260,13 @@ const translations = {
       ]
     },
     pricing: {
-      title: 'Paquetes Estándar',
-      subtitle: 'Inversión clara. Sin sorpresas. Escala según las necesidades de tu negocio.',
+      title: 'Paga solo lo que necesitas',
+      subtitle: 'Explora nuestros paquetes pre-diseñados o arma tu propia solución a medida.',
+      buildOwnPackage: 'Arma tu propio paquete',
+      customModalTitle: 'Arma tu Solución Vistomio',
+      customModalSubtitle: 'Selecciona los módulos que necesitas y crearemos un plan a tu medida.',
+      selectedModules: 'Módulos Seleccionados',
+      requestQuoteBtn: 'Solicitar cotización de mi plan',
       plans: [
         {
           name: 'Gastronomía Boutique',
@@ -269,7 +274,7 @@ const translations = {
           monthlyPrice: '$89',
           period: '/mes',
           features: ['POS Operativo Avanzado', 'Módulo Restaurante y Bar', 'Finanzas y Caja'],
-          cta: 'Contactar Ventas',
+          cta: '¡Vamos!',
           highlight: false
         },
         {
@@ -278,7 +283,7 @@ const translations = {
           monthlyPrice: '$149',
           period: '/mes',
           features: ['Booking Engine & Channel Manager', 'Check-in y Recepción', 'App de Personal', 'Finanzas Básicas', 'Chatbot Estándar'],
-          cta: 'Contactar Ventas',
+          cta: '¡Vamos!',
           highlight: false
         },
         {
@@ -287,7 +292,7 @@ const translations = {
           monthlyPrice: '$299',
           period: '/mes',
           features: ['Todos los módulos Starter', 'POS Gastronomía Integrado', 'Chatbot IA Avanzado', 'Analítica Predictiva', 'Soporte VIP 24/7'],
-          cta: 'Contactar Ventas',
+          cta: '¡Vamos!',
           highlight: false
         }
       ],
@@ -517,8 +522,13 @@ const translations = {
         ]
       },
       pricing: {
-      title: 'Standard Packages',
-      subtitle: 'Clear investment. No surprises. Scale according to your business needs.',
+      title: 'Pay only for what you need',
+      subtitle: 'Explore our pre-designed packages or build your own custom solution.',
+      buildOwnPackage: 'Build your own package',
+      customModalTitle: 'Build Your Vistomio Solution',
+      customModalSubtitle: 'Select the modules you need and we will create a tailored plan.',
+      selectedModules: 'Selected Modules',
+      requestQuoteBtn: 'Request quote for my plan',
       plans: [
         {
           name: 'Boutique Gastronomy',
@@ -526,7 +536,7 @@ const translations = {
           monthlyPrice: '$89',
           period: '/mo',
           features: ['Advanced POS', 'Restaurant & Bar Module', 'Finance & Cashier'],
-          cta: 'Contact Sales',
+          cta: 'Let\'s go!',
           highlight: false
         },
         {
@@ -535,7 +545,7 @@ const translations = {
           monthlyPrice: '$149',
           period: '/mo',
           features: ['Booking Engine & Channel Manager', 'Check-in & Front Desk', 'Staff App', 'Basic Finance', 'Standard Chatbot'],
-          cta: 'Contact Sales',
+          cta: 'Let\'s go!',
           highlight: false
         },
         {
@@ -544,7 +554,7 @@ const translations = {
           monthlyPrice: '$299',
           period: '/mo',
           features: ['All Starter modules', 'Integrated F&B POS', 'Advanced AI Chatbot', 'Predictive Analytics', '24/7 VIP Support'],
-          cta: 'Contact Sales',
+          cta: 'Let\'s go!',
           highlight: false
         }
       ],
@@ -774,16 +784,21 @@ const translations = {
         ]
       },
       pricing: {
-      title: 'Forfaits Standard',
-      subtitle: 'Investissement clair. Sans surprises. Évoluez selon les besoins de votre entreprise.',
-      plans: [
+      title: 'Payez seulement ce dont vous avez besoin',
+        subtitle: 'Explorez nos forfaits pré-conçus ou créez votre propre solution sur mesure.',
+        buildOwnPackage: 'Créez votre propre forfait',
+        customModalTitle: 'Créez votre solution Vistomio',
+        customModalSubtitle: 'Sélectionnez les modules dont vous avez besoin et nous créerons un plan sur mesure.',
+        selectedModules: 'Modules Sélectionnés',
+        requestQuoteBtn: 'Demander un devis pour mon plan',
+        plans: [
         {
           name: 'Gastronomie Boutique',
           setupPrice: 'Frais de Setup: $299',
           monthlyPrice: '$89',
           period: '/mois',
           features: ['POS Avancé', 'Module Restaurant & Bar', 'Finances et Caisse'],
-          cta: 'Contacter les Ventes',
+          cta: 'Allons-y !',
           highlight: false
         },
         {
@@ -792,7 +807,7 @@ const translations = {
           monthlyPrice: '$149',
           period: '/mois',
           features: ['Moteur de Réservation & Channel Manager', 'Check-in et Réception', 'App Personnel', 'Finances de Base', 'Chatbot Standard'],
-          cta: 'Contacter les Ventes',
+          cta: 'Allons-y !',
           highlight: false
         },
         {
@@ -801,7 +816,7 @@ const translations = {
           monthlyPrice: '$299',
           period: '/mois',
           features: ['Tous les modules Starter', 'POS F&B Intégré', 'Chatbot IA Avancé', 'Analytique Prédictive', 'Support VIP 24/7'],
-          cta: 'Contacter les Ventes',
+          cta: 'Allons-y !',
           highlight: false
         }
       ],
@@ -844,6 +859,15 @@ const VistomioLandingPage: React.FC = () => {
   const [langMenuOpen, setLangMenuOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [contactModalView, setContactModalView] = useState('options');
+  const [isCustomPlanModalOpen, setIsCustomPlanModalOpen] = useState(false);
+  const [selectedCustomModules, setSelectedCustomModules] = useState<string[]>([]);
+
+  const toggleCustomModule = (title: string) => {
+    setSelectedCustomModules(prev => 
+      prev.includes(title) ? prev.filter(t => t !== title) : [...prev, title]
+    );
+  };
+
   
   const langMenuRef = useRef<HTMLDivElement>(null);
   const t = translations[lang];
@@ -1466,8 +1490,19 @@ const VistomioLandingPage: React.FC = () => {
               </div>
             ))}
           </div>
+          
+          <div className="mt-16 text-center">
+            <button 
+              onClick={() => setIsCustomPlanModalOpen(true)}
+              className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-emerald-500/50 hover:border-emerald-400 text-emerald-400 hover:text-emerald-300 rounded-xl font-bold transition-all shadow-lg hover:shadow-emerald-500/20 group"
+            >
+              {t.pricing.buildOwnPackage}
+              <Plus className="ml-2 w-5 h-5 group-hover:rotate-90 transition-transform" />
+            </button>
+          </div>
         </div>
       </section>
+
 
       {/* --- CHATBOT AUTOMATION SECTION --- */}
       <section className="py-24 bg-[#0B1121] relative overflow-hidden">
@@ -1660,6 +1695,91 @@ const VistomioLandingPage: React.FC = () => {
       </footer>
 
       {/* Contact Modal */}
+      
+      {/* Custom Plan Modal */}
+      {isCustomPlanModalOpen && (
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-slate-900 border border-slate-800 rounded-3xl w-full max-w-4xl max-h-[90vh] flex flex-col relative overflow-hidden shadow-2xl">
+            {/* Header */}
+            <div className="p-6 md:p-8 border-b border-slate-800 flex justify-between items-center bg-slate-900/50 sticky top-0 z-10">
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-2">{t.pricing.customModalTitle}</h3>
+                <p className="text-slate-400">{t.pricing.customModalSubtitle}</p>
+              </div>
+              <button 
+                onClick={() => setIsCustomPlanModalOpen(false)}
+                className="p-2 text-slate-400 hover:text-white bg-slate-800/50 hover:bg-slate-800 rounded-full transition-colors"
+              >
+                <X size={24} />
+              </button>
+            </div>
+            
+            {/* Body */}
+            <div className="p-6 md:p-8 overflow-y-auto flex-grow custom-scrollbar">
+              <div className="space-y-10">
+                {t.featureCategories.map((category, catIdx) => (
+                  <div key={catIdx}>
+                    <h4 className="text-lg font-semibold text-emerald-400 mb-4 flex items-center">
+                      <div className="w-2 h-2 rounded-full bg-emerald-500 mr-3"></div>
+                      {category.name}
+                    </h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {category.items.map((item, itemIdx) => {
+                        const isSelected = selectedCustomModules.includes(item.title);
+                        return (
+                          <div 
+                            key={itemIdx} 
+                            onClick={() => toggleCustomModule(item.title)}
+                            className={`p-4 rounded-xl border cursor-pointer transition-all ${
+                              isSelected 
+                                ? 'bg-emerald-500/10 border-emerald-500/50 shadow-[0_0_15px_rgba(16,185,129,0.1)]' 
+                                : 'bg-slate-800/30 border-slate-700/50 hover:border-slate-600 hover:bg-slate-800/50'
+                            }`}
+                          >
+                            <div className="flex items-start gap-3">
+                              <div className={`mt-0.5 ${isSelected ? 'text-emerald-400' : 'text-slate-500'}`}>
+                                {isSelected ? <CheckCircle2 size={20} /> : <div className="w-5 h-5 rounded-full border-2 border-slate-600"></div>}
+                              </div>
+                              <div>
+                                <h5 className={`font-semibold mb-1 ${isSelected ? 'text-emerald-300' : 'text-white'}`}>{item.title}</h5>
+                                <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed">{item.desc}</p>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Footer */}
+            <div className="p-6 md:p-8 border-t border-slate-800 bg-slate-900/80 sticky bottom-0 flex flex-col sm:flex-row justify-between items-center gap-4">
+              <div className="text-left w-full sm:w-auto">
+                <span className="text-slate-400 text-sm block mb-1">{t.pricing.selectedModules}:</span>
+                <span className="text-2xl font-bold text-white">{selectedCustomModules.length}</span>
+              </div>
+              <button 
+                className={`w-full sm:w-auto px-8 py-3 rounded-xl font-bold transition-all ${
+                  selectedCustomModules.length > 0
+                    ? 'bg-gradient-to-r from-emerald-500 to-teal-400 text-white shadow-lg hover:shadow-emerald-500/25'
+                    : 'bg-slate-800 text-slate-500 cursor-not-allowed'
+                }`}
+                disabled={selectedCustomModules.length === 0}
+                onClick={() => {
+                  setIsCustomPlanModalOpen(false);
+                  setIsContactModalOpen(true);
+                }}
+              >
+                {t.pricing.requestQuoteBtn}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+
       {isContactModalOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
           <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onClick={() => { setIsContactModalOpen(false); setContactModalView('options'); }}></div>
