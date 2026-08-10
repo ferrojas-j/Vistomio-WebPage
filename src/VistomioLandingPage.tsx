@@ -112,6 +112,7 @@ const translations = {
     featuresSubtitle: 'Ecosistema interconectado. Utiliza un módulo o despliega la suite completa en minutos.',
     standaloneBadge1: 'Disponible como',
     standaloneBadge2: 'app independiente',
+    seeHowItWorks: 'Ver cómo funciona',
     featureCategories: [
       {
         name: 'Operaciones Hoteleras',
@@ -447,6 +448,7 @@ const translations = {
     featuresSubtitle: 'Interconnected ecosystem. Use a single module or deploy the full suite in minutes.',
     standaloneBadge1: 'Available as',
     standaloneBadge2: 'standalone app',
+    seeHowItWorks: 'See how it works',
     featureCategories: [
       {
         name: 'Hotel Operations',
@@ -783,6 +785,7 @@ const translations = {
     featuresSubtitle: 'Écosystème interconnecté. Utilisez un seul module ou déployez la suite complète en quelques minutes.',
     standaloneBadge1: 'Disponible en',
     standaloneBadge2: 'app indépendante',
+    seeHowItWorks: 'Voir comment ça marche',
     featureCategories: [
       {
         name: 'Opérations Hôtelières',
@@ -1800,7 +1803,7 @@ const VistomioLandingPage: React.FC = () => {
                       {(feature as any).demoId && (
                         <div className="mt-6 relative z-10">
                           <a href={`#${(feature as any).demoId}`} className="inline-flex items-center gap-2 text-sm font-semibold text-[#D4AF37] hover:text-[#f4d054] transition-colors group/btn">
-                            Ver cómo funciona <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
+                            {t.seeHowItWorks} <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
                           </a>
                         </div>
                       )}
@@ -1825,7 +1828,7 @@ const VistomioLandingPage: React.FC = () => {
                     
                     <div className="mb-10">
                       <a href="#demo-chatbot" className="inline-flex items-center gap-2 text-sm font-semibold text-[#D4AF37] hover:text-[#f4d054] transition-colors group/btn">
-                        Ver cómo funciona <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
+                        {t.seeHowItWorks} <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
                       </a>
                     </div>
 
