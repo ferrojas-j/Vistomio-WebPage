@@ -99,7 +99,7 @@ const translations = {
       ]
     },
     featuresTitle: 'Módulos diseñados para el futuro',
-    standaloneBadge: 'Módulo Independiente',
+    standaloneBadge: 'Disponible como app independiente',
     featureCategories: [
       {
         name: 'Operaciones Hoteleras',
@@ -117,7 +117,8 @@ const translations = {
           {
             title: 'App de Operaciones Diarias',
             desc: 'Seguimiento de inventario, limpieza y mantenimiento directamente al móvil de tu staff.',
-            icon: ClipboardCheck
+            icon: ClipboardCheck,
+            standalone: true
           }
         ]
       },
@@ -148,8 +149,7 @@ const translations = {
           {
             title: 'Nóminas y Personal',
             desc: 'Seguimiento de equipo y turnos para el staff.',
-            icon: Users,
-            standalone: true
+            icon: Users
           },
           {
             title: 'Pagos y Facturación Simplificada',
@@ -361,7 +361,7 @@ const translations = {
       ]
     },
     featuresTitle: 'Modules designed for the future',
-    standaloneBadge: 'Standalone Module',
+    standaloneBadge: 'Available as standalone app',
     featureCategories: [
       {
         name: 'Hotel Operations',
@@ -379,7 +379,8 @@ const translations = {
           {
             title: 'Daily Operations App',
             desc: 'Inventory tracking, housekeeping, and maintenance directly to your staff\'s mobile.',
-            icon: ClipboardCheck
+            icon: ClipboardCheck,
+            standalone: true
           }
         ]
       },
@@ -623,7 +624,7 @@ const translations = {
       ]
     },
     featuresTitle: "Des modules conçus pour l'avenir",
-    standaloneBadge: 'Module Indépendant',
+    standaloneBadge: 'Disponible en application indépendante',
     featureCategories: [
       {
         name: 'Opérations Hôtelières',
