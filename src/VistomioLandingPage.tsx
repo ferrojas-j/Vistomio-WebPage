@@ -1150,6 +1150,30 @@ const VistomioLandingPage: React.FC = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
+    fetch('https://api.country.is/')
+      .then(res => res.json())
+      .then(data => {
+        const country = data.country;
+        if (['FR', 'BE', 'CH', 'LU', 'MC', 'HT', 'SN', 'CI', 'CM'].includes(country)) {
+          setLang('fr');
+        } else if (['ES', 'MX', 'CL', 'AR', 'CO', 'PE', 'VE', 'EC', 'GT', 'CU', 'BO', 'DO', 'HN', 'PY', 'SV', 'NI', 'CR', 'PA', 'UY', 'PR', 'GQ'].includes(country)) {
+          setLang('es');
+        } else {
+          setLang('en'); // Defaults to English for US, CA, UK, AU and the rest of the world
+        }
+      })
+      .catch(() => {
+        // Fallback if API fails
+        if (typeof navigator !== 'undefined') {
+          const browserLang = navigator.language.toLowerCase();
+          if (browserLang.startsWith('fr')) setLang('fr');
+          else if (browserLang.startsWith('es')) setLang('es');
+          else setLang('en');
+        }
+      });
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 300) {
         setShowScrollTop(true);
