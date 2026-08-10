@@ -31,6 +31,10 @@ const translations = {
       assignments: 'Asignaciones',
       viewChecklist: 'Ver Checklist',
       floor1: 'María (Piso 1)',
+      floor2: 'Juan (Piso 2)',
+      occupied: 'Ocupada',
+      deepClean: 'Profunda',
+      stayover: 'Repaso',
       checkout: 'Checkout',
       checkinToday: 'Check-in Hoy',
       checklistTitle: 'Checklist Estándar de Limpieza',
@@ -192,6 +196,10 @@ const translations = {
       assignments: 'Assignments',
       viewChecklist: 'View Checklist',
       floor1: 'Mary (Floor 1)',
+      floor2: 'John (Floor 2)',
+      occupied: 'Occupied',
+      deepClean: 'Deep Clean',
+      stayover: 'Tidy Up',
       checkout: 'Checkout',
       checkinToday: 'Check-in Today',
       checklistTitle: 'Standard Cleaning Checklist',
@@ -353,6 +361,10 @@ const translations = {
       assignments: 'Assignations',
       viewChecklist: 'Voir Checklist',
       floor1: 'Marie (Étage 1)',
+      floor2: 'Jean (Étage 2)',
+      occupied: 'Occupée',
+      deepClean: 'En Profondeur',
+      stayover: 'Rafraîchir',
       checkout: 'Checkout',
       checkinToday: 'Check-in Auj.',
       checklistTitle: 'Checklist de Nettoyage Standard',
@@ -551,6 +563,42 @@ const LimpiezaView = ({ t, onOpenChecklist }: { t: any, onOpenChecklist: () => v
                  <span className="bg-amber-100 text-amber-700 text-[9px] font-bold px-1.5 py-0.5 rounded uppercase">{t.limpieza.checkinToday}</span>
                </div>
              </div>
+             <div className="w-5 h-5 rounded-full border-2 border-slate-200"></div>
+           </div>
+         </div>
+         
+         <div className="flex items-center gap-2 mt-6 mb-3">
+           <div className="w-6 h-6 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-xs font-bold">J</div>
+           <span className="text-sm font-bold text-slate-700">{t.limpieza.floor2}</span>
+         </div>
+         
+         <div className="flex flex-col gap-2">
+           <div className="p-3 rounded-xl border border-slate-100 flex justify-between items-center bg-slate-50/50">
+             <div className="flex flex-col gap-1.5">
+               <span className="font-bold text-sm text-slate-700">Hab 201</span>
+               <div className="flex gap-1.5">
+                 <span className="bg-rose-100 text-rose-700 text-[9px] font-bold px-1.5 py-0.5 rounded uppercase">{t.limpieza.checkout}</span>
+                 <span className="bg-purple-100 text-purple-700 text-[9px] font-bold px-1.5 py-0.5 rounded uppercase">{t.limpieza.deepClean}</span>
+               </div>
+             </div>
+             <div className="w-5 h-5 rounded-full border-2 border-slate-200"></div>
+           </div>
+           
+           <div className="p-3 rounded-xl border border-slate-100 flex justify-between items-center bg-slate-50/50">
+             <div className="flex flex-col gap-1.5">
+               <span className="font-bold text-sm text-slate-700">Hab 205</span>
+               <div className="flex gap-1.5">
+                 <span className="bg-sky-100 text-sky-700 text-[9px] font-bold px-1.5 py-0.5 rounded uppercase">{t.limpieza.occupied}</span>
+                 <span className="bg-emerald-100 text-emerald-700 text-[9px] font-bold px-1.5 py-0.5 rounded uppercase">{t.limpieza.stayover}</span>
+               </div>
+             </div>
+             <div className="w-5 h-5 rounded-full border-2 border-slate-200 flex items-center justify-center bg-emerald-500 border-emerald-500">
+               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+             </div>
+           </div>
+           
+           <div className="p-3 rounded-xl border border-slate-100 flex justify-between items-center bg-slate-50/50">
+             <span className="font-bold text-sm text-slate-700">Hab 208</span>
              <div className="w-5 h-5 rounded-full border-2 border-slate-200"></div>
            </div>
          </div>
