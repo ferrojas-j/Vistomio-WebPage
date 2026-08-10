@@ -1,3 +1,4 @@
+import POSSimulator from './POSSimulator';
 import React, { useState, useEffect, useRef } from 'react';
 import {  
   CreditCard, 
@@ -37,7 +38,7 @@ import {
   Clock,
   Home,
   Briefcase
- } from 'lucide-react';
+ , Wallet} from 'lucide-react';
 
 // --- Custom Icons ---
 const BoutiqueLogoIcon = ({ className = "w-6 h-6", strokeWidth = 1.5 }: { className?: string, strokeWidth?: number }) => (
@@ -258,6 +259,16 @@ const translations = {
           ]
         }
       ]
+    },
+    
+    posDemo: {
+      sectionTitle: 'Descubre nuestra App POS',
+      sectionDesc: 'Experimenta el control total desde la palma de tu mano. Navega por nuestro simulador interactivo de Punto de Venta.',
+      tabs: { tables: 'MESAS', orders: 'COMANDAS', expenses: 'GASTOS', admin: 'ADMIN' },
+      tables: { free: 'LIBRES', occupied: 'OCUPADAS', ready: 'LISTAS', room: 'SALÓN', bar: 'BARRA' },
+      orders: { recent: 'Comandas Recientes', today: 'Hoy', open: 'ABIERTA', closed: 'CERRADA', table: 'Mesa', bar: 'Barra', daypass: 'Daypass' },
+      expenses: { pettyCash: 'Caja Chica', date: 'Lunes, 10 De Agosto', auth: 'AUTORIZA: ADMINISTRADOR', inProgress: 'EN CURSO', initial: 'INICIAL', current: 'ACTUAL', todayExpenses: 'GASTOS DE HOY', addExpense: 'Registrar Gasto', items: [ { name: 'Verduras frescas y hielo', category: 'INSUMOS COCINA' }, { name: 'Hielo y limones', category: 'INSUMOS BARRA' }, { name: 'Gasolina', category: 'LOGÍSTICA' } ] },
+      admin: { dashboard: 'Panel de Control', activeShift: 'JORNADA ACTIVA', shift: 'TURNO: ADMINISTRADOR', totalSales: 'VENTAS TOTALES', totalExpenses: 'GASTOS (3)', tips: 'PROPINAS ACUMULADAS', management: 'GESTIÓN', menuEditor: 'Editor de Menú', menuEditorDesc: 'Platos, precios y disponibilidad' }
     },
     pricing: {
       title: 'Paga solo lo que necesitas',
@@ -522,7 +533,17 @@ const translations = {
           }
         ]
       },
-      pricing: {
+      
+    posDemo: {
+      sectionTitle: 'Discover our POS App',
+      sectionDesc: 'Experience total control from the palm of your hand. Navigate our interactive Point of Sale simulator.',
+      tabs: { tables: 'TABLES', orders: 'ORDERS', expenses: 'EXPENSES', admin: 'ADMIN' },
+      tables: { free: 'FREE', occupied: 'OCCUPIED', ready: 'READY', room: 'DINING ROOM', bar: 'BAR' },
+      orders: { recent: 'Recent Orders', today: 'Today', open: 'OPEN', closed: 'CLOSED', table: 'Table', bar: 'Bar', daypass: 'Daypass' },
+      expenses: { pettyCash: 'Petty Cash', date: 'Monday, August 10', auth: 'AUTH: ADMINISTRATOR', inProgress: 'IN PROGRESS', initial: 'INITIAL', current: 'CURRENT', todayExpenses: "TODAY'S EXPENSES", addExpense: 'Add Expense', items: [ { name: 'Fresh vegetables and ice', category: 'KITCHEN SUPPLIES' }, { name: 'Ice and lemons', category: 'BAR SUPPLIES' }, { name: 'Gasoline', category: 'LOGISTICS' } ] },
+      admin: { dashboard: 'Dashboard', activeShift: 'ACTIVE SHIFT', shift: 'SHIFT: ADMINISTRATOR', totalSales: 'TOTAL SALES', totalExpenses: 'EXPENSES (3)', tips: 'ACCUMULATED TIPS', management: 'MANAGEMENT', menuEditor: 'Menu Editor', menuEditorDesc: 'Dishes, prices and availability' }
+    },
+    pricing: {
       title: 'Pay only for what you need',
       subtitle: 'Explore our pre-designed packages or build your own custom solution.',
       buildOwnPackage: 'Build your own package',
@@ -784,7 +805,17 @@ const translations = {
           }
         ]
       },
-      pricing: {
+      
+    posDemo: {
+      sectionTitle: 'Découvrez notre Application POS',
+      sectionDesc: 'Faites l\'expérience d\'un contrôle total depuis la paume de votre main. Naviguez sur notre simulateur de Point de Vente.',
+      tabs: { tables: 'TABLES', orders: 'COMMANDES', expenses: 'DÉPENSES', admin: 'ADMIN' },
+      tables: { free: 'LIBRE', occupied: 'OCCUPÉ', ready: 'PRÊT', room: 'SALLE', bar: 'BAR' },
+      orders: { recent: 'Commandes Récentes', today: 'Aujourd\'hui', open: 'OUVERT', closed: 'FERMÉ', table: 'Table', bar: 'Bar', daypass: 'Daypass' },
+      expenses: { pettyCash: 'Petite Caisse', date: 'Lundi, 10 Août', auth: 'AUTH: ADMINISTRATEUR', inProgress: 'EN COURS', initial: 'INITIAL', current: 'ACTUEL', todayExpenses: "DÉPENSES DU JOUR", addExpense: 'Ajouter Dépense', items: [ { name: 'Légumes frais et glace', category: 'FOURNITURES CUISINE' }, { name: 'Glace et citrons', category: 'FOURNITURES BAR' }, { name: 'Essence', category: 'LOGISTIQUE' } ] },
+      admin: { dashboard: 'Tableau de Bord', activeShift: 'SERVICE ACTIF', shift: 'SERVICE: ADMINISTRATEUR', totalSales: 'VENTES TOTALES', totalExpenses: 'DÉPENSES (3)', tips: 'POURBOIRES CUMULÉS', management: 'GESTION', menuEditor: 'Éditeur de Menu', menuEditorDesc: 'Plats, prix et disponibilité' }
+    },
+    pricing: {
       title: 'Payez seulement ce dont vous avez besoin',
         subtitle: 'Explorez nos forfaits pré-conçus ou créez votre propre solution sur mesure.',
         buildOwnPackage: 'Créez votre propre forfait',
@@ -1606,6 +1637,53 @@ const VistomioLandingPage: React.FC = () => {
       </section>
 
       {/* --- PRICING --- */}
+      
+      {/* POS SIMULATOR SECTION */}
+      <section className="py-24 relative bg-slate-900 border-t border-slate-800 overflow-hidden">
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <div className="flex-1 text-center lg:text-left">
+              <div className="inline-block px-4 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-full text-emerald-400 text-sm font-bold uppercase tracking-wider mb-6">
+                Demo
+              </div>
+              <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
+                {t.posDemo.sectionTitle}
+              </h2>
+              <p className="text-xl text-slate-400 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0">
+                {t.posDemo.sectionDesc}
+              </p>
+              
+              <div className="flex flex-col gap-6 max-w-md mx-auto lg:mx-0">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-[#D4AF37] flex-shrink-0">
+                    <Utensils size={24} />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-bold mb-1">Operación Fluida</h4>
+                    <p className="text-slate-400 text-sm">Gestiona salones y barras con estados de mesas codificados por color.</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                    <Wallet size={24} />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-bold mb-1">Control Financiero</h4>
+                    <p className="text-slate-400 text-sm">Registra gastos al instante y mantén la caja chica actualizada.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="flex-1 w-full max-w-md lg:max-w-none">
+              <POSSimulator t={t} />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="precios" className="py-32 relative bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
