@@ -1622,7 +1622,7 @@ const VistomioLandingPage: React.FC = () => {
                 )}
                 
                 <h3 className={`text-2xl font-bold ${plan.highlight ? 'text-[#0B1121]' : 'text-white'} mb-2 pr-24`}>{plan.name}</h3>
-                <div className="text-sm font-semibold text-slate-500 mb-6 bg-slate-800 inline-block px-3 py-1 rounded-lg border border-slate-700 self-start">{plan.setupPrice}</div>
+                <div className="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-6 bg-emerald-500/10 inline-block px-3 py-1.5 rounded-full border border-emerald-500/30 self-start shadow-sm shadow-emerald-500/10">{plan.setupPrice}</div>
                 
                 <div className="flex items-baseline gap-1 mb-8">
                   <div className={`text-5xl font-extrabold ${plan.highlight ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#FCE69B]' : 'text-white'}`}>
