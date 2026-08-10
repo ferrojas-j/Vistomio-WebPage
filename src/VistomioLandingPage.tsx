@@ -79,6 +79,12 @@ const translations = {
       ctaPrimary: 'Explorar la plataforma',
       ctaSecondary: 'Agenda entrevista gratuita con nuestro equipo'
     },
+    locations: {
+      noga: 'Zipolite, México',
+      galloAzul: 'Todos Santos, México',
+      laMora: 'San Agustinillo, México',
+      jc: 'Santiago, Chile'
+    },
     socialProof: 'Negocios que ya confían en Vistomio',
     boutiqueNiche: {
       tag: 'JÓVENES, VALIENTES Y PRAGMÁTICOS',
@@ -406,6 +412,12 @@ const translations = {
       subtitle: 'The most modern and disruptive PMS and ERP. Centralize everything in a modular, cloud-native, and ridiculously fast platform.',
       ctaPrimary: 'Explore the platform',
       ctaSecondary: 'Schedule a free interview with our team'
+    },
+    locations: {
+      noga: 'Zipolite, Mexico',
+      galloAzul: 'Todos Santos, Mexico',
+      laMora: 'San Agustinillo, Mexico',
+      jc: 'Santiago, Chile'
     },
     socialProof: 'Businesses that already trust Vistomio',
     boutiqueNiche: {
@@ -735,6 +747,12 @@ const translations = {
       subtitle: 'Le PMS et ERP le plus moderne et disruptif. Centralisez tout dans une plateforme modulaire, native cloud et incroyablement rapide.',
       ctaPrimary: 'Explorer la plateforme',
       ctaSecondary: 'Planifier un entretien gratuit avec notre équipe'
+    },
+    locations: {
+      noga: 'Zipolite, Mexique',
+      galloAzul: 'Todos Santos, Mexique',
+      laMora: 'San Agustinillo, Mexique',
+      jc: 'Santiago, Chili'
     },
     socialProof: 'Les entreprises qui font déjà confiance à Vistomio',
     boutiqueNiche: {
@@ -1620,28 +1638,28 @@ const VistomioLandingPage: React.FC = () => {
               <div className="flex items-center gap-3 text-2xl font-bold text-slate-200">
                 <span className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-sm border border-slate-700 shadow-sm text-slate-300">HN</span> Noga
               </div>
-              <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">Zipolite, México</span>
+              <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">{t.locations.noga}</span>
             </div>
 
             <div className="flex flex-col items-center gap-2">
               <div className="flex items-center gap-2 text-2xl font-bold text-slate-200 italic">
                 <GalloAzulLogo className="text-blue-500" size={28} /> Gallo Azul
               </div>
-              <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">Todos Santos, México</span>
+              <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">{t.locations.galloAzul}</span>
             </div>
 
             <div className="flex flex-col items-center gap-2">
               <div className="flex items-center gap-2 text-2xl font-black text-slate-200 tracking-[0.2em]">
                 LA MORA
               </div>
-              <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">San Agustinillo, México</span>
+              <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">{t.locations.laMora}</span>
             </div>
 
             <div className="flex flex-col items-center gap-2">
               <div className="flex items-center gap-3 text-2xl font-bold text-slate-200">
                 <span className="border-2 border-[#D4AF37] p-1.5 text-[#D4AF37] text-sm">JC</span> Hoteles
               </div>
-              <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">Santiago, Chile</span>
+              <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">{t.locations.jc}</span>
             </div>
           </div>
         </div>
