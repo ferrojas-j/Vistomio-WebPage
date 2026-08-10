@@ -1,4 +1,7 @@
-import { useState, useEffect, useRef } from 'react';
+const fs = require('fs');
+const path = 'src/ChatbotSimulator.tsx';
+
+const newContent = `import { useState, useEffect, useRef } from 'react';
 import { Send, Bot, MessageCircle, Globe, Settings2, Sliders, Camera } from 'lucide-react';
 
 type Tone = 'friendly' | 'formal' | 'casual' | 'sales';
@@ -138,7 +141,7 @@ const translations = {
     },
     labels: {
       channel: 'CANAL DE COMMUNICATION',
-      tone: 'PERSONNALITÉ DE L\'IA',
+      tone: 'PERSONNALITÉ DE L\\'IA',
       panelTitle: 'Connectez vos canaux et personnalisez',
       panelDesc: 'Personnalisez le comportement du bot en temps réel. Tous les modules se connectent à vos données.',
       placeholder: 'Mode démonstration...'
@@ -148,23 +151,23 @@ const translations = {
         { id: '1', sender: 'user', text: 'Salut ! Avez-vous des tables pour ce soir ?', time: '19:02' },
         { id: '2', sender: 'bot', text: 'Salut ! 👋 Ravi de vous parler ! Laissez-moi vérifier... Oui ! Il nous reste quelques tables. Pour combien de personnes et à quelle heure ? 🍷', time: '19:02' },
         { id: '3', sender: 'user', text: 'On serait 4 personnes, vers 21h.', time: '19:04' },
-        { id: '4', sender: 'bot', text: 'Génial ! C\'est noté pour 21h00. À tout à l\'heure pour une belle soirée ! 🎉', time: '19:04' },
+        { id: '4', sender: 'bot', text: 'Génial ! C\\'est noté pour 21h00. À tout à l\\'heure pour une belle soirée ! 🎉', time: '19:04' },
         { id: '5', sender: 'user', text: 'Avez-vous des options végétariennes ?', time: '19:05' },
         { id: '6', sender: 'bot', text: 'Bien sûr ! 🌱 Demandez simplement à votre serveur et il vous recommandera nos meilleurs plats sans viande !', time: '19:05' }
       ],
       formal: [
         { id: '1', sender: 'user', text: 'Bonsoir, je souhaite réserver pour ce soir.', time: '19:02' },
-        { id: '2', sender: 'bot', text: 'Bonsoir. C\'est un plaisir de vous aider. J\'ai vérifié et nous avons des tables pour ce soir. Veuillez m\'indiquer le nombre de personnes et l\'heure souhaitée.', time: '19:02' },
+        { id: '2', sender: 'bot', text: 'Bonsoir. C\\'est un plaisir de vous aider. J\\'ai vérifié et nous avons des tables pour ce soir. Veuillez m\\'indiquer le nombre de personnes et l\\'heure souhaitée.', time: '19:02' },
         { id: '3', sender: 'user', text: 'Une table pour 4 à 21h.', time: '19:04' },
         { id: '4', sender: 'bot', text: 'Votre réservation pour 4 personnes à 21h00 est pré-approuvée. Souhaitez-vous recevoir notre menu numérique avant votre arrivée ?', time: '19:04' },
-        { id: '5', sender: 'user', text: 'Oui, s\'il vous plaît.', time: '19:05' },
+        { id: '5', sender: 'user', text: 'Oui, s\\'il vous plaît.', time: '19:05' },
         { id: '6', sender: 'bot', text: 'Entendu. Vous allez recevoir le lien sous peu. Votre réservation est confirmée. Nous vous attendons.', time: '19:05' }
       ],
       casual: [
         { id: '1', sender: 'user', text: 'yo, de la place ce soir ?', time: '19:02' },
         { id: '2', sender: 'bot', text: 'Yo ! ✌️ Ouais, il nous reste de la place. Vous êtes combien et vers quelle heure ? 🍔', time: '19:02' },
         { id: '3', sender: 'user', text: '4, vers 21h', time: '19:04' },
-        { id: '4', sender: 'bot', text: 'Super ! C\'est noté pour 4 à 21h. On se voit tout à l\'heure pour passer un bon moment ! 🍻', time: '19:04' },
+        { id: '4', sender: 'bot', text: 'Super ! C\\'est noté pour 4 à 21h. On se voit tout à l\\'heure pour passer un bon moment ! 🍻', time: '19:04' },
         { id: '5', sender: 'user', text: 'merci mec', time: '19:05' },
         { id: '6', sender: 'bot', text: 'Pas de souci ! Les boissons vous attendent ! 🧊', time: '19:05' }
       ],
@@ -172,9 +175,9 @@ const translations = {
         { id: '1', sender: 'user', text: 'Bonjour, avez-vous de la place pour dîner ?', time: '19:02' },
         { id: '2', sender: 'bot', text: 'Bonjour ! Oui, nous avons de la disponibilité. 🍽️ De plus, ce soir notre Ribeye est à -15% si vous réservez ici. Puis-je vous réserver une table pour en profiter ? 🔥', time: '19:02' },
         { id: '3', sender: 'user', text: 'Super ! Oui, 4 personnes à 21h.', time: '19:04' },
-        { id: '4', sender: 'bot', text: 'Excellent choix ! Votre table pour 4 et votre promotion sont confirmées. Voudriez-vous qu\'on prépare deux Margaritas 2 pour 1 pour votre arrivée ? 🍹', time: '19:04' },
-        { id: '5', sender: 'user', text: 'Oh oui, deux s\'il vous plaît.', time: '19:05' },
-        { id: '6', sender: 'bot', text: 'C\'est noté ! 🥂 Table, promo et boissons réservées. À ce soir ! 🥩🍷', time: '19:05' }
+        { id: '4', sender: 'bot', text: 'Excellent choix ! Votre table pour 4 et votre promotion sont confirmées. Voudriez-vous qu\\'on prépare deux Margaritas 2 pour 1 pour votre arrivée ? 🍹', time: '19:04' },
+        { id: '5', sender: 'user', text: 'Oh oui, deux s\\'il vous plaît.', time: '19:05' },
+        { id: '6', sender: 'bot', text: 'C\\'est noté ! 🥂 Table, promo et boissons réservées. À ce soir ! 🥩🍷', time: '19:05' }
       ]
     },
     responses: { friendly: '', formal: '', casual: '', sales: '' }
@@ -228,14 +231,14 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
           {/* Chat Area */}
           <div className="flex-grow overflow-y-auto p-4 space-y-4 relative custom-scrollbar bg-[#E5DDD5]">
             {messages.map((msg) => (
-              <div key={msg.id} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'} animate-[fade-in_0.3s_ease-out]`}>
-                <div className={`max-w-[85%] rounded-2xl px-4 py-2 text-[14px] shadow-sm relative ${
+              <div key={msg.id} className={\`flex \${msg.sender === 'user' ? 'justify-end' : 'justify-start'} animate-[fade-in_0.3s_ease-out]\`}>
+                <div className={\`max-w-[85%] rounded-2xl px-4 py-2 text-[14px] shadow-sm relative \${
                   msg.sender === 'user' 
                     ? 'bg-[#DCF8C6] text-slate-800 rounded-tr-none' 
                     : 'bg-white text-slate-800 rounded-tl-none border border-slate-100'
-                }`}>
+                }\`}>
                   <p className="leading-snug">{msg.text}</p>
-                  <span className={`text-[10px] block text-right mt-1 opacity-60 ${msg.sender === 'user' ? 'text-emerald-700' : 'text-slate-500'}`}>
+                  <span className={\`text-[10px] block text-right mt-1 opacity-60 \${msg.sender === 'user' ? 'text-emerald-700' : 'text-slate-500'}\`}>
                     {msg.time} {msg.sender === 'user' && '✓✓'}
                   </span>
                 </div>
@@ -309,11 +312,11 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
                 <button 
                   key={tOption}
                   onClick={() => setTone(tOption)}
-                  className={`flex items-center gap-3 px-5 py-4 rounded-xl border font-medium transition-all text-left ${
+                  className={\`flex items-center gap-3 px-5 py-4 rounded-xl border font-medium transition-all text-left \${
                     tone === tOption 
                       ? 'bg-slate-700/50 border-emerald-500/50 text-white shadow-inner' 
                       : 'bg-slate-900/50 border-slate-800 text-slate-400 hover:bg-slate-800 hover:text-slate-300'
-                  }`}
+                  }\`}
                 >
                   <Sliders size={18} className={tone === tOption ? 'text-emerald-400' : 'text-slate-500'} />
                   <span className="flex-grow">{t.tones[tOption]}</span>
@@ -327,3 +330,6 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
     </div>
   );
 }
+`;
+
+fs.writeFileSync(path, newContent);
