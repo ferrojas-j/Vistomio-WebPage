@@ -1,5 +1,6 @@
 import POSSimulator from './POSSimulator';
 import ChatbotSimulator from './ChatbotSimulator';
+import StaffAppSimulator from './StaffAppSimulator';
 import React, { useState, useEffect, useRef } from 'react';
 import {  
   CreditCard, 
@@ -1851,7 +1852,64 @@ const VistomioLandingPage: React.FC = () => {
         </div>
       </section>
 
-      <section id="precios" className="py-32 relative bg-slate-900">
+      {/* STAFF APP SIMULATOR SECTION */}
+      <section className="py-24 relative bg-slate-900 overflow-hidden">
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-indigo-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            <div className="flex-1 w-full max-w-sm lg:max-w-none shrink-0 lg:w-[360px]">
+              <StaffAppSimulator currentLanguage={lang} />
+            </div>
+            <div className="flex-1 text-center lg:text-left">
+              <div className="inline-block px-4 py-1.5 bg-indigo-500/10 border border-indigo-500/30 rounded-full text-indigo-400 text-sm font-bold uppercase tracking-wider mb-6">
+                Mini demo
+              </div>
+              <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
+                {lang === 'es' ? 'Sincronización total con Vistomio Staff' : lang === 'en' ? 'Total synchronization with Vistomio Staff' : 'Synchronisation totale avec Vistomio Staff'}
+              </h2>
+              <p className="text-xl text-slate-400 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0">
+                {lang === 'es' 
+                  ? 'Conecta las operaciones diarias de tu personal con el panel de control general en una colaboración virtuosa. Actualiza en tiempo real hallazgos, consumos, alertas y solicitudes sin fricciones.'
+                  : lang === 'en'
+                  ? 'Connect your staff\'s daily operations with the general control panel in a virtuous collaboration. Update findings, consumption, alerts, and requests in real-time without friction.'
+                  : 'Connectez les opérations quotidiennes de votre personnel au panneau de contrôle général dans une collaboration vertueuse. Mettez à jour les constats, consommations, alertes et demandes en temps réel sans friction.'}
+              </p>
+              
+              <div className="flex flex-col gap-6 max-w-md mx-auto lg:mx-0">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-indigo-400 flex-shrink-0">
+                    <ClipboardCheck size={24} />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-bold mb-1">
+                      {lang === 'es' ? 'Cero papel' : lang === 'en' ? 'Paperless' : 'Zéro papier'}
+                    </h4>
+                    <p className="text-slate-400 text-sm">
+                      {lang === 'es' ? 'Digitaliza checklists, asignaciones y solicitudes de mantenimiento al instante.' : lang === 'en' ? 'Digitize checklists, assignments, and maintenance requests instantly.' : 'Numérisez les checklists, les assignations et les demandes de maintenance instantanément.'}
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                    <Users size={24} />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-bold mb-1">
+                      {lang === 'es' ? 'Comunicación en tiempo real' : lang === 'en' ? 'Real-time communication' : 'Communication en temps réel'}
+                    </h4>
+                    <p className="text-slate-400 text-sm">
+                       {lang === 'es' ? 'Recepcionistas, mucamas y mantenimiento conectados bajo la misma fuente de verdad.' : lang === 'en' ? 'Receptionists, housekeepers, and maintenance connected under the same source of truth.' : 'Réceptionnistes, femmes de chambre et maintenance connectés sous la même source de vérité.'}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="precios" className="py-32 relative bg-slate-900 border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">{t.pricing.title}</h2>
