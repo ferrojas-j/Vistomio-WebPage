@@ -1757,7 +1757,7 @@ const VistomioLandingPage: React.FC = () => {
                     {category.items.map((feature, idx) => (
                       <div 
                         key={idx} 
-                        className="bg-slate-800/50 backdrop-blur-xl rounded-3xl p-8 border border-slate-700 hover:border-[#D4AF37]/50 hover:shadow-lg hover:shadow-amber-900/20 transition-all duration-300 group cursor-default relative overflow-hidden flex flex-col"
+                        className="bg-slate-800/50 backdrop-blur-xl rounded-3xl p-6 md:p-8 border border-slate-700 hover:border-[#D4AF37]/50 hover:shadow-lg hover:shadow-amber-900/20 transition-all duration-300 group cursor-default relative overflow-hidden flex flex-col"
                       >
                         
                       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#D4AF37]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -1793,7 +1793,7 @@ const VistomioLandingPage: React.FC = () => {
                     <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-2">
                       <h4 className="text-xl font-bold text-[#D4AF37]">{t.chatbotPlans.title}</h4>
                       <div className="inline-flex">
-                        <div className="px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 rounded-full text-emerald-400 text-[10px] font-semibold uppercase tracking-wider whitespace-nowrap">
+                        <div className="px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-emerald-400 text-[10px] font-semibold uppercase tracking-wider">
                           {t.standaloneBadge1} {t.standaloneBadge2}
                         </div>
                       </div>
@@ -2101,7 +2101,7 @@ const VistomioLandingPage: React.FC = () => {
             <span className="text-2xl font-bold text-white tracking-tight">Vistomio</span>
           </div>
           
-          <div className="flex gap-8 text-sm font-medium">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-8 text-sm font-medium">
             <a href="#" className="hover:text-white transition-colors">{t.footer.legal}</a>
             <a href="#" className="hover:text-white transition-colors">{t.footer.privacy}</a>
             <a href="mailto:hola@vistomio.com" className="hover:text-white transition-colors">{t.footer.contact}</a>
@@ -2214,7 +2214,7 @@ const VistomioLandingPage: React.FC = () => {
       {isContactModalOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
           <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onClick={() => { setIsContactModalOpen(false); setContactModalView('options'); }}></div>
-          <div className="relative bg-slate-900 border border-slate-800 rounded-[2.5rem] p-8 md:p-12 shadow-2xl w-full max-w-xl animate-[translate-y-0_0.3s_ease-out] overflow-hidden">
+          <div className="relative bg-slate-900 border border-slate-800 rounded-[2.5rem] p-5 sm:p-8 md:p-12 shadow-2xl w-full max-w-xl animate-[translate-y-0_0.3s_ease-out] overflow-hidden max-h-[90vh] overflow-y-auto custom-scrollbar">
             <button 
               onClick={() => { setIsContactModalOpen(false); setContactModalView('options'); }}
               className="absolute top-6 right-6 w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-slate-400 hover:text-white transition-colors z-10"
