@@ -1050,6 +1050,7 @@ const VistomioLandingPage: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langMenuOpen, setLangMenuOpen] = useState(false);
+  const [demosMenuOpen, setDemosMenuOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [contactModalView, setContactModalView] = useState('options');
   const [isCustomPlanModalOpen, setIsCustomPlanModalOpen] = useState(false);
@@ -1062,7 +1063,9 @@ const VistomioLandingPage: React.FC = () => {
   };
 
   
+
   const langMenuRef = useRef<HTMLDivElement>(null);
+  const demosMenuRef = useRef<HTMLDivElement>(null);
   const t = translations[lang];
 
   useEffect(() => {
@@ -1075,6 +1078,9 @@ const VistomioLandingPage: React.FC = () => {
     const handleClickOutside = (event: MouseEvent) => {
       if (langMenuRef.current && !langMenuRef.current.contains(event.target as Node)) {
         setLangMenuOpen(false);
+      }
+      if (demosMenuRef.current && !demosMenuRef.current.contains(event.target as Node)) {
+        setDemosMenuOpen(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -1136,6 +1142,42 @@ const VistomioLandingPage: React.FC = () => {
             <a href="#productos" className="text-sm font-medium text-slate-300 hover:text-[#FCE69B] transition-colors">{t.nav.products}</a>
             <a href="#precios" className="text-sm font-medium text-slate-300 hover:text-[#FCE69B] transition-colors">{t.nav.pricing}</a>
             <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="text-sm font-medium text-slate-300 hover:text-[#FCE69B] transition-colors">{t.nav.contact}</a>
+            
+            {/* Demos Dropdown */}
+            <div className="relative flex items-center h-full" ref={demosMenuRef}>
+              <button 
+                onMouseEnter={() => setDemosMenuOpen(true)}
+                onClick={() => setDemosMenuOpen(!demosMenuOpen)}
+                className="flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-[#FCE69B] transition-colors py-2"
+              >
+                Demos
+                <ChevronDown size={14} className={`text-slate-500 transition-transform duration-300 ${demosMenuOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              <div 
+                onMouseLeave={() => setDemosMenuOpen(false)}
+                className={`absolute top-[100%] right-0 mt-4 w-80 bg-slate-800/90 backdrop-blur-xl border border-slate-700 rounded-xl shadow-2xl overflow-hidden transition-all duration-200 origin-top-right ${demosMenuOpen ? 'opacity-100 scale-100 translate-y-0 visible pointer-events-auto' : 'opacity-0 scale-95 -translate-y-2 invisible pointer-events-none'}`}
+              >
+                <div className="flex flex-col p-2">
+                  <a href="https://demo.vistomio.com" target="_blank" rel="noopener noreferrer" onClick={() => setDemosMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 text-sm text-slate-300 hover:text-white hover:bg-slate-700/50 rounded-lg transition-colors group">
+                    <div className="w-8 h-8 rounded-full bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-[#0B1121] transition-colors"><Sparkles size={14} /></div>
+                    <span className="font-medium">Demo Suite Vistomio</span>
+                  </a>
+                  <a href="#demo-chatbot" onClick={() => setDemosMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 text-sm text-slate-300 hover:text-white hover:bg-slate-700/50 rounded-lg transition-colors group">
+                    <div className="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-colors"><Bot size={14} /></div>
+                    <span className="font-medium">Demo Chatbots IA Vistomio</span>
+                  </a>
+                  <a href="#demo-pos" onClick={() => setDemosMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 text-sm text-slate-300 hover:text-white hover:bg-slate-700/50 rounded-lg transition-colors group">
+                    <div className="w-8 h-8 rounded-full bg-amber-500/10 flex items-center justify-center text-amber-400 group-hover:bg-amber-500 group-hover:text-[#0B1121] transition-colors"><CreditCard size={14} /></div>
+                    <span className="font-medium">Demo POS Vistomio para restaurantes</span>
+                  </a>
+                  <a href="#demo-staff" onClick={() => setDemosMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 text-sm text-slate-300 hover:text-white hover:bg-slate-700/50 rounded-lg transition-colors group">
+                    <div className="w-8 h-8 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-colors"><Users size={14} /></div>
+                    <span className="font-medium">Demo Vistomio Staff App</span>
+                  </a>
+                </div>
+              </div>
+            </div>
             
             {/* Custom Language Selector */}
             <div className="relative border-l border-slate-700 pl-6" ref={langMenuRef}>
@@ -1798,13 +1840,14 @@ const VistomioLandingPage: React.FC = () => {
       </section>
 
       {/* CHATBOT SIMULATOR SECTION */}
-      <section className="py-24 relative bg-slate-900 border-t border-slate-800 overflow-hidden">
+      <section id="demo-chatbot" className="py-24 relative bg-slate-900 border-t border-slate-800 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <ChatbotSimulator currentLanguage={lang} />
         </div>
       </section>
 
-      <section className="py-24 relative bg-slate-900 border-t border-slate-800 overflow-hidden">
+      {/* POS SIMULATOR SECTION */}
+      <section id="demo-pos" className="py-24 relative bg-slate-900 border-t border-slate-800 overflow-hidden">
         <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16">
@@ -1850,7 +1893,7 @@ const VistomioLandingPage: React.FC = () => {
       </section>
 
       {/* STAFF APP SIMULATOR SECTION */}
-      <section className="py-24 relative bg-slate-900 overflow-hidden">
+      <section id="demo-staff" className="py-24 relative bg-slate-900 overflow-hidden">
         <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-indigo-500/10 blur-[120px] rounded-full pointer-events-none"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
