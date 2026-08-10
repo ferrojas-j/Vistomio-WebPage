@@ -103,7 +103,8 @@ const translations = {
       ]
     },
     featuresTitle: 'Módulos diseñados para el futuro',
-    standaloneBadge: 'Disponible como app independiente',
+    standaloneBadge1: 'Disponible como',
+    standaloneBadge2: 'app independiente',
     featureCategories: [
       {
         name: 'Operaciones Hoteleras',
@@ -122,7 +123,8 @@ const translations = {
             title: 'App de Operaciones Diarias',
             desc: 'Seguimiento de inventario, limpieza y mantenimiento directamente al móvil de tu staff.',
             icon: ClipboardCheck,
-            standalone: true
+            standalone: true,
+            demoId: 'demo-staff'
           }
         ]
       },
@@ -138,7 +140,8 @@ const translations = {
             title: 'POS App (Punto de Venta)',
             desc: 'Sincroniza el restaurante y el bar directamente a la habitación del huésped sin fricciones.',
             icon: Utensils,
-            standalone: true
+            standalone: true,
+            demoId: 'demo-pos'
           }
         ]
       },
@@ -428,7 +431,8 @@ const translations = {
       ]
     },
     featuresTitle: 'Modules designed for the future',
-    standaloneBadge: 'Available as standalone app',
+    standaloneBadge1: 'Available as',
+    standaloneBadge2: 'standalone app',
     featureCategories: [
       {
         name: 'Hotel Operations',
@@ -445,9 +449,10 @@ const translations = {
           },
           {
             title: 'Daily Operations App',
-            desc: 'Inventory tracking, housekeeping, and maintenance directly to your staff\'s mobile.',
+            desc: 'Track inventory, cleaning, and maintenance directly on your staff\'s mobile device.',
             icon: ClipboardCheck,
-            standalone: true
+            standalone: true,
+            demoId: 'demo-staff'
           }
         ]
       },
@@ -460,10 +465,11 @@ const translations = {
             icon: Wine
           },
           {
-            title: 'POS App',
-            desc: 'Sync the restaurant and bar directly to the guest\'s room without friction.',
+            title: 'POS App (Point of Sale)',
+            desc: 'Synchronize restaurant and bar directly to the guest room frictionlessly.',
             icon: Utensils,
-            standalone: true
+            standalone: true,
+            demoId: 'demo-pos'
           }
         ]
       },
@@ -754,7 +760,8 @@ const translations = {
       ]
     },
     featuresTitle: "Des modules conçus pour l'avenir",
-    standaloneBadge: 'Disponible en application indépendante',
+    standaloneBadge1: 'Disponible en',
+    standaloneBadge2: 'app indépendante',
     featureCategories: [
       {
         name: 'Opérations Hôtelières',
@@ -785,10 +792,11 @@ const translations = {
             icon: Wine
           },
           {
-            title: 'Application POS',
-            desc: 'Synchronisez le restaurant et le bar directement avec la chambre du client sans friction.',
+            title: 'App POS (Point de Vente)',
+            desc: 'Synchronisez le restaurant et le bar directement avec la chambre sans friction.',
             icon: Utensils,
-            standalone: true
+            standalone: true,
+            demoId: 'demo-pos'
           }
         ]
       },
@@ -1742,8 +1750,9 @@ const VistomioLandingPage: React.FC = () => {
                 <div className="mb-8 flex items-center gap-4">
                   <h3 className="text-2xl font-bold text-white tracking-tight">{category.name}</h3>
                   {isChatbotCategory && (
-                    <div className="px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 rounded-full text-emerald-400 text-xs font-semibold uppercase tracking-wider whitespace-nowrap ml-2">
-                      {t.standaloneBadge}
+                    <div className="px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-emerald-400 text-[10px] font-semibold uppercase tracking-wider ml-2 flex flex-col items-center justify-center text-center leading-[1.2]">
+                      <span>{t.standaloneBadge1}</span>
+                      <span>{t.standaloneBadge2}</span>
                     </div>
                   )}
                   <div className="h-px bg-slate-700 flex-grow"></div>
@@ -1764,13 +1773,22 @@ const VistomioLandingPage: React.FC = () => {
                           <feature.icon size={26} strokeWidth={1.5} />
                         </div>
                         {feature.standalone && (
-                          <div className="px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 rounded-full text-emerald-400 text-xs font-semibold uppercase tracking-wider whitespace-nowrap ml-2 mt-1">
-                            {t.standaloneBadge}
+                          <div className="px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-emerald-400 text-[10px] font-semibold uppercase tracking-wider ml-2 mt-1 flex flex-col items-center justify-center text-center leading-[1.2]">
+                            <span>{t.standaloneBadge1}</span>
+                            <span>{t.standaloneBadge2}</span>
                           </div>
                         )}
                       </div>
                       <h4 className="text-xl font-bold text-white mb-3 relative z-10">{feature.title}</h4>
                       <p className="text-slate-300 text-sm leading-relaxed relative z-10 flex-grow">{feature.desc}</p>
+                      
+                      {(feature as any).demoId && (
+                        <div className="mt-6 relative z-10">
+                          <a href={`#${(feature as any).demoId}`} className="inline-flex items-center gap-2 text-sm font-semibold text-[#D4AF37] hover:text-[#f4d054] transition-colors group/btn">
+                            Ver cómo funciona <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
+                          </a>
+                        </div>
+                      )}
                     
                       </div>
                     ))}
