@@ -1244,7 +1244,7 @@ const VistomioLandingPage: React.FC = () => {
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#D4AF37] to-[#FCE69B] flex items-center justify-center shadow-[0_0_20px_rgba(212,175,55,0.4)]">
               <BoutiqueLogoIcon className="text-[#0B1121] w-6 h-6" strokeWidth={2} />
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col font-sans">
               <span className="text-2xl font-bold tracking-tight text-white leading-none">Vistomio</span>
               <span className="text-[0.65rem] font-bold tracking-widest text-[#D4AF37] mt-1 uppercase whitespace-nowrap">{t.nav.logoSubtitle}</span>
             </div>
