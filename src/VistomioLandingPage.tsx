@@ -41,7 +41,7 @@ import {
   Clock,
   Home,
   Briefcase
- , Wallet, ConciergeBell} from 'lucide-react';
+ , Wallet} from 'lucide-react';
 
 // --- Custom Icons ---
 const BoutiqueLogoIcon = ({ className = "w-6 h-6", strokeWidth = 1.5 }: { className?: string, strokeWidth?: number }) => (
