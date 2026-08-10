@@ -1469,6 +1469,78 @@ const VistomioLandingPage: React.FC = () => {
         </div>
       </section>
 
+      {/* --- CHATBOT AUTOMATION SECTION --- */}
+      <section className="py-24 bg-[#0B1121] relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-emerald-500/5 blur-[150px] rounded-[100%]"></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
+              {t.chatbotPlans.title}
+            </h2>
+            <p className="text-lg text-slate-400">
+              {t.chatbotPlans.subtitle}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Standard Plan */}
+            <div className="bg-slate-900/50 border border-indigo-500/20 rounded-3xl p-8 flex flex-col h-full hover:border-indigo-500/40 transition-colors shadow-lg hover:shadow-indigo-500/5 relative overflow-hidden">
+              <div className="w-14 h-14 rounded-2xl bg-indigo-500/10 flex items-center justify-center border border-indigo-500/20 mb-6">
+                <MessageSquareText className="text-indigo-400" size={28} />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-8">{t.chatbotPlans.plans[0].name}</h3>
+              <div className="w-full h-px bg-white/5 mb-8"></div>
+              <ul className="flex flex-col gap-5 flex-grow">
+                {t.chatbotPlans.plans[0].features.map((feature, idx) => (
+                  <li key={idx} className="flex gap-4">
+                    <div className="mt-1 min-w-[20px] text-indigo-400"><CheckCircle2 size={20} /></div>
+                    <span className="text-slate-300 leading-relaxed">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Premium Plan */}
+            <div className="bg-slate-900/50 border border-amber-500/20 rounded-3xl p-8 flex flex-col h-full hover:border-amber-500/40 transition-colors shadow-lg hover:shadow-amber-500/5 relative overflow-hidden">
+              <div className="w-14 h-14 rounded-2xl bg-amber-500/10 flex items-center justify-center border border-amber-500/20 mb-6">
+                <Zap className="text-amber-400" size={28} />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-8">{t.chatbotPlans.plans[1].name}</h3>
+              <div className="w-full h-px bg-white/5 mb-8"></div>
+              <ul className="flex flex-col gap-5 flex-grow">
+                {t.chatbotPlans.plans[1].features.map((feature, idx) => (
+                  <li key={idx} className="flex gap-4">
+                    <div className="mt-1 min-w-[20px] text-amber-400"><CheckCircle2 size={20} /></div>
+                    <span className="text-slate-300 leading-relaxed">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Autonomous Plan */}
+            <div className="bg-slate-900/50 border border-emerald-500/20 rounded-3xl p-8 flex flex-col h-full hover:border-emerald-500/40 transition-colors shadow-lg hover:shadow-emerald-500/5 relative overflow-hidden">
+              <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20 mb-6">
+                <Bot className="text-emerald-400" size={28} />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-8">{t.chatbotPlans.plans[2].name}</h3>
+              <div className="w-full h-px bg-white/5 mb-8"></div>
+              <ul className="flex flex-col gap-5 flex-grow">
+                {t.chatbotPlans.plans[2].features.map((feature, idx) => (
+                  <li key={idx} className="flex gap-4">
+                    <div className="mt-1 min-w-[20px] text-emerald-400"><CheckCircle2 size={20} /></div>
+                    <span className="text-slate-300 leading-relaxed">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       {/* --- BENEFITS --- */}
       <section className="py-32 bg-slate-900 relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-[400px] bg-[#D4AF37]/10 blur-[120px] rounded-full pointer-events-none"></div>
@@ -1550,78 +1622,6 @@ const VistomioLandingPage: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* --- CHATBOT AUTOMATION SECTION --- */}
-      <section className="py-24 bg-[#0B1121] relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-emerald-500/5 blur-[150px] rounded-[100%]"></div>
-        </div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
-              {t.chatbotPlans.title}
-            </h2>
-            <p className="text-lg text-slate-400">
-              {t.chatbotPlans.subtitle}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Standard Plan */}
-            <div className="bg-slate-900/50 border border-indigo-500/20 rounded-3xl p-8 flex flex-col h-full hover:border-indigo-500/40 transition-colors shadow-lg hover:shadow-indigo-500/5 relative overflow-hidden">
-              <div className="w-14 h-14 rounded-2xl bg-indigo-500/10 flex items-center justify-center border border-indigo-500/20 mb-6">
-                <MessageSquareText className="text-indigo-400" size={28} />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-8">{t.chatbotPlans.plans[0].name}</h3>
-              <div className="w-full h-px bg-white/5 mb-8"></div>
-              <ul className="flex flex-col gap-5 flex-grow">
-                {t.chatbotPlans.plans[0].features.map((feature, idx) => (
-                  <li key={idx} className="flex gap-4">
-                    <div className="mt-1 min-w-[20px] text-indigo-400"><CheckCircle2 size={20} /></div>
-                    <span className="text-slate-300 leading-relaxed">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Premium Plan */}
-            <div className="bg-slate-900/50 border border-amber-500/20 rounded-3xl p-8 flex flex-col h-full hover:border-amber-500/40 transition-colors shadow-lg hover:shadow-amber-500/5 relative overflow-hidden">
-              <div className="w-14 h-14 rounded-2xl bg-amber-500/10 flex items-center justify-center border border-amber-500/20 mb-6">
-                <Zap className="text-amber-400" size={28} />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-8">{t.chatbotPlans.plans[1].name}</h3>
-              <div className="w-full h-px bg-white/5 mb-8"></div>
-              <ul className="flex flex-col gap-5 flex-grow">
-                {t.chatbotPlans.plans[1].features.map((feature, idx) => (
-                  <li key={idx} className="flex gap-4">
-                    <div className="mt-1 min-w-[20px] text-amber-400"><CheckCircle2 size={20} /></div>
-                    <span className="text-slate-300 leading-relaxed">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Autonomous Plan */}
-            <div className="bg-slate-900/50 border border-emerald-500/20 rounded-3xl p-8 flex flex-col h-full hover:border-emerald-500/40 transition-colors shadow-lg hover:shadow-emerald-500/5 relative overflow-hidden">
-              <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20 mb-6">
-                <Bot className="text-emerald-400" size={28} />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-8">{t.chatbotPlans.plans[2].name}</h3>
-              <div className="w-full h-px bg-white/5 mb-8"></div>
-              <ul className="flex flex-col gap-5 flex-grow">
-                {t.chatbotPlans.plans[2].features.map((feature, idx) => (
-                  <li key={idx} className="flex gap-4">
-                    <div className="mt-1 min-w-[20px] text-emerald-400"><CheckCircle2 size={20} /></div>
-                    <span className="text-slate-300 leading-relaxed">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
 
       {/* --- CTA FINAL --- */}
       <section className="py-24 relative overflow-hidden">
