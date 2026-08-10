@@ -193,9 +193,14 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
     setMessages(t.scripts[tone] as Message[]);
   }, [tone, currentLanguage]);
 
-  // Scroll to bottom on new message
+  // Scroll to bottom without scrolling the whole page
   useEffect(() => {
-    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (chatEndRef.current) {
+      const parent = chatEndRef.current.parentElement;
+      if (parent) {
+        parent.scrollTop = parent.scrollHeight;
+      }
+    }
   }, [messages]);
 
   const channelIcon = <MessageCircle size={20} className="text-white" />;
