@@ -205,7 +205,7 @@ const translations = {
         ]
       }
     ],
-    benefitsTitle: 'Eleva la experiencia de cada estancia',
+    benefitsTitle: 'Optimizar tu gestión es más fácil que nunca',
     benefits: [
       {
         title: 'Paga lo que usas',
@@ -562,7 +562,7 @@ const translations = {
         ]
       }
     ],
-    benefitsTitle: 'Elevate every guest experience',
+    benefitsTitle: 'Optimizing your management is easier than ever',
     benefits: [
       {
         title: 'Pay for what you use',
@@ -916,7 +916,7 @@ const translations = {
         ]
       }
     ],
-    benefitsTitle: 'Élevez chaque expérience client',
+    benefitsTitle: 'Optimiser votre gestion est plus facile que jamais',
     benefits: [
       {
         title: 'Payez ce que vous utilisez',
