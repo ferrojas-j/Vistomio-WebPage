@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { 
   Sparkles, Users, AlertTriangle, 
   CheckSquare, X, Box, Plus, 
-  Info, ShieldAlert
+  Info, ShieldAlert, DollarSign
 } from 'lucide-react';
 
 type Language = 'es' | 'en' | 'fr';
@@ -70,7 +70,15 @@ const translations = {
         { title: 'Taxis Huésped H5', time: 'Hoy, 14:30', amount: '-$450', isPositive: false },
         { title: 'Compra Papelería', time: 'Hoy, 11:15', amount: '-$1,200', isPositive: false },
         { title: 'Fondo Inicial', time: 'Ayer, 08:00', amount: '+$5,000', isPositive: true }
-      ]
+      ],
+      registerExpense: 'Registrar Gasto',
+      amount: 'MONTO',
+      amountPlaceholder: 'Ej: 500',
+      type: 'TIPO',
+      expenseType: 'Gasto (Egreso)',
+      desc: 'DESCRIPCIÓN Y MOTIVO',
+      descPlaceholder: 'Ej: Compra de café para huéspedes',
+      registerBtn: 'Registrar en Caja Chica'
     },
     mantenimiento: {
       advance: 'Avance Bitácora',
@@ -152,7 +160,15 @@ const translations = {
         { title: 'Taxis Guest Room 5', time: 'Today, 14:30', amount: '-$450', isPositive: false },
         { title: 'Office Supplies', time: 'Today, 11:15', amount: '-$1,200', isPositive: false },
         { title: 'Initial Fund', time: 'Yesterday, 08:00', amount: '+$5,000', isPositive: true }
-      ]
+      ],
+      registerExpense: 'Register Expense',
+      amount: 'AMOUNT',
+      amountPlaceholder: 'Ex: 500',
+      type: 'TYPE',
+      expenseType: 'Expense',
+      desc: 'DESCRIPTION AND REASON',
+      descPlaceholder: 'Ex: Coffee purchase for guests',
+      registerBtn: 'Register in Petty Cash'
     },
     mantenimiento: {
       advance: 'Update Log',
@@ -234,7 +250,15 @@ const translations = {
         { title: 'Taxis Client Ch. 5', time: 'Auj, 14h30', amount: '-$450', isPositive: false },
         { title: 'Fournitures de bureau', time: 'Auj, 11h15', amount: '-$1,200', isPositive: false },
         { title: 'Fonds Initial', time: 'Hier, 08h00', amount: '+$5,000', isPositive: true }
-      ]
+      ],
+      registerExpense: 'Enregistrer Dépense',
+      amount: 'MONTANT',
+      amountPlaceholder: 'Ex: 500',
+      type: 'TYPE',
+      expenseType: 'Dépense',
+      desc: 'DESCRIPTION ET MOTIF',
+      descPlaceholder: 'Ex: Achat de café pour clients',
+      registerBtn: 'Enregistrer en Petite Caisse'
     },
     mantenimiento: {
       advance: 'Mettre à jour',
@@ -317,36 +341,10 @@ const LimpiezaView = ({ t, onOpenChecklist }: { t: any, onOpenChecklist: () => v
          </div>
        </div>
     </div>
-    
-    <div className="bg-white rounded-2xl border border-slate-100 shadow-sm mt-2 overflow-hidden flex flex-col">
-       <div className="p-5 flex justify-between items-center border-b border-slate-50">
-         <div>
-           <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">{t.recepcion.pettyCash}</h4>
-           <p className="text-3xl font-black text-slate-800">$15,450</p>
-         </div>
-         <button className="w-10 h-10 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center transition-transform active:scale-95">
-           <Plus size={20} strokeWidth={2.5}/>
-         </button>
-       </div>
-       <div className="bg-slate-50/50 p-4 border-b border-slate-50">
-          <h4 className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.recepcion.recentExpenses}</h4>
-       </div>
-       <div className="flex flex-col p-4 gap-4">
-         {t.recepcion.expenses.map((expense: any, i: number) => (
-           <div key={i} className="flex justify-between items-center">
-             <div className="flex flex-col">
-               <span className="font-bold text-sm text-slate-700">{expense.title}</span>
-               <span className="text-[10px] text-slate-400">{expense.time}</span>
-             </div>
-             <span className={`font-bold text-sm ${expense.isPositive ? 'text-emerald-500' : 'text-slate-600'}`}>{expense.amount}</span>
-           </div>
-         ))}
-       </div>
-    </div>
   </div>
 );
 
-const RecepcionView = ({ t }: { t: any }) => (
+const RecepcionView = ({ t, onOpenExpense }: { t: any, onOpenExpense: () => void }) => (
   <div className="flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
     <button className="w-full bg-indigo-600 text-white rounded-2xl p-4 shadow-md shadow-indigo-600/20 flex items-center justify-center gap-2 font-bold text-sm transition-transform active:scale-95 cursor-default">
       <Plus size={18} /> {t.recepcion.newNovelty}
@@ -375,6 +373,32 @@ const RecepcionView = ({ t }: { t: any }) => (
              <p className="text-xs text-slate-400">{t.recepcion.log4.time}</p>
            </div>
          </div>
+       </div>
+    </div>
+    
+    <div className="bg-white rounded-2xl border border-slate-100 shadow-sm mt-2 overflow-hidden flex flex-col">
+       <div className="p-5 flex justify-between items-center border-b border-slate-50">
+         <div>
+           <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">{t.recepcion.pettyCash}</h4>
+           <p className="text-3xl font-black text-slate-800">$15,450</p>
+         </div>
+         <button onClick={onOpenExpense} className="w-10 h-10 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center transition-transform active:scale-95 cursor-pointer hover:bg-emerald-100">
+           <Plus size={20} strokeWidth={2.5}/>
+         </button>
+       </div>
+       <div className="bg-slate-50/50 p-4 border-b border-slate-50">
+          <h4 className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.recepcion.recentExpenses}</h4>
+       </div>
+       <div className="flex flex-col p-4 gap-4">
+         {t.recepcion.expenses.map((expense: any, i: number) => (
+           <div key={i} className="flex justify-between items-center">
+             <div className="flex flex-col">
+               <span className="font-bold text-sm text-slate-700">{expense.title}</span>
+               <span className="text-[10px] text-slate-400">{expense.time}</span>
+             </div>
+             <span className={`font-bold text-sm ${expense.isPositive ? 'text-emerald-500' : 'text-slate-600'}`}>{expense.amount}</span>
+           </div>
+         ))}
        </div>
     </div>
   </div>
@@ -417,6 +441,7 @@ const MantenimientoView = ({ t }: { t: any }) => (
 export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulatorProps) {
   const [activeTab, setActiveTab] = useState<Tab>('limpieza');
   const [isChecklistOpen, setIsChecklistOpen] = useState(false);
+  const [isExpenseModalOpen, setIsExpenseModalOpen] = useState(false);
   const t = translations[currentLanguage];
   
   return (
@@ -458,7 +483,7 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
         {/* Content Area */}
         <div className="flex-1 overflow-y-auto bg-slate-50 p-4 pb-24 custom-scrollbar">
           {activeTab === 'limpieza' && <LimpiezaView t={t} onOpenChecklist={() => setIsChecklistOpen(true)} />}
-          {activeTab === 'recepcion' && <RecepcionView t={t} />}
+          {activeTab === 'recepcion' && <RecepcionView t={t} onOpenExpense={() => setIsExpenseModalOpen(true)} />}
           {activeTab === 'mantenimiento' && <MantenimientoView t={t} />}
         </div>
         
@@ -480,6 +505,42 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
                   <span className="text-sm text-slate-600 font-medium leading-snug">{item}</span>
                 </label>
               ))}
+            </div>
+          </div>
+        </div>
+        
+        {/* Expense Modal */}
+        <div className={`absolute inset-0 bg-slate-900/40 backdrop-blur-[2px] z-30 transition-opacity duration-300 ${isExpenseModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsExpenseModalOpen(false)}>
+          <div className={`absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl transition-transform duration-300 ease-out p-6 shadow-2xl flex flex-col ${isExpenseModalOpen ? 'translate-y-0' : 'translate-y-full'}`} onClick={e => e.stopPropagation()}>
+            <div className="flex justify-between items-center mb-5 pb-4 border-b border-slate-50 shrink-0">
+              <h3 className="font-bold text-emerald-700 text-lg flex items-center gap-2"><DollarSign size={20}/> {t.recepcion.registerExpense}</h3>
+              <button onClick={() => setIsExpenseModalOpen(false)} className="text-slate-400 hover:text-slate-600 transition-colors p-1">
+                <X size={20} />
+              </button>
+            </div>
+            
+            <div className="flex flex-col gap-5 pb-2">
+              <div className="flex gap-4">
+                <div className="flex flex-col gap-2 flex-1">
+                  <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.recepcion.amount}</label>
+                  <input type="text" placeholder={t.recepcion.amountPlaceholder} className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-bold text-slate-700 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500" readOnly />
+                </div>
+                <div className="flex flex-col gap-2 flex-1">
+                  <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.recepcion.type}</label>
+                  <select className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium text-slate-700 focus:outline-none focus:border-emerald-500 appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%208l5%205%205-5%22%20fill%3D%22none%22%20stroke%3D%22%2364748b%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[position:right_10px_center]">
+                    <option>{t.recepcion.expenseType}</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div className="flex flex-col gap-2">
+                <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.recepcion.desc}</label>
+                <input type="text" placeholder={t.recepcion.descPlaceholder} className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-600 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500" readOnly />
+              </div>
+              
+              <button onClick={() => setIsExpenseModalOpen(false)} className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3.5 rounded-xl transition-colors mt-2 active:scale-[0.98]">
+                {t.recepcion.registerBtn}
+              </button>
             </div>
           </div>
         </div>
