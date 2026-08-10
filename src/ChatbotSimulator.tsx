@@ -224,7 +224,7 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
           </div>
 
           {/* Chat Area */}
-          <div className="flex-grow overflow-y-auto p-4 space-y-4 relative custom-scrollbar bg-[#E5DDD5] bg-opacity-90 bg-[url('https://i.imgur.com/3fM6U3Y.png')] bg-repeat" style={{ backgroundSize: '400px' }}>
+          <div className="flex-grow overflow-y-auto p-4 space-y-4 relative custom-scrollbar bg-[#E5DDD5]">
             {messages.map((msg) => (
               <div key={msg.id} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'} animate-[fade-in_0.3s_ease-out]`}>
                 <div className={`max-w-[85%] rounded-2xl px-4 py-2 text-[14px] shadow-sm relative ${
