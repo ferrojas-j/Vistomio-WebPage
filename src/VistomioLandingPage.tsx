@@ -106,7 +106,7 @@ const translations = {
         },
         {
           title: 'Fusión Hotel & Restaurante',
-          desc: 'El POS del restaurante habla directamente con la cuenta de la habitación. Cero errores.',
+          desc: 'El POS del restaurante habla directamente con los sistemas del hotel. Comunicación fluida, cero errores.',
           icon: Wine
         },
         {
@@ -462,7 +462,7 @@ const translations = {
         },
         {
           title: 'Hotel & Restaurant Fusion',
-          desc: 'The restaurant POS talks directly to the room folio. Zero mistakes.',
+          desc: 'The restaurant POS talks directly with the hotel systems. Seamless communication, zero mistakes.',
           icon: Wine
         },
         {
@@ -818,7 +818,7 @@ const translations = {
         },
         {
           title: 'Fusion Hôtel & Restaurant',
-          desc: 'Le POS du restaurant communique directement avec la note de la chambre. Zéro erreur.',
+          desc: 'Le POS du restaurant communique directement avec les systèmes de l\'hôtel. Communication fluide, zéro erreur.',
           icon: Wine
         },
         {
