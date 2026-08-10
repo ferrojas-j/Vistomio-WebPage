@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Send, Bot, MessageCircle, Globe, Camera } from 'lucide-react';
+import { Send, Bot, MessageCircle, Globe, Camera, Check } from 'lucide-react';
 
 type Tone = 'friendly' | 'formal' | 'casual' | 'sales';
 
@@ -287,18 +287,24 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
           <div className="h-10 px-4 rounded-xl bg-slate-800/80 flex items-center gap-2 border border-slate-700/50 shadow-sm cursor-default">
             <MessageCircle size={18} className="text-emerald-400" />
             <span className="text-sm font-medium text-slate-300">WhatsApp</span>
+            <Check size={14} className="text-emerald-500/70 ml-1" />
           </div>
           <div className="h-10 px-4 rounded-xl bg-slate-800/80 flex items-center gap-2 border border-slate-700/50 shadow-sm cursor-default">
             <Camera size={18} className="text-pink-400" />
             <span className="text-sm font-medium text-slate-300">Instagram</span>
+            <Check size={14} className="text-emerald-500/70 ml-1" />
           </div>
           <div className="h-10 px-4 rounded-xl bg-slate-800/80 flex items-center gap-2 border border-slate-700/50 shadow-sm cursor-default">
             <MessageCircle size={18} className="text-blue-400" />
             <span className="text-sm font-medium text-slate-300">Messenger</span>
+            <Check size={14} className="text-emerald-500/70 ml-1" />
           </div>
           <div className="h-10 px-4 rounded-xl bg-slate-800/80 flex items-center gap-2 border border-slate-700/50 shadow-sm cursor-default">
             <Globe size={18} className="text-[#D4AF37]" />
-            <span className="text-sm font-medium text-slate-300">Web</span>
+            <span className="text-sm font-medium text-slate-300">
+              {currentLanguage === 'es' ? 'Tu página web' : currentLanguage === 'en' ? 'Your website' : 'Votre site web'}
+            </span>
+            <Check size={14} className="text-emerald-500/70 ml-1" />
           </div>
         </div>
 
