@@ -1432,7 +1432,7 @@ const VistomioLandingPage: React.FC = () => {
                 {t.hero.titleHighlight.slice(1)}
               </span>
               <ConciergeBell 
-                className="absolute -top-1 -right-6 w-6 h-6 sm:w-9 sm:h-9 sm:-top-3 sm:-right-10 text-[#FCE69B] transform rotate-12 drop-shadow-[0_0_8px_rgba(252,230,155,0.6)]" 
+                className="absolute top-1 -right-8 w-7 h-7 sm:w-11 sm:h-11 sm:top-4 sm:-right-14 text-[#FCE69B] transform rotate-12 drop-shadow-[0_0_4px_rgba(252,230,155,0.3)]" 
                 strokeWidth={2.5} 
               />
             </span>
