@@ -341,6 +341,14 @@ const translations = {
         wines: 'Vinos'
       }
     },
+    contactModal: {
+      options: { title: 'Conecta con Nosotros', desc: 'Agenda una entrevista o contáctanos directamente para descubrir cómo podemos elevar tu negocio.', bookBtn: 'Agendar Entrevista Gratuita', orContact: 'O contáctanos vía' },
+      email: { title: 'Enviar Mensaje', desc: 'Te responderemos a la brevedad.', toLabel: 'Para', emailLabel: 'Tu Email', emailPlaceholder: 'ejemplo@hotel.com', messageLabel: 'Mensaje', messagePlaceholder: '¿En qué te podemos ayudar?', sendBtn: 'Enviar Correo', success: 'Mensaje enviado exitosamente.' },
+      calendar: { title: 'Agenda tu Demo', desc: 'Selecciona una fecha y hora disponible.', daysLabel: 'Días Disponibles', timesLabel: 'Horarios', days: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'], successAlert: 'Reunión agendada para {day} a las {time} exitosamente. Pronto recibirás un correo con la liga.' }
+    },
+    customPlanModal: {
+      title: 'Cotiza tu Plan', desc: 'Déjanos tus datos para enviarte una propuesta a la medida.', selectedModules: 'Módulos Seleccionados', emailLabel: 'Tu Email *', emailPlaceholder: 'ejemplo@hotel.com', phoneLabel: 'Número de Contacto *', phonePlaceholder: '+1 234 567 890', companyLabel: 'Empresa (Opcional)', companyPlaceholder: 'Nombre de tu hotel o restaurante', messageLabel: 'Mensaje Adicional', messagePlaceholder: 'Cuéntanos un poco más sobre lo que necesitas...', sendBtn: 'Solicitar cotización', successAlert: 'Se abrirá tu cliente de correo con los datos de tu cotización listos para enviar.', emailSubject: 'Solicitud de Cotización a Medida - Vistomio', emailBodyTemplate: 'Correo: {email}\\nTeléfono: {phone}\\nEmpresa: {company}\\n\\nMódulos Seleccionados:\\n- {modules}\\n\\nMensaje:\\n{message}'
+    },
     pricing: {
       title: 'Paga solo lo que necesitas',
       subtitle: 'Explora nuestros paquetes pre-diseñados o arma tu propia solución a medida.',
@@ -594,41 +602,40 @@ const translations = {
       }
     },
     chatbotPlans: {
-        badge: 'Standalone Product',
-        title: 'Multichannel AI Chatbot',
-        subtitle: 'Integrate our intelligent agent into your website or channels. Available as a standalone product or bundled with Vistomio packages.',
+      badge: 'Standalone Product',
+      title: 'Multichannel AI Chatbot',
+      subtitle: 'Integrate our intelligent agent into your website or channels. Available as a standalone product or bundled with Vistomio packages.',
       talkBtn: 'Let\'s Talk',
-        plans: [
-          {
-            name: 'Level 1: Automated Responses',
-            features: [
-              'Multi-channel connection',
-              'FAQ responses only',
-              'Sending links, etc.',
-              'Can only reply (no proactive messages)'
-            ]
-          },
-          {
-            name: 'Level 2: Proactive Sales',
-            features: [
-              'Standard features + proactive conversation initiation',
-              'Automated marketing campaigns',
-              'Special offers',
-              'Pre-arrival check-in cards, welcomes, etc.'
-            ]
-          },
-          {
-            name: 'Level 3: Full Autonomy',
-            features: [
-              'All the above + proactive sales agent',
-              'Synchronization with Booking Engine to execute reservations',
-              'Change dates',
-              'Extend stays, etc.'
-            ]
-          }
-        ]
-      },
-      
+      plans: [
+        {
+          name: 'Level 1: Automated Responses',
+          features: [
+            'Multi-channel connection',
+            'FAQ responses only',
+            'Sending links, etc.',
+            'Can only reply (no proactive messages)'
+          ]
+        },
+        {
+          name: 'Level 2: Proactive Sales',
+          features: [
+            'Standard features + proactive conversation initiation',
+            'Automated marketing campaigns',
+            'Special offers',
+            'Pre-arrival check-in cards, welcomes, etc.'
+          ]
+        },
+        {
+          name: 'Level 3: Full Autonomy',
+          features: [
+            'All the above + proactive sales agent',
+            'Synchronization with Booking Engine to execute reservations',
+            'Change dates',
+            'Extend stays, etc.'
+          ]
+        }
+      ]
+    },
     posDemo: {
       sectionTitle: 'Discover POS Vistomio for signature restaurants and bars',
       sectionDesc: 'Experience total control from the palm of your hand. Navigate our interactive Point of Sale simulator.',
@@ -681,6 +688,14 @@ const translations = {
         wines: 'Wines'
       },
       closeShiftModal: { title: 'Cash Register Close', subtitle: 'Current shift summary', income: 'DAILY INCOME', cc: 'Credit Card', transfer: 'Transfer', cash: 'Cash', totalIncome: 'Total Income', expenses: 'DAILY EXPENSES', pettyCash: 'Petty Cash', providers: 'Providers', totalExpenses: 'Total Expenses', balance: 'Final Balance', tips: 'Daily Tips', share: 'Share', print: 'Print', confirm: 'Confirm Close', cancel: 'Cancel' }
+    },
+    contactModal: {
+      options: { title: 'Connect with Us', desc: 'Schedule an interview or contact us directly to discover how we can elevate your business.', bookBtn: 'Schedule Free Interview', orContact: 'Or contact us via' },
+      email: { title: 'Send Message', desc: 'We will reply shortly.', toLabel: 'To', emailLabel: 'Your Email', emailPlaceholder: 'example@hotel.com', messageLabel: 'Message', messagePlaceholder: 'How can we help you?', sendBtn: 'Send Email', success: 'Message sent successfully.' },
+      calendar: { title: 'Schedule your Demo', desc: 'Select an available date and time.', daysLabel: 'Available Days', timesLabel: 'Times', days: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'], successAlert: 'Meeting scheduled for {day} at {time} successfully. You will receive an email with the link shortly.' }
+    },
+    customPlanModal: {
+      title: 'Quote your Plan', desc: 'Leave us your details to send you a customized proposal.', selectedModules: 'Selected Modules', emailLabel: 'Your Email *', emailPlaceholder: 'example@hotel.com', phoneLabel: 'Contact Number *', phonePlaceholder: '+1 234 567 890', companyLabel: 'Company (Optional)', companyPlaceholder: 'Name of your hotel or restaurant', messageLabel: 'Additional Message', messagePlaceholder: 'Tell us a bit more about what you need...', sendBtn: 'Request quote', successAlert: 'Your email client will open with the quote details ready to send.', emailSubject: 'Custom Quote Request - Vistomio', emailBodyTemplate: 'Email: {email}\\nPhone: {phone}\\nCompany: {company}\\n\\nSelected Modules:\\n- {modules}\\n\\nMessage:\\n{message}'
     },
     pricing: {
       title: 'Pay only for what you need',
@@ -933,41 +948,40 @@ const translations = {
       }
     },
     chatbotPlans: {
-        badge: 'Produit Indépendant',
-        title: 'Propulsez votre hôtel avec notre Chatbot IA',
-        subtitle: 'Intégrez notre agent intelligent sur votre site ou vos canaux. Disponible séparément ou inclus dans les forfaits Vistomio.',
-        talkBtn: 'Parlons-en',
-        plans: [
-          {
-            name: 'Niveau 1: Réponses Automatisées',
-            features: [
-              'Connexion multicanale',
-              'Réponses aux FAQ uniquement',
-              'Envoi de liens, etc.',
-              'Ne peut que répondre (pas de messages proactifs)'
-            ]
-          },
-          {
-            name: 'Niveau 2: Ventes Proactives',
-            features: [
-              'Tout le standard + initiation proactive de conversations',
-              'Campagnes marketing automatisées',
-              'Offres spéciales',
-              'Fiches de check-in anticipées, bienvenues, etc.'
-            ]
-          },
-          {
-            name: 'Niveau 3: Autonomie Totale',
-            features: [
-              'Tout ce qui précède + agent de vente proactif',
-              'Synchronisation avec le moteur de réservation',
-              'Modifier les dates',
-              'Prolonger les séjours, etc.'
-            ]
-          }
-        ]
-      },
-      
+      badge: 'Produit Indépendant',
+      title: 'Propulsez votre hôtel avec notre Chatbot IA',
+      subtitle: 'Intégrez notre agent intelligent sur votre site ou vos canaux. Disponible séparément ou inclus dans les forfaits Vistomio.',
+      talkBtn: 'Parlons-en',
+      plans: [
+        {
+          name: 'Niveau 1: Réponses Automatisées',
+          features: [
+            'Connexion multicanale',
+            'Réponses aux FAQ uniquement',
+            'Envoi de liens, etc.',
+            'Ne peut que répondre (pas de messages proactifs)'
+          ]
+        },
+        {
+          name: 'Niveau 2: Ventes Proactives',
+          features: [
+            'Tout le standard + initiation proactive de conversations',
+            'Campagnes marketing automatisées',
+            'Offres spéciales',
+            'Fiches de check-in anticipées, bienvenues, etc.'
+          ]
+        },
+        {
+          name: 'Niveau 3: Autonomie Totale',
+          features: [
+            'Tout ce qui précède + agent de vente proactif',
+            'Synchronisation avec le moteur de réservation',
+            'Modifier les dates',
+            'Prolonger les séjours, etc.'
+          ]
+        }
+      ]
+    },
     posDemo: {
       sectionTitle: "Découvrez POS Vistomio pour les restaurants et bars d'auteur",
       sectionDesc: 'Faites l\'expérience d\'un contrôle total depuis la paume de votre main. Naviguez sur notre simulateur de Point de Venta.',
@@ -996,7 +1010,7 @@ const translations = {
         categories: { meats: 'Viandes', wines: 'Vins', salads: 'Salades', sides: 'Accompagn.' },
         items: {
           ribeye: { name: 'Ribeye Prime (400g)', price: 850 },
-          picana: { name: 'Picanha (300g)', price: 650 },
+          picana: { name: 'Picaña (300g)', price: 650 },
           malbec: { name: 'Malbec Reserva 2020', price: 950 },
           chardonnay: { name: 'Chardonnay', price: 780 }
         }
@@ -1021,10 +1035,16 @@ const translations = {
       },
       closeShiftModal: { title: 'Fermeture de Caisse', subtitle: 'Résumé du service actuel', income: 'REVENUS DU JOUR', cc: 'Carte de crédit', transfer: 'Virement', cash: 'Espèces', totalIncome: 'Revenus Totaux', expenses: 'DÉPENSES DU JOUR', pettyCash: 'Petite Caisse', providers: 'Fournisseurs', totalExpenses: 'Dépenses Totales', balance: 'Solde Final', tips: 'Pourboires du jour', share: 'Partager', print: 'Imprimer', confirm: 'Confirmer la Fermeture', cancel: 'Annuler' }
     },
+    contactModal: {
+      options: { title: 'Connectez-vous avec nous', desc: 'Planifiez un entretien ou contactez-nous directement pour découvrir comment nous pouvons élever votre entreprise.', bookBtn: 'Planifier un Entretien Gratuit', orContact: 'Ou contactez-nous via' },
+      email: { title: 'Envoyer un Message', desc: 'Nous vous répondrons sous peu.', toLabel: 'À', emailLabel: 'Votre Email', emailPlaceholder: 'exemple@hotel.com', messageLabel: 'Message', messagePlaceholder: 'Comment pouvons-nous vous aider ?', sendBtn: 'Envoyer', success: 'Message envoyé avec succès.' },
+      calendar: { title: 'Planifiez votre Démo', desc: 'Sélectionnez une date et une heure disponibles.', daysLabel: 'Jours Disponibles', timesLabel: 'Horaires', days: ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'], successAlert: 'Réunion prévue pour {day} à {time} avec succès. Vous recevrez un e-mail avec le lien sous peu.' }
+    },
+    customPlanModal: {
+      title: 'Demandez un Devis', desc: 'Laissez-nous vos coordonnées pour recevoir une proposition sur mesure.', selectedModules: 'Modules Sélectionnés', emailLabel: 'Votre Email *', emailPlaceholder: 'exemple@hotel.com', phoneLabel: 'Numéro de Contact *', phonePlaceholder: '+1 234 567 890', companyLabel: 'Entreprise (Optionnel)', companyPlaceholder: 'Nom de votre hôtel ou restaurant', messageLabel: 'Message Supplémentaire', messagePlaceholder: 'Dites-nous en plus sur vos besoins...', sendBtn: 'Demander un devis', successAlert: 'Votre client de messagerie va s\'ouvrir avec les détails du devis prêts à être envoyés.', emailSubject: 'Demande de Devis sur Mesure - Vistomio', emailBodyTemplate: 'Email: {email}\\nTéléphone: {phone}\\nEntreprise: {company}\\n\\nModules Sélectionnés:\\n- {modules}\\n\\nMessage:\\n{message}'
+    },
     pricing: {
       title: 'Payez seulement ce dont vous avez besoin',
-        subtitle: 'Explorez nos forfaits pré-conçus ou créez votre propre solution sur mesure.',
-        buildOwnPackage: 'Créez votre propre forfait',
         customModalTitle: 'Créez votre solution Vistomio',
         customModalSubtitle: 'Sélectionnez les modules dont vous avez besoin et nous créerons un plan sur mesure.',
         selectedModules: 'Modules Sélectionnés',
@@ -2264,14 +2284,14 @@ const VistomioLandingPage: React.FC = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-[#D4AF37] to-[#FCE69B] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-amber-900/30">
                     <Calendar size={32} className="text-white" />
                   </div>
-                  <h3 className="text-3xl font-bold text-white mb-3">Conecta con Nosotros</h3>
-                  <p className="text-slate-400">Agenda una entrevista o contáctanos directamente para descubrir cómo podemos elevar tu negocio.</p>
+                  <h3 className="text-3xl font-bold text-white mb-3">{t.contactModal.options.title}</h3>
+                  <p className="text-slate-400">{t.contactModal.options.desc}</p>
                 </div>
 
                 <div className="space-y-4">
                   <button onClick={() => setContactModalView('calendar')} className="w-full bg-white text-[#0B1121] font-bold text-lg py-5 rounded-2xl flex items-center justify-center gap-3 hover:bg-slate-100 transition-colors shadow-xl">
                     <Calendar size={24} />
-                    Agendar Entrevista Gratuita
+                    {t.contactModal.options.bookBtn}
                   </button>
 
                   <div className="relative py-4">
@@ -2279,7 +2299,7 @@ const VistomioLandingPage: React.FC = () => {
                       <div className="w-full border-t border-slate-800"></div>
                     </div>
                     <div className="relative flex justify-center">
-                      <span className="px-4 bg-slate-900 text-sm text-slate-500 font-medium">O contáctanos vía</span>
+                      <span className="px-4 bg-slate-900 text-sm text-slate-500 font-medium">{t.contactModal.options.orContact}</span>
                     </div>
                   </div>
 
@@ -2323,8 +2343,8 @@ const VistomioLandingPage: React.FC = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-emerald-900/30">
                     <CheckCircle2 size={32} className="text-white" />
                   </div>
-                  <h3 className="text-3xl font-bold text-white mb-2">Cotiza tu Plan</h3>
-                  <p className="text-slate-400 text-sm">Déjanos tus datos para enviarte una propuesta a la medida.</p>
+                  <h3 className="text-3xl font-bold text-white mb-2">{t.customPlanModal.title}</h3>
+                  <p className="text-slate-400 text-sm">{t.customPlanModal.desc}</p>
                 </div>
 
                 <form className="space-y-4" onSubmit={(e) => { 
@@ -2335,19 +2355,24 @@ const VistomioLandingPage: React.FC = () => {
                   const company = formData.get('company');
                   const message = formData.get('message');
                   
-                  const subject = "Solicitud de Cotización a Medida - Vistomio";
-                  const body = `Correo: ${email}\nTeléfono: ${phone}\nEmpresa: ${company || 'No especificada'}\n\nMódulos Seleccionados:\n- ${selectedCustomModules.join('\n- ')}\n\nMensaje:\n${message}`;
+                  const subject = t.customPlanModal.emailSubject;
+                  const body = t.customPlanModal.emailBodyTemplate
+                    .replace('{email}', email as string)
+                    .replace('{phone}', phone as string)
+                    .replace('{company}', (company as string) || 'No especificada')
+                    .replace('{modules}', selectedCustomModules.join('\\n- '))
+                    .replace('{message}', message as string);
                   
                   window.location.href = `mailto:info@vistomio.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
                   
-                  alert("Se abrirá tu cliente de correo con los datos de tu cotización listos para enviar."); 
+                  alert(t.customPlanModal.successAlert); 
                   setIsContactModalOpen(false); 
                   setContactModalView('options'); 
                 }}>
                   
                   {selectedCustomModules.length > 0 && (
                     <div className="bg-slate-900/50 border border-slate-800 p-4 rounded-xl mb-4">
-                      <label className="block text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-2">Módulos Seleccionados</label>
+                      <label className="block text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-2">{t.customPlanModal.selectedModules}</label>
                       <ul className="text-slate-300 text-sm list-disc pl-4">
                         {selectedCustomModules.map((mod, i) => (
                           <li key={i}>{mod}</li>
@@ -2358,50 +2383,50 @@ const VistomioLandingPage: React.FC = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Tu Email *</label>
+                      <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">{t.customPlanModal.emailLabel}</label>
                       <input 
                         type="email" 
                         name="email"
                         required 
-                        placeholder="ejemplo@hotel.com"
+                        placeholder={t.customPlanModal.emailPlaceholder}
                         className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Número de Contacto *</label>
+                      <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">{t.customPlanModal.phoneLabel}</label>
                       <input 
                         type="tel" 
                         name="phone"
                         required 
-                        placeholder="+1 234 567 890"
+                        placeholder={t.customPlanModal.phonePlaceholder}
                         className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all"
                       />
                     </div>
                   </div>
                   
                   <div>
-                    <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Empresa (Opcional)</label>
+                    <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">{t.customPlanModal.companyLabel}</label>
                     <input 
                       type="text" 
                       name="company"
-                      placeholder="Nombre de tu hotel o restaurante"
+                      placeholder={t.customPlanModal.companyPlaceholder}
                       className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Mensaje Adicional</label>
+                    <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">{t.customPlanModal.messageLabel}</label>
                     <textarea 
                       name="message"
                       rows={3}
-                      placeholder="Cuéntanos un poco más sobre lo que necesitas..."
+                      placeholder={t.customPlanModal.messagePlaceholder}
                       className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all resize-none"
                     ></textarea>
                   </div>
                   
                   <button type="submit" className="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold text-lg py-4 rounded-xl flex items-center justify-center gap-2 transition-colors shadow-lg shadow-emerald-500/20 mt-6">
                     <Send size={20} />
-                    Solicitar cotización
+                    {t.customPlanModal.sendBtn}
                   </button>
                 </form>
               </div>
@@ -2417,13 +2442,13 @@ const VistomioLandingPage: React.FC = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-[#D4AF37] to-[#FCE69B] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-amber-900/30">
                     <Mail size={32} className="text-white" />
                   </div>
-                  <h3 className="text-3xl font-bold text-white mb-2">Enviar Mensaje</h3>
-                  <p className="text-slate-400 text-sm">Te responderemos a la brevedad.</p>
+                  <h3 className="text-3xl font-bold text-white mb-2">{t.contactModal.email.title}</h3>
+                  <p className="text-slate-400 text-sm">{t.contactModal.email.desc}</p>
                 </div>
 
-                <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); alert("Mensaje enviado exitosamente."); setIsContactModalOpen(false); setContactModalView('options'); }}>
+                <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); alert(t.contactModal.email.success); setIsContactModalOpen(false); setContactModalView('options'); }}>
                   <div>
-                    <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Para</label>
+                    <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">{t.contactModal.email.toLabel}</label>
                     <input 
                       type="email" 
                       value="info@vistomio.com" 
@@ -2432,27 +2457,27 @@ const VistomioLandingPage: React.FC = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Tu Email</label>
+                    <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">{t.contactModal.email.emailLabel}</label>
                     <input 
                       type="email" 
                       required 
-                      placeholder="ejemplo@hotel.com"
+                      placeholder={t.contactModal.email.emailPlaceholder}
                       className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Mensaje</label>
+                    <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">{t.contactModal.email.messageLabel}</label>
                     <textarea 
                       required 
                       rows={4}
-                      placeholder="¿En qué te podemos ayudar?"
+                      placeholder={t.contactModal.email.messagePlaceholder}
                       className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all resize-none"
                     ></textarea>
                   </div>
                   
                   <button type="submit" className="w-full bg-gradient-to-br from-[#D4AF37] to-[#FCE69B] text-[#0B1121] hover:brightness-110 shadow-lg shadow-[#D4AF37]/30 border border-[#FCE69B]/50 font-bold text-lg py-4 rounded-xl flex items-center justify-center gap-2 transition-colors shadow-lg shadow-amber-900/20 mt-4">
                     <Send size={20} />
-                    Enviar Correo
+                    {t.contactModal.email.sendBtn}
                   </button>
                 </form>
               </div>
@@ -2468,17 +2493,17 @@ const VistomioLandingPage: React.FC = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-[#D4AF37] to-[#FCE69B] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-amber-900/30">
                     <Calendar size={32} className="text-[#0B1121]" />
                   </div>
-                  <h3 className="text-3xl font-bold text-white mb-2">Agenda tu Demo</h3>
-                  <p className="text-slate-400 text-sm">Selecciona una fecha y hora disponible.</p>
+                  <h3 className="text-3xl font-bold text-white mb-2">{t.contactModal.calendar.title}</h3>
+                  <p className="text-slate-400 text-sm">{t.contactModal.calendar.desc}</p>
                 </div>
                 
                 <div className="space-y-6">
                   <div>
-                    <h4 className="text-sm font-semibold text-slate-300 mb-3">Días Disponibles</h4>
+                    <h4 className="text-sm font-semibold text-slate-300 mb-3">{t.contactModal.calendar.daysLabel}</h4>
                     <div className="flex gap-3 overflow-x-auto custom-scrollbar pb-2">
                       {['Lun 14', 'Mar 15', 'Mié 16', 'Jue 17', 'Vie 18', 'Sáb 19', 'Dom 20'].map((day, i) => (
                         <button key={i} className={`flex-shrink-0 w-20 py-3 rounded-xl border ${i === 2 ? 'border-[#D4AF37] bg-[#D4AF37]/10 text-[#D4AF37]' : 'border-slate-700 bg-slate-800 text-slate-400 hover:bg-slate-700'} flex flex-col items-center justify-center gap-1 transition-colors`}>
-                          <span className="text-xs uppercase">{`${day.split(' ')[0]}`}</span>
+                          <span className="text-xs uppercase">{t.contactModal.calendar.days[i]}</span>
                           <span className="text-lg font-bold">{`${day.split(' ')[1]}`}</span>
                         </button>
                       ))}
@@ -2486,10 +2511,10 @@ const VistomioLandingPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <h4 className="text-sm font-semibold text-slate-300 mb-3">Horarios (Mié 16)</h4>
+                    <h4 className="text-sm font-semibold text-slate-300 mb-3">{t.contactModal.calendar.timesLabel} ({t.contactModal.calendar.days[2]} 16)</h4>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                       {['09:00', '10:00', '11:30', '14:00', '15:30', '17:00'].map((time, i) => (
-                        <button key={i} onClick={() => { alert("Reunión agendada para Mié 16 a las " + time + " exitosamente. Pronto recibirás un correo con la liga."); setIsContactModalOpen(false); setContactModalView('options'); }} className="py-2.5 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 font-medium hover:border-[#D4AF37] hover:text-[#D4AF37] hover:bg-[#D4AF37]/5 transition-colors flex items-center justify-center gap-2">
+                        <button key={i} onClick={() => { alert(t.contactModal.calendar.successAlert.replace('{time}', time).replace('{day}', t.contactModal.calendar.days[2] + ' 16')); setIsContactModalOpen(false); setContactModalView('options'); }} className="py-2.5 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 font-medium hover:border-[#D4AF37] hover:text-[#D4AF37] hover:bg-[#D4AF37]/5 transition-colors flex items-center justify-center gap-2">
                           <Clock size={16} /> {time}
                         </button>
                       ))}
