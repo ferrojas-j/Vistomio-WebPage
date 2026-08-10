@@ -1490,16 +1490,6 @@ const VistomioLandingPage: React.FC = () => {
               </div>
             ))}
           </div>
-          
-          <div className="mt-16 text-center">
-            <button 
-              onClick={() => setIsCustomPlanModalOpen(true)}
-              className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-emerald-500/50 hover:border-emerald-400 text-emerald-400 hover:text-emerald-300 rounded-xl font-bold transition-all shadow-lg hover:shadow-emerald-500/20 group"
-            >
-              {t.pricing.buildOwnPackage}
-              <Plus className="ml-2 w-5 h-5 group-hover:rotate-90 transition-transform" />
-            </button>
-          </div>
         </div>
       </section>
 
@@ -1640,6 +1630,16 @@ const VistomioLandingPage: React.FC = () => {
                 </button>
               </div>
             ))}
+          </div>
+
+          <div className="mt-16 text-center">
+            <button 
+              onClick={() => setIsCustomPlanModalOpen(true)}
+              className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-emerald-500/50 hover:border-emerald-400 text-emerald-400 hover:text-emerald-300 rounded-xl font-bold transition-all shadow-lg hover:shadow-emerald-500/20 group mb-16"
+            >
+              {t.pricing.buildOwnPackage}
+              <Plus className="ml-2 w-5 h-5 group-hover:rotate-90 transition-transform" />
+            </button>
           </div>
 
           {/* Enterprise Section */}
