@@ -99,7 +99,7 @@ const translations = {
       ]
     },
     featuresTitle: 'Módulos diseñados para el futuro',
-    standaloneBadge: 'Se vende por separado',
+    standaloneBadge: 'Módulo Independiente',
     featureCategories: [
       {
         name: 'Operaciones Hoteleras',
@@ -356,7 +356,7 @@ const translations = {
       ]
     },
     featuresTitle: 'Modules designed for the future',
-    standaloneBadge: 'Standalone Product',
+    standaloneBadge: 'Standalone Module',
     featureCategories: [
       {
         name: 'Hotel Operations',
@@ -613,7 +613,7 @@ const translations = {
       ]
     },
     featuresTitle: "Des modules conçus pour l'avenir",
-    standaloneBadge: 'Produit Indépendant',
+    standaloneBadge: 'Module Indépendant',
     featureCategories: [
       {
         name: 'Opérations Hôtelières',
