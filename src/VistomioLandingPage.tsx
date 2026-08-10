@@ -1,4 +1,5 @@
 import POSSimulator from './POSSimulator';
+import ChatbotSimulator from './ChatbotSimulator';
 import React, { useState, useEffect, useRef } from 'react';
 import {  
   CreditCard, 
@@ -1759,6 +1760,15 @@ const VistomioLandingPage: React.FC = () => {
                         
                         </ul>
                       </div>
+                    </div>
+                    
+                    {/* Chatbot Simulator Mini Demo */}
+                    <div className="mt-20 mb-10 relative z-10">
+                      <div className="text-center mb-10">
+                        <h4 className="text-2xl font-bold text-white mb-2">Mini Demo Interactivo</h4>
+                        <p className="text-slate-400">Prueba cómo responde tu Chatbot IA 24/7 en diferentes escenarios y canales.</p>
+                      </div>
+                      <ChatbotSimulator currentLanguage={lang} />
                     </div>
 
                     {/* CTA Button */}
