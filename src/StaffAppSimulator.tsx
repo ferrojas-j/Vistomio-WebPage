@@ -98,6 +98,21 @@ const translations = {
       detailPlaceholder: 'Ej: Huésped 102 solicita taxi mañana a las 06:00',
       submitBtn: 'Registrar Novedad'
     },
+    mantenimientoModals: {
+      logbookTitle: 'Ingresar Avance a Bitácora',
+      logbookDesc: 'DESCRIPCIÓN DEL TRABAJO REALIZADO',
+      logbookDescPlaceholder: 'Ej: Se ha reparado el lavadero de H102, ya se puede usar nuevamente tras cambio de sifón.',
+      logbookSubmit: 'Guardar Avance de Mantenimiento',
+      suppliesTitle: 'Solicitar Recursos',
+      suppliesItem: 'HERRAMIENTA O MATERIAL NECESARIO',
+      suppliesItemPlaceholder: 'Ej: Silicona transparente, Tubo PVC 40mm...',
+      suppliesQty: 'CANTIDAD',
+      suppliesUrgency: 'URGENCIA',
+      suppliesUrgencyOptions: ['Normal (Stock)', 'Urgente', 'Emergencia'],
+      suppliesReason: 'MOTIVO O ÁREA',
+      suppliesReasonPlaceholder: 'Ej: Reparación fuga baño Hab 205',
+      suppliesSubmit: 'Enviar Solicitud al Jefe de Área'
+    },
     mantenimiento: {
       advance: 'Avance Bitácora',
       supplies: 'Pedir Insumos',
@@ -206,6 +221,21 @@ const translations = {
       detailPlaceholder: 'Ex: Guest 102 requests taxi tomorrow at 06:00',
       submitBtn: 'Register Log'
     },
+    mantenimientoModals: {
+      logbookTitle: 'Log Maintenance Progress',
+      logbookDesc: 'DESCRIPTION OF WORK DONE',
+      logbookDescPlaceholder: 'Ex: Fixed the sink in H102, ready to use after replacing siphon.',
+      logbookSubmit: 'Save Maintenance Progress',
+      suppliesTitle: 'Request Resources',
+      suppliesItem: 'TOOL OR MATERIAL NEEDED',
+      suppliesItemPlaceholder: 'Ex: Clear silicone, PVC pipe 40mm...',
+      suppliesQty: 'QUANTITY',
+      suppliesUrgency: 'URGENCY',
+      suppliesUrgencyOptions: ['Normal (Stock)', 'Urgent', 'Emergency'],
+      suppliesReason: 'REASON OR AREA',
+      suppliesReasonPlaceholder: 'Ex: Leak repair in room 205 bathroom',
+      suppliesSubmit: 'Send Request to Area Manager'
+    },
     mantenimiento: {
       advance: 'Update Log',
       supplies: 'Order Supplies',
@@ -313,6 +343,21 @@ const translations = {
       detail: 'DÉTAIL',
       detailPlaceholder: 'Ex: Client 102 demande un taxi demain à 06:00',
       submitBtn: 'Enregistrer Entrée'
+    },
+    mantenimientoModals: {
+      logbookTitle: 'Saisir Progrès de Maintenance',
+      logbookDesc: 'DESCRIPTION DU TRAVAIL RÉALISÉ',
+      logbookDescPlaceholder: 'Ex: Réparé l\'évier H102, utilisable après remplacement du siphon.',
+      logbookSubmit: 'Enregistrer Progrès de Maintenance',
+      suppliesTitle: 'Demander des Ressources',
+      suppliesItem: 'OUTIL OU MATÉRIEL NÉCESSAIRE',
+      suppliesItemPlaceholder: 'Ex: Silicone transparent, Tube PVC 40mm...',
+      suppliesQty: 'QUANTITÉ',
+      suppliesUrgency: 'URGENCE',
+      suppliesUrgencyOptions: ['Normal (Stock)', 'Urgent', 'Urgence'],
+      suppliesReason: 'MOTIF OU ZONE',
+      suppliesReasonPlaceholder: 'Ex: Réparation fuite salle de bain ch 205',
+      suppliesSubmit: 'Envoyer Demande au Chef de Zone'
     },
     mantenimiento: {
       advance: 'Mettre à jour',
@@ -458,13 +503,13 @@ const RecepcionView = ({ t, onOpenExpense, onOpenNovelty }: { t: any, onOpenExpe
   </div>
 );
 
-const MantenimientoView = ({ t }: { t: any }) => (
+const MantenimientoView = ({ t, onOpenLogbook, onOpenSupplies }: { t: any, onOpenLogbook: () => void, onOpenSupplies: () => void }) => (
   <div className="flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
     <div className="grid grid-cols-2 gap-3">
-      <button className="bg-indigo-600 text-white rounded-2xl p-4 shadow-md shadow-indigo-600/20 flex flex-col items-center justify-center gap-2 font-bold text-sm h-24 transition-transform active:scale-95 cursor-default">
+      <button onClick={onOpenLogbook} className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl p-4 shadow-md shadow-indigo-600/20 flex flex-col items-center justify-center gap-2 font-bold text-sm h-24 transition-transform active:scale-[0.98] cursor-pointer">
         <Plus size={20} /> {t.mantenimiento.advance}
       </button>
-      <button className="bg-amber-500 text-white rounded-2xl p-4 shadow-md shadow-amber-500/20 flex flex-col items-center justify-center gap-2 font-bold text-sm h-24 transition-transform active:scale-95 cursor-default">
+      <button onClick={onOpenSupplies} className="bg-amber-500 hover:bg-amber-600 text-white rounded-2xl p-4 shadow-md shadow-amber-500/20 flex flex-col items-center justify-center gap-2 font-bold text-sm h-24 transition-transform active:scale-[0.98] cursor-pointer">
         <Box size={20} /> {t.mantenimiento.supplies}
       </button>
     </div>
@@ -498,6 +543,8 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
   const [isExpenseModalOpen, setIsExpenseModalOpen] = useState(false);
   const [isReportModalOpen, setIsReportModalOpen] = useState(false);
   const [isNoveltyModalOpen, setIsNoveltyModalOpen] = useState(false);
+  const [isLogbookModalOpen, setIsLogbookModalOpen] = useState(false);
+  const [isSuppliesModalOpen, setIsSuppliesModalOpen] = useState(false);
   const t = translations[currentLanguage];
   
   return (
@@ -540,7 +587,7 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
         <div className="flex-1 overflow-y-auto bg-slate-50 p-4 pb-24 custom-scrollbar">
           {activeTab === 'limpieza' && <LimpiezaView t={t} onOpenChecklist={() => setIsChecklistOpen(true)} />}
           {activeTab === 'recepcion' && <RecepcionView t={t} onOpenExpense={() => setIsExpenseModalOpen(true)} onOpenNovelty={() => setIsNoveltyModalOpen(true)} />}
-          {activeTab === 'mantenimiento' && <MantenimientoView t={t} />}
+          {activeTab === 'mantenimiento' && <MantenimientoView t={t} onOpenLogbook={() => setIsLogbookModalOpen(true)} onOpenSupplies={() => setIsSuppliesModalOpen(true)} />}
         </div>
         
         {/* Checklist Modal */}
@@ -665,6 +712,72 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
               
               <button onClick={() => setIsNoveltyModalOpen(false)} className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3.5 rounded-xl transition-colors mt-2 active:scale-[0.98]">
                 {t.novelty?.submitBtn || 'Registrar Novedad'}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Logbook Modal */}
+        <div className={`absolute inset-0 bg-slate-900/40 backdrop-blur-[2px] z-30 transition-opacity duration-300 ${isLogbookModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsLogbookModalOpen(false)}>
+          <div className={`absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl transition-transform duration-300 ease-out p-6 shadow-2xl flex flex-col ${isLogbookModalOpen ? 'translate-y-0' : 'translate-y-full'}`} onClick={e => e.stopPropagation()}>
+            <div className="flex justify-between items-center mb-5 pb-4 border-b border-slate-50 shrink-0">
+              <h3 className="font-bold text-slate-800 text-lg flex items-center gap-2"><Plus size={20}/> {t.mantenimientoModals?.logbookTitle || 'Ingresar Avance a Bitácora'}</h3>
+              <button onClick={() => setIsLogbookModalOpen(false)} className="text-slate-400 hover:text-slate-600 transition-colors p-1">
+                <X size={20} />
+              </button>
+            </div>
+            
+            <div className="flex flex-col gap-5 pb-2">
+              <div className="flex flex-col gap-2">
+                <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.mantenimientoModals?.logbookDesc || 'DESCRIPCIÓN DEL TRABAJO REALIZADO'}</label>
+                <textarea placeholder={t.mantenimientoModals?.logbookDescPlaceholder || 'Ej: Se ha reparado...'} className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-600 focus:outline-none focus:border-slate-800 focus:ring-1 focus:ring-slate-800 resize-none h-32" readOnly></textarea>
+              </div>
+              
+              <button onClick={() => setIsLogbookModalOpen(false)} className="w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-3.5 rounded-xl transition-colors mt-2 active:scale-[0.98]">
+                {t.mantenimientoModals?.logbookSubmit || 'Guardar Avance de Mantenimiento'}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Supplies Modal */}
+        <div className={`absolute inset-0 bg-slate-900/40 backdrop-blur-[2px] z-30 transition-opacity duration-300 ${isSuppliesModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsSuppliesModalOpen(false)}>
+          <div className={`absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl transition-transform duration-300 ease-out p-6 shadow-2xl flex flex-col ${isSuppliesModalOpen ? 'translate-y-0' : 'translate-y-full'}`} onClick={e => e.stopPropagation()}>
+            <div className="flex justify-between items-center mb-5 pb-4 border-b border-slate-50 shrink-0">
+              <h3 className="font-bold text-amber-700 text-lg flex items-center gap-2"><Box size={20}/> {t.mantenimientoModals?.suppliesTitle || 'Solicitar Recursos'}</h3>
+              <button onClick={() => setIsSuppliesModalOpen(false)} className="text-slate-400 hover:text-slate-600 transition-colors p-1">
+                <X size={20} />
+              </button>
+            </div>
+            
+            <div className="flex flex-col gap-5 pb-2">
+              <div className="flex flex-col gap-2">
+                <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.mantenimientoModals?.suppliesItem || 'HERRAMIENTA O MATERIAL NECESARIO'}</label>
+                <input type="text" placeholder={t.mantenimientoModals?.suppliesItemPlaceholder || 'Ej: Silicona transparente...'} className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-600 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500" readOnly />
+              </div>
+              
+              <div className="flex gap-4">
+                <div className="flex flex-col gap-2 flex-[0.7]">
+                  <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.mantenimientoModals?.suppliesQty || 'CANTIDAD'}</label>
+                  <input type="text" defaultValue="1" className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-bold text-slate-700 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500" readOnly />
+                </div>
+                <div className="flex flex-col gap-2 flex-[1.3]">
+                  <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.mantenimientoModals?.suppliesUrgency || 'URGENCIA'}</label>
+                  <select className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium text-slate-700 focus:outline-none focus:border-amber-500 appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%208l5%205%205-5%22%20fill%3D%22none%22%20stroke%3D%22%2364748b%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[position:right_10px_center]">
+                    {(t.mantenimientoModals?.suppliesUrgencyOptions || ['Normal (Stock)']).map((opt: string, i: number) => (
+                      <option key={i}>{opt}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+              
+              <div className="flex flex-col gap-2">
+                <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.mantenimientoModals?.suppliesReason || 'MOTIVO O ÁREA'}</label>
+                <input type="text" placeholder={t.mantenimientoModals?.suppliesReasonPlaceholder || 'Ej: Reparación fuga baño Hab 205'} className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-600 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500" readOnly />
+              </div>
+              
+              <button onClick={() => setIsSuppliesModalOpen(false)} className="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3.5 rounded-xl transition-colors mt-2 active:scale-[0.98]">
+                {t.mantenimientoModals?.suppliesSubmit || 'Enviar Solicitud al Jefe de Área'}
               </button>
             </div>
           </div>
