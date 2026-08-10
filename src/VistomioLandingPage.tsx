@@ -1749,12 +1749,6 @@ const VistomioLandingPage: React.FC = () => {
               <div key={catIdx} className="flex flex-col">
                 <div className="mb-8 flex items-center gap-4">
                   <h3 className="text-2xl font-bold text-white tracking-tight">{category.name}</h3>
-                  {isChatbotCategory && (
-                    <div className="px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-emerald-400 text-[10px] font-semibold uppercase tracking-wider ml-2 flex flex-col items-center justify-center text-center leading-[1.2]">
-                      <span>{t.standaloneBadge1}</span>
-                      <span>{t.standaloneBadge2}</span>
-                    </div>
-                  )}
                   <div className="h-px bg-slate-700 flex-grow"></div>
                 </div>
                 
@@ -1796,10 +1790,23 @@ const VistomioLandingPage: React.FC = () => {
                 ) : (
                   
                   <div className="mt-2">
-                    <h4 className="text-xl font-bold text-[#D4AF37] mb-2">{t.chatbotPlans.title}</h4>
-                    <p className="text-slate-300 text-lg mb-10 max-w-4xl leading-relaxed">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-2">
+                      <h4 className="text-xl font-bold text-[#D4AF37]">{t.chatbotPlans.title}</h4>
+                      <div className="inline-flex">
+                        <div className="px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 rounded-full text-emerald-400 text-[10px] font-semibold uppercase tracking-wider whitespace-nowrap">
+                          {t.standaloneBadge1} {t.standaloneBadge2}
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-slate-300 text-lg mb-4 max-w-4xl leading-relaxed">
                       {t.chatbotPlans.subtitle}
                     </p>
+                    
+                    <div className="mb-10">
+                      <a href="#demo-chatbot" className="inline-flex items-center gap-2 text-sm font-semibold text-[#D4AF37] hover:text-[#f4d054] transition-colors group/btn">
+                        Ver cómo funciona <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
+                      </a>
+                    </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
                       {/* Standard Plan */}
