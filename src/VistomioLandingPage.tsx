@@ -1404,7 +1404,10 @@ const VistomioLandingPage: React.FC = () => {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           
-          <div className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/20 text-[#D4AF37] text-sm font-bold shadow-sm backdrop-blur-md uppercase tracking-widest">
+          <div 
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/20 text-[#D4AF37] text-xl md:text-2xl font-medium shadow-sm backdrop-blur-md"
+            style={{ fontFamily: "'Caveat', cursive" }}
+          >
             {t.hero.badge}
           </div>
 
