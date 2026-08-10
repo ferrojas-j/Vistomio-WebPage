@@ -1998,19 +1998,19 @@ const VistomioLandingPage: React.FC = () => {
                           <div 
                             key={itemIdx} 
                             onClick={() => toggleCustomModule(item.title)}
-                            className={`p-4 rounded-xl border cursor-pointer transition-all ${
+                            className={`p-4 rounded-xl border cursor-pointer transition-all h-full flex flex-col ${
                               isSelected 
                                 ? 'bg-emerald-500/10 border-emerald-500/50 shadow-[0_0_15px_rgba(16,185,129,0.1)]' 
                                 : 'bg-slate-800/30 border-slate-700/50 hover:border-slate-600 hover:bg-slate-800/50'
                             }`}
                           >
-                            <div className="flex items-start gap-3">
-                              <div className={`mt-0.5 ${isSelected ? 'text-emerald-400' : 'text-slate-500'}`}>
+                            <div className="flex items-start gap-3 h-full">
+                              <div className={`mt-0.5 shrink-0 ${isSelected ? 'text-emerald-400' : 'text-slate-500'}`}>
                                 {isSelected ? <CheckCircle2 size={20} /> : <div className="w-5 h-5 rounded-full border-2 border-slate-600"></div>}
                               </div>
-                              <div>
+                              <div className="flex-grow">
                                 <h5 className={`font-semibold mb-1 ${isSelected ? 'text-emerald-300' : 'text-white'}`}>{item.title}</h5>
-                                <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed">{item.desc}</p>
+                                <p className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
                               </div>
                             </div>
                           </div>

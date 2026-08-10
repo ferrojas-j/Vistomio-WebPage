@@ -386,6 +386,8 @@ export default function POSSimulator({ t }: { t: any }) {
             </div>
           )}
           
+
+        </div>
           {/* MODAL: CORTE DE CAJA */}
           {showCloseShift && (
             <div className="absolute inset-0 bg-slate-900/60 z-30 flex flex-col justify-end animate-[fade-in_0.2s_ease-out]">
@@ -848,8 +850,6 @@ export default function POSSimulator({ t }: { t: any }) {
               </div>
             </div>
           )}
-
-        </div>
 
         {/* Bottom Navigation */}
         <div className="absolute bottom-0 left-0 w-full bg-white border-t border-slate-100 px-6 pt-3 pb-6 flex justify-between z-20 shadow-[0_-10px_20px_rgba(0,0,0,0.03)] rounded-b-[2.5rem]">
