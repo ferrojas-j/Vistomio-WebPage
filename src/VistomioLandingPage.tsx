@@ -1299,9 +1299,7 @@ const VistomioLandingPage: React.FC = () => {
                 </div>
               </div>
             </div>
-            <a href="#precios" className="text-sm font-medium text-slate-300 hover:text-[#FCE69B] transition-colors">{t.nav.pricing}</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="text-sm font-medium text-slate-300 hover:text-[#FCE69B] transition-colors">{t.nav.contact}</a>
-            
+
             {/* Demos Dropdown */}
             <div 
               className="relative flex items-center h-full py-2" 
@@ -1341,6 +1339,9 @@ const VistomioLandingPage: React.FC = () => {
               </div>
             </div>
             
+            <a href="#precios" className="text-sm font-medium text-slate-300 hover:text-[#FCE69B] transition-colors">{t.nav.pricing}</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="text-sm font-medium text-slate-300 hover:text-[#FCE69B] transition-colors">{t.nav.contact}</a>
+
             {/* Custom Language Selector */}
             <div 
               className="relative border-l border-slate-700 pl-6 h-full flex items-center py-2" 
