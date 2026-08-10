@@ -62,7 +62,15 @@ const translations = {
       preferences: 'Preferencias:',
       preferencesValue: 'Vino Tinto, Almohadas extra',
       dinner: 'Reserva Cena:',
-      dinnerValue: '20:30 hrs - Terraza'
+      dinnerValue: '20:30 hrs - Terraza',
+      langLabel: 'Idiomas:',
+      langValue: 'Francés e inglés',
+      originLabel: 'Origen:',
+      originValue: 'París, Francia',
+      arrivalLabel: 'Llegada:',
+      arrivalValue: '17:00 hrs',
+      parkingLabel: 'Estacionamiento:',
+      parkingValue: 'Sí'
     },
     nav: {
       products: 'Productos',
@@ -410,7 +418,15 @@ const translations = {
       preferences: 'Preferences:',
       preferencesValue: 'Red Wine, Extra pillows',
       dinner: 'Dinner Reservation:',
-      dinnerValue: '8:30 PM - Terrace'
+      dinnerValue: '8:30 PM - Terrace',
+      langLabel: 'Languages:',
+      langValue: 'French and English',
+      originLabel: 'Origin:',
+      originValue: 'Paris, France',
+      arrivalLabel: 'Arrival:',
+      arrivalValue: '5:00 PM',
+      parkingLabel: 'Parking:',
+      parkingValue: 'Yes'
     },
     nav: {
       products: 'Products',
@@ -758,7 +774,15 @@ const translations = {
       preferences: 'Préférences :',
       preferencesValue: 'Vin Rouge, Oreillers suppl.',
       dinner: 'Réservation Dîner :',
-      dinnerValue: '20h30 - Terrasse'
+      dinnerValue: '20h30 - Terrasse',
+      langLabel: 'Langues :',
+      langValue: 'Français et anglais',
+      originLabel: 'Origine :',
+      originValue: 'Paris, France',
+      arrivalLabel: 'Arrivée :',
+      arrivalValue: '17h00',
+      parkingLabel: 'Parking :',
+      parkingValue: 'Oui'
     },
     nav: {
       products: 'Produits',
@@ -1754,6 +1778,22 @@ const VistomioLandingPage: React.FC = () => {
                     <div className="flex justify-between text-slate-300">
                       <span>{t.suiteMockup.preferences}</span>
                       <span className="font-semibold text-white">{t.suiteMockup.preferencesValue}</span>
+                    </div>
+                    <div className="flex justify-between text-slate-300 mt-2">
+                      <span>{t.suiteMockup.langLabel}</span>
+                      <span className="font-semibold text-white">{t.suiteMockup.langValue}</span>
+                    </div>
+                    <div className="flex justify-between text-slate-300 mt-2">
+                      <span>{t.suiteMockup.originLabel}</span>
+                      <span className="font-semibold text-white">{t.suiteMockup.originValue}</span>
+                    </div>
+                    <div className="flex justify-between text-slate-300 mt-2">
+                      <span>{t.suiteMockup.arrivalLabel}</span>
+                      <span className="font-semibold text-white">{t.suiteMockup.arrivalValue}</span>
+                    </div>
+                    <div className="flex justify-between text-slate-300 mt-2">
+                      <span>{t.suiteMockup.parkingLabel}</span>
+                      <span className="font-semibold text-white">{t.suiteMockup.parkingValue}</span>
                     </div>
                     <div className="flex justify-between text-slate-300 mt-2">
                       <span>{t.suiteMockup.dinner}</span>
