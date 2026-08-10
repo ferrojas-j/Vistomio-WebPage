@@ -1378,7 +1378,7 @@ const VistomioLandingPage: React.FC = () => {
                 className="flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-[#FCE69B] transition-colors group"
               >
                 <Globe size={16} className="text-[#D4AF37] group-hover:text-[#FCE69B] transition-colors" />
-                <span>{lang.toUpperCase()}</span>
+                <span>{lang === 'es' ? 'Español' : lang === 'en' ? 'English' : 'Français'}</span>
                 <ChevronDown size={14} className={`text-slate-500 transition-transform duration-300 ${langMenuOpen ? 'rotate-180' : ''}`} />
               </button>
               
@@ -1417,9 +1417,9 @@ const VistomioLandingPage: React.FC = () => {
             <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); setMobileMenuOpen(false); }} className="text-lg font-medium text-white">{t.nav.contact}</a>
             <div className="h-px bg-white/10 w-full my-2"></div>
             <div className="flex gap-4">
-               <button onClick={() => {setLang('es'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg ${lang === 'es' ? 'bg-slate-800 border border-slate-700/20 text-[#D4AF37]' : 'text-slate-400'}`}>ES</button>
-               <button onClick={() => {setLang('en'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg ${lang === 'en' ? 'bg-slate-800 border border-slate-700/20 text-[#D4AF37]' : 'text-slate-400'}`}>EN</button>
-               <button onClick={() => {setLang('fr'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg ${lang === 'fr' ? 'bg-slate-800 border border-slate-700/20 text-[#D4AF37]' : 'text-slate-400'}`}>FR</button>
+               <button onClick={() => {setLang('es'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg flex-1 ${lang === 'es' ? 'bg-slate-800 border border-slate-700/20 text-[#D4AF37]' : 'text-slate-400'}`}>Español</button>
+               <button onClick={() => {setLang('en'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg flex-1 ${lang === 'en' ? 'bg-slate-800 border border-slate-700/20 text-[#D4AF37]' : 'text-slate-400'}`}>English</button>
+               <button onClick={() => {setLang('fr'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg flex-1 ${lang === 'fr' ? 'bg-slate-800 border border-slate-700/20 text-[#D4AF37]' : 'text-slate-400'}`}>Français</button>
             </div>
             <a href="https://demo.vistomio.com" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-[#D4AF37] to-[#FCE69B] text-[#0B1121] text-center font-bold px-5 py-4 rounded-xl mt-4 shadow-[0_0_20px_rgba(212,175,55,0.3)]">
               {t.nav.demo}
