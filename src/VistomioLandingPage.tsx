@@ -227,11 +227,11 @@ const translations = {
     },
     chatbotPlans: {
       badge: 'Producto Independiente',
-      title: 'Potencia tu hotel con nuestro Chatbot IA',
-      subtitle: 'Integra nuestro agente inteligente a tu web o canales. Disponible como producto independiente o como parte de los paquetes Vistomio.',
+      title: 'Agentes de Inteligencia Artificial',
+      subtitle: 'Automatiza la atención, incrementa reservas directas y ofrece servicio 24/7 en todos tus canales con nuestros agentes de IA.',
       plans: [
         {
-          name: 'Plan Estándar',
+          name: 'Nivel 1: Respuestas Automáticas',
           features: [
             'Conexión multicanal',
             'Solo respuesta a preguntas frecuentes',
@@ -240,7 +240,7 @@ const translations = {
           ]
         },
         {
-          name: 'Plan Premium',
+          name: 'Nivel 2: Ventas Proactivas',
           features: [
             'Lo de estándar + capacidad de iniciar conversaciones proactivamente',
             'Envío automatizado de campañas de marketing',
@@ -249,7 +249,7 @@ const translations = {
           ]
         },
         {
-          name: 'Plan Autónomo',
+          name: 'Nivel 3: Autonomía Total',
           features: [
             'Todo lo anterior + agente de ventas proactivo',
             'Sincronización con Booking Engine para ejecutar reservas',
@@ -490,11 +490,11 @@ const translations = {
     },
     chatbotPlans: {
         badge: 'Standalone Product',
-        title: 'Power your hotel with our AI Chatbot',
+        title: 'Artificial Intelligence Agents',
         subtitle: 'Integrate our intelligent agent into your website or channels. Available as a standalone product or bundled with Vistomio packages.',
         plans: [
           {
-            name: 'Standard Plan',
+            name: 'Level 1: Automated Responses',
             features: [
               'Multi-channel connection',
               'FAQ responses only',
@@ -503,7 +503,7 @@ const translations = {
             ]
           },
           {
-            name: 'Premium Plan',
+            name: 'Level 2: Proactive Sales',
             features: [
               'Standard features + proactive conversation initiation',
               'Automated marketing campaigns',
@@ -512,7 +512,7 @@ const translations = {
             ]
           },
           {
-            name: 'Autonomous Plan',
+            name: 'Level 3: Full Autonomy',
             features: [
               'All the above + proactive sales agent',
               'Synchronization with Booking Engine to execute reservations',
@@ -756,7 +756,7 @@ const translations = {
         subtitle: 'Intégrez notre agent intelligent sur votre site ou vos canaux. Disponible séparément ou inclus dans les forfaits Vistomio.',
         plans: [
           {
-            name: 'Plan Standard',
+            name: 'Niveau 1: Réponses Automatisées',
             features: [
               'Connexion multicanale',
               'Réponses aux FAQ uniquement',
@@ -765,7 +765,7 @@ const translations = {
             ]
           },
           {
-            name: 'Plan Premium',
+            name: 'Niveau 2: Ventes Proactives',
             features: [
               'Tout le standard + initiation proactive de conversations',
               'Campagnes marketing automatisées',
@@ -774,7 +774,7 @@ const translations = {
             ]
           },
           {
-            name: 'Plan Autonome',
+            name: 'Niveau 3: Autonomie Totale',
             features: [
               'Tout ce qui précède + agent de vente proactif',
               'Synchronisation avec le moteur de réservation',
@@ -1501,70 +1501,72 @@ const VistomioLandingPage: React.FC = () => {
                     ))}
                   </div>
                 ) : (
-                  <div className="bg-[#0B1121] rounded-[2rem] p-8 md:p-12 relative overflow-hidden border border-slate-800 shadow-2xl mt-4">
-                    <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/5 blur-[80px] rounded-full pointer-events-none"></div>
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-emerald-500/5 blur-[150px] rounded-[100%] pointer-events-none"></div>
-                    
-                    <div className="text-center max-w-3xl mx-auto mb-16 relative z-10">
-                      <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
-                        {t.chatbotPlans.title}
-                      </h2>
-                      <p className="text-lg text-slate-400">
-                        {t.chatbotPlans.subtitle}
-                      </p>
-                    </div>
+                  
+                  <div className="mt-2">
+                    <p className="text-slate-300 text-lg mb-10 max-w-4xl leading-relaxed">
+                      {t.chatbotPlans.subtitle}
+                    </p>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto relative z-10">
-                      
-            {/* Standard Plan */}
-            <div className="bg-slate-900/50 border border-indigo-500/20 rounded-3xl p-8 flex flex-col h-full hover:border-indigo-500/40 transition-colors shadow-lg hover:shadow-indigo-500/5 relative overflow-hidden">
-              <div className="w-14 h-14 rounded-2xl bg-indigo-500/10 flex items-center justify-center border border-indigo-500/20 mb-6">
-                <MessageSquareText className="text-indigo-400" size={28} />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-8">{t.chatbotPlans.plans[0].name}</h3>
-              <div className="w-full h-px bg-white/5 mb-8"></div>
-              <ul className="flex flex-col gap-5 flex-grow">
-                {t.chatbotPlans.plans[0].features.map((feature, idx) => (
-                  <li key={idx} className="flex gap-4">
-                    <div className="mt-1 min-w-[20px] text-indigo-400"><CheckCircle2 size={20} /></div>
-                    <span className="text-slate-300 leading-relaxed">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
+                      {/* Standard Plan */}
+                      <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700 rounded-3xl p-8 flex flex-col h-full hover:border-indigo-500/50 hover:shadow-lg hover:shadow-indigo-900/20 transition-all duration-300 group relative overflow-hidden cursor-default">
+                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-indigo-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <div className="flex items-center gap-4 mb-6 relative z-10">
+                          <div className="w-14 h-14 rounded-2xl bg-indigo-500/10 flex items-center justify-center border border-indigo-500/20 group-hover:bg-indigo-500 group-hover:text-white transition-colors">
+                            <MessageSquareText className="text-indigo-400 group-hover:text-white transition-colors" size={26} />
+                          </div>
+                          <h3 className="text-xl font-bold text-white leading-tight">{t.chatbotPlans.plans[0].name}</h3>
+                        </div>
+                        <div className="w-full h-px bg-slate-700 mb-6 relative z-10"></div>
+                        <ul className="flex flex-col gap-4 flex-grow relative z-10">
+                          {t.chatbotPlans.plans[0].features.map((feature, idx) => (
+                            <li key={idx} className="flex gap-3">
+                              <div className="mt-1 min-w-[18px] text-indigo-400"><CheckCircle2 size={18} /></div>
+                              <span className="text-slate-300 text-sm leading-relaxed">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
 
-            {/* Premium Plan */}
-            <div className="bg-slate-900/50 border border-amber-500/20 rounded-3xl p-8 flex flex-col h-full hover:border-amber-500/40 transition-colors shadow-lg hover:shadow-amber-500/5 relative overflow-hidden">
-              <div className="w-14 h-14 rounded-2xl bg-amber-500/10 flex items-center justify-center border border-amber-500/20 mb-6">
-                <Zap className="text-amber-400" size={28} />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-8">{t.chatbotPlans.plans[1].name}</h3>
-              <div className="w-full h-px bg-white/5 mb-8"></div>
-              <ul className="flex flex-col gap-5 flex-grow">
-                {t.chatbotPlans.plans[1].features.map((feature, idx) => (
-                  <li key={idx} className="flex gap-4">
-                    <div className="mt-1 min-w-[20px] text-amber-400"><CheckCircle2 size={20} /></div>
-                    <span className="text-slate-300 leading-relaxed">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                      {/* Premium Plan */}
+                      <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700 rounded-3xl p-8 flex flex-col h-full hover:border-amber-500/50 hover:shadow-lg hover:shadow-amber-900/20 transition-all duration-300 group relative overflow-hidden cursor-default">
+                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <div className="flex items-center gap-4 mb-6 relative z-10">
+                          <div className="w-14 h-14 rounded-2xl bg-amber-500/10 flex items-center justify-center border border-amber-500/20 group-hover:bg-amber-500 group-hover:text-[#0B1121] transition-colors">
+                            <Zap className="text-amber-400 group-hover:text-[#0B1121] transition-colors" size={26} />
+                          </div>
+                          <h3 className="text-xl font-bold text-white leading-tight">{t.chatbotPlans.plans[1].name}</h3>
+                        </div>
+                        <div className="w-full h-px bg-slate-700 mb-6 relative z-10"></div>
+                        <ul className="flex flex-col gap-4 flex-grow relative z-10">
+                          {t.chatbotPlans.plans[1].features.map((feature, idx) => (
+                            <li key={idx} className="flex gap-3">
+                              <div className="mt-1 min-w-[18px] text-amber-400"><CheckCircle2 size={18} /></div>
+                              <span className="text-slate-300 text-sm leading-relaxed">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
 
-            {/* Autonomous Plan */}
-            <div className="bg-slate-900/50 border border-emerald-500/20 rounded-3xl p-8 flex flex-col h-full hover:border-emerald-500/40 transition-colors shadow-lg hover:shadow-emerald-500/5 relative overflow-hidden">
-              <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20 mb-6">
-                <Bot className="text-emerald-400" size={28} />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-8">{t.chatbotPlans.plans[2].name}</h3>
-              <div className="w-full h-px bg-white/5 mb-8"></div>
-              <ul className="flex flex-col gap-5 flex-grow">
-                {t.chatbotPlans.plans[2].features.map((feature, idx) => (
-                  <li key={idx} className="flex gap-4">
-                    <div className="mt-1 min-w-[20px] text-emerald-400"><CheckCircle2 size={20} /></div>
-                    <span className="text-slate-300 leading-relaxed">{feature}</span>
-                  </li>
-                ))}
-              </ul></div>
+                      {/* Autonomous Plan */}
+                      <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700 rounded-3xl p-8 flex flex-col h-full hover:border-emerald-500/50 hover:shadow-lg hover:shadow-emerald-900/20 transition-all duration-300 group relative overflow-hidden cursor-default">
+                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <div className="flex items-center gap-4 mb-6 relative z-10">
+                          <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20 group-hover:bg-emerald-500 group-hover:text-[#0B1121] transition-colors">
+                            <Bot className="text-emerald-400 group-hover:text-[#0B1121] transition-colors" size={26} />
+                          </div>
+                          <h3 className="text-xl font-bold text-white leading-tight">{t.chatbotPlans.plans[2].name}</h3>
+                        </div>
+                        <div className="w-full h-px bg-slate-700 mb-6 relative z-10"></div>
+                        <ul className="flex flex-col gap-4 flex-grow relative z-10">
+                          {t.chatbotPlans.plans[2].features.map((feature, idx) => (
+                            <li key={idx} className="flex gap-3">
+                              <div className="mt-1 min-w-[18px] text-emerald-400"><CheckCircle2 size={18} /></div>
+                              <span className="text-slate-300 text-sm leading-relaxed">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 )}
