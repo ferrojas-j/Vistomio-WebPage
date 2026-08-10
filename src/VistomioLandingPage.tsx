@@ -8,6 +8,7 @@ import {
   Smartphone, 
   MessageSquareText,
   ArrowLeft,
+  ArrowUp,
   Send,
   Mail, 
   PieChart, 
@@ -1055,6 +1056,23 @@ const VistomioLandingPage: React.FC = () => {
   const [contactModalView, setContactModalView] = useState('options');
   const [isCustomPlanModalOpen, setIsCustomPlanModalOpen] = useState(false);
   const [selectedCustomModules, setSelectedCustomModules] = useState<string[]>([]);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const toggleCustomModule = (title: string) => {
     setSelectedCustomModules(prev => 
@@ -2069,6 +2087,17 @@ const VistomioLandingPage: React.FC = () => {
           </div>
         </div>
       </footer>
+
+      {/* Scroll to Top FAB */}
+      <button 
+        onClick={scrollToTop}
+        className={`fixed bottom-6 right-6 z-40 bg-slate-900 text-white p-4 rounded-full shadow-xl shadow-slate-900/30 transition-all duration-300 active:scale-95 group flex items-center justify-center ${showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
+        aria-label="Volver arriba"
+        title="Volver arriba"
+      >
+        <span className="font-bold text-sm ml-1 mr-2 w-0 overflow-hidden group-hover:w-auto opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap inline-block">Volver arriba</span>
+        <ArrowUp size={20} />
+      </button>
 
       {/* Contact Modal */}
       
