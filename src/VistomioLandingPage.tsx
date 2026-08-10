@@ -1069,6 +1069,8 @@ const translations = {
     },
     pricing: {
       title: 'Payez seulement ce dont vous avez besoin',
+      subtitle: 'Explorez nos forfaits pré-conçus ou créez votre propre solution sur mesure.',
+      buildOwnPackage: 'Créez votre propre forfait',
         customModalTitle: 'Créez votre solution Vistomio',
         customModalSubtitle: 'Sélectionnez les modules dont vous avez besoin et nous créerons un plan sur mesure.',
         selectedModules: 'Modules Sélectionnés',
