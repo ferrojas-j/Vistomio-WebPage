@@ -270,7 +270,46 @@ const translations = {
       orders: { recent: 'Comandas Recientes', today: 'Hoy', open: 'ABIERTA', closed: 'CERRADA', table: 'Mesa', bar: 'Barra', daypass: 'Daypass' },
       expenses: { pettyCash: 'Caja Chica', date: 'Lunes, 10 De Agosto', auth: 'AUTORIZA: ADMINISTRADOR', inProgress: 'EN CURSO', initial: 'INICIAL', current: 'ACTUAL', todayExpenses: 'GASTOS DE HOY', addExpense: 'Registrar Gasto', items: [ { name: 'Verduras frescas y hielo', category: 'INSUMOS COCINA' }, { name: 'Hielo y limones', category: 'INSUMOS BARRA' }, { name: 'Gasolina', category: 'LOGÍSTICA' } ] },
       admin: { dashboard: 'Panel de Control', activeShift: 'JORNADA ACTIVA', shift: 'TURNO: ADMINISTRADOR', totalSales: 'VENTAS TOTALES', totalExpenses: 'GASTOS (3)', tips: 'PROPINAS ACUMULADAS', management: 'GESTIÓN', menuEditor: 'Editor de Menú', menuEditorDesc: 'Platos, precios y disponibilidad', closeShift: 'Cerrar Jornada', closeShiftDesc: 'Finalizar turno y hacer corte' },
-      closeShiftModal: { title: 'Corte de Caja', subtitle: 'Resumen de la jornada actual', income: 'INGRESOS DEL DÍA', cc: 'Tarjeta de crédito', transfer: 'Transferencia', cash: 'Efectivo', totalIncome: 'Total Ingresos', expenses: 'EGRESOS DEL DÍA', pettyCash: 'Gastos menores (Caja chica)', providers: 'Proveedores', totalExpenses: 'Total Egresos', balance: 'Balance Final', tips: 'Propinas del día', share: 'Compartir', print: 'Imprimir', confirm: 'Confirmar Cierre', cancel: 'Cancelar' }
+      closeShiftModal: { title: 'Corte de Caja', subtitle: 'Resumen de la jornada actual', income: 'INGRESOS DEL DÍA', cc: 'Tarjeta de crédito', transfer: 'Transferencia', cash: 'Efectivo', totalIncome: 'Total Ingresos', expenses: 'EGRESOS DEL DÍA', pettyCash: 'Gastos menores (Caja chica)', providers: 'Proveedores', totalExpenses: 'Total Egresos', balance: 'Balance Final', tips: 'Propinas del día', share: 'Compartir', print: 'Imprimir', confirm: 'Confirmar Cierre', cancel: 'Cancelar' },
+      tableInteraction: {
+        serving: 'ATENDIENDO',
+        toCharge: 'A COBRAR',
+        currentBill: 'CUENTA ACTUAL',
+        total: 'Total',
+        chargeBtn: 'Cobrar',
+        freeTableBtn: 'Liberar Mesa',
+        payment: 'Pago',
+        card: 'Tarjeta',
+        cash: 'Efectivo',
+        tip: 'Propina',
+        noTip: 'No',
+        confirmBtn: 'Confirmar',
+        categories: { meats: 'Carnes', wines: 'Vinos', salads: 'Ensaladas', sides: 'Acompañ.' },
+        items: {
+          ribeye: { name: 'Ribeye Prime (400g)', price: 850 },
+          picana: { name: 'Picaña (300g)', price: 650 },
+          malbec: { name: 'Malbec Reserva 2020', price: 950 },
+          chardonnay: { name: 'Chardonnay', price: 780 }
+        }
+      },
+      expenseModal: {
+        title: 'Nuevo Gasto',
+        desc: 'Pago a proveedores e insumos.',
+        amount: 'MONTO',
+        category: 'CATEGORÍA',
+        description: 'DESCRIPCIÓN',
+        saveBtn: 'Guardar Gasto',
+        descPlaceholder: 'Ej: Verduras, Hielo, Detergente'
+      },
+      menuEditor: {
+        title: 'Editor de Menú',
+        addDish: '+ Add Dish',
+        available: 'DISPONIBLE',
+        lowStock: 'POCAS UNIDADES',
+        outOfStock: 'AGOTADO',
+        meats: 'Carnes a la Parrilla',
+        wines: 'Vinos'
+      }
     },
     pricing: {
       title: 'Paga solo lo que necesitas',
@@ -545,6 +584,45 @@ const translations = {
       orders: { recent: 'Recent Orders', today: 'Today', open: 'OPEN', closed: 'CLOSED', table: 'Table', bar: 'Bar', daypass: 'Daypass' },
       expenses: { pettyCash: 'Petty Cash', date: 'Monday, August 10', auth: 'AUTH: ADMINISTRATOR', inProgress: 'IN PROGRESS', initial: 'INITIAL', current: 'CURRENT', todayExpenses: "TODAY'S EXPENSES", addExpense: 'Add Expense', items: [ { name: 'Fresh vegetables and ice', category: 'KITCHEN SUPPLIES' }, { name: 'Ice and lemons', category: 'BAR SUPPLIES' }, { name: 'Gasoline', category: 'LOGISTICS' } ] },
       admin: { dashboard: 'Dashboard', activeShift: 'ACTIVE SHIFT', shift: 'SHIFT: ADMINISTRATOR', totalSales: 'TOTAL SALES', totalExpenses: 'EXPENSES (3)', tips: 'ACCUMULATED TIPS', management: 'MANAGEMENT', menuEditor: 'Menu Editor', menuEditorDesc: 'Dishes, prices and availability', closeShift: 'Close Shift', closeShiftDesc: 'End shift and reconcile' },
+      tableInteraction: {
+        serving: 'SERVING',
+        toCharge: 'TO CHARGE',
+        currentBill: 'CURRENT BILL',
+        total: 'Total',
+        chargeBtn: 'Charge',
+        freeTableBtn: 'Free Table',
+        payment: 'Payment',
+        card: 'Card',
+        cash: 'Cash',
+        tip: 'Tip',
+        noTip: 'None',
+        confirmBtn: 'Confirm',
+        categories: { meats: 'Meats', wines: 'Wines', salads: 'Salads', sides: 'Sides' },
+        items: {
+          ribeye: { name: 'Prime Ribeye (400g)', price: 850 },
+          picana: { name: 'Picanha (300g)', price: 650 },
+          malbec: { name: 'Malbec Reserve 2020', price: 950 },
+          chardonnay: { name: 'Chardonnay', price: 780 }
+        }
+      },
+      expenseModal: {
+        title: 'New Expense',
+        desc: 'Payment to providers and supplies.',
+        amount: 'AMOUNT',
+        category: 'CATEGORY',
+        description: 'DESCRIPTION',
+        saveBtn: 'Save Expense',
+        descPlaceholder: 'Ex: Vegetables, Ice, Detergent'
+      },
+      menuEditor: {
+        title: 'Menu Editor',
+        addDish: '+ Add Dish',
+        available: 'AVAILABLE',
+        lowStock: 'LOW STOCK',
+        outOfStock: 'OUT OF STOCK',
+        meats: 'Grilled Meats',
+        wines: 'Wines'
+      },
       closeShiftModal: { title: 'Cash Register Close', subtitle: 'Current shift summary', income: 'DAILY INCOME', cc: 'Credit Card', transfer: 'Transfer', cash: 'Cash', totalIncome: 'Total Income', expenses: 'DAILY EXPENSES', pettyCash: 'Petty Cash', providers: 'Providers', totalExpenses: 'Total Expenses', balance: 'Final Balance', tips: 'Daily Tips', share: 'Share', print: 'Print', confirm: 'Confirm Close', cancel: 'Cancel' }
     },
     pricing: {
@@ -819,6 +897,45 @@ const translations = {
       orders: { recent: 'Commandes Récentes', today: 'Aujourd\'hui', open: 'OUVERT', closed: 'FERMÉ', table: 'Table', bar: 'Bar', daypass: 'Daypass' },
       expenses: { pettyCash: 'Petite Caisse', date: 'Lundi, 10 Août', auth: 'AUTH: ADMINISTRATEUR', inProgress: 'EN COURS', initial: 'INITIAL', current: 'ACTUEL', todayExpenses: "DÉPENSES DU JOUR", addExpense: 'Ajouter Dépense', items: [ { name: 'Légumes frais et glace', category: 'FOURNITURES CUISINE' }, { name: 'Glace et citrons', category: 'FOURNITURES BAR' }, { name: 'Essence', category: 'LOGISTIQUE' } ] },
       admin: { dashboard: 'Tableau de Bord', activeShift: 'SERVICE ACTIF', shift: 'SERVICE: ADMINISTRATEUR', totalSales: 'VENTES TOTALES', totalExpenses: 'DÉPENSES (3)', tips: 'POURBOIRES CUMULÉS', management: 'GESTION', menuEditor: 'Éditeur de Menu', menuEditorDesc: 'Plats, prix et disponibilité', closeShift: 'Fermer la Caisse', closeShiftDesc: 'Terminer le service et faire le bilan' },
+      tableInteraction: {
+        serving: 'EN SERVICE',
+        toCharge: 'À ENCAISSER',
+        currentBill: 'ADDITION ACTUELLE',
+        total: 'Total',
+        chargeBtn: 'Encaisser',
+        freeTableBtn: 'Libérer Table',
+        payment: 'Paiement',
+        card: 'Carte',
+        cash: 'Espèces',
+        tip: 'Pourboire',
+        noTip: 'Non',
+        confirmBtn: 'Confirmer',
+        categories: { meats: 'Viandes', wines: 'Vins', salads: 'Salades', sides: 'Accompagn.' },
+        items: {
+          ribeye: { name: 'Ribeye Prime (400g)', price: 850 },
+          picana: { name: 'Picanha (300g)', price: 650 },
+          malbec: { name: 'Malbec Reserva 2020', price: 950 },
+          chardonnay: { name: 'Chardonnay', price: 780 }
+        }
+      },
+      expenseModal: {
+        title: 'Nouvelle Dépense',
+        desc: 'Paiement aux fournisseurs et fournitures.',
+        amount: 'MONTANT',
+        category: 'CATÉGORIE',
+        description: 'DESCRIPTION',
+        saveBtn: 'Enregistrer',
+        descPlaceholder: 'Ex: Légumes, Glace, Détergent'
+      },
+      menuEditor: {
+        title: 'Éditeur de Menu',
+        addDish: '+ Ajouter Plat',
+        available: 'DISPONIBLE',
+        lowStock: 'PEU D\'UNITÉS',
+        outOfStock: 'ÉPUISÉ',
+        meats: 'Viandes Grillées',
+        wines: 'Vins'
+      },
       closeShiftModal: { title: 'Fermeture de Caisse', subtitle: 'Résumé du service actuel', income: 'REVENUS DU JOUR', cc: 'Carte de crédit', transfer: 'Virement', cash: 'Espèces', totalIncome: 'Revenus Totaux', expenses: 'DÉPENSES DU JOUR', pettyCash: 'Petite Caisse', providers: 'Fournisseurs', totalExpenses: 'Dépenses Totales', balance: 'Solde Final', tips: 'Pourboires du jour', share: 'Partager', print: 'Imprimer', confirm: 'Confirmer la Fermeture', cancel: 'Annuler' }
     },
     pricing: {
