@@ -230,6 +230,7 @@ const translations = {
       badge: 'Producto Independiente',
       title: 'Chatbot IA Multicanal',
       subtitle: 'Automatiza la atención, incrementa reservas directas y ofrece servicio 24/7 en todos tus canales con nuestros agentes de IA.',
+      talkBtn: 'Hablemos',
       plans: [
         {
           name: 'Nivel 1: Respuestas Automáticas',
@@ -503,6 +504,7 @@ const translations = {
         badge: 'Standalone Product',
         title: 'Multichannel AI Chatbot',
         subtitle: 'Integrate our intelligent agent into your website or channels. Available as a standalone product or bundled with Vistomio packages.',
+      talkBtn: 'Let\'s Talk',
         plans: [
           {
             name: 'Level 1: Automated Responses',
@@ -775,6 +777,7 @@ const translations = {
         badge: 'Produit Indépendant',
         title: 'Propulsez votre hôtel avec notre Chatbot IA',
         subtitle: 'Intégrez notre agent intelligent sur votre site ou vos canaux. Disponible séparément ou inclus dans les forfaits Vistomio.',
+        talkBtn: 'Parlons-en',
         plans: [
           {
             name: 'Niveau 1: Réponses Automatisées',
@@ -1597,8 +1600,23 @@ const VistomioLandingPage: React.FC = () => {
                               <span className="text-slate-300 text-sm leading-relaxed">{feature}</span>
                             </li>
                           ))}
+                        
                         </ul>
                       </div>
+                    </div>
+
+                    {/* CTA Button */}
+                    <div className="mt-12 text-center relative z-10">
+                      <button 
+                        onClick={() => {
+                          setContactModalView('email');
+                          setIsContactModalOpen(true);
+                        }}
+                        className="px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold rounded-xl transition-all shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2 mx-auto active:scale-95"
+                      >
+                        <MessageSquareText size={20} />
+                        {t.chatbotPlans.talkBtn}
+                      </button>
                     </div>
                   </div>
                 )}
