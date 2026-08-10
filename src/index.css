@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Kaushan+Script&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=Permanent+Marker&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'Outfit', system-ui, Avenir, Helvetica, Arial, sans-serif;
-  --font-serif: 'Outfit', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-sans: 'Nunito', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-serif: 'Nunito', system-ui, Avenir, Helvetica, Arial, sans-serif;
   --color-champagne: #D4AF37;
   --color-champagne-light: #FCE69B;
 }
 
 body {
   margin: 0;
-  font-family: 'Outfit', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Nunito', system-ui, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
