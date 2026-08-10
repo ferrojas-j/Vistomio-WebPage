@@ -1458,18 +1458,29 @@ const VistomioLandingPage: React.FC = () => {
           </div>
 
           <div className="flex flex-col gap-16">
-            {t.featureCategories.map((category, catIdx) => (
+            
+            {t.featureCategories.map((category, catIdx) => {
+              const isChatbotCategory = catIdx === t.featureCategories.length - 1;
+              return (
               <div key={catIdx} className="flex flex-col">
                 <div className="mb-8 flex items-center gap-4">
                   <h3 className="text-2xl font-bold text-white tracking-tight">{category.name}</h3>
+                  {isChatbotCategory && (
+                    <div className="px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 rounded-full text-emerald-400 text-xs font-semibold uppercase tracking-wider whitespace-nowrap ml-2">
+                      {t.standaloneBadge}
+                    </div>
+                  )}
                   <div className="h-px bg-slate-700 flex-grow"></div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {category.items.map((feature, idx) => (
-                    <div 
-                      key={idx} 
-                      className="bg-slate-800/50 backdrop-blur-xl rounded-3xl p-8 border border-slate-700 hover:border-[#D4AF37]/50 hover:shadow-lg hover:shadow-amber-900/20 transition-all duration-300 group cursor-default relative overflow-hidden flex flex-col"
-                    >
+                
+                {!isChatbotCategory ? (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {category.items.map((feature, idx) => (
+                      <div 
+                        key={idx} 
+                        className="bg-slate-800/50 backdrop-blur-xl rounded-3xl p-8 border border-slate-700 hover:border-[#D4AF37]/50 hover:shadow-lg hover:shadow-amber-900/20 transition-all duration-300 group cursor-default relative overflow-hidden flex flex-col"
+                      >
+                        
                       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#D4AF37]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                       
                       <div className="flex justify-between items-start mb-6 relative z-10">
@@ -1484,35 +1495,26 @@ const VistomioLandingPage: React.FC = () => {
                       </div>
                       <h4 className="text-xl font-bold text-white mb-3 relative z-10">{feature.title}</h4>
                       <p className="text-slate-300 text-sm leading-relaxed relative z-10 flex-grow">{feature.desc}</p>
-                    </div>
-                  ))}
-                
-                {catIdx === t.featureCategories.length - 1 && (
-                  <div className="mt-16 pt-16 border-t border-slate-800 relative bg-[#0B1121]/50 rounded-b-[3rem] px-8 pb-16 mx-[-2rem]">
-                    {/* Visual Connector */}
-                    <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-slate-900 border border-slate-800 rounded-full flex items-center justify-center text-emerald-500 shadow-[0_0_20px_rgba(16,185,129,0.2)]">
-                      <ChevronDown size={24} className="animate-bounce" />
-                    </div>
                     
-                    {/* --- CHATBOT AUTOMATION SECTION --- */}
-                    <div className="relative overflow-hidden pt-12 rounded-[2rem]">
-                      {/* --- CHATBOT AUTOMATION SECTION --- */}
-      
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-emerald-500/5 blur-[150px] rounded-[100%]"></div>
-        </div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
-              {t.chatbotPlans.title}
-            </h2>
-            <p className="text-lg text-slate-400">
-              {t.chatbotPlans.subtitle}
-            </p>
-          </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="bg-[#0B1121] rounded-[2rem] p-8 md:p-12 relative overflow-hidden border border-slate-800 shadow-2xl mt-4">
+                    <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/5 blur-[80px] rounded-full pointer-events-none"></div>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-emerald-500/5 blur-[150px] rounded-[100%] pointer-events-none"></div>
+                    
+                    <div className="text-center max-w-3xl mx-auto mb-16 relative z-10">
+                      <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
+                        {t.chatbotPlans.title}
+                      </h2>
+                      <p className="text-lg text-slate-400">
+                        {t.chatbotPlans.subtitle}
+                      </p>
+                    </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto relative z-10">
+                      
             {/* Standard Plan */}
             <div className="bg-slate-900/50 border border-indigo-500/20 rounded-3xl p-8 flex flex-col h-full hover:border-indigo-500/40 transition-colors shadow-lg hover:shadow-indigo-500/5 relative overflow-hidden">
               <div className="w-14 h-14 rounded-2xl bg-indigo-500/10 flex items-center justify-center border border-indigo-500/20 mb-6">
@@ -1561,17 +1563,13 @@ const VistomioLandingPage: React.FC = () => {
                     <span className="text-slate-300 leading-relaxed">{feature}</span>
                   </li>
                 ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      
+              </ul></div>
                     </div>
                   </div>
                 )}
-</div>
               </div>
-            ))}
+            )})}
+
           </div>
         </div>
       </section>
