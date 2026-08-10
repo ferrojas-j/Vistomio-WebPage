@@ -8,12 +8,12 @@ export default function POSSimulator({ t }: { t: any }) {
   const { posDemo } = t;
 
   return (
-    <div className="w-full max-w-[420px] mx-auto bg-slate-900 rounded-[3rem] p-3 shadow-2xl border-4 border-slate-800 relative shadow-emerald-500/20">
+    <div className="w-full max-w-[380px] mx-auto bg-slate-900 rounded-[3rem] p-3 shadow-2xl border-4 border-slate-800 relative shadow-emerald-500/20">
       {/* Notch */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-slate-900 rounded-b-2xl z-20"></div>
       
       {/* Phone Screen */}
-      <div className="w-full h-[750px] bg-slate-50 rounded-[2.5rem] overflow-hidden flex flex-col relative text-slate-800">
+      <div className="w-full h-[675px] bg-slate-50 rounded-[2.5rem] overflow-hidden flex flex-col relative text-slate-800">
         
         {/* Header */}
         <div className="pt-10 px-6 pb-4 flex justify-between items-center bg-white border-b border-slate-100 z-10 shadow-sm relative shrink-0">

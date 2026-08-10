@@ -1666,7 +1666,7 @@ const VistomioLandingPage: React.FC = () => {
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="flex-1 text-center lg:text-left">
               <div className="inline-block px-4 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-full text-emerald-400 text-sm font-bold uppercase tracking-wider mb-6">
-                Demo
+                Mini demo
               </div>
               <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
                 {t.posDemo.sectionTitle}
