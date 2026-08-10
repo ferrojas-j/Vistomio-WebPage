@@ -1950,7 +1950,7 @@ const VistomioLandingPage: React.FC = () => {
                   
                   <button type="submit" className="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold text-lg py-4 rounded-xl flex items-center justify-center gap-2 transition-colors shadow-lg shadow-emerald-500/20 mt-6">
                     <Send size={20} />
-                    Enviar Cotización
+                    Solicitar cotización
                   </button>
                 </form>
               </div>
