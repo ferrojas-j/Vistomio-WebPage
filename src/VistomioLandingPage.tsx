@@ -1140,6 +1140,7 @@ const VistomioLandingPage: React.FC = () => {
   const [lang, setLang] = useState<Language>('es');
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [productsMenuOpen, setProductsMenuOpen] = useState(false);
   const [langMenuOpen, setLangMenuOpen] = useState(false);
   const [demosMenuOpen, setDemosMenuOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
@@ -1174,6 +1175,7 @@ const VistomioLandingPage: React.FC = () => {
 
   const langMenuRef = useRef<HTMLDivElement>(null);
   const demosMenuRef = useRef<HTMLDivElement>(null);
+  const productsMenuRef = useRef<HTMLDivElement>(null);
   const t = translations[lang];
 
   useEffect(() => {
@@ -1189,6 +1191,9 @@ const VistomioLandingPage: React.FC = () => {
       }
       if (demosMenuRef.current && !demosMenuRef.current.contains(event.target as Node)) {
         setDemosMenuOpen(false);
+      }
+      if (productsMenuRef.current && !productsMenuRef.current.contains(event.target as Node)) {
+        setProductsMenuOpen(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -1247,7 +1252,50 @@ const VistomioLandingPage: React.FC = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="#productos" className="text-sm font-medium text-slate-300 hover:text-[#FCE69B] transition-colors">{t.nav.products}</a>
+            {/* Productos Dropdown */}
+            <div className="relative flex items-center h-full" ref={productsMenuRef}>
+              <button 
+                onMouseEnter={() => setProductsMenuOpen(true)}
+                onClick={() => setProductsMenuOpen(!productsMenuOpen)}
+                className="flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-[#FCE69B] transition-colors py-2"
+              >
+                {t.nav.products}
+                <ChevronDown size={14} className={`text-slate-500 transition-transform duration-300 ${productsMenuOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              <div 
+                onMouseLeave={() => setProductsMenuOpen(false)}
+                className={`absolute top-[100%] left-0 mt-4 w-[650px] bg-slate-800/95 backdrop-blur-xl border border-slate-700 rounded-2xl shadow-2xl overflow-hidden transition-all duration-200 origin-top-left ${productsMenuOpen ? 'opacity-100 scale-100 translate-y-0 visible pointer-events-auto' : 'opacity-0 scale-95 -translate-y-2 invisible pointer-events-none'}`}
+              >
+                <div className="p-6 grid grid-cols-2 gap-x-8 gap-y-6">
+                  {t.featureCategories.map((category, catIdx) => (
+                    <div key={catIdx} className="flex flex-col">
+                      <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">{category.name}</h4>
+                      <div className="flex flex-col gap-1">
+                        {category.items.map((item, itemIdx) => {
+                          const Icon = item.icon;
+                          return (
+                            <a 
+                              key={itemIdx} 
+                              href={`#category-${catIdx}`} 
+                              onClick={() => setProductsMenuOpen(false)} 
+                              className="flex items-start gap-3 p-2 rounded-lg hover:bg-slate-700/50 transition-colors group"
+                            >
+                              <div className="w-8 h-8 rounded-full bg-[#D4AF37]/10 flex-shrink-0 flex items-center justify-center text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-[#0B1121] transition-colors mt-0.5">
+                                <Icon size={14} />
+                              </div>
+                              <div className="flex flex-col">
+                                <span className="text-sm font-medium text-slate-200 group-hover:text-white transition-colors leading-tight">{item.title}</span>
+                              </div>
+                            </a>
+                          )
+                        })}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
             <a href="#precios" className="text-sm font-medium text-slate-300 hover:text-[#FCE69B] transition-colors">{t.nav.pricing}</a>
             <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="text-sm font-medium text-slate-300 hover:text-[#FCE69B] transition-colors">{t.nav.contact}</a>
             
@@ -1848,7 +1896,7 @@ const VistomioLandingPage: React.FC = () => {
             {t.featureCategories.map((category, catIdx) => {
               const isChatbotCategory = catIdx === t.featureCategories.length - 1;
               return (
-              <div key={catIdx} className="flex flex-col">
+              <div key={catIdx} id={`category-${catIdx}`} className="flex flex-col scroll-mt-32">
                 <div className="mb-8 flex items-center gap-4">
                   <h3 className="text-2xl font-bold text-white tracking-tight">{category.name}</h3>
                   <div className="h-px bg-slate-700 flex-grow"></div>
