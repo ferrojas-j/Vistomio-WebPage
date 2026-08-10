@@ -332,7 +332,7 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
             ))}
           </div>
           
-          <p className="mt-8 text-xl text-[#FCE69B] font-medium leading-relaxed max-w-2xl mx-auto lg:mx-0">
+          <p className="mt-8 text-xl text-slate-400 leading-relaxed max-w-2xl mx-auto lg:mx-0">
             {currentLanguage === 'es' 
               ? 'Cada chatbot que desarrollamos es un cerebro de IA entrenado específicamente para tu negocio, con tu propia información corporativa, tu estilo y alma única de tu negocio.'
               : currentLanguage === 'en'
