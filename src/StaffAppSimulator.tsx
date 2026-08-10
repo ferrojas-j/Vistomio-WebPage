@@ -30,7 +30,19 @@ const translations = {
       viewChecklist: 'Ver Checklist',
       floor1: 'María (Piso 1)',
       checkout: 'Checkout',
-      checkinToday: 'Check-in Hoy'
+      checkinToday: 'Check-in Hoy',
+      checklistTitle: 'Checklist Estándar de Limpieza',
+      checklist: [
+        'Ventilar habitación (abrir ventanas)',
+        'Sacar ropa de cama sucia y toallas',
+        'Limpiar y desinfectar el baño (inodoro, ducha, lavamanos)',
+        'Reponer amenities (jabón, shampoo, papel higiénico)',
+        'Tender la cama con sábanas limpias y lisas',
+        'Limpiar polvo de todos los muebles y superficies',
+        'Aspirar alfombras o barrer y trapear el piso',
+        'Verificar funcionamiento de luces, AC y TV',
+        'Cerrar ventanas y perfumar habitación'
+      ]
     },
     recepcion: {
       newNovelty: 'Nueva Novedad de Recepción',
@@ -51,7 +63,14 @@ const translations = {
       log4: {
         title: 'Huésped Hab 102 reporta pérdida de tarjeta. Se emite copia magnética.',
         time: 'Ayer, 21:00'
-      }
+      },
+      pettyCash: 'CAJA CHICA',
+      recentExpenses: 'ÚLTIMOS GASTOS',
+      expenses: [
+        { title: 'Taxis Huésped H5', time: 'Hoy, 14:30', amount: '-$450', isPositive: false },
+        { title: 'Compra Papelería', time: 'Hoy, 11:15', amount: '-$1,200', isPositive: false },
+        { title: 'Fondo Inicial', time: 'Ayer, 08:00', amount: '+$5,000', isPositive: true }
+      ]
     },
     mantenimiento: {
       advance: 'Avance Bitácora',
@@ -93,7 +112,19 @@ const translations = {
       viewChecklist: 'View Checklist',
       floor1: 'Mary (Floor 1)',
       checkout: 'Checkout',
-      checkinToday: 'Check-in Today'
+      checkinToday: 'Check-in Today',
+      checklistTitle: 'Standard Cleaning Checklist',
+      checklist: [
+        'Ventilate room (open windows)',
+        'Remove dirty bed linen and towels',
+        'Clean and disinfect bathroom (toilet, shower, sink)',
+        'Restock amenities (soap, shampoo, toilet paper)',
+        'Make the bed with clean and smooth sheets',
+        'Dust all furniture and surfaces',
+        'Vacuum carpets or sweep and mop the floor',
+        'Check lights, AC, and TV operation',
+        'Close windows and perfume the room'
+      ]
     },
     recepcion: {
       newNovelty: 'New Front Desk Update',
@@ -114,7 +145,14 @@ const translations = {
       log4: {
         title: 'Guest in Room 102 reported lost card. Magnetic copy issued.',
         time: 'Yesterday, 21:00'
-      }
+      },
+      pettyCash: 'PETTY CASH',
+      recentExpenses: 'LATEST EXPENSES',
+      expenses: [
+        { title: 'Taxis Guest Room 5', time: 'Today, 14:30', amount: '-$450', isPositive: false },
+        { title: 'Office Supplies', time: 'Today, 11:15', amount: '-$1,200', isPositive: false },
+        { title: 'Initial Fund', time: 'Yesterday, 08:00', amount: '+$5,000', isPositive: true }
+      ]
     },
     mantenimiento: {
       advance: 'Update Log',
@@ -156,7 +194,19 @@ const translations = {
       viewChecklist: 'Voir Checklist',
       floor1: 'Marie (Étage 1)',
       checkout: 'Checkout',
-      checkinToday: 'Check-in Auj.'
+      checkinToday: 'Check-in Auj.',
+      checklistTitle: 'Checklist de Nettoyage Standard',
+      checklist: [
+        'Aérer la chambre (ouvrir les fenêtres)',
+        'Enlever le linge de lit et les serviettes sales',
+        'Nettoyer et désinfecter la salle de bain',
+        'Réapprovisionner les produits (savon, shampoing)',
+        'Faire le lit avec des draps propres',
+        'Épousseter tous les meubles et surfaces',
+        'Aspirer les tapis ou balayer et laver le sol',
+        'Vérifier le fonctionnement des lumières, AC et TV',
+        'Fermer les fenêtres et parfumer la chambre'
+      ]
     },
     recepcion: {
       newNovelty: 'Nouvelle Mise à Jour',
@@ -177,7 +227,14 @@ const translations = {
       log4: {
         title: 'Client Ch. 102 signale perte de carte. Copie émise.',
         time: 'Hier, 21h00'
-      }
+      },
+      pettyCash: 'PETITE CAISSE',
+      recentExpenses: 'DERNIÈRES DÉPENSES',
+      expenses: [
+        { title: 'Taxis Client Ch. 5', time: 'Auj, 14h30', amount: '-$450', isPositive: false },
+        { title: 'Fournitures de bureau', time: 'Auj, 11h15', amount: '-$1,200', isPositive: false },
+        { title: 'Fonds Initial', time: 'Hier, 08h00', amount: '+$5,000', isPositive: true }
+      ]
     },
     mantenimiento: {
       advance: 'Mettre à jour',
@@ -204,7 +261,7 @@ const translations = {
   }
 };
 
-const LimpiezaView = ({ t }: { t: any }) => (
+const LimpiezaView = ({ t, onOpenChecklist }: { t: any, onOpenChecklist: () => void }) => (
   <div className="flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
     <div className="bg-indigo-600 text-white rounded-2xl p-4 shadow-md shadow-indigo-600/20">
       <div className="text-[10px] font-bold uppercase tracking-wider mb-1 opacity-80">{t.limpieza.planning}</div>
@@ -233,7 +290,7 @@ const LimpiezaView = ({ t }: { t: any }) => (
     <div className="bg-white rounded-2xl border border-slate-100 shadow-sm mt-2 overflow-hidden flex flex-col">
        <div className="p-3 border-b border-slate-100 flex justify-between items-center bg-slate-50">
           <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">{t.limpieza.assignments}</span>
-          <button className="flex items-center gap-1 text-indigo-600 bg-indigo-50 px-2 py-1 rounded text-[9px] font-bold uppercase"><CheckSquare size={12}/> {t.limpieza.viewChecklist}</button>
+          <button onClick={onOpenChecklist} className="flex items-center gap-1.5 text-indigo-600 bg-indigo-50 px-3 py-1.5 rounded-full text-[10px] font-black tracking-wide uppercase transition-transform active:scale-95 cursor-pointer hover:bg-indigo-100"><CheckSquare size={14} strokeWidth={2.5}/> {t.limpieza.viewChecklist}</button>
        </div>
        <div className="p-3">
          <div className="flex items-center gap-2 mb-3">
@@ -258,6 +315,32 @@ const LimpiezaView = ({ t }: { t: any }) => (
              <div className="w-5 h-5 rounded-full border-2 border-slate-200"></div>
            </div>
          </div>
+       </div>
+    </div>
+    
+    <div className="bg-white rounded-2xl border border-slate-100 shadow-sm mt-2 overflow-hidden flex flex-col">
+       <div className="p-5 flex justify-between items-center border-b border-slate-50">
+         <div>
+           <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">{t.recepcion.pettyCash}</h4>
+           <p className="text-3xl font-black text-slate-800">$15,450</p>
+         </div>
+         <button className="w-10 h-10 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center transition-transform active:scale-95">
+           <Plus size={20} strokeWidth={2.5}/>
+         </button>
+       </div>
+       <div className="bg-slate-50/50 p-4 border-b border-slate-50">
+          <h4 className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.recepcion.recentExpenses}</h4>
+       </div>
+       <div className="flex flex-col p-4 gap-4">
+         {t.recepcion.expenses.map((expense: any, i: number) => (
+           <div key={i} className="flex justify-between items-center">
+             <div className="flex flex-col">
+               <span className="font-bold text-sm text-slate-700">{expense.title}</span>
+               <span className="text-[10px] text-slate-400">{expense.time}</span>
+             </div>
+             <span className={`font-bold text-sm ${expense.isPositive ? 'text-emerald-500' : 'text-slate-600'}`}>{expense.amount}</span>
+           </div>
+         ))}
        </div>
     </div>
   </div>
@@ -333,6 +416,7 @@ const MantenimientoView = ({ t }: { t: any }) => (
 
 export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulatorProps) {
   const [activeTab, setActiveTab] = useState<Tab>('limpieza');
+  const [isChecklistOpen, setIsChecklistOpen] = useState(false);
   const t = translations[currentLanguage];
   
   return (
@@ -373,9 +457,31 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
 
         {/* Content Area */}
         <div className="flex-1 overflow-y-auto bg-slate-50 p-4 pb-24 custom-scrollbar">
-          {activeTab === 'limpieza' && <LimpiezaView t={t} />}
+          {activeTab === 'limpieza' && <LimpiezaView t={t} onOpenChecklist={() => setIsChecklistOpen(true)} />}
           {activeTab === 'recepcion' && <RecepcionView t={t} />}
           {activeTab === 'mantenimiento' && <MantenimientoView t={t} />}
+        </div>
+        
+        {/* Checklist Modal */}
+        <div className={`absolute inset-0 bg-slate-900/40 backdrop-blur-[2px] z-30 transition-opacity duration-300 ${isChecklistOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsChecklistOpen(false)}>
+          <div className={`absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl transition-transform duration-300 ease-out p-6 shadow-2xl flex flex-col max-h-[85%] ${isChecklistOpen ? 'translate-y-0' : 'translate-y-full'}`} onClick={e => e.stopPropagation()}>
+            <div className="flex justify-between items-center mb-4 pb-4 border-b border-slate-50 shrink-0">
+              <h3 className="font-bold text-slate-800 text-lg pr-4 leading-tight">{t.limpieza.checklistTitle}</h3>
+              <button onClick={() => setIsChecklistOpen(false)} className="text-slate-400 hover:text-slate-600 transition-colors p-1">
+                <X size={20} />
+              </button>
+            </div>
+            
+            <div className="overflow-y-auto custom-scrollbar flex flex-col gap-5 pb-6">
+              {t.limpieza.checklist.map((item: string, i: number) => (
+                <label key={i} className="flex items-start gap-4 cursor-pointer group">
+                  <div className="w-5 h-5 rounded border-2 border-slate-300 flex-shrink-0 mt-0.5 group-hover:border-indigo-400 transition-colors flex items-center justify-center bg-white">
+                  </div>
+                  <span className="text-sm text-slate-600 font-medium leading-snug">{item}</span>
+                </label>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Bottom Nav */}
