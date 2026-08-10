@@ -830,8 +830,8 @@ const translations = {
     },
     featuresTitle: "Des modules conçus pour l'avenir",
     featuresSubtitle: 'Écosystème interconnecté. Utilisez un seul module ou déployez la suite complète en quelques minutes.',
-    standaloneBadge1: 'Disponible en',
-    standaloneBadge2: 'app indépendante',
+    standaloneBadge1: 'Disponible comme',
+    standaloneBadge2: 'app autonome',
     seeHowItWorks: 'Voir comment ça marche',
     featureCategories: [
       {
