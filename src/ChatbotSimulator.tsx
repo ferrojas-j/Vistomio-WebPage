@@ -275,11 +275,13 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
         </h2>
         
         <p className="text-xl text-slate-400 leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
-          {currentLanguage === 'es' 
-            ? 'Conecta tus canales y centraliza respuestas eficientes 24/7 con un chatbot IA especializado en hotelería y restaurantes.' 
-            : currentLanguage === 'en' 
-            ? 'Connect your channels and centralize efficient 24/7 responses with an AI chatbot specialized in hospitality and restaurants.' 
-            : 'Connectez vos canaux et centralisez des réponses efficaces 24h/24 et 7j/7 avec un chatbot IA spécialisé dans l\'hôtellerie et la restauration.'}
+          {currentLanguage === 'es' ? (
+            <>Conecta tus canales y centraliza respuestas eficientes 24/7 con un chatbot IA <span className="text-emerald-400 font-medium">especializado en hotelería y restaurantes.</span></>
+          ) : currentLanguage === 'en' ? (
+            <>Connect your channels and centralize efficient 24/7 responses with an AI chatbot <span className="text-emerald-400 font-medium">specialized in hospitality and restaurants.</span></>
+          ) : (
+            <>Connectez vos canaux et centralisez des réponses efficaces 24h/24 et 7j/7 avec un chatbot IA <span className="text-emerald-400 font-medium">spécialisé dans l'hôtellerie et la restauration.</span></>
+          )}
         </p>
 
         {/* Channels Icons Grid */}
@@ -329,8 +331,15 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
               </button>
             ))}
           </div>
+          
+          <p className="mt-8 text-sm text-slate-400/80 leading-relaxed max-w-xl mx-auto lg:mx-0">
+            {currentLanguage === 'es' 
+              ? 'Cada chatbot que desarrollamos es un cerebro de IA entrenado específicamente para tu negocio, con tu propia información corporativa, tu estilo y alma única de tu negocio.'
+              : currentLanguage === 'en'
+              ? 'Each chatbot we develop is an AI brain trained specifically for your business, with your own corporate information, your style, and the unique soul of your business.'
+              : 'Chaque chatbot que nous développons est un cerveau d\'IA entraîné spécifiquement pour votre entreprise, avec vos propres informations d\'entreprise, votre style et l\'âme unique de votre entreprise.'}
+          </p>
         </div>
-
       </div>
     </div>
   );
