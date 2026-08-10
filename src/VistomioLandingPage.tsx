@@ -106,7 +106,7 @@ const translations = {
         },
         {
           title: 'Fusión Hotel & Restaurante',
-          desc: 'El POS del restaurante habla directamente con los sistemas del hotel. Comunicación fluida, cero errores.',
+          desc: 'El <span class="text-[#FCE69B] font-semibold">POS Vistomio restaurante</span> habla directamente con los sistemas del hotel. Comunicación fluida, cero errores.',
           icon: Wine
         },
         {
@@ -462,7 +462,7 @@ const translations = {
         },
         {
           title: 'Hotel & Restaurant Fusion',
-          desc: 'The restaurant POS talks directly with the hotel systems. Seamless communication, zero mistakes.',
+          desc: 'The <span class="text-[#FCE69B] font-semibold">Vistomio Restaurant POS</span> talks directly with the hotel systems. Seamless communication, zero mistakes.',
           icon: Wine
         },
         {
@@ -818,7 +818,7 @@ const translations = {
         },
         {
           title: 'Fusion Hôtel & Restaurant',
-          desc: 'Le POS du restaurant communique directement avec les systèmes de l\'hôtel. Communication fluide, zéro erreur.',
+          desc: 'Le <span class="text-[#FCE69B] font-semibold">POS Vistomio restaurant</span> communique directement avec les systèmes de l\'hôtel. Communication fluide, zéro erreur.',
           icon: Wine
         },
         {
