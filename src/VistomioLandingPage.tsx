@@ -1769,6 +1769,7 @@ const VistomioLandingPage: React.FC = () => {
                 disabled={selectedCustomModules.length === 0}
                 onClick={() => {
                   setIsCustomPlanModalOpen(false);
+                  setContactModalView('quote');
                   setIsContactModalOpen(true);
                 }}
               >
@@ -1838,6 +1839,105 @@ const VistomioLandingPage: React.FC = () => {
                     </a>
                   </div>
                 </div>
+              </div>
+            
+            ) : contactModalView === 'quote' ? (
+              <div className="animate-[fade-in_0.3s_ease-out]">
+                <button 
+                  onClick={() => {
+                    setContactModalView('options');
+                    setIsContactModalOpen(false);
+                    setIsCustomPlanModalOpen(true);
+                  }}
+                  className="absolute top-6 left-6 w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-slate-400 hover:text-white transition-colors z-10"
+                >
+                  <ArrowLeft size={20} />
+                </button>
+                <div className="text-center mb-8">
+                  <div className="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-emerald-900/30">
+                    <CheckCircle2 size={32} className="text-white" />
+                  </div>
+                  <h3 className="text-3xl font-bold text-white mb-2">Cotiza tu Plan</h3>
+                  <p className="text-slate-400 text-sm">Déjanos tus datos para enviarte una propuesta a la medida.</p>
+                </div>
+
+                <form className="space-y-4" onSubmit={(e) => { 
+                  e.preventDefault(); 
+                  const formData = new FormData(e.currentTarget as HTMLFormElement);
+                  const email = formData.get('email');
+                  const phone = formData.get('phone');
+                  const company = formData.get('company');
+                  const message = formData.get('message');
+                  
+                  const subject = "Solicitud de Cotización a Medida - Vistomio";
+                  const body = `Correo: ${email}\nTeléfono: ${phone}\nEmpresa: ${company || 'No especificada'}\n\nMódulos Seleccionados:\n- ${selectedCustomModules.join('\n- ')}\n\nMensaje:\n${message}`;
+                  
+                  window.location.href = `mailto:info@vistomio.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                  
+                  alert("Se abrirá tu cliente de correo con los datos de tu cotización listos para enviar."); 
+                  setIsContactModalOpen(false); 
+                  setContactModalView('options'); 
+                }}>
+                  
+                  {selectedCustomModules.length > 0 && (
+                    <div className="bg-slate-900/50 border border-slate-800 p-4 rounded-xl mb-4">
+                      <label className="block text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-2">Módulos Seleccionados</label>
+                      <ul className="text-slate-300 text-sm list-disc pl-4">
+                        {selectedCustomModules.map((mod, i) => (
+                          <li key={i}>{mod}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Tu Email *</label>
+                      <input 
+                        type="email" 
+                        name="email"
+                        required 
+                        placeholder="ejemplo@hotel.com"
+                        className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Número de Contacto *</label>
+                      <input 
+                        type="tel" 
+                        name="phone"
+                        required 
+                        placeholder="+1 234 567 890"
+                        className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Empresa (Opcional)</label>
+                    <input 
+                      type="text" 
+                      name="company"
+                      placeholder="Nombre de tu hotel o restaurante"
+                      className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Mensaje Adicional</label>
+                    <textarea 
+                      name="message"
+                      rows={3}
+                      placeholder="Cuéntanos un poco más sobre lo que necesitas..."
+                      className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all resize-none"
+                    ></textarea>
+                  </div>
+                  
+                  <button type="submit" className="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold text-lg py-4 rounded-xl flex items-center justify-center gap-2 transition-colors shadow-lg shadow-emerald-500/20 mt-6">
+                    <Send size={20} />
+                    Enviar Cotización
+                  </button>
+                </form>
               </div>
             ) : contactModalView === 'email' ? (
               <div className="animate-[fade-in_0.3s_ease-out]">
