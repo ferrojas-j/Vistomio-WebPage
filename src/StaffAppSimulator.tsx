@@ -732,7 +732,7 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
         
         {/* Header */}
         <div className="pt-10 pb-4 px-5 bg-white flex items-center justify-between border-b border-slate-100 z-10 shrink-0">
-          <h2 className="text-xl font-bold text-slate-800">App Personal</h2>
+          <h2 className="text-xl font-bold text-slate-800 tracking-tight">Vistomio Staff App</h2>
           <div className="flex items-center gap-2">
             <button onClick={() => setIsReportModalOpen(true)} className="flex items-center gap-1.5 px-3 py-1.5 bg-rose-50 text-rose-600 rounded-full text-xs font-bold transition-transform active:scale-95 cursor-pointer hover:bg-rose-100">
               <ShieldAlert size={14} /> Reportar
