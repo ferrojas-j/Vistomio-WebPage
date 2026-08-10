@@ -1580,6 +1580,7 @@ const VistomioLandingPage: React.FC = () => {
       </section>
 
       {/* --- BOUTIQUE NICHE SECTION (NEW) --- */}
+
       <section className="py-24 bg-slate-900 border-b border-slate-800 relative overflow-hidden">
         {/* Subtle background flair */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-amber-900/20 blur-[100px] rounded-full pointer-events-none"></div>
@@ -1642,7 +1643,29 @@ const VistomioLandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* --- FEATURES / MODULES --- */}
+      {/* --- BENEFITS --- */}
+      <section className="py-32 bg-slate-900 relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-[400px] bg-[#D4AF37]/10 blur-[120px] rounded-full pointer-events-none"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-20">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">{t.benefitsTitle}</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {t.benefits.map((benefit, idx) => (
+              <div key={idx} className="p-10 rounded-[2rem] bg-slate-800/60 backdrop-blur-xl border border-slate-700 hover:border-[#D4AF37]/50 hover:shadow-xl hover:shadow-amber-900/20 transition-all shadow-sm">
+                <div className="w-16 h-16 rounded-2xl bg-[#D4AF37]/10 text-[#D4AF37] flex items-center justify-center mb-8 border border-[#D4AF37]/30">
+                  <benefit.icon size={32} strokeWidth={1.5} />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">{benefit.title}</h3>
+                <p className="text-slate-300 leading-relaxed text-lg">{benefit.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="productos" className="py-32 relative bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
@@ -1763,10 +1786,7 @@ const VistomioLandingPage: React.FC = () => {
                       </div>
                     </div>
                     
-                    {/* Chatbot Simulator Mini Demo */}
-                    <div className="mt-20 mb-10 relative z-10 w-full">
-                      <ChatbotSimulator currentLanguage={lang} />
-                    </div>
+
 
                   </div>
                 )}
@@ -1777,36 +1797,13 @@ const VistomioLandingPage: React.FC = () => {
         </div>
       </section>
 
-
-      
-
-
-      {/* --- BENEFITS --- */}
-      <section className="py-32 bg-slate-900 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-[400px] bg-[#D4AF37]/10 blur-[120px] rounded-full pointer-events-none"></div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">{t.benefitsTitle}</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            {t.benefits.map((benefit, idx) => (
-              <div key={idx} className="p-10 rounded-[2rem] bg-slate-800/60 backdrop-blur-xl border border-slate-700 hover:border-[#D4AF37]/50 hover:shadow-xl hover:shadow-amber-900/20 transition-all shadow-sm">
-                <div className="w-16 h-16 rounded-2xl bg-[#D4AF37]/10 text-[#D4AF37] flex items-center justify-center mb-8 border border-[#D4AF37]/30">
-                  <benefit.icon size={32} strokeWidth={1.5} />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-4">{benefit.title}</h3>
-                <p className="text-slate-300 leading-relaxed text-lg">{benefit.desc}</p>
-              </div>
-            ))}
-          </div>
+      {/* CHATBOT SIMULATOR SECTION */}
+      <section className="py-24 relative bg-slate-900 border-t border-slate-800 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <ChatbotSimulator currentLanguage={lang} />
         </div>
       </section>
 
-      {/* --- PRICING --- */}
-      
-      {/* POS SIMULATOR SECTION */}
       <section className="py-24 relative bg-slate-900 border-t border-slate-800 overflow-hidden">
         <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -1908,6 +1905,23 @@ const VistomioLandingPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+
+{/* --- FEATURES / MODULES --- */}
+
+
+
+      
+
+
+
+
+      {/* --- PRICING --- */}
+      
+      {/* POS SIMULATOR SECTION */}
+
+
+
 
       <section id="precios" className="py-32 relative bg-slate-900 border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
