@@ -1612,14 +1612,14 @@ const VistomioLandingPage: React.FC = () => {
               <div className="flex items-center gap-3 text-2xl font-bold text-slate-200">
                 <span className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-sm border border-slate-700 shadow-sm text-slate-300">HN</span> Noga
               </div>
-              <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">Oaxaca, México</span>
+              <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">Zipolite, México</span>
             </div>
 
             <div className="flex flex-col items-center gap-2">
               <div className="flex items-center gap-2 text-2xl font-bold text-slate-200 italic">
                 <GalloAzulLogo className="text-blue-500" size={28} /> Gallo Azul
               </div>
-              <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">Baja California, México</span>
+              <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">Todos Santos, México</span>
             </div>
 
             <div className="flex flex-col items-center gap-2">
