@@ -90,6 +90,14 @@ const translations = {
       findingPlaceholder: 'Ej: Mancha en alfombra',
       submitBtn: 'Enviar Reporte Urgente'
     },
+    novelty: {
+      title: 'Nueva Novedad',
+      type: 'TIPO DE NOVEDAD',
+      typeOptions: ['Información', 'Incidente', 'Requerimiento', 'Otro'],
+      detail: 'DETALLE',
+      detailPlaceholder: 'Ej: Huésped 102 solicita taxi mañana a las 06:00',
+      submitBtn: 'Registrar Novedad'
+    },
     mantenimiento: {
       advance: 'Avance Bitácora',
       supplies: 'Pedir Insumos',
@@ -189,6 +197,14 @@ const translations = {
       finding: 'FINDING',
       findingPlaceholder: 'Ex: Stain on carpet',
       submitBtn: 'Send Urgent Report'
+    },
+    novelty: {
+      title: 'New Log',
+      type: 'LOG TYPE',
+      typeOptions: ['Information', 'Incident', 'Requirement', 'Other'],
+      detail: 'DETAIL',
+      detailPlaceholder: 'Ex: Guest 102 requests taxi tomorrow at 06:00',
+      submitBtn: 'Register Log'
     },
     mantenimiento: {
       advance: 'Update Log',
@@ -290,6 +306,14 @@ const translations = {
       findingPlaceholder: 'Ex: Tache sur le tapis',
       submitBtn: 'Envoyer Rapport Urgent'
     },
+    novelty: {
+      title: 'Nouvelle Entrée',
+      type: 'TYPE D\'ENTRÉE',
+      typeOptions: ['Information', 'Incident', 'Exigence', 'Autre'],
+      detail: 'DÉTAIL',
+      detailPlaceholder: 'Ex: Client 102 demande un taxi demain à 06:00',
+      submitBtn: 'Enregistrer Entrée'
+    },
     mantenimiento: {
       advance: 'Mettre à jour',
       supplies: 'Commander',
@@ -374,9 +398,9 @@ const LimpiezaView = ({ t, onOpenChecklist }: { t: any, onOpenChecklist: () => v
   </div>
 );
 
-const RecepcionView = ({ t, onOpenExpense }: { t: any, onOpenExpense: () => void }) => (
+const RecepcionView = ({ t, onOpenExpense, onOpenNovelty }: { t: any, onOpenExpense: () => void, onOpenNovelty: () => void }) => (
   <div className="flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
-    <button className="w-full bg-indigo-600 text-white rounded-2xl p-4 shadow-md shadow-indigo-600/20 flex items-center justify-center gap-2 font-bold text-sm transition-transform active:scale-95 cursor-default">
+    <button onClick={onOpenNovelty} className="w-full bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl p-4 shadow-md shadow-indigo-600/20 flex items-center justify-center gap-2 font-bold text-sm transition-transform active:scale-[0.98] cursor-pointer">
       <Plus size={18} /> {t.recepcion.newNovelty}
     </button>
     
@@ -473,6 +497,7 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
   const [isChecklistOpen, setIsChecklistOpen] = useState(false);
   const [isExpenseModalOpen, setIsExpenseModalOpen] = useState(false);
   const [isReportModalOpen, setIsReportModalOpen] = useState(false);
+  const [isNoveltyModalOpen, setIsNoveltyModalOpen] = useState(false);
   const t = translations[currentLanguage];
   
   return (
@@ -514,7 +539,7 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
         {/* Content Area */}
         <div className="flex-1 overflow-y-auto bg-slate-50 p-4 pb-24 custom-scrollbar">
           {activeTab === 'limpieza' && <LimpiezaView t={t} onOpenChecklist={() => setIsChecklistOpen(true)} />}
-          {activeTab === 'recepcion' && <RecepcionView t={t} onOpenExpense={() => setIsExpenseModalOpen(true)} />}
+          {activeTab === 'recepcion' && <RecepcionView t={t} onOpenExpense={() => setIsExpenseModalOpen(true)} onOpenNovelty={() => setIsNoveltyModalOpen(true)} />}
           {activeTab === 'mantenimiento' && <MantenimientoView t={t} />}
         </div>
         
@@ -608,6 +633,38 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
               
               <button onClick={() => setIsReportModalOpen(false)} className="w-full bg-[#D81E45] hover:bg-rose-700 text-white font-bold py-3.5 rounded-xl transition-colors mt-2 active:scale-[0.98]">
                 {t.report?.submitBtn || 'Enviar Reporte Urgente'}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Novelty Modal */}
+        <div className={`absolute inset-0 bg-slate-900/40 backdrop-blur-[2px] z-30 transition-opacity duration-300 ${isNoveltyModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsNoveltyModalOpen(false)}>
+          <div className={`absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl transition-transform duration-300 ease-out p-6 shadow-2xl flex flex-col ${isNoveltyModalOpen ? 'translate-y-0' : 'translate-y-full'}`} onClick={e => e.stopPropagation()}>
+            <div className="flex justify-between items-center mb-5 pb-4 border-b border-slate-50 shrink-0">
+              <h3 className="font-bold text-indigo-700 text-lg flex items-center gap-2"><Plus size={20}/> {t.novelty?.title || 'Nueva Novedad'}</h3>
+              <button onClick={() => setIsNoveltyModalOpen(false)} className="text-slate-400 hover:text-slate-600 transition-colors p-1">
+                <X size={20} />
+              </button>
+            </div>
+            
+            <div className="flex flex-col gap-5 pb-2">
+              <div className="flex flex-col gap-2">
+                <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.novelty?.type || 'TIPO DE NOVEDAD'}</label>
+                <select className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium text-slate-700 focus:outline-none focus:border-indigo-500 appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%208l5%205%205-5%22%20fill%3D%22none%22%20stroke%3D%22%2364748b%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[position:right_10px_center]">
+                  {(t.novelty?.typeOptions || ['Información']).map((opt: string, i: number) => (
+                    <option key={i}>{opt}</option>
+                  ))}
+                </select>
+              </div>
+              
+              <div className="flex flex-col gap-2">
+                <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.novelty?.detail || 'DETALLE'}</label>
+                <textarea placeholder={t.novelty?.detailPlaceholder || 'Ej: Huésped solicita despertar a las 06:00'} className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 resize-none h-24" readOnly></textarea>
+              </div>
+              
+              <button onClick={() => setIsNoveltyModalOpen(false)} className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3.5 rounded-xl transition-colors mt-2 active:scale-[0.98]">
+                {t.novelty?.submitBtn || 'Registrar Novedad'}
               </button>
             </div>
           </div>
