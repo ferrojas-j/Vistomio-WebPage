@@ -80,6 +80,16 @@ const translations = {
       descPlaceholder: 'Ej: Compra de café para huéspedes',
       registerBtn: 'Registrar en Caja Chica'
     },
+    report: {
+      title: 'Reportar Alerta',
+      team: 'EQUIPO',
+      teamOptions: ['Limpieza', 'Mantenimiento', 'Recepción'],
+      location: 'LUGAR',
+      locationPlaceholder: 'Ej: Habitación 102',
+      finding: 'HALLAZGO',
+      findingPlaceholder: 'Ej: Mancha en alfombra',
+      submitBtn: 'Enviar Reporte Urgente'
+    },
     mantenimiento: {
       advance: 'Avance Bitácora',
       supplies: 'Pedir Insumos',
@@ -170,6 +180,16 @@ const translations = {
       descPlaceholder: 'Ex: Coffee purchase for guests',
       registerBtn: 'Register in Petty Cash'
     },
+    report: {
+      title: 'Report Alert',
+      team: 'TEAM',
+      teamOptions: ['Cleaning', 'Maintenance', 'Front Desk'],
+      location: 'LOCATION',
+      locationPlaceholder: 'Ex: Room 102',
+      finding: 'FINDING',
+      findingPlaceholder: 'Ex: Stain on carpet',
+      submitBtn: 'Send Urgent Report'
+    },
     mantenimiento: {
       advance: 'Update Log',
       supplies: 'Order Supplies',
@@ -259,6 +279,16 @@ const translations = {
       desc: 'DESCRIPTION ET MOTIF',
       descPlaceholder: 'Ex: Achat de café pour clients',
       registerBtn: 'Enregistrer en Petite Caisse'
+    },
+    report: {
+      title: 'Signaler Alerte',
+      team: 'ÉQUIPE',
+      teamOptions: ['Ménage', 'Maintenance', 'Réception'],
+      location: 'LIEU',
+      locationPlaceholder: 'Ex: Chambre 102',
+      finding: 'DÉCOUVERTE',
+      findingPlaceholder: 'Ex: Tache sur le tapis',
+      submitBtn: 'Envoyer Rapport Urgent'
     },
     mantenimiento: {
       advance: 'Mettre à jour',
@@ -442,6 +472,7 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
   const [activeTab, setActiveTab] = useState<Tab>('limpieza');
   const [isChecklistOpen, setIsChecklistOpen] = useState(false);
   const [isExpenseModalOpen, setIsExpenseModalOpen] = useState(false);
+  const [isReportModalOpen, setIsReportModalOpen] = useState(false);
   const t = translations[currentLanguage];
   
   return (
@@ -456,7 +487,7 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
         <div className="pt-10 pb-4 px-5 bg-white flex items-center justify-between border-b border-slate-100 z-10 shrink-0">
           <h2 className="text-xl font-bold text-slate-800">App Personal</h2>
           <div className="flex items-center gap-2">
-            <button className="flex items-center gap-1.5 px-3 py-1.5 bg-rose-50 text-rose-600 rounded-full text-xs font-bold transition-transform active:scale-95 cursor-default">
+            <button onClick={() => setIsReportModalOpen(true)} className="flex items-center gap-1.5 px-3 py-1.5 bg-rose-50 text-rose-600 rounded-full text-xs font-bold transition-transform active:scale-95 cursor-pointer hover:bg-rose-100">
               <ShieldAlert size={14} /> Reportar
             </button>
             <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 cursor-default">
@@ -540,6 +571,43 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
               
               <button onClick={() => setIsExpenseModalOpen(false)} className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3.5 rounded-xl transition-colors mt-2 active:scale-[0.98]">
                 {t.recepcion.registerBtn}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Report Modal */}
+        <div className={`absolute inset-0 bg-slate-900/40 backdrop-blur-[2px] z-30 transition-opacity duration-300 ${isReportModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsReportModalOpen(false)}>
+          <div className={`absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl transition-transform duration-300 ease-out p-6 shadow-2xl flex flex-col ${isReportModalOpen ? 'translate-y-0' : 'translate-y-full'}`} onClick={e => e.stopPropagation()}>
+            <div className="flex justify-between items-center mb-5 pb-4 border-b border-slate-50 shrink-0">
+              <h3 className="font-bold text-rose-700 text-lg flex items-center gap-2"><AlertTriangle size={20}/> {t.report?.title || 'Reportar Alerta'}</h3>
+              <button onClick={() => setIsReportModalOpen(false)} className="text-slate-400 hover:text-slate-600 transition-colors p-1">
+                <X size={20} />
+              </button>
+            </div>
+            
+            <div className="flex flex-col gap-5 pb-2">
+              <div className="flex flex-col gap-2">
+                <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.report?.team || 'EQUIPO'}</label>
+                <select className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium text-slate-700 focus:outline-none focus:border-rose-500 appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%208l5%205%205-5%22%20fill%3D%22none%22%20stroke%3D%22%2364748b%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[position:right_10px_center]">
+                  {(t.report?.teamOptions || ['Limpieza']).map((opt: string, i: number) => (
+                    <option key={i}>{opt}</option>
+                  ))}
+                </select>
+              </div>
+              
+              <div className="flex flex-col gap-2">
+                <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.report?.location || 'LUGAR'}</label>
+                <input type="text" placeholder={t.report?.locationPlaceholder || 'Ej: Habitación 102'} className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-bold text-slate-700 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500" readOnly />
+              </div>
+              
+              <div className="flex flex-col gap-2">
+                <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.report?.finding || 'HALLAZGO'}</label>
+                <input type="text" placeholder={t.report?.findingPlaceholder || 'Ej: Mancha en alfombra'} className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-600 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500" readOnly />
+              </div>
+              
+              <button onClick={() => setIsReportModalOpen(false)} className="w-full bg-[#D81E45] hover:bg-rose-700 text-white font-bold py-3.5 rounded-xl transition-colors mt-2 active:scale-[0.98]">
+                {t.report?.submitBtn || 'Enviar Reporte Urgente'}
               </button>
             </div>
           </div>
