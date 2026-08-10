@@ -263,13 +263,14 @@ const translations = {
     },
     
     posDemo: {
-      sectionTitle: 'Descubre nuestra App POS',
+      sectionTitle: 'Descubre POS Vistomio para restaurantes y bares de autor',
       sectionDesc: 'Experimenta el control total desde la palma de tu mano. Navega por nuestro simulador interactivo de Punto de Venta.',
       tabs: { tables: 'MESAS', orders: 'COMANDAS', expenses: 'GASTOS', admin: 'ADMIN' },
-      tables: { free: 'LIBRES', occupied: 'OCUPADAS', ready: 'LISTAS', room: 'SALÓN', bar: 'BARRA' },
+      tables: { free: 'LIBRES', occupied: 'OCUPADAS', ready: 'LISTAS', room: 'SALÓN', bar: 'BARRA', daypass: 'DAYPASS (CONSUMOS)', openTab: '+ Abrir Cuenta', credit: 'Crédito:' },
       orders: { recent: 'Comandas Recientes', today: 'Hoy', open: 'ABIERTA', closed: 'CERRADA', table: 'Mesa', bar: 'Barra', daypass: 'Daypass' },
       expenses: { pettyCash: 'Caja Chica', date: 'Lunes, 10 De Agosto', auth: 'AUTORIZA: ADMINISTRADOR', inProgress: 'EN CURSO', initial: 'INICIAL', current: 'ACTUAL', todayExpenses: 'GASTOS DE HOY', addExpense: 'Registrar Gasto', items: [ { name: 'Verduras frescas y hielo', category: 'INSUMOS COCINA' }, { name: 'Hielo y limones', category: 'INSUMOS BARRA' }, { name: 'Gasolina', category: 'LOGÍSTICA' } ] },
-      admin: { dashboard: 'Panel de Control', activeShift: 'JORNADA ACTIVA', shift: 'TURNO: ADMINISTRADOR', totalSales: 'VENTAS TOTALES', totalExpenses: 'GASTOS (3)', tips: 'PROPINAS ACUMULADAS', management: 'GESTIÓN', menuEditor: 'Editor de Menú', menuEditorDesc: 'Platos, precios y disponibilidad' }
+      admin: { dashboard: 'Panel de Control', activeShift: 'JORNADA ACTIVA', shift: 'TURNO: ADMINISTRADOR', totalSales: 'VENTAS TOTALES', totalExpenses: 'GASTOS (3)', tips: 'PROPINAS ACUMULADAS', management: 'GESTIÓN', menuEditor: 'Editor de Menú', menuEditorDesc: 'Platos, precios y disponibilidad', closeShift: 'Cerrar Jornada', closeShiftDesc: 'Finalizar turno y hacer corte' },
+      closeShiftModal: { title: 'Corte de Caja', subtitle: 'Resumen de la jornada actual', income: 'INGRESOS DEL DÍA', cc: 'Tarjeta de crédito', transfer: 'Transferencia', cash: 'Efectivo', totalIncome: 'Total Ingresos', expenses: 'EGRESOS DEL DÍA', pettyCash: 'Gastos menores (Caja chica)', providers: 'Proveedores', totalExpenses: 'Total Egresos', balance: 'Balance Final', tips: 'Propinas del día', share: 'Compartir', print: 'Imprimir', confirm: 'Confirmar Cierre', cancel: 'Cancelar' }
     },
     pricing: {
       title: 'Paga solo lo que necesitas',
@@ -537,13 +538,14 @@ const translations = {
       },
       
     posDemo: {
-      sectionTitle: 'Discover our POS App',
+      sectionTitle: 'Discover POS Vistomio for signature restaurants and bars',
       sectionDesc: 'Experience total control from the palm of your hand. Navigate our interactive Point of Sale simulator.',
       tabs: { tables: 'TABLES', orders: 'ORDERS', expenses: 'EXPENSES', admin: 'ADMIN' },
-      tables: { free: 'FREE', occupied: 'OCCUPIED', ready: 'READY', room: 'DINING ROOM', bar: 'BAR' },
+      tables: { free: 'FREE', occupied: 'OCCUPIED', ready: 'READY', room: 'DINING ROOM', bar: 'BAR', daypass: 'DAYPASS (CONSUMPTION)', openTab: '+ Open Tab', credit: 'Credit:' },
       orders: { recent: 'Recent Orders', today: 'Today', open: 'OPEN', closed: 'CLOSED', table: 'Table', bar: 'Bar', daypass: 'Daypass' },
       expenses: { pettyCash: 'Petty Cash', date: 'Monday, August 10', auth: 'AUTH: ADMINISTRATOR', inProgress: 'IN PROGRESS', initial: 'INITIAL', current: 'CURRENT', todayExpenses: "TODAY'S EXPENSES", addExpense: 'Add Expense', items: [ { name: 'Fresh vegetables and ice', category: 'KITCHEN SUPPLIES' }, { name: 'Ice and lemons', category: 'BAR SUPPLIES' }, { name: 'Gasoline', category: 'LOGISTICS' } ] },
-      admin: { dashboard: 'Dashboard', activeShift: 'ACTIVE SHIFT', shift: 'SHIFT: ADMINISTRATOR', totalSales: 'TOTAL SALES', totalExpenses: 'EXPENSES (3)', tips: 'ACCUMULATED TIPS', management: 'MANAGEMENT', menuEditor: 'Menu Editor', menuEditorDesc: 'Dishes, prices and availability' }
+      admin: { dashboard: 'Dashboard', activeShift: 'ACTIVE SHIFT', shift: 'SHIFT: ADMINISTRATOR', totalSales: 'TOTAL SALES', totalExpenses: 'EXPENSES (3)', tips: 'ACCUMULATED TIPS', management: 'MANAGEMENT', menuEditor: 'Menu Editor', menuEditorDesc: 'Dishes, prices and availability', closeShift: 'Close Shift', closeShiftDesc: 'End shift and reconcile' },
+      closeShiftModal: { title: 'Cash Register Close', subtitle: 'Current shift summary', income: 'DAILY INCOME', cc: 'Credit Card', transfer: 'Transfer', cash: 'Cash', totalIncome: 'Total Income', expenses: 'DAILY EXPENSES', pettyCash: 'Petty Cash', providers: 'Providers', totalExpenses: 'Total Expenses', balance: 'Final Balance', tips: 'Daily Tips', share: 'Share', print: 'Print', confirm: 'Confirm Close', cancel: 'Cancel' }
     },
     pricing: {
       title: 'Pay only for what you need',
@@ -810,13 +812,14 @@ const translations = {
       },
       
     posDemo: {
-      sectionTitle: 'Découvrez notre Application POS',
+      sectionTitle: "Découvrez POS Vistomio pour les restaurants et bars d'auteur",
       sectionDesc: 'Faites l\'expérience d\'un contrôle total depuis la paume de votre main. Naviguez sur notre simulateur de Point de Vente.',
       tabs: { tables: 'TABLES', orders: 'COMMANDES', expenses: 'DÉPENSES', admin: 'ADMIN' },
-      tables: { free: 'LIBRE', occupied: 'OCCUPÉ', ready: 'PRÊT', room: 'SALLE', bar: 'BAR' },
+      tables: { free: 'LIBRE', occupied: 'OCCUPÉ', ready: 'PRÊT', room: 'SALLE', bar: 'BAR', daypass: 'DAYPASS (CONSOMMATION)', openTab: '+ Ouvrir un Compte', credit: 'Crédit:' },
       orders: { recent: 'Commandes Récentes', today: 'Aujourd\'hui', open: 'OUVERT', closed: 'FERMÉ', table: 'Table', bar: 'Bar', daypass: 'Daypass' },
       expenses: { pettyCash: 'Petite Caisse', date: 'Lundi, 10 Août', auth: 'AUTH: ADMINISTRATEUR', inProgress: 'EN COURS', initial: 'INITIAL', current: 'ACTUEL', todayExpenses: "DÉPENSES DU JOUR", addExpense: 'Ajouter Dépense', items: [ { name: 'Légumes frais et glace', category: 'FOURNITURES CUISINE' }, { name: 'Glace et citrons', category: 'FOURNITURES BAR' }, { name: 'Essence', category: 'LOGISTIQUE' } ] },
-      admin: { dashboard: 'Tableau de Bord', activeShift: 'SERVICE ACTIF', shift: 'SERVICE: ADMINISTRATEUR', totalSales: 'VENTES TOTALES', totalExpenses: 'DÉPENSES (3)', tips: 'POURBOIRES CUMULÉS', management: 'GESTION', menuEditor: 'Éditeur de Menu', menuEditorDesc: 'Plats, prix et disponibilité' }
+      admin: { dashboard: 'Tableau de Bord', activeShift: 'SERVICE ACTIF', shift: 'SERVICE: ADMINISTRATEUR', totalSales: 'VENTES TOTALES', totalExpenses: 'DÉPENSES (3)', tips: 'POURBOIRES CUMULÉS', management: 'GESTION', menuEditor: 'Éditeur de Menu', menuEditorDesc: 'Plats, prix et disponibilité', closeShift: 'Fermer la Caisse', closeShiftDesc: 'Terminer le service et faire le bilan' },
+      closeShiftModal: { title: 'Fermeture de Caisse', subtitle: 'Résumé du service actuel', income: 'REVENUS DU JOUR', cc: 'Carte de crédit', transfer: 'Virement', cash: 'Espèces', totalIncome: 'Revenus Totaux', expenses: 'DÉPENSES DU JOUR', pettyCash: 'Petite Caisse', providers: 'Fournisseurs', totalExpenses: 'Dépenses Totales', balance: 'Solde Final', tips: 'Pourboires du jour', share: 'Partager', print: 'Imprimer', confirm: 'Confirmer la Fermeture', cancel: 'Annuler' }
     },
     pricing: {
       title: 'Payez seulement ce dont vous avez besoin',
