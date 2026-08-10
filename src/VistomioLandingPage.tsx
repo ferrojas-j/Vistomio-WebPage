@@ -97,7 +97,7 @@ const translations = {
     boutiqueNiche: {
       tag: 'JÓVENES, VALIENTES Y PRAGMÁTICOS',
       title: 'Diseñado para negocios con alma',
-      subtitle: 'No somos un software corporativo aburrido y gris. Creamos tecnología vibrante para hoteles y restaurantes boutique que quieren destacar, optimizar sin fricciones y dar un servicio excepcional.',
+      subtitle: 'No somos un software corporativo aburrido y gris. Creamos tecnología vibrante y pragmática para hoteles y restaurantes boutique que quieren automatizar y optimizar sus operaciones para dedicar <span class="text-[#FCE69B] font-semibold">tiempo a lo importante: dar un servicio excepcional.</span>',
       cards: [
         {
           title: 'Experiencia Personalizada',
@@ -453,7 +453,7 @@ const translations = {
     boutiqueNiche: {
       tag: 'YOUNG, BOLD AND PRAGMATIC',
       title: 'Designed for businesses with a soul',
-      subtitle: 'We are not a boring, gray corporate software. We build vibrant technology for boutique hotels and restaurants that want to stand out, optimize without friction, and provide exceptional service.',
+      subtitle: 'We are not a boring, gray corporate software. We build vibrant and pragmatic technology for boutique hotels and restaurants that want to automate and optimize their operations to dedicate <span class="text-[#FCE69B] font-semibold">time to what matters: providing exceptional service.</span>',
       cards: [
         {
           title: 'Personalized Experience',
@@ -809,7 +809,7 @@ const translations = {
     boutiqueNiche: {
       tag: 'JEUNES, AUDACIEUX ET PRAGMATIQUES',
       title: 'Conçu pour les entreprises avec une âme',
-      subtitle: 'Nous ne sommes pas un logiciel d\'entreprise ennuyeux. Nous créons une technologie vibrante pour les hôtels et restaurants boutique qui veulent se démarquer et offrir un service exceptionnel.',
+      subtitle: 'Nous ne sommes pas un logiciel d\'entreprise ennuyeux et gris. Nous créons une technologie vibrante et pragmatique pour les hôtels et restaurants de charme qui souhaitent automatiser et optimiser leurs opérations pour consacrer du <span class="text-[#FCE69B] font-semibold">temps à ce qui compte : offrir un service exceptionnel.</span>',
       cards: [
         {
           title: 'Expérience Personnalisée',
@@ -1741,9 +1741,10 @@ const VistomioLandingPage: React.FC = () => {
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
                 {t.boutiqueNiche.title}
               </h2>
-              <p className="text-lg text-slate-300 leading-relaxed mb-8">
-                {t.boutiqueNiche.subtitle}
-              </p>
+              <p 
+                className="text-lg text-slate-300 leading-relaxed mb-8"
+                dangerouslySetInnerHTML={{ __html: t.boutiqueNiche.subtitle }}
+              />
               
               <ul className="space-y-6">
                 {t.boutiqueNiche.cards.map((card, idx) => (
