@@ -1726,7 +1726,7 @@ const VistomioLandingPage: React.FC = () => {
         </div>
       </section>
 
-      <section id="productos" className="pt-16 pb-32 relative bg-slate-900">
+      <section id="productos" className="scroll-mt-24 pt-16 pb-32 relative bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">{t.featuresTitle}</h2>
@@ -1984,7 +1984,7 @@ const VistomioLandingPage: React.FC = () => {
 
 
 
-      <section id="precios" className="py-32 relative bg-slate-900 border-t border-slate-800">
+      <section id="precios" className="scroll-mt-24 py-32 relative bg-slate-900 border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">{t.pricing.title}</h2>
