@@ -101,7 +101,7 @@ const translations = {
       cards: [
         {
           title: 'Experiencia Personalizada',
-          desc: 'Anticípate a los deseos de tu huésped. Perfiles detallados y preferencias integradas.',
+          desc: 'Con nuestro <span class="text-[#FCE69B] font-semibold">módulo de Check in digital</span>, anticípate a los deseos de tu huésped. Perfiles detallados y preferencias integradas.',
           icon: ConciergeBell
         },
         {
@@ -457,7 +457,7 @@ const translations = {
       cards: [
         {
           title: 'Personalized Experience',
-          desc: 'Anticipate your guest\'s desires. Detailed profiles and integrated preferences.',
+          desc: 'With our <span class="text-[#FCE69B] font-semibold">digital check-in module</span>, anticipate your guest\'s desires. Detailed profiles and integrated preferences.',
           icon: ConciergeBell
         },
         {
@@ -813,7 +813,7 @@ const translations = {
       cards: [
         {
           title: 'Expérience Personnalisée',
-          desc: 'Anticipez les désirs de vos clients. Profils détaillés et préférences intégrées.',
+          desc: 'Avec notre <span class="text-[#FCE69B] font-semibold">module de check-in numérique</span>, anticipez les désirs de vos clients. Profils détaillés et préférences intégrées.',
           icon: ConciergeBell
         },
         {
@@ -1754,7 +1754,7 @@ const VistomioLandingPage: React.FC = () => {
                     </div>
                     <div>
                       <h4 className="text-xl font-bold text-white mb-1">{card.title}</h4>
-                      <p className="text-slate-300">{card.desc}</p>
+                      <p className="text-slate-300" dangerouslySetInnerHTML={{ __html: card.desc }} />
                     </div>
                   </li>
                 ))}
