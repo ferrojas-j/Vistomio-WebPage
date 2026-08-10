@@ -163,8 +163,20 @@ const translations = {
         name: 'Atención al Cliente y Ventas',
         items: [
           {
-            title: 'Chatbots IA (3 Niveles)',
-            desc: 'Respuestas automáticas, ventas proactivas y sincronización con reservaciones.',
+            title: 'Chatbot IA (Nivel 1)',
+            desc: 'Respuestas automáticas a preguntas frecuentes y envíos de links.',
+            icon: Bot,
+            standalone: true
+          },
+          {
+            title: 'Chatbot IA (Nivel 2)',
+            desc: 'Ventas proactivas, campañas de marketing y ofertas especiales.',
+            icon: Bot,
+            standalone: true
+          },
+          {
+            title: 'Chatbot IA (Nivel 3)',
+            desc: 'Autonomía total con sincronización con Booking Engine para reservaciones.',
             icon: Bot,
             standalone: true
           }
@@ -477,8 +489,20 @@ const translations = {
         name: 'Customer Service & Sales Boosters',
         items: [
           {
-            title: 'AI Chatbots (3 Levels)',
-            desc: 'Automated responses, proactive sales, and reservation synchronization.',
+            title: 'AI Chatbot (Level 1)',
+            desc: 'Automated responses to FAQs and link sharing.',
+            icon: Bot,
+            standalone: true
+          },
+          {
+            title: 'AI Chatbot (Level 2)',
+            desc: 'Proactive sales, marketing campaigns, and special offers.',
+            icon: Bot,
+            standalone: true
+          },
+          {
+            title: 'AI Chatbot (Level 3)',
+            desc: 'Total autonomy with Booking Engine synchronization for reservations.',
             icon: Bot,
             standalone: true
           }
@@ -790,8 +814,20 @@ const translations = {
         name: 'Service Client & Ventes',
         items: [
           {
-            title: 'Chatbots IA (3 Niveaux)',
-            desc: 'Réponses automatisées, ventes proactives et synchronisation des réservations.',
+            title: 'Chatbot IA (Niveau 1)',
+            desc: 'Réponses automatisées aux FAQ et partage de liens.',
+            icon: Bot,
+            standalone: true
+          },
+          {
+            title: 'Chatbot IA (Niveau 2)',
+            desc: 'Ventes proactives, campagnes marketing et offres spéciales.',
+            icon: Bot,
+            standalone: true
+          },
+          {
+            title: 'Chatbot IA (Niveau 3)',
+            desc: 'Autonomie totale avec synchronisation du Booking Engine pour les réservations.',
             icon: Bot,
             standalone: true
           }
