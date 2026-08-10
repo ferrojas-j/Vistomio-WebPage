@@ -291,6 +291,10 @@ const translations = {
     posDemo: {
       sectionTitle: 'Descubre POS Vistomio para restaurantes y bares de autor',
       sectionDesc: 'Experimenta el control total desde la palma de tu mano. Navega por nuestro simulador interactivo de Punto de Venta.',
+      features: [
+        { title: 'Operación Fluida', desc: 'Gestiona salones y barras con estados de mesas codificados por color.' },
+        { title: 'Control Financiero', desc: 'Registra gastos al instante y mantén la caja chica actualizada.' }
+      ],
       tabs: { tables: 'MESAS', orders: 'COMANDAS', expenses: 'GASTOS', admin: 'ADMIN' },
       tables: { free: 'LIBRES', occupied: 'OCUPADAS', ready: 'LISTAS', room: 'SALÓN', bar: 'BARRA', daypass: 'DAYPASS (CONSUMOS)', openTab: '+ Abrir Cuenta', credit: 'Crédito:' },
       orders: { recent: 'Comandas Recientes', today: 'Hoy', open: 'ABIERTA', closed: 'CERRADA', table: 'Mesa', bar: 'Barra', daypass: 'Daypass' },
@@ -628,6 +632,10 @@ const translations = {
     posDemo: {
       sectionTitle: 'Discover POS Vistomio for signature restaurants and bars',
       sectionDesc: 'Experience total control from the palm of your hand. Navigate our interactive Point of Sale simulator.',
+      features: [
+        { title: 'Smooth Operation', desc: 'Manage dining rooms and bars with color-coded table statuses.' },
+        { title: 'Financial Control', desc: 'Record expenses instantly and keep petty cash updated.' }
+      ],
       tabs: { tables: 'TABLES', orders: 'ORDERS', expenses: 'EXPENSES', admin: 'ADMIN' },
       tables: { free: 'FREE', occupied: 'OCCUPIED', ready: 'READY', room: 'DINING ROOM', bar: 'BAR', daypass: 'DAYPASS (CONSUMPTION)', openTab: '+ Open Tab', credit: 'Credit:' },
       orders: { recent: 'Recent Orders', today: 'Today', open: 'OPEN', closed: 'CLOSED', table: 'Table', bar: 'Bar', daypass: 'Daypass' },
@@ -962,7 +970,11 @@ const translations = {
       
     posDemo: {
       sectionTitle: "Découvrez POS Vistomio pour les restaurants et bars d'auteur",
-      sectionDesc: 'Faites l\'expérience d\'un contrôle total depuis la paume de votre main. Naviguez sur notre simulateur de Point de Vente.',
+      sectionDesc: 'Faites l\'expérience d\'un contrôle total depuis la paume de votre main. Naviguez sur notre simulateur de Point de Venta.',
+      features: [
+        { title: 'Opération Fluide', desc: 'Gérez les salles et les bars avec des statuts de tables codés par couleur.' },
+        { title: 'Contrôle Financier', desc: 'Enregistrez les dépenses instantanément et gardez la petite caisse à jour.' }
+      ],
       tabs: { tables: 'TABLES', orders: 'COMMANDES', expenses: 'DÉPENSES', admin: 'ADMIN' },
       tables: { free: 'LIBRE', occupied: 'OCCUPÉ', ready: 'PRÊT', room: 'SALLE', bar: 'BAR', daypass: 'DAYPASS (CONSOMMATION)', openTab: '+ Ouvrir un Compte', credit: 'Crédit:' },
       orders: { recent: 'Commandes Récentes', today: 'Aujourd\'hui', open: 'OUVERT', closed: 'FERMÉ', table: 'Table', bar: 'Bar', daypass: 'Daypass' },
@@ -1935,8 +1947,8 @@ const VistomioLandingPage: React.FC = () => {
                     <Utensils size={24} />
                   </div>
                   <div>
-                    <h4 className="text-white font-bold mb-1">Operación Fluida</h4>
-                    <p className="text-slate-400 text-sm">Gestiona salones y barras con estados de mesas codificados por color.</p>
+                    <h4 className="text-white font-bold mb-1">{t.posDemo.features[0].title}</h4>
+                    <p className="text-slate-400 text-sm">{t.posDemo.features[0].desc}</p>
                   </div>
                 </div>
                 
@@ -1945,8 +1957,8 @@ const VistomioLandingPage: React.FC = () => {
                     <Wallet size={24} />
                   </div>
                   <div>
-                    <h4 className="text-white font-bold mb-1">Control Financiero</h4>
-                    <p className="text-slate-400 text-sm">Registra gastos al instante y mantén la caja chica actualizada.</p>
+                    <h4 className="text-white font-bold mb-1">{t.posDemo.features[1].title}</h4>
+                    <p className="text-slate-400 text-sm">{t.posDemo.features[1].desc}</p>
                   </div>
                 </div>
               </div>
