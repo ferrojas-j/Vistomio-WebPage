@@ -370,8 +370,8 @@ const translations = {
       title: 'Cotiza tu Plan', desc: 'Déjanos tus datos para enviarte una propuesta a la medida.', selectedModules: 'Módulos Seleccionados', emailLabel: 'Tu Email *', emailPlaceholder: 'ejemplo@hotel.com', phoneLabel: 'Número de Contacto *', phonePlaceholder: '+1 234 567 890', companyLabel: 'Empresa (Opcional)', companyPlaceholder: 'Nombre de tu hotel o restaurante', messageLabel: 'Mensaje Adicional', messagePlaceholder: 'Cuéntanos un poco más sobre lo que necesitas...', sendBtn: 'Solicitar cotización', successAlert: 'Se abrirá tu cliente de correo con los datos de tu cotización listos para enviar.', emailSubject: 'Solicitud de Cotización a Medida - Vistomio', emailBodyTemplate: 'Correo: {email}\\nTeléfono: {phone}\\nEmpresa: {company}\\n\\nMódulos Seleccionados:\\n- {modules}\\n\\nMensaje:\\n{message}'
     },
     pricing: {
-      title: 'Paga solo lo que necesitas',
-      subtitle: 'Explora nuestros paquetes pre-diseñados o arma tu propia solución a medida.',
+      title: 'Nuestros planes',
+      subtitle: 'Cada uno con una promesa clara.',
       buildOwnPackage: 'Arma tu propio paquete',
       customModalTitle: 'Arma tu Solución Vistomio',
       customModalSubtitle: 'Selecciona los módulos que necesitas y crearemos un plan a tu medida.',
@@ -379,33 +379,64 @@ const translations = {
       requestQuoteBtn: 'Solicitar cotización de mi plan',
       plans: [
         {
-          name: 'Gastronomía Boutique',
-          setupPrice: 'Setup Inicial: $299',
-          monthlyPrice: '$89',
+          name: 'Esencial',
+          quote: '"Digitaliza tu gestión sin complicaciones."',
+          setupPrice: 'Setup: 400€',
+          monthlyPrice: '250€',
           period: '/mes',
-          features: ['POS Operativo Avanzado', 'Módulo Restaurante y Bar', 'Finanzas y Caja'],
-          cta: '¡Vamos!',
+          features: [
+            { name: 'Dashboard General', desc: 'vista general en tiempo real de la operación' },
+            { name: 'Motor de Reservas y Channel Manager', desc: 'calendario multicanal o conexión API del PMS' },
+            { name: 'Check-in y Gestión de Huéspedes', desc: 'llegadas, firmas, idioma del huésped' }
+          ],
+          baseText: 'Ideal para reemplazar sistemas caseros o hojas de cálculo.',
+          cta: 'Comenzar',
           highlight: false
         },
         {
-          name: 'Hotel Starter',
-          setupPrice: 'Setup Inicial: $499',
-          monthlyPrice: '$149',
+          name: 'Crecimiento',
+          quote: '"Toma el control financiero de un vistazo."',
+          setupPrice: 'Setup: 500€',
+          monthlyPrice: '400€',
           period: '/mes',
-          features: ['Booking Engine & Channel Manager', 'Check-in y Recepción', 'App de Personal', 'Finanzas Básicas', 'Chatbot Estándar'],
-          cta: '¡Vamos!',
+          features: [
+            { name: 'Todo el plan Esencial', desc: '' },
+            { name: 'Pagos y Facturación', desc: 'cobros, pasarelas digitales, facturación' },
+            { name: 'Administración y Finanzas', desc: 'resumen ejecutivo, rentabilidad por departamento' }
+          ],
+          baseText: 'Para el propietario-gerente enfocado en rentabilidad.',
+          cta: 'Comenzar',
           highlight: false
         },
         {
-          name: 'Suite All-in-One',
-          setupPrice: 'Setup Inicial: $899',
-          monthlyPrice: '$299',
+          name: 'Signature',
+          quote: '"Más tiempo para tus huéspedes, menos papeleo."',
+          setupPrice: 'Setup: 700€',
+          monthlyPrice: '600€',
           period: '/mes',
-          features: ['Todos los módulos Starter', 'POS Gastronomía Integrado', 'Chatbot IA Avanzado', 'Analítica Predictiva', 'Soporte VIP 24/7'],
-          cta: '¡Vamos!',
+          features: [
+            { name: 'Todo el plan Crecimiento', desc: '' },
+            { name: 'Restaurante / Bar', desc: 'POS integrado, ventas, división de cuentas' },
+            { name: 'Operaciones Diarias y Recursos', desc: 'inventario, alertas de personal y de stock' },
+            { name: 'Reportes', desc: 'informes personalizados a medida' }
+          ],
+          baseText: 'Gestión integral sin fisuras para hoteles boutique.',
+          cta: 'Comenzar',
           highlight: false
         }
       ],
+      addon: {
+        name: 'Add-on transversal — Chatbot IA',
+        quote: '"Una atención disponible en todo momento, a la altura de tu reputación."',
+        features: [
+          'Asistente multicanal (WhatsApp, Instagram, Messenger, Web Chat).',
+          'Responde a consultas de disponibilidad y tarifas de forma continua.',
+          'Compatible con cualquier plan (solo o complemento).'
+        ],
+        baseText: 'La primera pieza del servicio al cliente automatizado de alta gama.',
+        price: 'Desde 150€/mes',
+        cta: 'Ver Demo'
+      },
       enterprise: {
         title: '¿Necesitas algo a la medida?',
         desc: 'Construimos una arquitectura de software única para cadenas boutique o propiedades con operaciones complejas.',
@@ -746,8 +777,8 @@ const translations = {
       title: 'Quote your Plan', desc: 'Leave us your details to send you a customized proposal.', selectedModules: 'Selected Modules', emailLabel: 'Your Email *', emailPlaceholder: 'example@hotel.com', phoneLabel: 'Contact Number *', phonePlaceholder: '+1 234 567 890', companyLabel: 'Company (Optional)', companyPlaceholder: 'Name of your hotel or restaurant', messageLabel: 'Additional Message', messagePlaceholder: 'Tell us a bit more about what you need...', sendBtn: 'Request quote', successAlert: 'Your email client will open with the quote details ready to send.', emailSubject: 'Custom Quote Request - Vistomio', emailBodyTemplate: 'Email: {email}\\nPhone: {phone}\\nCompany: {company}\\n\\nSelected Modules:\\n- {modules}\\n\\nMessage:\\n{message}'
     },
     pricing: {
-      title: 'Pay only for what you need',
-      subtitle: 'Explore our pre-designed packages or build your own custom solution.',
+      title: 'Our plans',
+      subtitle: 'Each with a clear promise.',
       buildOwnPackage: 'Build your own package',
       customModalTitle: 'Build Your Vistomio Solution',
       customModalSubtitle: 'Select the modules you need and we will create a tailored plan.',
@@ -755,33 +786,64 @@ const translations = {
       requestQuoteBtn: 'Request quote for my plan',
       plans: [
         {
-          name: 'Boutique Gastronomy',
-          setupPrice: 'Setup Fee: $299',
-          monthlyPrice: '$89',
+          name: 'Essential',
+          quote: '"Digitize your management without complications."',
+          setupPrice: 'Setup: 400€',
+          monthlyPrice: '250€',
           period: '/mo',
-          features: ['Advanced POS', 'Restaurant & Bar Module', 'Finance & Cashier'],
-          cta: 'Let\'s go!',
+          features: [
+            { name: 'General Dashboard', desc: 'real-time operation overview' },
+            { name: 'Booking Engine & Channel Manager', desc: 'multi-channel calendar or PMS API connection' },
+            { name: 'Check-in & Guest Management', desc: 'arrivals, document signing, guest language' }
+          ],
+          baseText: 'Ideal for replacing homegrown systems or spreadsheets.',
+          cta: 'Start',
           highlight: false
         },
         {
-          name: 'Hotel Starter',
-          setupPrice: 'Setup Fee: $499',
-          monthlyPrice: '$149',
+          name: 'Growth',
+          quote: '"Take financial control at a glance."',
+          setupPrice: 'Setup: 500€',
+          monthlyPrice: '400€',
           period: '/mo',
-          features: ['Booking Engine & Channel Manager', 'Check-in & Front Desk', 'Staff App', 'Basic Finance', 'Standard Chatbot'],
-          cta: 'Let\'s go!',
+          features: [
+            { name: 'Everything in Essential', desc: '' },
+            { name: 'Payments & Invoicing', desc: 'collections, digital gateways, invoicing' },
+            { name: 'Administration & Finance', desc: 'executive summary, profitability by department' }
+          ],
+          baseText: 'For the owner-manager focused on profitability.',
+          cta: 'Start',
           highlight: false
         },
         {
-          name: 'All-in-One Suite',
-          setupPrice: 'Setup Fee: $899',
-          monthlyPrice: '$299',
+          name: 'Signature',
+          quote: '"More time for guests, less paperwork."',
+          setupPrice: 'Setup: 700€',
+          monthlyPrice: '600€',
           period: '/mo',
-          features: ['All Starter modules', 'Integrated F&B POS', 'Advanced AI Chatbot', 'Predictive Analytics', '24/7 VIP Support'],
-          cta: 'Let\'s go!',
+          features: [
+            { name: 'Everything in Growth', desc: '' },
+            { name: 'Restaurant / Bar', desc: 'Integrated POS, sales, bill splitting' },
+            { name: 'Daily Operations & Resources', desc: 'inventory, staff and stock alerts' },
+            { name: 'Reporting', desc: 'custom tailored reports' }
+          ],
+          baseText: 'Seamless comprehensive management for boutique hotels.',
+          cta: 'Start',
           highlight: false
         }
       ],
+      addon: {
+        name: 'Transversal Add-on — AI Chatbot',
+        quote: '"Always-on service, matching your reputation."',
+        features: [
+          'Multi-channel assistant (WhatsApp, Instagram, Messenger, Web Chat).',
+          'Answers availability and rate queries continuously.',
+          'Compatible with any plan (sold alone or as an add-on).'
+        ],
+        baseText: 'The first piece of high-end automated customer service.',
+        price: 'From 150€/mo',
+        cta: 'View Demo'
+      },
       enterprise: {
         title: 'Need a custom solution?',
         desc: 'We build unique software architectures for boutique chains or properties with complex operations.',
@@ -1120,45 +1182,76 @@ const translations = {
       title: 'Demandez un Devis', desc: 'Laissez-nous vos coordonnées pour recevoir une proposition sur mesure.', selectedModules: 'Modules Sélectionnés', emailLabel: 'Votre Email *', emailPlaceholder: 'exemple@hotel.com', phoneLabel: 'Numéro de Contact *', phonePlaceholder: '+1 234 567 890', companyLabel: 'Entreprise (Optionnel)', companyPlaceholder: 'Nom de votre hôtel ou restaurant', messageLabel: 'Message Supplémentaire', messagePlaceholder: 'Dites-nous en plus sur vos besoins...', sendBtn: 'Demander un devis', successAlert: 'Votre client de messagerie va s\'ouvrir avec les détails du devis prêts à être envoyés.', emailSubject: 'Demande de Devis sur Mesure - Vistomio', emailBodyTemplate: 'Email: {email}\\nTéléphone: {phone}\\nEntreprise: {company}\\n\\nModules Sélectionnés:\\n- {modules}\\n\\nMessage:\\n{message}'
     },
     pricing: {
-      title: 'Payez seulement ce dont vous avez besoin',
-      subtitle: 'Explorez nos forfaits pré-conçus ou créez votre propre solution sur mesure.',
-      buildOwnPackage: 'Créez votre propre forfait',
-        customModalTitle: 'Créez votre solution Vistomio',
-        customModalSubtitle: 'Sélectionnez les modules dont vous avez besoin et nous créerons un plan sur mesure.',
-        selectedModules: 'Modules Sélectionnés',
-        requestQuoteBtn: 'Demander un devis pour mon plan',
-        plans: [
+      title: 'Nos forfaits',
+      subtitle: 'Chacun avec une promesse claire.',
+      buildOwnPackage: 'Créez votre forfait',
+      customModalTitle: 'Construisez votre Solution Vistomio',
+      customModalSubtitle: 'Sélectionnez les modules dont vous avez besoin et nous créerons un plan sur mesure.',
+      selectedModules: 'Modules Sélectionnés',
+      requestQuoteBtn: 'Demander un devis pour mon plan',
+      plans: [
         {
-          name: 'Gastronomie Boutique',
-          setupPrice: 'Frais de Setup: $299',
-          monthlyPrice: '$89',
+          name: 'Essentiel',
+          quote: '"Digitalisez votre gestion sans complications."',
+          setupPrice: 'Installation: 400€',
+          monthlyPrice: '250€',
           period: '/mois',
-          features: ['POS Avancé', 'Module Restaurant & Bar', 'Finances et Caisse'],
-          cta: 'Allons-y !',
+          features: [
+            { name: 'Tableau de bord général', desc: 'aperçu en temps réel de l\'opération' },
+            { name: 'Moteur de réservation & Channel Manager', desc: 'calendrier multicanal ou connexion API PMS' },
+            { name: 'Check-in et Gestion des hôtes', desc: 'arrivées, signatures, langue de l\'hôte' }
+          ],
+          baseText: 'Idéal pour remplacer les systèmes maison ou les feuilles de calcul.',
+          cta: 'Démarrer',
           highlight: false
         },
         {
-          name: 'Hotel Starter',
-          setupPrice: 'Frais de Setup: $499',
-          monthlyPrice: '$149',
+          name: 'Croissance',
+          quote: '"Prenez le contrôle financier en un coup d\'œil."',
+          setupPrice: 'Installation: 500€',
+          monthlyPrice: '400€',
           period: '/mois',
-          features: ['Moteur de Réservation & Channel Manager', 'Check-in et Réception', 'App Personnel', 'Finances de Base', 'Chatbot Standard'],
-          cta: 'Allons-y !',
+          features: [
+            { name: 'Tout le plan Essentiel', desc: '' },
+            { name: 'Paiements & Facturation', desc: 'encaissements, passerelles numériques, facturation' },
+            { name: 'Administration et Finances', desc: 'résumé exécutif, rentabilité par département' }
+          ],
+          baseText: 'Pour le propriétaire-gérant axé sur la rentabilité.',
+          cta: 'Démarrer',
           highlight: false
         },
         {
-          name: 'Suite All-in-One',
-          setupPrice: 'Frais de Setup: $899',
-          monthlyPrice: '$299',
+          name: 'Signature',
+          quote: '"Plus de temps pour les clients, moins de paperasse."',
+          setupPrice: 'Installation: 700€',
+          monthlyPrice: '600€',
           period: '/mois',
-          features: ['Tous les modules Starter', 'POS F&B Intégré', 'Chatbot IA Avancé', 'Analytique Prédictive', 'Support VIP 24/7'],
-          cta: 'Allons-y !',
+          features: [
+            { name: 'Tout le plan Croissance', desc: '' },
+            { name: 'Restaurant / Bar', desc: 'POS intégré, ventes, partage de notes' },
+            { name: 'Opérations quotidiennes', desc: 'inventaire, alertes de personnel et de stock' },
+            { name: 'Rapports', desc: 'rapports personnalisés sur mesure' }
+          ],
+          baseText: 'Gestion complète et fluide pour les hôtels-boutiques.',
+          cta: 'Démarrer',
           highlight: false
         }
       ],
+      addon: {
+        name: 'Add-on Transversal — Chatbot IA',
+        quote: '"Un service toujours disponible, à la hauteur de votre réputation."',
+        features: [
+          'Assistant multicanal (WhatsApp, Instagram, Messenger, Web Chat).',
+          'Répond aux demandes de disponibilité et de tarifs en continu.',
+          'Compatible avec tout plan (vendu seul ou en complément).'
+        ],
+        baseText: 'La première pièce du service client automatisé haut de gamme.',
+        price: 'Dès 150€/mois',
+        cta: 'Voir Démo'
+      },
       enterprise: {
         title: 'Besoin de sur-mesure ?',
-        desc: 'Nous construisons des architectures logicielles uniques pour les chaînes boutique ou les propriétés aux opérations complexes.',
+        desc: 'Nous concevons une architecture logicielles uniques pour les chaînes de boutiques ou les propriétés avec des opérations complexes.',
         cta: 'Parlons-en !'
       }
     },
@@ -1717,8 +1810,7 @@ const VistomioLandingPage: React.FC = () => {
 
 {/* --- BENEFITS --- */}
       <section className="pt-32 pb-16 bg-boutique-offwhite relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-[400px] bg-[#D4AF37]/10 blur-[120px] rounded-full pointer-events-none"></div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20">
             <SectionHeader eyebrow={t.benefitsTitle} align="center" />
@@ -2011,56 +2103,102 @@ const VistomioLandingPage: React.FC = () => {
 
       <section id="precios" className="scroll-mt-24 py-32 relative bg-white border-t border-gray-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <SectionHeader eyebrow={lang === 'es' ? 'PLANES Y PRECIOS' : lang === 'en' ? 'PLANS & PRICING' : 'PLANS ET PRIX'} title={t.pricing.title} align="center" />
-            <p className="text-lg text-boutique-gold font-semibold">{t.pricing.subtitle}</p>
+          <div className="flex items-center justify-center mb-16">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-px bg-[#D4AF37]"></div>
+              <span className="text-[#D4AF37] font-bold tracking-[0.25em] text-sm md:text-base uppercase">
+                {lang === 'es' ? 'PRECIOS Y PLANES' : lang === 'en' ? 'PRICING & PLANS' : 'PRIX ET FORFAITS'}
+              </span>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
-            {t.pricing.plans.map((plan, idx) => (
-              <div key={idx} className={`rounded-[2.5rem] p-10 bg-slate-800/80 backdrop-blur-xl border ${plan.highlight ? 'border-[#D4AF37] shadow-2xl shadow-amber-900/50 lg:scale-105 z-10 relative' : 'border-slate-700 hover:border-[#D4AF37]/50 shadow-sm hover:shadow-xl hover:shadow-amber-900/20 relative'} overflow-hidden transition-all duration-300 flex flex-col`}>
-                {plan.highlight && (
-                  <div className="absolute top-0 right-0 from-[#D4AF37] to-[#FCE69B] text-[#0B1121] text-xs font-semibold px-6 py-2 rounded-bl-2xl uppercase tracking-wider">
-                    MÁS POPULAR
-                  </div>
-                )}
+            {t.pricing.plans.map((plan: any, idx: number) => (
+              <div key={idx} className={`rounded-[2.5rem] p-8 lg:p-10 bg-boutique-anthracite border ${plan.highlight ? 'border-[#D4AF37] shadow-2xl shadow-[#D4AF37]/20 lg:scale-105 z-10 relative' : 'border-gray-800 hover:border-[#D4AF37]/50 shadow-lg relative'} overflow-hidden transition-all duration-300 flex flex-col`}>
                 
-                <h3 className={`text-2xl font-bold ${plan.highlight ? 'text-[#D4AF37]' : 'text-white'} mb-2 pr-24`}>{plan.name}</h3>
-                <div className="text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-6 bg-emerald-500/10 inline-block px-3 py-1.5 rounded-full border border-emerald-500/30 self-start shadow-sm shadow-emerald-500/10">{plan.setupPrice}</div>
+                <h3 className={`text-2xl font-bold ${plan.highlight ? 'text-[#D4AF37]' : 'text-white'} mb-3 pr-2`}>{plan.name}</h3>
+                
+
+                <div className="text-[11px] font-bold text-[#D4AF37] uppercase tracking-widest mb-6 border border-[#D4AF37]/30 bg-[#D4AF37]/10 inline-block px-4 py-1.5 rounded-full self-start">
+                  {plan.setupPrice}
+                </div>
                 
                 <div className="flex items-baseline gap-1 mb-8">
                   <div className={`text-5xl font-extrabold ${plan.highlight ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#FCE69B]' : 'text-white'}`}>
                     {plan.monthlyPrice}
                   </div>
-                  <span className="text-gray-500 font-medium">{plan.period}</span>
+                  <span className="text-gray-400 font-medium">{plan.period}</span>
                 </div>
                 
-                <div className="space-y-4 mb-10 flex-grow">
-                  {plan.features.map((feat, i) => (
-                    <div key={i} className="flex items-start gap-4 text-gray-200">
-                      <CheckCircle2 className={`${plan.highlight ? 'text-[#D4AF37]' : 'text-gray-400'} shrink-0 mt-0.5`} size={20} />
-                      <span className="text-base leading-snug">{feat}</span>
+                <div className="space-y-4 mb-8 flex-grow">
+                  {plan.features.map((feat: any, i: number) => (
+                    <div key={i} className="flex items-start gap-4 text-gray-300">
+                      <CheckCircle2 className={`${plan.highlight ? 'text-[#D4AF37]' : 'text-gray-500'} shrink-0 mt-1`} size={20} />
+                      <div className="flex flex-col">
+                        <span className="text-base font-medium leading-snug text-white">{feat.name}</span>
+                        {feat.desc && <span className="text-sm text-gray-400 mt-1 leading-snug">{feat.desc}</span>}
+                      </div>
                     </div>
                   ))}
                 </div>
                 
-                <button onClick={() => setIsContactModalOpen(true)} className="w-full py-4 rounded-2xl font-semibold text-lg transition-colors bg-boutique-sand hover:bg-white text-boutique-anthracite border border-boutique-sand hover:border-slate-600 shadow-sm hover:shadow-xl">
+                <p className="text-sm text-gray-400 italic mb-8 border-t border-gray-800 pt-6">
+                  {plan.baseText}
+                </p>
+
+                <button onClick={() => setIsContactModalOpen(true)} className={`w-full py-4 rounded-2xl font-semibold text-lg transition-colors ${plan.highlight ? 'bg-gradient-to-r from-[#D4AF37] to-[#B38822] hover:from-[#FCE69B] hover:to-[#D4AF37] text-boutique-anthracite shadow-lg shadow-[#D4AF37]/20' : 'bg-boutique-sand hover:bg-white text-boutique-anthracite shadow-sm'}`}>
                   {plan.cta}
                 </button>
               </div>
             ))}
           </div>
 
+          {/* Chatbot Add-on Banner */}
+          <div className="max-w-6xl mx-auto mb-16 bg-gradient-to-br from-boutique-sand/20 to-transparent border border-[#D4AF37]/20 rounded-[2rem] p-8 md:p-10 flex flex-col md:flex-row gap-8 relative overflow-hidden items-stretch">
+            <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#D4AF37]/10 blur-[80px] rounded-full pointer-events-none"></div>
+            
+            <div className="flex-1 relative z-10">
+              <div className="inline-block px-3 py-1 bg-boutique-anthracite text-[#D4AF37] text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">
+                ADD-ON
+              </div>
+              <h3 className="text-2xl md:text-3xl font-bold text-boutique-anthracite mb-3 font-serif">
+                {t.pricing.addon.name}
+              </h3>
+
+              
+              <ul className="space-y-3 mb-6">
+                {t.pricing.addon.features.map((feature: string, idx: number) => (
+                  <li key={idx} className="flex items-start text-gray-700">
+                    <CheckCircle2 className="w-5 h-5 text-[#D4AF37] mr-3 shrink-0 mt-0.5" />
+                    <span className="leading-relaxed">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              <p className="text-sm text-gray-500 italic border-t border-[#D4AF37]/20 pt-4">
+                {t.pricing.addon.baseText}
+              </p>
+            </div>
+            
+            <div className="md:w-72 shrink-0 bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center justify-center text-center relative z-10">
+              <div className="text-3xl md:text-4xl font-extrabold text-boutique-anthracite">
+                {t.pricing.addon.price}
+              </div>
+            </div>
+          </div>
+
 
           {/* Enterprise Section */}
-          <div className="max-w-5xl mx-auto bg-[#0B1121] rounded-[2rem] p-10 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-md relative overflow-hidden border border-gray-300">
-             <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/5 blur-[80px] rounded-full pointer-events-none"></div>
+          <div className="max-w-6xl mx-auto bg-boutique-anthracite rounded-[2rem] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden border border-[#D4AF37]/20">
+             <div className="absolute top-0 right-0 w-96 h-96 bg-[#D4AF37]/10 blur-[80px] rounded-full pointer-events-none"></div>
+             <div className="absolute bottom-0 left-0 w-64 h-64 bg-boutique-sand/10 blur-[60px] rounded-full pointer-events-none"></div>
+             
              <div className="relative z-10 md:w-2/3">
-                <h3 className="text-2xl md:text-3xl font-semibold text-white mb-4 font-serif tracking-wide">{t.pricing.enterprise.title}</h3>
-                <p className="text-gray-300 text-lg leading-relaxed">{t.pricing.enterprise.desc}</p>
+                <h3 className="text-3xl md:text-4xl font-bold text-[#D4AF37] mb-4 font-serif">{t.pricing.enterprise.title}</h3>
+                <p className="text-gray-300 text-lg leading-relaxed font-light">{t.pricing.enterprise.desc}</p>
              </div>
              <div className="relative z-10 md:w-1/3 flex justify-end w-full">
-                <button onClick={() => setIsContactModalOpen(true)} className="w-full md:w-auto px-8 py-4 bg-white text-[#0B1121] font-semibold rounded-2xl hover:bg-slate-200 transition-colors shadow-sm">
+                <button onClick={() => setIsContactModalOpen(true)} className="w-full md:w-auto px-8 py-4 bg-gradient-to-r from-[#D4AF37] to-[#B38822] hover:from-[#FCE69B] hover:to-[#D4AF37] text-boutique-anthracite font-semibold text-lg rounded-2xl transition-colors shadow-lg shadow-[#D4AF37]/20">
                   {t.pricing.enterprise.cta}
                 </button>
              </div>
@@ -2077,7 +2215,7 @@ const VistomioLandingPage: React.FC = () => {
         <div className="max-w-4xl mx-auto px-4 relative z-10 text-center flex flex-col items-center">
           <div className="flex items-center gap-4 mb-6 justify-center">
             <div className="w-12 h-[2px] bg-[#D4AF37]"></div>
-            <span className="text-[#D4AF37] font-bold tracking-[0.25em] text-xs md:text-sm uppercase">VISTOMIO</span>
+            <span className="text-[#D4AF37] font-bold tracking-[0.25em] text-sm md:text-base uppercase">VISTOMIO</span>
             <div className="w-12 h-[2px] bg-[#D4AF37]"></div>
           </div>
           
@@ -2483,7 +2621,7 @@ function SectionHeader({ eyebrow, title, align = 'center' }: { eyebrow?: string,
       {eyebrow && (
         <div className={`flex items-center gap-4 ${!title ? 'mb-0' : 'mb-5'} ${align === 'center' ? 'justify-center' : 'justify-start'}`}>
           <div className="w-12 h-[2px] bg-[#D4AF37]"></div>
-          <span className="text-[#D4AF37] font-bold tracking-[0.25em] text-xs md:text-sm uppercase">{eyebrow}</span>
+          <span className="text-[#D4AF37] font-bold tracking-[0.25em] text-sm md:text-base uppercase">{eyebrow}</span>
         </div>
       )}
       {title && (
