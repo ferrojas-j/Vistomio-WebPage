@@ -1759,7 +1759,7 @@ const VistomioLandingPage: React.FC = () => {
                <img src="/luxury_suite_interior.jpg" alt="Luxury Suite Interior" className="absolute inset-0 w-full h-full object-cover rounded-[2rem]" />
                
                {/* Card floating over the image - Moved to TOP LEFT to show the bed at the bottom */}
-               <div className="absolute -left-4 md:-left-12 top-8 md:top-12 w-[calc(100%+2rem)] md:w-[75%] lg:w-[70%] rounded-[2rem] bg-[#0B1121]/95 backdrop-blur-2xl border border-white/10 shadow-2xl shadow-black/50 p-5 md:p-6 flex flex-col justify-between overflow-hidden z-20 ring-1 ring-white/5">
+               <div className="absolute -left-4 md:-left-12 top-8 md:top-12 w-[calc(100%+2rem)] md:w-[75%] lg:w-[70%] rounded-[2rem] bg-boutique-anthracite backdrop-blur-2xl border border-white/10 shadow-2xl shadow-black/50 p-5 md:p-6 flex flex-col justify-between overflow-hidden z-20 ring-1 ring-white/5">
                   
                   {/* Subtle glass reflection */}
                   <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
