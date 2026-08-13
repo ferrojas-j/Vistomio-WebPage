@@ -514,92 +514,92 @@ const translations = {
 
 const LimpiezaView = ({ t, onOpenChecklist }: { t: any, onOpenChecklist: () => void }) => (
   <div className="flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
-    <div className="bg-indigo-600 text-white rounded-2xl p-4 shadow-md shadow-indigo-600/20">
-      <div className="text-[10px] font-bold uppercase tracking-wider mb-1 opacity-80">{t.limpieza.planning}</div>
-      <div className="text-xl font-bold">{t.limpieza.date}</div>
+    <div className="bg-boutique-gold text-boutique-anthracite rounded-2xl p-4 shadow-md shadow-indigo-600/20">
+      <div className="text-[10px] font-semibold uppercase tracking-wider mb-1 opacity-80">{t.limpieza.planning}</div>
+      <div className="text-xl font-semibold">{t.limpieza.date}</div>
     </div>
     
     <div className="grid grid-cols-2 gap-3">
       <div className="bg-white p-3 rounded-2xl border border-slate-100 shadow-sm flex flex-col gap-1">
-        <span className="text-[10px] font-bold text-slate-500 uppercase">{t.limpieza.clean}</span>
-        <span className="text-2xl font-black text-emerald-500">12</span>
+        <span className="text-[10px] font-semibold text-gray-500 uppercase">{t.limpieza.clean}</span>
+        <span className="text-2xl font-black text-boutique-gold">12</span>
       </div>
       <div className="bg-white p-3 rounded-2xl border border-slate-100 shadow-sm flex flex-col gap-1">
-        <span className="text-[10px] font-bold text-slate-500 uppercase">{t.limpieza.dirty}</span>
+        <span className="text-[10px] font-semibold text-gray-500 uppercase">{t.limpieza.dirty}</span>
         <span className="text-2xl font-black text-rose-500">4</span>
       </div>
       <div className="bg-white p-3 rounded-2xl border border-slate-100 shadow-sm flex flex-col gap-1">
-        <span className="text-[10px] font-bold text-slate-500 uppercase">{t.limpieza.guests}</span>
-        <span className="text-2xl font-black text-indigo-500">8</span>
+        <span className="text-[10px] font-semibold text-gray-500 uppercase">{t.limpieza.guests}</span>
+        <span className="text-2xl font-black text-boutique-gold">8</span>
       </div>
       <div className="bg-white p-3 rounded-2xl border border-slate-100 shadow-sm flex flex-col gap-1">
-        <span className="text-[10px] font-bold text-slate-500 uppercase">{t.limpieza.available}</span>
+        <span className="text-[10px] font-semibold text-gray-500 uppercase">{t.limpieza.available}</span>
         <span className="text-2xl font-black text-amber-500">5</span>
       </div>
     </div>
     
     <div className="bg-white rounded-2xl border border-slate-100 shadow-sm mt-2 overflow-hidden flex flex-col">
        <div className="p-3 border-b border-slate-100 flex justify-between items-center bg-slate-50">
-          <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">{t.limpieza.assignments}</span>
+          <span className="text-[11px] font-semibold text-gray-500 uppercase tracking-wider">{t.limpieza.assignments}</span>
           <button onClick={onOpenChecklist} className="flex items-center gap-1.5 text-indigo-600 bg-indigo-50 px-3 py-1.5 rounded-full text-[10px] font-black tracking-wide uppercase transition-transform active:scale-95 cursor-pointer hover:bg-indigo-100"><CheckSquare size={14} strokeWidth={2.5}/> {t.limpieza.viewChecklist}</button>
        </div>
        <div className="p-3">
          <div className="flex items-center gap-2 mb-3">
-           <div className="w-6 h-6 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-xs font-bold">M</div>
-           <span className="text-sm font-bold text-slate-700">{t.limpieza.floor1}</span>
+           <div className="w-6 h-6 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-xs font-semibold">M</div>
+           <span className="text-sm font-semibold text-slate-700">{t.limpieza.floor1}</span>
          </div>
          
          <div className="flex flex-col gap-2">
            <div className="p-3 rounded-xl border border-slate-100 flex justify-between items-center bg-slate-50/50">
-             <span className="font-bold text-sm text-slate-700">Hab 101</span>
-             <div className="w-5 h-5 rounded-full border-2 border-slate-200"></div>
+             <span className="font-semibold text-sm text-slate-700">Hab 101</span>
+             <div className="w-5 h-5 rounded-full border-2 border-boutique-sand"></div>
            </div>
            
            <div className="p-3 rounded-xl border border-slate-100 flex justify-between items-center bg-slate-50/50">
              <div className="flex flex-col gap-1.5">
-               <span className="font-bold text-sm text-slate-700">Hab 102</span>
+               <span className="font-semibold text-sm text-slate-700">Hab 102</span>
                <div className="flex gap-1.5">
-                 <span className="bg-rose-100 text-rose-700 text-[9px] font-bold px-1.5 py-0.5 rounded uppercase">{t.limpieza.checkout}</span>
-                 <span className="bg-amber-100 text-amber-700 text-[9px] font-bold px-1.5 py-0.5 rounded uppercase">{t.limpieza.checkinToday}</span>
+                 <span className="bg-rose-100 text-rose-700 text-[9px] font-semibold px-1.5 py-0.5 rounded uppercase">{t.limpieza.checkout}</span>
+                 <span className="bg-amber-100 text-amber-700 text-[9px] font-semibold px-1.5 py-0.5 rounded uppercase">{t.limpieza.checkinToday}</span>
                </div>
              </div>
-             <div className="w-5 h-5 rounded-full border-2 border-slate-200"></div>
+             <div className="w-5 h-5 rounded-full border-2 border-boutique-sand"></div>
            </div>
          </div>
          
          <div className="flex items-center gap-2 mt-6 mb-3">
-           <div className="w-6 h-6 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-xs font-bold">J</div>
-           <span className="text-sm font-bold text-slate-700">{t.limpieza.floor2}</span>
+           <div className="w-6 h-6 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-xs font-semibold">J</div>
+           <span className="text-sm font-semibold text-slate-700">{t.limpieza.floor2}</span>
          </div>
          
          <div className="flex flex-col gap-2">
            <div className="p-3 rounded-xl border border-slate-100 flex justify-between items-center bg-slate-50/50">
              <div className="flex flex-col gap-1.5">
-               <span className="font-bold text-sm text-slate-700">Hab 201</span>
+               <span className="font-semibold text-sm text-slate-700">Hab 201</span>
                <div className="flex gap-1.5">
-                 <span className="bg-rose-100 text-rose-700 text-[9px] font-bold px-1.5 py-0.5 rounded uppercase">{t.limpieza.checkout}</span>
-                 <span className="bg-purple-100 text-purple-700 text-[9px] font-bold px-1.5 py-0.5 rounded uppercase">{t.limpieza.deepClean}</span>
+                 <span className="bg-rose-100 text-rose-700 text-[9px] font-semibold px-1.5 py-0.5 rounded uppercase">{t.limpieza.checkout}</span>
+                 <span className="bg-purple-100 text-purple-700 text-[9px] font-semibold px-1.5 py-0.5 rounded uppercase">{t.limpieza.deepClean}</span>
                </div>
              </div>
-             <div className="w-5 h-5 rounded-full border-2 border-slate-200"></div>
+             <div className="w-5 h-5 rounded-full border-2 border-boutique-sand"></div>
            </div>
            
            <div className="p-3 rounded-xl border border-slate-100 flex justify-between items-center bg-slate-50/50">
              <div className="flex flex-col gap-1.5">
-               <span className="font-bold text-sm text-slate-700">Hab 205</span>
+               <span className="font-semibold text-sm text-slate-700">Hab 205</span>
                <div className="flex gap-1.5">
-                 <span className="bg-sky-100 text-sky-700 text-[9px] font-bold px-1.5 py-0.5 rounded uppercase">{t.limpieza.occupied}</span>
-                 <span className="bg-emerald-100 text-emerald-700 text-[9px] font-bold px-1.5 py-0.5 rounded uppercase">{t.limpieza.stayover}</span>
+                 <span className="bg-sky-100 text-sky-700 text-[9px] font-semibold px-1.5 py-0.5 rounded uppercase">{t.limpieza.occupied}</span>
+                 <span className="bg-emerald-100 text-emerald-700 text-[9px] font-semibold px-1.5 py-0.5 rounded uppercase">{t.limpieza.stayover}</span>
                </div>
              </div>
-             <div className="w-5 h-5 rounded-full border-2 border-slate-200 flex items-center justify-center bg-emerald-500 border-emerald-500">
+             <div className="w-5 h-5 rounded-full border-2 border-boutique-sand flex items-center justify-center bg-boutique-gold border-boutique-gold">
                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
              </div>
            </div>
            
            <div className="p-3 rounded-xl border border-slate-100 flex justify-between items-center bg-slate-50/50">
-             <span className="font-bold text-sm text-slate-700">Hab 208</span>
-             <div className="w-5 h-5 rounded-full border-2 border-slate-200"></div>
+             <span className="font-semibold text-sm text-slate-700">Hab 208</span>
+             <div className="w-5 h-5 rounded-full border-2 border-boutique-sand"></div>
            </div>
          </div>
        </div>
@@ -609,14 +609,14 @@ const LimpiezaView = ({ t, onOpenChecklist }: { t: any, onOpenChecklist: () => v
 
 const RecepcionView = ({ t, onOpenExpense, onOpenNovelty }: { t: any, onOpenExpense: () => void, onOpenNovelty: () => void }) => (
   <div className="flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
-    <button onClick={onOpenNovelty} className="w-full bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl p-4 shadow-md shadow-indigo-600/20 flex items-center justify-center gap-2 font-bold text-sm transition-transform active:scale-[0.98] cursor-pointer">
+    <button onClick={onOpenNovelty} className="w-full bg-boutique-gold hover:bg-indigo-700 text-boutique-anthracite rounded-2xl p-4 shadow-md shadow-indigo-600/20 flex items-center justify-center gap-2 font-semibold text-sm transition-transform active:scale-[0.98] cursor-pointer">
       <Plus size={18} /> {t.recepcion.newNovelty}
     </button>
     
     <div className="bg-white rounded-2xl border border-slate-100 shadow-sm mt-2 overflow-hidden flex flex-col">
        <div className="p-3 border-b border-slate-100 flex justify-between items-center bg-slate-50">
-          <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">{t.recepcion.logbook}</span>
-          <span className="bg-indigo-50 text-indigo-600 text-[9px] font-bold px-2 py-1 rounded uppercase tracking-widest">{t.recepcion.date}</span>
+          <span className="text-[11px] font-semibold text-gray-500 uppercase tracking-wider">{t.recepcion.logbook}</span>
+          <span className="bg-indigo-50 text-indigo-600 text-[9px] font-semibold px-2 py-1 rounded uppercase tracking-widest">{t.recepcion.date}</span>
        </div>
        
        <div className="flex flex-col p-4 gap-6">
@@ -625,7 +625,7 @@ const RecepcionView = ({ t, onOpenExpense, onOpenNovelty }: { t: any, onOpenExpe
              <div className="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center shrink-0 mt-1"><Info size={16}/></div>
              <div className="flex flex-col gap-1">
                <p className="text-sm font-medium text-slate-700 leading-snug">{log.title}</p>
-               <p className="text-xs text-slate-400">{log.time}</p>
+               <p className="text-xs text-gray-500">{log.time}</p>
              </div>
            </div>
          ))}
@@ -633,7 +633,7 @@ const RecepcionView = ({ t, onOpenExpense, onOpenNovelty }: { t: any, onOpenExpe
            <div className="w-8 h-8 rounded-full bg-rose-50 text-rose-600 flex items-center justify-center shrink-0 mt-1"><AlertTriangle size={16}/></div>
            <div className="flex flex-col gap-1">
              <p className="text-sm font-medium text-slate-700 leading-snug">{t.recepcion.log4.title}</p>
-             <p className="text-xs text-slate-400">{t.recepcion.log4.time}</p>
+             <p className="text-xs text-gray-500">{t.recepcion.log4.time}</p>
            </div>
          </div>
        </div>
@@ -642,24 +642,24 @@ const RecepcionView = ({ t, onOpenExpense, onOpenNovelty }: { t: any, onOpenExpe
     <div className="bg-white rounded-2xl border border-slate-100 shadow-sm mt-2 overflow-hidden flex flex-col">
        <div className="p-5 flex justify-between items-center border-b border-slate-50">
          <div>
-           <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">{t.recepcion.pettyCash}</h4>
+           <h4 className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-1">{t.recepcion.pettyCash}</h4>
            <p className="text-3xl font-black text-slate-800">$15,450</p>
          </div>
-         <button onClick={onOpenExpense} className="w-10 h-10 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center transition-transform active:scale-95 cursor-pointer hover:bg-emerald-100">
+         <button onClick={onOpenExpense} className="w-10 h-10 rounded-full bg-boutique-offwhite text-boutique-gold flex items-center justify-center transition-transform active:scale-95 cursor-pointer hover:bg-emerald-100">
            <Plus size={20} strokeWidth={2.5}/>
          </button>
        </div>
        <div className="bg-slate-50/50 p-4 border-b border-slate-50">
-          <h4 className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.recepcion.recentExpenses}</h4>
+          <h4 className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">{t.recepcion.recentExpenses}</h4>
        </div>
        <div className="flex flex-col p-4 gap-4">
          {t.recepcion.expenses.map((expense: any, i: number) => (
            <div key={i} className="flex justify-between items-center">
              <div className="flex flex-col">
-               <span className="font-bold text-sm text-slate-700">{expense.title}</span>
-               <span className="text-[10px] text-slate-400">{expense.time}</span>
+               <span className="font-semibold text-sm text-slate-700">{expense.title}</span>
+               <span className="text-[10px] text-gray-500">{expense.time}</span>
              </div>
-             <span className={`font-bold text-sm ${expense.isPositive ? 'text-emerald-500' : 'text-slate-600'}`}>{expense.amount}</span>
+             <span className={`font-bold text-sm ${expense.isPositive ? 'text-boutique-gold' : 'text-slate-600'}`}>{expense.amount}</span>
            </div>
          ))}
        </div>
@@ -670,18 +670,18 @@ const RecepcionView = ({ t, onOpenExpense, onOpenNovelty }: { t: any, onOpenExpe
 const MantenimientoView = ({ t, onOpenLogbook, onOpenSupplies }: { t: any, onOpenLogbook: () => void, onOpenSupplies: () => void }) => (
   <div className="flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
     <div className="grid grid-cols-2 gap-3">
-      <button onClick={onOpenLogbook} className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl p-4 shadow-md shadow-indigo-600/20 flex flex-col items-center justify-center gap-2 font-bold text-sm h-24 transition-transform active:scale-[0.98] cursor-pointer">
+      <button onClick={onOpenLogbook} className="bg-boutique-gold hover:bg-indigo-700 text-boutique-anthracite rounded-2xl p-4 shadow-md shadow-indigo-600/20 flex flex-col items-center justify-center gap-2 font-semibold text-sm h-24 transition-transform active:scale-[0.98] cursor-pointer">
         <Plus size={20} /> {t.mantenimiento.advance}
       </button>
-      <button onClick={onOpenSupplies} className="bg-amber-500 hover:bg-amber-600 text-white rounded-2xl p-4 shadow-md shadow-amber-500/20 flex flex-col items-center justify-center gap-2 font-bold text-sm h-24 transition-transform active:scale-[0.98] cursor-pointer">
+      <button onClick={onOpenSupplies} className="bg-amber-500 hover:bg-amber-600 text-boutique-anthracite rounded-2xl p-4 shadow-md shadow-amber-500/20 flex flex-col items-center justify-center gap-2 font-semibold text-sm h-24 transition-transform active:scale-[0.98] cursor-pointer">
         <Box size={20} /> {t.mantenimiento.supplies}
       </button>
     </div>
     
     <div className="bg-white rounded-2xl border border-slate-100 shadow-sm mt-2 overflow-hidden flex flex-col">
        <div className="p-3 border-b border-slate-100 flex justify-between items-center bg-slate-50">
-          <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">{t.mantenimiento.logbook}</span>
-          <span className="bg-indigo-50 text-indigo-600 text-[9px] font-bold px-2 py-1 rounded uppercase tracking-widest">{t.mantenimiento.date}</span>
+          <span className="text-[11px] font-semibold text-gray-500 uppercase tracking-wider">{t.mantenimiento.logbook}</span>
+          <span className="bg-indigo-50 text-indigo-600 text-[9px] font-semibold px-2 py-1 rounded uppercase tracking-widest">{t.mantenimiento.date}</span>
        </div>
        
        <div className="flex flex-col p-4 gap-6 relative">
@@ -689,10 +689,10 @@ const MantenimientoView = ({ t, onOpenLogbook, onOpenSupplies }: { t: any, onOpe
 
          {[t.mantenimiento.log1, t.mantenimiento.log2, t.mantenimiento.log3, t.mantenimiento.log4].map((log: any, i: number) => (
            <div key={i} className="flex gap-3 z-10">
-             <div className="w-3 h-3 rounded-full bg-emerald-500 mt-1.5 shrink-0 ml-[0.35rem] shadow-[0_0_0_4px_white]"></div>
+             <div className="w-3 h-3 rounded-full bg-boutique-gold mt-1.5 shrink-0 ml-[0.35rem] shadow-[0_0_0_4px_white]"></div>
              <div className="flex flex-col gap-1 ml-1">
                <p className="text-sm font-medium text-slate-700 leading-snug">{log.title}</p>
-               <p className="text-xs text-slate-400">{log.time}</p>
+               <p className="text-xs text-gray-500">{log.time}</p>
              </div>
            </div>
          ))}
@@ -723,21 +723,21 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
 
   
   return (
-    <div className="w-full max-w-[380px] mx-auto bg-slate-900 rounded-[3rem] p-3 shadow-2xl border-4 border-slate-800 relative shadow-indigo-500/20 shrink-0">
+    <div className="w-full max-w-[380px] mx-auto bg-white rounded-[3rem] p-3 shadow-md border-4 border-gray-200 relative shadow-indigo-500/20 shrink-0">
       {/* Phone Notch */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-slate-900 rounded-b-2xl z-50"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-white rounded-b-2xl z-50 border-b border-l border-r border-gray-100"></div>
       
       {/* App Container */}
       <div className="w-full h-[675px] bg-slate-50 rounded-[2.5rem] overflow-hidden flex flex-col relative font-sans">
         
         {/* Header */}
         <div className="pt-10 pb-4 px-5 bg-white flex items-center justify-between border-b border-slate-100 z-10 shrink-0">
-          <h2 className="text-xl font-bold text-slate-800 tracking-tight">Vistomio Staff App</h2>
+          <h2 className="text-xl font-semibold text-slate-800 tracking-tight font-serif tracking-wide">Vistomio Staff App</h2>
           <div className="flex items-center gap-2">
-            <button onClick={() => setIsReportModalOpen(true)} className="flex items-center gap-1.5 px-3 py-1.5 bg-rose-50 text-rose-600 rounded-full text-xs font-bold transition-transform active:scale-95 cursor-pointer hover:bg-rose-100">
+            <button onClick={() => setIsReportModalOpen(true)} className="flex items-center gap-1.5 px-3 py-1.5 bg-rose-50 text-rose-600 rounded-full text-xs font-semibold transition-transform active:scale-95 cursor-pointer hover:bg-rose-100">
               <ShieldAlert size={14} /> Reportar
             </button>
-            <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 cursor-default">
+            <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-gray-500 cursor-default">
               <X size={16} />
             </div>
           </div>
@@ -772,35 +772,35 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
         {/* Inventory View */}
         {activeBottomTab === 'inventory' && (
           <div className="flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-2 duration-300 h-full p-4">
-            <h2 className="text-xl font-bold text-slate-800 mt-2">{t.inventorySelection.title}</h2>
+            <h2 className="text-xl font-semibold text-slate-800 mt-2 font-serif tracking-wide">{t.inventorySelection.title}</h2>
             
             <div className="flex flex-col gap-4 mt-2">
               <div onClick={() => { setInventoryArea('limpieza'); setIsInventoryModalOpen(true); }} className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm flex items-center justify-between cursor-pointer hover:bg-slate-50 transition-colors active:scale-[0.98]">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-boutique-offwhite text-boutique-gold flex items-center justify-center shrink-0">
                     <Sparkles size={24} />
                   </div>
                   <div className="flex flex-col">
-                    <h3 className="font-bold text-slate-800 text-lg leading-tight">{t.inventorySelection.limpieza}</h3>
-                    <p className="text-xs text-slate-400 font-medium">{t.inventorySelection.limpiezaDesc}</p>
-                    <span className="bg-emerald-50 text-emerald-600 text-[10px] font-bold px-2 py-0.5 rounded mt-1.5 w-fit">{t.inventorySelection.limpiezaDate}</span>
+                    <h3 className="font-semibold text-slate-800 text-lg leading-tight font-serif tracking-wide">{t.inventorySelection.limpieza}</h3>
+                    <p className="text-xs text-gray-500 font-medium">{t.inventorySelection.limpiezaDesc}</p>
+                    <span className="bg-boutique-offwhite text-boutique-gold text-[10px] font-semibold px-2 py-0.5 rounded mt-1.5 w-fit">{t.inventorySelection.limpiezaDate}</span>
                   </div>
                 </div>
-                <ChevronRight className="text-slate-300" size={20}/>
+                <ChevronRight className="text-gray-600" size={20}/>
               </div>
 
               <div onClick={() => { setInventoryArea('recepcion'); setIsInventoryModalOpen(true); }} className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm flex items-center justify-between cursor-pointer hover:bg-slate-50 transition-colors active:scale-[0.98]">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-indigo-50 text-indigo-500 flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-indigo-50 text-boutique-gold flex items-center justify-center shrink-0">
                     <Users size={24} />
                   </div>
                   <div className="flex flex-col">
-                    <h3 className="font-bold text-slate-800 text-lg leading-tight">{t.inventorySelection.recepcion}</h3>
-                    <p className="text-xs text-slate-400 font-medium">{t.inventorySelection.recepcionDesc}</p>
-                    <span className="bg-indigo-50 text-indigo-600 text-[10px] font-bold px-2 py-0.5 rounded mt-1.5 w-fit">{t.inventorySelection.recepcionDate}</span>
+                    <h3 className="font-semibold text-slate-800 text-lg leading-tight font-serif tracking-wide">{t.inventorySelection.recepcion}</h3>
+                    <p className="text-xs text-gray-500 font-medium">{t.inventorySelection.recepcionDesc}</p>
+                    <span className="bg-indigo-50 text-indigo-600 text-[10px] font-semibold px-2 py-0.5 rounded mt-1.5 w-fit">{t.inventorySelection.recepcionDate}</span>
                   </div>
                 </div>
-                <ChevronRight className="text-slate-300" size={20}/>
+                <ChevronRight className="text-gray-600" size={20}/>
               </div>
 
               <div onClick={() => { setInventoryArea('mantenimiento'); setIsInventoryModalOpen(true); }} className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm flex items-center justify-between cursor-pointer hover:bg-slate-50 transition-colors active:scale-[0.98]">
@@ -809,11 +809,11 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
                     <Box size={24} />
                   </div>
                   <div className="flex flex-col">
-                    <h3 className="font-bold text-slate-800 text-lg leading-tight">{t.inventorySelection.mantenimiento}</h3>
-                    <p className="text-xs text-slate-400 font-medium">{t.inventorySelection.mantenimientoDesc}</p>
+                    <h3 className="font-semibold text-slate-800 text-lg leading-tight font-serif tracking-wide">{t.inventorySelection.mantenimiento}</h3>
+                    <p className="text-xs text-gray-500 font-medium">{t.inventorySelection.mantenimientoDesc}</p>
                   </div>
                 </div>
-                <ChevronRight className="text-slate-300" size={20}/>
+                <ChevronRight className="text-gray-600" size={20}/>
               </div>
             </div>
           </div>
@@ -821,11 +821,11 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
 
         
         {/* Checklist Modal */}
-        <div className={`absolute inset-0 bg-slate-900/40 backdrop-blur-[2px] z-30 transition-opacity duration-300 ${isChecklistOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsChecklistOpen(false)}>
+        <div className={`absolute inset-0 bg-boutique-offwhite/40 backdrop-blur-[2px] z-30 transition-opacity duration-300 ${isChecklistOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsChecklistOpen(false)}>
           <div className={`absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl transition-transform duration-300 ease-out p-6 shadow-2xl flex flex-col max-h-[85%] ${isChecklistOpen ? 'translate-y-0' : 'translate-y-full'}`} onClick={e => e.stopPropagation()}>
             <div className="flex justify-between items-center mb-4 pb-4 border-b border-slate-50 shrink-0">
-              <h3 className="font-bold text-slate-800 text-lg pr-4 leading-tight">{t.limpieza.checklistTitle}</h3>
-              <button onClick={() => setIsChecklistOpen(false)} className="text-slate-400 hover:text-slate-600 transition-colors p-1">
+              <h3 className="font-semibold text-slate-800 text-lg pr-4 leading-tight font-serif tracking-wide">{t.limpieza.checklistTitle}</h3>
+              <button onClick={() => setIsChecklistOpen(false)} className="text-gray-500 hover:text-slate-600 transition-colors p-1">
                 <X size={20} />
               </button>
             </div>
@@ -843,11 +843,11 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
         </div>
         
         {/* Expense Modal */}
-        <div className={`absolute inset-0 bg-slate-900/40 backdrop-blur-[2px] z-30 transition-opacity duration-300 ${isExpenseModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsExpenseModalOpen(false)}>
+        <div className={`absolute inset-0 bg-boutique-offwhite/40 backdrop-blur-[2px] z-30 transition-opacity duration-300 ${isExpenseModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsExpenseModalOpen(false)}>
           <div className={`absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl transition-transform duration-300 ease-out p-6 shadow-2xl flex flex-col ${isExpenseModalOpen ? 'translate-y-0' : 'translate-y-full'}`} onClick={e => e.stopPropagation()}>
             <div className="flex justify-between items-center mb-5 pb-4 border-b border-slate-50 shrink-0">
-              <h3 className="font-bold text-emerald-700 text-lg flex items-center gap-2"><DollarSign size={20}/> {t.recepcion.registerExpense}</h3>
-              <button onClick={() => setIsExpenseModalOpen(false)} className="text-slate-400 hover:text-slate-600 transition-colors p-1">
+              <h3 className="font-semibold text-emerald-700 text-lg flex items-center gap-2 font-serif tracking-wide"><DollarSign size={20}/> {t.recepcion.registerExpense}</h3>
+              <button onClick={() => setIsExpenseModalOpen(false)} className="text-gray-500 hover:text-slate-600 transition-colors p-1">
                 <X size={20} />
               </button>
             </div>
@@ -855,23 +855,23 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
             <div className="flex flex-col gap-5 pb-2">
               <div className="flex gap-4">
                 <div className="flex flex-col gap-2 flex-1">
-                  <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.recepcion.amount}</label>
-                  <input type="text" placeholder={t.recepcion.amountPlaceholder} className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-bold text-slate-700 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500" readOnly />
+                  <label className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">{t.recepcion.amount}</label>
+                  <input type="text" placeholder={t.recepcion.amountPlaceholder} className="w-full bg-white border border-boutique-sand rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 focus:outline-none focus:border-boutique-gold focus:ring-1 focus:ring-boutique-gold" readOnly />
                 </div>
                 <div className="flex flex-col gap-2 flex-1">
-                  <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.recepcion.type}</label>
-                  <select className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium text-slate-700 focus:outline-none focus:border-emerald-500 appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%208l5%205%205-5%22%20fill%3D%22none%22%20stroke%3D%22%2364748b%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[position:right_10px_center]">
+                  <label className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">{t.recepcion.type}</label>
+                  <select className="w-full bg-white border border-boutique-sand rounded-xl px-4 py-3 text-sm font-medium text-slate-700 focus:outline-none focus:border-boutique-gold appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%208l5%205%205-5%22%20fill%3D%22none%22%20stroke%3D%22%2364748b%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[position:right_10px_center]">
                     <option>{t.recepcion.expenseType}</option>
                   </select>
                 </div>
               </div>
               
               <div className="flex flex-col gap-2">
-                <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.recepcion.desc}</label>
-                <input type="text" placeholder={t.recepcion.descPlaceholder} className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-600 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500" readOnly />
+                <label className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">{t.recepcion.desc}</label>
+                <input type="text" placeholder={t.recepcion.descPlaceholder} className="w-full bg-white border border-boutique-sand rounded-xl px-4 py-3 text-sm text-slate-600 focus:outline-none focus:border-boutique-gold focus:ring-1 focus:ring-boutique-gold" readOnly />
               </div>
               
-              <button onClick={() => setIsExpenseModalOpen(false)} className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3.5 rounded-xl transition-colors mt-2 active:scale-[0.98]">
+              <button onClick={() => setIsExpenseModalOpen(false)} className="w-full bg-boutique-gold hover:bg-boutique-gold text-boutique-anthracite font-semibold py-3.5 rounded-xl transition-colors mt-2 active:scale-[0.98]">
                 {t.recepcion.registerBtn}
               </button>
             </div>
@@ -879,19 +879,19 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
         </div>
 
         {/* Report Modal */}
-        <div className={`absolute inset-0 bg-slate-900/40 backdrop-blur-[2px] z-30 transition-opacity duration-300 ${isReportModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsReportModalOpen(false)}>
+        <div className={`absolute inset-0 bg-boutique-offwhite/40 backdrop-blur-[2px] z-30 transition-opacity duration-300 ${isReportModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsReportModalOpen(false)}>
           <div className={`absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl transition-transform duration-300 ease-out p-6 shadow-2xl flex flex-col ${isReportModalOpen ? 'translate-y-0' : 'translate-y-full'}`} onClick={e => e.stopPropagation()}>
             <div className="flex justify-between items-center mb-5 pb-4 border-b border-slate-50 shrink-0">
-              <h3 className="font-bold text-rose-700 text-lg flex items-center gap-2"><AlertTriangle size={20}/> {t.report?.title || 'Reportar Alerta'}</h3>
-              <button onClick={() => setIsReportModalOpen(false)} className="text-slate-400 hover:text-slate-600 transition-colors p-1">
+              <h3 className="font-semibold text-rose-700 text-lg flex items-center gap-2 font-serif tracking-wide"><AlertTriangle size={20}/> {t.report?.title || 'Reportar Alerta'}</h3>
+              <button onClick={() => setIsReportModalOpen(false)} className="text-gray-500 hover:text-slate-600 transition-colors p-1">
                 <X size={20} />
               </button>
             </div>
             
             <div className="flex flex-col gap-5 pb-2">
               <div className="flex flex-col gap-2">
-                <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.report?.team || 'EQUIPO'}</label>
-                <select className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium text-slate-700 focus:outline-none focus:border-rose-500 appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%208l5%205%205-5%22%20fill%3D%22none%22%20stroke%3D%22%2364748b%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[position:right_10px_center]">
+                <label className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">{t.report?.team || 'EQUIPO'}</label>
+                <select className="w-full bg-white border border-boutique-sand rounded-xl px-4 py-3 text-sm font-medium text-slate-700 focus:outline-none focus:border-rose-500 appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%208l5%205%205-5%22%20fill%3D%22none%22%20stroke%3D%22%2364748b%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[position:right_10px_center]">
                   {(t.report?.teamOptions || ['Limpieza']).map((opt: string, i: number) => (
                     <option key={i}>{opt}</option>
                   ))}
@@ -899,16 +899,16 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
               </div>
               
               <div className="flex flex-col gap-2">
-                <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.report?.location || 'LUGAR'}</label>
-                <input type="text" placeholder={t.report?.locationPlaceholder || 'Ej: Habitación 102'} className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-bold text-slate-700 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500" readOnly />
+                <label className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">{t.report?.location || 'LUGAR'}</label>
+                <input type="text" placeholder={t.report?.locationPlaceholder || 'Ej: Habitación 102'} className="w-full bg-white border border-boutique-sand rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500" readOnly />
               </div>
               
               <div className="flex flex-col gap-2">
-                <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.report?.finding || 'HALLAZGO'}</label>
-                <input type="text" placeholder={t.report?.findingPlaceholder || 'Ej: Mancha en alfombra'} className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-600 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500" readOnly />
+                <label className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">{t.report?.finding || 'HALLAZGO'}</label>
+                <input type="text" placeholder={t.report?.findingPlaceholder || 'Ej: Mancha en alfombra'} className="w-full bg-white border border-boutique-sand rounded-xl px-4 py-3 text-sm text-slate-600 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500" readOnly />
               </div>
               
-              <button onClick={() => setIsReportModalOpen(false)} className="w-full bg-[#D81E45] hover:bg-rose-700 text-white font-bold py-3.5 rounded-xl transition-colors mt-2 active:scale-[0.98]">
+              <button onClick={() => setIsReportModalOpen(false)} className="w-full bg-[#D81E45] hover:bg-rose-700 text-boutique-anthracite font-semibold py-3.5 rounded-xl transition-colors mt-2 active:scale-[0.98]">
                 {t.report?.submitBtn || 'Enviar Reporte Urgente'}
               </button>
             </div>
@@ -916,19 +916,19 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
         </div>
 
         {/* Novelty Modal */}
-        <div className={`absolute inset-0 bg-slate-900/40 backdrop-blur-[2px] z-30 transition-opacity duration-300 ${isNoveltyModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsNoveltyModalOpen(false)}>
+        <div className={`absolute inset-0 bg-boutique-offwhite/40 backdrop-blur-[2px] z-30 transition-opacity duration-300 ${isNoveltyModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsNoveltyModalOpen(false)}>
           <div className={`absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl transition-transform duration-300 ease-out p-6 shadow-2xl flex flex-col ${isNoveltyModalOpen ? 'translate-y-0' : 'translate-y-full'}`} onClick={e => e.stopPropagation()}>
             <div className="flex justify-between items-center mb-5 pb-4 border-b border-slate-50 shrink-0">
-              <h3 className="font-bold text-indigo-700 text-lg flex items-center gap-2"><Plus size={20}/> {t.novelty?.title || 'Nueva Novedad'}</h3>
-              <button onClick={() => setIsNoveltyModalOpen(false)} className="text-slate-400 hover:text-slate-600 transition-colors p-1">
+              <h3 className="font-semibold text-indigo-700 text-lg flex items-center gap-2 font-serif tracking-wide"><Plus size={20}/> {t.novelty?.title || 'Nueva Novedad'}</h3>
+              <button onClick={() => setIsNoveltyModalOpen(false)} className="text-gray-500 hover:text-slate-600 transition-colors p-1">
                 <X size={20} />
               </button>
             </div>
             
             <div className="flex flex-col gap-5 pb-2">
               <div className="flex flex-col gap-2">
-                <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.novelty?.type || 'TIPO DE NOVEDAD'}</label>
-                <select className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium text-slate-700 focus:outline-none focus:border-indigo-500 appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%208l5%205%205-5%22%20fill%3D%22none%22%20stroke%3D%22%2364748b%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[position:right_10px_center]">
+                <label className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">{t.novelty?.type || 'TIPO DE NOVEDAD'}</label>
+                <select className="w-full bg-white border border-boutique-sand rounded-xl px-4 py-3 text-sm font-medium text-slate-700 focus:outline-none focus:border-indigo-500 appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%208l5%205%205-5%22%20fill%3D%22none%22%20stroke%3D%22%2364748b%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[position:right_10px_center]">
                   {(t.novelty?.typeOptions || ['Información']).map((opt: string, i: number) => (
                     <option key={i}>{opt}</option>
                   ))}
@@ -936,11 +936,11 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
               </div>
               
               <div className="flex flex-col gap-2">
-                <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.novelty?.detail || 'DETALLE'}</label>
-                <textarea placeholder={t.novelty?.detailPlaceholder || 'Ej: Huésped solicita despertar a las 06:00'} className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 resize-none h-24" readOnly></textarea>
+                <label className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">{t.novelty?.detail || 'DETALLE'}</label>
+                <textarea placeholder={t.novelty?.detailPlaceholder || 'Ej: Huésped solicita despertar a las 06:00'} className="w-full bg-white border border-boutique-sand rounded-xl px-4 py-3 text-sm text-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 resize-none h-24" readOnly></textarea>
               </div>
               
-              <button onClick={() => setIsNoveltyModalOpen(false)} className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3.5 rounded-xl transition-colors mt-2 active:scale-[0.98]">
+              <button onClick={() => setIsNoveltyModalOpen(false)} className="w-full bg-boutique-gold hover:bg-indigo-700 text-boutique-anthracite font-semibold py-3.5 rounded-xl transition-colors mt-2 active:scale-[0.98]">
                 {t.novelty?.submitBtn || 'Registrar Novedad'}
               </button>
             </div>
@@ -948,22 +948,22 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
         </div>
 
         {/* Logbook Modal */}
-        <div className={`absolute inset-0 bg-slate-900/40 backdrop-blur-[2px] z-30 transition-opacity duration-300 ${isLogbookModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsLogbookModalOpen(false)}>
+        <div className={`absolute inset-0 bg-boutique-offwhite/40 backdrop-blur-[2px] z-30 transition-opacity duration-300 ${isLogbookModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsLogbookModalOpen(false)}>
           <div className={`absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl transition-transform duration-300 ease-out p-6 shadow-2xl flex flex-col ${isLogbookModalOpen ? 'translate-y-0' : 'translate-y-full'}`} onClick={e => e.stopPropagation()}>
             <div className="flex justify-between items-center mb-5 pb-4 border-b border-slate-50 shrink-0">
-              <h3 className="font-bold text-slate-800 text-lg flex items-center gap-2"><Plus size={20}/> {t.mantenimientoModals?.logbookTitle || 'Ingresar Avance a Bitácora'}</h3>
-              <button onClick={() => setIsLogbookModalOpen(false)} className="text-slate-400 hover:text-slate-600 transition-colors p-1">
+              <h3 className="font-semibold text-slate-800 text-lg flex items-center gap-2 font-serif tracking-wide"><Plus size={20}/> {t.mantenimientoModals?.logbookTitle || 'Ingresar Avance a Bitácora'}</h3>
+              <button onClick={() => setIsLogbookModalOpen(false)} className="text-gray-500 hover:text-slate-600 transition-colors p-1">
                 <X size={20} />
               </button>
             </div>
             
             <div className="flex flex-col gap-5 pb-2">
               <div className="flex flex-col gap-2">
-                <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.mantenimientoModals?.logbookDesc || 'DESCRIPCIÓN DEL TRABAJO REALIZADO'}</label>
-                <textarea placeholder={t.mantenimientoModals?.logbookDescPlaceholder || 'Ej: Se ha reparado...'} className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-600 focus:outline-none focus:border-slate-800 focus:ring-1 focus:ring-slate-800 resize-none h-32" readOnly></textarea>
+                <label className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">{t.mantenimientoModals?.logbookDesc || 'DESCRIPCIÓN DEL TRABAJO REALIZADO'}</label>
+                <textarea placeholder={t.mantenimientoModals?.logbookDescPlaceholder || 'Ej: Se ha reparado...'} className="w-full bg-white border border-boutique-sand rounded-xl px-4 py-3 text-sm text-slate-600 focus:outline-none focus:border-gray-200 focus:ring-1 focus:ring-slate-800 resize-none h-32" readOnly></textarea>
               </div>
               
-              <button onClick={() => setIsLogbookModalOpen(false)} className="w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-3.5 rounded-xl transition-colors mt-2 active:scale-[0.98]">
+              <button onClick={() => setIsLogbookModalOpen(false)} className="w-full bg-boutique-sand hover:bg-boutique-offwhite text-boutique-anthracite font-semibold py-3.5 rounded-xl transition-colors mt-2 active:scale-[0.98]">
                 {t.mantenimientoModals?.logbookSubmit || 'Guardar Avance de Mantenimiento'}
               </button>
             </div>
@@ -971,29 +971,29 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
         </div>
 
         {/* Supplies Modal */}
-        <div className={`absolute inset-0 bg-slate-900/40 backdrop-blur-[2px] z-30 transition-opacity duration-300 ${isSuppliesModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsSuppliesModalOpen(false)}>
+        <div className={`absolute inset-0 bg-boutique-offwhite/40 backdrop-blur-[2px] z-30 transition-opacity duration-300 ${isSuppliesModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsSuppliesModalOpen(false)}>
           <div className={`absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl transition-transform duration-300 ease-out p-6 shadow-2xl flex flex-col ${isSuppliesModalOpen ? 'translate-y-0' : 'translate-y-full'}`} onClick={e => e.stopPropagation()}>
             <div className="flex justify-between items-center mb-5 pb-4 border-b border-slate-50 shrink-0">
-              <h3 className="font-bold text-amber-700 text-lg flex items-center gap-2"><Box size={20}/> {t.mantenimientoModals?.suppliesTitle || 'Solicitar Recursos'}</h3>
-              <button onClick={() => setIsSuppliesModalOpen(false)} className="text-slate-400 hover:text-slate-600 transition-colors p-1">
+              <h3 className="font-semibold text-amber-700 text-lg flex items-center gap-2 font-serif tracking-wide"><Box size={20}/> {t.mantenimientoModals?.suppliesTitle || 'Solicitar Recursos'}</h3>
+              <button onClick={() => setIsSuppliesModalOpen(false)} className="text-gray-500 hover:text-slate-600 transition-colors p-1">
                 <X size={20} />
               </button>
             </div>
             
             <div className="flex flex-col gap-5 pb-2">
               <div className="flex flex-col gap-2">
-                <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.mantenimientoModals?.suppliesItem || 'HERRAMIENTA O MATERIAL NECESARIO'}</label>
-                <input type="text" placeholder={t.mantenimientoModals?.suppliesItemPlaceholder || 'Ej: Silicona transparente...'} className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-600 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500" readOnly />
+                <label className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">{t.mantenimientoModals?.suppliesItem || 'HERRAMIENTA O MATERIAL NECESARIO'}</label>
+                <input type="text" placeholder={t.mantenimientoModals?.suppliesItemPlaceholder || 'Ej: Silicona transparente...'} className="w-full bg-white border border-boutique-sand rounded-xl px-4 py-3 text-sm text-slate-600 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500" readOnly />
               </div>
               
               <div className="flex gap-4">
                 <div className="flex flex-col gap-2 flex-[0.7]">
-                  <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.mantenimientoModals?.suppliesQty || 'CANTIDAD'}</label>
-                  <input type="text" defaultValue="1" className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-bold text-slate-700 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500" readOnly />
+                  <label className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">{t.mantenimientoModals?.suppliesQty || 'CANTIDAD'}</label>
+                  <input type="text" defaultValue="1" className="w-full bg-white border border-boutique-sand rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500" readOnly />
                 </div>
                 <div className="flex flex-col gap-2 flex-[1.3]">
-                  <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.mantenimientoModals?.suppliesUrgency || 'URGENCIA'}</label>
-                  <select className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium text-slate-700 focus:outline-none focus:border-amber-500 appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%208l5%205%205-5%22%20fill%3D%22none%22%20stroke%3D%22%2364748b%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[position:right_10px_center]">
+                  <label className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">{t.mantenimientoModals?.suppliesUrgency || 'URGENCIA'}</label>
+                  <select className="w-full bg-white border border-boutique-sand rounded-xl px-4 py-3 text-sm font-medium text-slate-700 focus:outline-none focus:border-amber-500 appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%208l5%205%205-5%22%20fill%3D%22none%22%20stroke%3D%22%2364748b%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[position:right_10px_center]">
                     {(t.mantenimientoModals?.suppliesUrgencyOptions || ['Normal (Stock)']).map((opt: string, i: number) => (
                       <option key={i}>{opt}</option>
                     ))}
@@ -1002,11 +1002,11 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
               </div>
               
               <div className="flex flex-col gap-2">
-                <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{t.mantenimientoModals?.suppliesReason || 'MOTIVO O ÁREA'}</label>
-                <input type="text" placeholder={t.mantenimientoModals?.suppliesReasonPlaceholder || 'Ej: Reparación fuga baño Hab 205'} className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-600 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500" readOnly />
+                <label className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">{t.mantenimientoModals?.suppliesReason || 'MOTIVO O ÁREA'}</label>
+                <input type="text" placeholder={t.mantenimientoModals?.suppliesReasonPlaceholder || 'Ej: Reparación fuga baño Hab 205'} className="w-full bg-white border border-boutique-sand rounded-xl px-4 py-3 text-sm text-slate-600 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500" readOnly />
               </div>
               
-              <button onClick={() => setIsSuppliesModalOpen(false)} className="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3.5 rounded-xl transition-colors mt-2 active:scale-[0.98]">
+              <button onClick={() => setIsSuppliesModalOpen(false)} className="w-full bg-amber-500 hover:bg-amber-600 text-boutique-anthracite font-semibold py-3.5 rounded-xl transition-colors mt-2 active:scale-[0.98]">
                 {t.mantenimientoModals?.suppliesSubmit || 'Enviar Solicitud al Jefe de Área'}
               </button>
             </div>
@@ -1015,11 +1015,11 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
 
 
         {/* Inventory Modal */}
-        <div className={`absolute inset-0 bg-slate-900/40 backdrop-blur-[2px] z-30 transition-opacity duration-300 ${isInventoryModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsInventoryModalOpen(false)}>
+        <div className={`absolute inset-0 bg-boutique-offwhite/40 backdrop-blur-[2px] z-30 transition-opacity duration-300 ${isInventoryModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsInventoryModalOpen(false)}>
           <div className={`absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl transition-transform duration-300 ease-out p-6 shadow-2xl flex flex-col h-[85%] ${isInventoryModalOpen ? 'translate-y-0' : 'translate-y-full'}`} onClick={e => e.stopPropagation()}>
             <div className="flex justify-between items-center mb-5 pb-4 border-b border-slate-50 shrink-0">
-              <h3 className="font-bold text-indigo-900 text-base flex items-center gap-2"><Box size={18}/> {t.inventorySelection?.modalTitle || 'Toma de Inventario'}: {inventoryTitleName}</h3>
-              <button onClick={() => setIsInventoryModalOpen(false)} className="text-slate-400 hover:text-slate-600 transition-colors p-1">
+              <h3 className="font-semibold text-indigo-900 text-base flex items-center gap-2 font-serif tracking-wide"><Box size={18}/> {t.inventorySelection?.modalTitle || 'Toma de Inventario'}: {inventoryTitleName}</h3>
+              <button onClick={() => setIsInventoryModalOpen(false)} className="text-gray-500 hover:text-slate-600 transition-colors p-1">
                 <X size={20} />
               </button>
             </div>
@@ -1027,14 +1027,14 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
             <div className="flex flex-col gap-3 overflow-y-auto pb-4 shrink">
               {inventoryItems.map((item: any, i: number) => (
                 <div key={i} className="flex justify-between items-center bg-slate-50 border border-slate-100 rounded-xl p-4 gap-4">
-                  <span className="font-bold text-sm text-slate-700 leading-tight">{item.name}</span>
-                  <input type="text" defaultValue={item.qty} className="w-16 bg-white border border-slate-200 rounded-lg px-3 py-2 text-sm font-bold text-slate-900 text-center focus:outline-none focus:border-indigo-600 focus:ring-1 focus:ring-indigo-600 shadow-sm shrink-0" readOnly/>
+                  <span className="font-semibold text-sm text-slate-700 leading-tight">{item.name}</span>
+                  <input type="text" defaultValue={item.qty} className="w-16 bg-white border border-boutique-sand rounded-lg px-3 py-2 text-sm font-semibold text-slate-900 text-center focus:outline-none focus:border-indigo-600 focus:ring-1 focus:ring-indigo-600 shadow-sm shrink-0" readOnly/>
                 </div>
               ))}
             </div>
             
             <div className="pt-2 mt-auto">
-              <button onClick={() => setIsInventoryModalOpen(false)} className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3.5 rounded-xl transition-colors active:scale-[0.98]">
+              <button onClick={() => setIsInventoryModalOpen(false)} className="w-full bg-boutique-gold hover:bg-indigo-700 text-boutique-anthracite font-semibold py-3.5 rounded-xl transition-colors active:scale-[0.98]">
                 {t.inventorySelection?.saveBtn || 'Guardar y Actualizar'}
               </button>
             </div>
@@ -1042,14 +1042,14 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
         </div>
 
         {/* Bottom Nav */}
-        <div className="absolute bottom-0 w-full bg-white border-t border-slate-200 flex justify-around items-center py-4 px-6 z-20 pb-6 rounded-b-[2rem]">
-          <button onClick={() => setActiveBottomTab('staff')} className={`flex flex-col items-center gap-1 cursor-pointer ${activeBottomTab === 'staff' ? 'text-indigo-600' : 'text-slate-400'}`}>
+        <div className="absolute bottom-0 w-full bg-white border-t border-boutique-sand flex justify-around items-center py-4 px-6 z-20 pb-6 rounded-b-[2rem]">
+          <button onClick={() => setActiveBottomTab('staff')} className={`flex flex-col items-center gap-1 cursor-pointer ${activeBottomTab === 'staff' ? 'text-indigo-600' : 'text-gray-500'}`}>
             <CheckSquare size={20} />
-            <span className="text-[9px] font-bold tracking-wider uppercase">STAFF</span>
+            <span className="text-[9px] font-semibold tracking-wider uppercase">STAFF</span>
           </button>
-          <button onClick={() => setActiveBottomTab('inventory')} className={`flex flex-col items-center gap-1 cursor-pointer ${activeBottomTab === 'inventory' ? 'text-indigo-600' : 'text-slate-400'}`}>
+          <button onClick={() => setActiveBottomTab('inventory')} className={`flex flex-col items-center gap-1 cursor-pointer ${activeBottomTab === 'inventory' ? 'text-indigo-600' : 'text-gray-500'}`}>
             <Box size={20} />
-            <span className="text-[9px] font-bold tracking-wider uppercase">INVENTARIO</span>
+            <span className="text-[9px] font-semibold tracking-wider uppercase">INVENTARIO</span>
           </button>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import POSSimulator from './POSSimulator';
 import ChatbotSimulator from './ChatbotSimulator';
 import StaffAppSimulator from './StaffAppSimulator';
+import MockVistomioApp from './MockVistomioApp';
 import React, { useState, useEffect, useRef } from 'react';
 import {  
   CreditCard, 
@@ -17,7 +18,6 @@ import {
   ArrowRight,
   Menu,
   X,
-  Play,
   Zap,
   Globe,
   Globe2,
@@ -26,33 +26,18 @@ import {
   Wine,
   ConciergeBell,
   BedDouble,
-  LayoutGrid,
   ClipboardCheck,
-  Package,
-  CircleDollarSign,
   Bot,
   LineChart,
   Plus,
   Calendar,
   CalendarCheck,
-  DollarSign,
-  ChevronLeft,
-  ChevronRight,
   Clock,
-  Home,
-  Briefcase
- , Wallet} from 'lucide-react';
+  Wallet, 
+  TrendingUp
+} from 'lucide-react';
 
 // --- Custom Icons ---
-const BoutiqueLogoIcon = ({ className = "w-6 h-6", strokeWidth = 1.5 }: { className?: string, strokeWidth?: number }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <path d="M12 2L8 10v9l4 2 4-2v-9L12 2z" />
-    <path d="M8 14L4 18v2l4-1" />
-    <path d="M16 14l4 4v2l-4-1" />
-    <circle cx="12" cy="11" r="1.5" />
-    <path d="M12 21v2" />
-  </svg>
-);
 
 // --- Translations Data ---
 const translations = {
@@ -80,12 +65,12 @@ const translations = {
       logoSubtitle: 'Tecnología a tu medida'
     },
     hero: {
-      badge: 'Tecnología boutique para negocios boutique',
-      title: 'La gestión de tu hotel',
-      titleHighlight: 'revolucionada',
-      subtitle: 'La excelencia en la hospitalidad empieza desde adentro. Centraliza reservas, operaciones y finanzas en una herramienta diseñada para tu negocio',
-      ctaPrimary: 'Explorar la plataforma',
-      ctaSecondary: 'Agenda entrevista gratuita con nuestro equipo'
+      badge: 'Sistemas boutique para negocios boutique',
+      title: 'Lleva la gestión de tu hotel',
+      titleHighlight: 'al siguiente nivel',
+      subtitle: 'La excelencia en la hospitalidad empieza desde adentro. Centraliza reservas, operaciones, administración y finanzas en una herramienta diseñada para darte tranquilidad.',
+      ctaPrimary: 'Explorar plataforma',
+      ctaSecondary: 'Agendar entrevista'
     },
     locations: {
       noga: 'Zipolite, México',
@@ -93,25 +78,52 @@ const translations = {
       laMora: 'San Agustinillo, México',
       jc: 'Santiago, Chile'
     },
+    heroBadges: {
+
+      badge1Top: 'GESTIÓN',
+
+      badge1Bottom: 'Cero estrés',
+
+      badge2Top: 'RESULTADO',
+
+      badge2Bottom: '+ Calidad de servicio',
+
+      badge3Top: 'EFICIENCIA',
+
+      badge3Bottom: '+ Tiempo libre'
+
+    },
+
+    systemDemo: {
+      mockApp: {
+        sidebar: { dashboard: 'Dashboard General', bookingEngine: 'Motor de Reservas y Channel Manager', payments: 'Pagos y Facturación', checkin: 'Check-in y Gestión de Huéspedes', restaurant: 'Restaurante / Bar', operations: 'Operaciones y Tareas', finance: 'Administración y Finanzas', chatbot: 'Chatbot IA', reports: 'Reportes', demoVersion: 'Versión Demo' },
+        header: { title1: 'Gestión de', title2: 'Reservas', search: 'Buscar huésped...', rooms: 'HABITACIONES', channels: 'CANALES', newRes1: 'NUEVA', newRes2: 'RESERVA' },
+        toolbar: { calendar: 'Calendario de Reservas', reservations: 'Reservas', rates: 'Tarifas', august: 'Agosto', today: 'HOY' },
+        grid: { room: 'HABITACIÓN', days: ['MIÉ', 'JUE', 'VIE', 'SÁB', 'DOM', 'LUN', 'MAR'], rooms: ['Suite Deluxe con Terraza', 'Suite de lujo con jardín', 'Habitación Deluxe 301'] },
+        channels: { title: 'Canales Conectados', synced: 'Sincronizado', active: 'Activo', directWeb: 'Web Directa', directSale: 'Venta Directa' }
+      },
+      title: 'Sistemas boutique para negocios boutique',
+      btn: 'Explorar demo'
+    },
     socialProof: 'Negocios que ya confían en Vistomio',
     boutiqueNiche: {
       tag: 'JÓVENES, VALIENTES Y PRAGMÁTICOS',
-      title: 'Diseñado para negocios con alma',
-      subtitle: 'No somos un software corporativo aburrido y gris. Creamos tecnología vibrante y pragmática para hoteles y restaurantes boutique que quieren automatizar y optimizar sus operaciones para dedicar <span class="text-[#FCE69B] font-semibold">tiempo a lo importante: dar un servicio excepcional.</span>',
+      title: 'Diseñado para lugares con alma',
+      subtitle: 'No somos un software corporativo aburrido y gris. Creamos tecnología vibrante y pragmática para hoteles y restaurantes boutique que quieren automatizar y optimizar sus operaciones para dedicar <span class="text-[#A37A3B] font-bold">tiempo a lo importante: dar un servicio excepcional.</span>',
       cards: [
         {
           title: 'Experiencia Personalizada',
-          desc: 'Con nuestro <span class="text-[#FCE69B] font-semibold">módulo de Check in digital</span>, anticípate a los deseos de tu huésped. Perfiles detallados y preferencias integradas.',
+          desc: 'Con nuestro <span class="text-[#A37A3B] font-bold">módulo de Check in digital</span>, anticípate a los deseos de tu huésped. Perfiles detallados y preferencias integradas.',
           icon: ConciergeBell
         },
         {
           title: 'Fusión Hotel & Restaurante',
-          desc: 'El <span class="text-[#FCE69B] font-semibold">POS Vistomio restaurante</span> habla directamente con los sistemas del hotel. Comunicación fluida, cero errores.',
+          desc: 'El <span class="text-[#A37A3B] font-bold">POS Vistomio restaurante</span> habla directamente con los sistemas del hotel. Comunicación fluida, cero errores.',
           icon: Wine
         },
         {
           title: 'Recomendaciones Inteligentes',
-          desc: 'Una IA especializada analiza los datos de tu operación para sugerirte <span class="text-[#FCE69B] font-semibold">dinámicas de tarifas, campañas y ventas cruzadas.</span>',
+          desc: 'Una IA especializada analiza los datos de tu operación para sugerirte <span class="text-[#A37A3B] font-bold">dinámicas de tarifas, campañas y ventas cruzadas.</span>',
           icon: Sparkles
         }
       ]
@@ -436,12 +448,12 @@ const translations = {
       logoSubtitle: 'Technology tailored to you'
     },
     hero: {
-      badge: 'Boutique technology for boutique businesses',
-      title: 'Hotel management',
-      titleHighlight: 'revolutionized',
-      subtitle: 'The most modern and disruptive PMS and ERP. Centralize everything in a modular, cloud-native, and ridiculously fast platform.',
-      ctaPrimary: 'Explore the platform',
-      ctaSecondary: 'Schedule a free interview with our team'
+      badge: 'Sistemas boutique para negocios boutique',
+      title: 'Lleva la gestión de tu hotel',
+      titleHighlight: 'al siguiente nivel',
+      subtitle: 'La excelencia en la hospitalidad empieza desde adentro. Centraliza reservas, operaciones, administración y finanzas en una herramienta diseñada para darte tranquilidad.',
+      ctaPrimary: 'Explorar plataforma',
+      ctaSecondary: 'Agendar entrevista'
     },
     locations: {
       noga: 'Zipolite, Mexico',
@@ -449,25 +461,45 @@ const translations = {
       laMora: 'San Agustinillo, Mexico',
       jc: 'Santiago, Chile'
     },
+        heroBadges: {
+      badge1Top: 'MANAGEMENT',
+      badge1Bottom: 'Zero stress',
+      badge2Top: 'RESULT',
+      badge2Bottom: '+ Service quality',
+      badge3Top: 'EFFICIENCY',
+      badge3Bottom: '+ Free time'
+    },
+
+    systemDemo: {
+      mockApp: {
+        sidebar: { dashboard: 'General Dashboard', bookingEngine: 'Booking Engine & Channel Manager', payments: 'Payments & Billing', checkin: 'Check-in & Guest Management', restaurant: 'Restaurant / Bar', operations: 'Operations & Tasks', finance: 'Admin & Finance', chatbot: 'AI Chatbot', reports: 'Reports', demoVersion: 'Demo Version' },
+        header: { title1: 'Reservation', title2: 'Management', search: 'Search guest...', rooms: 'ROOMS', channels: 'CHANNELS', newRes1: 'NEW', newRes2: 'BOOKING' },
+        toolbar: { calendar: 'Booking Calendar', reservations: 'Bookings', rates: 'Rates', august: 'August', today: 'TODAY' },
+        grid: { room: 'ROOM', days: ['WED', 'THU', 'FRI', 'SAT', 'SUN', 'MON', 'TUE'], rooms: ['Deluxe Suite with Terrace', 'Luxury Suite with Garden', 'Deluxe Room 301'] },
+        channels: { title: 'Connected Channels', synced: 'Synced', active: 'Active', directWeb: 'Direct Web', directSale: 'Direct Sale' }
+      },
+      title: 'Boutique systems for boutique businesses',
+      btn: 'Explore demo'
+    },
     socialProof: 'Businesses that already trust Vistomio',
     boutiqueNiche: {
       tag: 'YOUNG, BOLD AND PRAGMATIC',
-      title: 'Designed for businesses with a soul',
-      subtitle: 'We are not a boring, gray corporate software. We build vibrant and pragmatic technology for boutique hotels and restaurants that want to automate and optimize their operations to dedicate <span class="text-[#FCE69B] font-semibold">time to what matters: providing exceptional service.</span>',
+      title: 'Designed for places with a soul',
+      subtitle: 'We are not a boring, gray corporate software. We build vibrant and pragmatic technology for boutique hotels and restaurants that want to automate and optimize their operations to dedicate <span class="text-[#A37A3B] font-bold">time to what matters: providing exceptional service.</span>',
       cards: [
         {
           title: 'Personalized Experience',
-          desc: 'With our <span class="text-[#FCE69B] font-semibold">digital check-in module</span>, anticipate your guest\'s desires. Detailed profiles and integrated preferences.',
+          desc: 'With our <span class="text-[#A37A3B] font-bold">digital check-in module</span>, anticipate your guest\'s desires. Detailed profiles and integrated preferences.',
           icon: ConciergeBell
         },
         {
           title: 'Hotel & Restaurant Fusion',
-          desc: 'The <span class="text-[#FCE69B] font-semibold">Vistomio Restaurant POS</span> talks directly with the hotel systems. Seamless communication, zero mistakes.',
+          desc: 'The <span class="text-[#A37A3B] font-bold">Vistomio Restaurant POS</span> talks directly with the hotel systems. Seamless communication, zero mistakes.',
           icon: Wine
         },
         {
           title: 'Smart Recommendations',
-          desc: 'A specialized AI analyzes your operation data to suggest <span class="text-[#FCE69B] font-semibold">dynamic pricing, targeted campaigns, and cross-selling.</span>',
+          desc: 'A specialized AI analyzes your operation data to suggest <span class="text-[#A37A3B] font-bold">dynamic pricing, targeted campaigns, and cross-selling.</span>',
           icon: Sparkles
         }
       ]
@@ -792,12 +824,12 @@ const translations = {
       logoSubtitle: 'La technologie sur mesure'
     },
     hero: {
-      badge: 'Technologie boutique pour entreprises boutique',
-      title: 'La gestion hôtelière',
-      titleHighlight: 'révolutionnée',
-      subtitle: 'Le PMS et ERP le plus moderne et disruptif. Centralisez tout dans une plateforme modulaire, native cloud et incroyablement rapide.',
-      ctaPrimary: 'Explorer la plateforme',
-      ctaSecondary: 'Planifier un entretien gratuit avec notre équipe'
+      badge: 'Boutique systems for boutique businesses',
+      title: 'Take your hotel management',
+      titleHighlight: 'to the next level',
+      subtitle: 'Excellence in hospitality starts from within. Centralize bookings, operations, administration, and finances in a tool designed to give you peace of mind.',
+      ctaPrimary: 'Explore platform',
+      ctaSecondary: 'Schedule demonstration'
     },
     locations: {
       noga: 'Zipolite, Mexique',
@@ -805,25 +837,45 @@ const translations = {
       laMora: 'San Agustinillo, Mexique',
       jc: 'Santiago, Chili'
     },
+        heroBadges: {
+      badge1Top: 'GESTION',
+      badge1Bottom: 'Zéro stress',
+      badge2Top: 'RÉSULTAT',
+      badge2Bottom: '+ Qualité de service',
+      badge3Top: 'EFFICACITÉ',
+      badge3Bottom: '+ Temps libre'
+    },
+
+    systemDemo: {
+      mockApp: {
+        sidebar: { dashboard: 'Tableau de Bord', bookingEngine: 'Moteur de Réservation & Channel Manager', payments: 'Paiements & Facturation', checkin: 'Check-in & Gestion des Clients', restaurant: 'Restaurant / Bar', operations: 'Opérations & Tâches', finance: 'Admin & Finances', chatbot: 'Chatbot IA', reports: 'Rapports', demoVersion: 'Version Démo' },
+        header: { title1: 'Gestion des', title2: 'Réservations', search: 'Chercher client...', rooms: 'CHAMBRES', channels: 'CANAUX', newRes1: 'NOUVELLE', newRes2: 'RÉSERV.' },
+        toolbar: { calendar: 'Calendrier', reservations: 'Réservations', rates: 'Tarifs', august: 'Août', today: 'AUJ.' },
+        grid: { room: 'CHAMBRE', days: ['MER', 'JEU', 'VEN', 'SAM', 'DIM', 'LUN', 'MAR'], rooms: ['Suite Deluxe Terrasse', 'Suite Deluxe Jardin', 'Chambre Deluxe 301'] },
+        channels: { title: 'Canaux Connectés', synced: 'Synchronisé', active: 'Actif', directWeb: 'Web Direct', directSale: 'Vente Directe' }
+      },
+      title: 'Des systèmes boutique pour des établissements boutique',
+      btn: 'Explorer la démo'
+    },
     socialProof: 'Les entreprises qui font déjà confiance à Vistomio',
     boutiqueNiche: {
       tag: 'JEUNES, AUDACIEUX ET PRAGMATIQUES',
-      title: 'Conçu pour les entreprises avec une âme',
-      subtitle: 'Nous ne sommes pas un logiciel d\'entreprise ennuyeux et gris. Nous créons une technologie vibrante et pragmatique pour les hôtels et restaurants de charme qui souhaitent automatiser et optimiser leurs opérations pour consacrer du <span class="text-[#FCE69B] font-semibold">temps à ce qui compte : offrir un service exceptionnel.</span>',
+      title: 'Conçu pour les lieux avec une âme',
+      subtitle: 'Nous ne sommes pas un logiciel d\'entreprise ennuyeux et gris. Nous créons une technologie vibrante et pragmatique pour les hôtels et restaurants de charme qui souhaitent automatiser et optimiser leurs opérations pour consacrer du <span class="text-[#A37A3B] font-bold">temps à ce qui compte : offrir un service exceptionnel.</span>',
       cards: [
         {
           title: 'Expérience Personnalisée',
-          desc: 'Avec notre <span class="text-[#FCE69B] font-semibold">module de check-in numérique</span>, anticipez les désirs de vos clients. Profils détaillés et préférences intégrées.',
+          desc: 'Avec notre <span class="text-[#A37A3B] font-bold">module de check-in numérique</span>, anticipez les désirs de vos clients. Profils détaillés et préférences intégrées.',
           icon: ConciergeBell
         },
         {
           title: 'Fusion Hôtel & Restaurant',
-          desc: 'Le <span class="text-[#FCE69B] font-semibold">POS Vistomio restaurant</span> communique directement avec les systèmes de l\'hôtel. Communication fluide, zéro erreur.',
+          desc: 'Le <span class="text-[#A37A3B] font-bold">POS Vistomio restaurant</span> communique directement avec les systèmes de l\'hôtel. Communication fluide, zéro erreur.',
           icon: Wine
         },
         {
           title: 'Recommandations Intelligentes',
-          desc: 'Une IA spécialisée analyse vos données d\'exploitation pour suggérer <span class="text-[#FCE69B] font-semibold">des tarifs dynamiques, des campagnes et des ventes croisées.</span>',
+          desc: 'Une IA spécialisée analyse vos données d\'exploitation pour suggérer <span class="text-[#A37A3B] font-bold">des tarifs dynamiques, des campagnes et des ventes croisées.</span>',
           icon: Sparkles
         }
       ]
@@ -1257,21 +1309,15 @@ const VistomioLandingPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-slate-900 font-sans text-slate-300 selection:bg-slate-800 border border-slate-700 selection:text-white overflow-x-hidden bg-noise">
+    <div className="min-h-screen bg-boutique-offwhite font-sans text-boutique-anthracite selection:bg-slate-800 border border-boutique-sand selection:text-white overflow-x-hidden">
       
       {/* --- NAVBAR --- */}
-      <nav className={`fixed w-full z-50 transition-all duration-300 border-b border-slate-200/50 ${isScrolled ? 'bg-slate-900/90 backdrop-blur-xl py-4 shadow-xl shadow-slate-200/50' : 'bg-transparent py-6'}`}>
+      <nav className={`fixed w-full z-50 transition-all duration-300 border-b border-gray-200/50 ${isScrolled ? 'bg-boutique-offwhite/95 backdrop-blur-xl py-4 shadow-xl shadow-gray-200/50' : 'bg-transparent py-6'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           
           {/* Logo */}
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#D4AF37] to-[#FCE69B] flex items-center justify-center shadow-[0_0_20px_rgba(212,175,55,0.4)]">
-              <BoutiqueLogoIcon className="text-[#0B1121] w-6 h-6" strokeWidth={2} />
-            </div>
-            <div className="flex flex-col font-sans">
-              <span className="text-2xl font-bold tracking-tight text-white leading-none">Vistomio</span>
-              <span className="text-[0.65rem] font-bold tracking-widest text-[#D4AF37] mt-1 uppercase whitespace-nowrap">{t.nav.logoSubtitle}</span>
-            </div>
+          <div className="flex items-center">
+            <img src="/logo-full-transparent.png" alt="Vistomio Logo" className="h-24 md:h-28 w-auto object-contain" />
           </div>
 
           {/* Desktop Menu */}
@@ -1285,7 +1331,7 @@ const VistomioLandingPage: React.FC = () => {
             >
               <button 
                 onClick={() => setProductsMenuOpen(!productsMenuOpen)}
-                className="flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-[#FCE69B] transition-colors"
+                className="flex items-center gap-1 text-sm font-medium text-boutique-anthracite hover:text-[#FCE69B] transition-colors"
               >
                 {t.nav.products}
                 <ChevronDown size={14} className={`text-slate-500 transition-transform duration-300 ${productsMenuOpen ? 'rotate-180' : ''}`} />
@@ -1294,25 +1340,25 @@ const VistomioLandingPage: React.FC = () => {
               <div 
                 className={`absolute top-[100%] left-0 pt-4 w-[650px] transition-all duration-200 origin-top-left ${productsMenuOpen ? 'opacity-100 scale-100 translate-y-0 visible pointer-events-auto' : 'opacity-0 scale-95 -translate-y-2 invisible pointer-events-none'}`}
               >
-                <div className="bg-slate-800/95 backdrop-blur-xl border border-slate-700 rounded-2xl shadow-2xl overflow-hidden p-6 grid grid-cols-2 gap-x-8 gap-y-6">
+                <div className="bg-boutique-sand/95 backdrop-blur-xl border border-boutique-sand rounded-2xl shadow-md overflow-hidden p-6 grid grid-cols-2 gap-x-8 gap-y-6">
                   {t.featureCategories.map((category, catIdx) => (
                     <div key={catIdx} className="flex flex-col">
-                      <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">{category.name}</h4>
+                      <h4 className="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-3">{category.name}</h4>
                       <div className="flex flex-col gap-1">
                         {category.items.map((item, itemIdx) => {
                           const Icon = item.icon;
                           return (
                             <a 
                               key={itemIdx} 
-                              href={`#category-${catIdx}`} 
+                              href={(item as any).link || `#category-${catIdx}`}
                               onClick={() => setProductsMenuOpen(false)} 
-                              className="flex items-start gap-3 p-2 rounded-lg hover:bg-slate-700/50 transition-colors group"
+                              className="flex items-start gap-3 p-2 rounded-lg hover:bg-white/50 transition-colors group"
                             >
                               <div className="w-8 h-8 rounded-full bg-[#D4AF37]/10 flex-shrink-0 flex items-center justify-center text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-[#0B1121] transition-colors mt-0.5">
                                 <Icon size={14} />
                               </div>
                               <div className="flex flex-col">
-                                <span className="text-sm font-medium text-slate-200 group-hover:text-white transition-colors leading-tight">{item.title}</span>
+                                <span className="text-sm font-medium text-boutique-anthracite group-hover:text-white transition-colors leading-tight">{item.title}</span>
                               </div>
                             </a>
                           )
@@ -1333,7 +1379,7 @@ const VistomioLandingPage: React.FC = () => {
             >
               <button 
                 onClick={() => setDemosMenuOpen(!demosMenuOpen)}
-                className="flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-[#FCE69B] transition-colors"
+                className="flex items-center gap-1 text-sm font-medium text-boutique-anthracite hover:text-[#FCE69B] transition-colors"
               >
                 Demos
                 <ChevronDown size={14} className={`text-slate-500 transition-transform duration-300 ${demosMenuOpen ? 'rotate-180' : ''}`} />
@@ -1342,40 +1388,40 @@ const VistomioLandingPage: React.FC = () => {
               <div 
                 className={`absolute top-[100%] right-0 pt-4 w-80 transition-all duration-200 origin-top-right ${demosMenuOpen ? 'opacity-100 scale-100 translate-y-0 visible pointer-events-auto' : 'opacity-0 scale-95 -translate-y-2 invisible pointer-events-none'}`}
               >
-                <div className="bg-slate-800/90 backdrop-blur-xl border border-slate-700 rounded-xl shadow-2xl overflow-hidden flex flex-col p-2">
-                  <a href="https://demo.vistomio.com" target="_blank" rel="noopener noreferrer" onClick={() => setDemosMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 text-sm text-slate-300 hover:text-white hover:bg-slate-700/50 rounded-lg transition-colors group">
+                <div className="bg-boutique-sand/90 backdrop-blur-xl border border-boutique-sand rounded-xl shadow-md overflow-hidden flex flex-col p-2">
+                  <a href="https://demo.vistomio.com" target="_blank" rel="noopener noreferrer" onClick={() => setDemosMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 text-sm text-boutique-anthracite hover:text-boutique-anthracite hover:bg-white/50 rounded-lg transition-colors group">
                     <div className="w-8 h-8 rounded-full bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-[#0B1121] transition-colors"><Sparkles size={14} /></div>
                     <span className="font-medium">Demo Suite Vistomio</span>
                   </a>
-                  <a href="#demo-chatbot" onClick={() => setDemosMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 text-sm text-slate-300 hover:text-white hover:bg-slate-700/50 rounded-lg transition-colors group">
+                  <a href="#demo-chatbot" onClick={() => setDemosMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 text-sm text-boutique-anthracite hover:text-boutique-anthracite hover:bg-white/50 rounded-lg transition-colors group">
                     <div className="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-colors"><Bot size={14} /></div>
                     <span className="font-medium">Demo Chatbots IA Vistomio</span>
                   </a>
-                  <a href="#demo-pos" onClick={() => setDemosMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 text-sm text-slate-300 hover:text-white hover:bg-slate-700/50 rounded-lg transition-colors group">
+                  <a href="#demo-pos" onClick={() => setDemosMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 text-sm text-boutique-anthracite hover:text-boutique-anthracite hover:bg-white/50 rounded-lg transition-colors group">
                     <div className="w-8 h-8 rounded-full bg-amber-500/10 flex items-center justify-center text-amber-400 group-hover:bg-amber-500 group-hover:text-[#0B1121] transition-colors"><CreditCard size={14} /></div>
                     <span className="font-medium">Demo POS Vistomio para restaurantes</span>
                   </a>
-                  <a href="#demo-staff" onClick={() => setDemosMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 text-sm text-slate-300 hover:text-white hover:bg-slate-700/50 rounded-lg transition-colors group">
-                    <div className="w-8 h-8 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-colors"><Users size={14} /></div>
+                  <a href="#demo-staff" onClick={() => setDemosMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 text-sm text-boutique-anthracite hover:text-boutique-anthracite hover:bg-white/50 rounded-lg transition-colors group">
+                    <div className="w-8 h-8 rounded-full bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37] group-hover:bg-indigo-500 group-hover:text-white transition-colors"><Users size={14} /></div>
                     <span className="font-medium">Demo Vistomio Staff App</span>
                   </a>
                 </div>
               </div>
             </div>
             
-            <a href="#precios" className="text-sm font-medium text-slate-300 hover:text-[#FCE69B] transition-colors">{t.nav.pricing}</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="text-sm font-medium text-slate-300 hover:text-[#FCE69B] transition-colors">{t.nav.contact}</a>
+            <a href="#precios" className="text-sm font-medium text-boutique-anthracite hover:text-[#D4AF37] transition-colors">{t.nav.pricing}</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="text-sm font-medium text-boutique-anthracite hover:text-[#D4AF37] transition-colors">{t.nav.contact}</a>
 
             {/* Custom Language Selector */}
             <div 
-              className="relative border-l border-slate-700 pl-6 h-full flex items-center py-2" 
+              className="relative border-l border-gray-200 pl-6 h-full flex items-center py-2" 
               ref={langMenuRef}
               onMouseEnter={() => setLangMenuOpen(true)}
               onMouseLeave={() => setLangMenuOpen(false)}
             >
               <button 
                 onClick={() => setLangMenuOpen(!langMenuOpen)}
-                className="flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-[#FCE69B] transition-colors group"
+                className="flex items-center gap-2 text-sm font-medium text-boutique-anthracite hover:text-[#D4AF37] transition-colors group"
               >
                 <Globe size={16} className="text-[#D4AF37] group-hover:text-[#FCE69B] transition-colors" />
                 <span>{lang === 'es' ? 'Español' : lang === 'en' ? 'English' : 'Français'}</span>
@@ -1384,12 +1430,12 @@ const VistomioLandingPage: React.FC = () => {
               
               {/* Dropdown Menu */}
               <div className={`absolute top-full right-0 pt-4 w-32 transition-all duration-200 origin-top-right ${langMenuOpen ? 'opacity-100 scale-100 translate-y-0 visible' : 'opacity-0 scale-95 -translate-y-2 invisible'}`}>
-                <div className="bg-slate-800/60 backdrop-blur-xl border border-slate-700 rounded-xl shadow-xl overflow-hidden p-1 flex flex-col gap-1">
+                <div className="bg-white/95 backdrop-blur-xl border border-gray-100 rounded-xl shadow-lg overflow-hidden p-1 flex flex-col gap-1">
                   {(['es', 'en', 'fr'] as Language[]).map((l) => (
                     <button
                       key={l}
                       onClick={() => { setLang(l); setLangMenuOpen(false); }}
-                      className={`w-full text-left px-4 py-2 rounded-lg text-sm font-medium transition-colors ${lang === l ? 'bg-[#D4AF37]/10 text-[#D4AF37]' : 'text-slate-300 hover:bg-slate-700/50 hover:text-[#FCE69B]'}`}
+                      className={`w-full text-left px-4 py-2 rounded-lg text-sm font-medium transition-colors ${lang === l ? 'bg-amber-50 text-[#D4AF37] font-bold' : 'text-boutique-anthracite hover:bg-gray-50 hover:text-[#D4AF37]'}`}
                     >
                       {l === 'es' ? 'Español' : l === 'en' ? 'English' : 'Français'}
                     </button>
@@ -1398,445 +1444,210 @@ const VistomioLandingPage: React.FC = () => {
               </div>
             </div>
 
-            <a href="https://demo.vistomio.com" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-[#D4AF37] to-[#FCE69B] hover:from-[#FCE69B] hover:to-[#D4AF37] text-[#0B1121] text-sm font-semibold px-6 py-2.5 rounded-full transition-all shadow-[0_0_15px_rgba(212,175,55,0.5)] hover:shadow-[0_0_25px_rgba(212,175,55,0.7)] flex items-center gap-2">
+            <a href="https://demo.vistomio.com" target="_blank" rel="noopener noreferrer" className="from-[#D4AF37] to-[#FCE69B] hover:from-[#FCE69B] hover:to-[#D4AF37] text-[#0B1121] text-sm font-semibold px-6 py-2.5 rounded-full transition-all shadow-[0_0_15px_rgba(212,175,55,0.5)] hover:shadow-[0_0_25px_rgba(212,175,55,0.7)] flex items-center gap-2">
               {t.nav.demo} <ArrowRight size={16} />
             </a>
           </div>
 
           {/* Mobile Menu Toggle */}
-          <button className="md:hidden text-slate-300 hover:text-[#FCE69B]" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+          <button className="md:hidden text-boutique-anthracite hover:text-[#FCE69B]" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
         {/* Mobile Menu Dropdown */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-[#0B1121]/95 backdrop-blur-xl border-b border-white/10 py-6 px-6 flex flex-col gap-6 shadow-2xl">
-            <a href="#productos" className="text-lg font-medium text-white" onClick={() => setMobileMenuOpen(false)}>{t.nav.products}</a>
-            <a href="#precios" className="text-lg font-medium text-white" onClick={() => setMobileMenuOpen(false)}>{t.nav.pricing}</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); setMobileMenuOpen(false); }} className="text-lg font-medium text-white">{t.nav.contact}</a>
-            <div className="h-px bg-white/10 w-full my-2"></div>
+          <div className="md:hidden absolute top-full left-0 w-full bg-[#0B1121]/95 backdrop-blur-xl border-b border-black/10 py-6 px-6 flex flex-col gap-6 shadow-md">
+            <a href="#productos" className="text-lg font-medium text-boutique-anthracite" onClick={() => setMobileMenuOpen(false)}>{t.nav.products}</a>
+            <a href="#precios" className="text-lg font-medium text-boutique-anthracite" onClick={() => setMobileMenuOpen(false)}>{t.nav.pricing}</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); setMobileMenuOpen(false); }} className="text-lg font-medium text-boutique-anthracite">{t.nav.contact}</a>
+            <div className="h-px bg-black/10 w-full my-2"></div>
             <div className="flex gap-4">
                <button onClick={() => {setLang('es'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg flex-1 ${lang === 'es' ? 'bg-slate-800 border border-slate-700/20 text-[#D4AF37]' : 'text-slate-400'}`}>Español</button>
                <button onClick={() => {setLang('en'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg flex-1 ${lang === 'en' ? 'bg-slate-800 border border-slate-700/20 text-[#D4AF37]' : 'text-slate-400'}`}>English</button>
                <button onClick={() => {setLang('fr'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg flex-1 ${lang === 'fr' ? 'bg-slate-800 border border-slate-700/20 text-[#D4AF37]' : 'text-slate-400'}`}>Français</button>
             </div>
-            <a href="https://demo.vistomio.com" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-[#D4AF37] to-[#FCE69B] text-[#0B1121] text-center font-bold px-5 py-4 rounded-xl mt-4 shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+            <a href="https://demo.vistomio.com" target="_blank" rel="noopener noreferrer" className="from-[#D4AF37] to-[#FCE69B] text-[#0B1121] text-center font-semibold px-5 py-4 rounded-xl mt-4 shadow-[0_0_20px_rgba(212,175,55,0.3)]">
               {t.nav.demo}
             </a>
           </div>
         )}
       </nav>
 
-      {/* --- HERO SECTION --- */}
-      <section className="relative pt-40 pb-20 lg:pt-52 lg:pb-32 overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden flex justify-center">
-          {/* Symmetrical Elegant Ambient Glows */}
-          <div className="absolute top-[-10%] w-[1000px] h-[700px] bg-amber-200/20 blur-[180px] rounded-[100%]"></div>
-          <div className="absolute top-[30%] left-[-15%] w-[800px] h-[600px] bg-amber-500/10 blur-[150px] rounded-full"></div>
-          <div className="absolute top-[30%] right-[-15%] w-[800px] h-[600px] bg-purple-200/20 blur-[150px] rounded-full"></div>
-        </div>
+            {/* --- HERO SECTION --- */}
+      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-boutique-offwhite">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
+            {/* Left Content */}
+            <div className="w-full lg:w-[60%] flex flex-col items-start text-left lg:pr-12">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-[1px] bg-[#D4AF37]"></div>
+                <span className="text-[#D4AF37] text-xs font-semibold uppercase tracking-widest">
+                  {t.hero.badge || 'SISTEMAS BOUTIQUE PARA NEGOCIOS BOUTIQUE'}
+                </span>
+              </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          
-          <div className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/20 text-[#D4AF37] text-sm font-bold shadow-sm backdrop-blur-md mb-6 uppercase tracking-widest">
-            {t.hero.badge}
-          </div>
+              <h1 className="text-5xl md:text-6xl lg:text-[4.5rem] font-serif font-medium text-boutique-anthracite leading-[1.1] mb-4">
+                {t.hero.title}
+                <br />
+                <span className="text-[#D4AF37] italic font-serif tracking-normal">
+                  {t.hero.titleHighlight}
+                </span>
+              </h1>
+              
+              <p className="text-lg text-gray-600 max-w-lg mb-10 leading-relaxed">
+                {t.hero.subtitle}
+              </p>
 
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-tight mb-8">
-            {t.hero.title}
-            <br className="hidden sm:block" />
-            <span className="inline-block relative ml-2">
-              <span 
-                className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#FCE69B] tracking-normal inline-block transform -rotate-1 uppercase"
-                style={{ fontFamily: "'Permanent Marker', cursive", lineHeight: "1.2" }}
-              >
-                <span className="text-[1.3em]">{t.hero.titleHighlight.charAt(0)}</span>
-                {t.hero.titleHighlight.slice(1)}
-              </span>
-              <ConciergeBell 
-                className="absolute top-1 -right-8 w-7 h-7 sm:w-11 sm:h-11 sm:top-4 sm:-right-14 text-[#FCE69B] transform rotate-12 drop-shadow-[0_0_4px_rgba(252,230,155,0.3)]" 
-                strokeWidth={2.5} 
-              />
-            </span>
-          </h1>
-          
-          <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
-            {t.hero.subtitle}
-          </p>
+              <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                <a 
+                  href="https://demo.vistomio.com" target="_blank" rel="noopener noreferrer" 
+                  className="w-full sm:w-auto bg-[#C6A15B] hover:bg-[#B5914A] text-boutique-anthracite font-semibold text-sm px-8 py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2"
+                >
+                  {t.hero.ctaPrimary} <ArrowRight size={16} />
+                </a>
+                <a 
+                  href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} 
+                  className="w-full sm:w-auto bg-transparent border border-gray-300 hover:border-gray-400 text-boutique-anthracite font-semibold text-sm px-8 py-3.5 rounded-lg transition-colors text-center"
+                >
+                  {t.hero.ctaSecondary}
+                </a>
+              </div>
+            </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-24">
-            <a 
-              href="https://demo.vistomio.com" target="_blank" rel="noopener noreferrer" 
-              className="w-full sm:w-auto bg-gradient-to-r from-[#D4AF37] to-[#FCE69B] hover:from-[#FCE69B] hover:to-[#D4AF37] text-[#0B1121] font-bold text-lg px-8 py-4 rounded-2xl shadow-[0_0_30px_rgba(212,175,55,0.4)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] hover:-translate-y-1 transition-all flex items-center justify-center gap-3 group"
-            >
-              {t.hero.ctaPrimary}
-              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a 
-              href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} 
-              className="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 text-white font-semibold text-lg px-8 py-4 rounded-2xl border border-slate-700 shadow-sm hover:border-[#D4AF37]/50 hover:shadow-lg hover:shadow-amber-900/20 hover:-translate-y-1 transition-all backdrop-blur-sm"
-            >
-              {t.hero.ctaSecondary}
-            </a>
-          </div>
-
-          {/* REALISTIC UI MOCKUP BASED ON ACTUAL SCREENSHOTS */}
-          <div className="relative mx-auto w-full max-w-5xl rounded-2xl md:rounded-[2rem] border border-slate-200/50 bg-white/40 p-2 md:p-3 shadow-2xl shadow-amber-900/10 backdrop-blur-xl transform-gpu perspective-[2000px]">
-             
-             {/* Floating Hotel Elements */}
-             <div className="absolute bottom-24 -left-12 md:-left-16 bg-slate-800/90 backdrop-blur-md p-4 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-4 animate-[bounce_4s_infinite] hidden lg:flex z-30">
-               <div className="w-12 h-12 bg-emerald-500/10 rounded-full flex items-center justify-center text-emerald-400">
-                 <CalendarCheck size={24} />
-               </div>
-               <div className="text-left">
-                 <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{t.mockupBadges.leftTop}</div>
-                 <div className="text-sm font-bold text-slate-200">{t.mockupBadges.leftBottom}</div>
-               </div>
-             </div>
-             
-             <div className="absolute top-24 -right-12 md:-right-16 bg-slate-800/90 backdrop-blur-md p-4 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-4 animate-[bounce_5s_infinite] hidden lg:flex z-30">
-               <div className="w-12 h-12 bg-orange-500/10 rounded-full flex items-center justify-center text-orange-400">
-                 <Utensils size={24} />
-               </div>
-               <div className="text-left">
-                 <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{t.mockupBadges.rightTop}</div>
-                 <div className="text-sm font-bold text-slate-200">{t.mockupBadges.rightBottom}</div>
-               </div>
-             </div>
-
-             <div className="absolute inset-0 rounded-2xl md:rounded-[2rem] overflow-hidden pointer-events-none">
-               <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/20 via-transparent to-[#FCE69B]/20 opacity-50 pointer-events-none"></div>
-             </div>
-             
-             {/* Main App Container */}
-             <div className="rounded-xl md:rounded-2xl overflow-x-auto overflow-y-hidden border border-slate-200/10 bg-[#f4f7f9] shadow-inner relative z-10 custom-scrollbar">
-               <div className="min-w-[900px] w-full aspect-[16/10] relative flex text-left">
-                
-                {/* App Sidebar (Dark) */}
-                <div className="w-64 hidden md:flex flex-col bg-[#111827] text-slate-300 border-r border-slate-800">
-                  <div className="flex items-center gap-3 mb-8 px-6 pt-6">
-                     <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#D4AF37] to-[#FCE69B] flex items-center justify-center text-[#0B1121]">
-                        <BoutiqueLogoIcon className="w-5 h-5" strokeWidth={1.5} />
-                     </div>
-                     <div className="text-white font-bold text-lg">Vistomio</div>
-                  </div>
-                  
-                  <div className="px-6 mb-6">
-                    <div className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Active Property</div>
-                    <div className="text-white font-semibold text-sm">Hotel Vistomio <span className="text-slate-500 font-normal">Demo</span></div>
-                  </div>
-                  
-                  <div className="flex flex-col gap-1.5 px-4 overflow-y-auto pb-6 custom-scrollbar">
-                    <div className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-white/5 cursor-pointer group">
-                      <LayoutGrid size={20} className="shrink-0 text-slate-500 group-hover:text-slate-300" strokeWidth={1.5} /> 
-                      <span className="text-[13px] leading-snug font-medium">Dashboard General</span>
-                    </div>
-                    {/* Active State */}
-                    <div className="flex items-center gap-3 px-3 py-2 text-[#FCE69B] bg-[#1B160C]/80 border border-[#D4AF37]/30 rounded-xl cursor-pointer mt-1 mb-1 shadow-inner relative overflow-hidden">
-                      <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#D4AF37] rounded-l-xl"></div>
-                      <CalendarCheck size={20} className="shrink-0 text-[#D4AF37]" strokeWidth={1.5} /> 
-                      <span className="text-[13px] font-semibold leading-snug">Motor de Reservas y<br/>Channel Manager</span>
-                    </div>
-                    <div className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-white/5 cursor-pointer group">
-                      <CreditCard size={20} className="shrink-0 text-slate-500 group-hover:text-slate-300" strokeWidth={1.5} /> 
-                      <span className="text-[13px] leading-snug font-medium">Pagos y Facturación</span>
-                    </div>
-                    <div className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-white/5 cursor-pointer group">
-                      <ClipboardCheck size={20} className="shrink-0 text-slate-500 group-hover:text-slate-300" strokeWidth={1.5} /> 
-                      <span className="text-[13px] leading-snug font-medium">Check-in y Gestión de<br/>Huéspedes</span>
-                    </div>
-                    <div className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-white/5 cursor-pointer group">
-                      <Utensils size={20} className="shrink-0 text-slate-500 group-hover:text-slate-300" strokeWidth={1.5} /> 
-                      <span className="text-[13px] leading-snug font-medium">Restaurante / Bar</span>
-                    </div>
-                    <div className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-white/5 cursor-pointer group">
-                      <Package size={20} className="shrink-0 text-slate-500 group-hover:text-slate-300" strokeWidth={1.5} /> 
-                      <span className="text-[13px] leading-snug font-medium">Operaciones Diarias y<br/>Recursos</span>
-                    </div>
-                    <div className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-white/5 cursor-pointer group">
-                      <CircleDollarSign size={20} className="shrink-0 text-slate-500 group-hover:text-slate-300" strokeWidth={1.5} /> 
-                      <span className="text-[13px] leading-snug font-medium">Administración y Finanzas</span>
-                    </div>
-                    <div className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-white/5 cursor-pointer group">
-                      <Bot size={20} className="shrink-0 text-slate-500 group-hover:text-slate-300" strokeWidth={1.5} /> 
-                      <span className="text-[13px] leading-snug font-medium">Chatbot IA</span>
-                    </div>
-                    <div className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-white/5 cursor-pointer group">
-                      <LineChart size={20} className="shrink-0 text-slate-500 group-hover:text-slate-300" strokeWidth={1.5} /> 
-                      <span className="text-[13px] leading-snug font-medium">Reportes</span>
-                    </div>
-                  </div>
+            {/* Right Image with Badges */}
+            <div className="w-full lg:w-[35%] relative mt-12 lg:mt-0">
+              <div className="relative rounded-[2rem] overflow-hidden shadow-2xl bg-boutique-sand">
+                <img 
+                  src="/happy_owner_hero.jpg" 
+                  alt="Hotel Reception" 
+                  className="w-full h-auto object-cover aspect-[4/5]"
+                />
+              </div>
+              
+              {/* Floating Badges */}
+              {/* Gestión: Top Left */}
+              <div className="absolute top-12 -left-4 lg:-left-12 bg-white px-5 py-4 rounded-xl shadow-xl shadow-gray-300/60 border border-gray-100 flex items-center gap-4 z-20 animate-[float_6s_ease-in-out_infinite] scale-[1.05]">
+                <div className="w-8 h-8 bg-amber-50 rounded-full flex items-center justify-center text-[#D4AF37]">
+                  <Sparkles size={14} />
                 </div>
-
-                {/* App Content Area (Light) */}
-                <div className="flex-1 flex flex-col bg-slate-50 overflow-hidden text-slate-200">
-                  
-                  {/* Header */}
-                  <div className="h-20 px-6 flex items-center justify-between border-b border-slate-200 bg-white shrink-0">
-                    <div>
-                      <h2 className="text-2xl font-bold text-slate-800">{t.mockupCalendar.title}</h2>
-                      <p className="text-sm text-slate-500 hidden sm:block">Control centralizado de canales y disponibilidad</p>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <button className="bg-slate-800 text-white border border-slate-700 px-3 py-1.5 rounded-lg font-bold text-xs flex items-center gap-2 hover:bg-slate-700 transition-colors shadow-md shadow-slate-900/50">
-                        <Plus size={16} strokeWidth={3} className="shrink-0" /> 
-                        <div className="text-left leading-tight w-24 sm:w-20 whitespace-normal">{t.mockupCalendar.newBooking}</div>
-                      </button>
-                      <div className="flex items-center gap-2 ml-2">
-                        <span className="bg-emerald-50 text-emerald-600 border border-emerald-200 px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider whitespace-nowrap">8 {t.mockupCalendar.rooms}</span>
-                        <span className="bg-[#D4AF37]/10 text-[#D4AF37] border border-[#D4AF37] px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider whitespace-nowrap">5 {t.mockupCalendar.channels}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Dashboard Content */}
-                  <div className="p-4 flex-1 flex flex-col gap-4 overflow-y-auto custom-scrollbar">
-                    
-                    {/* Calendar Card */}
-                    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm flex flex-col min-h-[400px] overflow-hidden">
-                      {/* Calendar Header Controls */}
-                      <div className="p-3 border-b border-slate-100 flex items-center justify-between bg-white shrink-0 overflow-x-auto custom-scrollbar">
-                        <div className="flex items-center gap-2 shrink-0">
-                          <div className="flex items-center gap-2 font-bold text-slate-800 mr-2">
-                            <Calendar size={16} className="text-[#D4AF37]"/> <span className="hidden sm:inline">{t.mockupCalendar.title}</span>
-                          </div>
-                          <div className="flex bg-slate-100 p-1 rounded-lg">
-                            <button className="bg-white text-[#D4AF37] px-2 py-1 rounded-md text-xs font-bold shadow-sm flex items-center gap-1"><Calendar size={12}/> {t.mockupCalendar.reservations}</button>
-                            <button className="text-slate-500 px-2 py-1 rounded-md text-xs font-bold hover:text-slate-700 flex items-center gap-1"><DollarSign size={12}/> {t.mockupCalendar.rates}</button>
-                          </div>
-                          <div className="flex items-center gap-1 ml-2 text-xs font-bold text-slate-700 bg-slate-50 border border-slate-200 px-2 py-1 rounded-lg">
-                            {t.mockupCalendar.month} <ChevronDown size={12} className="text-slate-400" />
-                          </div>
-                          <div className="flex items-center gap-1 text-xs font-bold text-slate-700 bg-slate-50 border border-slate-200 px-2 py-1 rounded-lg">
-                            2026 <ChevronDown size={12} className="text-slate-400" />
-                          </div>
-                          <div className="flex items-center gap-1 ml-1">
-                            <button className="p-1 hover:bg-slate-100 rounded text-slate-400"><ChevronLeft size={14}/></button>
-                            <span className="text-[10px] font-bold text-slate-500">{t.mockupCalendar.today}</span>
-                            <button className="p-1 hover:bg-slate-100 rounded text-slate-400"><ChevronRight size={14}/></button>
-                          </div>
-                        </div>
-
-                        {/* Legends */}
-                        <div className="flex items-center gap-3 text-[9px] font-bold text-slate-500 uppercase tracking-wider shrink-0 ml-4">
-                          <div className="flex items-center gap-1"><CheckCircle2 size={10} className="text-emerald-500"/> {t.mockupCalendar.legend.paid}</div>
-                          <div className="flex items-center gap-1"><Clock size={10} className="text-red-500"/> {t.mockupCalendar.legend.toPay}</div>
-                          <div className="w-px h-3 bg-slate-300"></div>
-                          <div className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500"></div> {t.mockupCalendar.legend.inProgress}</div>
-                          <div className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div> {t.mockupCalendar.legend.confirmed}</div>
-                          <div className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full bg-slate-400"></div> {t.mockupCalendar.legend.checkout}</div>
-                        </div>
-                      </div>
-
-                      {/* Calendar Grid */}
-                      <div className="flex-1 overflow-x-auto overflow-y-hidden custom-scrollbar">
-                        <div className="min-w-[800px] h-full flex flex-col">
-                          {/* Header Row */}
-                          <div className="flex border-b border-slate-100 text-xs font-bold text-slate-500 text-center uppercase tracking-wider bg-slate-50/50">
-                            <div className="w-40 shrink-0 p-3 text-left flex items-end">{t.mockupCalendar.room}</div>
-                            {/* Days columns */}
-                            {[
-                              {d: t.mockupCalendar.days.sat, n: 8, o: '38%', h: false},
-                              {d: t.mockupCalendar.days.sun, n: 9, o: '75%', h: true},
-                              {d: t.mockupCalendar.days.mon, n: 10, o: '88%', h: false},
-                              {d: t.mockupCalendar.days.tue, n: 11, o: '75%', h: false},
-                              {d: t.mockupCalendar.days.wed, n: 12, o: '88%', h: false},
-                              {d: t.mockupCalendar.days.thu, n: 13, o: '63%', h: false},
-                              {d: t.mockupCalendar.days.fri, n: 14, o: '63%', h: false},
-                              {d: t.mockupCalendar.days.sat, n: 15, o: '63%', h: false},
-                              {d: t.mockupCalendar.days.sun, n: 16, o: '75%', h: false},
-                              {d: t.mockupCalendar.days.mon, n: 17, o: '50%', h: false},
-                              {d: t.mockupCalendar.days.tue, n: 18, o: '38%', h: false},
-                              {d: t.mockupCalendar.days.wed, n: 19, o: '63%', h: false}
-                            ].map((day, i) => (
-                              <div key={i} className={`flex-1 flex flex-col items-center justify-center p-1.5 border-l border-slate-100 ${day.h ? 'bg-amber-50/50 text-amber-600' : ''}`}>
-                                <span className="text-[10px]">{day.d}</span>
-                                <span className={`text-sm my-0.5 ${day.h ? 'text-amber-600' : 'text-slate-700'}`}>{day.n}</span>
-                                <span className={`text-[9px] ${day.h ? 'text-amber-500' : 'text-[#D4AF37]'}`}>{day.o}</span>
-                              </div>
-                            ))}
-                          </div>
-
-                          {/* Rows */}
-                          <div className="relative flex-1 flex flex-col pb-4">
-                            {/* Grid Lines (Background) */}
-                            <div className="absolute inset-0 flex pointer-events-none">
-                              <div className="w-40 shrink-0 border-r border-slate-100"></div>
-                              {[...Array(12)].map((_, i) => (
-                                <div key={i} className={`flex-1 border-r border-slate-100 ${i === 1 ? 'bg-amber-50/30' : ''}`}></div>
-                              ))}
-                            </div>
-
-                            {/* Data Rows */}
-                            {[
-                              { 
-                                name: t.mockupCalendar.roomTypes.suiteTerraza, 
-                                bars: [
-                                  { start: 1, span: 3, color: 'bg-emerald-500', name: 'Luis P.', status: 'paid' },
-                                  { start: 7, span: 2, color: 'bg-blue-400', name: 'Javier S.', status: 'paid' },
-                                  { start: 11, span: 1, color: 'bg-blue-400', name: 'Javier S.', status: 'toPay' }
-                                ]
-                              },
-                              { 
-                                name: t.mockupCalendar.roomTypes.suiteJardin, 
-                                bars: [
-                                  { start: 1, span: 2, color: 'bg-emerald-500', name: 'Pedro H.', status: 'paid' },
-                                  { start: 4, span: 4, color: 'bg-blue-400', name: 'Diego F.', status: 'toPay' },
-                                  { start: 10, span: 2, color: 'bg-blue-400', name: 'Pedro H.', status: 'paid' }
-                                ]
-                              },
-                              { 
-                                name: t.mockupCalendar.roomTypes.hab301, 
-                                bars: [
-                                  { start: 0, span: 2, color: 'bg-emerald-500', name: 'Roberto C.', status: 'paid' },
-                                  { start: 2, span: 2, color: 'bg-emerald-500', name: 'Raúl B.', status: 'paid' },
-                                  { start: 6, span: 3, color: 'bg-blue-400', name: 'Roberto C.', status: 'toPay' },
-                                  { start: 10, span: 2, color: 'bg-blue-400', name: 'Raúl B.', status: 'paid' }
-                                ]
-                              },
-                              { 
-                                name: t.mockupCalendar.roomTypes.hab302, 
-                                bars: [
-                                  { start: 0, span: 3, color: 'bg-emerald-500', name: 'Marta G.', status: 'paid' },
-                                  { start: 4, span: 4, color: 'bg-blue-400', name: 'Marta G.', status: 'paid' },
-                                  { start: 9, span: 3, color: 'bg-blue-400', name: 'Sofia L.', status: 'toPay' }
-                                ]
-                              },
-                              { 
-                                name: t.mockupCalendar.roomTypes.doble201, 
-                                bars: [
-                                  { start: 1, span: 4, color: 'bg-emerald-500', name: 'Valentina C.', status: 'paid' },
-                                  { start: 7, span: 1, color: 'bg-blue-400', name: 'D', status: 'toPay', icon: true },
-                                  { start: 9, span: 3, color: 'bg-blue-400', name: 'Roberto C.', status: 'toPay' }
-                                ]
-                              },
-                              { 
-                                name: t.mockupCalendar.roomTypes.doble202, 
-                                bars: [
-                                  { start: 3, span: 4, color: 'bg-blue-400', name: 'Valentina C.', status: 'paid' },
-                                  { start: 8, span: 1, color: 'bg-blue-400', name: 'Javier S.', status: 'paid' },
-                                  { start: 10, span: 2, color: 'bg-blue-400', name: 'Emilia V.', status: 'toPay', icon: true }
-                                ]
-                              },
-                            ].map((row, rIdx) => (
-                              <div key={rIdx} className="flex border-b border-slate-100 relative h-12 items-center z-10 hover:bg-slate-700/50/50">
-                                <div className="w-40 shrink-0 px-3 text-[11px] font-bold text-slate-600 bg-white/50">{row.name}</div>
-                                
-                                <div className="flex-1 relative h-full">
-                                  {row.bars.map((bar, bIdx) => (
-                                    <div key={bIdx} 
-                                         className={`absolute top-1.5 bottom-1.5 ${bar.color} rounded-md text-white text-[10px] flex items-center px-1.5 font-semibold shadow-sm overflow-hidden whitespace-nowrap`}
-                                         style={{ left: `calc((100% / 12) * ${bar.start} + 2px)`, width: `calc((100% / 12) * ${bar.span} - 4px)` }}>
-                                      {bar.icon ? <Home size={10} className="mr-1 shrink-0"/> : <Home size={10} className="mr-1 shrink-0 opacity-70"/>}
-                                      <span className="truncate flex-1">{bar.name}</span>
-                                      <div className="absolute right-1 w-3 h-3 bg-white/20 rounded-full flex items-center justify-center shrink-0">
-                                        {bar.status === 'paid' ? <CheckCircle2 size={8} className="text-white"/> : <Clock size={8} className="text-white"/>}
-                                      </div>
-                                    </div>
-                                  ))}
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Canales Conectados */}
-                    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-3 shrink-0">
-                       <div className="flex items-center gap-2 font-bold text-slate-800 mb-3 text-sm">
-                         <Globe size={16} className="text-[#D4AF37]"/> {t.mockupCalendar.channelsTitle}
-                       </div>
-                       <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-                         {[
-                           { name: 'Booking.com', status: t.mockupCalendar.sync, color: 'text-blue-600', bg: 'bg-blue-900', icon: Briefcase },
-                           { name: 'Airbnb', status: t.mockupCalendar.sync, color: 'text-emerald-600', bg: 'bg-rose-500', icon: Home },
-                           { name: 'Expedia', status: t.mockupCalendar.sync, color: 'text-emerald-600', bg: 'bg-black', icon: Briefcase },
-                           { name: 'Web Directa', status: t.mockupCalendar.active, color: 'text-[#D4AF37]', bg: 'bg-[#0B1121]', icon: Globe },
-                           { name: 'Venta Directa', status: t.mockupCalendar.manual, color: 'text-amber-500', bg: 'bg-amber-500', icon: Users }
-                         ].map((channel, idx) => (
-                           <div key={idx} className="flex items-center gap-2 p-2 rounded-xl bg-slate-50 border border-slate-100 hover:border-[#D4AF37]/20 transition-colors">
-                             <div className={`w-7 h-7 rounded-lg ${channel.bg} flex items-center justify-center text-white shrink-0 shadow-sm`}>
-                               <channel.icon size={12}/>
-                             </div>
-                             <div className="min-w-0">
-                               <div className="text-[11px] font-bold text-slate-700 whitespace-nowrap overflow-hidden text-ellipsis">{channel.name}</div>
-                               <div className={`text-[9px] font-semibold ${channel.color} whitespace-nowrap overflow-hidden text-ellipsis`}>{channel.status}</div>
-                             </div>
-                           </div>
-                         ))}
-                       </div>
-                    </div>
-
-                  </div>
+                <div>
+                  <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider leading-none mb-1">{(t as any).heroBadges?.badge1Top || 'GESTION'}</div>
+                  <div className="text-sm font-extrabold text-boutique-anthracite leading-none">{(t as any).heroBadges?.badge1Bottom || 'Estrés cero'}</div>
                 </div>
+              </div>
 
-                {/* Overlay Text on Hover */}
-                <div className="absolute inset-0 bg-white/70 backdrop-blur-md flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 z-20">
-                   <a href="https://demo.vistomio.com" target="_blank" rel="noopener noreferrer" className="bg-slate-900 text-white font-bold px-8 py-4 rounded-full shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:scale-105 transition-transform flex items-center gap-2">
-                     <Play fill="currentColor" size={18} /> Interactuar con el Demo
-                   </a>
+              {/* Resultado: Top Right */}
+              <div className="absolute top-32 -right-4 lg:-right-16 bg-white px-5 py-4 rounded-xl shadow-xl shadow-gray-300/60 border border-gray-100 flex items-center gap-4 z-20 animate-[float_5s_ease-in-out_infinite_1s] scale-[1.05]">
+                <div className="w-8 h-8 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-500">
+                  <TrendingUp size={14} />
                 </div>
-               </div>
-             </div>
+                <div>
+                  <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider leading-none mb-1">{(t as any).heroBadges?.badge2Top || 'RÉSULTAT'}</div>
+                  <div className="text-sm font-extrabold text-boutique-anthracite leading-none">{(t as any).heroBadges?.badge2Bottom || '+ Calidad de Service'}</div>
+                </div>
+              </div>
+
+              {/* Eficiencia: Bottom Right */}
+                              <div className="absolute bottom-16 -right-4 lg:-right-12 bg-white px-5 py-4 rounded-xl shadow-xl shadow-gray-300/60 border border-gray-100 flex items-center gap-4 z-20 animate-[float_7s_ease-in-out_infinite_2s] scale-[1.05]">
+                <div className="w-8 h-8 bg-amber-50 rounded-full flex items-center justify-center text-[#D4AF37]">
+                  <Clock size={14} />
+                </div>
+                <div>
+                  <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider leading-none mb-1">{(t as any).heroBadges?.badge3Top || 'EFFICACITÉ'}</div>
+                  <div className="text-sm font-extrabold text-boutique-anthracite leading-none">{(t as any).heroBadges?.badge3Bottom || '+ Temps Libre'}</div>
+                </div>
+              </div>
+
+              {/* SVG Arrow connecting Eficiencia to Resultado */}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* --- SOCIAL PROOF --- */}
-      <section className="py-12 border-y border-slate-800 bg-slate-900 relative z-10">
+      {/* --- SYSTEM DEMO SECTION --- */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <SectionHeader eyebrow={t.systemDemo?.title || 'Sistemas boutique para negocios boutique'} align="center" />
+          
+          <div className="relative mx-auto max-w-5xl group cursor-pointer">
+            {/* Decorative floating elements */}
+            <div className="absolute -left-12 top-1/4 w-24 h-24 bg-amber-50 rounded-full mix-blend-multiply opacity-70 animate-[float_6s_ease-in-out_infinite]"></div>
+            <div className="absolute -right-16 bottom-1/3 w-32 h-32 bg-emerald-50 rounded-full mix-blend-multiply opacity-70 animate-[float_8s_ease-in-out_infinite_1s]"></div>
+            
+            {/* Tablet Frame Container */}
+            <div className="relative mx-auto w-full rounded-[1.5rem] md:rounded-[2rem] border-[6px] md:border-[10px] border-gray-900 bg-gray-900 shadow-[0_20px_50px_rgba(0,0,0,0.2)] group transition-transform duration-500 hover:-translate-y-2">
+              {/* Inner Screen */}
+              <div className="relative bg-white overflow-hidden rounded-[1rem] md:rounded-[1.25rem] w-full" style={{ height: '640px' }}>
+                <div className="w-full h-full pointer-events-none select-none">
+                  <MockVistomioApp t={t.systemDemo.mockApp} lang={lang} />
+                </div>
+                
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 z-50 bg-white/70 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center">
+                  <a 
+                    href="https://demo.vistomio.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="bg-boutique-anthracite hover:bg-[#111] text-white font-bold tracking-widest uppercase text-sm px-8 py-4 rounded-xl shadow-2xl transition-transform duration-500 transform translate-y-8 group-hover:translate-y-0 flex items-center gap-3 border border-gray-700"
+                  >
+                    {t.systemDemo?.btn || 'Explorar demo'}
+                    <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+{/* --- SOCIAL PROOF --- */}
+      <section className="py-12 border-y border-gray-300 bg-boutique-offwhite relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-sm font-semibold text-slate-400 uppercase tracking-widest mb-10">
+          <p className="text-center text-sm font-semibold text-gray-600 uppercase tracking-widest mb-10">
             {t.socialProof}
           </p>
           <div className="flex flex-wrap justify-center items-center gap-10 md:gap-14 lg:gap-24 opacity-60 hover:opacity-100 transition-all duration-500">
             <div className="flex flex-col items-center gap-2">
-              <div className="flex items-center gap-3 text-2xl font-bold text-slate-200">
-                <span className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-sm border border-slate-700 shadow-sm text-slate-300">HN</span> Noga
+              <div className="flex items-center gap-3 text-2xl font-semibold text-boutique-anthracite">
+                <span className="w-10 h-10 rounded-xl bg-boutique-sand flex items-center justify-center text-sm border border-boutique-sand shadow-sm text-boutique-anthracite">HN</span> Noga
               </div>
-              <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">{t.locations.noga}</span>
+              <span className="text-xs font-semibold text-gray-600 uppercase tracking-widest">{t.locations.noga}</span>
             </div>
 
             <div className="flex flex-col items-center gap-2">
-              <div className="flex items-center gap-2 text-2xl font-bold text-slate-200 italic">
-                <GalloAzulLogo className="text-blue-500" size={28} /> Gallo Azul
+              <div className="flex items-center gap-2 text-2xl font-semibold text-boutique-anthracite italic">
+                <GalloAzulLogo className="text-boutique-navy" size={28} /> Gallo Azul
               </div>
-              <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">{t.locations.galloAzul}</span>
+              <span className="text-xs font-semibold text-gray-600 uppercase tracking-widest">{t.locations.galloAzul}</span>
             </div>
 
             <div className="flex flex-col items-center gap-2">
-              <div className="flex items-center gap-2 text-2xl font-black text-slate-200 tracking-[0.2em]">
+              <div className="flex items-center gap-2 text-2xl font-black text-boutique-anthracite tracking-[0.2em]">
                 LA MORA
               </div>
-              <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">{t.locations.laMora}</span>
+              <span className="text-xs font-semibold text-gray-600 uppercase tracking-widest">{t.locations.laMora}</span>
             </div>
 
             <div className="flex flex-col items-center gap-2">
-              <div className="flex items-center gap-3 text-2xl font-bold text-slate-200">
+              <div className="flex items-center gap-3 text-2xl font-semibold text-boutique-anthracite">
                 <span className="border-2 border-[#D4AF37] p-1.5 text-[#D4AF37] text-sm">JC</span> Hoteles
               </div>
-              <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">{t.locations.jc}</span>
+              <span className="text-xs font-semibold text-gray-600 uppercase tracking-widest">{t.locations.jc}</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* --- BOUTIQUE NICHE SECTION (NEW) --- */}
-
-      <section className="py-24 bg-slate-900 border-b border-slate-800 relative overflow-hidden">
-        {/* Subtle background flair */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-amber-900/20 blur-[100px] rounded-full pointer-events-none"></div>
+            {/* --- BOUTIQUE NICHE SECTION (NEW) --- */}
+      <section className="py-24 bg-white border-b border-gray-300 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
             <div className="lg:w-1/2">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                {t.boutiqueNiche.title}
-              </h2>
+
               <p 
-                className="text-lg text-slate-300 leading-relaxed mb-8"
+                className="text-lg text-boutique-anthracite leading-relaxed mb-8"
                 dangerouslySetInnerHTML={{ __html: t.boutiqueNiche.subtitle }}
               />
               
@@ -1847,54 +1658,59 @@ const VistomioLandingPage: React.FC = () => {
                       <card.icon size={24} />
                     </div>
                     <div>
-                      <h4 className="text-xl font-bold text-white mb-1">{card.title}</h4>
-                      <p className="text-slate-300" dangerouslySetInnerHTML={{ __html: card.desc }} />
+                      <h4 className="text-xl font-semibold text-boutique-anthracite mb-1">{card.title}</h4>
+                      <p className="text-boutique-anthracite" dangerouslySetInnerHTML={{ __html: card.desc }} />
                     </div>
                   </li>
                 ))}
               </ul>
             </div>
             
-            <div className="lg:w-1/2 relative w-full">
-               {/* Decorative Element mimicking a boutique menu/tablet */}
-               <div className="w-full aspect-square md:aspect-[4/3] rounded-3xl bg-gradient-to-tr from-[#0B1121] to-[#171E32] border border-white/10 shadow-2xl p-8 flex flex-col justify-between relative overflow-hidden group">
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-fuchsia-600/20 blur-[80px] rounded-full mix-blend-screen group-hover:bg-fuchsia-600/30 transition-colors"></div>
+                        <div className="lg:w-1/2 relative w-full h-[500px] md:h-[600px] mt-12 lg:mt-0 rounded-[2rem] shadow-2xl">
+               {/* Background Image */}
+               <img src="/luxury_suite_interior.jpg" alt="Luxury Suite Interior" className="absolute inset-0 w-full h-full object-cover rounded-[2rem]" />
+               
+               {/* Card floating over the image - Moved to TOP LEFT to show the bed at the bottom */}
+               <div className="absolute -left-4 md:-left-12 top-8 md:top-12 w-[calc(100%+2rem)] md:w-[75%] lg:w-[70%] rounded-[2rem] bg-[#0B1121]/95 backdrop-blur-2xl border border-white/10 shadow-2xl shadow-black/50 p-5 md:p-6 flex flex-col justify-between overflow-hidden z-20 ring-1 ring-white/5">
                   
-                  <div className="flex justify-between items-start relative z-10">
-                    <div className="w-12 h-12 bg-white/5 backdrop-blur-md rounded-2xl flex items-center justify-center border border-white/10">
-                      <BedDouble className="text-white" size={24}/>
+                  {/* Subtle glass reflection */}
+                  <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                  
+                  <div className="flex justify-between items-center relative z-10">
+                    <div className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 shadow-inner shadow-white/5">
+                      <BedDouble className="text-white" size={20}/>
                     </div>
-                    <div className="px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-full text-sm font-bold border border-emerald-500/30">
+                    <div className="px-3 py-1.5 bg-[#D4AF37]/20 text-[#D4AF37] rounded-full text-xs font-semibold border border-[#D4AF37]/30 backdrop-blur-md">
                       {t.suiteMockup.status}
                     </div>
                   </div>
                   
-                  <div className="relative z-10">
-                    <div className="text-5xl font-bold text-white mb-4">Suite 402</div>
-                    <div className="w-full h-px bg-white/10 mb-4"></div>
-                    <div className="flex justify-between text-slate-300">
-                      <span>{t.suiteMockup.preferences}</span>
+                  <div className="relative z-10 mt-5 md:mt-6">
+                    <div className="text-3xl md:text-4xl font-semibold text-white mb-3 md:mb-4 tracking-wide font-serif">Suite 402</div>
+                    <div className="w-full h-px bg-white/10 mb-3 md:mb-4"></div>
+                    <div className="flex justify-between text-white/70 text-sm">
+                      <span className="font-medium">{t.suiteMockup.preferences}</span>
                       <span className="font-semibold text-white">{t.suiteMockup.preferencesValue}</span>
                     </div>
-                    <div className="flex justify-between text-slate-300 mt-2">
-                      <span>{t.suiteMockup.langLabel}</span>
+                    <div className="flex justify-between text-white/70 mt-2.5 text-sm">
+                      <span className="font-medium">{t.suiteMockup.langLabel}</span>
                       <span className="font-semibold text-white">{t.suiteMockup.langValue}</span>
                     </div>
-                    <div className="flex justify-between text-slate-300 mt-2">
-                      <span>{t.suiteMockup.originLabel}</span>
+                    <div className="flex justify-between text-white/70 mt-2.5 text-sm">
+                      <span className="font-medium">{t.suiteMockup.originLabel}</span>
                       <span className="font-semibold text-white">{t.suiteMockup.originValue}</span>
                     </div>
-                    <div className="flex justify-between text-slate-300 mt-2">
-                      <span>{t.suiteMockup.arrivalLabel}</span>
+                    <div className="flex justify-between text-white/70 mt-2.5 text-sm">
+                      <span className="font-medium">{t.suiteMockup.arrivalLabel}</span>
                       <span className="font-semibold text-white">{t.suiteMockup.arrivalValue}</span>
                     </div>
-                    <div className="flex justify-between text-slate-300 mt-2">
-                      <span>{t.suiteMockup.parkingLabel}</span>
+                    <div className="flex justify-between text-white/70 mt-2.5 text-sm">
+                      <span className="font-medium">{t.suiteMockup.parkingLabel}</span>
                       <span className="font-semibold text-white">{t.suiteMockup.parkingValue}</span>
                     </div>
-                    <div className="flex justify-between text-slate-300 mt-2">
-                      <span>{t.suiteMockup.dinner}</span>
-                      <span className="font-semibold text-[#FCE69B]">{t.suiteMockup.dinnerValue}</span>
+                    <div className="flex justify-between text-white/70 mt-2.5 text-sm">
+                      <span className="font-medium">{t.suiteMockup.dinner}</span>
+                      <span className="font-bold text-[#FCE69B] drop-shadow-md">{t.suiteMockup.dinnerValue}</span>
                     </div>
                   </div>
                </div>
@@ -1904,34 +1720,34 @@ const VistomioLandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* --- BENEFITS --- */}
-      <section className="pt-32 pb-16 bg-slate-900 relative overflow-hidden">
+{/* --- BENEFITS --- */}
+      <section className="pt-32 pb-16 bg-boutique-offwhite relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-[400px] bg-[#D4AF37]/10 blur-[120px] rounded-full pointer-events-none"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">{t.benefitsTitle}</h2>
+            <SectionHeader eyebrow={lang === 'es' ? 'BENEFICIOS' : lang === 'en' ? 'BENEFITS' : 'AVANTAGES'} title={t.benefitsTitle} align="center" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {t.benefits.map((benefit, idx) => (
-              <div key={idx} className="p-10 rounded-[2rem] bg-slate-800/60 backdrop-blur-xl border border-slate-700 hover:border-[#D4AF37]/50 hover:shadow-xl hover:shadow-amber-900/20 transition-all shadow-sm">
+              <div key={idx} className="p-10 rounded-[2rem] bg-boutique-sand/60 backdrop-blur-xl border border-boutique-sand hover:border-[#D4AF37]/50 hover:shadow-xl hover:shadow-amber-900/20 transition-all shadow-sm">
                 <div className="w-16 h-16 rounded-2xl bg-[#D4AF37]/10 text-[#D4AF37] flex items-center justify-center mb-8 border border-[#D4AF37]/30">
                   <benefit.icon size={32} strokeWidth={1.5} />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">{benefit.title}</h3>
-                <p className="text-slate-300 leading-relaxed text-lg">{benefit.desc}</p>
+                <h3 className="text-2xl font-semibold text-boutique-anthracite mb-4 font-serif tracking-wide">{benefit.title}</h3>
+                <p className="text-boutique-anthracite leading-relaxed text-lg">{benefit.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="productos" className="scroll-mt-24 pt-16 pb-32 relative bg-slate-900">
+      <section id="productos" className="scroll-mt-24 pt-16 pb-32 relative bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">{t.featuresTitle}</h2>
-            <p className="text-lg text-slate-300">{t.featuresSubtitle}</p>
+            <SectionHeader eyebrow={lang === 'es' ? 'CARACTERÍSTICAS' : lang === 'en' ? 'FEATURES' : 'CARACTÉRISTIQUES'} title={t.featuresTitle} align="center" />
+            <p className="text-lg text-boutique-anthracite">{t.featuresSubtitle}</p>
           </div>
 
           <div className="flex flex-col gap-16">
@@ -1941,8 +1757,8 @@ const VistomioLandingPage: React.FC = () => {
               return (
               <div key={catIdx} id={`category-${catIdx}`} className="flex flex-col scroll-mt-32">
                 <div className="mb-8 flex items-center gap-4">
-                  <h3 className="text-2xl font-bold text-white tracking-tight">{category.name}</h3>
-                  <div className="h-px bg-slate-700 flex-grow"></div>
+                  <h3 className="text-2xl font-semibold text-boutique-anthracite tracking-tight font-serif tracking-wide">{category.name}</h3>
+                  <div className="h-px bg-white flex-grow"></div>
                 </div>
                 
                 {!isChatbotCategory ? (
@@ -1950,10 +1766,10 @@ const VistomioLandingPage: React.FC = () => {
                     {category.items.map((feature, idx) => (
                       <div 
                         key={idx} 
-                        className="bg-slate-800/50 backdrop-blur-xl rounded-3xl p-6 md:p-8 border border-slate-700 hover:border-[#D4AF37]/50 hover:shadow-lg hover:shadow-amber-900/20 transition-all duration-300 group cursor-default relative overflow-hidden flex flex-col"
+                        className="bg-boutique-sand/50 backdrop-blur-xl rounded-3xl p-6 md:p-8 border border-boutique-sand hover:border-[#D4AF37]/50 hover:shadow-lg hover:shadow-amber-900/20 transition-all duration-300 group cursor-default relative overflow-hidden flex flex-col"
                       >
                         
-                      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#D4AF37]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                      <div className="absolute top-0 left-0 w-full h-full from-[#D4AF37]/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                       
                       <div className="flex justify-between items-start mb-6 relative z-10">
                         <div className="w-14 h-14 rounded-2xl bg-[#D4AF37]/10 text-[#D4AF37] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#D4AF37] group-hover:text-[#0B1121] group-hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] transition-all duration-300 border border-[#D4AF37]/20 group-hover:border-transparent">
@@ -1966,12 +1782,12 @@ const VistomioLandingPage: React.FC = () => {
                           </div>
                         )}
                       </div>
-                      <h4 className="text-xl font-bold text-white mb-3 relative z-10">{feature.title}</h4>
-                      <p className="text-slate-300 text-sm leading-relaxed relative z-10 flex-grow">{feature.desc}</p>
+                      <h4 className="text-xl font-semibold text-boutique-anthracite mb-3 relative z-10">{feature.title}</h4>
+                      <p className="text-gray-600 text-sm leading-relaxed relative z-10 flex-grow font-medium">{feature.desc}</p>
                       
                       {(feature as any).demoId && (
                         <div className="mt-6 relative z-10">
-                          <a href={`#${(feature as any).demoId}`} className="inline-flex items-center gap-2 text-sm font-semibold text-[#D4AF37] hover:text-[#f4d054] transition-colors group/btn">
+                          <a href={`#${(feature as any).demoId}`} className="inline-flex items-center gap-2 text-sm font-bold text-[#D4AF37] hover:text-[#B5914A] transition-colors group/btn uppercase tracking-widest">
                             {t.seeHowItWorks} <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
                           </a>
                         </div>
@@ -1981,91 +1797,86 @@ const VistomioLandingPage: React.FC = () => {
                     ))}
                   </div>
                 ) : (
-                  
                   <div className="mt-2">
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-2">
-                      <h4 className="text-xl font-bold text-[#D4AF37]">{t.chatbotPlans.title}</h4>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-3">
+                      <h4 className="text-3xl font-serif font-medium text-boutique-anthracite">{t.chatbotPlans.title}</h4>
                       <div className="inline-flex">
-                        <div className="px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-emerald-400 text-[10px] font-semibold uppercase tracking-wider">
+                        <div className="px-3 py-1.5 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-700 text-[10px] font-bold uppercase tracking-widest shadow-sm">
                           {t.standaloneBadge1} {t.standaloneBadge2}
                         </div>
                       </div>
                     </div>
-                    <p className="text-slate-300 text-lg mb-4 max-w-4xl leading-relaxed">
+                    <p className="text-gray-600 text-lg mb-6 max-w-4xl leading-relaxed font-medium">
                       {t.chatbotPlans.subtitle}
                     </p>
                     
-                    <div className="mb-10">
-                      <a href="#demo-chatbot" className="inline-flex items-center gap-2 text-sm font-semibold text-[#D4AF37] hover:text-[#f4d054] transition-colors group/btn">
+                    <div className="mb-12">
+                      <a href="#demo-chatbot" className="inline-flex items-center gap-2 text-sm font-bold text-[#D4AF37] hover:text-[#B5914A] transition-colors group/btn uppercase tracking-widest">
                         {t.seeHowItWorks} <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
                       </a>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
                       {/* Standard Plan */}
-                      <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700 rounded-3xl p-8 flex flex-col h-full hover:border-indigo-500/50 hover:shadow-lg hover:shadow-indigo-900/20 transition-all duration-300 group relative overflow-hidden cursor-default">
-                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-indigo-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        <div className="flex items-center gap-4 mb-6 relative z-10">
-                          <div className="w-14 h-14 rounded-2xl bg-indigo-500/10 flex items-center justify-center border border-indigo-500/20 group-hover:bg-indigo-500 group-hover:text-white transition-colors">
-                            <MessageSquareText className="text-indigo-400 group-hover:text-white transition-colors" size={26} />
+                      <div className="bg-white border border-gray-100 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 rounded-[2rem] p-8 flex flex-col h-full relative overflow-hidden group">
+                        <div className="absolute top-0 left-0 w-full h-1 bg-[#D4AF37]/30 group-hover:bg-[#D4AF37] transition-colors"></div>
+                        <div className="flex items-center gap-5 mb-6">
+                          <div className="w-14 h-14 rounded-2xl bg-boutique-offwhite flex items-center justify-center border border-gray-100 text-boutique-anthracite shadow-sm">
+                            <MessageSquareText size={24} />
                           </div>
-                          <h3 className="text-xl font-bold text-white leading-tight">{t.chatbotPlans.plans[0].name}</h3>
+                          <h3 className="text-xl font-semibold text-boutique-anthracite leading-tight font-serif tracking-wide">{t.chatbotPlans.plans[0].name}</h3>
                         </div>
-                        <div className="w-full h-px bg-slate-700 mb-6 relative z-10"></div>
-                        <ul className="flex flex-col gap-4 flex-grow relative z-10">
+                        <div className="w-full h-px bg-gray-100 mb-6"></div>
+                        <ul className="flex flex-col gap-4 flex-grow">
                           {t.chatbotPlans.plans[0].features.map((feature, idx) => (
                             <li key={idx} className="flex gap-3">
-                              <div className="mt-1 min-w-[18px] text-indigo-400"><CheckCircle2 size={18} /></div>
-                              <span className="text-slate-300 text-sm leading-relaxed">{feature}</span>
+                              <div className="mt-0.5 min-w-[18px] text-[#D4AF37]"> <CheckCircle2 size={18} /> </div>
+                              <span className="text-gray-700 text-sm font-medium leading-relaxed">{feature}</span>
                             </li>
                           ))}
                         </ul>
                       </div>
 
                       {/* Premium Plan */}
-                      <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700 rounded-3xl p-8 flex flex-col h-full hover:border-amber-500/50 hover:shadow-lg hover:shadow-amber-900/20 transition-all duration-300 group relative overflow-hidden cursor-default">
-                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        <div className="flex items-center gap-4 mb-6 relative z-10">
-                          <div className="w-14 h-14 rounded-2xl bg-amber-500/10 flex items-center justify-center border border-amber-500/20 group-hover:bg-amber-500 group-hover:text-[#0B1121] transition-colors">
-                            <Zap className="text-amber-400 group-hover:text-[#0B1121] transition-colors" size={26} />
+                      <div className="bg-white border border-gray-100 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 rounded-[2rem] p-8 flex flex-col h-full relative overflow-hidden group">
+                        <div className="absolute top-0 left-0 w-full h-1 bg-[#D4AF37]/30 group-hover:bg-[#D4AF37] transition-colors"></div>
+                        <div className="flex items-center gap-5 mb-6">
+                          <div className="w-14 h-14 rounded-2xl bg-boutique-offwhite flex items-center justify-center border border-gray-100 text-boutique-anthracite shadow-sm">
+                            <Zap size={24} />
                           </div>
-                          <h3 className="text-xl font-bold text-white leading-tight">{t.chatbotPlans.plans[1].name}</h3>
+                          <h3 className="text-xl font-semibold text-boutique-anthracite leading-tight font-serif tracking-wide">{t.chatbotPlans.plans[1].name}</h3>
                         </div>
-                        <div className="w-full h-px bg-slate-700 mb-6 relative z-10"></div>
-                        <ul className="flex flex-col gap-4 flex-grow relative z-10">
+                        <div className="w-full h-px bg-gray-100 mb-6"></div>
+                        <ul className="flex flex-col gap-4 flex-grow">
                           {t.chatbotPlans.plans[1].features.map((feature, idx) => (
                             <li key={idx} className="flex gap-3">
-                              <div className="mt-1 min-w-[18px] text-amber-400"><CheckCircle2 size={18} /></div>
-                              <span className="text-slate-300 text-sm leading-relaxed">{feature}</span>
+                              <div className="mt-0.5 min-w-[18px] text-[#D4AF37]"> <CheckCircle2 size={18} /> </div>
+                              <span className="text-gray-700 text-sm font-medium leading-relaxed">{feature}</span>
                             </li>
                           ))}
                         </ul>
                       </div>
 
                       {/* Autonomous Plan */}
-                      <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700 rounded-3xl p-8 flex flex-col h-full hover:border-emerald-500/50 hover:shadow-lg hover:shadow-emerald-900/20 transition-all duration-300 group relative overflow-hidden cursor-default">
-                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        <div className="flex items-center gap-4 mb-6 relative z-10">
-                          <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20 group-hover:bg-emerald-500 group-hover:text-[#0B1121] transition-colors">
-                            <Bot className="text-emerald-400 group-hover:text-[#0B1121] transition-colors" size={26} />
+                      <div className="bg-white border border-gray-100 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 rounded-[2rem] p-8 flex flex-col h-full relative overflow-hidden group">
+                        <div className="absolute top-0 left-0 w-full h-1 bg-[#D4AF37]/30 group-hover:bg-[#D4AF37] transition-colors"></div>
+                        <div className="flex items-center gap-5 mb-6">
+                          <div className="w-14 h-14 rounded-2xl bg-boutique-offwhite flex items-center justify-center border border-gray-100 text-boutique-anthracite shadow-sm">
+                            <Bot size={24} />
                           </div>
-                          <h3 className="text-xl font-bold text-white leading-tight">{t.chatbotPlans.plans[2].name}</h3>
+                          <h3 className="text-xl font-semibold text-boutique-anthracite leading-tight font-serif tracking-wide">{t.chatbotPlans.plans[2].name}</h3>
                         </div>
-                        <div className="w-full h-px bg-slate-700 mb-6 relative z-10"></div>
-                        <ul className="flex flex-col gap-4 flex-grow relative z-10">
+                        <div className="w-full h-px bg-gray-100 mb-6"></div>
+                        <ul className="flex flex-col gap-4 flex-grow">
                           {t.chatbotPlans.plans[2].features.map((feature, idx) => (
                             <li key={idx} className="flex gap-3">
-                              <div className="mt-1 min-w-[18px] text-emerald-400"><CheckCircle2 size={18} /></div>
-                              <span className="text-slate-300 text-sm leading-relaxed">{feature}</span>
+                              <div className="mt-0.5 min-w-[18px] text-[#D4AF37]"> <CheckCircle2 size={18} /> </div>
+                              <span className="text-gray-700 text-sm font-medium leading-relaxed">{feature}</span>
                             </li>
                           ))}
-                        
                         </ul>
                       </div>
                     </div>
-                    
-
-
                   </div>
                 )}
               </div>
@@ -2076,46 +1887,46 @@ const VistomioLandingPage: React.FC = () => {
       </section>
 
       {/* CHATBOT SIMULATOR SECTION */}
-      <section id="demo-chatbot" className="py-24 relative bg-slate-900 border-t border-slate-800 overflow-hidden">
+      <section id="demo-chatbot" className="py-24 relative bg-white border-t border-gray-300 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <ChatbotSimulator currentLanguage={lang} />
         </div>
       </section>
 
       {/* POS SIMULATOR SECTION */}
-      <section id="demo-pos" className="py-24 relative bg-slate-900 border-t border-slate-800 overflow-hidden">
+      <section id="demo-pos" className="py-24 relative bg-boutique-offwhite border-t border-gray-300 overflow-hidden">
         <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="flex-1 text-center lg:text-left">
-              <div className="inline-block px-4 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-full text-emerald-400 text-sm font-bold uppercase tracking-wider mb-6">
+              <div className="inline-block px-4 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-full text-emerald-400 text-sm font-semibold uppercase tracking-wider mb-6">
                 Mini demo
               </div>
-              <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
+              <h2 className="text-4xl md:text-5xl font-semibold text-boutique-anthracite mb-6 leading-tight font-serif tracking-wide">
                 {t.posDemo.sectionTitle}
               </h2>
-              <p className="text-xl text-slate-400 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0">
+              <p className="text-xl text-gray-600 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0">
                 {t.posDemo.sectionDesc}
               </p>
               
               <div className="flex flex-col gap-6 max-w-md mx-auto lg:mx-0">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-[#D4AF37] flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-boutique-sand flex items-center justify-center text-[#D4AF37] flex-shrink-0">
                     <Utensils size={24} />
                   </div>
                   <div>
-                    <h4 className="text-white font-bold mb-1">{t.posDemo.features[0].title}</h4>
-                    <p className="text-slate-400 text-sm">{t.posDemo.features[0].desc}</p>
+                    <h4 className="text-boutique-anthracite font-semibold mb-1">{t.posDemo.features[0].title}</h4>
+                    <p className="text-gray-600 text-sm">{t.posDemo.features[0].desc}</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-boutique-sand flex items-center justify-center text-emerald-400 flex-shrink-0">
                     <Wallet size={24} />
                   </div>
                   <div>
-                    <h4 className="text-white font-bold mb-1">{t.posDemo.features[1].title}</h4>
-                    <p className="text-slate-400 text-sm">{t.posDemo.features[1].desc}</p>
+                    <h4 className="text-boutique-anthracite font-semibold mb-1">{t.posDemo.features[1].title}</h4>
+                    <p className="text-gray-600 text-sm">{t.posDemo.features[1].desc}</p>
                   </div>
                 </div>
               </div>
@@ -2129,21 +1940,21 @@ const VistomioLandingPage: React.FC = () => {
       </section>
 
       {/* STAFF APP SIMULATOR SECTION */}
-      <section id="demo-staff" className="py-24 relative bg-slate-900 overflow-hidden">
-        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-indigo-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+      <section id="demo-staff" className="py-24 relative bg-white overflow-hidden">
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-boutique-gold/10 blur-[120px] rounded-full pointer-events-none"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             <div className="flex-1 w-full max-w-sm lg:max-w-none shrink-0 lg:w-[360px]">
               <StaffAppSimulator currentLanguage={lang} />
             </div>
             <div className="flex-1 text-center lg:text-left">
-              <div className="inline-block px-4 py-1.5 bg-indigo-500/10 border border-indigo-500/30 rounded-full text-indigo-400 text-sm font-bold uppercase tracking-wider mb-6">
+              <div className="inline-block px-4 py-1.5 bg-boutique-gold/10 border border-boutique-gold/30 rounded-full text-boutique-gold text-sm font-semibold uppercase tracking-wider mb-6">
                 Mini demo
               </div>
-              <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
+              <h2 className="text-4xl md:text-5xl font-semibold text-boutique-anthracite mb-6 leading-tight font-serif tracking-wide">
                 {lang === 'es' ? 'Sincronización total con Vistomio Staff' : lang === 'en' ? 'Total synchronization with Vistomio Staff' : 'Synchronisation totale avec Vistomio Staff'}
               </h2>
-              <p className="text-xl text-slate-400 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0">
+              <p className="text-xl text-gray-600 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0">
                 {lang === 'es' 
                   ? 'Conecta las operaciones diarias de tu personal con el panel de control general en una colaboración virtuosa. Actualiza en tiempo real hallazgos, consumos, alertas y solicitudes sin fricciones.'
                   : lang === 'en'
@@ -2153,28 +1964,28 @@ const VistomioLandingPage: React.FC = () => {
               
               <div className="flex flex-col gap-6 max-w-md mx-auto lg:mx-0">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-indigo-400 flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-boutique-sand flex items-center justify-center text-boutique-gold flex-shrink-0">
                     <ClipboardCheck size={24} />
                   </div>
                   <div>
-                    <h4 className="text-white font-bold mb-1">
+                    <h4 className="text-boutique-anthracite font-semibold mb-1">
                       {lang === 'es' ? 'Cero papel' : lang === 'en' ? 'Paperless' : 'Zéro papier'}
                     </h4>
-                    <p className="text-slate-400 text-sm">
+                    <p className="text-gray-600 text-sm">
                       {lang === 'es' ? 'Digitaliza checklists, asignaciones y solicitudes de mantenimiento al instante.' : lang === 'en' ? 'Digitize checklists, assignments, and maintenance requests instantly.' : 'Numérisez les checklists, les assignations et les demandes de maintenance instantanément.'}
                     </p>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-boutique-sand flex items-center justify-center text-emerald-400 flex-shrink-0">
                     <Users size={24} />
                   </div>
                   <div>
-                    <h4 className="text-white font-bold mb-1">
+                    <h4 className="text-boutique-anthracite font-semibold mb-1">
                       {lang === 'es' ? 'Comunicación en tiempo real' : lang === 'en' ? 'Real-time communication' : 'Communication en temps réel'}
                     </h4>
-                    <p className="text-slate-400 text-sm">
+                    <p className="text-gray-600 text-sm">
                        {lang === 'es' ? 'Recepcionistas, mucamas y mantenimiento conectados bajo la misma fuente de verdad.' : lang === 'en' ? 'Receptionists, housekeepers, and maintenance connected under the same source of truth.' : 'Réceptionnistes, femmes de chambre et maintenance connectés sous la même source de vérité.'}
                     </p>
                   </div>
@@ -2202,42 +2013,42 @@ const VistomioLandingPage: React.FC = () => {
 
 
 
-      <section id="precios" className="scroll-mt-24 py-32 relative bg-slate-900 border-t border-slate-800">
+      <section id="precios" className="scroll-mt-24 py-32 relative bg-boutique-offwhite border-t border-gray-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">{t.pricing.title}</h2>
-            <p className="text-lg text-[#FCE69B] font-semibold">{t.pricing.subtitle}</p>
+            <SectionHeader eyebrow={lang === 'es' ? 'PLANES Y PRECIOS' : lang === 'en' ? 'PLANS & PRICING' : 'PLANS ET PRIX'} title={t.pricing.title} align="center" />
+            <p className="text-lg text-boutique-gold font-semibold">{t.pricing.subtitle}</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
             {t.pricing.plans.map((plan, idx) => (
               <div key={idx} className={`rounded-[2.5rem] p-10 bg-slate-800/80 backdrop-blur-xl border ${plan.highlight ? 'border-[#D4AF37] shadow-2xl shadow-amber-900/50 lg:scale-105 z-10 relative' : 'border-slate-700 hover:border-[#D4AF37]/50 shadow-sm hover:shadow-xl hover:shadow-amber-900/20 relative'} overflow-hidden transition-all duration-300 flex flex-col`}>
                 {plan.highlight && (
-                  <div className="absolute top-0 right-0 bg-gradient-to-r from-[#D4AF37] to-[#FCE69B] text-[#0B1121] text-xs font-bold px-6 py-2 rounded-bl-2xl uppercase tracking-wider">
+                  <div className="absolute top-0 right-0 from-[#D4AF37] to-[#FCE69B] text-[#0B1121] text-xs font-semibold px-6 py-2 rounded-bl-2xl uppercase tracking-wider">
                     MÁS POPULAR
                   </div>
                 )}
                 
                 <h3 className={`text-2xl font-bold ${plan.highlight ? 'text-[#0B1121]' : 'text-white'} mb-2 pr-24`}>{plan.name}</h3>
-                <div className="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-6 bg-emerald-500/10 inline-block px-3 py-1.5 rounded-full border border-emerald-500/30 self-start shadow-sm shadow-emerald-500/10">{plan.setupPrice}</div>
+                <div className="text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-6 bg-emerald-500/10 inline-block px-3 py-1.5 rounded-full border border-emerald-500/30 self-start shadow-sm shadow-emerald-500/10">{plan.setupPrice}</div>
                 
                 <div className="flex items-baseline gap-1 mb-8">
                   <div className={`text-5xl font-extrabold ${plan.highlight ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#FCE69B]' : 'text-white'}`}>
                     {plan.monthlyPrice}
                   </div>
-                  <span className="text-slate-500 font-medium">{plan.period}</span>
+                  <span className="text-gray-500 font-medium">{plan.period}</span>
                 </div>
                 
                 <div className="space-y-4 mb-10 flex-grow">
                   {plan.features.map((feat, i) => (
-                    <div key={i} className="flex items-start gap-4 text-slate-300">
+                    <div key={i} className="flex items-start gap-4 text-boutique-anthracite">
                       <CheckCircle2 className={`${plan.highlight ? 'text-[#D4AF37]' : 'text-slate-400'} shrink-0 mt-0.5`} size={20} />
                       <span className="text-base leading-snug">{feat}</span>
                     </div>
                   ))}
                 </div>
                 
-                <button onClick={() => setIsContactModalOpen(true)} className="w-full py-4 rounded-2xl font-bold text-lg transition-colors bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 hover:border-slate-600 shadow-lg hover:shadow-xl">
+                <button onClick={() => setIsContactModalOpen(true)} className="w-full py-4 rounded-2xl font-semibold text-lg transition-colors bg-boutique-sand hover:bg-white text-boutique-anthracite border border-boutique-sand hover:border-slate-600 shadow-sm hover:shadow-xl">
                   {plan.cta}
                 </button>
               </div>
@@ -2247,7 +2058,7 @@ const VistomioLandingPage: React.FC = () => {
           <div className="mt-16 text-center">
             <button 
               onClick={() => setIsCustomPlanModalOpen(true)}
-              className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-emerald-500/50 hover:border-emerald-400 text-emerald-400 hover:text-emerald-300 rounded-xl font-bold transition-all shadow-lg hover:shadow-emerald-500/20 group mb-16"
+              className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-emerald-500/50 hover:border-emerald-400 text-emerald-400 hover:text-emerald-300 rounded-xl font-semibold transition-all shadow-sm hover:shadow-emerald-500/20 group mb-16"
             >
               {t.pricing.buildOwnPackage}
               <Plus className="ml-2 w-5 h-5 group-hover:rotate-90 transition-transform" />
@@ -2255,14 +2066,14 @@ const VistomioLandingPage: React.FC = () => {
           </div>
 
           {/* Enterprise Section */}
-          <div className="max-w-5xl mx-auto bg-[#0B1121] rounded-[2rem] p-10 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden border border-slate-800">
+          <div className="max-w-5xl mx-auto bg-[#0B1121] rounded-[2rem] p-10 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-md relative overflow-hidden border border-gray-300">
              <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/5 blur-[80px] rounded-full pointer-events-none"></div>
              <div className="relative z-10 md:w-2/3">
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">{t.pricing.enterprise.title}</h3>
-                <p className="text-slate-400 text-lg leading-relaxed">{t.pricing.enterprise.desc}</p>
+                <h3 className="text-2xl md:text-3xl font-semibold text-boutique-anthracite mb-4 font-serif tracking-wide">{t.pricing.enterprise.title}</h3>
+                <p className="text-gray-600 text-lg leading-relaxed">{t.pricing.enterprise.desc}</p>
              </div>
              <div className="relative z-10 md:w-1/3 flex justify-end w-full">
-                <button onClick={() => setIsContactModalOpen(true)} className="w-full md:w-auto px-8 py-4 bg-white text-[#0B1121] font-bold rounded-2xl hover:bg-slate-200 transition-colors shadow-lg">
+                <button onClick={() => setIsContactModalOpen(true)} className="w-full md:w-auto px-8 py-4 bg-white text-[#0B1121] font-semibold rounded-2xl hover:bg-slate-200 transition-colors shadow-sm">
                   {t.pricing.enterprise.cta}
                 </button>
              </div>
@@ -2272,35 +2083,32 @@ const VistomioLandingPage: React.FC = () => {
 
       {/* --- CTA FINAL --- */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-950 opacity-95"></div>
+        <div className="absolute inset-0 opacity-95"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[300px] bg-amber-500/10 blur-[100px] rounded-full"></div>
         
-        <div className="max-w-4xl mx-auto px-4 relative z-10 text-center text-white">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">{t.ctaFinal.title}</h2>
-          <p className="text-xl text-[#FCE69B] mb-12 max-w-2xl mx-auto font-light">{t.ctaFinal.subtitle}</p>
-          <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="inline-block bg-white text-[#0B1121] font-bold text-xl px-12 py-5 rounded-full shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:shadow-[0_0_60px_rgba(255,255,255,0.4)] hover:scale-105 transition-all">
+        <div className="max-w-4xl mx-auto px-4 relative z-10 text-center text-boutique-anthracite">
+          <SectionHeader eyebrow="VISTOMIO" title={t.ctaFinal.title} align="center" />
+          <p className="text-xl text-boutique-gold mb-12 max-w-2xl mx-auto font-light">{t.ctaFinal.subtitle}</p>
+          <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="inline-block bg-white text-[#0B1121] font-semibold text-xl px-12 py-5 rounded-full shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:shadow-[0_0_60px_rgba(255,255,255,0.4)] hover:scale-105 transition-all">
             {t.ctaFinal.button}
           </a>
         </div>
       </section>
 
       {/* --- FOOTER --- */}
-      <footer id="contacto" className="bg-slate-900 text-slate-400 py-16 border-t border-slate-800">
+      <footer id="contacto" className="bg-boutique-offwhite text-gray-600 py-16 border-t border-gray-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#D4AF37] to-[#FCE69B] flex items-center justify-center text-[#0B1121]">
-               <BoutiqueLogoIcon className="w-5 h-5 text-slate-900" strokeWidth={1.5} />
-            </div>
-            <span className="text-2xl font-bold text-white tracking-tight">Vistomio</span>
+          <div className="flex items-center">
+            <img src="/logo-full-transparent.png" alt="Vistomio Logo" className="h-24 md:h-28 w-auto object-contain" />
           </div>
           
           <div className="flex flex-wrap justify-center gap-4 sm:gap-8 text-sm font-medium">
-            <a href="#" className="hover:text-white transition-colors">{t.footer.legal}</a>
-            <a href="#" className="hover:text-white transition-colors">{t.footer.privacy}</a>
-            <a href="mailto:hola@vistomio.com" className="hover:text-white transition-colors">{t.footer.contact}</a>
+            <a href="#" className="hover:text-boutique-anthracite transition-colors">{t.footer.legal}</a>
+            <a href="#" className="hover:text-boutique-anthracite transition-colors">{t.footer.privacy}</a>
+            <a href="mailto:hola@vistomio.com" className="hover:text-boutique-anthracite transition-colors">{t.footer.contact}</a>
           </div>
 
-          <div className="text-sm text-slate-500">
+          <div className="text-sm text-gray-500">
             {t.footer.rights}
           </div>
         </div>
@@ -2313,7 +2121,7 @@ const VistomioLandingPage: React.FC = () => {
         aria-label="Volver arriba"
         title="Volver arriba"
       >
-        <span className="font-bold text-sm ml-1 mr-2 w-0 overflow-hidden group-hover:w-auto opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap inline-block">Volver arriba</span>
+        <span className="font-semibold text-sm ml-1 mr-2 w-0 overflow-hidden group-hover:w-auto opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap inline-block">Volver arriba</span>
         <ArrowUp size={20} />
       </button>
 
@@ -2322,16 +2130,16 @@ const VistomioLandingPage: React.FC = () => {
       {/* Custom Plan Modal */}
       {isCustomPlanModalOpen && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-slate-900 border border-slate-800 rounded-3xl w-full max-w-4xl max-h-[90vh] flex flex-col relative overflow-hidden shadow-2xl">
+          <div className="bg-boutique-offwhite border border-gray-300 rounded-3xl w-full max-w-4xl max-h-[90vh] flex flex-col relative overflow-hidden shadow-md">
             {/* Header */}
-            <div className="p-6 md:p-8 border-b border-slate-800 flex justify-between items-center bg-slate-900/50 sticky top-0 z-10">
+            <div className="p-6 md:p-8 border-b border-gray-300 flex justify-between items-center bg-boutique-offwhite/50 sticky top-0 z-10">
               <div>
-                <h3 className="text-2xl font-bold text-white mb-2">{t.pricing.customModalTitle}</h3>
-                <p className="text-slate-400">{t.pricing.customModalSubtitle}</p>
+                <h3 className="text-2xl font-semibold text-boutique-anthracite mb-2 font-serif tracking-wide">{t.pricing.customModalTitle}</h3>
+                <p className="text-gray-600">{t.pricing.customModalSubtitle}</p>
               </div>
               <button 
                 onClick={() => setIsCustomPlanModalOpen(false)}
-                className="p-2 text-slate-400 hover:text-white bg-slate-800/50 hover:bg-slate-800 rounded-full transition-colors"
+                className="p-2 text-gray-600 hover:text-boutique-anthracite bg-boutique-sand/50 hover:bg-boutique-sand rounded-full transition-colors"
               >
                 <X size={24} />
               </button>
@@ -2361,11 +2169,11 @@ const VistomioLandingPage: React.FC = () => {
                           >
                             <div className="flex items-start gap-3 h-full">
                               <div className={`mt-0.5 shrink-0 ${isSelected ? 'text-emerald-400' : 'text-slate-500'}`}>
-                                {isSelected ? <CheckCircle2 size={20} /> : <div className="w-5 h-5 rounded-full border-2 border-slate-600"></div>}
+                                {isSelected ? <CheckCircle2 size={20} /> : <div className="w-5 h-5 rounded-full border-2 border-gray-300"></div>}
                               </div>
                               <div className="flex-grow">
                                 <h5 className={`font-semibold mb-1 ${isSelected ? 'text-emerald-300' : 'text-white'}`}>{item.title}</h5>
-                                <p className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
+                                <p className="text-xs text-gray-600 leading-relaxed">{item.desc}</p>
                               </div>
                             </div>
                           </div>
@@ -2378,10 +2186,10 @@ const VistomioLandingPage: React.FC = () => {
             </div>
 
             {/* Footer */}
-            <div className="p-6 md:p-8 border-t border-slate-800 bg-slate-900/80 sticky bottom-0 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div className="p-6 md:p-8 border-t border-gray-300 bg-slate-900/80 sticky bottom-0 flex flex-col sm:flex-row justify-between items-center gap-4">
               <div className="text-left w-full sm:w-auto">
-                <span className="text-slate-400 text-sm block mb-1">{t.pricing.selectedModules}:</span>
-                <span className="text-2xl font-bold text-white">{selectedCustomModules.length}</span>
+                <span className="text-gray-600 text-sm block mb-1">{t.pricing.selectedModules}:</span>
+                <span className="text-2xl font-semibold text-boutique-anthracite">{selectedCustomModules.length}</span>
               </div>
               <button 
                 className={`w-full sm:w-auto px-8 py-3 rounded-xl font-bold transition-all ${
@@ -2407,10 +2215,10 @@ const VistomioLandingPage: React.FC = () => {
       {isContactModalOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
           <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onClick={() => { setIsContactModalOpen(false); setContactModalView('options'); }}></div>
-          <div className="relative bg-slate-900 border border-slate-800 rounded-[2.5rem] p-5 sm:p-8 md:p-12 shadow-2xl w-full max-w-xl animate-[translate-y-0_0.3s_ease-out] overflow-hidden max-h-[90vh] overflow-y-auto custom-scrollbar">
+          <div className="relative bg-boutique-offwhite border border-gray-300 rounded-[2.5rem] p-5 sm:p-8 md:p-12 shadow-md w-full max-w-xl animate-[translate-y-0_0.3s_ease-out] overflow-hidden max-h-[90vh] overflow-y-auto custom-scrollbar">
             <button 
               onClick={() => { setIsContactModalOpen(false); setContactModalView('options'); }}
-              className="absolute top-6 right-6 w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-slate-400 hover:text-white transition-colors z-10"
+              className="absolute top-6 right-6 w-10 h-10 bg-boutique-sand rounded-full flex items-center justify-center text-gray-600 hover:text-boutique-anthracite transition-colors z-10"
             >
               <X size={20} />
             </button>
@@ -2418,46 +2226,46 @@ const VistomioLandingPage: React.FC = () => {
             {contactModalView === 'options' ? (
               <div className="animate-[fade-in_0.3s_ease-out]">
                 <div className="text-center mb-10">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#D4AF37] to-[#FCE69B] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-amber-900/30">
-                    <Calendar size={32} className="text-white" />
+                  <div className="w-16 h-16 from-[#D4AF37] to-[#FCE69B] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm shadow-amber-900/30">
+                    <Calendar size={32} className="text-boutique-anthracite" />
                   </div>
-                  <h3 className="text-3xl font-bold text-white mb-3">{t.contactModal.options.title}</h3>
-                  <p className="text-slate-400">{t.contactModal.options.desc}</p>
+                  <h3 className="text-3xl font-semibold text-boutique-anthracite mb-3 font-serif tracking-wide">{t.contactModal.options.title}</h3>
+                  <p className="text-gray-600">{t.contactModal.options.desc}</p>
                 </div>
 
                 <div className="space-y-4">
-                  <button onClick={() => setContactModalView('calendar')} className="w-full bg-white text-[#0B1121] font-bold text-lg py-5 rounded-2xl flex items-center justify-center gap-3 hover:bg-slate-100 transition-colors shadow-xl">
+                  <button onClick={() => setContactModalView('calendar')} className="w-full bg-white text-[#0B1121] font-semibold text-lg py-5 rounded-2xl flex items-center justify-center gap-3 hover:bg-slate-100 transition-colors shadow-sm">
                     <Calendar size={24} />
                     {t.contactModal.options.bookBtn}
                   </button>
 
                   <div className="relative py-4">
                     <div className="absolute inset-0 flex items-center">
-                      <div className="w-full border-t border-slate-800"></div>
+                      <div className="w-full border-t border-gray-300"></div>
                     </div>
                     <div className="relative flex justify-center">
-                      <span className="px-4 bg-slate-900 text-sm text-slate-500 font-medium">{t.contactModal.options.orContact}</span>
+                      <span className="px-4 bg-boutique-offwhite text-sm text-gray-500 font-medium">{t.contactModal.options.orContact}</span>
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <button onClick={() => setContactModalView('email')} className="bg-slate-800 hover:bg-slate-700 border border-slate-700 p-4 rounded-2xl flex flex-col items-center gap-3 transition-colors group">
-                      <div className="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center text-slate-400 group-hover:text-[#FCE69B] transition-colors">
+                    <button onClick={() => setContactModalView('email')} className="bg-boutique-sand hover:bg-white border border-boutique-sand p-4 rounded-2xl flex flex-col items-center gap-3 transition-colors group">
+                      <div className="w-12 h-12 bg-boutique-offwhite rounded-xl flex items-center justify-center text-gray-600 group-hover:text-[#FCE69B] transition-colors">
                         <Mail size={24} />
                       </div>
                       <div className="text-center">
-                        <div className="text-sm font-bold text-white mb-1">Email</div>
-                        <div className="text-xs text-slate-400">info@vistomio.com</div>
+                        <div className="text-sm font-semibold text-boutique-anthracite mb-1">Email</div>
+                        <div className="text-xs text-gray-600">info@vistomio.com</div>
                       </div>
                     </button>
                     
-                    <a href="https://wa.me/525540590054" target="_blank" rel="noreferrer" className="bg-slate-800 hover:bg-slate-700 border border-slate-700 p-4 rounded-2xl flex flex-col items-center gap-3 transition-colors group">
-                      <div className="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center text-slate-400 group-hover:text-emerald-400 transition-colors">
+                    <a href="https://wa.me/525540590054" target="_blank" rel="noreferrer" className="bg-boutique-sand hover:bg-white border border-boutique-sand p-4 rounded-2xl flex flex-col items-center gap-3 transition-colors group">
+                      <div className="w-12 h-12 bg-boutique-offwhite rounded-xl flex items-center justify-center text-gray-600 group-hover:text-emerald-400 transition-colors">
                         <MessageSquareText size={24} />
                       </div>
                       <div className="text-center">
-                        <div className="text-sm font-bold text-white mb-1">WhatsApp</div>
-                        <div className="text-xs text-slate-400">+52 55 40590054</div>
+                        <div className="text-sm font-semibold text-boutique-anthracite mb-1">WhatsApp</div>
+                        <div className="text-xs text-gray-600">+52 55 40590054</div>
                       </div>
                     </a>
                   </div>
@@ -2472,16 +2280,16 @@ const VistomioLandingPage: React.FC = () => {
                     setIsContactModalOpen(false);
                     setIsCustomPlanModalOpen(true);
                   }}
-                  className="absolute top-6 left-6 w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-slate-400 hover:text-white transition-colors z-10"
+                  className="absolute top-6 left-6 w-10 h-10 bg-boutique-sand rounded-full flex items-center justify-center text-gray-600 hover:text-boutique-anthracite transition-colors z-10"
                 >
                   <ArrowLeft size={20} />
                 </button>
                 <div className="text-center mb-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-emerald-900/30">
-                    <CheckCircle2 size={32} className="text-white" />
+                  <div className="w-16 h-16 from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm shadow-emerald-900/30">
+                    <CheckCircle2 size={32} className="text-boutique-anthracite" />
                   </div>
-                  <h3 className="text-3xl font-bold text-white mb-2">{t.customPlanModal.title}</h3>
-                  <p className="text-slate-400 text-sm">{t.customPlanModal.desc}</p>
+                  <h3 className="text-3xl font-semibold text-boutique-anthracite mb-2 font-serif tracking-wide">{t.customPlanModal.title}</h3>
+                  <p className="text-gray-600 text-sm">{t.customPlanModal.desc}</p>
                 </div>
 
                 <form className="space-y-4" onSubmit={(e) => { 
@@ -2508,9 +2316,9 @@ const VistomioLandingPage: React.FC = () => {
                 }}>
                   
                   {selectedCustomModules.length > 0 && (
-                    <div className="bg-slate-900/50 border border-slate-800 p-4 rounded-xl mb-4">
+                    <div className="bg-boutique-offwhite/50 border border-gray-300 p-4 rounded-xl mb-4">
                       <label className="block text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-2">{t.customPlanModal.selectedModules}</label>
-                      <ul className="text-slate-300 text-sm list-disc pl-4">
+                      <ul className="text-boutique-anthracite text-sm list-disc pl-4">
                         {selectedCustomModules.map((mod, i) => (
                           <li key={i}>{mod}</li>
                         ))}
@@ -2520,48 +2328,48 @@ const VistomioLandingPage: React.FC = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">{t.customPlanModal.emailLabel}</label>
+                      <label className="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-2">{t.customPlanModal.emailLabel}</label>
                       <input 
                         type="email" 
                         name="email"
                         required 
                         placeholder={t.customPlanModal.emailPlaceholder}
-                        className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all"
+                        className="w-full bg-boutique-sand border border-boutique-sand text-boutique-anthracite placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">{t.customPlanModal.phoneLabel}</label>
+                      <label className="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-2">{t.customPlanModal.phoneLabel}</label>
                       <input 
                         type="tel" 
                         name="phone"
                         required 
                         placeholder={t.customPlanModal.phonePlaceholder}
-                        className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all"
+                        className="w-full bg-boutique-sand border border-boutique-sand text-boutique-anthracite placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all"
                       />
                     </div>
                   </div>
                   
                   <div>
-                    <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">{t.customPlanModal.companyLabel}</label>
+                    <label className="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-2">{t.customPlanModal.companyLabel}</label>
                     <input 
                       type="text" 
                       name="company"
                       placeholder={t.customPlanModal.companyPlaceholder}
-                      className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all"
+                      className="w-full bg-boutique-sand border border-boutique-sand text-boutique-anthracite placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">{t.customPlanModal.messageLabel}</label>
+                    <label className="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-2">{t.customPlanModal.messageLabel}</label>
                     <textarea 
                       name="message"
                       rows={3}
                       placeholder={t.customPlanModal.messagePlaceholder}
-                      className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all resize-none"
+                      className="w-full bg-boutique-sand border border-boutique-sand text-boutique-anthracite placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all resize-none"
                     ></textarea>
                   </div>
                   
-                  <button type="submit" className="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold text-lg py-4 rounded-xl flex items-center justify-center gap-2 transition-colors shadow-lg shadow-emerald-500/20 mt-6">
+                  <button type="submit" className="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-semibold text-lg py-4 rounded-xl flex items-center justify-center gap-2 transition-colors shadow-sm shadow-emerald-500/20 mt-6">
                     <Send size={20} />
                     {t.customPlanModal.sendBtn}
                   </button>
@@ -2571,48 +2379,48 @@ const VistomioLandingPage: React.FC = () => {
               <div className="animate-[fade-in_0.3s_ease-out]">
                 <button 
                   onClick={() => setContactModalView('options')}
-                  className="absolute top-6 left-6 w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-slate-400 hover:text-white transition-colors z-10"
+                  className="absolute top-6 left-6 w-10 h-10 bg-boutique-sand rounded-full flex items-center justify-center text-gray-600 hover:text-boutique-anthracite transition-colors z-10"
                 >
                   <ArrowLeft size={20} />
                 </button>
                 <div className="text-center mb-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#D4AF37] to-[#FCE69B] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-amber-900/30">
-                    <Mail size={32} className="text-white" />
+                  <div className="w-16 h-16 from-[#D4AF37] to-[#FCE69B] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm shadow-amber-900/30">
+                    <Mail size={32} className="text-boutique-anthracite" />
                   </div>
-                  <h3 className="text-3xl font-bold text-white mb-2">{t.contactModal.email.title}</h3>
-                  <p className="text-slate-400 text-sm">{t.contactModal.email.desc}</p>
+                  <h3 className="text-3xl font-semibold text-boutique-anthracite mb-2 font-serif tracking-wide">{t.contactModal.email.title}</h3>
+                  <p className="text-gray-600 text-sm">{t.contactModal.email.desc}</p>
                 </div>
 
                 <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); alert(t.contactModal.email.success); setIsContactModalOpen(false); setContactModalView('options'); }}>
                   <div>
-                    <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">{t.contactModal.email.toLabel}</label>
+                    <label className="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-2">{t.contactModal.email.toLabel}</label>
                     <input 
                       type="email" 
                       value="info@vistomio.com" 
                       disabled 
-                      className="w-full bg-slate-900/50 border border-slate-800 text-slate-500 rounded-xl px-4 py-3 cursor-not-allowed"
+                      className="w-full bg-boutique-offwhite/50 border border-gray-300 text-gray-500 rounded-xl px-4 py-3 cursor-not-allowed"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">{t.contactModal.email.emailLabel}</label>
+                    <label className="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-2">{t.contactModal.email.emailLabel}</label>
                     <input 
                       type="email" 
                       required 
                       placeholder={t.contactModal.email.emailPlaceholder}
-                      className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all"
+                      className="w-full bg-boutique-sand border border-boutique-sand text-boutique-anthracite placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">{t.contactModal.email.messageLabel}</label>
+                    <label className="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-2">{t.contactModal.email.messageLabel}</label>
                     <textarea 
                       required 
                       rows={4}
                       placeholder={t.contactModal.email.messagePlaceholder}
-                      className="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all resize-none"
+                      className="w-full bg-boutique-sand border border-boutique-sand text-boutique-anthracite placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all resize-none"
                     ></textarea>
                   </div>
                   
-                  <button type="submit" className="w-full bg-gradient-to-br from-[#D4AF37] to-[#FCE69B] text-[#0B1121] hover:brightness-110 shadow-lg shadow-[#D4AF37]/30 border border-[#FCE69B]/50 font-bold text-lg py-4 rounded-xl flex items-center justify-center gap-2 transition-colors shadow-lg shadow-amber-900/20 mt-4">
+                  <button type="submit" className="w-full from-[#D4AF37] to-[#FCE69B] text-[#0B1121] hover:brightness-110 shadow-sm shadow-[#D4AF37]/30 border border-[#FCE69B]/50 font-semibold text-lg py-4 rounded-xl flex items-center justify-center gap-2 transition-colors shadow-amber-900/20 mt-4">
                     <Send size={20} />
                     {t.contactModal.email.sendBtn}
                   </button>
@@ -2622,36 +2430,36 @@ const VistomioLandingPage: React.FC = () => {
               <div className="animate-[fade-in_0.3s_ease-out]">
                 <button 
                   onClick={() => setContactModalView('options')}
-                  className="absolute top-6 left-6 w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-slate-400 hover:text-white transition-colors z-10"
+                  className="absolute top-6 left-6 w-10 h-10 bg-boutique-sand rounded-full flex items-center justify-center text-gray-600 hover:text-boutique-anthracite transition-colors z-10"
                 >
                   <ArrowLeft size={20} />
                 </button>
                 <div className="text-center mb-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#D4AF37] to-[#FCE69B] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-amber-900/30">
+                  <div className="w-16 h-16 from-[#D4AF37] to-[#FCE69B] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm shadow-amber-900/30">
                     <Calendar size={32} className="text-[#0B1121]" />
                   </div>
-                  <h3 className="text-3xl font-bold text-white mb-2">{t.contactModal.calendar.title}</h3>
-                  <p className="text-slate-400 text-sm">{t.contactModal.calendar.desc}</p>
+                  <h3 className="text-3xl font-semibold text-boutique-anthracite mb-2 font-serif tracking-wide">{t.contactModal.calendar.title}</h3>
+                  <p className="text-gray-600 text-sm">{t.contactModal.calendar.desc}</p>
                 </div>
                 
                 <div className="space-y-6">
                   <div>
-                    <h4 className="text-sm font-semibold text-slate-300 mb-3">{t.contactModal.calendar.daysLabel}</h4>
+                    <h4 className="text-sm font-semibold text-boutique-anthracite mb-3">{t.contactModal.calendar.daysLabel}</h4>
                     <div className="flex gap-3 overflow-x-auto custom-scrollbar pb-2">
                       {['Lun 14', 'Mar 15', 'Mié 16', 'Jue 17', 'Vie 18', 'Sáb 19', 'Dom 20'].map((day, i) => (
                         <button key={i} className={`flex-shrink-0 w-20 py-3 rounded-xl border ${i === 2 ? 'border-[#D4AF37] bg-[#D4AF37]/10 text-[#D4AF37]' : 'border-slate-700 bg-slate-800 text-slate-400 hover:bg-slate-700'} flex flex-col items-center justify-center gap-1 transition-colors`}>
                           <span className="text-xs uppercase">{t.contactModal.calendar.days[i]}</span>
-                          <span className="text-lg font-bold">{`${day.split(' ')[1]}`}</span>
+                          <span className="text-lg font-semibold">{`${day.split(' ')[1]}`}</span>
                         </button>
                       ))}
                     </div>
                   </div>
 
                   <div>
-                    <h4 className="text-sm font-semibold text-slate-300 mb-3">{t.contactModal.calendar.timesLabel} ({t.contactModal.calendar.days[2]} 16)</h4>
+                    <h4 className="text-sm font-semibold text-boutique-anthracite mb-3">{t.contactModal.calendar.timesLabel} ({t.contactModal.calendar.days[2]} 16)</h4>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                       {['09:00', '10:00', '11:30', '14:00', '15:30', '17:00'].map((time, i) => (
-                        <button key={i} onClick={() => { alert(t.contactModal.calendar.successAlert.replace('{time}', time).replace('{day}', t.contactModal.calendar.days[2] + ' 16')); setIsContactModalOpen(false); setContactModalView('options'); }} className="py-2.5 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 font-medium hover:border-[#D4AF37] hover:text-[#D4AF37] hover:bg-[#D4AF37]/5 transition-colors flex items-center justify-center gap-2">
+                        <button key={i} onClick={() => { alert(t.contactModal.calendar.successAlert.replace('{time}', time).replace('{day}', t.contactModal.calendar.days[2] + ' 16')); setIsContactModalOpen(false); setContactModalView('options'); }} className="py-2.5 rounded-lg border border-boutique-sand bg-boutique-sand text-boutique-anthracite font-medium hover:border-[#D4AF37]ver:border-[#D4AF37] hover:text-[#D4AF37] hover:bg-[#D4AF37]/5 transition-colors flex items-center justify-center gap-2">
                           <Clock size={16} /> {time}
                         </button>
                       ))}
@@ -2667,5 +2475,23 @@ const VistomioLandingPage: React.FC = () => {
   );
 };
 
+
+function SectionHeader({ eyebrow, title, align = 'center' }: { eyebrow?: string, title?: string, align?: 'left' | 'center' }) {
+  return (
+    <div className={`mb-12 md:mb-16 ${align === 'center' ? 'text-center flex flex-col items-center' : 'text-left flex flex-col items-start'}`}>
+      {eyebrow && (
+        <div className={`flex items-center gap-4 ${!title ? 'mb-0' : 'mb-5'} ${align === 'center' ? 'justify-center' : 'justify-start'}`}>
+          <div className="w-10 h-[1.5px] bg-[#D4AF37]"></div>
+          <span className="text-[#D4AF37] font-bold tracking-[0.25em] text-[10px] md:text-xs uppercase">{eyebrow}</span>
+        </div>
+      )}
+      {title && (
+        <h2 className="text-3xl md:text-4xl lg:text-[40px] font-serif text-[#2C3238] font-normal leading-tight max-w-4xl mx-auto">
+          {title}
+        </h2>
+      )}
+    </div>
+  );
+}
 
 export default VistomioLandingPage;
