@@ -29,7 +29,7 @@ import {
   ClipboardCheck,
   Bot,
   LineChart,
-  Plus,
+
   Calendar,
   CalendarCheck,
   Clock,
@@ -108,7 +108,7 @@ const translations = {
     socialProof: 'Negocios que ya confían en Vistomio',
     boutiqueNiche: {
       tag: 'JÓVENES, VALIENTES Y PRAGMÁTICOS',
-      title: 'Diseñado para lugares con alma',
+      title: 'Tecnología para lugares con alma',
       subtitle: 'No somos un software corporativo aburrido y gris. Creamos tecnología vibrante y pragmática para hoteles y restaurantes boutique que quieren automatizar y optimizar sus operaciones para dedicar <span class="text-[#A37A3B] font-bold">tiempo a lo importante: dar un servicio excepcional.</span>',
       cards: [
         {
@@ -128,8 +128,8 @@ const translations = {
         }
       ]
     },
-    featuresTitle: 'Módulos diseñados para el futuro',
-    featuresSubtitle: 'Ecosistema interconectado. Utiliza un módulo o despliega la suite completa en minutos.',
+    featuresTitle: '',
+    featuresSubtitle: 'Ecosistema interconectado y modular, usa solo lo que necesitas',
     standaloneBadge1: 'Disponible como',
     standaloneBadge2: 'app independiente',
     seeHowItWorks: 'Ver cómo funciona',
@@ -484,7 +484,7 @@ const translations = {
     socialProof: 'Businesses that already trust Vistomio',
     boutiqueNiche: {
       tag: 'YOUNG, BOLD AND PRAGMATIC',
-      title: 'Designed for places with a soul',
+      title: 'Technology for places with a soul',
       subtitle: 'We are not a boring, gray corporate software. We build vibrant and pragmatic technology for boutique hotels and restaurants that want to automate and optimize their operations to dedicate <span class="text-[#A37A3B] font-bold">time to what matters: providing exceptional service.</span>',
       cards: [
         {
@@ -504,8 +504,8 @@ const translations = {
         }
       ]
     },
-    featuresTitle: 'Modules designed for the future',
-    featuresSubtitle: 'Interconnected ecosystem. Use a single module or deploy the full suite in minutes.',
+    featuresTitle: '',
+    featuresSubtitle: 'Interconnected and modular ecosystem, use only what you need',
     standaloneBadge1: 'Available as',
     standaloneBadge2: 'standalone app',
     seeHowItWorks: 'See how it works',
@@ -824,12 +824,12 @@ const translations = {
       logoSubtitle: 'La technologie sur mesure'
     },
     hero: {
-      badge: 'Boutique systems for boutique businesses',
-      title: 'Take your hotel management',
-      titleHighlight: 'to the next level',
-      subtitle: 'Excellence in hospitality starts from within. Centralize bookings, operations, administration, and finances in a tool designed to give you peace of mind.',
-      ctaPrimary: 'Explore platform',
-      ctaSecondary: 'Schedule demonstration'
+      badge: 'Systèmes sur mesure pour lieux d\'exception',
+      title: 'Faites passer la gestion de votre hôtel',
+      titleHighlight: 'au niveau supérieur',
+      subtitle: 'L\'excellence hôtelière commence de l\'intérieur. Centralisez les réservations, opérations, l\'administration et les finances dans un outil conçu pour vous offrir une tranquillité d\'esprit totale.',
+      ctaPrimary: 'Explorer la plateforme',
+      ctaSecondary: 'Planifier une entrevue'
     },
     locations: {
       noga: 'Zipolite, Mexique',
@@ -860,7 +860,7 @@ const translations = {
     socialProof: 'Les entreprises qui font déjà confiance à Vistomio',
     boutiqueNiche: {
       tag: 'JEUNES, AUDACIEUX ET PRAGMATIQUES',
-      title: 'Conçu pour les lieux avec une âme',
+      title: 'Une technologie pour des lieux qui ont une âme',
       subtitle: 'Nous ne sommes pas un logiciel d\'entreprise ennuyeux et gris. Nous créons une technologie vibrante et pragmatique pour les hôtels et restaurants de charme qui souhaitent automatiser et optimiser leurs opérations pour consacrer du <span class="text-[#A37A3B] font-bold">temps à ce qui compte : offrir un service exceptionnel.</span>',
       cards: [
         {
@@ -880,8 +880,8 @@ const translations = {
         }
       ]
     },
-    featuresTitle: "Des modules conçus pour l'avenir",
-    featuresSubtitle: 'Écosystème interconnecté. Utilisez un seul module ou déployez la suite complète en quelques minutes.',
+    featuresTitle: '',
+    featuresSubtitle: 'Écosystème interconnecté et modulaire, utilisez uniquement ce dont vous avez besoin',
     standaloneBadge1: 'Disponible comme',
     standaloneBadge2: 'app autonome',
     seeHowItWorks: 'Voir comment ça marche',
@@ -1475,17 +1475,11 @@ const VistomioLandingPage: React.FC = () => {
       </nav>
 
             {/* --- HERO SECTION --- */}
-      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-boutique-offwhite">
+      <section className="relative pt-40 pb-20 lg:pt-56 lg:pb-32 overflow-hidden bg-boutique-offwhite">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
             {/* Left Content */}
             <div className="w-full lg:w-[60%] flex flex-col items-start text-left lg:pr-12">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-[1px] bg-[#D4AF37]"></div>
-                <span className="text-[#D4AF37] text-xs font-semibold uppercase tracking-widest">
-                  {t.hero.badge || 'SISTEMAS BOUTIQUE PARA NEGOCIOS BOUTIQUE'}
-                </span>
-              </div>
 
               <h1 className="text-5xl md:text-6xl lg:text-[4.5rem] font-serif font-medium text-boutique-anthracite leading-[1.1] mb-4">
                 {t.hero.title}
@@ -1538,7 +1532,7 @@ const VistomioLandingPage: React.FC = () => {
               </div>
 
               {/* Resultado: Top Right */}
-              <div className="absolute top-32 -right-4 lg:-right-16 bg-white px-5 py-4 rounded-xl shadow-xl shadow-gray-300/60 border border-gray-100 flex items-center gap-4 z-20 animate-[float_5s_ease-in-out_infinite_1s] scale-[1.05]">
+              <div className="absolute top-8 -right-4 lg:-right-16 bg-white px-5 py-4 rounded-xl shadow-xl shadow-gray-300/60 border border-gray-100 flex items-center gap-4 z-20 animate-[float_5s_ease-in-out_infinite_1s] scale-[1.05]">
                 <div className="w-8 h-8 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-500">
                   <TrendingUp size={14} />
                 </div>
@@ -1646,8 +1640,9 @@ const VistomioLandingPage: React.FC = () => {
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
             <div className="lg:w-1/2">
 
+              <SectionHeader eyebrow={t.boutiqueNiche.title} align="left" />
               <p 
-                className="text-lg text-boutique-anthracite leading-relaxed mb-8"
+                className="text-lg text-boutique-anthracite leading-relaxed mb-8 mt-2"
                 dangerouslySetInnerHTML={{ __html: t.boutiqueNiche.subtitle }}
               />
               
@@ -1726,7 +1721,7 @@ const VistomioLandingPage: React.FC = () => {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20">
-            <SectionHeader eyebrow={lang === 'es' ? 'BENEFICIOS' : lang === 'en' ? 'BENEFITS' : 'AVANTAGES'} title={t.benefitsTitle} align="center" />
+            <SectionHeader eyebrow={t.benefitsTitle} align="center" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
@@ -1746,8 +1741,7 @@ const VistomioLandingPage: React.FC = () => {
       <section id="productos" className="scroll-mt-24 pt-16 pb-32 relative bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <SectionHeader eyebrow={lang === 'es' ? 'CARACTERÍSTICAS' : lang === 'en' ? 'FEATURES' : 'CARACTÉRISTIQUES'} title={t.featuresTitle} align="center" />
-            <p className="text-lg text-boutique-anthracite">{t.featuresSubtitle}</p>
+            <SectionHeader eyebrow={lang === 'es' ? 'PRODUCTOS' : lang === 'en' ? 'PRODUCTS' : 'PRODUITS'} title={t.featuresTitle} align="center" />
           </div>
 
           <div className="flex flex-col gap-16">
@@ -1756,9 +1750,12 @@ const VistomioLandingPage: React.FC = () => {
               const isChatbotCategory = catIdx === t.featureCategories.length - 1;
               return (
               <div key={catIdx} id={`category-${catIdx}`} className="flex flex-col scroll-mt-32">
-                <div className="mb-8 flex items-center gap-4">
-                  <h3 className="text-2xl font-semibold text-boutique-anthracite tracking-tight font-serif tracking-wide">{category.name}</h3>
-                  <div className="h-px bg-white flex-grow"></div>
+                <div className="mb-10 flex items-center gap-5">
+                  <div className="w-10 h-10 rounded-full bg-[#D4AF37]/10 flex shrink-0 items-center justify-center border border-[#D4AF37]/20 shadow-sm shadow-[#D4AF37]/5">
+                     <div className="w-2.5 h-2.5 rounded-full bg-[#D4AF37]"></div>
+                  </div>
+                  <h3 className="text-3xl md:text-4xl font-bold text-boutique-anthracite tracking-tight font-serif">{category.name}</h3>
+                  <div className="h-[2px] bg-gradient-to-r from-[#D4AF37]/30 to-transparent flex-grow rounded-full ml-4"></div>
                 </div>
                 
                 {!isChatbotCategory ? (
@@ -1776,7 +1773,7 @@ const VistomioLandingPage: React.FC = () => {
                           <feature.icon size={26} strokeWidth={1.5} />
                         </div>
                         {feature.standalone && (
-                          <div className="px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-emerald-400 text-[10px] font-semibold uppercase tracking-wider ml-2 mt-1 flex flex-col items-center justify-center text-center leading-[1.2]">
+                          <div className="px-3 py-1.5 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-xl text-[#A37A3B] text-[10px] font-bold uppercase tracking-widest ml-2 mt-1 flex flex-col items-center justify-center text-center leading-[1.2] shadow-sm">
                             <span>{t.standaloneBadge1}</span>
                             <span>{t.standaloneBadge2}</span>
                           </div>
@@ -1801,7 +1798,7 @@ const VistomioLandingPage: React.FC = () => {
                     <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-3">
                       <h4 className="text-3xl font-serif font-medium text-boutique-anthracite">{t.chatbotPlans.title}</h4>
                       <div className="inline-flex">
-                        <div className="px-3 py-1.5 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-700 text-[10px] font-bold uppercase tracking-widest shadow-sm">
+                        <div className="px-3 py-1.5 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-xl text-[#A37A3B] text-[10px] font-bold uppercase tracking-widest shadow-sm">
                           {t.standaloneBadge1} {t.standaloneBadge2}
                         </div>
                       </div>
@@ -1818,7 +1815,7 @@ const VistomioLandingPage: React.FC = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
                       {/* Standard Plan */}
-                      <div className="bg-white border border-gray-100 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 rounded-[2rem] p-8 flex flex-col h-full relative overflow-hidden group">
+                      <div className="bg-boutique-offwhite border border-gray-100 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 rounded-[2rem] p-8 flex flex-col h-full relative overflow-hidden group">
                         <div className="absolute top-0 left-0 w-full h-1 bg-[#D4AF37]/30 group-hover:bg-[#D4AF37] transition-colors"></div>
                         <div className="flex items-center gap-5 mb-6">
                           <div className="w-14 h-14 rounded-2xl bg-boutique-offwhite flex items-center justify-center border border-gray-100 text-boutique-anthracite shadow-sm">
@@ -1838,7 +1835,7 @@ const VistomioLandingPage: React.FC = () => {
                       </div>
 
                       {/* Premium Plan */}
-                      <div className="bg-white border border-gray-100 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 rounded-[2rem] p-8 flex flex-col h-full relative overflow-hidden group">
+                      <div className="bg-boutique-offwhite border border-gray-100 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 rounded-[2rem] p-8 flex flex-col h-full relative overflow-hidden group">
                         <div className="absolute top-0 left-0 w-full h-1 bg-[#D4AF37]/30 group-hover:bg-[#D4AF37] transition-colors"></div>
                         <div className="flex items-center gap-5 mb-6">
                           <div className="w-14 h-14 rounded-2xl bg-boutique-offwhite flex items-center justify-center border border-gray-100 text-boutique-anthracite shadow-sm">
@@ -1858,7 +1855,7 @@ const VistomioLandingPage: React.FC = () => {
                       </div>
 
                       {/* Autonomous Plan */}
-                      <div className="bg-white border border-gray-100 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 rounded-[2rem] p-8 flex flex-col h-full relative overflow-hidden group">
+                      <div className="bg-boutique-offwhite border border-gray-100 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 rounded-[2rem] p-8 flex flex-col h-full relative overflow-hidden group">
                         <div className="absolute top-0 left-0 w-full h-1 bg-[#D4AF37]/30 group-hover:bg-[#D4AF37] transition-colors"></div>
                         <div className="flex items-center gap-5 mb-6">
                           <div className="w-14 h-14 rounded-2xl bg-boutique-offwhite flex items-center justify-center border border-gray-100 text-boutique-anthracite shadow-sm">
@@ -1887,19 +1884,18 @@ const VistomioLandingPage: React.FC = () => {
       </section>
 
       {/* CHATBOT SIMULATOR SECTION */}
-      <section id="demo-chatbot" className="py-24 relative bg-white border-t border-gray-300 overflow-hidden">
+      <section id="demo-chatbot" className="py-24 relative bg-boutique-offwhite border-t border-gray-300 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <ChatbotSimulator currentLanguage={lang} />
         </div>
       </section>
 
       {/* POS SIMULATOR SECTION */}
-      <section id="demo-pos" className="py-24 relative bg-boutique-offwhite border-t border-gray-300 overflow-hidden">
-        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+      <section id="demo-pos" className="py-24 relative bg-boutique-offwhite overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="flex-1 text-center lg:text-left">
-              <div className="inline-block px-4 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-full text-emerald-400 text-sm font-semibold uppercase tracking-wider mb-6">
+              <div className="inline-block px-4 py-1.5 bg-boutique-gold/10 border border-boutique-gold/30 rounded-full text-boutique-gold text-sm font-semibold uppercase tracking-wider mb-6">
                 Mini demo
               </div>
               <h2 className="text-4xl md:text-5xl font-semibold text-boutique-anthracite mb-6 leading-tight font-serif tracking-wide">
@@ -1940,7 +1936,7 @@ const VistomioLandingPage: React.FC = () => {
       </section>
 
       {/* STAFF APP SIMULATOR SECTION */}
-      <section id="demo-staff" className="py-24 relative bg-white overflow-hidden">
+      <section id="demo-staff" className="py-24 relative bg-boutique-offwhite overflow-hidden">
         <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-boutique-gold/10 blur-[120px] rounded-full pointer-events-none"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
@@ -2013,7 +2009,7 @@ const VistomioLandingPage: React.FC = () => {
 
 
 
-      <section id="precios" className="scroll-mt-24 py-32 relative bg-boutique-offwhite border-t border-gray-300">
+      <section id="precios" className="scroll-mt-24 py-32 relative bg-white border-t border-gray-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <SectionHeader eyebrow={lang === 'es' ? 'PLANES Y PRECIOS' : lang === 'en' ? 'PLANS & PRICING' : 'PLANS ET PRIX'} title={t.pricing.title} align="center" />
@@ -2029,7 +2025,7 @@ const VistomioLandingPage: React.FC = () => {
                   </div>
                 )}
                 
-                <h3 className={`text-2xl font-bold ${plan.highlight ? 'text-[#0B1121]' : 'text-white'} mb-2 pr-24`}>{plan.name}</h3>
+                <h3 className={`text-2xl font-bold ${plan.highlight ? 'text-[#D4AF37]' : 'text-white'} mb-2 pr-24`}>{plan.name}</h3>
                 <div className="text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-6 bg-emerald-500/10 inline-block px-3 py-1.5 rounded-full border border-emerald-500/30 self-start shadow-sm shadow-emerald-500/10">{plan.setupPrice}</div>
                 
                 <div className="flex items-baseline gap-1 mb-8">
@@ -2041,8 +2037,8 @@ const VistomioLandingPage: React.FC = () => {
                 
                 <div className="space-y-4 mb-10 flex-grow">
                   {plan.features.map((feat, i) => (
-                    <div key={i} className="flex items-start gap-4 text-boutique-anthracite">
-                      <CheckCircle2 className={`${plan.highlight ? 'text-[#D4AF37]' : 'text-slate-400'} shrink-0 mt-0.5`} size={20} />
+                    <div key={i} className="flex items-start gap-4 text-gray-200">
+                      <CheckCircle2 className={`${plan.highlight ? 'text-[#D4AF37]' : 'text-gray-400'} shrink-0 mt-0.5`} size={20} />
                       <span className="text-base leading-snug">{feat}</span>
                     </div>
                   ))}
@@ -2055,22 +2051,13 @@ const VistomioLandingPage: React.FC = () => {
             ))}
           </div>
 
-          <div className="mt-16 text-center">
-            <button 
-              onClick={() => setIsCustomPlanModalOpen(true)}
-              className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-emerald-500/50 hover:border-emerald-400 text-emerald-400 hover:text-emerald-300 rounded-xl font-semibold transition-all shadow-sm hover:shadow-emerald-500/20 group mb-16"
-            >
-              {t.pricing.buildOwnPackage}
-              <Plus className="ml-2 w-5 h-5 group-hover:rotate-90 transition-transform" />
-            </button>
-          </div>
 
           {/* Enterprise Section */}
           <div className="max-w-5xl mx-auto bg-[#0B1121] rounded-[2rem] p-10 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-md relative overflow-hidden border border-gray-300">
              <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/5 blur-[80px] rounded-full pointer-events-none"></div>
              <div className="relative z-10 md:w-2/3">
-                <h3 className="text-2xl md:text-3xl font-semibold text-boutique-anthracite mb-4 font-serif tracking-wide">{t.pricing.enterprise.title}</h3>
-                <p className="text-gray-600 text-lg leading-relaxed">{t.pricing.enterprise.desc}</p>
+                <h3 className="text-2xl md:text-3xl font-semibold text-white mb-4 font-serif tracking-wide">{t.pricing.enterprise.title}</h3>
+                <p className="text-gray-300 text-lg leading-relaxed">{t.pricing.enterprise.desc}</p>
              </div>
              <div className="relative z-10 md:w-1/3 flex justify-end w-full">
                 <button onClick={() => setIsContactModalOpen(true)} className="w-full md:w-auto px-8 py-4 bg-white text-[#0B1121] font-semibold rounded-2xl hover:bg-slate-200 transition-colors shadow-sm">
@@ -2082,21 +2069,35 @@ const VistomioLandingPage: React.FC = () => {
       </section>
 
       {/* --- CTA FINAL --- */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-95"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[300px] bg-amber-500/10 blur-[100px] rounded-full"></div>
-        
-        <div className="max-w-4xl mx-auto px-4 relative z-10 text-center text-boutique-anthracite">
-          <SectionHeader eyebrow="VISTOMIO" title={t.ctaFinal.title} align="center" />
-          <p className="text-xl text-boutique-gold mb-12 max-w-2xl mx-auto font-light">{t.ctaFinal.subtitle}</p>
-          <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="inline-block bg-white text-[#0B1121] font-semibold text-xl px-12 py-5 rounded-full shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:shadow-[0_0_60px_rgba(255,255,255,0.4)] hover:scale-105 transition-all">
+      <section className="py-24 md:py-32 relative bg-boutique-anthracite overflow-hidden">
+        {/* Background Accents */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-boutique-gold/10 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-boutique-sand/10 blur-[100px] rounded-full -translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
+
+        <div className="max-w-4xl mx-auto px-4 relative z-10 text-center flex flex-col items-center">
+          <div className="flex items-center gap-4 mb-6 justify-center">
+            <div className="w-12 h-[2px] bg-[#D4AF37]"></div>
+            <span className="text-[#D4AF37] font-bold tracking-[0.25em] text-xs md:text-sm uppercase">VISTOMIO</span>
+            <div className="w-12 h-[2px] bg-[#D4AF37]"></div>
+          </div>
+          
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white font-normal leading-tight mb-8">
+            {t.ctaFinal.title}
+          </h2>
+          
+          <p className="text-xl md:text-2xl text-gray-300 mb-14 max-w-2xl mx-auto font-light leading-relaxed">
+            {t.ctaFinal.subtitle}
+          </p>
+          
+          <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="inline-flex items-center gap-2 bg-[#D4AF37] text-white font-semibold text-lg md:text-xl px-10 py-5 rounded-full hover:bg-[#b5932d] shadow-lg hover:shadow-2xl hover:shadow-[#D4AF37]/30 transition-all hover:-translate-y-1">
             {t.ctaFinal.button}
+            <ArrowRight className="w-5 h-5" />
           </a>
         </div>
       </section>
 
       {/* --- FOOTER --- */}
-      <footer id="contacto" className="bg-boutique-offwhite text-gray-600 py-16 border-t border-gray-300">
+      <footer id="contacto" className="bg-white text-gray-600 py-16 border-t border-gray-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex items-center">
             <img src="/logo-full-transparent.png" alt="Vistomio Logo" className="h-24 md:h-28 w-auto object-contain" />
@@ -2481,8 +2482,8 @@ function SectionHeader({ eyebrow, title, align = 'center' }: { eyebrow?: string,
     <div className={`mb-12 md:mb-16 ${align === 'center' ? 'text-center flex flex-col items-center' : 'text-left flex flex-col items-start'}`}>
       {eyebrow && (
         <div className={`flex items-center gap-4 ${!title ? 'mb-0' : 'mb-5'} ${align === 'center' ? 'justify-center' : 'justify-start'}`}>
-          <div className="w-10 h-[1.5px] bg-[#D4AF37]"></div>
-          <span className="text-[#D4AF37] font-bold tracking-[0.25em] text-[10px] md:text-xs uppercase">{eyebrow}</span>
+          <div className="w-12 h-[2px] bg-[#D4AF37]"></div>
+          <span className="text-[#D4AF37] font-bold tracking-[0.25em] text-xs md:text-sm uppercase">{eyebrow}</span>
         </div>
       )}
       {title && (

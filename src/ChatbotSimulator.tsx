@@ -203,9 +203,9 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
     <div className="w-full max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-12">
       
       {/* Phone Mockup Container */}
-      <div className="w-full max-w-[380px] mx-auto bg-white rounded-[3rem] p-3 shadow-md border-4 border-gray-200 relative shadow-boutique-gold/20 shrink-0">
+      <div className="w-full max-w-[380px] mx-auto bg-slate-900 rounded-[3rem] p-3 shadow-2xl border-[6px] border-slate-950 relative shadow-black/30 shrink-0">
         {/* Phone Notch */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-white rounded-b-2xl z-20 border-b border-l border-r border-gray-100"></div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-slate-900 rounded-b-2xl z-20"></div>
         
         {/* App Container */}
         <div className="w-full h-[675px] bg-[#EFEAE2] rounded-[2.5rem] overflow-hidden flex flex-col relative">

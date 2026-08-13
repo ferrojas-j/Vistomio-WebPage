@@ -92,9 +92,9 @@ export default function POSSimulator({ t }: { t: any }) {
   };
 
   return (
-    <div className="w-full max-w-[380px] mx-auto bg-boutique-offwhite rounded-[3rem] p-3 shadow-md border-4 border-gray-200 relative shadow-boutique-gold/20">
-      {/* Notch */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-boutique-offwhite rounded-b-2xl z-20"></div>
+    <div className="w-full max-w-[380px] mx-auto bg-slate-900 rounded-[3rem] p-3 shadow-2xl border-[6px] border-slate-950 relative shadow-black/30">
+      {/* Phone Notch */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-slate-900 rounded-b-2xl z-20"></div>
       
       {/* Phone Screen */}
       <div className="w-full h-[675px] bg-slate-50 rounded-[2.5rem] overflow-hidden flex flex-col relative text-slate-800">
