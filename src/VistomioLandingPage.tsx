@@ -1670,13 +1670,13 @@ const VistomioLandingPage: React.FC = () => {
                   {lang === 'es' ? 'CHECK-IN' : lang === 'en' ? 'CHECK-IN' : 'CHECK-IN'}
                 </div>
                 <div className="text-xs md:text-sm font-extrabold text-boutique-navy leading-none">
-                  {lang === 'es' ? '+ Nuevo huésped' : lang === 'en' ? '+ New guest' : '+ Nouveau client'}
+                  {lang === 'es' ? 'Ingreso huésped Suite 403' : lang === 'en' ? 'Guest check-in Suite 403' : 'Arrivée client Suite 403'}
                 </div>
               </div>
             </div>
 
             {/* Top Right: Restaurant */}
-            <div className="absolute top-1/4 -right-4 md:-right-20 bg-white px-4 md:px-5 py-3 md:py-4 rounded-xl shadow-xl shadow-gray-300/60 border border-gray-100 flex items-center gap-3 md:gap-4 z-20 animate-[float_7s_ease-in-out_infinite_1s] scale-100 md:scale-[1.05]">
+            <div className="absolute top-1/4 -right-4 md:-right-20 bg-white px-4 md:px-5 py-3 md:py-4 rounded-xl shadow-xl shadow-gray-300/60 border border-gray-100 flex items-center gap-3 md:gap-4 z-20 animate-[float_7s_ease-in-out_infinite_1s] scale-100 md:scale-[1.05] max-w-[200px] md:max-w-[260px]">
               <div className="w-8 h-8 md:w-10 md:h-10 bg-amber-50 rounded-full flex items-center justify-center text-[#D4AF37] shrink-0">
                 <Wine size={18} className="md:w-5 md:h-5" />
               </div>
@@ -1684,8 +1684,8 @@ const VistomioLandingPage: React.FC = () => {
                 <div className="text-[9px] md:text-[10px] font-bold text-gray-400 uppercase tracking-wider leading-none mb-1">
                   {lang === 'es' ? 'RESTAURANTE' : lang === 'en' ? 'RESTAURANT' : 'RESTAURANT'}
                 </div>
-                <div className="text-xs md:text-sm font-extrabold text-boutique-navy leading-none">
-                  {lang === 'es' ? '+ Pedido Mesa 4' : lang === 'en' ? '+ Order Table 4' : '+ Commande Table 4'}
+                <div className="text-xs md:text-sm font-extrabold text-boutique-navy leading-tight">
+                  {lang === 'es' ? 'Nueva solicitud de reserva 20:00 horas 4 personas' : lang === 'en' ? 'New reservation request 8:00 PM 4 people' : 'Nouvelle demande de réservation 20h00 4 personnes'}
                 </div>
               </div>
             </div>
@@ -1700,7 +1700,7 @@ const VistomioLandingPage: React.FC = () => {
                   {lang === 'es' ? 'MANTENIMIENTO' : lang === 'en' ? 'MAINTENANCE' : 'MAINTENANCE'}
                 </div>
                 <div className="text-xs md:text-sm font-extrabold text-boutique-navy leading-none">
-                  {lang === 'es' ? 'Limpieza 102 lista' : lang === 'en' ? 'Room 102 clean' : 'Chambre 102 propre'}
+                  {lang === 'es' ? 'Ducha Suite 104 arreglada' : lang === 'en' ? 'Suite 104 shower fixed' : 'Douche Suite 104 réparée'}
                 </div>
               </div>
             </div>
@@ -1715,7 +1715,7 @@ const VistomioLandingPage: React.FC = () => {
                   {lang === 'es' ? 'FINANZAS' : lang === 'en' ? 'FINANCE' : 'FINANCES'}
                 </div>
                 <div className="text-xs md:text-sm font-extrabold text-boutique-navy leading-none">
-                  {lang === 'es' ? '+ Pago $250' : lang === 'en' ? '+ Payment $250' : '+ Paiement $250'}
+                  {lang === 'es' ? 'Nuevo pago por reserva' : lang === 'en' ? 'New booking payment' : 'Nouveau paiement de réservation'}
                 </div>
               </div>
             </div>
