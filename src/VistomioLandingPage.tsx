@@ -1904,7 +1904,18 @@ const VistomioLandingPage: React.FC = () => {
                   <div className="w-10 h-10 rounded-full bg-[#D4AF37]/10 flex shrink-0 items-center justify-center border border-[#D4AF37]/20 shadow-sm shadow-[#D4AF37]/5">
                      <div className="w-2.5 h-2.5 rounded-full bg-[#D4AF37]"></div>
                   </div>
-                  <h3 className="text-3xl md:text-4xl font-normal text-boutique-navy tracking-tight font-serif">{category.name}</h3>
+                  <h3 className="text-3xl md:text-4xl font-normal text-boutique-navy tracking-tight font-serif">
+                    {category.name.includes('&') ? (
+                      category.name.split('&').map((part: any, i: number, arr: any[]) => (
+                        <span key={i}>
+                          {part}
+                          {i < arr.length - 1 && <span className="font-sans font-normal text-[0.95em] opacity-90 mx-[1px]">&amp;</span>}
+                        </span>
+                      ))
+                    ) : (
+                      category.name
+                    )}
+                  </h3>
                   <div className="h-[2px] bg-gradient-to-r from-[#D4AF37]/30 to-transparent flex-grow rounded-full ml-4"></div>
                 </div>
                 
