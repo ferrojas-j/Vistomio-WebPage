@@ -1402,7 +1402,7 @@ const VistomioLandingPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-boutique-offwhite font-sans text-boutique-anthracite selection:bg-slate-800 border border-boutique-sand selection:text-white overflow-x-hidden">
+    <div className="min-h-screen bg-boutique-offwhite font-sans text-boutique-navy selection:bg-slate-800 border border-boutique-sand selection:text-white overflow-x-hidden">
       
       {/* --- NAVBAR --- */}
       <nav className={`fixed w-full z-50 transition-all duration-300 border-b border-gray-200/50 ${isScrolled ? 'bg-boutique-offwhite/95 backdrop-blur-xl py-4 shadow-xl shadow-gray-200/50' : 'bg-transparent py-6'}`}>
@@ -1425,7 +1425,7 @@ const VistomioLandingPage: React.FC = () => {
             >
               <button 
                 onClick={() => setProductsMenuOpen(!productsMenuOpen)}
-                className="flex items-center gap-1 text-sm font-medium text-boutique-anthracite hover:text-[#FCE69B] transition-colors"
+                className="flex items-center gap-1 text-sm font-medium text-boutique-navy hover:text-[#FCE69B] transition-colors"
               >
                 {t.nav.products}
                 <ChevronDown size={14} className={`text-slate-500 transition-transform duration-300 ${productsMenuOpen ? 'rotate-180' : ''}`} />
@@ -1437,7 +1437,7 @@ const VistomioLandingPage: React.FC = () => {
                 <div className="bg-boutique-sand/95 backdrop-blur-xl border border-boutique-sand rounded-2xl shadow-md overflow-hidden p-6 grid grid-cols-2 gap-x-8 gap-y-6">
                   {t.featureCategories.map((category, catIdx) => (
                     <div key={catIdx} className="flex flex-col">
-                      <h4 className="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-3">{category.name}</h4>
+                      <h4 className="text-xs font-semibold text-boutique-navy/80 uppercase tracking-wider mb-3">{category.name}</h4>
                       <div className="flex flex-col gap-1">
                         {category.items.map((item, itemIdx) => {
                           const Icon = item.icon;
@@ -1452,7 +1452,7 @@ const VistomioLandingPage: React.FC = () => {
                                 <Icon size={14} />
                               </div>
                               <div className="flex flex-col">
-                                <span className="text-sm font-medium text-boutique-anthracite group-hover:text-white transition-colors leading-tight">{item.title}</span>
+                                <span className="text-sm font-medium text-boutique-navy group-hover:text-white transition-colors leading-tight">{item.title}</span>
                               </div>
                             </a>
                           )
@@ -1473,7 +1473,7 @@ const VistomioLandingPage: React.FC = () => {
             >
               <button 
                 onClick={() => setDemosMenuOpen(!demosMenuOpen)}
-                className="flex items-center gap-1 text-sm font-medium text-boutique-anthracite hover:text-[#FCE69B] transition-colors"
+                className="flex items-center gap-1 text-sm font-medium text-boutique-navy hover:text-[#FCE69B] transition-colors"
               >
                 Demos
                 <ChevronDown size={14} className={`text-slate-500 transition-transform duration-300 ${demosMenuOpen ? 'rotate-180' : ''}`} />
@@ -1483,19 +1483,19 @@ const VistomioLandingPage: React.FC = () => {
                 className={`absolute top-[100%] right-0 pt-4 w-80 transition-all duration-200 origin-top-right ${demosMenuOpen ? 'opacity-100 scale-100 translate-y-0 visible pointer-events-auto' : 'opacity-0 scale-95 -translate-y-2 invisible pointer-events-none'}`}
               >
                 <div className="bg-boutique-sand/90 backdrop-blur-xl border border-boutique-sand rounded-xl shadow-md overflow-hidden flex flex-col p-2">
-                  <a href="https://demo.vistomio.com" target="_blank" rel="noopener noreferrer" onClick={() => setDemosMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 text-sm text-boutique-anthracite hover:text-boutique-anthracite hover:bg-white/50 rounded-lg transition-colors group">
+                  <a href="https://demo.vistomio.com" target="_blank" rel="noopener noreferrer" onClick={() => setDemosMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 text-sm text-boutique-navy hover:text-boutique-navy hover:bg-white/50 rounded-lg transition-colors group">
                     <div className="w-8 h-8 rounded-full bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-[#0B1121] transition-colors"><Sparkles size={14} /></div>
                     <span className="font-medium">Demo Suite Vistomio</span>
                   </a>
-                  <a href="#demo-chatbot" onClick={() => setDemosMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 text-sm text-boutique-anthracite hover:text-boutique-anthracite hover:bg-white/50 rounded-lg transition-colors group">
+                  <a href="#demo-chatbot" onClick={() => setDemosMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 text-sm text-boutique-navy hover:text-boutique-navy hover:bg-white/50 rounded-lg transition-colors group">
                     <div className="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-colors"><Bot size={14} /></div>
                     <span className="font-medium">Demo Chatbots IA Vistomio</span>
                   </a>
-                  <a href="#demo-pos" onClick={() => setDemosMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 text-sm text-boutique-anthracite hover:text-boutique-anthracite hover:bg-white/50 rounded-lg transition-colors group">
+                  <a href="#demo-pos" onClick={() => setDemosMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 text-sm text-boutique-navy hover:text-boutique-navy hover:bg-white/50 rounded-lg transition-colors group">
                     <div className="w-8 h-8 rounded-full bg-amber-500/10 flex items-center justify-center text-amber-400 group-hover:bg-amber-500 group-hover:text-[#0B1121] transition-colors"><CreditCard size={14} /></div>
                     <span className="font-medium">Demo POS Vistomio para restaurantes</span>
                   </a>
-                  <a href="#demo-staff" onClick={() => setDemosMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 text-sm text-boutique-anthracite hover:text-boutique-anthracite hover:bg-white/50 rounded-lg transition-colors group">
+                  <a href="#demo-staff" onClick={() => setDemosMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 text-sm text-boutique-navy hover:text-boutique-navy hover:bg-white/50 rounded-lg transition-colors group">
                     <div className="w-8 h-8 rounded-full bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37] group-hover:bg-indigo-500 group-hover:text-white transition-colors"><Users size={14} /></div>
                     <span className="font-medium">Demo Vistomio Staff App</span>
                   </a>
@@ -1504,7 +1504,7 @@ const VistomioLandingPage: React.FC = () => {
             </div>
             
             <a href="#precios" className="text-sm font-medium text-boutique-navy hover:text-[#D4AF37] transition-colors">{t.nav.pricing}</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="text-sm font-medium text-boutique-anthracite hover:text-[#D4AF37] transition-colors">{t.nav.contact}</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="text-sm font-medium text-boutique-navy hover:text-[#D4AF37] transition-colors">{t.nav.contact}</a>
 
             {/* Custom Language Selector */}
             <div 
@@ -1515,7 +1515,7 @@ const VistomioLandingPage: React.FC = () => {
             >
               <button 
                 onClick={() => setLangMenuOpen(!langMenuOpen)}
-                className="flex items-center gap-2 text-sm font-medium text-boutique-anthracite hover:text-[#D4AF37] transition-colors group"
+                className="flex items-center gap-2 text-sm font-medium text-boutique-navy hover:text-[#D4AF37] transition-colors group"
               >
                 <Globe size={16} className="text-[#D4AF37] group-hover:text-[#FCE69B] transition-colors" />
                 <span>{lang === 'es' ? 'Español' : lang === 'en' ? 'English' : 'Français'}</span>
@@ -1529,7 +1529,7 @@ const VistomioLandingPage: React.FC = () => {
                     <button
                       key={l}
                       onClick={() => { setLang(l); setLangMenuOpen(false); }}
-                      className={`w-full text-left px-4 py-2 rounded-lg text-sm font-medium transition-colors ${lang === l ? 'bg-amber-50 text-[#D4AF37] font-bold' : 'text-boutique-anthracite hover:bg-gray-50 hover:text-[#D4AF37]'}`}
+                      className={`w-full text-left px-4 py-2 rounded-lg text-sm font-medium transition-colors ${lang === l ? 'bg-amber-50 text-[#D4AF37] font-bold' : 'text-boutique-navy hover:bg-gray-50 hover:text-[#D4AF37]'}`}
                     >
                       {l === 'es' ? 'Español' : l === 'en' ? 'English' : 'Français'}
                     </button>
@@ -1544,7 +1544,7 @@ const VistomioLandingPage: React.FC = () => {
           </div>
 
           {/* Mobile Menu Toggle */}
-          <button className="md:hidden text-boutique-anthracite hover:text-[#FCE69B]" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+          <button className="md:hidden text-boutique-navy hover:text-[#FCE69B]" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
@@ -1554,7 +1554,7 @@ const VistomioLandingPage: React.FC = () => {
           <div className="md:hidden absolute top-full left-0 w-full bg-[#0B1121]/95 backdrop-blur-xl border-b border-black/10 py-6 px-6 flex flex-col gap-6 shadow-md">
             <a href="#productos" className="text-lg font-medium text-boutique-navy" onClick={() => setMobileMenuOpen(false)}>{t.nav.products}</a>
             <a href="#precios" className="text-lg font-medium text-boutique-navy" onClick={() => setMobileMenuOpen(false)}>{t.nav.pricing}</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); setMobileMenuOpen(false); }} className="text-lg font-medium text-boutique-anthracite">{t.nav.contact}</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); setMobileMenuOpen(false); }} className="text-lg font-medium text-boutique-navy">{t.nav.contact}</a>
             <div className="h-px bg-black/10 w-full my-2"></div>
             <div className="flex gap-4">
                <button onClick={() => {setLang('es'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg flex-1 ${lang === 'es' ? 'bg-slate-800 border border-slate-700/20 text-[#D4AF37]' : 'text-slate-400'}`}>Español</button>
@@ -1583,7 +1583,7 @@ const VistomioLandingPage: React.FC = () => {
                 </span>
               </h1>
               
-              <p className="text-lg text-gray-600 max-w-lg mb-10 leading-relaxed">
+              <p className="text-lg text-boutique-navy/80 max-w-lg mb-10 leading-relaxed">
                 {t.hero.subtitle}
               </p>
 
@@ -1596,7 +1596,7 @@ const VistomioLandingPage: React.FC = () => {
                 </a>
                 <a 
                   href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} 
-                  className="w-full sm:w-auto bg-transparent border border-gray-300 hover:border-gray-400 text-boutique-anthracite font-semibold text-sm px-8 py-3.5 rounded-lg transition-colors text-center"
+                  className="w-full sm:w-auto bg-transparent border border-gray-300 hover:border-gray-400 text-boutique-navy font-semibold text-sm px-8 py-3.5 rounded-lg transition-colors text-center"
                 >
                   {t.hero.ctaSecondary}
                 </a>
@@ -1621,7 +1621,7 @@ const VistomioLandingPage: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider leading-none mb-1">{(t as any).heroBadges?.badge1Top || 'GESTION'}</div>
-                  <div className="text-sm font-extrabold text-boutique-anthracite leading-none">{(t as any).heroBadges?.badge1Bottom || 'Estrés cero'}</div>
+                  <div className="text-sm font-extrabold text-boutique-navy leading-none">{(t as any).heroBadges?.badge1Bottom || 'Estrés cero'}</div>
                 </div>
               </div>
 
@@ -1632,7 +1632,7 @@ const VistomioLandingPage: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider leading-none mb-1">{(t as any).heroBadges?.badge2Top || 'RÉSULTAT'}</div>
-                  <div className="text-sm font-extrabold text-boutique-anthracite leading-none">{(t as any).heroBadges?.badge2Bottom || '+ Calidad de Service'}</div>
+                  <div className="text-sm font-extrabold text-boutique-navy leading-none">{(t as any).heroBadges?.badge2Bottom || '+ Calidad de Service'}</div>
                 </div>
               </div>
 
@@ -1643,7 +1643,7 @@ const VistomioLandingPage: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider leading-none mb-1">{(t as any).heroBadges?.badge3Top || 'EFFICACITÉ'}</div>
-                  <div className="text-sm font-extrabold text-boutique-anthracite leading-none">{(t as any).heroBadges?.badge3Bottom || '+ Temps Libre'}</div>
+                  <div className="text-sm font-extrabold text-boutique-navy leading-none">{(t as any).heroBadges?.badge3Bottom || '+ Temps Libre'}</div>
                 </div>
               </div>
 
@@ -1749,36 +1749,36 @@ const VistomioLandingPage: React.FC = () => {
 {/* --- SOCIAL PROOF --- */}
       <section className="py-12 border-y border-gray-300 bg-boutique-offwhite relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-sm font-semibold text-gray-600 uppercase tracking-widest mb-10">
+          <p className="text-center text-sm font-semibold text-boutique-navy/80 uppercase tracking-widest mb-10">
             {t.socialProof}
           </p>
           <div className="flex flex-wrap justify-center items-center gap-10 md:gap-14 lg:gap-24 opacity-60 hover:opacity-100 transition-all duration-500">
             <div className="flex flex-col items-center gap-2">
-              <div className="flex items-center gap-3 text-2xl font-semibold text-boutique-anthracite">
-                <span className="w-10 h-10 rounded-xl bg-boutique-sand flex items-center justify-center text-sm border border-boutique-sand shadow-sm text-boutique-anthracite">HN</span> Noga
+              <div className="flex items-center gap-3 text-2xl font-semibold text-boutique-navy">
+                <span className="w-10 h-10 rounded-xl bg-boutique-sand flex items-center justify-center text-sm border border-boutique-sand shadow-sm text-boutique-navy">HN</span> Noga
               </div>
-              <span className="text-xs font-semibold text-gray-600 uppercase tracking-widest">{t.locations.noga}</span>
+              <span className="text-xs font-semibold text-boutique-navy/80 uppercase tracking-widest">{t.locations.noga}</span>
             </div>
 
             <div className="flex flex-col items-center gap-2">
-              <div className="flex items-center gap-2 text-2xl font-semibold text-boutique-anthracite italic">
+              <div className="flex items-center gap-2 text-2xl font-semibold text-boutique-navy italic">
                 <GalloAzulLogo className="text-boutique-navy" size={28} /> Gallo Azul
               </div>
-              <span className="text-xs font-semibold text-gray-600 uppercase tracking-widest">{t.locations.galloAzul}</span>
+              <span className="text-xs font-semibold text-boutique-navy/80 uppercase tracking-widest">{t.locations.galloAzul}</span>
             </div>
 
             <div className="flex flex-col items-center gap-2">
-              <div className="flex items-center gap-2 text-2xl font-black text-boutique-anthracite tracking-[0.2em]">
+              <div className="flex items-center gap-2 text-2xl font-black text-boutique-navy tracking-[0.2em]">
                 LA MORA
               </div>
-              <span className="text-xs font-semibold text-gray-600 uppercase tracking-widest">{t.locations.laMora}</span>
+              <span className="text-xs font-semibold text-boutique-navy/80 uppercase tracking-widest">{t.locations.laMora}</span>
             </div>
 
             <div className="flex flex-col items-center gap-2">
-              <div className="flex items-center gap-3 text-2xl font-semibold text-boutique-anthracite">
+              <div className="flex items-center gap-3 text-2xl font-semibold text-boutique-navy">
                 <span className="border-2 border-[#D4AF37] p-1.5 text-[#D4AF37] text-sm">JC</span> Hoteles
               </div>
-              <span className="text-xs font-semibold text-gray-600 uppercase tracking-widest">{t.locations.jc}</span>
+              <span className="text-xs font-semibold text-boutique-navy/80 uppercase tracking-widest">{t.locations.jc}</span>
             </div>
           </div>
         </div>
@@ -1793,7 +1793,7 @@ const VistomioLandingPage: React.FC = () => {
 
               <SectionHeader eyebrow={t.boutiqueNiche.title} align="left" />
               <p 
-                className="text-lg text-boutique-anthracite leading-relaxed mb-8 mt-2"
+                className="text-lg text-boutique-navy leading-relaxed mb-8 mt-2"
                 dangerouslySetInnerHTML={{ __html: t.boutiqueNiche.subtitle }}
               />
               
@@ -1805,7 +1805,7 @@ const VistomioLandingPage: React.FC = () => {
                     </div>
                     <div>
                       <h4 className="text-xl font-semibold text-boutique-navy mb-1">{card.title}</h4>
-                      <p className="text-boutique-anthracite" dangerouslySetInnerHTML={{ __html: card.desc }} />
+                      <p className="text-boutique-navy" dangerouslySetInnerHTML={{ __html: card.desc }} />
                     </div>
                   </li>
                 ))}
@@ -1881,7 +1881,7 @@ const VistomioLandingPage: React.FC = () => {
                   <benefit.icon size={32} strokeWidth={1.5} />
                 </div>
                 <h3 className="text-2xl font-normal text-boutique-navy mb-4 font-serif tracking-wide">{benefit.title}</h3>
-                <p className="text-boutique-anthracite leading-relaxed text-lg">{benefit.desc}</p>
+                <p className="text-boutique-navy leading-relaxed text-lg">{benefit.desc}</p>
               </div>
             ))}
           </div>
@@ -1930,7 +1930,7 @@ const VistomioLandingPage: React.FC = () => {
                         )}
                       </div>
                       <h4 className="text-xl font-semibold text-boutique-navy mb-3 relative z-10">{feature.title}</h4>
-                      <p className="text-gray-600 text-sm leading-relaxed relative z-10 flex-grow font-medium">{feature.desc}</p>
+                      <p className="text-boutique-navy/80 text-sm leading-relaxed relative z-10 flex-grow font-medium">{feature.desc}</p>
                       
                       {(feature as any).demoId && (
                         <div className="mt-6 relative z-10">
@@ -1953,7 +1953,7 @@ const VistomioLandingPage: React.FC = () => {
                         </div>
                       </div>
                     </div>
-                    <p className="text-gray-600 text-lg mb-6 max-w-4xl leading-relaxed font-medium">
+                    <p className="text-boutique-navy/80 text-lg mb-6 max-w-4xl leading-relaxed font-medium">
                       {t.chatbotPlans.subtitle}
                     </p>
                     
@@ -1968,7 +1968,7 @@ const VistomioLandingPage: React.FC = () => {
                       <div className="bg-boutique-offwhite border border-gray-100 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 rounded-[2rem] p-8 flex flex-col h-full relative overflow-hidden group">
                         <div className="absolute top-0 left-0 w-full h-1 bg-[#D4AF37]/30 group-hover:bg-[#D4AF37] transition-colors"></div>
                         <div className="flex items-center gap-5 mb-6">
-                          <div className="w-14 h-14 rounded-2xl bg-boutique-offwhite flex items-center justify-center border border-gray-100 text-boutique-anthracite shadow-sm">
+                          <div className="w-14 h-14 rounded-2xl bg-boutique-offwhite flex items-center justify-center border border-gray-100 text-boutique-navy shadow-sm">
                             <MessageSquareText size={24} />
                           </div>
                           <h3 className="text-xl font-normal text-boutique-navy leading-tight font-serif tracking-wide">{t.chatbotPlans.plans[0].name}</h3>
@@ -1978,7 +1978,7 @@ const VistomioLandingPage: React.FC = () => {
                           {t.chatbotPlans.plans[0].features.map((feature, idx) => (
                             <li key={idx} className="flex gap-3">
                               <div className="mt-0.5 min-w-[18px] text-[#D4AF37]"> <CheckCircle2 size={18} /> </div>
-                              <span className="text-gray-700 text-sm font-medium leading-relaxed">{feature}</span>
+                              <span className="text-boutique-navy/90 text-sm font-medium leading-relaxed">{feature}</span>
                             </li>
                           ))}
                         </ul>
@@ -1988,7 +1988,7 @@ const VistomioLandingPage: React.FC = () => {
                       <div className="bg-boutique-offwhite border border-gray-100 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 rounded-[2rem] p-8 flex flex-col h-full relative overflow-hidden group">
                         <div className="absolute top-0 left-0 w-full h-1 bg-[#D4AF37]/30 group-hover:bg-[#D4AF37] transition-colors"></div>
                         <div className="flex items-center gap-5 mb-6">
-                          <div className="w-14 h-14 rounded-2xl bg-boutique-offwhite flex items-center justify-center border border-gray-100 text-boutique-anthracite shadow-sm">
+                          <div className="w-14 h-14 rounded-2xl bg-boutique-offwhite flex items-center justify-center border border-gray-100 text-boutique-navy shadow-sm">
                             <Zap size={24} />
                           </div>
                           <h3 className="text-xl font-normal text-boutique-navy leading-tight font-serif tracking-wide">{t.chatbotPlans.plans[1].name}</h3>
@@ -1998,7 +1998,7 @@ const VistomioLandingPage: React.FC = () => {
                           {t.chatbotPlans.plans[1].features.map((feature, idx) => (
                             <li key={idx} className="flex gap-3">
                               <div className="mt-0.5 min-w-[18px] text-[#D4AF37]"> <CheckCircle2 size={18} /> </div>
-                              <span className="text-gray-700 text-sm font-medium leading-relaxed">{feature}</span>
+                              <span className="text-boutique-navy/90 text-sm font-medium leading-relaxed">{feature}</span>
                             </li>
                           ))}
                         </ul>
@@ -2008,7 +2008,7 @@ const VistomioLandingPage: React.FC = () => {
                       <div className="bg-boutique-offwhite border border-gray-100 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 rounded-[2rem] p-8 flex flex-col h-full relative overflow-hidden group">
                         <div className="absolute top-0 left-0 w-full h-1 bg-[#D4AF37]/30 group-hover:bg-[#D4AF37] transition-colors"></div>
                         <div className="flex items-center gap-5 mb-6">
-                          <div className="w-14 h-14 rounded-2xl bg-boutique-offwhite flex items-center justify-center border border-gray-100 text-boutique-anthracite shadow-sm">
+                          <div className="w-14 h-14 rounded-2xl bg-boutique-offwhite flex items-center justify-center border border-gray-100 text-boutique-navy shadow-sm">
                             <Bot size={24} />
                           </div>
                           <h3 className="text-xl font-normal text-boutique-navy leading-tight font-serif tracking-wide">{t.chatbotPlans.plans[2].name}</h3>
@@ -2018,7 +2018,7 @@ const VistomioLandingPage: React.FC = () => {
                           {t.chatbotPlans.plans[2].features.map((feature, idx) => (
                             <li key={idx} className="flex gap-3">
                               <div className="mt-0.5 min-w-[18px] text-[#D4AF37]"> <CheckCircle2 size={18} /> </div>
-                              <span className="text-gray-700 text-sm font-medium leading-relaxed">{feature}</span>
+                              <span className="text-boutique-navy/90 text-sm font-medium leading-relaxed">{feature}</span>
                             </li>
                           ))}
                         </ul>
@@ -2051,7 +2051,7 @@ const VistomioLandingPage: React.FC = () => {
               <h2 className="text-4xl md:text-5xl font-normal text-boutique-navy mb-6 leading-tight font-serif tracking-wide">
                 {t.posDemo.sectionTitle}
               </h2>
-              <p className="text-xl text-gray-600 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0">
+              <p className="text-xl text-boutique-navy/80 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0">
                 {t.posDemo.sectionDesc}
               </p>
               
@@ -2062,7 +2062,7 @@ const VistomioLandingPage: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="text-boutique-navy font-semibold mb-1">{t.posDemo.features[0].title}</h4>
-                    <p className="text-gray-600 text-sm">{t.posDemo.features[0].desc}</p>
+                    <p className="text-boutique-navy/80 text-sm">{t.posDemo.features[0].desc}</p>
                   </div>
                 </div>
                 
@@ -2072,7 +2072,7 @@ const VistomioLandingPage: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="text-boutique-navy font-semibold mb-1">{t.posDemo.features[1].title}</h4>
-                    <p className="text-gray-600 text-sm">{t.posDemo.features[1].desc}</p>
+                    <p className="text-boutique-navy/80 text-sm">{t.posDemo.features[1].desc}</p>
                   </div>
                 </div>
               </div>
@@ -2100,7 +2100,7 @@ const VistomioLandingPage: React.FC = () => {
               <h2 className="text-4xl md:text-5xl font-normal text-boutique-navy mb-6 leading-tight font-serif tracking-wide">
                 {lang === 'es' ? 'Sincronización total con Vistomio Staff' : lang === 'en' ? 'Total synchronization with Vistomio Staff' : 'Synchronisation totale avec Vistomio Staff'}
               </h2>
-              <p className="text-xl text-gray-600 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0">
+              <p className="text-xl text-boutique-navy/80 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0">
                 {lang === 'es' 
                   ? 'Conecta las operaciones diarias de tu personal con el panel de control general en una colaboración virtuosa. Actualiza en tiempo real hallazgos, consumos, alertas y solicitudes sin fricciones.'
                   : lang === 'en'
@@ -2117,7 +2117,7 @@ const VistomioLandingPage: React.FC = () => {
                     <h4 className="text-boutique-navy font-semibold mb-1">
                       {lang === 'es' ? 'Cero papel' : lang === 'en' ? 'Paperless' : 'Zéro papier'}
                     </h4>
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-boutique-navy/80 text-sm">
                       {lang === 'es' ? 'Digitaliza checklists, asignaciones y solicitudes de mantenimiento al instante.' : lang === 'en' ? 'Digitize checklists, assignments, and maintenance requests instantly.' : 'Numérisez les checklists, les assignations et les demandes de maintenance instantanément.'}
                     </p>
                   </div>
@@ -2131,7 +2131,7 @@ const VistomioLandingPage: React.FC = () => {
                     <h4 className="text-boutique-navy font-semibold mb-1">
                       {lang === 'es' ? 'Comunicación en tiempo real' : lang === 'en' ? 'Real-time communication' : 'Communication en temps réel'}
                     </h4>
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-boutique-navy/80 text-sm">
                        {lang === 'es' ? 'Recepcionistas, mucamas y mantenimiento conectados bajo la misma fuente de verdad.' : lang === 'en' ? 'Receptionists, housekeepers, and maintenance connected under the same source of truth.' : 'Réceptionnistes, femmes de chambre et maintenance connectés sous la même source de vérité.'}
                     </p>
                   </div>
@@ -2226,7 +2226,7 @@ const VistomioLandingPage: React.FC = () => {
               
               <ul className="space-y-3 mb-6">
                 {t.pricing.addon.features.map((feature: string, idx: number) => (
-                  <li key={idx} className="flex items-start text-gray-700">
+                  <li key={idx} className="flex items-start text-boutique-navy/90">
                     <CheckCircle2 className="w-5 h-5 text-[#D4AF37] mr-3 shrink-0 mt-0.5" />
                     <span className="leading-relaxed">{feature}</span>
                   </li>
@@ -2293,7 +2293,7 @@ const VistomioLandingPage: React.FC = () => {
       </section>
 
       {/* --- FOOTER --- */}
-      <footer id="contacto" className="bg-white text-gray-600 py-16 border-t border-gray-300">
+      <footer id="contacto" className="bg-white text-boutique-navy/80 py-16 border-t border-gray-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex flex-col items-center justify-center cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <img src="/logo-icon-transparent.png" alt="Vistomio Logo Icon" className="h-12 md:h-14 w-auto object-contain mb-1" />
@@ -2333,11 +2333,11 @@ const VistomioLandingPage: React.FC = () => {
             <div className="p-6 md:p-8 border-b border-gray-300 flex justify-between items-center bg-boutique-offwhite/50 sticky top-0 z-10">
               <div>
                 <h3 className="text-2xl font-normal text-boutique-navy mb-2 font-serif tracking-wide">{t.pricing.customModalTitle}</h3>
-                <p className="text-gray-600">{t.pricing.customModalSubtitle}</p>
+                <p className="text-boutique-navy/80">{t.pricing.customModalSubtitle}</p>
               </div>
               <button 
                 onClick={() => setIsCustomPlanModalOpen(false)}
-                className="p-2 text-gray-600 hover:text-boutique-anthracite bg-boutique-sand/50 hover:bg-boutique-sand rounded-full transition-colors"
+                className="p-2 text-boutique-navy/80 hover:text-boutique-navy bg-boutique-sand/50 hover:bg-boutique-sand rounded-full transition-colors"
               >
                 <X size={24} />
               </button>
@@ -2371,7 +2371,7 @@ const VistomioLandingPage: React.FC = () => {
                               </div>
                               <div className="flex-grow">
                                 <h5 className={`font-semibold mb-1 ${isSelected ? 'text-emerald-300' : 'text-white'}`}>{item.title}</h5>
-                                <p className="text-xs text-gray-600 leading-relaxed">{item.desc}</p>
+                                <p className="text-xs text-boutique-navy/80 leading-relaxed">{item.desc}</p>
                               </div>
                             </div>
                           </div>
@@ -2386,8 +2386,8 @@ const VistomioLandingPage: React.FC = () => {
             {/* Footer */}
             <div className="p-6 md:p-8 border-t border-gray-300 bg-slate-900/80 sticky bottom-0 flex flex-col sm:flex-row justify-between items-center gap-4">
               <div className="text-left w-full sm:w-auto">
-                <span className="text-gray-600 text-sm block mb-1">{t.pricing.selectedModules}:</span>
-                <span className="text-2xl font-semibold text-boutique-anthracite">{selectedCustomModules.length}</span>
+                <span className="text-boutique-navy/80 text-sm block mb-1">{t.pricing.selectedModules}:</span>
+                <span className="text-2xl font-semibold text-boutique-navy">{selectedCustomModules.length}</span>
               </div>
               <button 
                 className={`w-full sm:w-auto px-8 py-3 rounded-xl font-bold transition-all ${
@@ -2416,7 +2416,7 @@ const VistomioLandingPage: React.FC = () => {
           <div className="relative bg-boutique-offwhite border border-gray-300 rounded-[2.5rem] p-5 sm:p-8 md:p-12 shadow-md w-full max-w-xl animate-[translate-y-0_0.3s_ease-out] overflow-hidden max-h-[90vh] overflow-y-auto custom-scrollbar">
             <button 
               onClick={() => { setIsContactModalOpen(false); setContactModalView('options'); }}
-              className="absolute top-6 right-6 w-10 h-10 bg-boutique-sand rounded-full flex items-center justify-center text-gray-600 hover:text-boutique-anthracite transition-colors z-10"
+              className="absolute top-6 right-6 w-10 h-10 bg-boutique-sand rounded-full flex items-center justify-center text-boutique-navy/80 hover:text-boutique-navy transition-colors z-10"
             >
               <X size={20} />
             </button>
@@ -2425,10 +2425,10 @@ const VistomioLandingPage: React.FC = () => {
               <div className="animate-[fade-in_0.3s_ease-out]">
                 <div className="text-center mb-10">
                   <div className="w-16 h-16 from-[#D4AF37] to-[#FCE69B] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm shadow-amber-900/30">
-                    <Calendar size={32} className="text-boutique-anthracite" />
+                    <Calendar size={32} className="text-boutique-navy" />
                   </div>
                   <h3 className="text-3xl font-normal text-boutique-navy mb-3 font-serif tracking-wide">{t.contactModal.options.title}</h3>
-                  <p className="text-gray-600">{t.contactModal.options.desc}</p>
+                  <p className="text-boutique-navy/80">{t.contactModal.options.desc}</p>
                 </div>
 
                 <div className="space-y-4">
@@ -2448,22 +2448,22 @@ const VistomioLandingPage: React.FC = () => {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <button onClick={() => setContactModalView('email')} className="bg-boutique-sand hover:bg-white border border-boutique-sand p-4 rounded-2xl flex flex-col items-center gap-3 transition-colors group">
-                      <div className="w-12 h-12 bg-boutique-offwhite rounded-xl flex items-center justify-center text-gray-600 group-hover:text-[#FCE69B] transition-colors">
+                      <div className="w-12 h-12 bg-boutique-offwhite rounded-xl flex items-center justify-center text-boutique-navy/80 group-hover:text-[#FCE69B] transition-colors">
                         <Mail size={24} />
                       </div>
                       <div className="text-center">
-                        <div className="text-sm font-semibold text-boutique-anthracite mb-1">Email</div>
-                        <div className="text-xs text-gray-600">info@vistomio.com</div>
+                        <div className="text-sm font-semibold text-boutique-navy mb-1">Email</div>
+                        <div className="text-xs text-boutique-navy/80">info@vistomio.com</div>
                       </div>
                     </button>
                     
                     <a href="https://wa.me/525540590054" target="_blank" rel="noreferrer" className="bg-boutique-sand hover:bg-white border border-boutique-sand p-4 rounded-2xl flex flex-col items-center gap-3 transition-colors group">
-                      <div className="w-12 h-12 bg-boutique-offwhite rounded-xl flex items-center justify-center text-gray-600 group-hover:text-emerald-400 transition-colors">
+                      <div className="w-12 h-12 bg-boutique-offwhite rounded-xl flex items-center justify-center text-boutique-navy/80 group-hover:text-emerald-400 transition-colors">
                         <MessageSquareText size={24} />
                       </div>
                       <div className="text-center">
-                        <div className="text-sm font-semibold text-boutique-anthracite mb-1">WhatsApp</div>
-                        <div className="text-xs text-gray-600">+52 55 40590054</div>
+                        <div className="text-sm font-semibold text-boutique-navy mb-1">WhatsApp</div>
+                        <div className="text-xs text-boutique-navy/80">+52 55 40590054</div>
                       </div>
                     </a>
                   </div>
@@ -2478,16 +2478,16 @@ const VistomioLandingPage: React.FC = () => {
                     setIsContactModalOpen(false);
                     setIsCustomPlanModalOpen(true);
                   }}
-                  className="absolute top-6 left-6 w-10 h-10 bg-boutique-sand rounded-full flex items-center justify-center text-gray-600 hover:text-boutique-anthracite transition-colors z-10"
+                  className="absolute top-6 left-6 w-10 h-10 bg-boutique-sand rounded-full flex items-center justify-center text-boutique-navy/80 hover:text-boutique-navy transition-colors z-10"
                 >
                   <ArrowLeft size={20} />
                 </button>
                 <div className="text-center mb-8">
                   <div className="w-16 h-16 from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm shadow-emerald-900/30">
-                    <CheckCircle2 size={32} className="text-boutique-anthracite" />
+                    <CheckCircle2 size={32} className="text-boutique-navy" />
                   </div>
                   <h3 className="text-3xl font-normal text-boutique-navy mb-2 font-serif tracking-wide">{t.customPlanModal.title}</h3>
-                  <p className="text-gray-600 text-sm">{t.customPlanModal.desc}</p>
+                  <p className="text-boutique-navy/80 text-sm">{t.customPlanModal.desc}</p>
                 </div>
 
                 <form className="space-y-4" onSubmit={(e) => { 
@@ -2516,7 +2516,7 @@ const VistomioLandingPage: React.FC = () => {
                   {selectedCustomModules.length > 0 && (
                     <div className="bg-boutique-offwhite/50 border border-gray-300 p-4 rounded-xl mb-4">
                       <label className="block text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-2">{t.customPlanModal.selectedModules}</label>
-                      <ul className="text-boutique-anthracite text-sm list-disc pl-4">
+                      <ul className="text-boutique-navy text-sm list-disc pl-4">
                         {selectedCustomModules.map((mod, i) => (
                           <li key={i}>{mod}</li>
                         ))}
@@ -2526,44 +2526,44 @@ const VistomioLandingPage: React.FC = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-2">{t.customPlanModal.emailLabel}</label>
+                      <label className="block text-xs font-semibold text-boutique-navy/80 uppercase tracking-wider mb-2">{t.customPlanModal.emailLabel}</label>
                       <input 
                         type="email" 
                         name="email"
                         required 
                         placeholder={t.customPlanModal.emailPlaceholder}
-                        className="w-full bg-boutique-sand border border-boutique-sand text-boutique-anthracite placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all"
+                        className="w-full bg-boutique-sand border border-boutique-sand text-boutique-navy placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-2">{t.customPlanModal.phoneLabel}</label>
+                      <label className="block text-xs font-semibold text-boutique-navy/80 uppercase tracking-wider mb-2">{t.customPlanModal.phoneLabel}</label>
                       <input 
                         type="tel" 
                         name="phone"
                         required 
                         placeholder={t.customPlanModal.phonePlaceholder}
-                        className="w-full bg-boutique-sand border border-boutique-sand text-boutique-anthracite placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all"
+                        className="w-full bg-boutique-sand border border-boutique-sand text-boutique-navy placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all"
                       />
                     </div>
                   </div>
                   
                   <div>
-                    <label className="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-2">{t.customPlanModal.companyLabel}</label>
+                    <label className="block text-xs font-semibold text-boutique-navy/80 uppercase tracking-wider mb-2">{t.customPlanModal.companyLabel}</label>
                     <input 
                       type="text" 
                       name="company"
                       placeholder={t.customPlanModal.companyPlaceholder}
-                      className="w-full bg-boutique-sand border border-boutique-sand text-boutique-anthracite placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all"
+                      className="w-full bg-boutique-sand border border-boutique-sand text-boutique-navy placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-2">{t.customPlanModal.messageLabel}</label>
+                    <label className="block text-xs font-semibold text-boutique-navy/80 uppercase tracking-wider mb-2">{t.customPlanModal.messageLabel}</label>
                     <textarea 
                       name="message"
                       rows={3}
                       placeholder={t.customPlanModal.messagePlaceholder}
-                      className="w-full bg-boutique-sand border border-boutique-sand text-boutique-anthracite placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all resize-none"
+                      className="w-full bg-boutique-sand border border-boutique-sand text-boutique-navy placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all resize-none"
                     ></textarea>
                   </div>
                   
@@ -2577,21 +2577,21 @@ const VistomioLandingPage: React.FC = () => {
               <div className="animate-[fade-in_0.3s_ease-out]">
                 <button 
                   onClick={() => setContactModalView('options')}
-                  className="absolute top-6 left-6 w-10 h-10 bg-boutique-sand rounded-full flex items-center justify-center text-gray-600 hover:text-boutique-anthracite transition-colors z-10"
+                  className="absolute top-6 left-6 w-10 h-10 bg-boutique-sand rounded-full flex items-center justify-center text-boutique-navy/80 hover:text-boutique-navy transition-colors z-10"
                 >
                   <ArrowLeft size={20} />
                 </button>
                 <div className="text-center mb-8">
                   <div className="w-16 h-16 from-[#D4AF37] to-[#FCE69B] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm shadow-amber-900/30">
-                    <Mail size={32} className="text-boutique-anthracite" />
+                    <Mail size={32} className="text-boutique-navy" />
                   </div>
                   <h3 className="text-3xl font-normal text-boutique-navy mb-2 font-serif tracking-wide">{t.contactModal.email.title}</h3>
-                  <p className="text-gray-600 text-sm">{t.contactModal.email.desc}</p>
+                  <p className="text-boutique-navy/80 text-sm">{t.contactModal.email.desc}</p>
                 </div>
 
                 <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); alert(t.contactModal.email.success); setIsContactModalOpen(false); setContactModalView('options'); }}>
                   <div>
-                    <label className="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-2">{t.contactModal.email.toLabel}</label>
+                    <label className="block text-xs font-semibold text-boutique-navy/80 uppercase tracking-wider mb-2">{t.contactModal.email.toLabel}</label>
                     <input 
                       type="email" 
                       value="info@vistomio.com" 
@@ -2600,21 +2600,21 @@ const VistomioLandingPage: React.FC = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-2">{t.contactModal.email.emailLabel}</label>
+                    <label className="block text-xs font-semibold text-boutique-navy/80 uppercase tracking-wider mb-2">{t.contactModal.email.emailLabel}</label>
                     <input 
                       type="email" 
                       required 
                       placeholder={t.contactModal.email.emailPlaceholder}
-                      className="w-full bg-boutique-sand border border-boutique-sand text-boutique-anthracite placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all"
+                      className="w-full bg-boutique-sand border border-boutique-sand text-boutique-navy placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-2">{t.contactModal.email.messageLabel}</label>
+                    <label className="block text-xs font-semibold text-boutique-navy/80 uppercase tracking-wider mb-2">{t.contactModal.email.messageLabel}</label>
                     <textarea 
                       required 
                       rows={4}
                       placeholder={t.contactModal.email.messagePlaceholder}
-                      className="w-full bg-boutique-sand border border-boutique-sand text-boutique-anthracite placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all resize-none"
+                      className="w-full bg-boutique-sand border border-boutique-sand text-boutique-navy placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all resize-none"
                     ></textarea>
                   </div>
                   
@@ -2628,7 +2628,7 @@ const VistomioLandingPage: React.FC = () => {
               <div className="animate-[fade-in_0.3s_ease-out]">
                 <button 
                   onClick={() => setContactModalView('options')}
-                  className="absolute top-6 left-6 w-10 h-10 bg-boutique-sand rounded-full flex items-center justify-center text-gray-600 hover:text-boutique-anthracite transition-colors z-10"
+                  className="absolute top-6 left-6 w-10 h-10 bg-boutique-sand rounded-full flex items-center justify-center text-boutique-navy/80 hover:text-boutique-navy transition-colors z-10"
                 >
                   <ArrowLeft size={20} />
                 </button>
@@ -2637,7 +2637,7 @@ const VistomioLandingPage: React.FC = () => {
                     <Calendar size={32} className="text-[#0B1121]" />
                   </div>
                   <h3 className="text-3xl font-normal text-boutique-navy mb-2 font-serif tracking-wide">{t.contactModal.calendar.title}</h3>
-                  <p className="text-gray-600 text-sm">{t.contactModal.calendar.desc}</p>
+                  <p className="text-boutique-navy/80 text-sm">{t.contactModal.calendar.desc}</p>
                 </div>
                 
                 <div className="space-y-6">
@@ -2657,7 +2657,7 @@ const VistomioLandingPage: React.FC = () => {
                     <h4 className="text-sm font-semibold text-boutique-navy mb-3">{t.contactModal.calendar.timesLabel} ({t.contactModal.calendar.days[2]} 16)</h4>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                       {['09:00', '10:00', '11:30', '14:00', '15:30', '17:00'].map((time, i) => (
-                        <button key={i} onClick={() => { alert(t.contactModal.calendar.successAlert.replace('{time}', time).replace('{day}', t.contactModal.calendar.days[2] + ' 16')); setIsContactModalOpen(false); setContactModalView('options'); }} className="py-2.5 rounded-lg border border-boutique-sand bg-boutique-sand text-boutique-anthracite font-medium hover:border-[#D4AF37]ver:border-[#D4AF37] hover:text-[#D4AF37] hover:bg-[#D4AF37]/5 transition-colors flex items-center justify-center gap-2">
+                        <button key={i} onClick={() => { alert(t.contactModal.calendar.successAlert.replace('{time}', time).replace('{day}', t.contactModal.calendar.days[2] + ' 16')); setIsContactModalOpen(false); setContactModalView('options'); }} className="py-2.5 rounded-lg border border-boutique-sand bg-boutique-sand text-boutique-navy font-medium hover:border-[#D4AF37]ver:border-[#D4AF37] hover:text-[#D4AF37] hover:bg-[#D4AF37]/5 transition-colors flex items-center justify-center gap-2">
                           <Clock size={16} /> {time}
                         </button>
                       ))}

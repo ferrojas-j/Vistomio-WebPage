@@ -514,7 +514,7 @@ const translations = {
 
 const LimpiezaView = ({ t, onOpenChecklist }: { t: any, onOpenChecklist: () => void }) => (
   <div className="flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
-    <div className="bg-boutique-gold text-boutique-anthracite rounded-2xl p-4 shadow-md shadow-indigo-600/20">
+    <div className="bg-boutique-gold text-boutique-navy rounded-2xl p-4 shadow-md shadow-indigo-600/20">
       <div className="text-[10px] font-semibold uppercase tracking-wider mb-1 opacity-80">{t.limpieza.planning}</div>
       <div className="text-xl font-semibold">{t.limpieza.date}</div>
     </div>
@@ -609,7 +609,7 @@ const LimpiezaView = ({ t, onOpenChecklist }: { t: any, onOpenChecklist: () => v
 
 const RecepcionView = ({ t, onOpenExpense, onOpenNovelty }: { t: any, onOpenExpense: () => void, onOpenNovelty: () => void }) => (
   <div className="flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
-    <button onClick={onOpenNovelty} className="w-full bg-boutique-gold hover:bg-indigo-700 text-boutique-anthracite rounded-2xl p-4 shadow-md shadow-indigo-600/20 flex items-center justify-center gap-2 font-semibold text-sm transition-transform active:scale-[0.98] cursor-pointer">
+    <button onClick={onOpenNovelty} className="w-full bg-boutique-gold hover:bg-indigo-700 text-boutique-navy rounded-2xl p-4 shadow-md shadow-indigo-600/20 flex items-center justify-center gap-2 font-semibold text-sm transition-transform active:scale-[0.98] cursor-pointer">
       <Plus size={18} /> {t.recepcion.newNovelty}
     </button>
     
@@ -670,10 +670,10 @@ const RecepcionView = ({ t, onOpenExpense, onOpenNovelty }: { t: any, onOpenExpe
 const MantenimientoView = ({ t, onOpenLogbook, onOpenSupplies }: { t: any, onOpenLogbook: () => void, onOpenSupplies: () => void }) => (
   <div className="flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
     <div className="grid grid-cols-2 gap-3">
-      <button onClick={onOpenLogbook} className="bg-boutique-gold hover:bg-indigo-700 text-boutique-anthracite rounded-2xl p-4 shadow-md shadow-indigo-600/20 flex flex-col items-center justify-center gap-2 font-semibold text-sm h-24 transition-transform active:scale-[0.98] cursor-pointer">
+      <button onClick={onOpenLogbook} className="bg-boutique-gold hover:bg-indigo-700 text-boutique-navy rounded-2xl p-4 shadow-md shadow-indigo-600/20 flex flex-col items-center justify-center gap-2 font-semibold text-sm h-24 transition-transform active:scale-[0.98] cursor-pointer">
         <Plus size={20} /> {t.mantenimiento.advance}
       </button>
-      <button onClick={onOpenSupplies} className="bg-amber-500 hover:bg-amber-600 text-boutique-anthracite rounded-2xl p-4 shadow-md shadow-amber-500/20 flex flex-col items-center justify-center gap-2 font-semibold text-sm h-24 transition-transform active:scale-[0.98] cursor-pointer">
+      <button onClick={onOpenSupplies} className="bg-amber-500 hover:bg-amber-600 text-boutique-navy rounded-2xl p-4 shadow-md shadow-amber-500/20 flex flex-col items-center justify-center gap-2 font-semibold text-sm h-24 transition-transform active:scale-[0.98] cursor-pointer">
         <Box size={20} /> {t.mantenimiento.supplies}
       </button>
     </div>
@@ -786,7 +786,7 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
                     <span className="bg-boutique-offwhite text-boutique-gold text-[10px] font-semibold px-2 py-0.5 rounded mt-1.5 w-fit">{t.inventorySelection.limpiezaDate}</span>
                   </div>
                 </div>
-                <ChevronRight className="text-gray-600" size={20}/>
+                <ChevronRight className="text-boutique-navy/80" size={20}/>
               </div>
 
               <div onClick={() => { setInventoryArea('recepcion'); setIsInventoryModalOpen(true); }} className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm flex items-center justify-between cursor-pointer hover:bg-slate-50 transition-colors active:scale-[0.98]">
@@ -800,7 +800,7 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
                     <span className="bg-indigo-50 text-indigo-600 text-[10px] font-semibold px-2 py-0.5 rounded mt-1.5 w-fit">{t.inventorySelection.recepcionDate}</span>
                   </div>
                 </div>
-                <ChevronRight className="text-gray-600" size={20}/>
+                <ChevronRight className="text-boutique-navy/80" size={20}/>
               </div>
 
               <div onClick={() => { setInventoryArea('mantenimiento'); setIsInventoryModalOpen(true); }} className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm flex items-center justify-between cursor-pointer hover:bg-slate-50 transition-colors active:scale-[0.98]">
@@ -813,7 +813,7 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
                     <p className="text-xs text-gray-500 font-medium">{t.inventorySelection.mantenimientoDesc}</p>
                   </div>
                 </div>
-                <ChevronRight className="text-gray-600" size={20}/>
+                <ChevronRight className="text-boutique-navy/80" size={20}/>
               </div>
             </div>
           </div>
@@ -871,7 +871,7 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
                 <input type="text" placeholder={t.recepcion.descPlaceholder} className="w-full bg-white border border-boutique-sand rounded-xl px-4 py-3 text-sm text-slate-600 focus:outline-none focus:border-boutique-gold focus:ring-1 focus:ring-boutique-gold" readOnly />
               </div>
               
-              <button onClick={() => setIsExpenseModalOpen(false)} className="w-full bg-boutique-gold hover:bg-boutique-gold text-boutique-anthracite font-semibold py-3.5 rounded-xl transition-colors mt-2 active:scale-[0.98]">
+              <button onClick={() => setIsExpenseModalOpen(false)} className="w-full bg-boutique-gold hover:bg-boutique-gold text-boutique-navy font-semibold py-3.5 rounded-xl transition-colors mt-2 active:scale-[0.98]">
                 {t.recepcion.registerBtn}
               </button>
             </div>
@@ -908,7 +908,7 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
                 <input type="text" placeholder={t.report?.findingPlaceholder || 'Ej: Mancha en alfombra'} className="w-full bg-white border border-boutique-sand rounded-xl px-4 py-3 text-sm text-slate-600 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500" readOnly />
               </div>
               
-              <button onClick={() => setIsReportModalOpen(false)} className="w-full bg-[#D81E45] hover:bg-rose-700 text-boutique-anthracite font-semibold py-3.5 rounded-xl transition-colors mt-2 active:scale-[0.98]">
+              <button onClick={() => setIsReportModalOpen(false)} className="w-full bg-[#D81E45] hover:bg-rose-700 text-boutique-navy font-semibold py-3.5 rounded-xl transition-colors mt-2 active:scale-[0.98]">
                 {t.report?.submitBtn || 'Enviar Reporte Urgente'}
               </button>
             </div>
@@ -940,7 +940,7 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
                 <textarea placeholder={t.novelty?.detailPlaceholder || 'Ej: Huésped solicita despertar a las 06:00'} className="w-full bg-white border border-boutique-sand rounded-xl px-4 py-3 text-sm text-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 resize-none h-24" readOnly></textarea>
               </div>
               
-              <button onClick={() => setIsNoveltyModalOpen(false)} className="w-full bg-boutique-gold hover:bg-indigo-700 text-boutique-anthracite font-semibold py-3.5 rounded-xl transition-colors mt-2 active:scale-[0.98]">
+              <button onClick={() => setIsNoveltyModalOpen(false)} className="w-full bg-boutique-gold hover:bg-indigo-700 text-boutique-navy font-semibold py-3.5 rounded-xl transition-colors mt-2 active:scale-[0.98]">
                 {t.novelty?.submitBtn || 'Registrar Novedad'}
               </button>
             </div>
@@ -963,7 +963,7 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
                 <textarea placeholder={t.mantenimientoModals?.logbookDescPlaceholder || 'Ej: Se ha reparado...'} className="w-full bg-white border border-boutique-sand rounded-xl px-4 py-3 text-sm text-slate-600 focus:outline-none focus:border-gray-200 focus:ring-1 focus:ring-slate-800 resize-none h-32" readOnly></textarea>
               </div>
               
-              <button onClick={() => setIsLogbookModalOpen(false)} className="w-full bg-boutique-sand hover:bg-boutique-offwhite text-boutique-anthracite font-semibold py-3.5 rounded-xl transition-colors mt-2 active:scale-[0.98]">
+              <button onClick={() => setIsLogbookModalOpen(false)} className="w-full bg-boutique-sand hover:bg-boutique-offwhite text-boutique-navy font-semibold py-3.5 rounded-xl transition-colors mt-2 active:scale-[0.98]">
                 {t.mantenimientoModals?.logbookSubmit || 'Guardar Avance de Mantenimiento'}
               </button>
             </div>
@@ -1006,7 +1006,7 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
                 <input type="text" placeholder={t.mantenimientoModals?.suppliesReasonPlaceholder || 'Ej: Reparación fuga baño Hab 205'} className="w-full bg-white border border-boutique-sand rounded-xl px-4 py-3 text-sm text-slate-600 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500" readOnly />
               </div>
               
-              <button onClick={() => setIsSuppliesModalOpen(false)} className="w-full bg-amber-500 hover:bg-amber-600 text-boutique-anthracite font-semibold py-3.5 rounded-xl transition-colors mt-2 active:scale-[0.98]">
+              <button onClick={() => setIsSuppliesModalOpen(false)} className="w-full bg-amber-500 hover:bg-amber-600 text-boutique-navy font-semibold py-3.5 rounded-xl transition-colors mt-2 active:scale-[0.98]">
                 {t.mantenimientoModals?.suppliesSubmit || 'Enviar Solicitud al Jefe de Área'}
               </button>
             </div>
@@ -1034,7 +1034,7 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
             </div>
             
             <div className="pt-2 mt-auto">
-              <button onClick={() => setIsInventoryModalOpen(false)} className="w-full bg-boutique-gold hover:bg-indigo-700 text-boutique-anthracite font-semibold py-3.5 rounded-xl transition-colors active:scale-[0.98]">
+              <button onClick={() => setIsInventoryModalOpen(false)} className="w-full bg-boutique-gold hover:bg-indigo-700 text-boutique-navy font-semibold py-3.5 rounded-xl transition-colors active:scale-[0.98]">
                 {t.inventorySelection?.saveBtn || 'Guardar y Actualizar'}
               </button>
             </div>

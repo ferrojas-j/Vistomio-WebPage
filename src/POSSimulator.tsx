@@ -364,7 +364,7 @@ export default function POSSimulator({ t }: { t: any }) {
                       <p className="text-[11px] text-gray-500 font-semibold leading-tight">{posDemo.admin.menuEditorDesc}</p>
                     </div>
                   </div>
-                  <div className="text-gray-600 mr-2">›</div>
+                  <div className="text-boutique-navy/80 mr-2">›</div>
                 </div>
 
                 <div 
@@ -478,7 +478,7 @@ export default function POSSimulator({ t }: { t: any }) {
                     </button>
                   </div>
 
-                  <button className="w-full bg-boutique-navy hover:bg-rose-600 text-boutique-anthracite font-semibold py-4 rounded-xl flex items-center justify-center gap-2 active:scale-95 transition-all shadow-sm shadow-rose-500/20 mb-4">
+                  <button className="w-full bg-boutique-navy hover:bg-rose-600 text-boutique-navy font-semibold py-4 rounded-xl flex items-center justify-center gap-2 active:scale-95 transition-all shadow-sm shadow-rose-500/20 mb-4">
                     <Shield size={18} />
                     {posDemo.closeShiftModal?.confirm || 'Confirmar Cierre'}
                   </button>
@@ -537,7 +537,7 @@ export default function POSSimulator({ t }: { t: any }) {
                     </div>
                   </div>
                   
-                  <button onClick={() => setShowNewExpense(false)} className="w-full bg-boutique-navy hover:bg-rose-600 text-boutique-anthracite font-semibold py-3.5 rounded-xl flex items-center justify-center gap-2 active:scale-95 transition-all shadow-sm shadow-rose-500/20 mt-6 cursor-pointer">
+                  <button onClick={() => setShowNewExpense(false)} className="w-full bg-boutique-navy hover:bg-rose-600 text-boutique-navy font-semibold py-3.5 rounded-xl flex items-center justify-center gap-2 active:scale-95 transition-all shadow-sm shadow-rose-500/20 mt-6 cursor-pointer">
                     {tExpModal.saveBtn || 'Guardar Gasto'}
                   </button>
                 </div>
@@ -720,7 +720,7 @@ export default function POSSimulator({ t }: { t: any }) {
                   <div className="bg-white p-4 pt-4 border-t border-slate-100 mt-auto shrink-0 shadow-[0_-10px_20px_rgba(0,0,0,0.03)]">
                     <button 
                       onClick={confirmPayment}
-                      className="w-full bg-boutique-gold hover:bg-indigo-700 text-boutique-anthracite font-semibold py-4 rounded-xl flex items-center justify-center gap-2 active:scale-95 transition-all shadow-sm shadow-indigo-600/20 cursor-pointer"
+                      className="w-full bg-boutique-gold hover:bg-indigo-700 text-boutique-navy font-semibold py-4 rounded-xl flex items-center justify-center gap-2 active:scale-95 transition-all shadow-sm shadow-indigo-600/20 cursor-pointer"
                     >
                       <Check size={18} />
                       {tInt.confirmBtn || 'Confirmar'}

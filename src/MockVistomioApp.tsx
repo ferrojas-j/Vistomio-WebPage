@@ -13,7 +13,7 @@ export default function MockVistomioApp({ t, lang }: { t: any, lang: string }) {
   };
 
   return (
-    <div className="w-full flex bg-white text-left text-boutique-anthracite font-sans" style={{ height: '640px' }}>
+    <div className="w-full flex bg-white text-left text-boutique-navy font-sans" style={{ height: '640px' }}>
       
       {/* --- SIDEBAR --- */}
       <div className="w-64 flex-shrink-0 bg-[#F4F1EA] flex flex-col overflow-hidden">
@@ -24,8 +24,8 @@ export default function MockVistomioApp({ t, lang }: { t: any, lang: string }) {
             V
           </div>
           <div className="flex flex-col" translate="no">
-            <span className="font-bold tracking-[0.2em] text-[11px] text-gray-800 leading-tight">VISTOMIO</span>
-            <span className="font-bold tracking-[0.2em] text-[11px] text-gray-800 leading-tight">APP</span>
+            <span className="font-bold tracking-[0.2em] text-[11px] text-boutique-navy leading-tight">VISTOMIO</span>
+            <span className="font-bold tracking-[0.2em] text-[11px] text-boutique-navy leading-tight">APP</span>
           </div>
         </div>
 
@@ -45,7 +45,7 @@ export default function MockVistomioApp({ t, lang }: { t: any, lang: string }) {
         {/* Bottom Sidebar Area */}
         <div className="p-4 mt-auto bg-[#F4F1EA]">
           <div className="flex items-center justify-between bg-white px-4 py-3 rounded-2xl shadow-sm mb-4 cursor-pointer">
-            <div className="flex items-center gap-2 text-sm font-bold text-gray-700">
+            <div className="flex items-center gap-2 text-sm font-bold text-boutique-navy/90">
               <Globe size={16} className="text-gray-400" /> {languageNames[lang] || 'Español'}
             </div>
             <ChevronDown size={14} className="text-gray-400" />
@@ -74,7 +74,7 @@ export default function MockVistomioApp({ t, lang }: { t: any, lang: string }) {
               <Badge count="8" label={t.header.rooms} color="emerald" />
               <Badge count="5" label={t.header.channels} color="amber" />
             </div>
-            <button className="bg-white border-2 border-gray-100/80 hover:border-gray-200 px-3 py-1 rounded-2xl text-[9px] font-bold tracking-widest text-gray-700 uppercase flex items-center gap-2 shadow-sm transition-all">
+            <button className="bg-white border-2 border-gray-100/80 hover:border-gray-200 px-3 py-1 rounded-2xl text-[9px] font-bold tracking-widest text-boutique-navy/90 uppercase flex items-center gap-2 shadow-sm transition-all">
               <span className="text-gray-400 text-sm">+</span>
               <div className="flex flex-col text-left leading-tight">
                 <span>{t.header.newRes1}</span>
@@ -87,12 +87,12 @@ export default function MockVistomioApp({ t, lang }: { t: any, lang: string }) {
         {/* Toolbar */}
         <div className="px-6 pb-3 flex flex-wrap items-center justify-between gap-3 flex-shrink-0 border-b border-gray-50 mb-2">
           <div className="flex items-center gap-4">
-            <div className="hidden xl:flex items-start gap-2 font-bold text-gray-700 w-28 leading-tight text-xs">
+            <div className="hidden xl:flex items-start gap-2 font-bold text-boutique-navy/90 w-28 leading-tight text-xs">
               <CalendarDays size={14} className="text-[#D4AF37] mt-0.5" />
               {t.toolbar.calendar}
             </div>
             <div className="flex bg-gray-50/80 p-1 rounded-2xl border border-gray-100">
-              <button className="bg-white px-3 py-1.5 rounded-[12px] shadow-sm border border-gray-100 text-[11px] font-bold flex items-center gap-1.5 text-gray-800">
+              <button className="bg-white px-3 py-1.5 rounded-[12px] shadow-sm border border-gray-100 text-[11px] font-bold flex items-center gap-1.5 text-boutique-navy">
                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-500"></div> {t.toolbar.reservations}
               </button>
               <button className="px-3 py-1.5 rounded-[12px] text-[11px] font-bold text-gray-500 flex items-center gap-1.5">
@@ -103,17 +103,17 @@ export default function MockVistomioApp({ t, lang }: { t: any, lang: string }) {
           
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2">
-              <div className="flex items-center gap-1 bg-white border border-gray-200/80 rounded-xl px-3 py-1.5 shadow-sm text-[11px] font-bold text-gray-600">
+              <div className="flex items-center gap-1 bg-white border border-gray-200/80 rounded-xl px-3 py-1.5 shadow-sm text-[11px] font-bold text-boutique-navy/80">
                 {t.toolbar.august} <ChevronDown size={14} className="text-gray-400" />
               </div>
-              <div className="flex items-center gap-1 bg-white border border-gray-200/80 rounded-xl px-3 py-1.5 shadow-sm text-[11px] font-bold text-gray-600">
+              <div className="flex items-center gap-1 bg-white border border-gray-200/80 rounded-xl px-3 py-1.5 shadow-sm text-[11px] font-bold text-boutique-navy/80">
                 2026 <ChevronDown size={14} className="text-gray-400" />
               </div>
             </div>
             <div className="flex items-center gap-1.5">
-              <button className="p-1.5 bg-white border border-gray-200/80 rounded-xl text-gray-600 shadow-sm"><ChevronLeft size={14} strokeWidth={3} /></button>
+              <button className="p-1.5 bg-white border border-gray-200/80 rounded-xl text-boutique-navy/80 shadow-sm"><ChevronLeft size={14} strokeWidth={3} /></button>
               <button className="px-3 py-1.5 bg-white border border-gray-200/80 shadow-sm rounded-xl text-[9px] font-bold tracking-widest text-[#2A75D3]">{t.toolbar.today}</button>
-              <button className="p-1.5 bg-white border border-gray-200/80 rounded-xl text-gray-600 shadow-sm"><ChevronRight size={14} strokeWidth={3} /></button>
+              <button className="p-1.5 bg-white border border-gray-200/80 rounded-xl text-boutique-navy/80 shadow-sm"><ChevronRight size={14} strokeWidth={3} /></button>
             </div>
           </div>
         </div>
@@ -142,7 +142,7 @@ export default function MockVistomioApp({ t, lang }: { t: any, lang: string }) {
             <div className="flex-1 flex flex-col overflow-y-auto custom-scrollbar-mock-horizontal">
               <div className="h-16 relative flex border-b-2 border-gray-100/60 group">
                 <div className="w-48 flex-shrink-0 px-4 py-0 border-r-2 border-gray-100/60 flex items-center">
-                  <span className="text-[11px] font-bold text-gray-700">{t.grid.rooms?.[0] || 'Suite Deluxe'}</span>
+                  <span className="text-[11px] font-bold text-boutique-navy/90">{t.grid.rooms?.[0] || 'Suite Deluxe'}</span>
                 </div>
                 <div className="flex-1 grid grid-cols-7 relative">
                    {[...Array(7)].map((_, i) => <div key={i} className={`border-r-2 border-gray-100/60 h-full ${i === 1 ? 'bg-amber-50/20' : ''}`}></div>)}
@@ -154,7 +154,7 @@ export default function MockVistomioApp({ t, lang }: { t: any, lang: string }) {
               
               <div className="h-16 relative flex border-b-2 border-gray-100/60 group">
                 <div className="w-48 flex-shrink-0 px-4 py-0 border-r-2 border-gray-100/60 flex items-center">
-                  <span className="text-[11px] font-bold text-gray-700">{t.grid.rooms?.[1] || 'Suite Garden'}</span>
+                  <span className="text-[11px] font-bold text-boutique-navy/90">{t.grid.rooms?.[1] || 'Suite Garden'}</span>
                 </div>
                 <div className="flex-1 grid grid-cols-7 relative">
                    {[...Array(7)].map((_, i) => <div key={i} className={`border-r-2 border-gray-100/60 h-full ${i === 1 ? 'bg-amber-50/20' : ''}`}></div>)}
@@ -165,7 +165,7 @@ export default function MockVistomioApp({ t, lang }: { t: any, lang: string }) {
 
               <div className="h-16 relative flex border-b-2 border-gray-100/60 group">
                 <div className="w-48 flex-shrink-0 px-4 py-0 border-r-2 border-gray-100/60 flex items-center">
-                  <span className="text-[11px] font-bold text-gray-700">{t.grid.rooms?.[2] || 'Room 301'}</span>
+                  <span className="text-[11px] font-bold text-boutique-navy/90">{t.grid.rooms?.[2] || 'Room 301'}</span>
                 </div>
                 <div className="flex-1 grid grid-cols-7 relative">
                    {[...Array(7)].map((_, i) => <div key={i} className={`border-r-2 border-gray-100/60 h-full ${i === 1 ? 'bg-amber-50/20' : ''}`}></div>)}
@@ -182,7 +182,7 @@ export default function MockVistomioApp({ t, lang }: { t: any, lang: string }) {
           <div className="border-2 border-gray-100/60 rounded-[1.5rem] bg-white p-5">
             <div className="flex items-center gap-2 mb-4">
               <Globe size={16} className="text-gray-400" />
-              <h3 className="text-sm font-bold text-gray-700">{t.channels.title}</h3>
+              <h3 className="text-sm font-bold text-boutique-navy/90">{t.channels.title}</h3>
             </div>
             
             <div className="flex gap-4">
@@ -263,7 +263,7 @@ function ChannelCard({ name, color, subtitle }: { name: string, color: string, s
         <Globe size={14} />
       </div>
       <div className="overflow-hidden">
-        <div className="text-[11px] font-bold text-gray-800 leading-tight truncate">{name}</div>
+        <div className="text-[11px] font-bold text-boutique-navy leading-tight truncate">{name}</div>
         <div className="text-[9px] text-gray-500 font-semibold mt-0.5">{subtitle}</div>
       </div>
     </div>

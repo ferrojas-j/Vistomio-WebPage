@@ -197,7 +197,7 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
     }
   }, [messages]);
 
-  const channelIcon = <MessageCircle size={20} className="text-boutique-anthracite" />;
+  const channelIcon = <MessageCircle size={20} className="text-boutique-navy" />;
 
   return (
     <div className="w-full max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-12">
@@ -213,10 +213,10 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
           {/* Header */}
           <div className={'bg-boutique-gold px-4 py-4 pt-8 flex items-center gap-3 shadow-md z-10 shrink-0 transition-colors'}>
             <div className="w-10 h-10 rounded-full bg-black/20 flex items-center justify-center shrink-0">
-              <Bot size={24} className="text-boutique-anthracite" />
+              <Bot size={24} className="text-boutique-navy" />
             </div>
             <div className="flex-grow">
-              <h3 className="font-semibold text-boutique-anthracite leading-tight font-serif tracking-wide">Vistomio Bot</h3>
+              <h3 className="font-semibold text-boutique-navy leading-tight font-serif tracking-wide">Vistomio Bot</h3>
               <p className="text-white/80 text-xs">En línea 24/7</p>
             </div>
             <div className="ml-auto flex gap-3 opacity-80">
@@ -254,7 +254,7 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
               />
               <button 
                 type="button"
-                className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-colors bg-slate-300 text-boutique-anthracite cursor-default"
+                className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-colors bg-slate-300 text-boutique-navy cursor-default"
               >
                 <Send size={18} className="ml-1" />
               </button>
@@ -270,7 +270,7 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
           Mini demo
         </div>
         
-        <h2 className="text-4xl md:text-5xl font-semibold text-boutique-anthracite mb-6 leading-tight font-serif tracking-wide">
+        <h2 className="text-4xl md:text-5xl font-semibold text-boutique-navy mb-6 leading-tight font-serif tracking-wide">
           {currentLanguage === 'es' ? 'Descubre el Chatbot IA Omnicanal de Vistomio' : currentLanguage === 'en' ? 'Discover Vistomio\'s Omnichannel AI Chatbot' : 'Découvrez le Chatbot IA Omnicanal de Vistomio'}
         </h2>
         
@@ -288,22 +288,22 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
         <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-12">
           <div className="h-10 px-4 rounded-xl bg-boutique-sand/80 flex items-center gap-2 border border-gray-300/50 shadow-sm cursor-default">
             <MessageCircle size={18} className="text-boutique-gold" />
-            <span className="text-sm font-medium text-gray-600">WhatsApp</span>
+            <span className="text-sm font-medium text-boutique-navy/80">WhatsApp</span>
             <Check size={14} className="text-boutique-gold/70 ml-1" />
           </div>
           <div className="h-10 px-4 rounded-xl bg-boutique-sand/80 flex items-center gap-2 border border-gray-300/50 shadow-sm cursor-default">
             <Camera size={18} className="text-pink-400" />
-            <span className="text-sm font-medium text-gray-600">Instagram</span>
+            <span className="text-sm font-medium text-boutique-navy/80">Instagram</span>
             <Check size={14} className="text-boutique-gold/70 ml-1" />
           </div>
           <div className="h-10 px-4 rounded-xl bg-boutique-sand/80 flex items-center gap-2 border border-gray-300/50 shadow-sm cursor-default">
             <MessageCircle size={18} className="text-boutique-navy" />
-            <span className="text-sm font-medium text-gray-600">Messenger</span>
+            <span className="text-sm font-medium text-boutique-navy/80">Messenger</span>
             <Check size={14} className="text-boutique-gold/70 ml-1" />
           </div>
           <div className="h-10 px-4 rounded-xl bg-boutique-sand/80 flex items-center gap-2 border border-gray-300/50 shadow-sm cursor-default">
             <Globe size={18} className="text-boutique-gold" />
-            <span className="text-sm font-medium text-gray-600">
+            <span className="text-sm font-medium text-boutique-navy/80">
               {currentLanguage === 'es' ? 'Tu página web' : currentLanguage === 'en' ? 'Your website' : 'Votre site web'}
             </span>
             <Check size={14} className="text-boutique-gold/70 ml-1" />
@@ -312,7 +312,7 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
 
         {/* Customization Pills */}
         <div>
-          <h4 className="text-lg font-semibold text-boutique-anthracite mb-4">
+          <h4 className="text-lg font-semibold text-boutique-navy mb-4">
             {currentLanguage === 'es' ? 'Personaliza como quieras' : currentLanguage === 'en' ? 'Customize as you like' : 'Personnalisez comme vous le souhaitez'}
           </h4>
           
@@ -324,7 +324,7 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
                 className={`flex items-center gap-2 px-5 py-2.5 rounded-full border font-medium transition-all text-sm ${
                   tone === tOption 
                     ? 'bg-boutique-gold/10 border-boutique-gold/50 text-boutique-gold' 
-                    : 'bg-boutique-sand/50 border-gray-300 text-gray-500 hover:bg-boutique-sand hover:text-gray-600'
+                    : 'bg-boutique-sand/50 border-gray-300 text-gray-500 hover:bg-boutique-sand hover:text-boutique-navy/80'
                 }`}
               >
                 <span className="flex-grow">{t.tones[tOption]}</span>
