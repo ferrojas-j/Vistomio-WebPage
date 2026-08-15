@@ -2265,7 +2265,7 @@ const VistomioLandingPage: React.FC = () => {
       </section>
 
       {/* --- CTA FINAL --- */}
-      <section className="py-24 md:py-32 relative bg-boutique-anthracite overflow-hidden">
+      <section className="py-24 md:py-32 relative bg-boutique-navy overflow-hidden">
         {/* Background Accents */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-boutique-gold/10 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-boutique-sand/10 blur-[100px] rounded-full -translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
