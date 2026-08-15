@@ -1659,9 +1659,66 @@ const VistomioLandingPage: React.FC = () => {
           <SectionHeader eyebrow={t.systemDemo?.title || 'Sistemas boutique para negocios boutique'} align="center" />
           
           <div className="relative mx-auto max-w-5xl group cursor-pointer">
-            {/* Decorative floating elements */}
-            <div className="absolute -left-12 top-1/4 w-24 h-24 bg-amber-50 rounded-full mix-blend-multiply opacity-70 animate-[float_6s_ease-in-out_infinite]"></div>
-            <div className="absolute -right-16 bottom-1/3 w-32 h-32 bg-emerald-50 rounded-full mix-blend-multiply opacity-70 animate-[float_8s_ease-in-out_infinite_1s]"></div>
+            {/* Decorative Floating Badges */}
+            {/* Top Left: Check-in */}
+            <div className="absolute -top-6 -left-4 md:-left-16 bg-white px-4 md:px-5 py-3 md:py-4 rounded-xl shadow-xl shadow-gray-300/60 border border-gray-100 flex items-center gap-3 md:gap-4 z-20 animate-[float_5s_ease-in-out_infinite] scale-100 md:scale-[1.05]">
+              <div className="w-8 h-8 md:w-10 md:h-10 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-500 shrink-0">
+                <ConciergeBell size={18} className="md:w-5 md:h-5" />
+              </div>
+              <div>
+                <div className="text-[9px] md:text-[10px] font-bold text-gray-400 uppercase tracking-wider leading-none mb-1">
+                  {lang === 'es' ? 'CHECK-IN' : lang === 'en' ? 'CHECK-IN' : 'CHECK-IN'}
+                </div>
+                <div className="text-xs md:text-sm font-extrabold text-boutique-navy leading-none">
+                  {lang === 'es' ? '+ Nuevo huésped' : lang === 'en' ? '+ New guest' : '+ Nouveau client'}
+                </div>
+              </div>
+            </div>
+
+            {/* Top Right: Restaurant */}
+            <div className="absolute top-1/4 -right-4 md:-right-20 bg-white px-4 md:px-5 py-3 md:py-4 rounded-xl shadow-xl shadow-gray-300/60 border border-gray-100 flex items-center gap-3 md:gap-4 z-20 animate-[float_7s_ease-in-out_infinite_1s] scale-100 md:scale-[1.05]">
+              <div className="w-8 h-8 md:w-10 md:h-10 bg-amber-50 rounded-full flex items-center justify-center text-[#D4AF37] shrink-0">
+                <Wine size={18} className="md:w-5 md:h-5" />
+              </div>
+              <div>
+                <div className="text-[9px] md:text-[10px] font-bold text-gray-400 uppercase tracking-wider leading-none mb-1">
+                  {lang === 'es' ? 'RESTAURANTE' : lang === 'en' ? 'RESTAURANT' : 'RESTAURANT'}
+                </div>
+                <div className="text-xs md:text-sm font-extrabold text-boutique-navy leading-none">
+                  {lang === 'es' ? '+ Pedido Mesa 4' : lang === 'en' ? '+ Order Table 4' : '+ Commande Table 4'}
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Left: Maintenance */}
+            <div className="absolute bottom-1/4 -left-4 md:-left-20 bg-white px-4 md:px-5 py-3 md:py-4 rounded-xl shadow-xl shadow-gray-300/60 border border-gray-100 flex items-center gap-3 md:gap-4 z-20 animate-[float_6s_ease-in-out_infinite_1.5s] scale-100 md:scale-[1.05]">
+              <div className="w-8 h-8 md:w-10 md:h-10 bg-blue-50 rounded-full flex items-center justify-center text-blue-500 shrink-0">
+                <ClipboardCheck size={18} className="md:w-5 md:h-5" />
+              </div>
+              <div>
+                <div className="text-[9px] md:text-[10px] font-bold text-gray-400 uppercase tracking-wider leading-none mb-1">
+                  {lang === 'es' ? 'MANTENIMIENTO' : lang === 'en' ? 'MAINTENANCE' : 'MAINTENANCE'}
+                </div>
+                <div className="text-xs md:text-sm font-extrabold text-boutique-navy leading-none">
+                  {lang === 'es' ? 'Limpieza 102 lista' : lang === 'en' ? 'Room 102 clean' : 'Chambre 102 propre'}
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Right: Payments */}
+            <div className="absolute -bottom-6 -right-4 md:-right-16 bg-white px-4 md:px-5 py-3 md:py-4 rounded-xl shadow-xl shadow-gray-300/60 border border-gray-100 flex items-center gap-3 md:gap-4 z-20 animate-[float_8s_ease-in-out_infinite_0.5s] scale-100 md:scale-[1.05]">
+              <div className="w-8 h-8 md:w-10 md:h-10 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-500 shrink-0">
+                <CreditCard size={18} className="md:w-5 md:h-5" />
+              </div>
+              <div>
+                <div className="text-[9px] md:text-[10px] font-bold text-gray-400 uppercase tracking-wider leading-none mb-1">
+                  {lang === 'es' ? 'FINANZAS' : lang === 'en' ? 'FINANCE' : 'FINANCES'}
+                </div>
+                <div className="text-xs md:text-sm font-extrabold text-boutique-navy leading-none">
+                  {lang === 'es' ? '+ Pago $250' : lang === 'en' ? '+ Payment $250' : '+ Paiement $250'}
+                </div>
+              </div>
+            </div>
             
             {/* Tablet Frame Container */}
             <div className="relative mx-auto w-full rounded-[1.5rem] md:rounded-[2rem] border-[6px] md:border-[10px] border-gray-900 bg-gray-900 shadow-[0_20px_50px_rgba(0,0,0,0.2)] group transition-transform duration-500 hover:-translate-y-2">
