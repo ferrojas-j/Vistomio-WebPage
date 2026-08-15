@@ -1409,8 +1409,9 @@ const VistomioLandingPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           
           {/* Logo */}
-          <div className="flex items-center">
-            <img src="/logo-full-transparent.png" alt="Vistomio Logo" className="h-24 md:h-28 w-auto object-contain" />
+          <div className="flex flex-col items-center justify-center cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <img src="/logo-icon-transparent.png" alt="Vistomio Logo Icon" className="h-12 md:h-14 w-auto object-contain mb-1" />
+            <span className="text-boutique-anthracite font-medium tracking-[0.25em] text-sm md:text-base uppercase">VISTOMIO</span>
           </div>
 
           {/* Desktop Menu */}
@@ -2237,8 +2238,9 @@ const VistomioLandingPage: React.FC = () => {
       {/* --- FOOTER --- */}
       <footer id="contacto" className="bg-white text-gray-600 py-16 border-t border-gray-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex items-center">
-            <img src="/logo-full-transparent.png" alt="Vistomio Logo" className="h-24 md:h-28 w-auto object-contain" />
+          <div className="flex flex-col items-center justify-center cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <img src="/logo-icon-transparent.png" alt="Vistomio Logo Icon" className="h-12 md:h-14 w-auto object-contain mb-1" />
+            <span className="text-boutique-anthracite font-medium tracking-[0.25em] text-sm md:text-base uppercase">VISTOMIO</span>
           </div>
           
           <div className="flex flex-wrap justify-center gap-4 sm:gap-8 text-sm font-medium">
