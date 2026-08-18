@@ -1810,7 +1810,7 @@ const VistomioLandingPage: React.FC = () => {
                     </div>
                     <div>
                       <h4 className="text-xl text-boutique-navy mb-1 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{card.title}</h4>
-                      <p className="text-boutique-navy" dangerouslySetInnerHTML={{ __html: card.desc }} />
+                      <p className="text-boutique-navy text-base leading-relaxed" dangerouslySetInnerHTML={{ __html: card.desc }} />
                     </div>
                   </li>
                 ))}
@@ -1885,8 +1885,8 @@ const VistomioLandingPage: React.FC = () => {
                 <div className="w-16 h-16 rounded-2xl bg-[#13203A] text-white flex items-center justify-center mb-8 shadow-md border border-[#13203A]/20">
                     <benefit.icon size={32} strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-2xl font-normal text-[#B8863B] mb-4 font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{benefit.title}</h3>
-                <p className="text-boutique-navy leading-relaxed text-lg">{benefit.desc}</p>
+                  <h3 className="text-xl md:text-2xl font-normal text-[#B8863B] mb-4 font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{benefit.title}</h3>
+                <p className="text-boutique-navy/80 leading-relaxed text-base">{benefit.desc}</p>
               </div>
             ))}
           </div>
@@ -1945,8 +1945,8 @@ const VistomioLandingPage: React.FC = () => {
                           </div>
                         )}
                       </div>
-                      <h4 className="text-lg md:text-xl text-[#B8863B] mb-3 relative z-10 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{feature.title}</h4>
-                      <p className="text-boutique-navy/80 text-sm leading-relaxed relative z-10 flex-grow font-medium">{feature.desc}</p>
+                      <h4 className="text-xl text-[#B8863B] mb-3 relative z-10 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{feature.title}</h4>
+                      <p className="text-boutique-navy/80 text-base leading-relaxed relative z-10 flex-grow font-medium">{feature.desc}</p>
                       
                       {(feature as any).demoId && (
                         <div className="mt-6 relative z-10">
@@ -1987,14 +1987,14 @@ const VistomioLandingPage: React.FC = () => {
                           <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center border border-[#6B4357]/20 text-[#6B4357] shadow-md">
                             <Bot size={24} strokeWidth={1.5} />
                           </div>
-                          <h3 className="text-base font-normal text-boutique-navy font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.chatbotPlans.plans[0].name}</h3>
+                          <h3 className="text-xl font-normal text-boutique-navy font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.chatbotPlans.plans[0].name}</h3>
                         </div>
                         <div className="w-full h-px bg-gray-100 mb-6"></div>
                         <ul className="flex flex-col gap-4 flex-grow">
                           {t.chatbotPlans.plans[0].features.map((feature, idx) => (
                             <li key={idx} className="flex gap-3">
                               <div className="mt-0.5 min-w-[18px] text-[#B8863B]"> <CheckCircle2 size={18} /> </div>
-                              <span className="text-boutique-navy/90 text-sm font-medium leading-relaxed">{feature}</span>
+                              <span className="text-boutique-navy/90 text-base font-medium leading-relaxed">{feature}</span>
                             </li>
                           ))}
                         </ul>
@@ -2010,14 +2010,14 @@ const VistomioLandingPage: React.FC = () => {
                               <Zap size={10} className="absolute -bottom-1 -right-1 text-[#C6A15B]" fill="currentColor" />
                             </div>
                           </div>
-                          <h3 className="text-base font-normal text-boutique-navy font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.chatbotPlans.plans[1].name}</h3>
+                          <h3 className="text-xl font-normal text-boutique-navy font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.chatbotPlans.plans[1].name}</h3>
                         </div>
                         <div className="w-full h-px bg-gray-100 mb-6"></div>
                         <ul className="flex flex-col gap-4 flex-grow">
                           {t.chatbotPlans.plans[1].features.map((feature, idx) => (
                             <li key={idx} className="flex gap-3">
                               <div className="mt-0.5 min-w-[18px] text-[#B8863B]"> <CheckCircle2 size={18} /> </div>
-                              <span className="text-boutique-navy/90 text-sm font-medium leading-relaxed">{feature}</span>
+                              <span className="text-boutique-navy/90 text-base font-medium leading-relaxed">{feature}</span>
                             </li>
                           ))}
                         </ul>
@@ -2033,14 +2033,14 @@ const VistomioLandingPage: React.FC = () => {
                               <Sparkles size={10} className="absolute -bottom-1 -right-1 text-[#C6A15B]" fill="currentColor" />
                             </div>
                           </div>
-                          <h3 className="text-base font-normal text-boutique-navy font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.chatbotPlans.plans[2].name}</h3>
+                          <h3 className="text-xl font-normal text-boutique-navy font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.chatbotPlans.plans[2].name}</h3>
                         </div>
                         <div className="w-full h-px bg-gray-100 mb-6"></div>
                         <ul className="flex flex-col gap-4 flex-grow">
                           {t.chatbotPlans.plans[2].features.map((feature, idx) => (
                             <li key={idx} className="flex gap-3">
                               <div className="mt-0.5 min-w-[18px] text-[#B8863B]"> <CheckCircle2 size={18} /> </div>
-                              <span className="text-boutique-navy/90 text-sm font-medium leading-relaxed">{feature}</span>
+                              <span className="text-boutique-navy/90 text-base font-medium leading-relaxed">{feature}</span>
                             </li>
                           ))}
                         </ul>
@@ -2083,8 +2083,8 @@ const VistomioLandingPage: React.FC = () => {
                     <Utensils size={24} />
                   </div>
                   <div>
-                    <h4 className="text-boutique-navy mb-1 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{t.posDemo.features[0].title}</h4>
-                    <p className="text-boutique-navy/80 text-sm">{t.posDemo.features[0].desc}</p>
+                    <h4 className="text-xl text-boutique-navy mb-1 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{t.posDemo.features[0].title}</h4>
+                    <p className="text-boutique-navy/80 text-base leading-relaxed">{t.posDemo.features[0].desc}</p>
                   </div>
                 </div>
                 
@@ -2093,8 +2093,8 @@ const VistomioLandingPage: React.FC = () => {
                     <Wallet size={24} />
                   </div>
                   <div>
-                    <h4 className="text-boutique-navy mb-1 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{t.posDemo.features[1].title}</h4>
-                    <p className="text-boutique-navy/80 text-sm">{t.posDemo.features[1].desc}</p>
+                    <h4 className="text-xl text-boutique-navy mb-1 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{t.posDemo.features[1].title}</h4>
+                    <p className="text-boutique-navy/80 text-base leading-relaxed">{t.posDemo.features[1].desc}</p>
                   </div>
                 </div>
               </div>
@@ -2136,10 +2136,10 @@ const VistomioLandingPage: React.FC = () => {
                     <ClipboardCheck size={24} />
                   </div>
                   <div>
-                    <h4 className="text-boutique-navy mb-1 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">
+                    <h4 className="text-xl text-boutique-navy mb-1 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">
                       {lang === 'es' ? 'Cero papel' : lang === 'en' ? 'Paperless' : 'Zéro papier'}
                     </h4>
-                    <p className="text-boutique-navy/80 text-sm">
+                    <p className="text-boutique-navy/80 text-base leading-relaxed">
                       {lang === 'es' ? 'Digitaliza checklists, asignaciones y solicitudes de mantenimiento al instante.' : lang === 'en' ? 'Digitize checklists, assignments, and maintenance requests instantly.' : 'Numérisez les checklists, les assignations et les demandes de maintenance instantanément.'}
                     </p>
                   </div>
@@ -2150,10 +2150,10 @@ const VistomioLandingPage: React.FC = () => {
                     <Users size={24} />
                   </div>
                   <div>
-                    <h4 className="text-boutique-navy mb-1 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">
+                    <h4 className="text-xl text-boutique-navy mb-1 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">
                       {lang === 'es' ? 'Comunicación en tiempo real' : lang === 'en' ? 'Real-time communication' : 'Communication en temps réel'}
                     </h4>
-                    <p className="text-boutique-navy/80 text-sm">
+                    <p className="text-boutique-navy/80 text-base leading-relaxed">
                        {lang === 'es' ? 'Recepcionistas, mucamas y mantenimiento conectados bajo la misma fuente de verdad.' : lang === 'en' ? 'Receptionists, housekeepers, and maintenance connected under the same source of truth.' : 'Réceptionnistes, femmes de chambre et maintenance connectés sous la même source de vérité.'}
                     </p>
                   </div>
@@ -2509,7 +2509,7 @@ const VistomioLandingPage: React.FC = () => {
                     <CheckCircle2 size={32} className="text-boutique-navy" />
                   </div>
                   <h3 className="text-3xl font-normal text-boutique-navy mb-2 font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.customPlanModal.title}</h3>
-                  <p className="text-boutique-navy/80 text-sm">{t.customPlanModal.desc}</p>
+                  <p className="text-boutique-navy/80 text-base leading-relaxed">{t.customPlanModal.desc}</p>
                 </div>
 
                 <form className="space-y-4" onSubmit={(e) => { 
@@ -2608,7 +2608,7 @@ const VistomioLandingPage: React.FC = () => {
                     <Mail size={32} className="text-boutique-navy" />
                   </div>
                   <h3 className="text-3xl font-normal text-boutique-navy mb-2 font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.contactModal.email.title}</h3>
-                  <p className="text-boutique-navy/80 text-sm">{t.contactModal.email.desc}</p>
+                  <p className="text-boutique-navy/80 text-base leading-relaxed">{t.contactModal.email.desc}</p>
                 </div>
 
                 <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); alert(t.contactModal.email.success); setIsContactModalOpen(false); setContactModalView('options'); }}>
@@ -2659,7 +2659,7 @@ const VistomioLandingPage: React.FC = () => {
                     <Calendar size={32} className="text-[#0B1121]" />
                   </div>
                   <h3 className="text-3xl font-normal text-boutique-navy mb-2 font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.contactModal.calendar.title}</h3>
-                  <p className="text-boutique-navy/80 text-sm">{t.contactModal.calendar.desc}</p>
+                  <p className="text-boutique-navy/80 text-base leading-relaxed">{t.contactModal.calendar.desc}</p>
                 </div>
                 
                 <div className="space-y-6">
