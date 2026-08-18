@@ -1518,7 +1518,7 @@ const VistomioLandingPage: React.FC = () => {
                 onClick={() => setLangMenuOpen(!langMenuOpen)}
                 className="flex items-center gap-2 text-sm font-medium text-boutique-navy hover:text-[#B8863B] transition-colors group"
               >
-                <Globe size={16} className="text-[#B8863B] group-hover:text-[#FCE69B] transition-colors" />
+                <Globe size={16} className="text-boutique-navy group-hover:text-[#B8863B] transition-colors" />
                 <span>{lang === 'es' ? 'Español' : lang === 'en' ? 'English' : 'Français'}</span>
                 <ChevronDown size={14} className={`text-slate-500 transition-transform duration-300 ${langMenuOpen ? 'rotate-180' : ''}`} />
               </button>
