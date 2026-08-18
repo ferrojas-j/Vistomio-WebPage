@@ -2,7 +2,7 @@
 
 @theme {
   --font-sans: 'Inter', system-ui, sans-serif;
-  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-serif: 'Literata', Georgia, serif;
   
   --color-boutique-navy: #13203A;
   --color-boutique-gold: #C6A15B;
@@ -29,6 +29,7 @@
 body {
   margin: 0;
   font-family: var(--font-sans);
+  font-optical-sizing: auto;
   background-color: var(--color-boutique-offwhite);
   color: var(--color-boutique-anthracite);
   -webkit-font-smoothing: antialiased;
