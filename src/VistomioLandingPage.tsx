@@ -1944,12 +1944,12 @@ const VistomioLandingPage: React.FC = () => {
                           </div>
                         )}
                       </div>
-                      <h4 className="text-xl text-boutique-navy mb-3 relative z-10 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{feature.title}</h4>
+                      <h4 className="text-xl text-[#B8863B] mb-3 relative z-10 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{feature.title}</h4>
                       <p className="text-boutique-navy/80 text-sm leading-relaxed relative z-10 flex-grow font-medium">{feature.desc}</p>
                       
                       {(feature as any).demoId && (
                         <div className="mt-6 relative z-10">
-                          <a href={`#${(feature as any).demoId}`} className="inline-flex items-center gap-2 text-sm font-bold text-[#13203A] hover:text-[#13203A]/80 transition-colors group/btn uppercase tracking-widest">
+                          <a href={`#${(feature as any).demoId}`} className="inline-flex items-center gap-2 text-sm font-bold text-[#B8863B] hover:text-[#C6A15B] transition-colors group/btn uppercase tracking-widest">
                             {t.seeHowItWorks} <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
                           </a>
                         </div>
@@ -1973,7 +1973,7 @@ const VistomioLandingPage: React.FC = () => {
                     </p>
                     
                     <div className="mb-12">
-                      <a href="#demo-chatbot" className="inline-flex items-center gap-2 text-sm font-bold text-[#13203A] hover:text-[#13203A]/80 transition-colors group/btn uppercase tracking-widest">
+                      <a href="#demo-chatbot" className="inline-flex items-center gap-2 text-sm font-bold text-[#B8863B] hover:text-[#C6A15B] transition-colors group/btn uppercase tracking-widest">
                         {t.seeHowItWorks} <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
                       </a>
                     </div>
@@ -1986,7 +1986,7 @@ const VistomioLandingPage: React.FC = () => {
                           <div className="w-14 h-14 rounded-2xl bg-boutique-offwhite flex items-center justify-center border border-gray-100 text-boutique-navy shadow-sm">
                             <MessageSquareText size={24} />
                           </div>
-                          <h3 className="text-xl font-normal text-boutique-navy font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.chatbotPlans.plans[0].name}</h3>
+                          <h3 className="text-xl font-normal text-[#B8863B] font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.chatbotPlans.plans[0].name}</h3>
                         </div>
                         <div className="w-full h-px bg-gray-100 mb-6"></div>
                         <ul className="flex flex-col gap-4 flex-grow">
@@ -2006,7 +2006,7 @@ const VistomioLandingPage: React.FC = () => {
                           <div className="w-14 h-14 rounded-2xl bg-boutique-offwhite flex items-center justify-center border border-gray-100 text-boutique-navy shadow-sm">
                             <Zap size={24} />
                           </div>
-                          <h3 className="text-xl font-normal text-boutique-navy font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.chatbotPlans.plans[1].name}</h3>
+                          <h3 className="text-xl font-normal text-[#B8863B] font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.chatbotPlans.plans[1].name}</h3>
                         </div>
                         <div className="w-full h-px bg-gray-100 mb-6"></div>
                         <ul className="flex flex-col gap-4 flex-grow">
@@ -2026,7 +2026,7 @@ const VistomioLandingPage: React.FC = () => {
                           <div className="w-14 h-14 rounded-2xl bg-boutique-offwhite flex items-center justify-center border border-gray-100 text-boutique-navy shadow-sm">
                             <Bot size={24} />
                           </div>
-                          <h3 className="text-xl font-normal text-boutique-navy font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.chatbotPlans.plans[2].name}</h3>
+                          <h3 className="text-xl font-normal text-[#B8863B] font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.chatbotPlans.plans[2].name}</h3>
                         </div>
                         <div className="w-full h-px bg-gray-100 mb-6"></div>
                         <ul className="flex flex-col gap-4 flex-grow">
