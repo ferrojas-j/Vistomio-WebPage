@@ -1410,10 +1410,7 @@ const VistomioLandingPage: React.FC = () => {
           
           {/* Logo */}
           <div className="flex flex-col items-center justify-center cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <div className="relative flex items-center justify-center">
-                <div className="absolute top-[10%] left-[10%] w-[80%] h-[75%] bg-white" style={{ clipPath: 'polygon(50% 100%, 0 0, 100% 0)' }}></div>
-                <img src="/logo-icon-transparent.png" alt="Vistomio Logo Icon" className="relative z-10 h-[52px] md:h-[62px] w-auto object-contain mb-1 drop-shadow-[0_0_0.75px_#B8863B]" />
-              </div>
+            <img src="/logo-icon-transparent.png" alt="Vistomio Logo Icon" className="h-[52px] md:h-[62px] w-auto object-contain mb-1" />
             <span className="text-boutique-navy font-medium tracking-[0.25em] text-sm md:text-base uppercase">VISTOMIO</span>
           </div>
 
@@ -2320,10 +2317,7 @@ const VistomioLandingPage: React.FC = () => {
       <footer id="contacto" className="bg-white text-boutique-navy/80 py-16 border-t border-gray-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex flex-col items-center justify-center cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <div className="relative flex items-center justify-center">
-                <div className="absolute top-[10%] left-[10%] w-[80%] h-[75%] bg-white" style={{ clipPath: 'polygon(50% 100%, 0 0, 100% 0)' }}></div>
-                <img src="/logo-icon-transparent.png" alt="Vistomio Logo Icon" className="relative z-10 h-[52px] md:h-[62px] w-auto object-contain mb-1 drop-shadow-[0_0_0.75px_#B8863B]" />
-              </div>
+            <img src="/logo-icon-transparent.png" alt="Vistomio Logo Icon" className="h-[52px] md:h-[62px] w-auto object-contain mb-1" />
             <span className="text-boutique-navy font-medium tracking-[0.25em] text-sm md:text-base uppercase">VISTOMIO</span>
           </div>
           
