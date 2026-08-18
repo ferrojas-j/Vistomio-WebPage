@@ -27,34 +27,31 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
       <div className="w-[180px] md:w-[240px] flex-shrink-0 bg-[#F4F1EA] flex flex-col overflow-hidden rounded-[16px] md:rounded-[20px] shadow-xl h-full">
         
         {/* Logo Area */}
-        <div className="p-5 md:p-6 flex items-center justify-center gap-3 border-b border-[#E8DFD0]/50 bg-white">
-          <div className="w-10 h-10 md:w-14 md:h-14 rounded-[10px] md:rounded-[14px] border-2 border-[#C6A15B] bg-white flex items-center justify-center text-[#C6A15B] font-bold text-2xl md:text-3xl shadow-sm flex-shrink-0">
-            V
+        <div className="pt-6 pb-6 md:pt-10 md:pb-8 flex items-center justify-center gap-3 md:gap-4 bg-white rounded-t-[16px] md:rounded-t-[20px]">
+          <div className="w-12 h-12 md:w-16 md:h-16 rounded-[12px] md:rounded-[16px] border-[1.5px] border-[#C6A15B] bg-white flex items-center justify-center shadow-[0_2px_10px_rgba(0,0,0,0.05)] flex-shrink-0 p-2 md:p-2.5">
+            <img src="/logo-icon-transparent.png" alt="Vistomio Logo" className="w-full h-full object-contain opacity-90" />
           </div>
-          <div className="flex flex-col" translate="no">
-            <span className="font-black tracking-[0.15em] text-[12px] md:text-[15px] text-boutique-navy leading-none">VISTOMIO</span>
-            <span className="font-extrabold tracking-[0.15em] text-[9px] md:text-[11px] text-boutique-navy leading-none mt-1.5">APP</span>
-          </div>
+          <span className="font-bold tracking-[0.2em] md:tracking-[0.25em] text-[13px] md:text-[17px] text-boutique-navy leading-none mt-1" translate="no">VISTOMIO</span>
         </div>
 
-        {/* Menu Items (Perfectly spaced, filling the column without language selector) */}
-        <div className="flex-1 py-4 md:py-6 space-y-1.5 md:space-y-3 overflow-y-auto scrollbar-hide [&::-webkit-scrollbar]:hidden flex flex-col">
-          <MenuItem icon={<LayoutDashboard className="w-4 h-4 md:w-5 md:h-5" />} label={t.sidebar?.dashboard || 'Dashboard'} />
-          <MenuItem icon={<CalendarDays className="w-4 h-4 md:w-5 md:h-5" />} label={t.sidebar?.bookingEngine || 'Reservas'} active />
-          <MenuItem icon={<CreditCard className="w-4 h-4 md:w-5 md:h-5" />} label={t.sidebar?.payments || 'Pagos'} />
-          <MenuItem icon={<UserCheck className="w-4 h-4 md:w-5 md:h-5" />} label={t.sidebar?.checkin || 'Check-in'} />
-          <MenuItem icon={<Utensils className="w-4 h-4 md:w-5 md:h-5" />} label={t.sidebar?.restaurant || 'Restaurante'} />
-          <MenuItem icon={<ClipboardList className="w-4 h-4 md:w-5 md:h-5" />} label={t.sidebar?.operations || 'Operaciones'} />
-          <MenuItem icon={<DollarSign className="text-sm md:text-lg" />} label={t.sidebar?.finance || 'Finanzas'} />
-          <MenuItem icon={<MessageSquareText className="w-4 h-4 md:w-5 md:h-5" />} label={t.sidebar?.chatbot || 'Chatbot IA'} />
-          <MenuItem icon={<BarChart2 className="w-4 h-4 md:w-5 md:h-5" />} label={t.sidebar?.reports || 'Reportes'} />
+        {/* Menu Items */}
+        <div className="flex-1 px-2 md:px-3 py-6 md:py-8 space-y-2 md:space-y-4 overflow-y-auto scrollbar-hide [&::-webkit-scrollbar]:hidden flex flex-col justify-start">
+          <MenuItem icon={<LayoutDashboard className="w-4 h-4 md:w-5 md:h-5" />} label={t?.sidebar?.dashboard || 'Dashboard General'} />
+          <MenuItem icon={<CalendarDays className="w-4 h-4 md:w-5 md:h-5" />} label={t?.sidebar?.bookingEngine || 'Motor de Reservas'} active />
+          <MenuItem icon={<CreditCard className="w-4 h-4 md:w-5 md:h-5" />} label={t?.sidebar?.payments || 'Pagos y Facturación'} />
+          <MenuItem icon={<UserCheck className="w-4 h-4 md:w-5 md:h-5" />} label={t?.sidebar?.checkin || 'Check-in y Gestión'} />
+          <MenuItem icon={<Utensils className="w-4 h-4 md:w-5 md:h-5" />} label={t?.sidebar?.restaurant || 'Restaurante y Bar'} />
+          <MenuItem icon={<ClipboardList className="w-4 h-4 md:w-5 md:h-5" />} label={t?.sidebar?.operations || 'Operaciones y Tareas'} />
+          <MenuItem icon={<DollarSign className="text-sm md:text-lg" />} label={t?.sidebar?.finance || 'Administración y Finanzas'} />
+          <MenuItem icon={<MessageSquareText className="w-4 h-4 md:w-5 md:h-5" />} label={t?.sidebar?.chatbot || 'Chatbot IA'} />
+          <MenuItem icon={<BarChart2 className="w-4 h-4 md:w-5 md:h-5" />} label={t?.sidebar?.reports || 'Reportes y Analíticas'} />
         </div>
       </div>
 
       {/* --- MAIN CONTENT --- */}
       <div className="flex-1 flex flex-col overflow-hidden relative gap-3 md:gap-4 h-full">
         
-        {/* CALENDAR WHITE CARD (Larger flex space) */}
+        {/* CALENDAR WHITE CARD */}
         <div className="bg-white rounded-[16px] md:rounded-[24px] flex-[2] flex flex-col overflow-hidden shadow-xl min-h-0 shrink">
           
           {/* Top Header */}
@@ -105,7 +102,7 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
               </div>
             </div>
 
-            {/* Grid Body (6 rows to look more complete) */}
+            {/* Grid Body (6 rows) */}
             <div className="flex-1 flex flex-col overflow-y-auto scrollbar-hide [&::-webkit-scrollbar]:hidden bg-gray-50/30">
               
               <GanttRow name="Suite Deluxe Terraza">
@@ -143,7 +140,7 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
           </div>
         </div>
 
-        {/* CANALES CONECTADOS (Shorter, more compact) */}
+        {/* CANALES CONECTADOS */}
         <div className="bg-white rounded-[12px] md:rounded-[16px] p-3 md:p-4 shadow-xl flex-shrink-0 flex flex-col overflow-hidden shrink-0 h-auto">
           <div className="flex items-center gap-2 mb-2 md:mb-3 px-1">
             <Globe className="w-4 h-4 text-boutique-navy" />
@@ -167,9 +164,9 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
 // Helper Components
 function MenuItem({ icon, label, active = false }: { icon: React.ReactNode, label: string, active?: boolean }) {
   return (
-    <div className={`flex items-center gap-3.5 px-4 md:px-5 py-2.5 md:py-3.5 mx-3 md:mx-4 rounded-[12px] cursor-pointer transition-colors ${active ? 'bg-[#13203A] text-white shadow-md' : 'text-gray-500 hover:bg-black/5 hover:text-boutique-navy'}`}>
+    <div className={`flex items-center gap-3.5 px-3 md:px-5 py-3 md:py-4 mx-2 md:mx-3 rounded-[12px] md:rounded-[16px] cursor-pointer transition-colors ${active ? 'bg-[#13203A] text-white shadow-[0_4px_12px_rgba(19,32,58,0.2)]' : 'text-gray-500 hover:bg-black/5 hover:text-boutique-navy'}`}>
       <div className={`${active ? 'text-white' : 'text-gray-400'} flex-shrink-0`}>{icon}</div>
-      <span className={`text-[11px] md:text-[13px] leading-tight truncate ${active ? 'font-bold' : 'font-semibold'}`}>{label}</span>
+      <span className={`text-[11px] md:text-[13px] leading-tight truncate ${active ? 'font-bold' : 'font-medium'}`}>{label}</span>
     </div>
   );
 }
