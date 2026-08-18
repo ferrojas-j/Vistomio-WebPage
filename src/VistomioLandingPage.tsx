@@ -1911,7 +1911,7 @@ const VistomioLandingPage: React.FC = () => {
                   <div className="w-10 h-10 rounded-full bg-[#A63D2E]/10 flex shrink-0 items-center justify-center border border-[#A63D2E]/20 shadow-sm">
                      <div className="w-2.5 h-2.5 rounded-full bg-[#A63D2E]"></div>
                   </div>
-                  <h3 className="text-3xl md:text-4xl font-normal text-boutique-navy font-serif tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">
+                  <h3 className="text-[33px] md:text-[40px] font-normal text-[#6B4357] font-serif tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">
                     {category.name.includes('&') ? (
                       category.name.split('&').map((part: any, i: number, arr: any[]) => (
                         <span key={i}>
@@ -1964,7 +1964,7 @@ const VistomioLandingPage: React.FC = () => {
                 ) : (
                   <div className="mt-2">
                     <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-3">
-                      <h4 className="text-3xl font-serif font-normal text-boutique-navy tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{t.chatbotPlans.title}</h4>
+                      <h4 className="text-[33px] font-serif font-normal text-[#6B4357] tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{t.chatbotPlans.title}</h4>
                       <div className="inline-flex">
                         <div className="px-3 py-1.5 bg-white border border-[#6E7B4A] rounded-xl text-[#6E7B4A] text-[10px] font-bold uppercase tracking-widest shadow-sm">
                           {t.standaloneBadge1} {t.standaloneBadge2}
@@ -2072,7 +2072,7 @@ const VistomioLandingPage: React.FC = () => {
               <div className="inline-block px-4 py-1.5 bg-boutique-gold/10 border border-boutique-gold/30 rounded-full text-boutique-gold text-sm font-semibold uppercase tracking-wider mb-6">
                 Mini demo
               </div>
-              <h2 className="text-4xl md:text-5xl font-normal text-boutique-navy mb-6 font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">
+              <h2 className="text-[40px] md:text-[53px] font-normal text-[#6B4357] mb-6 font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">
                 {t.posDemo.sectionTitle}
               </h2>
               <p className="text-xl text-boutique-navy/80 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0">
@@ -2121,7 +2121,7 @@ const VistomioLandingPage: React.FC = () => {
               <div className="inline-block px-4 py-1.5 bg-boutique-gold/10 border border-boutique-gold/30 rounded-full text-boutique-gold text-sm font-semibold uppercase tracking-wider mb-6">
                 Mini demo
               </div>
-              <h2 className="text-4xl md:text-5xl font-normal text-boutique-navy mb-6 font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">
+              <h2 className="text-[40px] md:text-[53px] font-normal text-[#6B4357] mb-6 font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">
                 {lang === 'es' ? 'Sincronización total con Vistomio Staff' : lang === 'en' ? 'Total synchronization with Vistomio Staff' : 'Synchronisation totale avec Vistomio Staff'}
               </h2>
               <p className="text-xl text-boutique-navy/80 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0">
@@ -2711,7 +2711,7 @@ function SectionHeader({ eyebrow, title, align = 'center' }: { eyebrow?: string,
         </div>
       )}
       {title && (
-        <h2 className="text-3xl md:text-4xl lg:text-[40px] font-serif text-[#2C3238] font-normal max-w-4xl mx-auto tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">
+        <h2 className="text-[33px] md:text-[40px] lg:text-[44px] font-serif text-[#6B4357] font-normal max-w-4xl mx-auto tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">
           {title}
         </h2>
       )}
