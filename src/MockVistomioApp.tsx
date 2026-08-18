@@ -21,7 +21,7 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
     <div className="w-full h-full flex bg-white text-left text-boutique-navy font-sans">
       
       {/* --- SIDEBAR --- */}
-      <div className="w-[200px] lg:w-[260px] xl:w-[280px] flex-shrink-0 bg-[#F4F1EA] flex flex-col overflow-hidden border-r border-[#E8DFD0]/50 h-full">
+      <div className="w-[260px] lg:w-[300px] flex-shrink-0 bg-[#F4F1EA] flex flex-col overflow-hidden border-r border-[#E8DFD0]/50 h-full">
         
         {/* Logo Area */}
         <div className="p-6 lg:p-8 flex items-center justify-center gap-2 lg:gap-3 mt-2 lg:mt-4 mb-2 lg:mb-4">
@@ -35,7 +35,7 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
         </div>
 
         {/* Menu Items */}
-        <div className="flex-1 py-2 lg:py-4 space-y-1 lg:space-y-2 overflow-y-auto custom-scrollbar-mock">
+        <div className="flex-1 py-2 lg:py-4 space-y-1 lg:space-y-2 overflow-y-auto scrollbar-hide [&::-webkit-scrollbar]:hidden">
           <MenuItem icon={<LayoutDashboard className="w-4 h-4 lg:w-5 lg:h-5" />} label={t.sidebar?.dashboard || 'Dashboard'} />
           <MenuItem icon={<CalendarDays className="w-4 h-4 lg:w-5 lg:h-5" />} label={t.sidebar?.bookingEngine || 'Reservas'} active />
           <MenuItem icon={<CreditCard className="w-4 h-4 lg:w-5 lg:h-5" />} label={t.sidebar?.payments || 'Pagos'} />
@@ -109,8 +109,8 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
             </div>
 
             {/* Grid Body */}
-            <div className="flex-1 flex flex-col overflow-y-auto custom-scrollbar-mock-horizontal min-w-[700px]">
-              <div className="h-[48px] lg:h-[56px] relative flex border-b border-gray-100 group">
+            <div className="flex-1 flex flex-col overflow-y-auto scrollbar-hide [&::-webkit-scrollbar]:hidden min-w-[700px]">
+              <div className="h-[56px] min-h-[56px] flex-shrink-0 relative flex border-b border-gray-100 group">
                 <div className="w-32 lg:w-48 flex-shrink-0 px-3 lg:px-6 py-0 border-r border-gray-100 flex items-center">
                   <span className="text-[10px] lg:text-[12px] font-bold text-boutique-navy/90 truncate">Suite Deluxe Terraza</span>
                 </div>
@@ -121,7 +121,7 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
                 </div>
               </div>
               
-              <div className="h-[48px] lg:h-[56px] relative flex border-b border-gray-100 group">
+              <div className="h-[56px] min-h-[56px] flex-shrink-0 relative flex border-b border-gray-100 group">
                 <div className="w-32 lg:w-48 flex-shrink-0 px-3 lg:px-6 py-0 border-r border-gray-100 flex items-center">
                   <span className="text-[10px] lg:text-[12px] font-bold text-boutique-navy/90 truncate">Suite Deluxe Jardín</span>
                 </div>
@@ -132,7 +132,7 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
                 </div>
               </div>
 
-              <div className="h-[48px] lg:h-[56px] relative flex border-b border-gray-100 group">
+              <div className="h-[56px] min-h-[56px] flex-shrink-0 relative flex border-b border-gray-100 group">
                 <div className="w-32 lg:w-48 flex-shrink-0 px-3 lg:px-6 py-0 border-r border-gray-100 flex items-center">
                   <span className="text-[10px] lg:text-[12px] font-bold text-boutique-navy/90 truncate">Habitación Deluxe 301</span>
                 </div>
@@ -144,7 +144,7 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
                 </div>
               </div>
 
-              <div className="h-[48px] lg:h-[56px] relative flex border-b border-gray-100 group">
+              <div className="h-[56px] min-h-[56px] flex-shrink-0 relative flex border-b border-gray-100 group">
                 <div className="w-32 lg:w-48 flex-shrink-0 px-3 lg:px-6 py-0 border-r border-gray-100 flex items-center">
                   <span className="text-[10px] lg:text-[12px] font-bold text-boutique-navy/90 truncate">Habitación Deluxe 302</span>
                 </div>
@@ -155,7 +155,7 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
                 </div>
               </div>
 
-              <div className="h-[48px] lg:h-[56px] relative flex border-b border-gray-100 group">
+              <div className="h-[56px] min-h-[56px] flex-shrink-0 relative flex border-b border-gray-100 group">
                 <div className="w-32 lg:w-48 flex-shrink-0 px-3 lg:px-6 py-0 border-r border-gray-100 flex items-center">
                   <span className="text-[10px] lg:text-[12px] font-bold text-boutique-navy/90 truncate">Habitación Jardín 201</span>
                 </div>
@@ -167,7 +167,7 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
                 </div>
               </div>
               
-              <div className="h-[48px] lg:h-[56px] relative flex border-b border-gray-100 group">
+              <div className="h-[56px] min-h-[56px] flex-shrink-0 relative flex border-b border-gray-100 group">
                 <div className="w-32 lg:w-48 flex-shrink-0 px-3 lg:px-6 py-0 border-r border-gray-100 flex items-center">
                   <span className="text-[10px] lg:text-[12px] font-bold text-boutique-navy/90 truncate">Habitación Jardín 202</span>
                 </div>
@@ -192,7 +192,7 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
             <h3 className="text-base lg:text-lg text-boutique-navy/90 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">Canales Conectados</h3>
           </div>
           
-          <div className="flex gap-2 lg:gap-4 overflow-x-auto custom-scrollbar-mock-horizontal pb-2">
+          <div className="flex gap-2 lg:gap-4 overflow-x-auto scrollbar-hide [&::-webkit-scrollbar]:hidden pb-2">
             <ChannelCard name="Booking.com" color="blue" subtitle="Conectado" rooms="8 Hab." />
             <ChannelCard name="Airbnb" color="red" subtitle="Conectado" rooms="5 Hab." />
             <ChannelCard name="Expedia" color="black" subtitle="Conectado" rooms="8 Hab." />
@@ -257,7 +257,7 @@ function ChannelCard({ name, color, subtitle, rooms }: { name: string, color: st
   };
 
   return (
-    <div className="flex flex-col justify-between border border-gray-200 rounded-[12px] lg:rounded-[20px] p-2.5 lg:p-4 bg-white flex-shrink-0 w-[120px] lg:w-[170px] shadow-sm">
+    <div className="flex flex-col justify-between border border-gray-200 rounded-[12px] lg:rounded-[20px] p-2.5 lg:p-4 bg-white flex-shrink-0 w-[140px] lg:w-[180px] shadow-sm">
       <div className="flex items-center gap-2 lg:gap-4 mb-2 lg:mb-3">
         <div className={`w-8 h-8 lg:w-12 lg:h-12 rounded-[8px] lg:rounded-2xl ${colors[color]} flex items-center justify-center text-white flex-shrink-0 shadow-sm`}>
           <Globe2 className="w-4 h-4 lg:w-6 lg:h-6" />

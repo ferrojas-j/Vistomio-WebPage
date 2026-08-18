@@ -1723,7 +1723,7 @@ const VistomioLandingPage: React.FC = () => {
             {/* Tablet Frame Container */}
             <div className="relative mx-auto w-full rounded-[1.5rem] md:rounded-[2rem] border-[6px] md:border-[10px] border-gray-900 bg-gray-900 shadow-[0_20px_50px_rgba(0,0,0,0.2)] group transition-transform duration-500 hover:-translate-y-2">
               {/* Inner Screen */}
-              <div className="relative bg-white overflow-hidden rounded-[1rem] md:rounded-[1.25rem] w-full aspect-[4/3] md:aspect-[16/10] max-h-[700px] min-h-[400px]">
+              <div className="relative bg-white overflow-hidden rounded-[1rem] md:rounded-[1.25rem] w-full" style={{ height: '740px' }}>
                 <div className="w-full h-full pointer-events-none select-none">
                   <MockVistomioApp t={t.systemDemo.mockApp} lang={lang} />
                 </div>
