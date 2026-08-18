@@ -101,7 +101,7 @@ export default function POSSimulator({ t }: { t: any }) {
         
         {/* Header */}
         <div className="pt-10 px-6 pb-4 flex justify-between items-center bg-white border-b border-slate-100 z-10 shadow-sm relative shrink-0">
-          <h2 className="text-2xl font-black text-slate-900 tracking-tight font-serif tracking-wide">
+          <h2 className="text-2xl font-sans font-semibold text-slate-900 tracking-tight">
             {activeTab === 'tables' && posDemo.tabs.tables}
             {activeTab === 'orders' && posDemo.tabs.orders}
             {activeTab === 'expenses' && posDemo.tabs.expenses}
@@ -125,11 +125,11 @@ export default function POSSimulator({ t }: { t: any }) {
                   <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">{posDemo.tables.free}</span>
                 </div>
                 <div className="flex flex-col items-center gap-1">
-                  <div className="w-3 h-3 rounded-full bg-rose-400"></div>
+                  <div className="w-3 h-3 rounded-full bg-boutique-terracotta"></div>
                   <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">{posDemo.tables.occupied}</span>
                 </div>
                 <div className="flex flex-col items-center gap-1">
-                  <div className="w-3 h-3 rounded-full bg-indigo-400"></div>
+                  <div className="w-3 h-3 rounded-full bg-boutique-petrol"></div>
                   <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">{posDemo.tables.ready}</span>
                 </div>
               </div>
@@ -139,19 +139,19 @@ export default function POSSimulator({ t }: { t: any }) {
               <div className="grid grid-cols-3 gap-3 mb-6">
                 {['M1', 'M2', 'M3', 'M4', 'M5', 'M6', 'M7', 'M8', 'M9'].map((table) => (
                   <div key={table} onClick={() => handleTableClick(table)} className={`aspect-square rounded-2xl flex flex-col items-center justify-center gap-1 border-2 transition-transform active:scale-95 cursor-pointer
-                    ${tablesStatus[table] === 'free' ? 'bg-white border-emerald-100' : ''}
-                    ${tablesStatus[table] === 'occupied' ? 'bg-rose-50 border-rose-100' : ''}
-                    ${tablesStatus[table] === 'ready' ? 'bg-indigo-50 border-indigo-100' : ''}
+                    ${tablesStatus[table] === 'free' ? 'bg-white border-boutique-olive/20' : ''}
+                    ${tablesStatus[table] === 'occupied' ? 'bg-boutique-terracotta/10 border-boutique-terracotta/20' : ''}
+                    ${tablesStatus[table] === 'ready' ? 'bg-boutique-petrol/10 border-boutique-petrol/20' : ''}
                   `}>
                     <span className={`text-xl font-bold
-                      ${tablesStatus[table] === 'free' ? 'text-emerald-700' : ''}
-                      ${tablesStatus[table] === 'occupied' ? 'text-rose-700' : ''}
-                      ${tablesStatus[table] === 'ready' ? 'text-indigo-700' : ''}
+                      ${tablesStatus[table] === 'free' ? 'text-boutique-olive' : ''}
+                      ${tablesStatus[table] === 'occupied' ? 'text-boutique-terracotta' : ''}
+                      ${tablesStatus[table] === 'ready' ? 'text-boutique-petrol' : ''}
                     `}>{table}</span>
                     <div className={`w-1.5 h-1.5 rounded-full
                       ${tablesStatus[table] === 'free' ? 'bg-boutique-gold' : ''}
-                      ${tablesStatus[table] === 'occupied' ? 'bg-rose-400' : ''}
-                      ${tablesStatus[table] === 'ready' ? 'bg-indigo-400' : ''}
+                      ${tablesStatus[table] === 'occupied' ? 'bg-boutique-terracotta' : ''}
+                      ${tablesStatus[table] === 'ready' ? 'bg-boutique-petrol' : ''}
                     `}></div>
                   </div>
                 ))}
@@ -162,19 +162,19 @@ export default function POSSimulator({ t }: { t: any }) {
               <div className="grid grid-cols-3 gap-3 mb-6">
                 {['B1', 'B2', 'B3', 'B4', 'B5', 'B6'].map((table) => (
                   <div key={table} onClick={() => handleTableClick(table)} className={`aspect-square rounded-2xl flex flex-col items-center justify-center gap-1 border-2 transition-transform active:scale-95 cursor-pointer
-                    ${tablesStatus[table] === 'free' ? 'bg-white border-emerald-100' : ''}
-                    ${tablesStatus[table] === 'occupied' ? 'bg-rose-50 border-rose-100' : ''}
-                    ${tablesStatus[table] === 'ready' ? 'bg-indigo-50 border-indigo-100' : ''}
+                    ${tablesStatus[table] === 'free' ? 'bg-white border-boutique-olive/20' : ''}
+                    ${tablesStatus[table] === 'occupied' ? 'bg-boutique-terracotta/10 border-boutique-terracotta/20' : ''}
+                    ${tablesStatus[table] === 'ready' ? 'bg-boutique-petrol/10 border-boutique-petrol/20' : ''}
                   `}>
                     <span className={`text-xl font-bold
-                      ${tablesStatus[table] === 'free' ? 'text-emerald-700' : ''}
-                      ${tablesStatus[table] === 'occupied' ? 'text-rose-700' : ''}
-                      ${tablesStatus[table] === 'ready' ? 'text-indigo-700' : ''}
+                      ${tablesStatus[table] === 'free' ? 'text-boutique-olive' : ''}
+                      ${tablesStatus[table] === 'occupied' ? 'text-boutique-terracotta' : ''}
+                      ${tablesStatus[table] === 'ready' ? 'text-boutique-petrol' : ''}
                     `}>{table}</span>
                     <div className={`w-1.5 h-1.5 rounded-full
                       ${tablesStatus[table] === 'free' ? 'bg-boutique-gold' : ''}
-                      ${tablesStatus[table] === 'occupied' ? 'bg-rose-400' : ''}
-                      ${tablesStatus[table] === 'ready' ? 'bg-indigo-400' : ''}
+                      ${tablesStatus[table] === 'occupied' ? 'bg-boutique-terracotta' : ''}
+                      ${tablesStatus[table] === 'ready' ? 'bg-boutique-petrol' : ''}
                     `}></div>
                   </div>
                 ))}
@@ -183,21 +183,21 @@ export default function POSSimulator({ t }: { t: any }) {
               {/* DAYPASS */}
               <div className="flex justify-between items-end mb-3 px-1">
                 <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider">{posDemo.tables.daypass}</h4>
-                <button className="text-[10px] font-semibold text-indigo-600">{posDemo.tables.openTab}</button>
+                <button className="text-[10px] font-semibold text-boutique-petrol">{posDemo.tables.openTab}</button>
               </div>
               <div className="grid grid-cols-2 gap-3 mb-6">
                 {['DP-01', 'DP-02'].map((table, idx) => (
                   <div key={table} onClick={() => handleTableClick(table)} className={`py-4 rounded-2xl flex flex-col items-center justify-center gap-1 border-2 transition-transform active:scale-95 cursor-pointer
-                    ${tablesStatus[table] === 'free' ? 'bg-white border-emerald-100' : ''}
-                    ${tablesStatus[table] === 'occupied' ? 'bg-rose-50 border-rose-100' : ''}
+                    ${tablesStatus[table] === 'free' ? 'bg-white border-boutique-olive/20' : ''}
+                    ${tablesStatus[table] === 'occupied' ? 'bg-boutique-terracotta/10 border-boutique-terracotta/20' : ''}
                   `}>
                     <span className={`text-xl font-black tracking-tight
-                      ${tablesStatus[table] === 'free' ? 'text-emerald-700' : ''}
-                      ${tablesStatus[table] === 'occupied' ? 'text-rose-700' : ''}
+                      ${tablesStatus[table] === 'free' ? 'text-boutique-olive' : ''}
+                      ${tablesStatus[table] === 'occupied' ? 'text-boutique-terracotta' : ''}
                     `}>{table}</span>
                     <div className={`text-[9px] font-bold uppercase
                       ${tablesStatus[table] === 'free' ? 'text-boutique-gold' : ''}
-                      ${tablesStatus[table] === 'occupied' ? 'text-rose-500' : ''}
+                      ${tablesStatus[table] === 'occupied' ? 'text-boutique-terracotta' : ''}
                     `}>{posDemo.tables.credit} {idx === 0 ? '$300' : '$500'}</div>
                   </div>
                 ))}
@@ -209,7 +209,7 @@ export default function POSSimulator({ t }: { t: any }) {
           {activeTab === 'orders' && (
             <div className="p-4 animate-[fade-in_0.3s_ease-out]">
               <div className="flex justify-between items-end mb-4 px-1">
-                <h3 className="font-semibold text-slate-800 text-lg font-serif tracking-wide">{posDemo.orders.recent}</h3>
+                <h3 className="font-sans font-semibold text-slate-800 text-lg">{posDemo.orders.recent}</h3>
                 <span className="text-xs font-semibold text-gray-500">{posDemo.orders.today}</span>
               </div>
               
@@ -224,7 +224,7 @@ export default function POSSimulator({ t }: { t: any }) {
                   <div key={idx} className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 flex justify-between items-center cursor-pointer active:scale-95 transition-transform">
                     <div className="flex gap-3 items-center">
                       <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0
-                        ${order.status === posDemo.orders.open ? 'bg-emerald-100 text-boutique-gold' : 'bg-slate-100 text-slate-500'}
+                        ${order.status === posDemo.orders.open ? 'bg-boutique-olive/20 text-boutique-gold' : 'bg-slate-100 text-slate-500'}
                       `}>
                         <Receipt size={20} />
                       </div>
@@ -253,7 +253,7 @@ export default function POSSimulator({ t }: { t: any }) {
                 <div className="relative z-10">
                   <div className="flex justify-between items-start mb-3">
                     <div>
-                      <h3 className="font-semibold text-slate-800 text-lg font-serif tracking-wide">{posDemo.expenses.pettyCash}</h3>
+                      <h3 className="font-sans font-semibold text-slate-800 text-lg">{posDemo.expenses.pettyCash}</h3>
                       <p className="text-xs text-gray-500 font-semibold">{posDemo.expenses.date}</p>
                     </div>
                     <div className="bg-boutique-offwhite text-boutique-gold text-[9px] font-semibold px-2 py-1 rounded-full uppercase tracking-wider">
@@ -287,7 +287,7 @@ export default function POSSimulator({ t }: { t: any }) {
                   return (
                   <div key={idx} className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 flex justify-between items-center">
                     <div className="flex gap-3 items-center">
-                      <div className="w-10 h-10 rounded-xl bg-rose-50 text-rose-500 flex items-center justify-center shrink-0">
+                      <div className="w-10 h-10 rounded-xl bg-boutique-terracotta/10 text-boutique-terracotta flex items-center justify-center shrink-0">
                         <Wallet size={18} />
                       </div>
                       <div>
@@ -295,12 +295,12 @@ export default function POSSimulator({ t }: { t: any }) {
                         <p className="text-[10px] text-gray-500 font-semibold tracking-wide uppercase mt-0.5">{item.category} • {times[idx]}</p>
                       </div>
                     </div>
-                    <div className="font-black text-rose-600 text-sm shrink-0">{amts[idx]}</div>
+                    <div className="font-black text-boutique-terracotta text-sm shrink-0">{amts[idx]}</div>
                   </div>
                 )})}
               </div>
 
-              <button onClick={() => setShowNewExpense(true)} className="w-full bg-rose-50 border-2 border-dashed border-rose-200 text-rose-600 font-semibold py-3.5 rounded-2xl flex items-center justify-center gap-2 active:bg-rose-100 transition-colors">
+              <button onClick={() => setShowNewExpense(true)} className="w-full bg-boutique-terracotta/10 border-2 border-dashed border-boutique-terracotta/30 text-boutique-terracotta font-semibold py-3.5 rounded-2xl flex items-center justify-center gap-2 active:bg-boutique-terracotta/20 transition-colors">
                 <Plus size={18} />
                 {posDemo.expenses.addExpense}
               </button>
@@ -313,7 +313,7 @@ export default function POSSimulator({ t }: { t: any }) {
               <div className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 mb-4">
                 <div className="flex justify-between items-start mb-3">
                   <div>
-                    <h3 className="font-semibold text-slate-800 text-lg leading-tight font-serif tracking-wide">{posDemo.admin.dashboard}</h3>
+                    <h3 className="font-sans font-semibold text-slate-800 text-lg leading-tight">{posDemo.admin.dashboard}</h3>
                     <p className="text-xs text-gray-500 font-semibold">{posDemo.expenses.date}</p>
                   </div>
                   <div className="bg-boutique-offwhite text-boutique-gold text-[9px] font-semibold px-2 py-1 rounded-full uppercase tracking-wider">
@@ -335,8 +335,8 @@ export default function POSSimulator({ t }: { t: any }) {
                   <div className="font-black text-slate-800 text-lg">$14,250.00</div>
                 </div>
                 <div className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100">
-                  <div className="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center mb-3">
-                    <Wallet size={16} className="text-rose-500" />
+                  <div className="w-8 h-8 rounded-full bg-boutique-terracotta/10 flex items-center justify-center mb-3">
+                    <Wallet size={16} className="text-boutique-terracotta" />
                   </div>
                   <div className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-1">{posDemo.admin.totalExpenses}</div>
                   <div className="font-black text-slate-800 text-lg">$680.00</div>
@@ -344,8 +344,8 @@ export default function POSSimulator({ t }: { t: any }) {
               </div>
 
               <div className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 mb-6">
-                <div className="w-8 h-8 rounded-full bg-amber-50 flex items-center justify-center mb-3">
-                  <Coins size={16} className="text-amber-500" />
+                <div className="w-8 h-8 rounded-full bg-boutique-ochre/10 flex items-center justify-center mb-3">
+                  <Coins size={16} className="text-boutique-ochre" />
                 </div>
                 <div className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-1">{posDemo.admin.tips}</div>
                 <div className="font-black text-slate-800 text-xl">$1,850.00</div>
@@ -356,7 +356,7 @@ export default function POSSimulator({ t }: { t: any }) {
               <div className="flex flex-col gap-3">
                 <div onClick={() => setShowMenuEditor(true)} className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 flex items-center justify-between cursor-pointer active:bg-slate-50 transition-colors">
                   <div className="flex gap-4 items-center">
-                    <div className="w-12 h-12 rounded-xl bg-indigo-50 flex items-center justify-center shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-boutique-petrol/10 flex items-center justify-center shrink-0">
                       <Coffee size={20} className="text-boutique-gold" />
                     </div>
                     <div>
@@ -398,7 +398,7 @@ export default function POSSimulator({ t }: { t: any }) {
                 </div>
 
                 <div className="text-center bg-white pb-4 shrink-0 shadow-sm relative z-10 border-b border-slate-100">
-                  <h2 className="text-xl font-black text-slate-900 font-serif tracking-wide">{posDemo.closeShiftModal?.title || 'Corte de Caja'}</h2>
+                  <h2 className="text-xl font-sans font-semibold text-slate-900 tracking-tight">{posDemo.closeShiftModal?.title || 'Corte de Caja'}</h2>
                   <p className="text-xs font-semibold text-gray-500">{posDemo.closeShiftModal?.subtitle || 'Resumen de la jornada actual'}</p>
                 </div>
 
@@ -447,24 +447,24 @@ export default function POSSimulator({ t }: { t: any }) {
                       <div className="h-px w-full bg-slate-100 my-1"></div>
                       <div className="flex justify-between items-center">
                         <span className="font-semibold text-slate-800">{posDemo.closeShiftModal?.totalExpenses || 'Total Egresos'}</span>
-                        <span className="font-black text-rose-600">-$1,880.00</span>
+                        <span className="font-black text-boutique-terracotta">-$1,880.00</span>
                       </div>
                     </div>
                   </div>
 
                   {/* BALANCE */}
-                  <div className="bg-indigo-50 rounded-2xl shadow-sm border border-indigo-100 p-4 mb-4 flex justify-between items-center">
-                    <span className="font-semibold text-indigo-900">{posDemo.closeShiftModal?.balance || 'Balance Final'}</span>
-                    <span className="font-black text-indigo-700 text-xl">$12,370.00</span>
+                  <div className="bg-boutique-petrol/10 rounded-2xl shadow-sm border border-boutique-petrol/20 p-4 mb-4 flex justify-between items-center">
+                    <span className="font-semibold text-boutique-navy">{posDemo.closeShiftModal?.balance || 'Balance Final'}</span>
+                    <span className="font-black text-boutique-petrol text-xl">$12,370.00</span>
                   </div>
 
                   {/* TIPS */}
-                  <div className="bg-amber-50 rounded-2xl shadow-sm border border-amber-100 p-4 mb-6 flex justify-between items-center">
+                  <div className="bg-boutique-ochre/10 rounded-2xl shadow-sm border border-boutique-ochre/20 p-4 mb-6 flex justify-between items-center">
                     <div className="flex items-center gap-2">
-                      <Coins size={16} className="text-amber-600" />
-                      <span className="font-semibold text-amber-900">{posDemo.closeShiftModal?.tips || 'Propinas del día'}</span>
+                      <Coins size={16} className="text-boutique-ochre" />
+                      <span className="font-semibold text-boutique-navy">{posDemo.closeShiftModal?.tips || 'Propinas del día'}</span>
                     </div>
-                    <span className="font-black text-amber-700 text-lg">$1,850.00</span>
+                    <span className="font-black text-boutique-ochre text-lg">$1,850.00</span>
                   </div>
 
                   <div className="flex gap-3 mb-6">
@@ -478,7 +478,7 @@ export default function POSSimulator({ t }: { t: any }) {
                     </button>
                   </div>
 
-                  <button className="w-full bg-boutique-navy hover:bg-rose-600 text-boutique-navy font-semibold py-4 rounded-xl flex items-center justify-center gap-2 active:scale-95 transition-all shadow-sm shadow-rose-500/20 mb-4">
+                  <button className="w-full bg-boutique-navy hover:bg-boutique-terracotta text-boutique-navy font-semibold py-4 rounded-xl flex items-center justify-center gap-2 active:scale-95 transition-all shadow-sm shadow-boutique-terracotta/20 mb-4">
                     <Shield size={18} />
                     {posDemo.closeShiftModal?.confirm || 'Confirmar Cierre'}
                   </button>
@@ -505,11 +505,11 @@ export default function POSSimulator({ t }: { t: any }) {
                     <X size={20} />
                   </button>
                   
-                  <div className="w-12 h-12 rounded-2xl bg-rose-50 flex items-center justify-center mb-4">
-                    <Wallet size={24} className="text-rose-500" />
+                  <div className="w-12 h-12 rounded-2xl bg-boutique-terracotta/10 flex items-center justify-center mb-4">
+                    <Wallet size={24} className="text-boutique-terracotta" />
                   </div>
                   
-                  <h2 className="text-xl font-black text-slate-900 mb-1 font-serif tracking-wide">{tExpModal.title || 'Nuevo Gasto'}</h2>
+                  <h2 className="text-xl font-sans font-semibold text-slate-900 tracking-tight mb-1">{tExpModal.title || 'Nuevo Gasto'}</h2>
                   <p className="text-xs font-medium text-gray-500 mb-6">{tExpModal.desc || 'Pago a proveedores e insumos.'}</p>
                   
                   <div className="space-y-4">
@@ -537,7 +537,7 @@ export default function POSSimulator({ t }: { t: any }) {
                     </div>
                   </div>
                   
-                  <button onClick={() => setShowNewExpense(false)} className="w-full bg-boutique-navy hover:bg-rose-600 text-boutique-navy font-semibold py-3.5 rounded-xl flex items-center justify-center gap-2 active:scale-95 transition-all shadow-sm shadow-rose-500/20 mt-6 cursor-pointer">
+                  <button onClick={() => setShowNewExpense(false)} className="w-full bg-boutique-navy hover:bg-boutique-terracotta text-boutique-navy font-semibold py-3.5 rounded-xl flex items-center justify-center gap-2 active:scale-95 transition-all shadow-sm shadow-boutique-terracotta/20 mt-6 cursor-pointer">
                     {tExpModal.saveBtn || 'Guardar Gasto'}
                   </button>
                 </div>
@@ -556,7 +556,7 @@ export default function POSSimulator({ t }: { t: any }) {
                   <ChevronLeft size={20} />
                 </button>
                 <div className="text-center">
-                  <h2 className="text-xl font-black text-slate-900 tracking-tight font-serif tracking-wide">{posDemo.orders?.table || 'Mesa'} {activeTable}</h2>
+                  <h2 className="text-xl font-sans font-semibold text-slate-900 tracking-tight">{posDemo.orders?.table || 'Mesa'} {activeTable}</h2>
                   <div className={`text-[10px] font-bold uppercase tracking-wider ${tableMode === 'menu' ? 'text-boutique-gold' : 'text-gray-500'}`}>
                     {tableMode === 'menu' ? tInt.serving || 'ATENDIENDO' : tInt.toCharge || 'A COBRAR'}
                   </div>
@@ -575,7 +575,7 @@ export default function POSSimulator({ t }: { t: any }) {
                       <button 
                         key={cat}
                         onClick={() => setMenuTab(cat as any)}
-                        className={`px-4 py-2 rounded-xl text-sm font-bold whitespace-nowrap transition-colors cursor-pointer ${menuTab === cat ? 'bg-indigo-600 text-white shadow-md' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'}`}
+                        className={`px-4 py-2 rounded-xl text-sm font-bold whitespace-nowrap transition-colors cursor-pointer ${menuTab === cat ? 'bg-boutique-petrol text-white shadow-md' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'}`}
                       >
                         {(tCat as any)[cat] || cat}
                       </button>
@@ -588,10 +588,10 @@ export default function POSSimulator({ t }: { t: any }) {
                       <button 
                         key={idx} 
                         onClick={() => addToCart(item)}
-                        className="bg-white p-3 rounded-2xl border border-boutique-sand shadow-sm text-left active:scale-95 active:border-indigo-300 transition-all cursor-pointer hover:border-indigo-200 hover:shadow-md"
+                        className="bg-white p-3 rounded-2xl border border-boutique-sand shadow-sm text-left active:scale-95 active:border-boutique-petrol/40 transition-all cursor-pointer hover:border-boutique-petrol/30 hover:shadow-md"
                       >
                         <div className="text-sm font-semibold text-slate-800 leading-tight mb-2 h-10">{item.name}</div>
-                        <div className="text-indigo-600 font-black">${item.price}</div>
+                        <div className="text-boutique-petrol font-black">${item.price}</div>
                       </button>
                     ))}
                     {(menuItems[menuTab as keyof typeof menuItems] || []).length === 0 && (
@@ -613,7 +613,7 @@ export default function POSSimulator({ t }: { t: any }) {
                           </div>
                           <div className="flex items-center gap-3">
                             <div className="font-black text-slate-900">${item.price * item.qty}</div>
-                            <button onClick={() => removeFromCart(item.id)} className="w-6 h-6 rounded-md bg-rose-50 text-rose-500 flex items-center justify-center hover:bg-rose-100 transition-colors cursor-pointer">
+                            <button onClick={() => removeFromCart(item.id)} className="w-6 h-6 rounded-md bg-boutique-terracotta/10 text-boutique-terracotta flex items-center justify-center hover:bg-boutique-terracotta/20 transition-colors cursor-pointer">
                               <X size={12} />
                             </button>
                           </div>
@@ -642,7 +642,7 @@ export default function POSSimulator({ t }: { t: any }) {
                       >
                         {tInt.chargeBtn || 'Cobrar'} &rsaquo;
                       </button>
-                      <button onClick={freeTable} className="w-full bg-white border border-rose-200 text-rose-500 hover:bg-rose-50 font-semibold py-3.5 rounded-xl flex items-center justify-center active:bg-rose-100 transition-colors cursor-pointer">
+                      <button onClick={freeTable} className="w-full bg-white border border-boutique-terracotta/30 text-boutique-terracotta hover:bg-boutique-terracotta/10 font-semibold py-3.5 rounded-xl flex items-center justify-center active:bg-boutique-terracotta/20 transition-colors cursor-pointer">
                         {tInt.freeTableBtn || 'Liberar Mesa'}
                       </button>
                     </div>
@@ -657,10 +657,10 @@ export default function POSSimulator({ t }: { t: any }) {
                   {/* Success Overlay */}
                   {showSuccess && (
                     <div className="absolute inset-0 bg-white z-50 flex flex-col items-center justify-center animate-[fade-in_0.2s_ease-out]">
-                      <div className="w-20 h-20 rounded-full bg-emerald-100 text-boutique-gold flex items-center justify-center mb-4 animate-[bounce_0.5s_ease-out]">
+                      <div className="w-20 h-20 rounded-full bg-boutique-olive/20 text-boutique-gold flex items-center justify-center mb-4 animate-[bounce_0.5s_ease-out]">
                         <Check size={40} strokeWidth={3} />
                       </div>
-                      <h3 className="text-2xl font-black text-slate-900 font-serif tracking-wide">Success</h3>
+                      <h3 className="text-2xl font-sans font-black text-slate-900">Success</h3>
                     </div>
                   )}
 
@@ -677,17 +677,17 @@ export default function POSSimulator({ t }: { t: any }) {
                       <div className="flex gap-3">
                         <button 
                           onClick={() => setPaymentMethod('card')}
-                          className={`flex-1 p-4 rounded-xl border-2 flex flex-col items-center justify-center gap-2 transition-all cursor-pointer ${paymentMethod === 'card' ? 'border-indigo-500 bg-indigo-50/50' : 'border-slate-100 bg-white hover:border-slate-200'}`}
+                          className={`flex-1 p-4 rounded-xl border-2 flex flex-col items-center justify-center gap-2 transition-all cursor-pointer ${paymentMethod === 'card' ? 'border-boutique-petrol bg-boutique-petrol/5' : 'border-slate-100 bg-white hover:border-slate-200'}`}
                         >
-                          <CreditCard size={24} className={paymentMethod === 'card' ? 'text-indigo-600' : 'text-gray-500'} />
-                          <span className={`text-sm font-bold ${paymentMethod === 'card' ? 'text-indigo-700' : 'text-slate-500'}`}>{tInt.card || 'Tarjeta'}</span>
+                          <CreditCard size={24} className={paymentMethod === 'card' ? 'text-boutique-petrol' : 'text-gray-500'} />
+                          <span className={`text-sm font-bold ${paymentMethod === 'card' ? 'text-boutique-petrol' : 'text-slate-500'}`}>{tInt.card || 'Tarjeta'}</span>
                         </button>
                         <button 
                           onClick={() => setPaymentMethod('cash')}
-                          className={`flex-1 p-4 rounded-xl border-2 flex flex-col items-center justify-center gap-2 transition-all cursor-pointer ${paymentMethod === 'cash' ? 'border-indigo-500 bg-indigo-50/50' : 'border-slate-100 bg-white hover:border-slate-200'}`}
+                          className={`flex-1 p-4 rounded-xl border-2 flex flex-col items-center justify-center gap-2 transition-all cursor-pointer ${paymentMethod === 'cash' ? 'border-boutique-petrol bg-boutique-petrol/5' : 'border-slate-100 bg-white hover:border-slate-200'}`}
                         >
-                          <Banknote size={24} className={paymentMethod === 'cash' ? 'text-indigo-600' : 'text-gray-500'} />
-                          <span className={`text-sm font-bold ${paymentMethod === 'cash' ? 'text-indigo-700' : 'text-slate-500'}`}>{tInt.cash || 'Efectivo'}</span>
+                          <Banknote size={24} className={paymentMethod === 'cash' ? 'text-boutique-petrol' : 'text-gray-500'} />
+                          <span className={`text-sm font-bold ${paymentMethod === 'cash' ? 'text-boutique-petrol' : 'text-slate-500'}`}>{tInt.cash || 'Efectivo'}</span>
                         </button>
                       </div>
                     </div>
@@ -700,14 +700,14 @@ export default function POSSimulator({ t }: { t: any }) {
                           <button 
                             key={pct}
                             onClick={() => setTipPct(pct)}
-                            className={`py-3 rounded-xl border-2 text-sm font-bold transition-all cursor-pointer ${tipPct === pct ? 'border-indigo-500 bg-indigo-50/50 text-indigo-700' : 'border-slate-100 bg-white text-slate-500 hover:border-slate-200'}`}
+                            className={`py-3 rounded-xl border-2 text-sm font-bold transition-all cursor-pointer ${tipPct === pct ? 'border-boutique-petrol bg-boutique-petrol/5 text-boutique-petrol' : 'border-slate-100 bg-white text-slate-500 hover:border-slate-200'}`}
                           >
                             {pct}%
                           </button>
                         ))}
                         <button 
                           onClick={() => setTipPct(0)}
-                          className={`py-3 rounded-xl border-2 text-sm font-bold transition-all cursor-pointer ${tipPct === 0 ? 'border-indigo-500 bg-indigo-50/50 text-indigo-700' : 'border-slate-100 bg-white text-slate-500 hover:border-slate-200'}`}
+                          className={`py-3 rounded-xl border-2 text-sm font-bold transition-all cursor-pointer ${tipPct === 0 ? 'border-boutique-petrol bg-boutique-petrol/5 text-boutique-petrol' : 'border-slate-100 bg-white text-slate-500 hover:border-slate-200'}`}
                         >
                           {tInt.noTip || 'No'}
                         </button>
@@ -720,7 +720,7 @@ export default function POSSimulator({ t }: { t: any }) {
                   <div className="bg-white p-4 pt-4 border-t border-slate-100 mt-auto shrink-0 shadow-[0_-10px_20px_rgba(0,0,0,0.03)]">
                     <button 
                       onClick={confirmPayment}
-                      className="w-full bg-boutique-gold hover:bg-indigo-700 text-boutique-navy font-semibold py-4 rounded-xl flex items-center justify-center gap-2 active:scale-95 transition-all shadow-sm shadow-indigo-600/20 cursor-pointer"
+                      className="w-full bg-boutique-gold hover:bg-boutique-petrol text-boutique-navy font-semibold py-4 rounded-xl flex items-center justify-center gap-2 active:scale-95 transition-all shadow-sm shadow-boutique-petrol/20 cursor-pointer"
                     >
                       <Check size={18} />
                       {tInt.confirmBtn || 'Confirmar'}
@@ -742,7 +742,7 @@ export default function POSSimulator({ t }: { t: any }) {
                 <button onClick={() => setShowMenuEditor(false)} className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-slate-100 transition-colors cursor-pointer mr-4">
                   <ChevronLeft size={20} />
                 </button>
-                <h2 className="text-xl font-black text-slate-900 tracking-tight font-serif tracking-wide">{tMenuEd.title || 'Editor de Menú'}</h2>
+                <h2 className="text-xl font-sans font-semibold text-slate-900 tracking-tight">{tMenuEd.title || 'Editor de Menú'}</h2>
               </div>
               
               <div className="flex-grow overflow-y-auto p-4 flex flex-col gap-4">
@@ -754,7 +754,7 @@ export default function POSSimulator({ t }: { t: any }) {
                       <Coffee size={16} className="text-gray-500" />
                       {tMenuEd.meats || 'Carnes a la Parrilla'}
                     </div>
-                    <button className="text-[10px] font-semibold text-amber-600 bg-amber-50 px-2.5 py-1.5 rounded-lg active:bg-amber-100 transition-colors">
+                    <button className="text-[10px] font-semibold text-boutique-ochre bg-boutique-ochre/10 px-2.5 py-1.5 rounded-lg active:bg-boutique-ochre/20 transition-colors">
                       {tMenuEd.addDish || '+ Add Dish'}
                     </button>
                   </div>
@@ -770,21 +770,21 @@ export default function POSSimulator({ t }: { t: any }) {
                       </div>
                       <div className="text-right">
                         <div className="font-black text-slate-900 mb-2">$850</div>
-                        <button className="text-gray-500 hover:text-rose-500 transition-colors"><X size={16} /></button>
+                        <button className="text-gray-500 hover:text-boutique-terracotta transition-colors"><X size={16} /></button>
                       </div>
                     </div>
                     
                     <div className="flex justify-between items-start border-b border-slate-50 pb-4">
                       <div>
                         <h4 className="font-semibold text-slate-800 text-sm mb-1">Tomahawk (800g)</h4>
-                        <span className="inline-block text-[9px] font-semibold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full uppercase tracking-wide">
+                        <span className="inline-block text-[9px] font-semibold text-boutique-ochre bg-boutique-ochre/10 px-2 py-0.5 rounded-full uppercase tracking-wide">
                           <div className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block mr-1"></div>
                           {tMenuEd.lowStock || 'POCAS UNIDADES'}
                         </span>
                       </div>
                       <div className="text-right">
                         <div className="font-black text-slate-900 mb-2">$1600</div>
-                        <button className="text-gray-500 hover:text-rose-500 transition-colors"><X size={16} /></button>
+                        <button className="text-gray-500 hover:text-boutique-terracotta transition-colors"><X size={16} /></button>
                       </div>
                     </div>
                     
@@ -798,7 +798,7 @@ export default function POSSimulator({ t }: { t: any }) {
                       </div>
                       <div className="text-right">
                         <div className="font-black text-slate-900 mb-2">$650</div>
-                        <button className="text-gray-500 hover:text-rose-500 transition-colors"><X size={16} /></button>
+                        <button className="text-gray-500 hover:text-boutique-terracotta transition-colors"><X size={16} /></button>
                       </div>
                     </div>
                   </div>
@@ -811,7 +811,7 @@ export default function POSSimulator({ t }: { t: any }) {
                       <Coffee size={16} className="text-gray-500" />
                       {tMenuEd.wines || 'Vinos'}
                     </div>
-                    <button className="text-[10px] font-semibold text-amber-600 bg-amber-50 px-2.5 py-1.5 rounded-lg active:bg-amber-100 transition-colors">
+                    <button className="text-[10px] font-semibold text-boutique-ochre bg-boutique-ochre/10 px-2.5 py-1.5 rounded-lg active:bg-boutique-ochre/20 transition-colors">
                       {tMenuEd.addDish || '+ Add Dish'}
                     </button>
                   </div>
@@ -827,21 +827,21 @@ export default function POSSimulator({ t }: { t: any }) {
                       </div>
                       <div className="text-right">
                         <div className="font-black text-slate-900 mb-2">$950</div>
-                        <button className="text-gray-500 hover:text-rose-500 transition-colors"><X size={16} /></button>
+                        <button className="text-gray-500 hover:text-boutique-terracotta transition-colors"><X size={16} /></button>
                       </div>
                     </div>
                     
                     <div className="flex justify-between items-start">
                       <div>
                         <h4 className="font-semibold text-slate-800 text-sm mb-1">Cabernet Sauvignon</h4>
-                        <span className="inline-block text-[9px] font-semibold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-full uppercase tracking-wide">
-                          <div className="w-1.5 h-1.5 rounded-full bg-rose-400 inline-block mr-1"></div>
+                        <span className="inline-block text-[9px] font-semibold text-boutique-terracotta bg-boutique-terracotta/10 px-2 py-0.5 rounded-full uppercase tracking-wide">
+                          <div className="w-1.5 h-1.5 rounded-full bg-boutique-terracotta inline-block mr-1"></div>
                           {tMenuEd.outOfStock || 'AGOTADO'}
                         </span>
                       </div>
                       <div className="text-right">
                         <div className="font-black text-slate-900 mb-2">$820</div>
-                        <button className="text-gray-500 hover:text-rose-500 transition-colors"><X size={16} /></button>
+                        <button className="text-gray-500 hover:text-boutique-terracotta transition-colors"><X size={16} /></button>
                       </div>
                     </div>
                   </div>
@@ -855,7 +855,7 @@ export default function POSSimulator({ t }: { t: any }) {
         <div className="absolute bottom-0 left-0 w-full bg-white border-t border-slate-100 px-6 pt-3 pb-6 flex justify-between z-20 shadow-[0_-10px_20px_rgba(0,0,0,0.03)] rounded-b-[2.5rem]">
           <button 
             onClick={() => setActiveTab('tables')}
-            className={`flex flex-col items-center gap-1.5 cursor-pointer ${activeTab === 'tables' ? 'text-indigo-600' : 'text-gray-500'}`}
+            className={`flex flex-col items-center gap-1.5 cursor-pointer ${activeTab === 'tables' ? 'text-boutique-petrol' : 'text-gray-500'}`}
           >
             <LayoutGrid size={22} className={activeTab === 'tables' ? 'fill-indigo-100' : ''} />
             <span className="text-[9px] font-semibold uppercase tracking-wider">{posDemo.tabs.tables}</span>
@@ -863,7 +863,7 @@ export default function POSSimulator({ t }: { t: any }) {
           
           <button 
             onClick={() => setActiveTab('orders')}
-            className={`flex flex-col items-center gap-1.5 cursor-pointer ${activeTab === 'orders' ? 'text-indigo-600' : 'text-gray-500'}`}
+            className={`flex flex-col items-center gap-1.5 cursor-pointer ${activeTab === 'orders' ? 'text-boutique-petrol' : 'text-gray-500'}`}
           >
             <Receipt size={22} className={activeTab === 'orders' ? 'fill-indigo-100' : ''} />
             <span className="text-[9px] font-semibold uppercase tracking-wider">{posDemo.tabs.orders}</span>
@@ -871,7 +871,7 @@ export default function POSSimulator({ t }: { t: any }) {
           
           <button 
             onClick={() => setActiveTab('expenses')}
-            className={`flex flex-col items-center gap-1.5 cursor-pointer ${activeTab === 'expenses' ? 'text-indigo-600' : 'text-gray-500'}`}
+            className={`flex flex-col items-center gap-1.5 cursor-pointer ${activeTab === 'expenses' ? 'text-boutique-petrol' : 'text-gray-500'}`}
           >
             <Wallet size={22} className={activeTab === 'expenses' ? 'fill-indigo-100' : ''} />
             <span className="text-[9px] font-semibold uppercase tracking-wider">{posDemo.tabs.expenses}</span>
@@ -879,7 +879,7 @@ export default function POSSimulator({ t }: { t: any }) {
           
           <button 
             onClick={() => setActiveTab('admin')}
-            className={`flex flex-col items-center gap-1.5 cursor-pointer ${activeTab === 'admin' ? 'text-indigo-600' : 'text-gray-500'}`}
+            className={`flex flex-col items-center gap-1.5 cursor-pointer ${activeTab === 'admin' ? 'text-boutique-petrol' : 'text-gray-500'}`}
           >
             <Briefcase size={22} className={activeTab === 'admin' ? 'fill-indigo-100' : ''} />
             <span className="text-[9px] font-semibold uppercase tracking-wider">{posDemo.tabs.admin}</span>

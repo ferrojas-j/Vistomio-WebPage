@@ -197,7 +197,7 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
     }
   }, [messages]);
 
-  const channelIcon = <MessageCircle size={20} className="text-boutique-navy" />;
+  const channelIcon = <MessageCircle size={20} className="text-white" />;
 
   return (
     <div className="w-full max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-12">
@@ -213,13 +213,13 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
           {/* Header */}
           <div className={'bg-boutique-gold px-4 py-4 pt-8 flex items-center gap-3 shadow-md z-10 shrink-0 transition-colors'}>
             <div className="w-10 h-10 rounded-full bg-black/20 flex items-center justify-center shrink-0">
-              <Bot size={24} className="text-boutique-navy" />
+              <Bot size={24} className="text-white" />
             </div>
             <div className="flex-grow">
-              <h3 className="font-semibold text-boutique-navy leading-tight font-serif tracking-wide">Vistomio Bot</h3>
-              <p className="text-white/80 text-xs">En línea 24/7</p>
+              <h3 className="font-sans font-semibold text-lg text-white leading-tight tracking-wide">Vistomio Bot</h3>
+              <p className="text-white/80 text-xs font-sans">En línea 24/7</p>
             </div>
-            <div className="ml-auto flex gap-3 opacity-80">
+            <div className="ml-auto flex gap-3 opacity-80 text-white">
               {channelIcon}
             </div>
           </div>
@@ -227,15 +227,15 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
           {/* Chat Area */}
           <div className="flex-grow overflow-y-auto p-4 space-y-4 relative custom-scrollbar bg-[#EFEAE2]">
             {messages.map((msg) => (
-              <div key={msg.id} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'} animate-[fade-in_0.3s_ease-out]`}>
+              <div key={msg.id} className={`flex ${msg.sender === 'bot' ? 'justify-end' : 'justify-start'} animate-[fade-in_0.3s_ease-out]`}>
                 <div className={`max-w-[85%] rounded-2xl px-4 py-2 text-[14px] shadow-sm relative ${
-                  msg.sender === 'user' 
+                  msg.sender === 'bot' 
                     ? 'bg-[#DCF8C6] text-slate-800 rounded-tr-none' 
                     : 'bg-white text-slate-800 rounded-tl-none border border-slate-100'
                 }`}>
                   <p className="leading-snug">{msg.text}</p>
-                  <span className={`text-[10px] block text-right mt-1 opacity-60 ${msg.sender === 'user' ? 'text-emerald-700' : 'text-slate-500'}`}>
-                    {msg.time} {msg.sender === 'user' && '✓✓'}
+                  <span className={`text-[10px] block text-right mt-1 opacity-60 text-slate-500`}>
+                    {msg.time} {msg.sender === 'bot' && '✓✓'}
                   </span>
                 </div>
               </div>
@@ -266,11 +266,11 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
       {/* Text & Content Right Side */}
       <div className="flex-1 text-center lg:text-left flex flex-col justify-center">
         
-        <div className="inline-block px-4 py-1.5 bg-boutique-gold/10 border border-boutique-gold/30 rounded-full text-boutique-gold text-sm font-semibold uppercase tracking-wider mb-6 mx-auto lg:mx-0 w-max">
+        <div className="inline-block px-4 py-1.5 bg-white border border-boutique-navy/40 rounded-full text-boutique-navy text-sm font-semibold uppercase tracking-wider mb-6 mx-auto lg:mx-0 w-max">
           Mini demo
         </div>
         
-        <h2 className="text-4xl md:text-5xl font-semibold text-boutique-navy mb-6 leading-tight font-serif tracking-wide">
+        <h2 className="text-4xl md:text-5xl font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] text-boutique-navy mb-6 leading-[1.3]">
           {currentLanguage === 'es' ? 'Descubre el Chatbot IA Omnicanal de Vistomio' : currentLanguage === 'en' ? 'Discover Vistomio\'s Omnichannel AI Chatbot' : 'Découvrez le Chatbot IA Omnicanal de Vistomio'}
         </h2>
         
@@ -286,33 +286,33 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
 
         {/* Channels Icons Grid */}
         <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-12">
-          <div className="h-10 px-4 rounded-xl bg-boutique-sand/80 flex items-center gap-2 border border-gray-300/50 shadow-sm cursor-default">
+          <div className="h-10 px-4 rounded-xl bg-white flex items-center gap-2 border border-gray-200 shadow-sm cursor-default">
             <MessageCircle size={18} className="text-boutique-gold" />
             <span className="text-sm font-medium text-boutique-navy/80">WhatsApp</span>
-            <Check size={14} className="text-boutique-gold/70 ml-1" />
+            <Check size={14} className="text-boutique-olive ml-1" />
           </div>
-          <div className="h-10 px-4 rounded-xl bg-boutique-sand/80 flex items-center gap-2 border border-gray-300/50 shadow-sm cursor-default">
+          <div className="h-10 px-4 rounded-xl bg-white flex items-center gap-2 border border-gray-200 shadow-sm cursor-default">
             <Camera size={18} className="text-pink-400" />
             <span className="text-sm font-medium text-boutique-navy/80">Instagram</span>
-            <Check size={14} className="text-boutique-gold/70 ml-1" />
+            <Check size={14} className="text-boutique-olive ml-1" />
           </div>
-          <div className="h-10 px-4 rounded-xl bg-boutique-sand/80 flex items-center gap-2 border border-gray-300/50 shadow-sm cursor-default">
+          <div className="h-10 px-4 rounded-xl bg-white flex items-center gap-2 border border-gray-200 shadow-sm cursor-default">
             <MessageCircle size={18} className="text-boutique-navy" />
             <span className="text-sm font-medium text-boutique-navy/80">Messenger</span>
-            <Check size={14} className="text-boutique-gold/70 ml-1" />
+            <Check size={14} className="text-boutique-olive ml-1" />
           </div>
-          <div className="h-10 px-4 rounded-xl bg-boutique-sand/80 flex items-center gap-2 border border-gray-300/50 shadow-sm cursor-default">
+          <div className="h-10 px-4 rounded-xl bg-white flex items-center gap-2 border border-gray-200 shadow-sm cursor-default">
             <Globe size={18} className="text-boutique-gold" />
             <span className="text-sm font-medium text-boutique-navy/80">
               {currentLanguage === 'es' ? 'Tu página web' : currentLanguage === 'en' ? 'Your website' : 'Votre site web'}
             </span>
-            <Check size={14} className="text-boutique-gold/70 ml-1" />
+            <Check size={14} className="text-boutique-olive ml-1" />
           </div>
         </div>
 
         {/* Customization Pills */}
         <div>
-          <h4 className="text-lg font-semibold text-boutique-navy mb-4">
+          <h4 className="text-xl font-serif font-normal text-boutique-navy mb-4 tracking-[0.03em] md:tracking-[0.05em]">
             {currentLanguage === 'es' ? 'Personaliza como quieras' : currentLanguage === 'en' ? 'Customize as you like' : 'Personnalisez comme vous le souhaitez'}
           </h4>
           
@@ -321,10 +321,10 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
               <button 
                 key={tOption}
                 onClick={() => setTone(tOption)}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-full border font-medium transition-all text-sm ${
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-full border font-medium transition-all text-sm bg-white ${
                   tone === tOption 
-                    ? 'bg-boutique-gold/10 border-boutique-gold/50 text-boutique-gold' 
-                    : 'bg-boutique-sand/50 border-gray-300 text-gray-500 hover:bg-boutique-sand hover:text-boutique-navy/80'
+                    ? 'border-boutique-plum text-boutique-plum shadow-sm' 
+                    : 'border-boutique-plum/30 text-boutique-plum/70 hover:border-boutique-plum hover:text-boutique-plum'
                 }`}
               >
                 <span className="flex-grow">{t.tones[tOption]}</span>

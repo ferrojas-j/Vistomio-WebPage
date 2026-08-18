@@ -1752,7 +1752,7 @@ const VistomioLandingPage: React.FC = () => {
           <p className="text-center text-sm font-semibold text-boutique-navy/80 uppercase tracking-widest mb-10">
             {t.socialProof}
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-14 lg:gap-24 opacity-60 hover:opacity-100 transition-all duration-500">
+          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-14 lg:gap-24 opacity-100 transition-all duration-500">
             <div className="flex flex-col items-center gap-2">
               <div className="flex items-center gap-3 text-2xl font-semibold text-boutique-navy">
                 <span className="w-10 h-10 rounded-xl bg-boutique-sand flex items-center justify-center text-sm border border-boutique-sand shadow-sm text-boutique-navy">HN</span> Noga
@@ -1832,7 +1832,7 @@ const VistomioLandingPage: React.FC = () => {
                   </div>
                   
                   <div className="relative z-10 mt-5 md:mt-6">
-                    <div className="text-3xl md:text-4xl font-normal text-white mb-3 md:mb-4 tracking-wide font-serif">Suite 402</div>
+                    <div className="text-3xl md:text-4xl font-normal text-white mb-3 md:mb-4 tracking-[0.03em] md:tracking-[0.05em] font-serif">Suite 402</div>
                     <div className="w-full h-px bg-white/10 mb-3 md:mb-4"></div>
                     <div className="flex justify-between text-white/70 text-sm">
                       <span className="font-medium">{t.suiteMockup.preferences}</span>
@@ -1880,7 +1880,7 @@ const VistomioLandingPage: React.FC = () => {
                 <div className="w-16 h-16 rounded-2xl bg-[#D4AF37]/10 text-[#D4AF37] flex items-center justify-center mb-8 border border-[#D4AF37]/30">
                   <benefit.icon size={32} strokeWidth={1.5} />
                 </div>
-                <h3 className="text-2xl font-normal text-boutique-navy mb-4 font-serif tracking-wide">{benefit.title}</h3>
+                <h3 className="text-2xl font-normal text-boutique-navy mb-4 font-serif tracking-[0.03em] md:tracking-[0.05em]">{benefit.title}</h3>
                 <p className="text-boutique-navy leading-relaxed text-lg">{benefit.desc}</p>
               </div>
             ))}
@@ -1982,7 +1982,7 @@ const VistomioLandingPage: React.FC = () => {
                           <div className="w-14 h-14 rounded-2xl bg-boutique-offwhite flex items-center justify-center border border-gray-100 text-boutique-navy shadow-sm">
                             <MessageSquareText size={24} />
                           </div>
-                          <h3 className="text-xl font-normal text-boutique-navy leading-tight font-serif tracking-wide">{t.chatbotPlans.plans[0].name}</h3>
+                          <h3 className="text-xl font-normal text-boutique-navy leading-tight font-serif tracking-[0.03em] md:tracking-[0.05em]">{t.chatbotPlans.plans[0].name}</h3>
                         </div>
                         <div className="w-full h-px bg-gray-100 mb-6"></div>
                         <ul className="flex flex-col gap-4 flex-grow">
@@ -2002,7 +2002,7 @@ const VistomioLandingPage: React.FC = () => {
                           <div className="w-14 h-14 rounded-2xl bg-boutique-offwhite flex items-center justify-center border border-gray-100 text-boutique-navy shadow-sm">
                             <Zap size={24} />
                           </div>
-                          <h3 className="text-xl font-normal text-boutique-navy leading-tight font-serif tracking-wide">{t.chatbotPlans.plans[1].name}</h3>
+                          <h3 className="text-xl font-normal text-boutique-navy leading-tight font-serif tracking-[0.03em] md:tracking-[0.05em]">{t.chatbotPlans.plans[1].name}</h3>
                         </div>
                         <div className="w-full h-px bg-gray-100 mb-6"></div>
                         <ul className="flex flex-col gap-4 flex-grow">
@@ -2022,7 +2022,7 @@ const VistomioLandingPage: React.FC = () => {
                           <div className="w-14 h-14 rounded-2xl bg-boutique-offwhite flex items-center justify-center border border-gray-100 text-boutique-navy shadow-sm">
                             <Bot size={24} />
                           </div>
-                          <h3 className="text-xl font-normal text-boutique-navy leading-tight font-serif tracking-wide">{t.chatbotPlans.plans[2].name}</h3>
+                          <h3 className="text-xl font-normal text-boutique-navy leading-tight font-serif tracking-[0.03em] md:tracking-[0.05em]">{t.chatbotPlans.plans[2].name}</h3>
                         </div>
                         <div className="w-full h-px bg-gray-100 mb-6"></div>
                         <ul className="flex flex-col gap-4 flex-grow">
@@ -2059,7 +2059,7 @@ const VistomioLandingPage: React.FC = () => {
               <div className="inline-block px-4 py-1.5 bg-boutique-gold/10 border border-boutique-gold/30 rounded-full text-boutique-gold text-sm font-semibold uppercase tracking-wider mb-6">
                 Mini demo
               </div>
-              <h2 className="text-4xl md:text-5xl font-normal text-boutique-navy mb-6 leading-tight font-serif tracking-wide">
+              <h2 className="text-4xl md:text-5xl font-normal text-boutique-navy mb-6 leading-tight font-serif tracking-[0.03em] md:tracking-[0.05em]">
                 {t.posDemo.sectionTitle}
               </h2>
               <p className="text-xl text-boutique-navy/80 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0">
@@ -2098,7 +2098,7 @@ const VistomioLandingPage: React.FC = () => {
 
       {/* STAFF APP SIMULATOR SECTION */}
       <section id="demo-staff" className="py-24 relative bg-boutique-offwhite overflow-hidden">
-        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-boutique-gold/10 blur-[120px] rounded-full pointer-events-none"></div>
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-boutique-gold/10 blur-[0px] hidden rounded-full pointer-events-none"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             <div className="flex-1 w-full max-w-sm lg:max-w-none shrink-0 lg:w-[360px]">
@@ -2108,7 +2108,7 @@ const VistomioLandingPage: React.FC = () => {
               <div className="inline-block px-4 py-1.5 bg-boutique-gold/10 border border-boutique-gold/30 rounded-full text-boutique-gold text-sm font-semibold uppercase tracking-wider mb-6">
                 Mini demo
               </div>
-              <h2 className="text-4xl md:text-5xl font-normal text-boutique-navy mb-6 leading-tight font-serif tracking-wide">
+              <h2 className="text-4xl md:text-5xl font-normal text-boutique-navy mb-6 leading-tight font-serif tracking-[0.03em] md:tracking-[0.05em]">
                 {lang === 'es' ? 'Sincronización total con Vistomio Staff' : lang === 'en' ? 'Total synchronization with Vistomio Staff' : 'Synchronisation totale avec Vistomio Staff'}
               </h2>
               <p className="text-xl text-boutique-navy/80 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0">
@@ -2224,7 +2224,7 @@ const VistomioLandingPage: React.FC = () => {
 
           {/* Chatbot Add-on Banner */}
           <div className="max-w-6xl mx-auto mb-16 bg-gradient-to-br from-boutique-sand/20 to-transparent border border-[#D4AF37]/20 rounded-[2rem] p-8 md:p-10 flex flex-col md:flex-row gap-8 relative overflow-hidden items-stretch">
-            <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#D4AF37]/10 blur-[80px] rounded-full pointer-events-none"></div>
+            <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#D4AF37]/10 blur-[0px] hidden rounded-full pointer-events-none"></div>
             
             <div className="flex-1 relative z-10">
               <div className="inline-block px-3 py-1 bg-boutique-navy text-[#D4AF37] text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">
@@ -2259,7 +2259,7 @@ const VistomioLandingPage: React.FC = () => {
 
           {/* Enterprise Section */}
           <div className="max-w-6xl mx-auto bg-boutique-navy rounded-[2rem] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden border border-[#D4AF37]/20">
-             <div className="absolute top-0 right-0 w-96 h-96 bg-[#D4AF37]/10 blur-[80px] rounded-full pointer-events-none"></div>
+             <div className="absolute top-0 right-0 w-96 h-96 bg-[#D4AF37]/10 blur-[0px] hidden rounded-full pointer-events-none"></div>
              <div className="absolute bottom-0 left-0 w-64 h-64 bg-boutique-sand/10 blur-[60px] rounded-full pointer-events-none"></div>
              
              <div className="relative z-10 md:w-2/3">
@@ -2278,8 +2278,8 @@ const VistomioLandingPage: React.FC = () => {
       {/* --- CTA FINAL --- */}
       <section className="py-24 md:py-32 relative bg-boutique-navy overflow-hidden">
         {/* Background Accents */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-boutique-gold/10 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-boutique-sand/10 blur-[100px] rounded-full -translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-boutique-gold/10 blur-[0px] hidden rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-boutique-sand/10 blur-[0px] hidden rounded-full -translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
 
         <div className="max-w-4xl mx-auto px-4 relative z-10 text-center flex flex-col items-center">
           <div className="flex items-center gap-4 mb-6 justify-center">
@@ -2343,7 +2343,7 @@ const VistomioLandingPage: React.FC = () => {
             {/* Header */}
             <div className="p-6 md:p-8 border-b border-gray-300 flex justify-between items-center bg-boutique-offwhite/50 sticky top-0 z-10">
               <div>
-                <h3 className="text-2xl font-normal text-boutique-navy mb-2 font-serif tracking-wide">{t.pricing.customModalTitle}</h3>
+                <h3 className="text-2xl font-normal text-boutique-navy mb-2 font-serif tracking-[0.03em] md:tracking-[0.05em]">{t.pricing.customModalTitle}</h3>
                 <p className="text-boutique-navy/80">{t.pricing.customModalSubtitle}</p>
               </div>
               <button 
@@ -2438,7 +2438,7 @@ const VistomioLandingPage: React.FC = () => {
                   <div className="w-16 h-16 from-[#D4AF37] to-[#FCE69B] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm shadow-amber-900/30">
                     <Calendar size={32} className="text-boutique-navy" />
                   </div>
-                  <h3 className="text-3xl font-normal text-boutique-navy mb-3 font-serif tracking-wide">{t.contactModal.options.title}</h3>
+                  <h3 className="text-3xl font-normal text-boutique-navy mb-3 font-serif tracking-[0.03em] md:tracking-[0.05em]">{t.contactModal.options.title}</h3>
                   <p className="text-boutique-navy/80">{t.contactModal.options.desc}</p>
                 </div>
 
@@ -2497,7 +2497,7 @@ const VistomioLandingPage: React.FC = () => {
                   <div className="w-16 h-16 from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm shadow-emerald-900/30">
                     <CheckCircle2 size={32} className="text-boutique-navy" />
                   </div>
-                  <h3 className="text-3xl font-normal text-boutique-navy mb-2 font-serif tracking-wide">{t.customPlanModal.title}</h3>
+                  <h3 className="text-3xl font-normal text-boutique-navy mb-2 font-serif tracking-[0.03em] md:tracking-[0.05em]">{t.customPlanModal.title}</h3>
                   <p className="text-boutique-navy/80 text-sm">{t.customPlanModal.desc}</p>
                 </div>
 
@@ -2596,7 +2596,7 @@ const VistomioLandingPage: React.FC = () => {
                   <div className="w-16 h-16 from-[#D4AF37] to-[#FCE69B] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm shadow-amber-900/30">
                     <Mail size={32} className="text-boutique-navy" />
                   </div>
-                  <h3 className="text-3xl font-normal text-boutique-navy mb-2 font-serif tracking-wide">{t.contactModal.email.title}</h3>
+                  <h3 className="text-3xl font-normal text-boutique-navy mb-2 font-serif tracking-[0.03em] md:tracking-[0.05em]">{t.contactModal.email.title}</h3>
                   <p className="text-boutique-navy/80 text-sm">{t.contactModal.email.desc}</p>
                 </div>
 
@@ -2647,7 +2647,7 @@ const VistomioLandingPage: React.FC = () => {
                   <div className="w-16 h-16 from-[#D4AF37] to-[#FCE69B] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm shadow-amber-900/30">
                     <Calendar size={32} className="text-[#0B1121]" />
                   </div>
-                  <h3 className="text-3xl font-normal text-boutique-navy mb-2 font-serif tracking-wide">{t.contactModal.calendar.title}</h3>
+                  <h3 className="text-3xl font-normal text-boutique-navy mb-2 font-serif tracking-[0.03em] md:tracking-[0.05em]">{t.contactModal.calendar.title}</h3>
                   <p className="text-boutique-navy/80 text-sm">{t.contactModal.calendar.desc}</p>
                 </div>
                 
