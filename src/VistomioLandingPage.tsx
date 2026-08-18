@@ -1964,7 +1964,7 @@ const VistomioLandingPage: React.FC = () => {
                 ) : (
                   <div className="mt-2">
                     <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-3">
-                      <h4 className="text-[33px] font-serif font-normal text-[#6B4357] tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{t.chatbotPlans.title}</h4>
+                      <h4 className="text-2xl md:text-3xl font-serif font-normal text-boutique-navy tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{t.chatbotPlans.title}</h4>
                       <div className="inline-flex">
                         <div className="px-3 py-1.5 bg-white border border-[#6E7B4A] rounded-xl text-[#6E7B4A] text-[10px] font-bold uppercase tracking-widest shadow-sm">
                           {t.standaloneBadge1} {t.standaloneBadge2}
