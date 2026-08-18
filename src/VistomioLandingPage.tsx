@@ -279,7 +279,7 @@ const translations = {
       talkBtn: 'Hablemos',
       plans: [
         {
-          name: 'Nivel 1: Respuestas Automáticas',
+          name: 'Chatbot estándar',
           features: [
             'Conexión multicanal',
             'Solo respuesta a preguntas frecuentes',
@@ -288,7 +288,7 @@ const translations = {
           ]
         },
         {
-          name: 'Nivel 2: Ventas Proactivas',
+          name: 'Chatbot proactivo',
           features: [
             'Lo de estándar + capacidad de iniciar conversaciones proactivamente',
             'Envío automatizado de campañas de marketing',
@@ -297,7 +297,7 @@ const translations = {
           ]
         },
         {
-          name: 'Nivel 3: Autonomía Total',
+          name: 'Agente autónomo',
           features: [
             'Todo lo anterior + agente de ventas proactivo',
             'Sincronización con Booking Engine para ejecutar reservas',
@@ -687,7 +687,7 @@ const translations = {
       talkBtn: 'Let\'s Talk',
       plans: [
         {
-          name: 'Level 1: Automated Responses',
+          name: 'Standard Chatbot',
           features: [
             'Multi-channel connection',
             'FAQ responses only',
@@ -696,7 +696,7 @@ const translations = {
           ]
         },
         {
-          name: 'Level 2: Proactive Sales',
+          name: 'Proactive Chatbot',
           features: [
             'Standard features + proactive conversation initiation',
             'Automated marketing campaigns',
@@ -705,7 +705,7 @@ const translations = {
           ]
         },
         {
-          name: 'Level 3: Full Autonomy',
+          name: 'Autonomous Agent',
           features: [
             'All the above + proactive sales agent',
             'Synchronization with Booking Engine to execute reservations',
@@ -1092,7 +1092,7 @@ const translations = {
       talkBtn: 'Parlons-en',
       plans: [
         {
-          name: 'Niveau 1: Réponses Automatisées',
+          name: 'Chatbot standard',
           features: [
             'Connexion multicanale',
             'Réponses aux FAQ uniquement',
@@ -1101,7 +1101,7 @@ const translations = {
           ]
         },
         {
-          name: 'Niveau 2: Ventes Proactives',
+          name: 'Chatbot proactif',
           features: [
             'Tout le standard + initiation proactive de conversations',
             'Campagnes marketing automatisées',
@@ -1110,7 +1110,7 @@ const translations = {
           ]
         },
         {
-          name: 'Niveau 3: Autonomie Totale',
+          name: 'Agent autonome',
           features: [
             'Tout ce qui précède + agent de vente proactif',
             'Synchronisation avec le moteur de réservation',
@@ -1983,8 +1983,8 @@ const VistomioLandingPage: React.FC = () => {
                       <div className="bg-boutique-offwhite border border-gray-100 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 rounded-[2rem] p-8 flex flex-col h-full relative overflow-hidden group">
                         <div className="absolute top-0 left-0 w-full h-1 bg-[#D4AF37]/30 group-hover:bg-[#D4AF37] transition-colors"></div>
                         <div className="flex items-center gap-5 mb-6">
-                          <div className="w-14 h-14 rounded-2xl bg-boutique-offwhite flex items-center justify-center border border-gray-100 text-boutique-navy shadow-sm">
-                            <MessageSquareText size={24} />
+                          <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center border border-[#13203A]/20 text-[#13203A] shadow-md">
+                            <Bot size={24} strokeWidth={1.5} />
                           </div>
                           <h3 className="text-xl font-normal text-[#B8863B] font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.chatbotPlans.plans[0].name}</h3>
                         </div>
@@ -2003,8 +2003,11 @@ const VistomioLandingPage: React.FC = () => {
                       <div className="bg-boutique-offwhite border border-gray-100 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 rounded-[2rem] p-8 flex flex-col h-full relative overflow-hidden group">
                         <div className="absolute top-0 left-0 w-full h-1 bg-[#D4AF37]/30 group-hover:bg-[#D4AF37] transition-colors"></div>
                         <div className="flex items-center gap-5 mb-6">
-                          <div className="w-14 h-14 rounded-2xl bg-boutique-offwhite flex items-center justify-center border border-gray-100 text-boutique-navy shadow-sm">
-                            <Zap size={24} />
+                          <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center border border-[#13203A]/20 text-[#13203A] shadow-md">
+                            <div className="relative flex items-center justify-center">
+                              <Bot size={24} strokeWidth={1.5} />
+                              <Zap size={10} className="absolute -bottom-1 -right-1 text-[#C6A15B]" fill="currentColor" />
+                            </div>
                           </div>
                           <h3 className="text-xl font-normal text-[#B8863B] font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.chatbotPlans.plans[1].name}</h3>
                         </div>
@@ -2023,8 +2026,11 @@ const VistomioLandingPage: React.FC = () => {
                       <div className="bg-boutique-offwhite border border-gray-100 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 rounded-[2rem] p-8 flex flex-col h-full relative overflow-hidden group">
                         <div className="absolute top-0 left-0 w-full h-1 bg-[#D4AF37]/30 group-hover:bg-[#D4AF37] transition-colors"></div>
                         <div className="flex items-center gap-5 mb-6">
-                          <div className="w-14 h-14 rounded-2xl bg-boutique-offwhite flex items-center justify-center border border-gray-100 text-boutique-navy shadow-sm">
-                            <Bot size={24} />
+                          <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center border border-[#13203A]/20 text-[#13203A] shadow-md">
+                            <div className="relative flex items-center justify-center">
+                              <Bot size={24} strokeWidth={1.5} />
+                              <Sparkles size={10} className="absolute -bottom-1 -right-1 text-[#C6A15B]" fill="currentColor" />
+                            </div>
                           </div>
                           <h3 className="text-xl font-normal text-[#B8863B] font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.chatbotPlans.plans[2].name}</h3>
                         </div>
