@@ -514,7 +514,7 @@ const translations = {
 
 const LimpiezaView = ({ t, onOpenChecklist }: { t: any, onOpenChecklist: () => void }) => (
   <div className="flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
-    <div className="bg-boutique-gold text-boutique-navy rounded-2xl p-4 shadow-md shadow-boutique-petrol/20">
+    <div className="bg-boutique-gold text-boutique-navy rounded-2xl p-4 shadow-md">
       <div className="text-[10px] font-semibold uppercase tracking-wider mb-1 opacity-80">{t.limpieza.planning}</div>
       <div className="text-xl font-semibold">{t.limpieza.date}</div>
     </div>
@@ -609,7 +609,7 @@ const LimpiezaView = ({ t, onOpenChecklist }: { t: any, onOpenChecklist: () => v
 
 const RecepcionView = ({ t, onOpenExpense, onOpenNovelty }: { t: any, onOpenExpense: () => void, onOpenNovelty: () => void }) => (
   <div className="flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
-    <button onClick={onOpenNovelty} className="w-full bg-boutique-gold hover:bg-boutique-petrol text-boutique-navy rounded-2xl p-4 shadow-md shadow-boutique-petrol/20 flex items-center justify-center gap-2 font-semibold text-sm transition-transform active:scale-[0.98] cursor-pointer">
+    <button onClick={onOpenNovelty} className="w-full bg-boutique-gold hover:bg-boutique-petrol text-boutique-navy rounded-2xl p-4 shadow-md flex items-center justify-center gap-2 font-semibold text-sm transition-transform active:scale-[0.98] cursor-pointer">
       <Plus size={18} /> {t.recepcion.newNovelty}
     </button>
     
@@ -670,10 +670,10 @@ const RecepcionView = ({ t, onOpenExpense, onOpenNovelty }: { t: any, onOpenExpe
 const MantenimientoView = ({ t, onOpenLogbook, onOpenSupplies }: { t: any, onOpenLogbook: () => void, onOpenSupplies: () => void }) => (
   <div className="flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
     <div className="grid grid-cols-2 gap-3">
-      <button onClick={onOpenLogbook} className="bg-boutique-gold hover:bg-boutique-petrol text-boutique-navy rounded-2xl p-4 shadow-md shadow-boutique-petrol/20 flex flex-col items-center justify-center gap-2 font-semibold text-sm h-24 transition-transform active:scale-[0.98] cursor-pointer">
+      <button onClick={onOpenLogbook} className="bg-boutique-gold hover:bg-boutique-petrol text-boutique-navy rounded-2xl p-4 shadow-md flex flex-col items-center justify-center gap-2 font-semibold text-sm h-24 transition-transform active:scale-[0.98] cursor-pointer">
         <Plus size={20} /> {t.mantenimiento.advance}
       </button>
-      <button onClick={onOpenSupplies} className="bg-boutique-ochre hover:bg-boutique-ochre text-boutique-navy rounded-2xl p-4 shadow-md shadow-boutique-ochre/20 flex flex-col items-center justify-center gap-2 font-semibold text-sm h-24 transition-transform active:scale-[0.98] cursor-pointer">
+      <button onClick={onOpenSupplies} className="bg-boutique-ochre hover:bg-boutique-ochre text-boutique-navy rounded-2xl p-4 shadow-md flex flex-col items-center justify-center gap-2 font-semibold text-sm h-24 transition-transform active:scale-[0.98] cursor-pointer">
         <Box size={20} /> {t.mantenimiento.supplies}
       </button>
     </div>
@@ -689,7 +689,7 @@ const MantenimientoView = ({ t, onOpenLogbook, onOpenSupplies }: { t: any, onOpe
 
          {[t.mantenimiento.log1, t.mantenimiento.log2, t.mantenimiento.log3, t.mantenimiento.log4].map((log: any, i: number) => (
            <div key={i} className="flex gap-3 z-10">
-             <div className="w-3 h-3 rounded-full bg-boutique-gold mt-1.5 shrink-0 ml-[0.35rem] shadow-[0_0_0_4px_white]"></div>
+             <div className="w-3 h-3 rounded-full bg-boutique-gold mt-1.5 shrink-0 ml-[0.35rem]"></div>
              <div className="flex flex-col gap-1 ml-1">
                <p className="text-sm font-medium text-slate-700 leading-snug">{log.title}</p>
                <p className="text-xs text-gray-500">{log.time}</p>
@@ -723,7 +723,7 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
 
   
   return (
-    <div className="w-full max-w-[380px] mx-auto bg-slate-900 rounded-[3rem] p-3 shadow-2xl border-[6px] border-slate-950 relative shadow-black/30 shrink-0">
+    <div className="w-full max-w-[380px] mx-auto bg-slate-900 rounded-[3rem] p-3 shadow-2xl border-[6px] border-slate-950 relative shrink-0">
       {/* Phone Notch */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-slate-900 rounded-b-2xl z-50"></div>
       

@@ -92,7 +92,7 @@ export default function POSSimulator({ t }: { t: any }) {
   };
 
   return (
-    <div className="w-full max-w-[380px] mx-auto bg-slate-900 rounded-[3rem] p-3 shadow-2xl border-[6px] border-slate-950 relative shadow-black/30">
+    <div className="w-full max-w-[380px] mx-auto bg-slate-900 rounded-[3rem] p-3 shadow-2xl border-[6px] border-slate-950 relative">
       {/* Phone Notch */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-slate-900 rounded-b-2xl z-20"></div>
       
@@ -478,7 +478,7 @@ export default function POSSimulator({ t }: { t: any }) {
                     </button>
                   </div>
 
-                  <button className="w-full bg-boutique-navy hover:bg-boutique-terracotta text-boutique-navy font-semibold py-4 rounded-xl flex items-center justify-center gap-2 active:scale-95 transition-all shadow-sm shadow-boutique-terracotta/20 mb-4">
+                  <button className="w-full bg-boutique-navy hover:bg-boutique-terracotta text-boutique-navy font-semibold py-4 rounded-xl flex items-center justify-center gap-2 active:scale-95 transition-all shadow-sm mb-4">
                     <Shield size={18} />
                     {posDemo.closeShiftModal?.confirm || 'Confirmar Cierre'}
                   </button>
@@ -537,7 +537,7 @@ export default function POSSimulator({ t }: { t: any }) {
                     </div>
                   </div>
                   
-                  <button onClick={() => setShowNewExpense(false)} className="w-full bg-boutique-navy hover:bg-boutique-terracotta text-boutique-navy font-semibold py-3.5 rounded-xl flex items-center justify-center gap-2 active:scale-95 transition-all shadow-sm shadow-boutique-terracotta/20 mt-6 cursor-pointer">
+                  <button onClick={() => setShowNewExpense(false)} className="w-full bg-boutique-navy hover:bg-boutique-terracotta text-boutique-navy font-semibold py-3.5 rounded-xl flex items-center justify-center gap-2 active:scale-95 transition-all shadow-sm mt-6 cursor-pointer">
                     {tExpModal.saveBtn || 'Guardar Gasto'}
                   </button>
                 </div>
@@ -720,7 +720,7 @@ export default function POSSimulator({ t }: { t: any }) {
                   <div className="bg-white p-4 pt-4 border-t border-slate-100 mt-auto shrink-0 shadow-[0_-10px_20px_rgba(0,0,0,0.03)]">
                     <button 
                       onClick={confirmPayment}
-                      className="w-full bg-boutique-gold hover:bg-boutique-petrol text-boutique-navy font-semibold py-4 rounded-xl flex items-center justify-center gap-2 active:scale-95 transition-all shadow-sm shadow-boutique-petrol/20 cursor-pointer"
+                      className="w-full bg-boutique-gold hover:bg-boutique-petrol text-boutique-navy font-semibold py-4 rounded-xl flex items-center justify-center gap-2 active:scale-95 transition-all shadow-sm cursor-pointer"
                     >
                       <Check size={18} />
                       {tInt.confirmBtn || 'Confirmar'}
