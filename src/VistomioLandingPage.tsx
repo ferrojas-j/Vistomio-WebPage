@@ -1728,13 +1728,13 @@ const VistomioLandingPage: React.FC = () => {
                   <MockVistomioApp t={t.systemDemo.mockApp} lang={lang} />
                 </div>
                 
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 z-50 bg-white/70 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center">
+                {/* Permanent Overlay Button */}
+                <div className="absolute bottom-8 left-0 w-full z-50 flex items-center justify-center">
                   <a 
                     href="https://demo.vistomio.com" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="bg-boutique-anthracite hover:bg-[#111] text-white font-bold tracking-widest uppercase text-sm px-8 py-4 rounded-xl shadow-2xl transition-transform duration-500 transform translate-y-8 group-hover:translate-y-0 flex items-center gap-3 border border-gray-700"
+                    className="bg-boutique-anthracite hover:bg-[#111] text-white font-bold tracking-widest uppercase text-sm px-8 py-4 rounded-xl shadow-2xl flex items-center gap-3 border border-gray-700 transition-transform hover:-translate-y-1"
                   >
                     {t.systemDemo?.btn || 'Explorar demo'}
                     <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
