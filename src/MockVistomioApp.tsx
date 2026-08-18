@@ -29,7 +29,7 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
         {/* Logo Area */}
         <div className="pt-6 pb-6 md:pt-8 md:pb-6 flex items-center justify-center gap-3 md:gap-4 bg-white rounded-t-[16px] md:rounded-t-[20px]">
           <div className="w-10 h-10 md:w-12 md:h-12 rounded-[10px] md:rounded-[12px] border-[1.5px] border-[#C6A15B] bg-white flex items-center justify-center shadow-[0_2px_10px_rgba(0,0,0,0.05)] flex-shrink-0 p-1.5 md:p-2">
-            <img src="/logo-icon-transparent.png" alt="Vistomio Logo" className="w-full h-full object-contain opacity-90" />
+            <img src="/logo-icon-transparent.png" alt="Vistomio Logo" className="w-full h-full object-contain opacity-90 drop-shadow-[0_0_0.75px_#B8863B] scale-110" />
           </div>
           <span className="font-bold tracking-[0.2em] md:tracking-[0.25em] text-[11px] md:text-[14px] text-boutique-navy leading-none mt-1" translate="no">VISTOMIO</span>
         </div>
