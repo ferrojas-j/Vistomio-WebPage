@@ -24,10 +24,10 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
     <div className="w-full h-full flex bg-[#13203A] text-left text-boutique-navy font-sans p-3 md:p-5 gap-3 md:gap-5">
       
       {/* --- SIDEBAR --- */}
-      <div className="w-[180px] md:w-[240px] flex-shrink-0 bg-[#F4F1EA] flex flex-col overflow-hidden rounded-[16px] md:rounded-[20px] shadow-xl h-full">
+      <div className="w-[200px] lg:w-[280px] flex-shrink-0 bg-[#F4F1EA] flex flex-col overflow-hidden rounded-[16px] md:rounded-[20px] shadow-xl h-full">
         
         {/* Logo Area */}
-        <div className="pt-6 pb-6 md:pt-10 md:pb-8 flex items-center justify-center gap-3 md:gap-4 bg-white rounded-t-[16px] md:rounded-t-[20px]">
+        <div className="pt-6 pb-6 md:pt-8 md:pb-6 flex items-center justify-center gap-3 md:gap-4 bg-white rounded-t-[16px] md:rounded-t-[20px]">
           <div className="w-12 h-12 md:w-16 md:h-16 rounded-[12px] md:rounded-[16px] border-[1.5px] border-[#C6A15B] bg-white flex items-center justify-center shadow-[0_2px_10px_rgba(0,0,0,0.05)] flex-shrink-0 p-2 md:p-2.5">
             <img src="/logo-icon-transparent.png" alt="Vistomio Logo" className="w-full h-full object-contain opacity-90" />
           </div>
@@ -35,7 +35,7 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
         </div>
 
         {/* Menu Items */}
-        <div className="flex-1 px-2 md:px-3 py-6 md:py-8 space-y-2 md:space-y-4 overflow-y-auto scrollbar-hide [&::-webkit-scrollbar]:hidden flex flex-col justify-start">
+        <div className="flex-1 px-2 md:px-4 py-4 md:py-5 space-y-1 md:space-y-2 overflow-y-auto scrollbar-hide [&::-webkit-scrollbar]:hidden flex flex-col justify-start">
           <MenuItem icon={<LayoutDashboard className="w-4 h-4 md:w-5 md:h-5" />} label={t?.sidebar?.dashboard || 'Dashboard General'} />
           <MenuItem icon={<CalendarDays className="w-4 h-4 md:w-5 md:h-5" />} label={t?.sidebar?.bookingEngine || 'Motor de Reservas'} active />
           <MenuItem icon={<CreditCard className="w-4 h-4 md:w-5 md:h-5" />} label={t?.sidebar?.payments || 'Pagos y Facturación'} />
@@ -164,9 +164,9 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
 // Helper Components
 function MenuItem({ icon, label, active = false }: { icon: React.ReactNode, label: string, active?: boolean }) {
   return (
-    <div className={`flex items-center gap-3.5 px-3 md:px-5 py-3 md:py-4 mx-2 md:mx-3 rounded-[12px] md:rounded-[16px] cursor-pointer transition-colors ${active ? 'bg-[#13203A] text-white shadow-[0_4px_12px_rgba(19,32,58,0.2)]' : 'text-gray-500 hover:bg-black/5 hover:text-boutique-navy'}`}>
+    <div className={`flex items-center gap-3 md:gap-4 px-3 md:px-4 py-2.5 md:py-3.5 mx-2 md:mx-3 rounded-[10px] md:rounded-[14px] cursor-pointer transition-colors ${active ? 'bg-[#13203A] text-white shadow-[0_4px_12px_rgba(19,32,58,0.2)]' : 'text-gray-500 hover:bg-black/5 hover:text-boutique-navy'}`}>
       <div className={`${active ? 'text-white' : 'text-gray-400'} flex-shrink-0`}>{icon}</div>
-      <span className={`text-[11px] md:text-[13px] leading-tight truncate ${active ? 'font-bold' : 'font-medium'}`}>{label}</span>
+      <span className={`text-[11px] md:text-[13px] leading-tight whitespace-normal ${active ? 'font-bold' : 'font-medium'}`}>{label}</span>
     </div>
   );
 }
@@ -234,7 +234,7 @@ function ChannelCard({ name, color, subtitle, rooms, className = '' }: { name: s
           <Globe2 className="w-3 h-3 md:w-4 md:h-4" />
         </div>
         <div className="flex-1 min-w-0">
-          <div className="text-[10px] md:text-[13px] font-bold text-boutique-navy leading-tight truncate">{name}</div>
+          <div className="text-[10px] md:text-[13px] font-bold text-boutique-navy leading-tight whitespace-normal">{name}</div>
           <div className={`hidden xl:block text-[9px] md:text-[10px] font-bold mt-0.5 ${subtitle === 'Conectado' ? 'text-[#86D097]' : 'text-gray-400'} truncate`}>{subtitle}</div>
         </div>
       </div>

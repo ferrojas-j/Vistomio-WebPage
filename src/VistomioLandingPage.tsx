@@ -1661,7 +1661,7 @@ const VistomioLandingPage: React.FC = () => {
           <div className="relative mx-auto max-w-5xl group cursor-pointer">
             {/* Decorative Floating Badges */}
             {/* Top Left: Check-in */}
-            <div className="absolute top-[15%] -left-[4%] md:-left-[14%] bg-white px-4 md:px-5 py-3 md:py-4 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.1)] border-[1.5px] border-[#B8863B] flex items-center gap-3 md:gap-4 z-20 animate-[float_5s_ease-in-out_infinite] scale-100 md:scale-[1.05]">
+            <div className="absolute top-[25%] -left-[4%] md:-left-[20%] bg-white px-4 md:px-5 py-3 md:py-4 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.1)] border-[1.5px] border-[#B8863B] flex items-center gap-3 md:gap-4 z-20 animate-[float_5s_ease-in-out_infinite] scale-100 md:scale-[1.05]">
               <div className="w-8 h-8 md:w-10 md:h-10 bg-[#B8863B]/15 rounded-full flex items-center justify-center text-boutique-plum shrink-0">
                 <ConciergeBell size={18} className="md:w-5 md:h-5" />
               </div>
@@ -1676,7 +1676,7 @@ const VistomioLandingPage: React.FC = () => {
             </div>
 
             {/* Top Right: Restaurant */}
-            <div className="absolute top-[15%] -right-[4%] md:-right-[14%] bg-white px-4 md:px-5 py-3 md:py-4 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.1)] border-[1.5px] border-[#B8863B] flex items-center gap-3 md:gap-4 z-20 animate-[float_7s_ease-in-out_infinite_1s] scale-100 md:scale-[1.05]">
+            <div className="absolute top-[25%] -right-[4%] md:-right-[20%] bg-white px-4 md:px-5 py-3 md:py-4 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.1)] border-[1.5px] border-[#B8863B] flex items-center gap-3 md:gap-4 z-20 animate-[float_7s_ease-in-out_infinite_1s] scale-100 md:scale-[1.05]">
               <div className="w-8 h-8 md:w-10 md:h-10 bg-[#B8863B]/15 rounded-full flex items-center justify-center text-boutique-plum shrink-0">
                 <Wine size={18} className="md:w-5 md:h-5" />
               </div>
@@ -1691,7 +1691,7 @@ const VistomioLandingPage: React.FC = () => {
             </div>
 
             {/* Bottom Left: Maintenance */}
-            <div className="absolute bottom-[20%] -left-[4%] md:-left-[14%] bg-white px-4 md:px-5 py-3 md:py-4 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.1)] border-[1.5px] border-[#B8863B] flex items-center gap-3 md:gap-4 z-20 animate-[float_6s_ease-in-out_infinite_1.5s] scale-100 md:scale-[1.05]">
+            <div className="absolute bottom-[15%] -left-[4%] md:-left-[20%] bg-white px-4 md:px-5 py-3 md:py-4 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.1)] border-[1.5px] border-[#B8863B] flex items-center gap-3 md:gap-4 z-20 animate-[float_6s_ease-in-out_infinite_1.5s] scale-100 md:scale-[1.05]">
               <div className="w-8 h-8 md:w-10 md:h-10 bg-[#B8863B]/15 rounded-full flex items-center justify-center text-boutique-plum shrink-0">
                 <ClipboardCheck size={18} className="md:w-5 md:h-5" />
               </div>
@@ -1706,7 +1706,7 @@ const VistomioLandingPage: React.FC = () => {
             </div>
 
             {/* Bottom Right: Payments */}
-            <div className="absolute bottom-[20%] -right-[4%] md:-right-[14%] bg-white px-4 md:px-5 py-3 md:py-4 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.1)] border-[1.5px] border-[#B8863B] flex items-center gap-3 md:gap-4 z-20 animate-[float_8s_ease-in-out_infinite_0.5s] scale-100 md:scale-[1.05]">
+            <div className="absolute bottom-[15%] -right-[4%] md:-right-[20%] bg-white px-4 md:px-5 py-3 md:py-4 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.1)] border-[1.5px] border-[#B8863B] flex items-center gap-3 md:gap-4 z-20 animate-[float_8s_ease-in-out_infinite_0.5s] scale-100 md:scale-[1.05]">
               <div className="w-8 h-8 md:w-10 md:h-10 bg-[#B8863B]/15 rounded-full flex items-center justify-center text-boutique-plum shrink-0">
                 <CreditCard size={18} className="md:w-5 md:h-5" />
               </div>
