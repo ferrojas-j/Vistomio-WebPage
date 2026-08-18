@@ -1721,20 +1721,12 @@ const VistomioLandingPage: React.FC = () => {
             </div>
             
             {/* Tablet Frame Container */}
-            <div 
-              className="relative mx-auto w-full aspect-[16/10] rounded-[1.5rem] md:rounded-[2rem] border-[6px] md:border-[10px] border-gray-900 bg-gray-900 shadow-[0_20px_50px_rgba(0,0,0,0.2)] group transition-transform duration-500 hover:-translate-y-2 overflow-hidden" 
-              style={{ containerType: 'inline-size' }}
-            >
+            <div className="relative mx-auto w-full aspect-[4/3] lg:aspect-[16/10] min-h-[400px] lg:min-h-[500px] rounded-[1.5rem] md:rounded-[2rem] border-[6px] md:border-[10px] border-gray-900 bg-gray-900 shadow-[0_20px_50px_rgba(0,0,0,0.2)] group transition-transform duration-500 hover:-translate-y-2 overflow-hidden flex flex-col">
               {/* Inner Screen */}
-              <div 
-                className="absolute top-0 left-0 bg-white origin-top-left pointer-events-none select-none rounded-[1rem] md:rounded-[1.25rem] overflow-hidden"
-                style={{ 
-                  width: '1280px', 
-                  height: '800px', 
-                  transform: 'scale(calc(100cqw / 1280))' 
-                }}
-              >
+              <div className="relative bg-[#13203A] flex-1 w-full h-full overflow-hidden rounded-[1rem] md:rounded-[1.25rem]">
+                <div className="w-full h-full pointer-events-none select-none absolute inset-0">
                   <MockVistomioApp t={t.systemDemo.mockApp} lang={lang} />
+                </div>
               </div>
               
               {/* Hover Overlay */}
