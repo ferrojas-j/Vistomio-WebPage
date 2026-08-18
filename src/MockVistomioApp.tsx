@@ -144,7 +144,7 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
         <div className="bg-white rounded-[12px] md:rounded-[16px] p-3 md:p-4 shadow-xl flex-shrink-0 flex flex-col overflow-hidden shrink-0 h-auto">
           <div className="flex items-center gap-2 mb-2 md:mb-3 px-1">
             <Globe className="w-4 h-4 text-boutique-navy" />
-            <h3 className="text-sm md:text-base text-boutique-navy font-serif font-bold tracking-[0.02em] whitespace-nowrap">Canales Conectados</h3>
+            <h3 className="text-sm md:text-base text-boutique-navy font-serif font-bold tracking-[0.02em] whitespace-nowrap">{t.channels?.title || 'Channel Manager'}</h3>
           </div>
           
           <div className="flex justify-between gap-2 md:gap-3 w-full overflow-hidden">

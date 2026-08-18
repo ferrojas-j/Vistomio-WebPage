@@ -101,7 +101,7 @@ const translations = {
         header: { title1: 'Gestión de', title2: 'Reservas', search: 'Buscar huésped...', rooms: 'HABITACIONES', channels: 'CANALES', newRes1: 'NUEVA', newRes2: 'RESERVA' },
         toolbar: { calendar: 'Calendario de Reservas', reservations: 'Reservas', rates: 'Tarifas', august: 'Agosto', today: 'HOY' },
         grid: { room: 'HABITACIÓN', days: ['MIÉ', 'JUE', 'VIE', 'SÁB', 'DOM', 'LUN', 'MAR'], rooms: ['Suite Deluxe con Terraza', 'Suite de lujo con jardín', 'Habitación Deluxe 301'] },
-        channels: { title: 'Canales Conectados', synced: 'Sincronizado', active: 'Activo', directWeb: 'Web Directa', directSale: 'Venta Directa' }
+        channels: { title: 'Channel Manager', synced: 'Sincronizado', active: 'Activo', directWeb: 'Web Directa', directSale: 'Venta Directa' }
       },
       title: 'Sistemas boutique para negocios boutique',
       btn: 'Explorar demo'
@@ -508,7 +508,7 @@ const translations = {
         header: { title1: 'Reservation', title2: 'Management', search: 'Search guest...', rooms: 'ROOMS', channels: 'CHANNELS', newRes1: 'NEW', newRes2: 'BOOKING' },
         toolbar: { calendar: 'Booking Calendar', reservations: 'Bookings', rates: 'Rates', august: 'August', today: 'TODAY' },
         grid: { room: 'ROOM', days: ['WED', 'THU', 'FRI', 'SAT', 'SUN', 'MON', 'TUE'], rooms: ['Deluxe Suite with Terrace', 'Luxury Suite with Garden', 'Deluxe Room 301'] },
-        channels: { title: 'Connected Channels', synced: 'Synced', active: 'Active', directWeb: 'Direct Web', directSale: 'Direct Sale' }
+        channels: { title: 'Channel Manager', synced: 'Synced', active: 'Active', directWeb: 'Direct Web', directSale: 'Direct Sale' }
       },
       title: 'Boutique systems for boutique businesses',
       btn: 'Explore demo'
@@ -915,7 +915,7 @@ const translations = {
         header: { title1: 'Gestion des', title2: 'Réservations', search: 'Chercher client...', rooms: 'CHAMBRES', channels: 'CANAUX', newRes1: 'NOUVELLE', newRes2: 'RÉSERV.' },
         toolbar: { calendar: 'Calendrier', reservations: 'Réservations', rates: 'Tarifs', august: 'Août', today: 'AUJ.' },
         grid: { room: 'CHAMBRE', days: ['MER', 'JEU', 'VEN', 'SAM', 'DIM', 'LUN', 'MAR'], rooms: ['Suite Deluxe Terrasse', 'Suite Deluxe Jardin', 'Chambre Deluxe 301'] },
-        channels: { title: 'Canaux Connectés', synced: 'Synchronisé', active: 'Actif', directWeb: 'Web Direct', directSale: 'Vente Directe' }
+        channels: { title: 'Channel Manager', synced: 'Synchronisé', active: 'Actif', directWeb: 'Web Direct', directSale: 'Vente Directe' }
       },
       title: 'Des systèmes boutique pour des établissements boutique',
       btn: 'Explorer la démo'
