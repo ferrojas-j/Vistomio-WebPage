@@ -12,7 +12,6 @@ import {
   ArrowUp,
   Send,
   Mail, 
-  PieChart, 
   Users,
   CheckCircle2,
   ArrowRight,
@@ -20,7 +19,6 @@ import {
   X,
   Zap,
   Globe,
-  Globe2,
   ChevronDown,
   Sparkles,
   Wine,
@@ -34,7 +32,10 @@ import {
   CalendarCheck,
   Clock,
   Wallet, 
-  TrendingUp
+  TrendingUp,
+  Blocks,
+    Languages,
+    Cloud
 } from 'lucide-react';
 
 // --- Custom Icons ---
@@ -219,21 +220,21 @@ const translations = {
     ],
     benefitsTitle: 'Optimizar tu gestión es más fácil que nunca',
     benefits: [
-      {
-        title: 'Paga lo que usas',
-        desc: 'Arquitectura 100% modular. Conecta Vistomio a tus sistemas actuales vía API o utiliza la suite completa.',
-        icon: Zap
-      },
-      {
-        title: 'Multilenguaje Real',
-        desc: 'Tu equipo y tus huéspedes merecen comunicarse en su idioma. Todo el sistema se adapta automáticamente.',
-        icon: Globe2
-      },
-      {
-        title: 'Nube de Alto Rendimiento',
-        desc: 'Sin servidores locales, sin instalaciones complejas. Fluidez absoluta desde cualquier dispositivo, en cualquier lugar.',
-        icon: PieChart
-      }
+              {
+          title: 'Paga solo lo que usas',
+          desc: 'Arquitectura 100% modular. Conecta Vistomio a tus sistemas actuales vía API o utiliza la suite completa.',
+          icon: Blocks
+        },
+        {
+          title: 'Multilenguaje Real',
+          desc: 'Tu equipo y tus huéspedes merecen comunicarse en su idioma. Todo el sistema se adapta automáticamente.',
+          icon: Languages
+        },
+        {
+          title: 'Nube de Alto Rendimiento',
+          desc: 'Sin servidores locales, sin instalaciones complejas. Fluidez absoluta desde cualquier dispositivo, en cualquier lugar.',
+          icon: Cloud
+        }
     ],
     mockupBadges: {
       leftTop: 'Nueva Reserva',
@@ -627,21 +628,21 @@ const translations = {
     ],
     benefitsTitle: 'Optimizing your management is easier than ever',
     benefits: [
-      {
-        title: 'Pay for what you use',
-        desc: '100% modular architecture. Connect Vistomio to your current systems via API or use the full suite.',
-        icon: Zap
-      },
-      {
-        title: 'True Multilanguage',
-        desc: 'Your team and guests deserve to communicate in their language. The entire system adapts automatically.',
-        icon: Globe2
-      },
-      {
-        title: 'High-Performance Cloud',
-        desc: 'No local servers, no complex installations. Absolute fluidity from any device, anywhere.',
-        icon: PieChart
-      }
+              {
+          title: 'Pay only for what you use',
+          desc: '100% modular architecture. Connect Vistomio to your current systems via API or use the full suite.',
+          icon: Blocks
+        },
+        {
+          title: 'True Multilanguage',
+          desc: 'Your team and guests deserve to communicate in their language. The entire system adapts automatically.',
+          icon: Languages
+        },
+        {
+          title: 'High-Performance Cloud',
+          desc: 'No local servers, no complex installations. Absolute fluidity from any device, anywhere.',
+          icon: Cloud
+        }
     ],
     mockupBadges: {
       leftTop: 'New Booking',
@@ -1032,21 +1033,21 @@ const translations = {
     ],
     benefitsTitle: 'Optimiser votre gestion est plus facile que jamais',
     benefits: [
-      {
-        title: 'Payez ce que vous utilisez',
-        desc: 'Architecture 100% modulaire. Connectez Vistomio à vos systèmes actuels via API ou utilisez la suite.',
-        icon: Zap
-      },
-      {
-        title: 'Vrai Multilingue',
-        desc: 'Votre équipe et vos clients méritent de communiquer dans leur langue. Le système s\'adapte.',
-        icon: Globe2
-      },
-      {
-        title: 'Cloud Haute Performance',
-        desc: 'Pas de serveurs locaux, fluidité absolue depuis n\'importe quel appareil, n\'importe où.',
-        icon: PieChart
-      }
+              {
+          title: 'Payez seulement ce que vous utilisez',
+          desc: 'Architecture 100% modulaire. Connectez Vistomio à vos systèmes actuels via API ou utilisez la suite.',
+          icon: Blocks
+        },
+        {
+          title: 'Vrai Multilingue',
+          desc: 'Votre équipe et vos clients méritent de communiquer dans leur langue. Le système s\'adapte.',
+          icon: Languages
+        },
+        {
+          title: 'Cloud Haute Performance',
+          desc: 'Pas de serveurs locaux, fluidité absolue depuis n\'importe quel appareil, n\'importe où.',
+          icon: Cloud
+        }
     ],
     mockupBadges: {
       leftTop: 'Nouvelle Réservation',
@@ -1881,10 +1882,10 @@ const VistomioLandingPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {t.benefits.map((benefit, idx) => (
               <div key={idx} className="p-10 rounded-[2rem] bg-boutique-sand/60 backdrop-blur-xl border border-boutique-sand hover:border-[#D4AF37]/50 hover:shadow-xl transition-all shadow-sm">
-                <div className="w-16 h-16 rounded-2xl bg-[#D4AF37]/10 text-[#D4AF37] flex items-center justify-center mb-8 border border-[#D4AF37]/30">
-                  <benefit.icon size={32} strokeWidth={1.5} />
-                </div>
-                <h3 className="text-2xl font-normal text-boutique-navy mb-4 font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{benefit.title}</h3>
+                <div className="w-16 h-16 rounded-2xl bg-[#13203A] text-white flex items-center justify-center mb-8 shadow-md border border-[#13203A]/20">
+                    <benefit.icon size={32} strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-2xl font-normal text-[#D4AF37] mb-4 font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{benefit.title}</h3>
                 <p className="text-boutique-navy leading-relaxed text-lg">{benefit.desc}</p>
               </div>
             ))}
