@@ -270,7 +270,7 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
           Mini demo
         </div>
         
-        <h2 className="text-4xl md:text-5xl font-serif font-normal md:tracking-[0.05em] text-boutique-navy mb-6 tracking-[0.03em] leading-relaxed">
+        <h2 className="text-[40px] md:text-[53px] font-normal text-boutique-navy mb-6 font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">
           {currentLanguage === 'es' ? 'Descubre el Chatbot IA Omnicanal de Vistomio' : currentLanguage === 'en' ? 'Discover Vistomio\'s Omnichannel AI Chatbot' : 'Découvrez le Chatbot IA Omnicanal de Vistomio'}
         </h2>
         
