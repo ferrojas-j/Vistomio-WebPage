@@ -1905,8 +1905,8 @@ const VistomioLandingPage: React.FC = () => {
               return (
               <div key={catIdx} id={`category-${catIdx}`} className="flex flex-col scroll-mt-32">
                 <div className="mb-10 flex items-center gap-5">
-                  <div className="w-10 h-10 rounded-full bg-[#D4AF37]/10 flex shrink-0 items-center justify-center border border-[#D4AF37]/20 shadow-sm">
-                     <div className="w-2.5 h-2.5 rounded-full bg-[#D4AF37]"></div>
+                  <div className="w-10 h-10 rounded-full bg-[#A63D2E]/10 flex shrink-0 items-center justify-center border border-[#A63D2E]/20 shadow-sm">
+                     <div className="w-2.5 h-2.5 rounded-full bg-[#A63D2E]"></div>
                   </div>
                   <h3 className="text-3xl md:text-4xl font-normal text-boutique-navy font-serif tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">
                     {category.name.includes('&') ? (
@@ -1934,11 +1934,11 @@ const VistomioLandingPage: React.FC = () => {
                       <div className="absolute top-0 left-0 w-full h-full from-[#D4AF37]/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                       
                       <div className="flex justify-between items-start mb-6 relative z-10">
-                        <div className="w-14 h-14 rounded-2xl bg-[#D4AF37]/10 text-[#D4AF37] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#D4AF37] group-hover:text-[#0B1121] transition-all duration-300 border border-[#D4AF37]/20 group-hover:border-transparent">
+                        <div className="w-14 h-14 rounded-2xl bg-[#13203A] text-white flex items-center justify-center group-hover:scale-110 transition-all duration-300 border border-[#13203A]/20 shadow-md">
                           <feature.icon size={26} strokeWidth={1.5} />
                         </div>
                         {feature.standalone && (
-                          <div className="px-3 py-1.5 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-xl text-[#A37A3B] text-[10px] font-bold uppercase tracking-widest ml-2 mt-1 flex flex-col items-center justify-center text-center leading-[1.2] shadow-sm">
+                          <div className="px-3 py-1.5 bg-white border border-[#6E7B4A] rounded-xl text-[#6E7B4A] text-[10px] font-bold uppercase tracking-widest ml-2 mt-1 flex flex-col items-center justify-center text-center leading-[1.2] shadow-sm">
                             <span>{t.standaloneBadge1}</span>
                             <span>{t.standaloneBadge2}</span>
                           </div>
@@ -1949,7 +1949,7 @@ const VistomioLandingPage: React.FC = () => {
                       
                       {(feature as any).demoId && (
                         <div className="mt-6 relative z-10">
-                          <a href={`#${(feature as any).demoId}`} className="inline-flex items-center gap-2 text-sm font-bold text-[#D4AF37] hover:text-[#B5914A] transition-colors group/btn uppercase tracking-widest">
+                          <a href={`#${(feature as any).demoId}`} className="inline-flex items-center gap-2 text-sm font-bold text-[#13203A] hover:text-[#13203A]/80 transition-colors group/btn uppercase tracking-widest">
                             {t.seeHowItWorks} <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
                           </a>
                         </div>
@@ -1963,7 +1963,7 @@ const VistomioLandingPage: React.FC = () => {
                     <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-3">
                       <h4 className="text-3xl font-serif font-normal text-boutique-navy tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{t.chatbotPlans.title}</h4>
                       <div className="inline-flex">
-                        <div className="px-3 py-1.5 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-xl text-[#A37A3B] text-[10px] font-bold uppercase tracking-widest shadow-sm">
+                        <div className="px-3 py-1.5 bg-white border border-[#6E7B4A] rounded-xl text-[#6E7B4A] text-[10px] font-bold uppercase tracking-widest shadow-sm">
                           {t.standaloneBadge1} {t.standaloneBadge2}
                         </div>
                       </div>
@@ -1973,7 +1973,7 @@ const VistomioLandingPage: React.FC = () => {
                     </p>
                     
                     <div className="mb-12">
-                      <a href="#demo-chatbot" className="inline-flex items-center gap-2 text-sm font-bold text-[#D4AF37] hover:text-[#B5914A] transition-colors group/btn uppercase tracking-widest">
+                      <a href="#demo-chatbot" className="inline-flex items-center gap-2 text-sm font-bold text-[#13203A] hover:text-[#13203A]/80 transition-colors group/btn uppercase tracking-widest">
                         {t.seeHowItWorks} <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
                       </a>
                     </div>
