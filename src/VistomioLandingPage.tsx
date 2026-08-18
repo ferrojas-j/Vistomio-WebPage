@@ -2067,7 +2067,7 @@ const VistomioLandingPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="flex-1 text-center lg:text-left">
-              <div className="inline-block px-4 py-1.5 bg-boutique-gold/10 border border-boutique-gold/30 rounded-full text-boutique-gold text-sm font-semibold uppercase tracking-wider mb-6">
+              <div className="inline-block px-4 py-1.5 bg-white border border-boutique-navy rounded-full text-boutique-navy text-sm font-semibold uppercase tracking-wider mb-6">
                 Mini demo
               </div>
               <h2 className="text-[40px] md:text-[53px] font-normal text-[#B8863B] mb-6 font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">
@@ -2116,7 +2116,7 @@ const VistomioLandingPage: React.FC = () => {
               <StaffAppSimulator currentLanguage={lang} />
             </div>
             <div className="flex-1 text-center lg:text-left">
-              <div className="inline-block px-4 py-1.5 bg-boutique-gold/10 border border-boutique-gold/30 rounded-full text-boutique-gold text-sm font-semibold uppercase tracking-wider mb-6">
+              <div className="inline-block px-4 py-1.5 bg-white border border-boutique-navy rounded-full text-boutique-navy text-sm font-semibold uppercase tracking-wider mb-6">
                 Mini demo
               </div>
               <h2 className="text-[40px] md:text-[53px] font-normal text-[#B8863B] mb-6 font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">
