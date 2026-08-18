@@ -1449,7 +1449,7 @@ const VistomioLandingPage: React.FC = () => {
                               onClick={() => setProductsMenuOpen(false)} 
                               className="flex items-start gap-3 p-2 rounded-lg hover:bg-white/50 transition-colors group"
                             >
-                              <div className="w-8 h-8 rounded-full bg-[#D4AF37]/10 flex-shrink-0 flex items-center justify-center text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-[#0B1121] transition-colors mt-0.5">
+                              <div className="w-8 h-8 rounded-full bg-[#B8863B]/10 flex-shrink-0 flex items-center justify-center text-[#B8863B] group-hover:bg-[#B8863B] group-hover:text-[#0B1121] transition-colors mt-0.5">
                                 <Icon size={14} />
                               </div>
                               <div className="flex flex-col">
@@ -1485,7 +1485,7 @@ const VistomioLandingPage: React.FC = () => {
               >
                 <div className="bg-boutique-sand/90 backdrop-blur-xl border border-boutique-sand rounded-xl shadow-md overflow-hidden flex flex-col p-2">
                   <a href="https://demo.vistomio.com" target="_blank" rel="noopener noreferrer" onClick={() => setDemosMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 text-sm text-boutique-navy hover:text-boutique-navy hover:bg-white/50 rounded-lg transition-colors group">
-                    <div className="w-8 h-8 rounded-full bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-[#0B1121] transition-colors"><Sparkles size={14} /></div>
+                    <div className="w-8 h-8 rounded-full bg-[#B8863B]/10 flex items-center justify-center text-[#B8863B] group-hover:bg-[#B8863B] group-hover:text-[#0B1121] transition-colors"><Sparkles size={14} /></div>
                     <span className="font-medium">Demo Suite Vistomio</span>
                   </a>
                   <a href="#demo-chatbot" onClick={() => setDemosMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 text-sm text-boutique-navy hover:text-boutique-navy hover:bg-white/50 rounded-lg transition-colors group">
@@ -1497,15 +1497,15 @@ const VistomioLandingPage: React.FC = () => {
                     <span className="font-medium">Demo POS Vistomio para restaurantes</span>
                   </a>
                   <a href="#demo-staff" onClick={() => setDemosMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 text-sm text-boutique-navy hover:text-boutique-navy hover:bg-white/50 rounded-lg transition-colors group">
-                    <div className="w-8 h-8 rounded-full bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37] group-hover:bg-indigo-500 group-hover:text-white transition-colors"><Users size={14} /></div>
+                    <div className="w-8 h-8 rounded-full bg-[#B8863B]/10 flex items-center justify-center text-[#B8863B] group-hover:bg-indigo-500 group-hover:text-white transition-colors"><Users size={14} /></div>
                     <span className="font-medium">Demo Vistomio Staff App</span>
                   </a>
                 </div>
               </div>
             </div>
             
-            <a href="#precios" className="text-sm font-medium text-boutique-navy hover:text-[#D4AF37] transition-colors">{t.nav.pricing}</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="text-sm font-medium text-boutique-navy hover:text-[#D4AF37] transition-colors">{t.nav.contact}</a>
+            <a href="#precios" className="text-sm font-medium text-boutique-navy hover:text-[#B8863B] transition-colors">{t.nav.pricing}</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="text-sm font-medium text-boutique-navy hover:text-[#B8863B] transition-colors">{t.nav.contact}</a>
 
             {/* Custom Language Selector */}
             <div 
@@ -1516,9 +1516,9 @@ const VistomioLandingPage: React.FC = () => {
             >
               <button 
                 onClick={() => setLangMenuOpen(!langMenuOpen)}
-                className="flex items-center gap-2 text-sm font-medium text-boutique-navy hover:text-[#D4AF37] transition-colors group"
+                className="flex items-center gap-2 text-sm font-medium text-boutique-navy hover:text-[#B8863B] transition-colors group"
               >
-                <Globe size={16} className="text-[#D4AF37] group-hover:text-[#FCE69B] transition-colors" />
+                <Globe size={16} className="text-[#B8863B] group-hover:text-[#FCE69B] transition-colors" />
                 <span>{lang === 'es' ? 'Español' : lang === 'en' ? 'English' : 'Français'}</span>
                 <ChevronDown size={14} className={`text-slate-500 transition-transform duration-300 ${langMenuOpen ? 'rotate-180' : ''}`} />
               </button>
@@ -1530,7 +1530,7 @@ const VistomioLandingPage: React.FC = () => {
                     <button
                       key={l}
                       onClick={() => { setLang(l); setLangMenuOpen(false); }}
-                      className={`w-full text-left px-4 py-2 rounded-lg text-sm font-medium transition-colors ${lang === l ? 'bg-amber-50 text-[#D4AF37] font-bold' : 'text-boutique-navy hover:bg-gray-50 hover:text-[#D4AF37]'}`}
+                      className={`w-full text-left px-4 py-2 rounded-lg text-sm font-medium transition-colors ${lang === l ? 'bg-amber-50 text-[#B8863B] font-bold' : 'text-boutique-navy hover:bg-gray-50 hover:text-[#B8863B]'}`}
                     >
                       {l === 'es' ? 'Español' : l === 'en' ? 'English' : 'Français'}
                     </button>
@@ -1558,9 +1558,9 @@ const VistomioLandingPage: React.FC = () => {
             <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); setMobileMenuOpen(false); }} className="text-lg font-medium text-boutique-navy">{t.nav.contact}</a>
             <div className="h-px bg-black/10 w-full my-2"></div>
             <div className="flex gap-4">
-               <button onClick={() => {setLang('es'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg flex-1 ${lang === 'es' ? 'bg-slate-800 border border-slate-700/20 text-[#D4AF37]' : 'text-slate-400'}`}>Español</button>
-               <button onClick={() => {setLang('en'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg flex-1 ${lang === 'en' ? 'bg-slate-800 border border-slate-700/20 text-[#D4AF37]' : 'text-slate-400'}`}>English</button>
-               <button onClick={() => {setLang('fr'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg flex-1 ${lang === 'fr' ? 'bg-slate-800 border border-slate-700/20 text-[#D4AF37]' : 'text-slate-400'}`}>Français</button>
+               <button onClick={() => {setLang('es'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg flex-1 ${lang === 'es' ? 'bg-slate-800 border border-slate-700/20 text-[#B8863B]' : 'text-slate-400'}`}>Español</button>
+               <button onClick={() => {setLang('en'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg flex-1 ${lang === 'en' ? 'bg-slate-800 border border-slate-700/20 text-[#B8863B]' : 'text-slate-400'}`}>English</button>
+               <button onClick={() => {setLang('fr'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg flex-1 ${lang === 'fr' ? 'bg-slate-800 border border-slate-700/20 text-[#B8863B]' : 'text-slate-400'}`}>Français</button>
             </div>
             <a href="https://demo.vistomio.com" target="_blank" rel="noopener noreferrer" className="bg-[#6B4357] hover:bg-[#5a3849] text-white text-center font-semibold px-5 py-4 rounded-xl mt-4 shadow-sm">
               {t.nav.demo}
@@ -1579,7 +1579,7 @@ const VistomioLandingPage: React.FC = () => {
               <h1 className="text-5xl md:text-6xl lg:text-[4.2rem] font-serif font-normal text-boutique-navy mb-6 tracking-[0.02em] md:tracking-[0.03em] leading-[1.1] max-w-3xl">
                 {t.hero.title}
                 <br />
-                <span className="text-[#D4AF37] font-serif">
+                <span className="text-[#B8863B] font-serif">
                   {t.hero.titleHighlight}
                 </span>
               </h1>
@@ -1781,7 +1781,7 @@ const VistomioLandingPage: React.FC = () => {
 
             <div className="flex flex-col items-center gap-2">
               <div className="flex items-center gap-3 text-2xl font-semibold text-boutique-navy">
-                <span className="border-2 border-[#D4AF37] p-1.5 text-[#D4AF37] text-sm">JC</span> Hoteles
+                <span className="border-2 border-[#B8863B] p-1.5 text-[#B8863B] text-sm">JC</span> Hoteles
               </div>
               <span className="text-xs font-semibold text-boutique-navy/80 uppercase tracking-widest">{t.locations.jc}</span>
             </div>
@@ -1805,7 +1805,7 @@ const VistomioLandingPage: React.FC = () => {
               <ul className="space-y-6">
                 {t.boutiqueNiche.cards.map((card, idx) => (
                   <li key={idx} className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] flex items-center justify-center shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-[#B8863B]/10 border border-[#B8863B]/30 text-[#B8863B] flex items-center justify-center shrink-0">
                       <card.icon size={24} />
                     </div>
                     <div>
@@ -1831,7 +1831,7 @@ const VistomioLandingPage: React.FC = () => {
                     <div className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 shadow-inner">
                       <BedDouble className="text-white" size={20}/>
                     </div>
-                    <div className="px-3 py-1.5 bg-[#D4AF37]/20 text-[#D4AF37] rounded-full text-xs font-semibold border border-[#D4AF37]/30 backdrop-blur-md">
+                    <div className="px-3 py-1.5 bg-[#B8863B]/20 text-[#B8863B] rounded-full text-xs font-semibold border border-[#B8863B]/30 backdrop-blur-md">
                       {t.suiteMockup.status}
                     </div>
                   </div>
@@ -1881,11 +1881,11 @@ const VistomioLandingPage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {t.benefits.map((benefit, idx) => (
-              <div key={idx} className="p-10 rounded-[2rem] bg-boutique-sand/60 backdrop-blur-xl border border-boutique-sand hover:border-[#D4AF37]/50 hover:shadow-xl transition-all shadow-sm">
+              <div key={idx} className="p-10 rounded-[2rem] bg-boutique-sand/60 backdrop-blur-xl border border-boutique-sand hover:border-[#B8863B]/50 hover:shadow-xl transition-all shadow-sm">
                 <div className="w-16 h-16 rounded-2xl bg-[#13203A] text-white flex items-center justify-center mb-8 shadow-md border border-[#13203A]/20">
                     <benefit.icon size={32} strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-2xl font-normal text-[#D4AF37] mb-4 font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{benefit.title}</h3>
+                  <h3 className="text-2xl font-normal text-[#B8863B] mb-4 font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{benefit.title}</h3>
                 <p className="text-boutique-navy leading-relaxed text-lg">{benefit.desc}</p>
               </div>
             ))}
@@ -1921,7 +1921,7 @@ const VistomioLandingPage: React.FC = () => {
                       category.name
                     )}
                   </h3>
-                  <div className="h-[2px] bg-gradient-to-r from-[#D4AF37]/30 to-transparent flex-grow rounded-full ml-4"></div>
+                  <div className="h-[2px] bg-gradient-to-r from-[#B8863B]/30 to-transparent flex-grow rounded-full ml-4"></div>
                 </div>
                 
                 {!isChatbotCategory ? (
@@ -1929,10 +1929,10 @@ const VistomioLandingPage: React.FC = () => {
                     {category.items.map((feature, idx) => (
                       <div 
                         key={idx} 
-                        className="bg-boutique-sand/50 backdrop-blur-xl rounded-3xl p-6 md:p-8 border border-boutique-sand hover:border-[#D4AF37]/50 hover:shadow-lg transition-all duration-300 group cursor-default relative overflow-hidden flex flex-col"
+                        className="bg-boutique-sand/50 backdrop-blur-xl rounded-3xl p-6 md:p-8 border border-boutique-sand hover:border-[#B8863B]/50 hover:shadow-lg transition-all duration-300 group cursor-default relative overflow-hidden flex flex-col"
                       >
                         
-                      <div className="absolute top-0 left-0 w-full h-full from-[#D4AF37]/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                      <div className="absolute top-0 left-0 w-full h-full from-[#B8863B]/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                       
                       <div className="flex justify-between items-start mb-6 relative z-10">
                         <div className="w-14 h-14 rounded-2xl bg-[#13203A] text-white flex items-center justify-center group-hover:scale-110 transition-all duration-300 border border-[#13203A]/20 shadow-md">
@@ -1982,7 +1982,7 @@ const VistomioLandingPage: React.FC = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
                       {/* Standard Plan */}
                       <div className="bg-boutique-offwhite border border-gray-100 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 rounded-[2rem] p-8 flex flex-col h-full relative overflow-hidden group">
-                        <div className="absolute top-0 left-0 w-full h-1 bg-[#D4AF37]/30 group-hover:bg-[#D4AF37] transition-colors"></div>
+                        <div className="absolute top-0 left-0 w-full h-1 bg-[#B8863B]/30 group-hover:bg-[#B8863B] transition-colors"></div>
                         <div className="flex items-center gap-5 mb-6">
                           <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center border border-[#13203A]/20 text-[#13203A] shadow-md">
                             <Bot size={24} strokeWidth={1.5} />
@@ -1993,7 +1993,7 @@ const VistomioLandingPage: React.FC = () => {
                         <ul className="flex flex-col gap-4 flex-grow">
                           {t.chatbotPlans.plans[0].features.map((feature, idx) => (
                             <li key={idx} className="flex gap-3">
-                              <div className="mt-0.5 min-w-[18px] text-[#D4AF37]"> <CheckCircle2 size={18} /> </div>
+                              <div className="mt-0.5 min-w-[18px] text-[#B8863B]"> <CheckCircle2 size={18} /> </div>
                               <span className="text-boutique-navy/90 text-sm font-medium leading-relaxed">{feature}</span>
                             </li>
                           ))}
@@ -2002,7 +2002,7 @@ const VistomioLandingPage: React.FC = () => {
 
                       {/* Premium Plan */}
                       <div className="bg-boutique-offwhite border border-gray-100 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 rounded-[2rem] p-8 flex flex-col h-full relative overflow-hidden group">
-                        <div className="absolute top-0 left-0 w-full h-1 bg-[#D4AF37]/30 group-hover:bg-[#D4AF37] transition-colors"></div>
+                        <div className="absolute top-0 left-0 w-full h-1 bg-[#B8863B]/30 group-hover:bg-[#B8863B] transition-colors"></div>
                         <div className="flex items-center gap-5 mb-6">
                           <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center border border-[#13203A]/20 text-[#13203A] shadow-md">
                             <div className="relative flex items-center justify-center">
@@ -2016,7 +2016,7 @@ const VistomioLandingPage: React.FC = () => {
                         <ul className="flex flex-col gap-4 flex-grow">
                           {t.chatbotPlans.plans[1].features.map((feature, idx) => (
                             <li key={idx} className="flex gap-3">
-                              <div className="mt-0.5 min-w-[18px] text-[#D4AF37]"> <CheckCircle2 size={18} /> </div>
+                              <div className="mt-0.5 min-w-[18px] text-[#B8863B]"> <CheckCircle2 size={18} /> </div>
                               <span className="text-boutique-navy/90 text-sm font-medium leading-relaxed">{feature}</span>
                             </li>
                           ))}
@@ -2025,7 +2025,7 @@ const VistomioLandingPage: React.FC = () => {
 
                       {/* Autonomous Plan */}
                       <div className="bg-boutique-offwhite border border-gray-100 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 rounded-[2rem] p-8 flex flex-col h-full relative overflow-hidden group">
-                        <div className="absolute top-0 left-0 w-full h-1 bg-[#D4AF37]/30 group-hover:bg-[#D4AF37] transition-colors"></div>
+                        <div className="absolute top-0 left-0 w-full h-1 bg-[#B8863B]/30 group-hover:bg-[#B8863B] transition-colors"></div>
                         <div className="flex items-center gap-5 mb-6">
                           <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center border border-[#13203A]/20 text-[#13203A] shadow-md">
                             <div className="relative flex items-center justify-center">
@@ -2039,7 +2039,7 @@ const VistomioLandingPage: React.FC = () => {
                         <ul className="flex flex-col gap-4 flex-grow">
                           {t.chatbotPlans.plans[2].features.map((feature, idx) => (
                             <li key={idx} className="flex gap-3">
-                              <div className="mt-0.5 min-w-[18px] text-[#D4AF37]"> <CheckCircle2 size={18} /> </div>
+                              <div className="mt-0.5 min-w-[18px] text-[#B8863B]"> <CheckCircle2 size={18} /> </div>
                               <span className="text-boutique-navy/90 text-sm font-medium leading-relaxed">{feature}</span>
                             </li>
                           ))}
@@ -2070,7 +2070,7 @@ const VistomioLandingPage: React.FC = () => {
               <div className="inline-block px-4 py-1.5 bg-boutique-gold/10 border border-boutique-gold/30 rounded-full text-boutique-gold text-sm font-semibold uppercase tracking-wider mb-6">
                 Mini demo
               </div>
-              <h2 className="text-[40px] md:text-[53px] font-normal text-[#D4AF37] mb-6 font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">
+              <h2 className="text-[40px] md:text-[53px] font-normal text-[#B8863B] mb-6 font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">
                 {t.posDemo.sectionTitle}
               </h2>
               <p className="text-xl text-boutique-navy/80 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0">
@@ -2079,7 +2079,7 @@ const VistomioLandingPage: React.FC = () => {
               
               <div className="flex flex-col gap-6 max-w-md mx-auto lg:mx-0">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-boutique-sand flex items-center justify-center text-[#D4AF37] flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-boutique-sand flex items-center justify-center text-[#B8863B] flex-shrink-0">
                     <Utensils size={24} />
                   </div>
                   <div>
@@ -2119,7 +2119,7 @@ const VistomioLandingPage: React.FC = () => {
               <div className="inline-block px-4 py-1.5 bg-boutique-gold/10 border border-boutique-gold/30 rounded-full text-boutique-gold text-sm font-semibold uppercase tracking-wider mb-6">
                 Mini demo
               </div>
-              <h2 className="text-[40px] md:text-[53px] font-normal text-[#D4AF37] mb-6 font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">
+              <h2 className="text-[40px] md:text-[53px] font-normal text-[#B8863B] mb-6 font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">
                 {lang === 'es' ? 'Sincronización total con Vistomio Staff' : lang === 'en' ? 'Total synchronization with Vistomio Staff' : 'Synchronisation totale avec Vistomio Staff'}
               </h2>
               <p className="text-xl text-boutique-navy/80 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0">
@@ -2185,8 +2185,8 @@ const VistomioLandingPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center justify-center mb-16">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-px bg-[#D4AF37]"></div>
-              <span className="text-[#D4AF37] font-bold tracking-[0.25em] text-sm md:text-base uppercase">
+              <div className="w-12 h-px bg-[#B8863B]"></div>
+              <span className="text-[#B8863B] font-bold tracking-[0.25em] text-sm md:text-base uppercase">
                 {lang === 'es' ? 'PRECIOS Y PLANES' : lang === 'en' ? 'PRICING & PLANS' : 'PRIX ET FORFAITS'}
               </span>
             </div>
@@ -2194,17 +2194,17 @@ const VistomioLandingPage: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
             {t.pricing.plans.map((plan: any, idx: number) => (
-              <div key={idx} className={`rounded-[2.5rem] p-8 lg:p-10 bg-boutique-navy border ${plan.highlight ? 'border-[#D4AF37] shadow-2xl  lg:scale-105 z-10 relative' : 'border-gray-800 hover:border-[#D4AF37]/50 shadow-lg relative'} overflow-hidden transition-all duration-300 flex flex-col`}>
+              <div key={idx} className={`rounded-[2.5rem] p-8 lg:p-10 bg-boutique-navy border ${plan.highlight ? 'border-[#B8863B] shadow-2xl  lg:scale-105 z-10 relative' : 'border-gray-800 hover:border-[#B8863B]/50 shadow-lg relative'} overflow-hidden transition-all duration-300 flex flex-col`}>
                 
-                <h3 className={`text-2xl font-bold ${plan.highlight ? 'text-[#D4AF37]' : 'text-white'} mb-3 pr-2`}>{plan.name}</h3>
+                <h3 className={`text-2xl font-bold ${plan.highlight ? 'text-[#B8863B]' : 'text-white'} mb-3 pr-2`}>{plan.name}</h3>
                 
 
-                <div className="text-[11px] font-bold text-[#D4AF37] uppercase tracking-widest mb-6 border border-[#D4AF37]/30 bg-[#D4AF37]/10 inline-block px-4 py-1.5 rounded-full self-start">
+                <div className="text-[11px] font-bold text-[#B8863B] uppercase tracking-widest mb-6 border border-[#B8863B]/30 bg-[#B8863B]/10 inline-block px-4 py-1.5 rounded-full self-start">
                   {plan.setupPrice}
                 </div>
                 
                 <div className="flex items-baseline gap-1 mb-8">
-                  <div className={`text-5xl font-extrabold ${plan.highlight ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#FCE69B]' : 'text-white'}`}>
+                  <div className={`text-5xl font-extrabold ${plan.highlight ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#B8863B] to-[#FCE69B]' : 'text-white'}`}>
                     {plan.monthlyPrice}
                   </div>
                   <span className="text-gray-400 font-medium">{plan.period}</span>
@@ -2213,7 +2213,7 @@ const VistomioLandingPage: React.FC = () => {
                 <div className="space-y-4 mb-8 flex-grow">
                   {plan.features.map((feat: any, i: number) => (
                     <div key={i} className="flex items-start gap-4 text-gray-300">
-                      <CheckCircle2 className={`${plan.highlight ? 'text-[#D4AF37]' : 'text-gray-500'} shrink-0 mt-1`} size={20} />
+                      <CheckCircle2 className={`${plan.highlight ? 'text-[#B8863B]' : 'text-gray-500'} shrink-0 mt-1`} size={20} />
                       <div className="flex flex-col">
                         <span className="text-base font-medium leading-snug text-white">{feat.name}</span>
                         {feat.desc && <span className="text-sm text-gray-400 mt-1 leading-snug">{feat.desc}</span>}
@@ -2226,7 +2226,7 @@ const VistomioLandingPage: React.FC = () => {
                   {plan.baseText}
                 </p>
 
-                <button onClick={() => setIsContactModalOpen(true)} className={`w-full py-4 rounded-2xl font-semibold text-lg transition-colors ${plan.highlight ? 'bg-gradient-to-r from-[#D4AF37] to-[#B38822] hover:from-[#FCE69B] hover:to-[#D4AF37] text-boutique-navy shadow-lg ' : 'bg-boutique-sand hover:bg-white text-boutique-navy shadow-sm'}`}>
+                <button onClick={() => setIsContactModalOpen(true)} className={`w-full py-4 rounded-2xl font-semibold text-lg transition-colors ${plan.highlight ? 'bg-gradient-to-r from-[#B8863B] to-[#B38822] hover:from-[#FCE69B] hover:to-[#B8863B] text-boutique-navy shadow-lg ' : 'bg-boutique-sand hover:bg-white text-boutique-navy shadow-sm'}`}>
                   {plan.cta}
                 </button>
               </div>
@@ -2234,11 +2234,11 @@ const VistomioLandingPage: React.FC = () => {
           </div>
 
           {/* Chatbot Add-on Banner */}
-          <div className="max-w-6xl mx-auto mb-16 bg-gradient-to-br from-boutique-sand/20 to-transparent border border-[#D4AF37]/20 rounded-[2rem] p-8 md:p-10 flex flex-col md:flex-row gap-8 relative overflow-hidden items-stretch">
-            <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#D4AF37]/10 blur-[0px] hidden rounded-full pointer-events-none"></div>
+          <div className="max-w-6xl mx-auto mb-16 bg-gradient-to-br from-boutique-sand/20 to-transparent border border-[#B8863B]/20 rounded-[2rem] p-8 md:p-10 flex flex-col md:flex-row gap-8 relative overflow-hidden items-stretch">
+            <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#B8863B]/10 blur-[0px] hidden rounded-full pointer-events-none"></div>
             
             <div className="flex-1 relative z-10">
-              <div className="inline-block px-3 py-1 bg-boutique-navy text-[#D4AF37] text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">
+              <div className="inline-block px-3 py-1 bg-boutique-navy text-[#B8863B] text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">
                 ADD-ON
               </div>
               <h3 className="text-2xl md:text-3xl font-normal text-boutique-navy mb-3 font-serif tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">
@@ -2249,13 +2249,13 @@ const VistomioLandingPage: React.FC = () => {
               <ul className="space-y-3 mb-6">
                 {t.pricing.addon.features.map((feature: string, idx: number) => (
                   <li key={idx} className="flex items-start text-boutique-navy/90">
-                    <CheckCircle2 className="w-5 h-5 text-[#D4AF37] mr-3 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-[#B8863B] mr-3 shrink-0 mt-0.5" />
                     <span className="leading-relaxed">{feature}</span>
                   </li>
                 ))}
               </ul>
               
-              <p className="text-sm text-gray-500 border-t border-[#D4AF37]/20 pt-4">
+              <p className="text-sm text-gray-500 border-t border-[#B8863B]/20 pt-4">
                 {t.pricing.addon.baseText}
               </p>
             </div>
@@ -2269,16 +2269,16 @@ const VistomioLandingPage: React.FC = () => {
 
 
           {/* Enterprise Section */}
-          <div className="max-w-6xl mx-auto bg-boutique-navy rounded-[2rem] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden border border-[#D4AF37]/20">
-             <div className="absolute top-0 right-0 w-96 h-96 bg-[#D4AF37]/10 blur-[0px] hidden rounded-full pointer-events-none"></div>
+          <div className="max-w-6xl mx-auto bg-boutique-navy rounded-[2rem] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden border border-[#B8863B]/20">
+             <div className="absolute top-0 right-0 w-96 h-96 bg-[#B8863B]/10 blur-[0px] hidden rounded-full pointer-events-none"></div>
              <div className="absolute bottom-0 left-0 w-64 h-64 bg-boutique-sand/10 blur-[60px] rounded-full pointer-events-none"></div>
              
              <div className="relative z-10 md:w-2/3">
-                <h3 className="text-3xl md:text-4xl font-normal text-[#D4AF37] mb-4 font-serif tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{t.pricing.enterprise.title}</h3>
+                <h3 className="text-3xl md:text-4xl font-normal text-[#B8863B] mb-4 font-serif tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{t.pricing.enterprise.title}</h3>
                 <p className="text-gray-300 text-lg leading-relaxed font-light">{t.pricing.enterprise.desc}</p>
              </div>
              <div className="relative z-10 md:w-1/3 flex justify-end w-full">
-                <button onClick={() => setIsContactModalOpen(true)} className="w-full md:w-auto px-8 py-4 bg-gradient-to-r from-[#D4AF37] to-[#B38822] hover:from-[#FCE69B] hover:to-[#D4AF37] text-boutique-navy font-semibold text-lg rounded-2xl transition-colors shadow-lg">
+                <button onClick={() => setIsContactModalOpen(true)} className="w-full md:w-auto px-8 py-4 bg-gradient-to-r from-[#B8863B] to-[#B38822] hover:from-[#FCE69B] hover:to-[#B8863B] text-boutique-navy font-semibold text-lg rounded-2xl transition-colors shadow-lg">
                   {t.pricing.enterprise.cta}
                 </button>
              </div>
@@ -2294,9 +2294,9 @@ const VistomioLandingPage: React.FC = () => {
 
         <div className="max-w-4xl mx-auto px-4 relative z-10 text-center flex flex-col items-center">
           <div className="flex items-center gap-4 mb-6 justify-center">
-            <div className="w-12 h-[2px] bg-[#D4AF37]"></div>
-            <span className="text-[#D4AF37] font-bold tracking-[0.25em] text-sm md:text-base uppercase">VISTOMIO</span>
-            <div className="w-12 h-[2px] bg-[#D4AF37]"></div>
+            <div className="w-12 h-[2px] bg-[#B8863B]"></div>
+            <span className="text-[#B8863B] font-bold tracking-[0.25em] text-sm md:text-base uppercase">VISTOMIO</span>
+            <div className="w-12 h-[2px] bg-[#B8863B]"></div>
           </div>
           
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white font-normal mb-8 tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">
@@ -2307,7 +2307,7 @@ const VistomioLandingPage: React.FC = () => {
             {t.ctaFinal.subtitle}
           </p>
           
-          <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="inline-flex items-center gap-2 bg-[#D4AF37] text-white font-semibold text-lg md:text-xl px-10 py-5 rounded-full hover:bg-[#b5932d] transition-all hover:-translate-y-1">
+          <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="inline-flex items-center gap-2 bg-[#B8863B] text-white font-semibold text-lg md:text-xl px-10 py-5 rounded-full hover:bg-[#b5932d] transition-all hover:-translate-y-1">
             {t.ctaFinal.button}
             <ArrowRight className="w-5 h-5" />
           </a>
@@ -2446,7 +2446,7 @@ const VistomioLandingPage: React.FC = () => {
             {contactModalView === 'options' ? (
               <div className="animate-[fade-in_0.3s_ease-out]">
                 <div className="text-center mb-10">
-                  <div className="w-16 h-16 from-[#D4AF37] to-[#FCE69B] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm">
+                  <div className="w-16 h-16 from-[#B8863B] to-[#FCE69B] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm">
                     <Calendar size={32} className="text-boutique-navy" />
                   </div>
                   <h3 className="text-3xl font-normal text-boutique-navy mb-3 font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.contactModal.options.title}</h3>
@@ -2604,7 +2604,7 @@ const VistomioLandingPage: React.FC = () => {
                   <ArrowLeft size={20} />
                 </button>
                 <div className="text-center mb-8">
-                  <div className="w-16 h-16 from-[#D4AF37] to-[#FCE69B] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm">
+                  <div className="w-16 h-16 from-[#B8863B] to-[#FCE69B] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm">
                     <Mail size={32} className="text-boutique-navy" />
                   </div>
                   <h3 className="text-3xl font-normal text-boutique-navy mb-2 font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.contactModal.email.title}</h3>
@@ -2627,7 +2627,7 @@ const VistomioLandingPage: React.FC = () => {
                       type="email" 
                       required 
                       placeholder={t.contactModal.email.emailPlaceholder}
-                      className="w-full bg-boutique-sand border border-boutique-sand text-boutique-navy placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all"
+                      className="w-full bg-boutique-sand border border-boutique-sand text-boutique-navy placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-[#B8863B] focus:ring-1 focus:ring-[#B8863B] transition-all"
                     />
                   </div>
                   <div>
@@ -2636,11 +2636,11 @@ const VistomioLandingPage: React.FC = () => {
                       required 
                       rows={4}
                       placeholder={t.contactModal.email.messagePlaceholder}
-                      className="w-full bg-boutique-sand border border-boutique-sand text-boutique-navy placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all resize-none"
+                      className="w-full bg-boutique-sand border border-boutique-sand text-boutique-navy placeholder-slate-500 rounded-xl px-4 py-3 focus:outline-none focus:border-[#B8863B] focus:ring-1 focus:ring-[#B8863B] transition-all resize-none"
                     ></textarea>
                   </div>
                   
-                  <button type="submit" className="w-full from-[#D4AF37] to-[#FCE69B] text-[#0B1121] hover:brightness-110 shadow-sm border border-[#FCE69B]/50 font-semibold text-lg py-4 rounded-xl flex items-center justify-center gap-2 transition-colors mt-4">
+                  <button type="submit" className="w-full from-[#B8863B] to-[#FCE69B] text-[#0B1121] hover:brightness-110 shadow-sm border border-[#FCE69B]/50 font-semibold text-lg py-4 rounded-xl flex items-center justify-center gap-2 transition-colors mt-4">
                     <Send size={20} />
                     {t.contactModal.email.sendBtn}
                   </button>
@@ -2655,7 +2655,7 @@ const VistomioLandingPage: React.FC = () => {
                   <ArrowLeft size={20} />
                 </button>
                 <div className="text-center mb-8">
-                  <div className="w-16 h-16 from-[#D4AF37] to-[#FCE69B] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm">
+                  <div className="w-16 h-16 from-[#B8863B] to-[#FCE69B] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm">
                     <Calendar size={32} className="text-[#0B1121]" />
                   </div>
                   <h3 className="text-3xl font-normal text-boutique-navy mb-2 font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.contactModal.calendar.title}</h3>
@@ -2667,7 +2667,7 @@ const VistomioLandingPage: React.FC = () => {
                     <h4 className="text-sm text-boutique-navy mb-3 font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{t.contactModal.calendar.daysLabel}</h4>
                     <div className="flex gap-3 overflow-x-auto custom-scrollbar pb-2">
                       {['Lun 14', 'Mar 15', 'Mié 16', 'Jue 17', 'Vie 18', 'Sáb 19', 'Dom 20'].map((day, i) => (
-                        <button key={i} className={`flex-shrink-0 w-20 py-3 rounded-xl border ${i === 2 ? 'border-[#D4AF37] bg-[#D4AF37]/10 text-[#D4AF37]' : 'border-slate-700 bg-slate-800 text-slate-400 hover:bg-slate-700'} flex flex-col items-center justify-center gap-1 transition-colors`}>
+                        <button key={i} className={`flex-shrink-0 w-20 py-3 rounded-xl border ${i === 2 ? 'border-[#B8863B] bg-[#B8863B]/10 text-[#B8863B]' : 'border-slate-700 bg-slate-800 text-slate-400 hover:bg-slate-700'} flex flex-col items-center justify-center gap-1 transition-colors`}>
                           <span className="text-xs uppercase">{t.contactModal.calendar.days[i]}</span>
                           <span className="text-lg font-semibold">{`${day.split(' ')[1]}`}</span>
                         </button>
@@ -2679,7 +2679,7 @@ const VistomioLandingPage: React.FC = () => {
                     <h4 className="text-sm text-boutique-navy mb-3 font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{t.contactModal.calendar.timesLabel} ({t.contactModal.calendar.days[2]} 16)</h4>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                       {['09:00', '10:00', '11:30', '14:00', '15:30', '17:00'].map((time, i) => (
-                        <button key={i} onClick={() => { alert(t.contactModal.calendar.successAlert.replace('{time}', time).replace('{day}', t.contactModal.calendar.days[2] + ' 16')); setIsContactModalOpen(false); setContactModalView('options'); }} className="py-2.5 rounded-lg border border-boutique-sand bg-boutique-sand text-boutique-navy font-medium hover:border-[#D4AF37]ver:border-[#D4AF37] hover:text-[#D4AF37] hover:bg-[#D4AF37]/5 transition-colors flex items-center justify-center gap-2">
+                        <button key={i} onClick={() => { alert(t.contactModal.calendar.successAlert.replace('{time}', time).replace('{day}', t.contactModal.calendar.days[2] + ' 16')); setIsContactModalOpen(false); setContactModalView('options'); }} className="py-2.5 rounded-lg border border-boutique-sand bg-boutique-sand text-boutique-navy font-medium hover:border-[#B8863B]ver:border-[#B8863B] hover:text-[#B8863B] hover:bg-[#B8863B]/5 transition-colors flex items-center justify-center gap-2">
                           <Clock size={16} /> {time}
                         </button>
                       ))}
@@ -2701,12 +2701,12 @@ function SectionHeader({ eyebrow, title, align = 'center' }: { eyebrow?: string,
     <div className={`mb-12 md:mb-16 ${align === 'center' ? 'text-center flex flex-col items-center' : 'text-left flex flex-col items-start'}`}>
       {eyebrow && (
         <div className={`flex items-center gap-4 ${!title ? 'mb-0' : 'mb-5'} ${align === 'center' ? 'justify-center' : 'justify-start'}`}>
-          <div className="w-12 h-[2px] bg-[#D4AF37]"></div>
-          <span className="text-[#D4AF37] font-bold tracking-[0.25em] text-base md:text-lg uppercase">{eyebrow}</span>
+          <div className="w-12 h-[2px] bg-[#B8863B]"></div>
+          <span className="text-[#B8863B] font-bold tracking-[0.25em] text-base md:text-lg uppercase">{eyebrow}</span>
         </div>
       )}
       {title && (
-        <h2 className="text-[33px] md:text-[40px] lg:text-[44px] font-serif text-[#D4AF37] font-normal max-w-4xl mx-auto tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">
+        <h2 className="text-[33px] md:text-[40px] lg:text-[44px] font-serif text-[#B8863B] font-normal max-w-4xl mx-auto tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">
           {title}
         </h2>
       )}
