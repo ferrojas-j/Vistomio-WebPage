@@ -888,8 +888,8 @@ const translations = {
     hero: {
         badge: 'Systèmes sur mesure pour lieux d\'exception',
         title: 'Votre hôtel est unique, gérez-le de façon unique',
-        titleHighlight: '',
-        subtitle: 'Si vous n\'acceptez aucune concession dans le service que vous offrez à vos hôtes, votre système de gestion ne devrait pas en faire non plus.',
+          titleHighlight: '',
+          subtitle: 'Vous n\'acceptez aucun compromis sur l\'expérience que vous offrez à vos clients. Votre outil de gestion ne devrait pas en accepter non plus.',
         ctaPrimary: 'Explorer la plateforme',
         ctaSecondary: 'Planifier une entrevue'
       },
