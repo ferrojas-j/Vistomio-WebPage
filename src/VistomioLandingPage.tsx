@@ -66,9 +66,9 @@ const translations = {
     },
     hero: {
       badge: 'Sistemas boutique para negocios boutique',
-      title: 'Lleva la gestión de tu hotel',
-      titleHighlight: 'al siguiente nivel',
-      subtitle: 'La excelencia en la hospitalidad empieza desde adentro. Centraliza reservas, operaciones, administración y finanzas en una herramienta diseñada para darte tranquilidad.',
+      title: 'Su hotel es único, gestiónalo de manera única',
+      titleHighlight: '',
+      subtitle: 'Si usted no acepta concesiones en el servicio que ofrece a sus huéspedes, su sistema de gestión tampoco debería hacerlo.',
       ctaPrimary: 'Explorar plataforma',
       ctaSecondary: 'Agendar entrevista'
     },
@@ -480,7 +480,7 @@ const translations = {
     },
     hero: {
       badge: 'Sistemas boutique para negocios boutique',
-      title: 'Lleva la gestión de tu hotel',
+      title: 'Your hotel is unique, manage it uniquely',
       titleHighlight: 'al siguiente nivel',
       subtitle: 'La excelencia en la hospitalidad empieza desde adentro. Centraliza reservas, operaciones, administración y finanzas en una herramienta diseñada para darte tranquilidad.',
       ctaPrimary: 'Explorar plataforma',
@@ -887,7 +887,7 @@ const translations = {
     },
     hero: {
       badge: 'Systèmes sur mesure pour lieux d\'exception',
-      title: 'Faites passer la gestion de votre hôtel',
+      title: 'Votre hôtel est unique, gérez-le de façon unique',
       titleHighlight: 'au niveau supérieur',
       subtitle: 'L\'excellence hôtelière commence de l\'intérieur. Centralisez les réservations, opérations, l\'administration et les finances dans un outil conçu pour vous offrir une tranquillité d\'esprit totale.',
       ctaPrimary: 'Explorer la plateforme',
@@ -1575,7 +1575,7 @@ const VistomioLandingPage: React.FC = () => {
             {/* Left Content */}
             <div className="w-full lg:w-[60%] flex flex-col items-start text-left lg:pr-12">
 
-              <h1 className="text-5xl md:text-6xl lg:text-[4.5rem] font-serif font-normal text-boutique-navy mb-4 tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">
+              <h1 className="text-5xl md:text-6xl lg:text-[4.2rem] font-serif font-normal text-boutique-navy mb-6 tracking-[0.02em] md:tracking-[0.03em] leading-[1.1] max-w-3xl">
                 {t.hero.title}
                 <br />
                 <span className="text-[#D4AF37] font-serif">
@@ -1583,7 +1583,7 @@ const VistomioLandingPage: React.FC = () => {
                 </span>
               </h1>
               
-              <p className="text-lg text-boutique-navy/80 max-w-lg mb-10 leading-relaxed">
+              <p className="text-lg md:text-xl text-boutique-navy/80 max-w-2xl mb-10 leading-relaxed">
                 {t.hero.subtitle}
               </p>
 
@@ -1615,34 +1615,34 @@ const VistomioLandingPage: React.FC = () => {
               
               {/* Floating Badges */}
               {/* Gestión: Top Left */}
-              <div className="absolute top-12 -left-4 lg:-left-12 bg-white px-5 py-4 rounded-xl shadow-xl border border-gray-100 flex items-center gap-4 z-20 animate-[float_6s_ease-in-out_infinite] scale-[1.05]">
+              <div className="absolute top-12 -left-4 lg:-left-12 bg-white px-5 py-4 rounded-xl shadow-xl border-[1.5px] border-[#B8863B] flex items-center gap-4 z-20 animate-[float_6s_ease-in-out_infinite] scale-[1.05]">
                 <div className="w-8 h-8 bg-amber-50 rounded-full flex items-center justify-center text-[#D4AF37]">
                   <Sparkles size={14} />
                 </div>
                 <div>
-                  <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider leading-none mb-1">{(t as any).heroBadges?.badge1Top || 'GESTION'}</div>
+                  <div className="text-[10px] font-bold text-boutique-navy uppercase tracking-wider leading-none mb-1">{(t as any).heroBadges?.badge1Top || 'GESTION'}</div>
                   <div className="text-sm font-extrabold text-boutique-navy leading-none">{(t as any).heroBadges?.badge1Bottom || 'Estrés cero'}</div>
                 </div>
               </div>
 
               {/* Resultado: Top Right */}
-              <div className="absolute top-8 -right-4 lg:-right-16 bg-white px-5 py-4 rounded-xl shadow-xl border border-gray-100 flex items-center gap-4 z-20 animate-[float_5s_ease-in-out_infinite_1s] scale-[1.05]">
+              <div className="absolute top-8 -right-4 lg:-right-16 bg-white px-5 py-4 rounded-xl shadow-xl border-[1.5px] border-[#B8863B] flex items-center gap-4 z-20 animate-[float_5s_ease-in-out_infinite_1s] scale-[1.05]">
                 <div className="w-8 h-8 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-500">
                   <TrendingUp size={14} />
                 </div>
                 <div>
-                  <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider leading-none mb-1">{(t as any).heroBadges?.badge2Top || 'RÉSULTAT'}</div>
+                  <div className="text-[10px] font-bold text-boutique-navy uppercase tracking-wider leading-none mb-1">{(t as any).heroBadges?.badge2Top || 'RÉSULTAT'}</div>
                   <div className="text-sm font-extrabold text-boutique-navy leading-none">{(t as any).heroBadges?.badge2Bottom || '+ Calidad de Service'}</div>
                 </div>
               </div>
 
               {/* Eficiencia: Bottom Right */}
-                              <div className="absolute bottom-16 -right-4 lg:-right-12 bg-white px-5 py-4 rounded-xl shadow-xl border border-gray-100 flex items-center gap-4 z-20 animate-[float_7s_ease-in-out_infinite_2s] scale-[1.05]">
+                              <div className="absolute bottom-16 -right-4 lg:-right-12 bg-white px-5 py-4 rounded-xl shadow-xl border-[1.5px] border-[#B8863B] flex items-center gap-4 z-20 animate-[float_7s_ease-in-out_infinite_2s] scale-[1.05]">
                 <div className="w-8 h-8 bg-amber-50 rounded-full flex items-center justify-center text-[#D4AF37]">
                   <Clock size={14} />
                 </div>
                 <div>
-                  <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider leading-none mb-1">{(t as any).heroBadges?.badge3Top || 'EFFICACITÉ'}</div>
+                  <div className="text-[10px] font-bold text-boutique-navy uppercase tracking-wider leading-none mb-1">{(t as any).heroBadges?.badge3Top || 'EFFICACITÉ'}</div>
                   <div className="text-sm font-extrabold text-boutique-navy leading-none">{(t as any).heroBadges?.badge3Bottom || '+ Temps Libre'}</div>
                 </div>
               </div>
@@ -1667,7 +1667,7 @@ const VistomioLandingPage: React.FC = () => {
                 <span className="absolute top-0 right-0 w-2 h-2 md:w-2.5 md:h-2.5 bg-[#6E7B4A] border border-white rounded-full"></span>
               </div>
               <div>
-                <div className="text-[9px] md:text-[10px] font-bold text-gray-400 uppercase tracking-wider leading-none mb-1">
+                <div className="text-[9px] md:text-[10px] font-bold text-boutique-navy uppercase tracking-wider leading-none mb-1">
                   {lang === 'es' ? 'CHECK-IN' : lang === 'en' ? 'CHECK-IN' : 'CHECK-IN'}
                 </div>
                 <div className="text-xs md:text-sm font-extrabold text-boutique-navy leading-none">
@@ -1683,7 +1683,7 @@ const VistomioLandingPage: React.FC = () => {
                 <span className="absolute top-0 right-0 w-2 h-2 md:w-2.5 md:h-2.5 bg-[#6E7B4A] border border-white rounded-full"></span>
               </div>
               <div>
-                <div className="text-[9px] md:text-[10px] font-bold text-gray-400 uppercase tracking-wider leading-none mb-1">
+                <div className="text-[9px] md:text-[10px] font-bold text-boutique-navy uppercase tracking-wider leading-none mb-1">
                   {lang === 'es' ? 'RESTAURANTE' : lang === 'en' ? 'RESTAURANT' : 'RESTAURANT'}
                 </div>
                 <div className="text-xs md:text-sm font-extrabold text-boutique-navy leading-tight">
@@ -1699,7 +1699,7 @@ const VistomioLandingPage: React.FC = () => {
                 <span className="absolute top-0 right-0 w-2 h-2 md:w-2.5 md:h-2.5 bg-[#6E7B4A] border border-white rounded-full"></span>
               </div>
               <div>
-                <div className="text-[9px] md:text-[10px] font-bold text-gray-400 uppercase tracking-wider leading-none mb-1">
+                <div className="text-[9px] md:text-[10px] font-bold text-boutique-navy uppercase tracking-wider leading-none mb-1">
                   {lang === 'es' ? 'MANTENIMIENTO' : lang === 'en' ? 'MAINTENANCE' : 'MAINTENANCE'}
                 </div>
                 <div className="text-xs md:text-sm font-extrabold text-boutique-navy leading-none">
@@ -1715,7 +1715,7 @@ const VistomioLandingPage: React.FC = () => {
                 <span className="absolute top-0 right-0 w-2 h-2 md:w-2.5 md:h-2.5 bg-[#6E7B4A] border border-white rounded-full"></span>
               </div>
               <div>
-                <div className="text-[9px] md:text-[10px] font-bold text-gray-400 uppercase tracking-wider leading-none mb-1">
+                <div className="text-[9px] md:text-[10px] font-bold text-boutique-navy uppercase tracking-wider leading-none mb-1">
                   {lang === 'es' ? 'FINANZAS' : lang === 'en' ? 'FINANCE' : 'FINANCES'}
                 </div>
                 <div className="text-xs md:text-sm font-extrabold text-boutique-navy leading-none">
