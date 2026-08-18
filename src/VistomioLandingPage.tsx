@@ -280,12 +280,12 @@ const translations = {
       plans: [
         {
           name: 'Chatbot estándar',
-          features: [
-            'Conexión multicanal',
-            'Solo respuesta a preguntas frecuentes',
-            'Envíos de links, etc.',
-            'Solo puede responder (no envía mensajes proactivamente)'
-          ]
+            features: [
+              'Conexión multicanal 24/7',
+              'Personalización de tono y personalidad',
+              'Entrenado con información interna de tu negocio',
+              'Responde todo tipo de preguntas frecuentes'
+            ]
         },
         {
           name: 'Chatbot proactivo',
@@ -688,12 +688,12 @@ const translations = {
       plans: [
         {
           name: 'Standard Chatbot',
-          features: [
-            'Multi-channel connection',
-            'FAQ responses only',
-            'Sending links, etc.',
-            'Can only reply (no proactive messages)'
-          ]
+            features: [
+              '24/7 multi-channel connection',
+              'Tone and personality customization',
+              'Trained with your business internal information',
+              'Answers all types of frequently asked questions'
+            ]
         },
         {
           name: 'Proactive Chatbot',
@@ -1093,12 +1093,12 @@ const translations = {
       plans: [
         {
           name: 'Chatbot standard',
-          features: [
-            'Connexion multicanale',
-            'Réponses aux FAQ uniquement',
-            'Envoi de liens, etc.',
-            'Ne peut que répondre (pas de messages proactifs)'
-          ]
+            features: [
+              'Connexion multicanale 24/7',
+              'Personnalisation du ton et de la personnalité',
+              'Formé avec les informations internes de votre entreprise',
+              'Répond à tous types de questions fréquentes'
+            ]
         },
         {
           name: 'Chatbot proactif',
