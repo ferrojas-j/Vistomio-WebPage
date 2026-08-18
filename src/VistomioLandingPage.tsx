@@ -1538,7 +1538,7 @@ const VistomioLandingPage: React.FC = () => {
               </div>
             </div>
 
-            <a href="https://demo.vistomio.com" target="_blank" rel="noopener noreferrer" className="from-[#D4AF37] to-[#FCE69B] hover:from-[#FCE69B] hover:to-[#D4AF37] text-[#0B1121] text-sm font-semibold px-6 py-2.5 rounded-full transition-all flex items-center gap-2">
+            <a href="https://demo.vistomio.com" target="_blank" rel="noopener noreferrer" className="bg-[#6B4357] hover:bg-[#5a3849] text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-all flex items-center gap-2 shadow-sm">
               {t.nav.demo} <ArrowRight size={16} />
             </a>
           </div>
@@ -1561,7 +1561,7 @@ const VistomioLandingPage: React.FC = () => {
                <button onClick={() => {setLang('en'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg flex-1 ${lang === 'en' ? 'bg-slate-800 border border-slate-700/20 text-[#D4AF37]' : 'text-slate-400'}`}>English</button>
                <button onClick={() => {setLang('fr'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg flex-1 ${lang === 'fr' ? 'bg-slate-800 border border-slate-700/20 text-[#D4AF37]' : 'text-slate-400'}`}>Français</button>
             </div>
-            <a href="https://demo.vistomio.com" target="_blank" rel="noopener noreferrer" className="from-[#D4AF37] to-[#FCE69B] text-[#0B1121] text-center font-semibold px-5 py-4 rounded-xl mt-4">
+            <a href="https://demo.vistomio.com" target="_blank" rel="noopener noreferrer" className="bg-[#6B4357] hover:bg-[#5a3849] text-white text-center font-semibold px-5 py-4 rounded-xl mt-4 shadow-sm">
               {t.nav.demo}
             </a>
           </div>
@@ -1616,9 +1616,9 @@ const VistomioLandingPage: React.FC = () => {
               {/* Floating Badges */}
               {/* Gestión: Top Left */}
               <div className="absolute top-12 -left-4 lg:-left-12 bg-white px-5 py-4 rounded-xl shadow-xl border-[1.5px] border-[#B8863B] flex items-center gap-4 z-20 animate-[float_6s_ease-in-out_infinite] scale-[1.05]">
-                <div className="w-8 h-8 bg-amber-50 rounded-full flex items-center justify-center text-[#D4AF37]">
-                  <Sparkles size={14} />
-                </div>
+                <div className="w-8 h-8 bg-[#B8863B]/15 rounded-full flex items-center justify-center text-[#6B4357]">
+                    <Sparkles size={14} strokeWidth={1.5} />
+                  </div>
                 <div>
                   <div className="text-[10px] font-bold text-boutique-navy uppercase tracking-wider leading-none mb-1">{(t as any).heroBadges?.badge1Top || 'GESTION'}</div>
                   <div className="text-sm font-extrabold text-boutique-navy leading-none">{(t as any).heroBadges?.badge1Bottom || 'Estrés cero'}</div>
@@ -1627,9 +1627,9 @@ const VistomioLandingPage: React.FC = () => {
 
               {/* Resultado: Top Right */}
               <div className="absolute top-8 -right-4 lg:-right-16 bg-white px-5 py-4 rounded-xl shadow-xl border-[1.5px] border-[#B8863B] flex items-center gap-4 z-20 animate-[float_5s_ease-in-out_infinite_1s] scale-[1.05]">
-                <div className="w-8 h-8 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-500">
-                  <TrendingUp size={14} />
-                </div>
+                <div className="w-8 h-8 bg-[#B8863B]/15 rounded-full flex items-center justify-center text-[#6B4357]">
+                    <TrendingUp size={14} strokeWidth={1.5} />
+                  </div>
                 <div>
                   <div className="text-[10px] font-bold text-boutique-navy uppercase tracking-wider leading-none mb-1">{(t as any).heroBadges?.badge2Top || 'RÉSULTAT'}</div>
                   <div className="text-sm font-extrabold text-boutique-navy leading-none">{(t as any).heroBadges?.badge2Bottom || '+ Calidad de Service'}</div>
@@ -1638,9 +1638,9 @@ const VistomioLandingPage: React.FC = () => {
 
               {/* Eficiencia: Bottom Right */}
                               <div className="absolute bottom-16 -right-4 lg:-right-12 bg-white px-5 py-4 rounded-xl shadow-xl border-[1.5px] border-[#B8863B] flex items-center gap-4 z-20 animate-[float_7s_ease-in-out_infinite_2s] scale-[1.05]">
-                <div className="w-8 h-8 bg-amber-50 rounded-full flex items-center justify-center text-[#D4AF37]">
-                  <Clock size={14} />
-                </div>
+                <div className="w-8 h-8 bg-[#B8863B]/15 rounded-full flex items-center justify-center text-[#6B4357]">
+                    <Clock size={14} strokeWidth={1.5} />
+                  </div>
                 <div>
                   <div className="text-[10px] font-bold text-boutique-navy uppercase tracking-wider leading-none mb-1">{(t as any).heroBadges?.badge3Top || 'EFFICACITÉ'}</div>
                   <div className="text-sm font-extrabold text-boutique-navy leading-none">{(t as any).heroBadges?.badge3Bottom || '+ Temps Libre'}</div>
