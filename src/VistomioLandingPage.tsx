@@ -1984,7 +1984,7 @@ const VistomioLandingPage: React.FC = () => {
                       <div className="bg-boutique-offwhite border border-gray-100 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 rounded-[2rem] p-8 flex flex-col h-full relative overflow-hidden group">
                         <div className="absolute top-0 left-0 w-full h-1 bg-[#B8863B]/30 group-hover:bg-[#B8863B] transition-colors"></div>
                         <div className="flex items-center gap-5 mb-6">
-                          <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center border border-[#13203A]/20 text-[#13203A] shadow-md">
+                          <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center border border-[#6B4357]/20 text-[#6B4357] shadow-md">
                             <Bot size={24} strokeWidth={1.5} />
                           </div>
                           <h3 className="text-base font-normal text-boutique-navy font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.chatbotPlans.plans[0].name}</h3>
@@ -2004,7 +2004,7 @@ const VistomioLandingPage: React.FC = () => {
                       <div className="bg-boutique-offwhite border border-gray-100 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 rounded-[2rem] p-8 flex flex-col h-full relative overflow-hidden group">
                         <div className="absolute top-0 left-0 w-full h-1 bg-[#B8863B]/30 group-hover:bg-[#B8863B] transition-colors"></div>
                         <div className="flex items-center gap-5 mb-6">
-                          <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center border border-[#13203A]/20 text-[#13203A] shadow-md">
+                          <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center border border-[#6B4357]/20 text-[#6B4357] shadow-md">
                             <div className="relative flex items-center justify-center">
                               <Bot size={24} strokeWidth={1.5} />
                               <Zap size={10} className="absolute -bottom-1 -right-1 text-[#C6A15B]" fill="currentColor" />
@@ -2027,7 +2027,7 @@ const VistomioLandingPage: React.FC = () => {
                       <div className="bg-boutique-offwhite border border-gray-100 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 rounded-[2rem] p-8 flex flex-col h-full relative overflow-hidden group">
                         <div className="absolute top-0 left-0 w-full h-1 bg-[#B8863B]/30 group-hover:bg-[#B8863B] transition-colors"></div>
                         <div className="flex items-center gap-5 mb-6">
-                          <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center border border-[#13203A]/20 text-[#13203A] shadow-md">
+                          <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center border border-[#6B4357]/20 text-[#6B4357] shadow-md">
                             <div className="relative flex items-center justify-center">
                               <Bot size={24} strokeWidth={1.5} />
                               <Sparkles size={10} className="absolute -bottom-1 -right-1 text-[#C6A15B]" fill="currentColor" />
@@ -2079,7 +2079,7 @@ const VistomioLandingPage: React.FC = () => {
               
               <div className="flex flex-col gap-6 max-w-md mx-auto lg:mx-0">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-boutique-sand flex items-center justify-center text-[#B8863B] flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-[#6B4357] flex-shrink-0 shadow-md border border-[#6B4357]/20">
                     <Utensils size={24} />
                   </div>
                   <div>
@@ -2089,7 +2089,7 @@ const VistomioLandingPage: React.FC = () => {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-boutique-sand flex items-center justify-center text-emerald-400 flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-[#6B4357] flex-shrink-0 shadow-md border border-[#6B4357]/20">
                     <Wallet size={24} />
                   </div>
                   <div>
@@ -2132,7 +2132,7 @@ const VistomioLandingPage: React.FC = () => {
               
               <div className="flex flex-col gap-6 max-w-md mx-auto lg:mx-0">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-boutique-sand flex items-center justify-center text-boutique-gold flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-[#6B4357] flex-shrink-0 shadow-md border border-[#6B4357]/20">
                     <ClipboardCheck size={24} />
                   </div>
                   <div>
@@ -2146,7 +2146,7 @@ const VistomioLandingPage: React.FC = () => {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-boutique-sand flex items-center justify-center text-emerald-400 flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-[#6B4357] flex-shrink-0 shadow-md border border-[#6B4357]/20">
                     <Users size={24} />
                   </div>
                   <div>
