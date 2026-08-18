@@ -1947,7 +1947,7 @@ const VistomioLandingPage: React.FC = () => {
                           </div>
                         )}
                       </div>
-                      <h4 className="text-xl text-[#B8863B] mb-3 relative z-10 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{feature.title}</h4>
+                      <h4 className="text-base text-boutique-navy mb-3 relative z-10 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{feature.title}</h4>
                       <p className="text-boutique-navy/80 text-sm leading-relaxed relative z-10 flex-grow font-medium">{feature.desc}</p>
                       
                       {(feature as any).demoId && (
@@ -1989,7 +1989,7 @@ const VistomioLandingPage: React.FC = () => {
                           <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center border border-[#13203A]/20 text-[#13203A] shadow-md">
                             <Bot size={24} strokeWidth={1.5} />
                           </div>
-                          <h3 className="text-xl font-normal text-[#B8863B] font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.chatbotPlans.plans[0].name}</h3>
+                          <h3 className="text-base font-normal text-boutique-navy font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.chatbotPlans.plans[0].name}</h3>
                         </div>
                         <div className="w-full h-px bg-gray-100 mb-6"></div>
                         <ul className="flex flex-col gap-4 flex-grow">
@@ -2012,7 +2012,7 @@ const VistomioLandingPage: React.FC = () => {
                               <Zap size={10} className="absolute -bottom-1 -right-1 text-[#C6A15B]" fill="currentColor" />
                             </div>
                           </div>
-                          <h3 className="text-xl font-normal text-[#B8863B] font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.chatbotPlans.plans[1].name}</h3>
+                          <h3 className="text-base font-normal text-boutique-navy font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.chatbotPlans.plans[1].name}</h3>
                         </div>
                         <div className="w-full h-px bg-gray-100 mb-6"></div>
                         <ul className="flex flex-col gap-4 flex-grow">
@@ -2035,7 +2035,7 @@ const VistomioLandingPage: React.FC = () => {
                               <Sparkles size={10} className="absolute -bottom-1 -right-1 text-[#C6A15B]" fill="currentColor" />
                             </div>
                           </div>
-                          <h3 className="text-xl font-normal text-[#B8863B] font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.chatbotPlans.plans[2].name}</h3>
+                          <h3 className="text-base font-normal text-boutique-navy font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.chatbotPlans.plans[2].name}</h3>
                         </div>
                         <div className="w-full h-px bg-gray-100 mb-6"></div>
                         <ul className="flex flex-col gap-4 flex-grow">
