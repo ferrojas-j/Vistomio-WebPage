@@ -216,7 +216,7 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
               <Bot size={24} className="text-white" />
             </div>
             <div className="flex-grow">
-              <h3 className="font-sans font-semibold text-lg text-white leading-tight tracking-wide">Vistomio Bot</h3>
+              <h3 className="text-lg text-white font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">Vistomio Bot</h3>
               <p className="text-white/80 text-xs font-sans">En línea 24/7</p>
             </div>
             <div className="ml-auto flex gap-3 opacity-80 text-white">
@@ -270,7 +270,7 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
           Mini demo
         </div>
         
-        <h2 className="text-4xl md:text-5xl font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] text-boutique-navy mb-6 leading-[1.3]">
+        <h2 className="text-4xl md:text-5xl font-serif font-normal md:tracking-[0.05em] text-boutique-navy mb-6 tracking-[0.03em] leading-relaxed">
           {currentLanguage === 'es' ? 'Descubre el Chatbot IA Omnicanal de Vistomio' : currentLanguage === 'en' ? 'Discover Vistomio\'s Omnichannel AI Chatbot' : 'Découvrez le Chatbot IA Omnicanal de Vistomio'}
         </h2>
         
@@ -312,7 +312,7 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
 
         {/* Customization Pills */}
         <div>
-          <h4 className="text-xl font-serif font-normal text-boutique-navy mb-4 tracking-[0.03em] md:tracking-[0.05em]">
+          <h4 className="text-xl font-serif font-normal text-boutique-navy mb-4 md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">
             {currentLanguage === 'es' ? 'Personaliza como quieras' : currentLanguage === 'en' ? 'Customize as you like' : 'Personnalisez comme vous le souhaitez'}
           </h4>
           

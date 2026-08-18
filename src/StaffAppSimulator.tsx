@@ -642,7 +642,7 @@ const RecepcionView = ({ t, onOpenExpense, onOpenNovelty }: { t: any, onOpenExpe
     <div className="bg-white rounded-2xl border border-slate-100 shadow-sm mt-2 overflow-hidden flex flex-col">
        <div className="p-5 flex justify-between items-center border-b border-slate-50">
          <div>
-           <h4 className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-1">{t.recepcion.pettyCash}</h4>
+           <h4 className="text-[10px] text-gray-500 uppercase mb-1 font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{t.recepcion.pettyCash}</h4>
            <p className="text-3xl font-black text-slate-800">$15,450</p>
          </div>
          <button onClick={onOpenExpense} className="w-10 h-10 rounded-full bg-boutique-offwhite text-boutique-gold flex items-center justify-center transition-transform active:scale-95 cursor-pointer hover:bg-boutique-olive/20">
@@ -650,7 +650,7 @@ const RecepcionView = ({ t, onOpenExpense, onOpenNovelty }: { t: any, onOpenExpe
          </button>
        </div>
        <div className="bg-slate-50/50 p-4 border-b border-slate-50">
-          <h4 className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">{t.recepcion.recentExpenses}</h4>
+          <h4 className="text-[10px] text-gray-500 uppercase font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{t.recepcion.recentExpenses}</h4>
        </div>
        <div className="flex flex-col p-4 gap-4">
          {t.recepcion.expenses.map((expense: any, i: number) => (
@@ -732,7 +732,7 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
         
         {/* Header */}
         <div className="pt-10 pb-4 px-5 bg-white flex items-center justify-between border-b border-slate-100 z-10 shrink-0">
-          <h2 className="text-xl font-sans font-semibold text-slate-800 tracking-tight">Vistomio Staff App</h2>
+          <h2 className="text-xl text-slate-800 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">Vistomio Staff App</h2>
           <div className="flex items-center gap-2">
             <button onClick={() => setIsReportModalOpen(true)} className="flex items-center gap-1.5 px-3 py-1.5 bg-boutique-terracotta/10 text-boutique-terracotta rounded-full text-xs font-semibold transition-transform active:scale-95 cursor-pointer hover:bg-boutique-terracotta/20">
               <ShieldAlert size={14} /> Reportar
@@ -772,7 +772,7 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
         {/* Inventory View */}
         {activeBottomTab === 'inventory' && (
           <div className="flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-2 duration-300 h-full p-4">
-            <h2 className="text-xl font-sans font-semibold text-slate-800 mt-2">{t.inventorySelection.title}</h2>
+            <h2 className="text-xl text-slate-800 mt-2 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{t.inventorySelection.title}</h2>
             
             <div className="flex flex-col gap-4 mt-2">
               <div onClick={() => { setInventoryArea('limpieza'); setIsInventoryModalOpen(true); }} className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm flex items-center justify-between cursor-pointer hover:bg-slate-50 transition-colors active:scale-[0.98]">
@@ -781,7 +781,7 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
                     <Sparkles size={24} />
                   </div>
                   <div className="flex flex-col">
-                    <h3 className="font-semibold text-slate-800 text-lg leading-tight font-serif tracking-[0.03em] md:tracking-[0.05em]">{t.inventorySelection.limpieza}</h3>
+                    <h3 className="text-slate-800 text-lg font-serif md:tracking-[0.05em] font-normal tracking-[0.03em] leading-relaxed">{t.inventorySelection.limpieza}</h3>
                     <p className="text-xs text-gray-500 font-medium">{t.inventorySelection.limpiezaDesc}</p>
                     <span className="bg-boutique-offwhite text-boutique-gold text-[10px] font-semibold px-2 py-0.5 rounded mt-1.5 w-fit">{t.inventorySelection.limpiezaDate}</span>
                   </div>
@@ -795,7 +795,7 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
                     <Users size={24} />
                   </div>
                   <div className="flex flex-col">
-                    <h3 className="font-semibold text-slate-800 text-lg leading-tight font-serif tracking-[0.03em] md:tracking-[0.05em]">{t.inventorySelection.recepcion}</h3>
+                    <h3 className="text-slate-800 text-lg font-serif md:tracking-[0.05em] font-normal tracking-[0.03em] leading-relaxed">{t.inventorySelection.recepcion}</h3>
                     <p className="text-xs text-gray-500 font-medium">{t.inventorySelection.recepcionDesc}</p>
                     <span className="bg-boutique-petrol/10 text-boutique-petrol text-[10px] font-semibold px-2 py-0.5 rounded mt-1.5 w-fit">{t.inventorySelection.recepcionDate}</span>
                   </div>
@@ -809,7 +809,7 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
                     <Box size={24} />
                   </div>
                   <div className="flex flex-col">
-                    <h3 className="font-semibold text-slate-800 text-lg leading-tight font-serif tracking-[0.03em] md:tracking-[0.05em]">{t.inventorySelection.mantenimiento}</h3>
+                    <h3 className="text-slate-800 text-lg font-serif md:tracking-[0.05em] font-normal tracking-[0.03em] leading-relaxed">{t.inventorySelection.mantenimiento}</h3>
                     <p className="text-xs text-gray-500 font-medium">{t.inventorySelection.mantenimientoDesc}</p>
                   </div>
                 </div>
@@ -824,7 +824,7 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
         <div className={`absolute inset-0 bg-boutique-offwhite/40 backdrop-blur-[2px] z-30 transition-opacity duration-300 ${isChecklistOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsChecklistOpen(false)}>
           <div className={`absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl transition-transform duration-300 ease-out p-6 shadow-2xl flex flex-col max-h-[85%] ${isChecklistOpen ? 'translate-y-0' : 'translate-y-full'}`} onClick={e => e.stopPropagation()}>
             <div className="flex justify-between items-center mb-4 pb-4 border-b border-slate-50 shrink-0">
-              <h3 className="font-semibold text-slate-800 text-lg pr-4 leading-tight font-serif tracking-[0.03em] md:tracking-[0.05em]">{t.limpieza.checklistTitle}</h3>
+              <h3 className="text-slate-800 text-lg pr-4 font-serif md:tracking-[0.05em] font-normal tracking-[0.03em] leading-relaxed">{t.limpieza.checklistTitle}</h3>
               <button onClick={() => setIsChecklistOpen(false)} className="text-gray-500 hover:text-slate-600 transition-colors p-1">
                 <X size={20} />
               </button>
@@ -846,7 +846,7 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
         <div className={`absolute inset-0 bg-boutique-offwhite/40 backdrop-blur-[2px] z-30 transition-opacity duration-300 ${isExpenseModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsExpenseModalOpen(false)}>
           <div className={`absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl transition-transform duration-300 ease-out p-6 shadow-2xl flex flex-col ${isExpenseModalOpen ? 'translate-y-0' : 'translate-y-full'}`} onClick={e => e.stopPropagation()}>
             <div className="flex justify-between items-center mb-5 pb-4 border-b border-slate-50 shrink-0">
-              <h3 className="font-semibold text-boutique-olive text-lg flex items-center gap-2 font-serif tracking-[0.03em] md:tracking-[0.05em]"><DollarSign size={20}/> {t.recepcion.registerExpense}</h3>
+              <h3 className="text-boutique-olive text-lg flex items-center gap-2 font-serif md:tracking-[0.05em] font-normal tracking-[0.03em] leading-relaxed"><DollarSign size={20}/> {t.recepcion.registerExpense}</h3>
               <button onClick={() => setIsExpenseModalOpen(false)} className="text-gray-500 hover:text-slate-600 transition-colors p-1">
                 <X size={20} />
               </button>
@@ -882,7 +882,7 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
         <div className={`absolute inset-0 bg-boutique-offwhite/40 backdrop-blur-[2px] z-30 transition-opacity duration-300 ${isReportModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsReportModalOpen(false)}>
           <div className={`absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl transition-transform duration-300 ease-out p-6 shadow-2xl flex flex-col ${isReportModalOpen ? 'translate-y-0' : 'translate-y-full'}`} onClick={e => e.stopPropagation()}>
             <div className="flex justify-between items-center mb-5 pb-4 border-b border-slate-50 shrink-0">
-              <h3 className="font-semibold text-boutique-terracotta text-lg flex items-center gap-2 font-serif tracking-[0.03em] md:tracking-[0.05em]"><AlertTriangle size={20}/> {t.report?.title || 'Reportar Alerta'}</h3>
+              <h3 className="text-boutique-terracotta text-lg flex items-center gap-2 font-serif md:tracking-[0.05em] font-normal tracking-[0.03em] leading-relaxed"><AlertTriangle size={20}/> {t.report?.title || 'Reportar Alerta'}</h3>
               <button onClick={() => setIsReportModalOpen(false)} className="text-gray-500 hover:text-slate-600 transition-colors p-1">
                 <X size={20} />
               </button>
@@ -919,7 +919,7 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
         <div className={`absolute inset-0 bg-boutique-offwhite/40 backdrop-blur-[2px] z-30 transition-opacity duration-300 ${isNoveltyModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsNoveltyModalOpen(false)}>
           <div className={`absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl transition-transform duration-300 ease-out p-6 shadow-2xl flex flex-col ${isNoveltyModalOpen ? 'translate-y-0' : 'translate-y-full'}`} onClick={e => e.stopPropagation()}>
             <div className="flex justify-between items-center mb-5 pb-4 border-b border-slate-50 shrink-0">
-              <h3 className="font-semibold text-boutique-petrol text-lg flex items-center gap-2 font-serif tracking-[0.03em] md:tracking-[0.05em]"><Plus size={20}/> {t.novelty?.title || 'Nueva Novedad'}</h3>
+              <h3 className="text-boutique-petrol text-lg flex items-center gap-2 font-serif md:tracking-[0.05em] font-normal tracking-[0.03em] leading-relaxed"><Plus size={20}/> {t.novelty?.title || 'Nueva Novedad'}</h3>
               <button onClick={() => setIsNoveltyModalOpen(false)} className="text-gray-500 hover:text-slate-600 transition-colors p-1">
                 <X size={20} />
               </button>
@@ -951,7 +951,7 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
         <div className={`absolute inset-0 bg-boutique-offwhite/40 backdrop-blur-[2px] z-30 transition-opacity duration-300 ${isLogbookModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsLogbookModalOpen(false)}>
           <div className={`absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl transition-transform duration-300 ease-out p-6 shadow-2xl flex flex-col ${isLogbookModalOpen ? 'translate-y-0' : 'translate-y-full'}`} onClick={e => e.stopPropagation()}>
             <div className="flex justify-between items-center mb-5 pb-4 border-b border-slate-50 shrink-0">
-              <h3 className="font-semibold text-slate-800 text-lg flex items-center gap-2 font-serif tracking-[0.03em] md:tracking-[0.05em]"><Plus size={20}/> {t.mantenimientoModals?.logbookTitle || 'Ingresar Avance a Bitácora'}</h3>
+              <h3 className="text-slate-800 text-lg flex items-center gap-2 font-serif md:tracking-[0.05em] font-normal tracking-[0.03em] leading-relaxed"><Plus size={20}/> {t.mantenimientoModals?.logbookTitle || 'Ingresar Avance a Bitácora'}</h3>
               <button onClick={() => setIsLogbookModalOpen(false)} className="text-gray-500 hover:text-slate-600 transition-colors p-1">
                 <X size={20} />
               </button>
@@ -974,7 +974,7 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
         <div className={`absolute inset-0 bg-boutique-offwhite/40 backdrop-blur-[2px] z-30 transition-opacity duration-300 ${isSuppliesModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsSuppliesModalOpen(false)}>
           <div className={`absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl transition-transform duration-300 ease-out p-6 shadow-2xl flex flex-col ${isSuppliesModalOpen ? 'translate-y-0' : 'translate-y-full'}`} onClick={e => e.stopPropagation()}>
             <div className="flex justify-between items-center mb-5 pb-4 border-b border-slate-50 shrink-0">
-              <h3 className="font-semibold text-boutique-ochre text-lg flex items-center gap-2 font-serif tracking-[0.03em] md:tracking-[0.05em]"><Box size={20}/> {t.mantenimientoModals?.suppliesTitle || 'Solicitar Recursos'}</h3>
+              <h3 className="text-boutique-ochre text-lg flex items-center gap-2 font-serif md:tracking-[0.05em] font-normal tracking-[0.03em] leading-relaxed"><Box size={20}/> {t.mantenimientoModals?.suppliesTitle || 'Solicitar Recursos'}</h3>
               <button onClick={() => setIsSuppliesModalOpen(false)} className="text-gray-500 hover:text-slate-600 transition-colors p-1">
                 <X size={20} />
               </button>
@@ -1018,7 +1018,7 @@ export default function StaffAppSimulator({ currentLanguage }: StaffAppSimulator
         <div className={`absolute inset-0 bg-boutique-offwhite/40 backdrop-blur-[2px] z-30 transition-opacity duration-300 ${isInventoryModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsInventoryModalOpen(false)}>
           <div className={`absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl transition-transform duration-300 ease-out p-6 shadow-2xl flex flex-col h-[85%] ${isInventoryModalOpen ? 'translate-y-0' : 'translate-y-full'}`} onClick={e => e.stopPropagation()}>
             <div className="flex justify-between items-center mb-5 pb-4 border-b border-slate-50 shrink-0">
-              <h3 className="font-semibold text-boutique-navy text-base flex items-center gap-2 font-serif tracking-[0.03em] md:tracking-[0.05em]"><Box size={18}/> {t.inventorySelection?.modalTitle || 'Toma de Inventario'}: {inventoryTitleName}</h3>
+              <h3 className="text-boutique-navy text-base flex items-center gap-2 font-serif md:tracking-[0.05em] font-normal tracking-[0.03em] leading-relaxed"><Box size={18}/> {t.inventorySelection?.modalTitle || 'Toma de Inventario'}: {inventoryTitleName}</h3>
               <button onClick={() => setIsInventoryModalOpen(false)} className="text-gray-500 hover:text-slate-600 transition-colors p-1">
                 <X size={20} />
               </button>

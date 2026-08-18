@@ -101,7 +101,7 @@ export default function POSSimulator({ t }: { t: any }) {
         
         {/* Header */}
         <div className="pt-10 px-6 pb-4 flex justify-between items-center bg-white border-b border-slate-100 z-10 shadow-sm relative shrink-0">
-          <h2 className="text-2xl font-sans font-semibold text-slate-900 tracking-tight">
+          <h2 className="text-2xl text-slate-900 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">
             {activeTab === 'tables' && posDemo.tabs.tables}
             {activeTab === 'orders' && posDemo.tabs.orders}
             {activeTab === 'expenses' && posDemo.tabs.expenses}
@@ -135,7 +135,7 @@ export default function POSSimulator({ t }: { t: any }) {
               </div>
 
               {/* SALON */}
-              <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 px-1">{posDemo.tables.room}</h4>
+              <h4 className="text-xs text-gray-500 uppercase mb-3 px-1 font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{posDemo.tables.room}</h4>
               <div className="grid grid-cols-3 gap-3 mb-6">
                 {['M1', 'M2', 'M3', 'M4', 'M5', 'M6', 'M7', 'M8', 'M9'].map((table) => (
                   <div key={table} onClick={() => handleTableClick(table)} className={`aspect-square rounded-2xl flex flex-col items-center justify-center gap-1 border-2 transition-transform active:scale-95 cursor-pointer
@@ -158,7 +158,7 @@ export default function POSSimulator({ t }: { t: any }) {
               </div>
 
               {/* BARRA */}
-              <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 px-1">{posDemo.tables.bar}</h4>
+              <h4 className="text-xs text-gray-500 uppercase mb-3 px-1 font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{posDemo.tables.bar}</h4>
               <div className="grid grid-cols-3 gap-3 mb-6">
                 {['B1', 'B2', 'B3', 'B4', 'B5', 'B6'].map((table) => (
                   <div key={table} onClick={() => handleTableClick(table)} className={`aspect-square rounded-2xl flex flex-col items-center justify-center gap-1 border-2 transition-transform active:scale-95 cursor-pointer
@@ -182,7 +182,7 @@ export default function POSSimulator({ t }: { t: any }) {
 
               {/* DAYPASS */}
               <div className="flex justify-between items-end mb-3 px-1">
-                <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider">{posDemo.tables.daypass}</h4>
+                <h4 className="text-xs text-gray-500 uppercase font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{posDemo.tables.daypass}</h4>
                 <button className="text-[10px] font-semibold text-boutique-petrol">{posDemo.tables.openTab}</button>
               </div>
               <div className="grid grid-cols-2 gap-3 mb-6">
@@ -209,7 +209,7 @@ export default function POSSimulator({ t }: { t: any }) {
           {activeTab === 'orders' && (
             <div className="p-4 animate-[fade-in_0.3s_ease-out]">
               <div className="flex justify-between items-end mb-4 px-1">
-                <h3 className="font-sans font-semibold text-slate-800 text-lg">{posDemo.orders.recent}</h3>
+                <h3 className="text-slate-800 text-lg font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{posDemo.orders.recent}</h3>
                 <span className="text-xs font-semibold text-gray-500">{posDemo.orders.today}</span>
               </div>
               
@@ -229,7 +229,7 @@ export default function POSSimulator({ t }: { t: any }) {
                         <Receipt size={20} />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-slate-800 text-sm">Comanda #{order.id}</h4>
+                        <h4 className="text-slate-800 text-sm font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">Comanda #{order.id}</h4>
                         <p className="text-xs text-gray-500 font-medium">{order.loc} • {order.time}</p>
                       </div>
                     </div>
@@ -253,7 +253,7 @@ export default function POSSimulator({ t }: { t: any }) {
                 <div className="relative z-10">
                   <div className="flex justify-between items-start mb-3">
                     <div>
-                      <h3 className="font-sans font-semibold text-slate-800 text-lg">{posDemo.expenses.pettyCash}</h3>
+                      <h3 className="text-slate-800 text-lg font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{posDemo.expenses.pettyCash}</h3>
                       <p className="text-xs text-gray-500 font-semibold">{posDemo.expenses.date}</p>
                     </div>
                     <div className="bg-boutique-offwhite text-boutique-gold text-[9px] font-semibold px-2 py-1 rounded-full uppercase tracking-wider">
@@ -278,7 +278,7 @@ export default function POSSimulator({ t }: { t: any }) {
                 </div>
               </div>
 
-              <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 px-1">{posDemo.expenses.todayExpenses}</h4>
+              <h4 className="text-xs text-gray-500 uppercase mb-3 px-1 font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{posDemo.expenses.todayExpenses}</h4>
               
               <div className="flex flex-col gap-3 mb-4">
                 {posDemo.expenses.items.map((item: any, idx: number) => {
@@ -291,7 +291,7 @@ export default function POSSimulator({ t }: { t: any }) {
                         <Wallet size={18} />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-slate-800 text-sm leading-tight">{item.name}</h4>
+                        <h4 className="text-slate-800 text-sm font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{item.name}</h4>
                         <p className="text-[10px] text-gray-500 font-semibold tracking-wide uppercase mt-0.5">{item.category} • {times[idx]}</p>
                       </div>
                     </div>
@@ -313,7 +313,7 @@ export default function POSSimulator({ t }: { t: any }) {
               <div className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 mb-4">
                 <div className="flex justify-between items-start mb-3">
                   <div>
-                    <h3 className="font-sans font-semibold text-slate-800 text-lg leading-tight">{posDemo.admin.dashboard}</h3>
+                    <h3 className="text-slate-800 text-lg font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{posDemo.admin.dashboard}</h3>
                     <p className="text-xs text-gray-500 font-semibold">{posDemo.expenses.date}</p>
                   </div>
                   <div className="bg-boutique-offwhite text-boutique-gold text-[9px] font-semibold px-2 py-1 rounded-full uppercase tracking-wider">
@@ -351,7 +351,7 @@ export default function POSSimulator({ t }: { t: any }) {
                 <div className="font-black text-slate-800 text-xl">$1,850.00</div>
               </div>
 
-              <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 px-1">{posDemo.admin.management}</h4>
+              <h4 className="text-xs text-gray-500 uppercase mb-3 px-1 font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{posDemo.admin.management}</h4>
               
               <div className="flex flex-col gap-3">
                 <div onClick={() => setShowMenuEditor(true)} className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 flex items-center justify-between cursor-pointer active:bg-slate-50 transition-colors">
@@ -360,7 +360,7 @@ export default function POSSimulator({ t }: { t: any }) {
                       <Coffee size={20} className="text-boutique-gold" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-slate-800 text-base">{posDemo.admin.menuEditor}</h4>
+                      <h4 className="text-slate-800 text-base font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{posDemo.admin.menuEditor}</h4>
                       <p className="text-[11px] text-gray-500 font-semibold leading-tight">{posDemo.admin.menuEditorDesc}</p>
                     </div>
                   </div>
@@ -376,7 +376,7 @@ export default function POSSimulator({ t }: { t: any }) {
                       <LogOut size={20} className="text-gray-500" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-slate-800 text-base">{posDemo.admin.closeShift || 'Cerrar Jornada'}</h4>
+                      <h4 className="text-slate-800 text-base font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{posDemo.admin.closeShift || 'Cerrar Jornada'}</h4>
                       <p className="text-[11px] text-gray-500 font-semibold leading-tight">{posDemo.admin.closeShiftDesc || 'Finalizar turno y hacer corte'}</p>
                     </div>
                   </div>
@@ -398,7 +398,7 @@ export default function POSSimulator({ t }: { t: any }) {
                 </div>
 
                 <div className="text-center bg-white pb-4 shrink-0 shadow-sm relative z-10 border-b border-slate-100">
-                  <h2 className="text-xl font-sans font-semibold text-slate-900 tracking-tight">{posDemo.closeShiftModal?.title || 'Corte de Caja'}</h2>
+                  <h2 className="text-xl text-slate-900 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{posDemo.closeShiftModal?.title || 'Corte de Caja'}</h2>
                   <p className="text-xs font-semibold text-gray-500">{posDemo.closeShiftModal?.subtitle || 'Resumen de la jornada actual'}</p>
                 </div>
 
@@ -509,7 +509,7 @@ export default function POSSimulator({ t }: { t: any }) {
                     <Wallet size={24} className="text-boutique-terracotta" />
                   </div>
                   
-                  <h2 className="text-xl font-sans font-semibold text-slate-900 tracking-tight mb-1">{tExpModal.title || 'Nuevo Gasto'}</h2>
+                  <h2 className="text-xl text-slate-900 mb-1 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{tExpModal.title || 'Nuevo Gasto'}</h2>
                   <p className="text-xs font-medium text-gray-500 mb-6">{tExpModal.desc || 'Pago a proveedores e insumos.'}</p>
                   
                   <div className="space-y-4">
@@ -556,7 +556,7 @@ export default function POSSimulator({ t }: { t: any }) {
                   <ChevronLeft size={20} />
                 </button>
                 <div className="text-center">
-                  <h2 className="text-xl font-sans font-semibold text-slate-900 tracking-tight">{posDemo.orders?.table || 'Mesa'} {activeTable}</h2>
+                  <h2 className="text-xl text-slate-900 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{posDemo.orders?.table || 'Mesa'} {activeTable}</h2>
                   <div className={`text-[10px] font-bold uppercase tracking-wider ${tableMode === 'menu' ? 'text-boutique-gold' : 'text-gray-500'}`}>
                     {tableMode === 'menu' ? tInt.serving || 'ATENDIENDO' : tInt.toCharge || 'A COBRAR'}
                   </div>
@@ -603,7 +603,7 @@ export default function POSSimulator({ t }: { t: any }) {
 
                   {/* Current Bill */}
                   <div className="flex-grow bg-slate-50 px-4 pt-4 border-t border-slate-100">
-                    <h4 className="text-[11px] font-semibold text-gray-500 uppercase tracking-wider mb-3">{tInt.currentBill || 'CUENTA ACTUAL'}</h4>
+                    <h4 className="text-[11px] text-gray-500 uppercase mb-3 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{tInt.currentBill || 'CUENTA ACTUAL'}</h4>
                     <div className="flex flex-col gap-2">
                       {cart.map((item, idx) => (
                         <div key={idx} className="bg-white p-3 rounded-2xl border border-slate-100 shadow-sm flex justify-between items-center animate-[fade-in_0.2s_ease-out]">
@@ -660,7 +660,7 @@ export default function POSSimulator({ t }: { t: any }) {
                       <div className="w-20 h-20 rounded-full bg-boutique-olive/20 text-boutique-gold flex items-center justify-center mb-4 animate-[bounce_0.5s_ease-out]">
                         <Check size={40} strokeWidth={3} />
                       </div>
-                      <h3 className="text-2xl font-sans font-black text-slate-900">Success</h3>
+                      <h3 className="text-2xl font-black text-slate-900 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">Success</h3>
                     </div>
                   )}
 
@@ -673,7 +673,7 @@ export default function POSSimulator({ t }: { t: any }) {
                     
                     {/* Payment Method */}
                     <div>
-                      <h4 className="text-sm font-semibold text-slate-800 mb-3">{tInt.payment || 'Pago'}</h4>
+                      <h4 className="text-sm text-slate-800 mb-3 font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{tInt.payment || 'Pago'}</h4>
                       <div className="flex gap-3">
                         <button 
                           onClick={() => setPaymentMethod('card')}
@@ -694,7 +694,7 @@ export default function POSSimulator({ t }: { t: any }) {
 
                     {/* Tip */}
                     <div>
-                      <h4 className="text-sm font-semibold text-slate-800 mb-3">{tInt.tip || 'Propina'}</h4>
+                      <h4 className="text-sm text-slate-800 mb-3 font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{tInt.tip || 'Propina'}</h4>
                       <div className="grid grid-cols-4 gap-2">
                         {[10, 15, 20].map(pct => (
                           <button 
@@ -742,7 +742,7 @@ export default function POSSimulator({ t }: { t: any }) {
                 <button onClick={() => setShowMenuEditor(false)} className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-slate-100 transition-colors cursor-pointer mr-4">
                   <ChevronLeft size={20} />
                 </button>
-                <h2 className="text-xl font-sans font-semibold text-slate-900 tracking-tight">{tMenuEd.title || 'Editor de Menú'}</h2>
+                <h2 className="text-xl text-slate-900 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{tMenuEd.title || 'Editor de Menú'}</h2>
               </div>
               
               <div className="flex-grow overflow-y-auto p-4 flex flex-col gap-4">
@@ -762,7 +762,7 @@ export default function POSSimulator({ t }: { t: any }) {
                   <div className="flex flex-col gap-4">
                     <div className="flex justify-between items-start border-b border-slate-50 pb-4">
                       <div>
-                        <h4 className="font-semibold text-slate-800 text-sm mb-1">Ribeye Prime (400g)</h4>
+                        <h4 className="text-slate-800 text-sm mb-1 font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">Ribeye Prime (400g)</h4>
                         <span className="inline-block text-[9px] font-semibold text-boutique-gold bg-boutique-offwhite px-2 py-0.5 rounded-full uppercase tracking-wide">
                           <div className="w-1.5 h-1.5 rounded-full bg-boutique-gold inline-block mr-1"></div>
                           {tMenuEd.available || 'DISPONIBLE'}
@@ -776,7 +776,7 @@ export default function POSSimulator({ t }: { t: any }) {
                     
                     <div className="flex justify-between items-start border-b border-slate-50 pb-4">
                       <div>
-                        <h4 className="font-semibold text-slate-800 text-sm mb-1">Tomahawk (800g)</h4>
+                        <h4 className="text-slate-800 text-sm mb-1 font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">Tomahawk (800g)</h4>
                         <span className="inline-block text-[9px] font-semibold text-boutique-ochre bg-boutique-ochre/10 px-2 py-0.5 rounded-full uppercase tracking-wide">
                           <div className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block mr-1"></div>
                           {tMenuEd.lowStock || 'POCAS UNIDADES'}
@@ -790,7 +790,7 @@ export default function POSSimulator({ t }: { t: any }) {
                     
                     <div className="flex justify-between items-start">
                       <div>
-                        <h4 className="font-semibold text-slate-800 text-sm mb-1">Picaña (300g)</h4>
+                        <h4 className="text-slate-800 text-sm mb-1 font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">Picaña (300g)</h4>
                         <span className="inline-block text-[9px] font-semibold text-boutique-gold bg-boutique-offwhite px-2 py-0.5 rounded-full uppercase tracking-wide">
                           <div className="w-1.5 h-1.5 rounded-full bg-boutique-gold inline-block mr-1"></div>
                           {tMenuEd.available || 'DISPONIBLE'}
@@ -819,7 +819,7 @@ export default function POSSimulator({ t }: { t: any }) {
                   <div className="flex flex-col gap-4">
                     <div className="flex justify-between items-start border-b border-slate-50 pb-4">
                       <div>
-                        <h4 className="font-semibold text-slate-800 text-sm mb-1">Malbec Reserva 2020</h4>
+                        <h4 className="text-slate-800 text-sm mb-1 font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">Malbec Reserva 2020</h4>
                         <span className="inline-block text-[9px] font-semibold text-boutique-gold bg-boutique-offwhite px-2 py-0.5 rounded-full uppercase tracking-wide">
                           <div className="w-1.5 h-1.5 rounded-full bg-boutique-gold inline-block mr-1"></div>
                           {tMenuEd.available || 'DISPONIBLE'}
@@ -833,7 +833,7 @@ export default function POSSimulator({ t }: { t: any }) {
                     
                     <div className="flex justify-between items-start">
                       <div>
-                        <h4 className="font-semibold text-slate-800 text-sm mb-1">Cabernet Sauvignon</h4>
+                        <h4 className="text-slate-800 text-sm mb-1 font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">Cabernet Sauvignon</h4>
                         <span className="inline-block text-[9px] font-semibold text-boutique-terracotta bg-boutique-terracotta/10 px-2 py-0.5 rounded-full uppercase tracking-wide">
                           <div className="w-1.5 h-1.5 rounded-full bg-boutique-terracotta inline-block mr-1"></div>
                           {tMenuEd.outOfStock || 'AGOTADO'}

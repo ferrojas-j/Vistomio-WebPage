@@ -32,7 +32,7 @@ export default function MockVistomioApp({ t, lang }: { t: any, lang: 'es' | 'en'
         
         {/* Logo Area */}
         <div className="p-8 flex items-center justify-center gap-3">
-          <div className="w-12 h-12 rounded-[14px] border-2 border-[#C6A15B] bg-white flex items-center justify-center text-[#C6A15B] font-serif italic font-bold text-2xl shadow-sm">
+          <div className="w-12 h-12 rounded-[14px] border-2 border-[#C6A15B] bg-white flex items-center justify-center text-[#C6A15B] font-bold text-2xl shadow-sm">
             V
           </div>
           <div className="flex flex-col" translate="no">
@@ -94,7 +94,7 @@ export default function MockVistomioApp({ t, lang }: { t: any, lang: 'es' | 'en'
           {/* Top Header */}
           <div className="pt-6 pb-4 px-8 flex flex-col xl:flex-row xl:items-center justify-between bg-white flex-shrink-0 gap-4 xl:gap-0">
             <div className="flex items-center gap-6">
-              <h1 className="text-2xl font-bold text-boutique-navy flex items-center gap-3">
+              <h1 className="text-2xl text-boutique-navy flex items-center gap-3 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">
                 <CalendarDays size={24} className="text-[#C6A15B]" />
                 Calendario
               </h1>
@@ -235,7 +235,7 @@ export default function MockVistomioApp({ t, lang }: { t: any, lang: 'es' | 'en'
         <div className="bg-white rounded-[24px] p-5 shadow-xl flex-shrink-0 h-[140px] flex flex-col justify-center">
           <div className="flex items-center gap-2 mb-4 px-2">
             <Globe size={18} className="text-boutique-navy" />
-            <h3 className="text-[15px] font-bold text-boutique-navy/90">Canales Conectados</h3>
+            <h3 className="text-[15px] text-boutique-navy/90 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">Canales Conectados</h3>
           </div>
           
           <div className="flex gap-4">
