@@ -12,12 +12,11 @@ import {
   ChevronDown, 
   Utensils, 
   Calendar, 
-  ShieldCheck,
   ChevronLeft,
   ChevronRight
 } from 'lucide-react';
 
-export default function MockVistomioApp({ t, lang }: { t: any, lang: 'es' | 'en' | 'fr' }) {
+export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
   return (
     <div className="w-full flex bg-white text-left text-boutique-navy font-sans" style={{ height: '640px' }}>
       
