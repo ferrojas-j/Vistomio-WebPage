@@ -1723,18 +1723,18 @@ const VistomioLandingPage: React.FC = () => {
             {/* Tablet Frame Container */}
             <div className="relative mx-auto w-full rounded-[1.5rem] md:rounded-[2rem] border-[6px] md:border-[10px] border-gray-900 bg-gray-900 shadow-[0_20px_50px_rgba(0,0,0,0.2)] group transition-transform duration-500 hover:-translate-y-2">
               {/* Inner Screen */}
-              <div className="relative bg-white overflow-hidden rounded-[1rem] md:rounded-[1.25rem] w-full" style={{ height: '640px' }}>
+              <div className="relative bg-white overflow-hidden rounded-[1rem] md:rounded-[1.25rem] w-full aspect-[4/3] md:aspect-[16/10] max-h-[700px] min-h-[400px]">
                 <div className="w-full h-full pointer-events-none select-none">
                   <MockVistomioApp t={t.systemDemo.mockApp} lang={lang} />
                 </div>
                 
-                {/* Permanent Overlay Button */}
-                <div className="absolute bottom-8 left-0 w-full z-50 flex items-center justify-center">
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 z-50 bg-white/70 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center">
                   <a 
                     href="https://demo.vistomio.com" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="bg-boutique-anthracite hover:bg-[#111] text-white font-bold tracking-widest uppercase text-sm px-8 py-4 rounded-xl shadow-2xl flex items-center gap-3 border border-gray-700 transition-transform hover:-translate-y-1"
+                    className="bg-boutique-anthracite hover:bg-[#111] text-white font-bold tracking-widest uppercase text-sm px-8 py-4 rounded-xl shadow-2xl transition-transform duration-500 transform translate-y-8 group-hover:translate-y-0 flex items-center gap-3 border border-gray-700"
                   >
                     {t.systemDemo?.btn || 'Explorar demo'}
                     <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
