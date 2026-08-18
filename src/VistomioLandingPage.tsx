@@ -1662,8 +1662,9 @@ const VistomioLandingPage: React.FC = () => {
             {/* Decorative Floating Badges */}
             {/* Top Left: Check-in */}
             <div className="absolute top-[25%] -left-[4%] md:-left-[20%] bg-white px-4 md:px-5 py-3 md:py-4 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.1)] border-[1.5px] border-[#B8863B] flex items-center gap-3 md:gap-4 z-20 animate-[float_5s_ease-in-out_infinite] scale-100 md:scale-[1.05]">
-              <div className="w-8 h-8 md:w-10 md:h-10 bg-[#B8863B]/15 rounded-full flex items-center justify-center text-boutique-plum shrink-0">
+              <div className="relative w-8 h-8 md:w-10 md:h-10 bg-[#B8863B]/15 rounded-full flex items-center justify-center text-boutique-plum shrink-0">
                 <ConciergeBell size={18} className="md:w-5 md:h-5" />
+                <span className="absolute top-0 right-0 w-2 h-2 md:w-2.5 md:h-2.5 bg-[#6E7B4A] border border-white rounded-full"></span>
               </div>
               <div>
                 <div className="text-[9px] md:text-[10px] font-bold text-gray-400 uppercase tracking-wider leading-none mb-1">
@@ -1677,8 +1678,9 @@ const VistomioLandingPage: React.FC = () => {
 
             {/* Top Right: Restaurant */}
             <div className="absolute top-[25%] -right-[4%] md:-right-[20%] bg-white px-4 md:px-5 py-3 md:py-4 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.1)] border-[1.5px] border-[#B8863B] flex items-center gap-3 md:gap-4 z-20 animate-[float_7s_ease-in-out_infinite_1s] scale-100 md:scale-[1.05]">
-              <div className="w-8 h-8 md:w-10 md:h-10 bg-[#B8863B]/15 rounded-full flex items-center justify-center text-boutique-plum shrink-0">
+              <div className="relative w-8 h-8 md:w-10 md:h-10 bg-[#B8863B]/15 rounded-full flex items-center justify-center text-boutique-plum shrink-0">
                 <Wine size={18} className="md:w-5 md:h-5" />
+                <span className="absolute top-0 right-0 w-2 h-2 md:w-2.5 md:h-2.5 bg-[#6E7B4A] border border-white rounded-full"></span>
               </div>
               <div>
                 <div className="text-[9px] md:text-[10px] font-bold text-gray-400 uppercase tracking-wider leading-none mb-1">
@@ -1692,8 +1694,9 @@ const VistomioLandingPage: React.FC = () => {
 
             {/* Bottom Left: Maintenance */}
             <div className="absolute bottom-[15%] -left-[4%] md:-left-[20%] bg-white px-4 md:px-5 py-3 md:py-4 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.1)] border-[1.5px] border-[#B8863B] flex items-center gap-3 md:gap-4 z-20 animate-[float_6s_ease-in-out_infinite_1.5s] scale-100 md:scale-[1.05]">
-              <div className="w-8 h-8 md:w-10 md:h-10 bg-[#B8863B]/15 rounded-full flex items-center justify-center text-boutique-plum shrink-0">
+              <div className="relative w-8 h-8 md:w-10 md:h-10 bg-[#B8863B]/15 rounded-full flex items-center justify-center text-boutique-plum shrink-0">
                 <ClipboardCheck size={18} className="md:w-5 md:h-5" />
+                <span className="absolute top-0 right-0 w-2 h-2 md:w-2.5 md:h-2.5 bg-[#6E7B4A] border border-white rounded-full"></span>
               </div>
               <div>
                 <div className="text-[9px] md:text-[10px] font-bold text-gray-400 uppercase tracking-wider leading-none mb-1">
@@ -1707,8 +1710,9 @@ const VistomioLandingPage: React.FC = () => {
 
             {/* Bottom Right: Payments */}
             <div className="absolute bottom-[15%] -right-[4%] md:-right-[20%] bg-white px-4 md:px-5 py-3 md:py-4 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.1)] border-[1.5px] border-[#B8863B] flex items-center gap-3 md:gap-4 z-20 animate-[float_8s_ease-in-out_infinite_0.5s] scale-100 md:scale-[1.05]">
-              <div className="w-8 h-8 md:w-10 md:h-10 bg-[#B8863B]/15 rounded-full flex items-center justify-center text-boutique-plum shrink-0">
+              <div className="relative w-8 h-8 md:w-10 md:h-10 bg-[#B8863B]/15 rounded-full flex items-center justify-center text-boutique-plum shrink-0">
                 <CreditCard size={18} className="md:w-5 md:h-5" />
+                <span className="absolute top-0 right-0 w-2 h-2 md:w-2.5 md:h-2.5 bg-[#6E7B4A] border border-white rounded-full"></span>
               </div>
               <div>
                 <div className="text-[9px] md:text-[10px] font-bold text-gray-400 uppercase tracking-wider leading-none mb-1">
