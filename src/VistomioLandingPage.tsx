@@ -2069,7 +2069,7 @@ const VistomioLandingPage: React.FC = () => {
               <div className="inline-block px-4 py-1.5 bg-boutique-gold/10 border border-boutique-gold/30 rounded-full text-boutique-gold text-sm font-semibold uppercase tracking-wider mb-6">
                 Mini demo
               </div>
-              <h2 className="text-[40px] md:text-[53px] font-normal text-[#6B4357] mb-6 font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">
+              <h2 className="text-[40px] md:text-[53px] font-normal text-[#D4AF37] mb-6 font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">
                 {t.posDemo.sectionTitle}
               </h2>
               <p className="text-xl text-boutique-navy/80 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0">
@@ -2118,7 +2118,7 @@ const VistomioLandingPage: React.FC = () => {
               <div className="inline-block px-4 py-1.5 bg-boutique-gold/10 border border-boutique-gold/30 rounded-full text-boutique-gold text-sm font-semibold uppercase tracking-wider mb-6">
                 Mini demo
               </div>
-              <h2 className="text-[40px] md:text-[53px] font-normal text-[#6B4357] mb-6 font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">
+              <h2 className="text-[40px] md:text-[53px] font-normal text-[#D4AF37] mb-6 font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">
                 {lang === 'es' ? 'Sincronización total con Vistomio Staff' : lang === 'en' ? 'Total synchronization with Vistomio Staff' : 'Synchronisation totale avec Vistomio Staff'}
               </h2>
               <p className="text-xl text-boutique-navy/80 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0">
@@ -2701,11 +2701,11 @@ function SectionHeader({ eyebrow, title, align = 'center' }: { eyebrow?: string,
       {eyebrow && (
         <div className={`flex items-center gap-4 ${!title ? 'mb-0' : 'mb-5'} ${align === 'center' ? 'justify-center' : 'justify-start'}`}>
           <div className="w-12 h-[2px] bg-[#D4AF37]"></div>
-          <span className="text-[#6B4357] font-bold tracking-[0.25em] text-base md:text-lg uppercase">{eyebrow}</span>
+          <span className="text-[#D4AF37] font-bold tracking-[0.25em] text-base md:text-lg uppercase">{eyebrow}</span>
         </div>
       )}
       {title && (
-        <h2 className="text-[33px] md:text-[40px] lg:text-[44px] font-serif text-[#6B4357] font-normal max-w-4xl mx-auto tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">
+        <h2 className="text-[33px] md:text-[40px] lg:text-[44px] font-serif text-[#D4AF37] font-normal max-w-4xl mx-auto tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">
           {title}
         </h2>
       )}
