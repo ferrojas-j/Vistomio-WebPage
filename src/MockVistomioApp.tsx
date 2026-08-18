@@ -39,7 +39,7 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
         </div>
 
         {/* Menu Items (Extremely compact) */}
-        <div className="flex-1 py-2 space-y-0.5 overflow-y-auto scrollbar-hide [&::-webkit-scrollbar]:hidden">
+        <div className="flex-1 py-1.5 space-y-0 overflow-y-auto scrollbar-hide [&::-webkit-scrollbar]:hidden">
           <MenuItem icon={<LayoutDashboard className="w-3.5 h-3.5 md:w-4 md:h-4" />} label={t.sidebar?.dashboard || 'Dashboard'} />
           <MenuItem icon={<CalendarDays className="w-3.5 h-3.5 md:w-4 md:h-4" />} label={t.sidebar?.bookingEngine || 'Reservas'} active />
           <MenuItem icon={<CreditCard className="w-3.5 h-3.5 md:w-4 md:h-4" />} label={t.sidebar?.payments || 'Pagos'} />
@@ -52,7 +52,7 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
         </div>
 
         {/* Bottom Area (Language only) */}
-        <div className="p-3 bg-[#E8DFD0]/30 border-t border-[#E8DFD0]/50">
+        <div className="p-3 bg-[#E8DFD0]/30 border-t border-[#E8DFD0]/50 mt-auto">
           <div className="flex items-center justify-between bg-white px-2.5 py-1.5 md:py-2 border border-gray-200 rounded-lg shadow-sm cursor-pointer">
             <div className="flex items-center gap-1.5 text-[10px] md:text-xs font-bold text-boutique-navy/90">
               <Globe className="w-3 h-3 text-gray-400" /> Español
@@ -66,24 +66,24 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
       <div className="flex-1 flex flex-col overflow-hidden relative gap-2 md:gap-3 h-full">
         
         {/* CALENDAR WHITE CARD */}
-        <div className="bg-white rounded-[12px] md:rounded-[16px] flex-1 flex flex-col overflow-hidden shadow-xl min-h-[200px]">
+        <div className="bg-white rounded-[12px] md:rounded-[16px] flex-1 flex flex-col overflow-hidden shadow-xl min-h-0 shrink">
           
           {/* Top Header */}
           <div className="py-2 md:py-3 px-3 md:px-5 flex items-center justify-between bg-white flex-shrink-0">
             
             {/* Left: Title & Toggle */}
             <div className="flex items-center gap-3">
-              <h1 className="text-[14px] md:text-[18px] text-boutique-navy flex items-center gap-1.5 md:gap-2 font-serif font-normal">
+              <h1 className="text-[14px] md:text-[18px] text-boutique-navy flex items-center gap-1.5 md:gap-2 font-serif font-normal whitespace-nowrap">
                 <CalendarDays className="w-4 h-4 md:w-5 md:h-5 text-[#C6A15B]" />
                 <span className="hidden sm:inline">Calendario</span>
               </h1>
 
               {/* Toggle */}
               <div className="hidden xl:flex items-center bg-gray-50 rounded-full p-0.5 border border-gray-200">
-                <div className="bg-white px-3 py-1 rounded-full text-[10px] font-bold text-boutique-navy shadow-sm flex items-center gap-1">
+                <div className="bg-white px-3 py-1 rounded-full text-[10px] font-bold text-boutique-navy shadow-sm flex items-center gap-1 whitespace-nowrap">
                   <Calendar className="w-3 h-3" /> Reservas
                 </div>
-                <div className="px-3 py-1 rounded-full text-[10px] font-bold text-gray-500 flex items-center gap-1">
+                <div className="px-3 py-1 rounded-full text-[10px] font-bold text-gray-500 flex items-center gap-1 whitespace-nowrap">
                   <div className="font-bold font-sans text-xs">$</div> Tarifas
                 </div>
               </div>
@@ -92,22 +92,22 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
             {/* Center: Date Selectors & Navigation */}
             <div className="flex flex-row items-center gap-2">
               <div className="flex gap-1.5 hidden md:flex">
-                <div className="bg-white border border-gray-200 rounded-full px-3 py-1 text-[9px] md:text-[11px] font-bold text-boutique-navy flex items-center gap-1 shadow-sm">
+                <div className="bg-white border border-gray-200 rounded-full px-3 py-1 text-[9px] md:text-[11px] font-bold text-boutique-navy flex items-center gap-1 shadow-sm whitespace-nowrap">
                   Agosto <ChevronDown className="w-3 h-3 text-gray-400" />
                 </div>
-                <div className="bg-white border border-gray-200 rounded-full px-3 py-1 text-[9px] md:text-[11px] font-bold text-boutique-navy flex items-center gap-1 shadow-sm">
+                <div className="bg-white border border-gray-200 rounded-full px-3 py-1 text-[9px] md:text-[11px] font-bold text-boutique-navy flex items-center gap-1 shadow-sm whitespace-nowrap">
                   2026 <ChevronDown className="w-3 h-3 text-gray-400" />
                 </div>
               </div>
               <div className="bg-white border border-gray-200 rounded-full flex items-center shadow-sm">
                 <button className="px-2 py-1 text-gray-400 hover:text-boutique-navy"><ChevronLeft className="w-3 h-3" strokeWidth={3} /></button>
-                <div className="px-2 py-1 text-[9px] md:text-[11px] font-bold text-boutique-navy tracking-widest text-[#2A75D3]">HOY</div>
+                <div className="px-2 py-1 text-[9px] md:text-[11px] font-bold text-boutique-navy tracking-widest text-[#2A75D3] whitespace-nowrap">HOY</div>
                 <button className="px-2 py-1 text-gray-400 hover:text-boutique-navy"><ChevronRight className="w-3 h-3" strokeWidth={3} /></button>
               </div>
             </div>
 
             {/* Right: Legend */}
-            <div className="hidden 2xl:flex items-center gap-3 bg-white border border-gray-200 rounded-full px-4 py-1 shadow-sm text-[8px] font-bold tracking-widest text-gray-500 uppercase">
+            <div className="hidden 2xl:flex items-center gap-3 bg-white border border-gray-200 rounded-full px-4 py-1 shadow-sm text-[8px] font-bold tracking-widest text-gray-500 uppercase whitespace-nowrap flex-nowrap shrink-0">
               <div className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full border border-gray-300"></div> PAGADO</div>
               <div className="flex items-center gap-1 text-[#E68A8A]"><div className="w-1.5 h-1.5 rounded-full border border-[#E68A8A]"></div> POR PAGAR</div>
               <div className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full bg-[#98C2A0]"></div> EN CURSO</div>
@@ -125,7 +125,7 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
               <div className="flex-1 grid grid-cols-7 relative">
                 {['LUN 17', 'MAR 18', 'MIÉ 19', 'JUE 20', 'VIE 21', 'SÁB 22', 'DOM 23'].map((day: string, i: number) => (
                   <div key={i} className={`flex flex-col items-center justify-center py-1.5 md:py-2 border-r border-gray-100 ${i === 1 ? 'bg-[#FFF9E5]' : ''}`}>
-                    <span className={`text-[9px] md:text-[11px] font-bold text-center leading-tight ${i === 1 ? 'text-[#C6A15B]' : 'text-gray-500'}`}>
+                    <span className={`text-[9px] md:text-[11px] font-bold text-center leading-tight whitespace-nowrap ${i === 1 ? 'text-[#C6A15B]' : 'text-gray-500'}`}>
                       {day}
                     </span>
                     <span className={`text-[8px] md:text-[9px] mt-0.5 font-bold ${i === 1 ? 'text-[#C6A15B]' : 'text-[#86D097]'}`}>
@@ -170,13 +170,13 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
         </div>
 
         {/* CANALES CONECTADOS */}
-        <div className="bg-white rounded-[12px] md:rounded-[16px] p-3 md:p-4 shadow-xl flex-shrink-0 flex flex-col overflow-hidden">
+        <div className="bg-white rounded-[12px] md:rounded-[16px] p-3 md:p-4 shadow-xl flex-shrink-0 flex flex-col overflow-hidden shrink-0 h-auto">
           <div className="flex items-center gap-2 mb-2 md:mb-3 px-1">
             <Globe className="w-3.5 h-3.5 md:w-4 md:h-4 text-boutique-navy" />
-            <h3 className="text-xs md:text-sm text-boutique-navy font-serif font-bold tracking-[0.02em]">Canales Conectados</h3>
+            <h3 className="text-xs md:text-sm text-boutique-navy font-serif font-bold tracking-[0.02em] whitespace-nowrap">Canales Conectados</h3>
           </div>
           
-          <div className="flex justify-between gap-2 w-full">
+          <div className="flex justify-between gap-2 w-full overflow-hidden">
             <ChannelCard name="Booking" color="blue" subtitle="Conectado" rooms="8 Hab." />
             <ChannelCard name="Airbnb" color="red" subtitle="Conectado" rooms="6 Hab." />
             <ChannelCard name="Expedia" color="black" subtitle="Conectado" rooms="8 Hab." />
@@ -193,7 +193,7 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
 // Helper Components
 function MenuItem({ icon, label, active = false }: { icon: React.ReactNode, label: string, active?: boolean }) {
   return (
-    <div className={`flex items-center gap-2.5 px-3 md:px-4 py-1.5 md:py-2 mx-2 rounded-[8px] cursor-pointer transition-colors ${active ? 'bg-[#13203A] text-white shadow-md' : 'text-gray-500 hover:bg-black/5'}`}>
+    <div className={`flex items-center gap-2.5 px-3 md:px-4 py-1 md:py-1.5 mx-2 rounded-[8px] cursor-pointer transition-colors ${active ? 'bg-[#13203A] text-white shadow-md' : 'text-gray-500 hover:bg-black/5'}`}>
       <div className={`${active ? 'text-white' : 'text-gray-400'} flex-shrink-0`}>{icon}</div>
       <span className={`text-[9px] md:text-[11px] leading-tight truncate ${active ? 'font-bold' : 'font-semibold'}`}>{label}</span>
     </div>
@@ -257,14 +257,14 @@ function ChannelCard({ name, color, subtitle, rooms, className = '' }: { name: s
   };
 
   return (
-    <div className={`flex flex-col justify-between border border-gray-200 rounded-[8px] md:rounded-[12px] p-2 md:p-3 bg-white flex-1 min-w-[70px] md:min-w-[90px] shadow-sm ${className}`}>
-      <div className="flex flex-col xl:flex-row xl:items-center gap-1.5 md:gap-2 mb-1 md:mb-2">
+    <div className={`flex flex-col justify-between border border-gray-200 rounded-[8px] md:rounded-[12px] p-2 md:p-3 bg-white flex-1 min-w-[70px] md:min-w-[90px] shadow-sm ${className} shrink`}>
+      <div className="flex flex-col xl:flex-row xl:items-center gap-1.5 md:gap-2 mb-1 md:mb-2 overflow-hidden">
         <div className={`w-6 h-6 md:w-8 md:h-8 rounded-[6px] md:rounded-[8px] ${colors[color]} flex items-center justify-center text-white flex-shrink-0 shadow-sm`}>
           <Globe2 className="w-3 h-3 md:w-4 md:h-4" />
         </div>
         <div className="flex-1 min-w-0">
           <div className="text-[9px] md:text-[11px] font-bold text-boutique-navy leading-tight truncate">{name}</div>
-          <div className={`hidden xl:block text-[8px] md:text-[9px] font-bold mt-0.5 ${subtitle === 'Conectado' ? 'text-[#86D097]' : 'text-gray-400'}`}>{subtitle}</div>
+          <div className={`hidden xl:block text-[8px] md:text-[9px] font-bold mt-0.5 ${subtitle === 'Conectado' ? 'text-[#86D097]' : 'text-gray-400'} truncate`}>{subtitle}</div>
         </div>
       </div>
       

@@ -1721,7 +1721,7 @@ const VistomioLandingPage: React.FC = () => {
             </div>
             
             {/* Tablet Frame Container */}
-            <div className="relative mx-auto w-full aspect-[4/3] lg:aspect-[16/10] min-h-[400px] lg:min-h-[500px] rounded-[1.5rem] md:rounded-[2rem] border-[6px] md:border-[10px] border-gray-900 bg-gray-900 shadow-[0_20px_50px_rgba(0,0,0,0.2)] group transition-transform duration-500 hover:-translate-y-2 overflow-hidden flex flex-col">
+            <div className="relative mx-auto w-full max-w-[1200px] aspect-[16/10] min-h-[500px] rounded-[1.5rem] md:rounded-[2rem] border-[6px] md:border-[10px] border-gray-900 bg-gray-900 shadow-[0_20px_50px_rgba(0,0,0,0.2)] group transition-transform duration-500 hover:-translate-y-2 overflow-hidden flex flex-col flex-shrink-0">
               {/* Inner Screen */}
               <div className="relative bg-[#13203A] flex-1 w-full h-full overflow-hidden rounded-[1rem] md:rounded-[1.25rem]">
                 <div className="w-full h-full pointer-events-none select-none absolute inset-0">
