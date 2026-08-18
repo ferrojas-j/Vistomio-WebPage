@@ -1911,7 +1911,7 @@ const VistomioLandingPage: React.FC = () => {
                   <div className="w-10 h-10 rounded-full bg-[#A63D2E]/10 flex shrink-0 items-center justify-center border border-[#A63D2E]/20 shadow-sm">
                      <div className="w-2.5 h-2.5 rounded-full bg-[#A63D2E]"></div>
                   </div>
-                  <h3 className="text-[33px] md:text-[40px] font-normal text-[#6B4357] font-serif tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">
+                  <h3 className="text-2xl md:text-3xl font-normal text-boutique-navy font-serif tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">
                     {category.name.includes('&') ? (
                       category.name.split('&').map((part: any, i: number, arr: any[]) => (
                         <span key={i}>
@@ -1947,7 +1947,7 @@ const VistomioLandingPage: React.FC = () => {
                           </div>
                         )}
                       </div>
-                      <h4 className="text-base text-boutique-navy mb-3 relative z-10 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{feature.title}</h4>
+                      <h4 className="text-lg md:text-xl text-[#B8863B] mb-3 relative z-10 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{feature.title}</h4>
                       <p className="text-boutique-navy/80 text-sm leading-relaxed relative z-10 flex-grow font-medium">{feature.desc}</p>
                       
                       {(feature as any).demoId && (
@@ -2707,7 +2707,7 @@ function SectionHeader({ eyebrow, title, align = 'center' }: { eyebrow?: string,
       {eyebrow && (
         <div className={`flex items-center gap-4 ${!title ? 'mb-0' : 'mb-5'} ${align === 'center' ? 'justify-center' : 'justify-start'}`}>
           <div className="w-12 h-[2px] bg-[#D4AF37]"></div>
-          <span className="text-[#D4AF37] font-bold tracking-[0.25em] text-sm md:text-base uppercase">{eyebrow}</span>
+          <span className="text-[#6B4357] font-bold tracking-[0.25em] text-base md:text-lg uppercase">{eyebrow}</span>
         </div>
       )}
       {title && (
