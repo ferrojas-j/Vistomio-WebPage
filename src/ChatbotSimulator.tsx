@@ -322,9 +322,7 @@ export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLa
                 key={tOption}
                 onClick={() => setTone(tOption)}
                 className={`flex items-center gap-2 px-5 py-2.5 rounded-full border font-medium transition-all text-sm bg-white ${
-                  tone === tOption 
-                    ? 'border-boutique-plum text-boutique-plum shadow-sm' 
-                    : 'border-boutique-plum/30 text-boutique-plum/70 hover:border-boutique-plum hover:text-boutique-plum'
+                  tone === tOption ? 'border-[#B8863B] text-[#B8863B] shadow-sm' : 'border-[#13203A]/40 text-[#13203A]/80 hover:border-[#13203A] hover:text-[#13203A]'
                 }`}
               >
                 <span className="flex-grow">{t.tones[tOption]}</span>
