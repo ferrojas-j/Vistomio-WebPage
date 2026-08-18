@@ -479,13 +479,13 @@ const translations = {
       logoSubtitle: 'Technology tailored to you'
     },
     hero: {
-      badge: 'Sistemas boutique para negocios boutique',
-      title: 'Your hotel is unique, manage it uniquely',
-      titleHighlight: 'al siguiente nivel',
-      subtitle: 'La excelencia en la hospitalidad empieza desde adentro. Centraliza reservas, operaciones, administración y finanzas en una herramienta diseñada para darte tranquilidad.',
-      ctaPrimary: 'Explorar plataforma',
-      ctaSecondary: 'Agendar entrevista'
-    },
+        badge: 'Boutique systems for boutique businesses',
+        title: 'Your hotel is unique, manage it uniquely',
+        titleHighlight: '',
+        subtitle: 'If you do not accept concessions in the service you offer your guests, your management system shouldn\'t either.',
+        ctaPrimary: 'Explore platform',
+        ctaSecondary: 'Schedule interview'
+      },
     locations: {
       noga: 'Zipolite, Mexico',
       galloAzul: 'Todos Santos, Mexico',
@@ -683,7 +683,7 @@ const translations = {
     chatbotPlans: {
       badge: 'Standalone Product',
       title: 'Multichannel AI Chatbot',
-      subtitle: 'Integrate our intelligent agent into your website or channels. Available as a standalone product or bundled with Vistomio packages.',
+        subtitle: 'Automate customer service, increase direct bookings, and offer 24/7 support across all your channels with our AI agents.',
       talkBtn: 'Let\'s Talk',
       plans: [
         {
@@ -886,13 +886,13 @@ const translations = {
       logoSubtitle: 'La technologie sur mesure'
     },
     hero: {
-      badge: 'Systèmes sur mesure pour lieux d\'exception',
-      title: 'Votre hôtel est unique, gérez-le de façon unique',
-      titleHighlight: 'au niveau supérieur',
-      subtitle: 'L\'excellence hôtelière commence de l\'intérieur. Centralisez les réservations, opérations, l\'administration et les finances dans un outil conçu pour vous offrir une tranquillité d\'esprit totale.',
-      ctaPrimary: 'Explorer la plateforme',
-      ctaSecondary: 'Planifier une entrevue'
-    },
+        badge: 'Systèmes sur mesure pour lieux d\'exception',
+        title: 'Votre hôtel est unique, gérez-le de façon unique',
+        titleHighlight: '',
+        subtitle: 'Si vous n\'acceptez aucune concession dans le service que vous offrez à vos hôtes, votre système de gestion ne devrait pas en faire non plus.',
+        ctaPrimary: 'Explorer la plateforme',
+        ctaSecondary: 'Planifier une entrevue'
+      },
     locations: {
       noga: 'Zipolite, Mexique',
       galloAzul: 'Todos Santos, Mexique',
@@ -1087,8 +1087,8 @@ const translations = {
     },
     chatbotPlans: {
       badge: 'Produit Indépendant',
-      title: 'Propulsez votre hôtel avec notre Chatbot IA',
-      subtitle: 'Intégrez notre agent intelligent sur votre site ou vos canaux. Disponible séparément ou inclus dans les forfaits Vistomio.',
+      title: 'Chatbot IA Multicanal',
+        subtitle: 'Automatisez le service client, augmentez les réservations directes et offrez une assistance 24/7 sur tous vos canaux avec nos agents IA.',
       talkBtn: 'Parlons-en',
       plans: [
         {
