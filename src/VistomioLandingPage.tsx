@@ -109,17 +109,17 @@ const translations = {
       cards: [
         {
           title: 'Experiencia Personalizada',
-          desc: 'Con nuestro <span class="text-[#A37A3B] font-bold">módulo de Check in digital</span>, anticípate a los deseos de tu huésped. Perfiles detallados y preferencias integradas.',
+          desc: 'Su herramienta aprende de sus huéspedes, no al revés. Perfiles detallados, preferencias integradas, anticipación de necesidades desde la llegada.',
           icon: ConciergeBell
         },
         {
           title: 'Fusión Hotel & Restaurante',
-          desc: 'El <span class="text-[#A37A3B] font-bold">POS Vistomio restaurante</span> habla directamente con los sistemas del hotel. Comunicación fluida, cero errores.',
+          desc: 'Un solo sistema, cero doble registro. El POS del restaurante se comunica de forma nativa con el hotel — como en una verdadera casa, no en dos softwares que no se hablan entre sí.',
           icon: Wine
         },
         {
           title: 'Recomendaciones Inteligentes',
-          desc: 'Una IA especializada analiza los datos de tu operación para sugerirte <span class="text-[#A37A3B] font-bold">dinámicas de tarifas, campañas y ventas cruzadas.</span>',
+          desc: 'Una IA que conoce su casa, no un algoritmo genérico. Tarifas dinámicas, campañas y ventas cruzadas ajustadas a su realidad, no a la de una cadena.',
           icon: Sparkles
         }
       ]
@@ -516,17 +516,17 @@ const translations = {
       cards: [
         {
           title: 'Personalized Experience',
-          desc: 'With our <span class="text-[#A37A3B] font-bold">digital check-in module</span>, anticipate your guest\'s desires. Detailed profiles and integrated preferences.',
+          desc: 'Your tool learns from your guests, not the other way around. Detailed profiles, integrated preferences, anticipating needs right from arrival.',
           icon: ConciergeBell
         },
         {
           title: 'Hotel & Restaurant Fusion',
-          desc: 'The <span class="text-[#A37A3B] font-bold">Vistomio Restaurant POS</span> talks directly with the hotel systems. Seamless communication, zero mistakes.',
+          desc: 'A single system, zero double entry. The restaurant POS communicates natively with the hotel — like in a real home, not two softwares that don\'t talk to each other.',
           icon: Wine
         },
         {
           title: 'Smart Recommendations',
-          desc: 'A specialized AI analyzes your operation data to suggest <span class="text-[#A37A3B] font-bold">dynamic pricing, targeted campaigns, and cross-selling.</span>',
+          desc: 'An AI that knows your house, not a generic algorithm. Dynamic pricing, campaigns, and cross-selling tailored to your reality, not a chain\'s.',
           icon: Sparkles
         }
       ]
@@ -923,17 +923,17 @@ const translations = {
       cards: [
         {
           title: 'Expérience Personnalisée',
-          desc: 'Avec notre <span class="text-[#A37A3B] font-bold">module de check-in numérique</span>, anticipez les désirs de vos clients. Profils détaillés et préférences intégrées.',
+          desc: 'Votre outil apprend vos clients, pas l\'inverse. Fiches détaillées, préférences intégrées, anticipation des besoins dès l\'arrivée.',
           icon: ConciergeBell
         },
         {
           title: 'Fusion Hôtel & Restaurant',
-          desc: 'Le <span class="text-[#A37A3B] font-bold">POS Vistomio restaurant</span> communique directement avec les systèmes de l\'hôtel. Communication fluide, zéro erreur.',
+          desc: 'Un seul système, zéro double saisie. Le POS restaurant communique nativement avec l\'hôtel — comme dans une vraie maison, pas dans deux logiciels qui ne se parlent pas.',
           icon: Wine
         },
         {
           title: 'Recommandations Intelligentes',
-          desc: 'Une IA spécialisée analyse vos données d\'exploitation pour suggérer <span class="text-[#A37A3B] font-bold">des tarifs dynamiques, des campagnes et des ventes croisées.</span>',
+          desc: 'Une IA qui connaît votre maison, pas un algorithme générique. Tarifs dynamiques, campagnes et ventes croisées ajustés à votre réalité, pas à celle d\'une chaîne.',
           icon: Sparkles
         }
       ]
