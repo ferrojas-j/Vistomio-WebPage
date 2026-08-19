@@ -4,6 +4,9 @@ import StaffAppSimulator from './StaffAppSimulator';
 import MockVistomioApp from './MockVistomioApp';
 import React, { useState, useEffect, useRef } from 'react';
 import {  
+  Coffee,
+  Feather,
+  Wind,
   CreditCard, 
   Utensils, 
   Smartphone, 
@@ -32,7 +35,6 @@ import {
   CalendarCheck,
   Clock,
   Wallet, 
-  TrendingUp,
   Blocks,
     Languages,
     Cloud
@@ -81,17 +83,12 @@ const translations = {
     },
     heroBadges: {
 
-      badge1Top: 'GESTIÓN',
-
-      badge1Bottom: 'Cero estrés',
-
-      badge2Top: 'RESULTADO',
-
-      badge2Bottom: '+ Calidad de servicio',
-
-      badge3Top: 'EFICIENCIA',
-
-      badge3Bottom: '+ Tiempo libre'
+      badge1Top: 'ADMINISTRACIÓN',
+        badge1Bottom: 'Automatizada',
+        badge2Top: 'OPERACIÓN',
+        badge2Bottom: 'Optimizada',
+        badge3Top: 'MÁS TIEMPO',
+        badge3Bottom: 'Para lo importante'
 
     },
 
@@ -494,12 +491,12 @@ const translations = {
       jc: 'Santiago, Chile'
     },
         heroBadges: {
-      badge1Top: 'MANAGEMENT',
-      badge1Bottom: 'Zero stress',
-      badge2Top: 'RESULT',
-      badge2Bottom: '+ Service quality',
-      badge3Top: 'EFFICIENCY',
-      badge3Bottom: '+ Free time'
+      badge1Top: 'ADMINISTRATION',
+        badge1Bottom: 'Automated',
+        badge2Top: 'OPERATION',
+        badge2Bottom: 'Optimized',
+        badge3Top: 'MORE TIME',
+        badge3Bottom: 'For what matters'
     },
 
     systemDemo: {
@@ -901,12 +898,12 @@ const translations = {
       jc: 'Santiago, Chili'
     },
         heroBadges: {
-      badge1Top: 'GESTION',
-      badge1Bottom: 'Zéro stress',
-      badge2Top: 'RÉSULTAT',
-      badge2Bottom: '+ Qualité de service',
-      badge3Top: 'EFFICACITÉ',
-      badge3Bottom: '+ Temps libre'
+      badge1Top: 'ADMINISTRATION',
+        badge1Bottom: 'Automatisée',
+        badge2Top: 'OPÉRATION',
+        badge2Bottom: 'Optimisée',
+        badge3Top: 'PLUS DE TEMPS',
+        badge3Bottom: 'Pour l\'essentiel'
     },
 
     systemDemo: {
@@ -1618,7 +1615,7 @@ const VistomioLandingPage: React.FC = () => {
               {/* Gestión: Top Left */}
               <div className="absolute top-12 -left-4 lg:-left-12 bg-white px-5 py-4 rounded-xl shadow-xl border-[1.5px] border-[#B8863B] flex items-center gap-4 z-20 animate-[float_6s_ease-in-out_infinite] scale-[1.05]">
                 <div className="w-8 h-8 bg-[#B8863B]/15 rounded-full flex items-center justify-center text-[#6B4357]">
-                    <Sparkles size={14} strokeWidth={1.5} />
+                    <Feather size={14} strokeWidth={1.5} />
                   </div>
                 <div>
                   <div className="text-[10px] font-bold text-boutique-navy uppercase tracking-wider leading-none mb-1">{(t as any).heroBadges?.badge1Top || 'GESTION'}</div>
@@ -1629,7 +1626,7 @@ const VistomioLandingPage: React.FC = () => {
               {/* Resultado: Top Right */}
               <div className="absolute top-8 -right-4 lg:-right-16 bg-white px-5 py-4 rounded-xl shadow-xl border-[1.5px] border-[#B8863B] flex items-center gap-4 z-20 animate-[float_5s_ease-in-out_infinite_1s] scale-[1.05]">
                 <div className="w-8 h-8 bg-[#B8863B]/15 rounded-full flex items-center justify-center text-[#6B4357]">
-                    <TrendingUp size={14} strokeWidth={1.5} />
+                    <Wind size={14} strokeWidth={1.5} />
                   </div>
                 <div>
                   <div className="text-[10px] font-bold text-boutique-navy uppercase tracking-wider leading-none mb-1">{(t as any).heroBadges?.badge2Top || 'RÉSULTAT'}</div>
@@ -1640,7 +1637,7 @@ const VistomioLandingPage: React.FC = () => {
               {/* Eficiencia: Bottom Right */}
                               <div className="absolute bottom-16 -right-4 lg:-right-12 bg-white px-5 py-4 rounded-xl shadow-xl border-[1.5px] border-[#B8863B] flex items-center gap-4 z-20 animate-[float_7s_ease-in-out_infinite_2s] scale-[1.05]">
                 <div className="w-8 h-8 bg-[#B8863B]/15 rounded-full flex items-center justify-center text-[#6B4357]">
-                    <Clock size={14} strokeWidth={1.5} />
+                    <Coffee size={14} strokeWidth={1.5} />
                   </div>
                 <div>
                   <div className="text-[10px] font-bold text-boutique-navy uppercase tracking-wider leading-none mb-1">{(t as any).heroBadges?.badge3Top || 'EFFICACITÉ'}</div>
