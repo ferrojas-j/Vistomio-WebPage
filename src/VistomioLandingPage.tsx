@@ -1791,7 +1791,7 @@ const VistomioLandingPage: React.FC = () => {
               <ul className="space-y-6">
                 {t.boutiqueNiche.cards.map((card, idx) => (
                   <li key={idx} className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-[#B8863B]/10 border border-[#B8863B]/30 text-[#B8863B] flex items-center justify-center shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-boutique-navy text-white flex items-center justify-center shrink-0 shadow-sm">
                       <card.icon size={24} />
                     </div>
                     <div>
