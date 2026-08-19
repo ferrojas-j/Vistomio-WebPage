@@ -70,7 +70,7 @@ const translations = {
       title: 'Su hotel es único, gestiónalo de manera única',
       titleHighlight: '',
       subtitle: 'Si usted no acepta concesiones en el servicio que ofrece a sus huéspedes, su sistema de gestión tampoco debería hacerlo.',
-      ctaPrimary: 'Explorar plataforma',
+      ctaPrimary: 'Explora la app de Vistomio',
       ctaSecondary: 'Agendar entrevista'
     },
     locations: {
@@ -479,7 +479,7 @@ const translations = {
         title: 'Your hotel is unique, manage it uniquely',
         titleHighlight: '',
         subtitle: 'If you do not accept concessions in the service you offer your guests, your management system shouldn\'t either.',
-        ctaPrimary: 'Explore platform',
+        ctaPrimary: 'Explore the Vistomio app',
         ctaSecondary: 'Schedule interview'
       },
     locations: {
@@ -886,7 +886,7 @@ const translations = {
         title: 'Votre hôtel est unique, gérez-le de façon unique',
           titleHighlight: '',
           subtitle: 'Vous n\'acceptez aucun compromis sur l\'expérience que vous offrez à vos clients. Votre outil de gestion ne devrait pas en accepter non plus.',
-        ctaPrimary: 'Explorer la plateforme',
+        ctaPrimary: 'Explorez l\'app Vistomio',
         ctaSecondary: 'Planifier une entrevue'
       },
     locations: {
@@ -1586,7 +1586,7 @@ const VistomioLandingPage: React.FC = () => {
               <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
                 <a 
                   href="https://demo.vistomio.com" target="_blank" rel="noopener noreferrer" 
-                  className="w-full sm:w-auto bg-[#C6A15B] hover:bg-[#B5914A] text-boutique-navy font-semibold text-sm px-8 py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto bg-[#C6A15B] hover:bg-[#B5914A] text-white font-semibold text-sm px-8 py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2"
                 >
                   {t.hero.ctaPrimary} <ArrowRight size={16} />
                 </a>
