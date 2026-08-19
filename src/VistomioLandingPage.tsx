@@ -1795,7 +1795,7 @@ const VistomioLandingPage: React.FC = () => {
                       <card.icon size={24} />
                     </div>
                     <div>
-                      <h4 className="text-xl text-boutique-navy mb-1 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{card.title}</h4>
+                      <h4 className="text-xl text-[#B8863B] mb-1 font-serif font-normal tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{card.title}</h4>
                       <p className="text-boutique-navy text-base leading-relaxed" dangerouslySetInnerHTML={{ __html: card.desc }} />
                     </div>
                   </li>
