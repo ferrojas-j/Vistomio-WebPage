@@ -1534,7 +1534,7 @@ const VistomioLandingPage: React.FC = () => {
               </div>
             </div>
 
-            <a href="https://demo.vistomio.com" target="_blank" rel="noopener noreferrer" className="bg-[#6B4357] hover:bg-[#5a3849] text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-all flex items-center gap-2 shadow-sm">
+            <a href="https://demo.vistomio.com" target="_blank" rel="noopener noreferrer" className="bg-boutique-navy hover:bg-boutique-navy/90 text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-all flex items-center gap-2 shadow-sm">
               {t.nav.demo} <ArrowRight size={16} />
             </a>
           </div>
@@ -1557,7 +1557,7 @@ const VistomioLandingPage: React.FC = () => {
                <button onClick={() => {setLang('en'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg flex-1 ${lang === 'en' ? 'bg-slate-800 border border-slate-700/20 text-[#B8863B]' : 'text-slate-400'}`}>English</button>
                <button onClick={() => {setLang('fr'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg flex-1 ${lang === 'fr' ? 'bg-slate-800 border border-slate-700/20 text-[#B8863B]' : 'text-slate-400'}`}>Français</button>
             </div>
-            <a href="https://demo.vistomio.com" target="_blank" rel="noopener noreferrer" className="bg-[#6B4357] hover:bg-[#5a3849] text-white text-center font-semibold px-5 py-4 rounded-xl mt-4 shadow-sm">
+            <a href="https://demo.vistomio.com" target="_blank" rel="noopener noreferrer" className="bg-boutique-navy hover:bg-boutique-navy/90 text-white text-center font-semibold px-5 py-4 rounded-xl mt-4 shadow-sm">
               {t.nav.demo}
             </a>
           </div>
