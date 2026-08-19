@@ -1592,7 +1592,7 @@ const VistomioLandingPage: React.FC = () => {
                 </a>
                 <a 
                   href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} 
-                  className="w-full sm:w-auto bg-white border border-boutique-navy hover:bg-boutique-navy hover:text-white text-boutique-navy font-semibold text-sm px-8 py-3.5 rounded-lg transition-colors text-center"
+                  className="w-full sm:w-auto bg-boutique-navy text-white hover:bg-boutique-navy/90 font-semibold text-sm px-8 py-3.5 rounded-lg transition-colors text-center border-none"
                 >
                   {t.hero.ctaSecondary}
                 </a>
