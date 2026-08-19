@@ -4,9 +4,7 @@ import StaffAppSimulator from './StaffAppSimulator';
 import MockVistomioApp from './MockVistomioApp';
 import React, { useState, useEffect, useRef } from 'react';
 import {  
-  Coffee,
-  Feather,
-  Wind,
+  Check,
   CreditCard, 
   Utensils, 
   Smartphone, 
@@ -1612,40 +1610,31 @@ const VistomioLandingPage: React.FC = () => {
               </div>
               
               {/* Floating Badges */}
-              {/* Gestión: Top Left */}
-              <div className="absolute top-12 -left-4 lg:-left-12 bg-white px-5 py-4 rounded-xl shadow-xl border-[1.5px] border-[#B8863B] flex items-center gap-4 z-20 animate-[float_6s_ease-in-out_infinite] scale-[1.05]">
-                <div className="w-8 h-8 bg-[#B8863B]/15 rounded-full flex items-center justify-center text-[#6B4357]">
-                    <Feather size={14} strokeWidth={1.5} />
+                              {/* Gestión: Top Left */}
+                <div className="absolute top-12 -left-4 lg:-left-12 bg-white px-5 py-3.5 rounded-full shadow-lg border border-gray-100 flex items-center gap-3 z-20 animate-[float_6s_ease-in-out_infinite] scale-[1.05]">
+                  <Check size={18} strokeWidth={2.5} className="text-boutique-navy" />
+                  <div className="text-[13px] md:text-sm font-bold text-boutique-navy leading-none">
+                     {lang === 'es' ? 'Administración automatizada' : lang === 'en' ? 'Automated management' : 'Administration automatisée'}
                   </div>
-                <div>
-                  <div className="text-[10px] font-bold text-boutique-navy uppercase tracking-wider leading-none mb-1">{(t as any).heroBadges?.badge1Top || 'GESTION'}</div>
-                  <div className="text-sm font-extrabold text-boutique-navy leading-none">{(t as any).heroBadges?.badge1Bottom || 'Estrés cero'}</div>
                 </div>
-              </div>
 
-              {/* Resultado: Top Right */}
-              <div className="absolute top-8 -right-4 lg:-right-16 bg-white px-5 py-4 rounded-xl shadow-xl border-[1.5px] border-[#B8863B] flex items-center gap-4 z-20 animate-[float_5s_ease-in-out_infinite_1s] scale-[1.05]">
-                <div className="w-8 h-8 bg-[#B8863B]/15 rounded-full flex items-center justify-center text-[#6B4357]">
-                    <Wind size={14} strokeWidth={1.5} />
+                {/* Resultado: Top Right */}
+                <div className="absolute top-8 -right-4 lg:-right-16 bg-white px-5 py-3.5 rounded-full shadow-lg border border-gray-100 flex items-center gap-3 z-20 animate-[float_5s_ease-in-out_infinite_1s] scale-[1.05]">
+                  <Check size={18} strokeWidth={2.5} className="text-boutique-navy" />
+                  <div className="text-[13px] md:text-sm font-bold text-boutique-navy leading-none">
+                     {lang === 'es' ? 'Operación optimizada' : lang === 'en' ? 'Optimized operation' : 'Opération optimisée'}
                   </div>
-                <div>
-                  <div className="text-[10px] font-bold text-boutique-navy uppercase tracking-wider leading-none mb-1">{(t as any).heroBadges?.badge2Top || 'RÉSULTAT'}</div>
-                  <div className="text-sm font-extrabold text-boutique-navy leading-none">{(t as any).heroBadges?.badge2Bottom || '+ Calidad de Service'}</div>
                 </div>
-              </div>
 
-              {/* Eficiencia: Bottom Right */}
-                              <div className="absolute bottom-16 -right-4 lg:-right-12 bg-white px-5 py-4 rounded-xl shadow-xl border-[1.5px] border-[#B8863B] flex items-center gap-4 z-20 animate-[float_7s_ease-in-out_infinite_2s] scale-[1.05]">
-                <div className="w-8 h-8 bg-[#B8863B]/15 rounded-full flex items-center justify-center text-[#6B4357]">
-                    <Coffee size={14} strokeWidth={1.5} />
+                {/* Eficiencia: Bottom Right */}
+                <div className="absolute bottom-16 -right-4 lg:-right-12 bg-white px-5 py-3.5 rounded-full shadow-lg border border-gray-100 flex items-center gap-3 z-20 animate-[float_7s_ease-in-out_infinite_2s] scale-[1.05]">
+                  <Check size={18} strokeWidth={2.5} className="text-boutique-navy" />
+                  <div className="text-[13px] md:text-sm font-bold text-boutique-navy leading-none">
+                     {lang === 'es' ? 'Más tiempo para lo importante' : lang === 'en' ? 'More time for what matters' : 'Plus de temps pour l\'essentiel'}
                   </div>
-                <div>
-                  <div className="text-[10px] font-bold text-boutique-navy uppercase tracking-wider leading-none mb-1">{(t as any).heroBadges?.badge3Top || 'EFFICACITÉ'}</div>
-                  <div className="text-sm font-extrabold text-boutique-navy leading-none">{(t as any).heroBadges?.badge3Bottom || '+ Temps Libre'}</div>
                 </div>
-              </div>
 
-              {/* SVG Arrow connecting Eficiencia to Resultado */}
+                {/* SVG Arrow connecting Eficiencia to Resultado */}
             </div>
           </div>
         </div>
