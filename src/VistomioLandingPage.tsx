@@ -1612,7 +1612,7 @@ const VistomioLandingPage: React.FC = () => {
               {/* Floating Badges */}
                               {/* Gestión: Top Left */}
                 <div className="absolute top-12 -left-4 lg:-left-12 bg-white px-5 py-3.5 rounded-full shadow-lg border border-gray-100 flex items-center gap-3 z-20 animate-[float_6s_ease-in-out_infinite] scale-[1.05]">
-                  <Check size={18} strokeWidth={2.5} className="text-boutique-navy" />
+                  <Check size={18} strokeWidth={2.5} className="text-[#B8863B]" />
                   <div className="text-[13px] md:text-sm font-bold text-boutique-navy leading-none">
                      {lang === 'es' ? 'Administración automatizada' : lang === 'en' ? 'Automated management' : 'Administration automatisée'}
                   </div>
@@ -1620,7 +1620,7 @@ const VistomioLandingPage: React.FC = () => {
 
                 {/* Resultado: Top Right */}
                 <div className="absolute top-8 -right-4 lg:-right-16 bg-white px-5 py-3.5 rounded-full shadow-lg border border-gray-100 flex items-center gap-3 z-20 animate-[float_5s_ease-in-out_infinite_1s] scale-[1.05]">
-                  <Check size={18} strokeWidth={2.5} className="text-boutique-navy" />
+                  <Check size={18} strokeWidth={2.5} className="text-[#B8863B]" />
                   <div className="text-[13px] md:text-sm font-bold text-boutique-navy leading-none">
                      {lang === 'es' ? 'Operación optimizada' : lang === 'en' ? 'Optimized operation' : 'Opération optimisée'}
                   </div>
@@ -1628,7 +1628,7 @@ const VistomioLandingPage: React.FC = () => {
 
                 {/* Eficiencia: Bottom Right */}
                 <div className="absolute bottom-16 -right-4 lg:-right-12 bg-white px-5 py-3.5 rounded-full shadow-lg border border-gray-100 flex items-center gap-3 z-20 animate-[float_7s_ease-in-out_infinite_2s] scale-[1.05]">
-                  <Check size={18} strokeWidth={2.5} className="text-boutique-navy" />
+                  <Check size={18} strokeWidth={2.5} className="text-[#B8863B]" />
                   <div className="text-[13px] md:text-sm font-bold text-boutique-navy leading-none">
                      {lang === 'es' ? 'Más tiempo para lo importante' : lang === 'en' ? 'More time for what matters' : 'Plus de temps pour l\'essentiel'}
                   </div>
