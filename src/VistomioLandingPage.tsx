@@ -71,7 +71,7 @@ const translations = {
       titleHighlight: '',
       subtitle: 'Si usted no acepta concesiones en el servicio que ofrece a sus huéspedes, su sistema de gestión tampoco debería hacerlo.',
       ctaPrimary: 'Explora la app de Vistomio',
-      ctaSecondary: 'Agendar entrevista'
+      ctaSecondary: 'Solicita un diagnóstico gratuito'
     },
     locations: {
       noga: 'Zipolite, México',
@@ -480,7 +480,7 @@ const translations = {
         titleHighlight: '',
         subtitle: 'If you do not accept concessions in the service you offer your guests, your management system shouldn\'t either.',
         ctaPrimary: 'Explore the Vistomio app',
-        ctaSecondary: 'Schedule interview'
+        ctaSecondary: 'Request a free diagnostic'
       },
     locations: {
       noga: 'Zipolite, Mexico',
@@ -887,7 +887,7 @@ const translations = {
           titleHighlight: '',
           subtitle: 'Vous n\'acceptez aucun compromis sur l\'expérience que vous offrez à vos clients. Votre outil de gestion ne devrait pas en accepter non plus.',
         ctaPrimary: 'Explorez l\'app Vistomio',
-        ctaSecondary: 'Planifier une entrevue'
+        ctaSecondary: 'Demandez un diagnostic gratuit'
       },
     locations: {
       noga: 'Zipolite, Mexique',
