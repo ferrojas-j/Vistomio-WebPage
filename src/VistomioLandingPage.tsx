@@ -2564,7 +2564,14 @@ const VistomioLandingPage: React.FC = () => {
                 const isPremium = idx === 2;
                 const isPro = idx === 1;
                 return (
-                  <div key={idx} className="bg-white rounded-[2rem] p-8 border-[#13203A] border-[1.5px] shadow-sm flex flex-col relative mt-4 overflow-hidden transition-all duration-300">
+                  <div key={idx} className={`bg-white rounded-[2rem] p-8 border-[1.5px] overflow-hidden transition-all duration-300 flex flex-col ${isPro ? 'border-[#B8863B] shadow-xl relative mt-0 lg:-mt-4 lg:mb-4' : 'border-[#13203A] shadow-sm relative mt-4'}`}>
+                    
+                    {isPro && (
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-[#B8863B] text-white text-[11px] font-bold uppercase tracking-[0.1em] py-1.5 px-6 rounded-b-lg flex items-center gap-1.5 z-10">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                        {lang === 'es' ? 'MÁS POPULAR' : lang === 'en' ? 'MOST POPULAR' : 'PLUS POPULAIRE'}
+                      </div>
+                    )}
                     
 
                     <div className="flex items-center gap-4 mb-8">
