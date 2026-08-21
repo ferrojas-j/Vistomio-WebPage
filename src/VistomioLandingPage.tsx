@@ -2457,7 +2457,7 @@ const VistomioLandingPage: React.FC = () => {
                         {lang === 'es' ? 'Ahorras' : lang === 'en' ? 'Save' : 'Économisez'} {savings}{symbol} / {lang === 'es' ? 'año' : lang === 'en' ? 'year' : 'an'}
                       </div>
                     ) : (
-                      <div className="h-8 mb-8"></div>
+                      <div className="h-4"></div>
                     )}
 
                     <div className="mb-6">
@@ -2525,20 +2525,20 @@ const VistomioLandingPage: React.FC = () => {
                   {/* Decorative glow */}
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-40 bg-[#B8863B]/15 blur-[30px] rounded-full pointer-events-none"></div>
 
-                  <div className="mb-4 flex items-baseline gap-1 relative z-10">
-                    <span className="text-5xl font-extrabold text-white">{getPriceInfo('addon').current}</span>
-                    <span className="text-2xl font-bold text-[#B8863B]">{currency === 'EUR' ? '€' : '$'}</span>
-                    <span className="text-gray-400 text-sm ml-1">{t.pricing.addon.period}</span>
-                  </div>
-                  
-                  {billingCycle === 'annual' ? (
-                    <div className="bg-[#6E7B4A] text-white text-xs font-bold px-4 py-2 rounded-full inline-flex items-center gap-1.5 mb-6 relative z-10 shadow-lg shadow-[#6E7B4A]/30 border border-white/10">
-                      <CheckCircle2 className="w-3.5 h-3.5" />
-                      {lang === 'es' ? 'Ahorras' : lang === 'en' ? 'Save' : 'Économisez'} {getPriceInfo('addon').savings}{currency === 'EUR' ? '€' : '$'} / {lang === 'es' ? 'año' : lang === 'en' ? 'year' : 'an'}
+                  <div className="flex-1 flex flex-col items-center justify-center w-full relative z-10 py-6">
+                    <div className={`flex items-baseline gap-1 ${billingCycle === 'annual' ? 'mb-5' : 'mb-0'}`}>
+                      <span className="text-5xl font-extrabold text-white tracking-tight">{getPriceInfo('addon').current}</span>
+                      <span className="text-2xl font-bold text-[#B8863B]">{currency === 'EUR' ? '€' : '$'}</span>
+                      <span className="text-gray-400 text-sm ml-1">{t.pricing.addon.period}</span>
                     </div>
-                  ) : (
-                    <div className="h-10 mb-6"></div>
-                  )}
+                    
+                    {billingCycle === 'annual' && (
+                      <div className="bg-[#6E7B4A] text-white text-xs font-bold px-4 py-2 rounded-full inline-flex items-center gap-1.5 relative shadow-lg shadow-[#6E7B4A]/30 border border-white/10">
+                        <CheckCircle2 className="w-3.5 h-3.5" />
+                        {lang === 'es' ? 'Ahorras' : lang === 'en' ? 'Save' : 'Économisez'} {getPriceInfo('addon').savings}{currency === 'EUR' ? '€' : '$'} / {lang === 'es' ? 'año' : lang === 'en' ? 'year' : 'an'}
+                      </div>
+                    )}
+                  </div>
                   
                   <div className="w-full bg-white/5 rounded-2xl p-4 mt-auto flex justify-between items-center text-sm font-semibold border border-white/10 relative z-10 backdrop-blur-md">
                     <span className="text-gray-400 tracking-wide uppercase">Setup:</span>
@@ -2589,7 +2589,7 @@ const VistomioLandingPage: React.FC = () => {
                         {lang === 'es' ? 'Ahorras' : lang === 'en' ? 'Save' : 'Économisez'} {getPriceInfo('chatbot', idx).savings}{currency === 'EUR' ? '€' : '$'} / {lang === 'es' ? 'año' : lang === 'en' ? 'year' : 'an'}
                       </div>
                     ) : (
-                      <div className="h-8 mb-8"></div>
+                      <div className="h-4"></div>
                     )}
 
                     <ul className="space-y-4 mb-8 flex-1">
