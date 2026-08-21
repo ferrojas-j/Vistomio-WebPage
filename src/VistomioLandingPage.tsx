@@ -2494,26 +2494,30 @@ const VistomioLandingPage: React.FC = () => {
                 </ul>
               </div>
               
-              <div className="md:w-72 shrink-0 bg-[#A8986B] p-8 rounded-3xl text-white flex flex-col items-center justify-center text-center relative shadow-inner">
-                <div className="mb-2 flex items-baseline gap-1">
-                  <span className="text-5xl font-extrabold">{convertPrice(billingCycle === 'annual' ? t.pricing.addon.annualPrice : t.pricing.addon.monthlyPrice)}</span>
-                  <span className="text-2xl font-semibold">{currency === 'EUR' ? '€' : '$'}</span>
-                  <span className="text-white/80 text-sm">{t.pricing.addon.period}</span>
-                </div>
-                
-                {billingCycle === 'annual' ? (
-                  <div className="bg-white text-boutique-navy text-[11px] font-bold px-3 py-1.5 rounded-md inline-flex items-center mb-6">
-                    {lang === 'es' ? 'Ahorras' : lang === 'en' ? 'Save' : 'Économisez'} {convertPrice(t.pricing.addon.savings)}{currency === 'EUR' ? '€' : '$'} / {lang === 'es' ? 'año' : lang === 'en' ? 'year' : 'an'}
+              <div className="md:w-72 shrink-0 bg-gradient-to-b from-[#13203A] to-[#0A111F] p-8 rounded-3xl text-white flex flex-col items-center justify-center text-center relative shadow-xl overflow-hidden border border-[#B8863B]/30">
+                  {/* Decorative glow */}
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-40 bg-[#B8863B]/15 blur-[30px] rounded-full pointer-events-none"></div>
+
+                  <div className="mb-4 flex items-baseline gap-1 relative z-10">
+                    <span className="text-5xl font-extrabold text-white">{convertPrice(billingCycle === 'annual' ? t.pricing.addon.annualPrice : t.pricing.addon.monthlyPrice)}</span>
+                    <span className="text-2xl font-bold text-[#B8863B]">{currency === 'EUR' ? '€' : '$'}</span>
+                    <span className="text-gray-400 text-sm ml-1">{t.pricing.addon.period}</span>
                   </div>
-                ) : (
-                  <div className="h-7 mb-6"></div>
-                )}
-                
-                <div className="w-full border-t border-white/20 pt-4 mt-auto flex justify-between items-center text-sm font-semibold">
-                  <span className="text-white/90">Setup:</span>
-                  <span>{convertPrice(t.pricing.addon.setup)}{currency === 'EUR' ? '€' : '$'}</span>
+                  
+                  {billingCycle === 'annual' ? (
+                    <div className="bg-[#6E7B4A] text-white text-xs font-bold px-4 py-2 rounded-full inline-flex items-center gap-1.5 mb-6 relative z-10 shadow-lg shadow-[#6E7B4A]/30 border border-white/10">
+                      <CheckCircle2 className="w-3.5 h-3.5" />
+                      {lang === 'es' ? 'Ahorras' : lang === 'en' ? 'Save' : 'Économisez'} {convertPrice(t.pricing.addon.savings)}{currency === 'EUR' ? '€' : '$'} / {lang === 'es' ? 'año' : lang === 'en' ? 'year' : 'an'}
+                    </div>
+                  ) : (
+                    <div className="h-10 mb-6"></div>
+                  )}
+                  
+                  <div className="w-full bg-white/5 rounded-2xl p-4 mt-auto flex justify-between items-center text-sm font-semibold border border-white/10 relative z-10 backdrop-blur-md">
+                    <span className="text-gray-400 tracking-wide uppercase">Setup:</span>
+                    <span className="text-white text-lg font-bold">{convertPrice(t.pricing.addon.setup)}{currency === 'EUR' ? '€' : '$'}</span>
+                  </div>
                 </div>
-              </div>
             </div>
           </div>
 
