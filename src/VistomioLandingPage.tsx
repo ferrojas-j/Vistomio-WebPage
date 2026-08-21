@@ -2360,34 +2360,34 @@ const VistomioLandingPage: React.FC = () => {
             </div>
             
             <div className="flex flex-col md:flex-row items-center gap-6">
-              <div className="flex bg-slate-100 p-1 rounded-full border border-gray-200">
+              <div className="flex bg-white p-1.5 rounded-full border border-[#B8863B]/30 shadow-[0_8px_30px_-12px_rgba(184,134,59,0.2)] relative">
                 <button 
                   onClick={() => setCurrency('EUR')}
-                  className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors ${currency === 'EUR' ? 'bg-white text-boutique-navy shadow-sm' : 'text-gray-500 hover:text-boutique-navy'}`}
+                  className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${currency === 'EUR' ? 'bg-boutique-navy text-white shadow-md transform scale-[1.02]' : 'text-boutique-navy/60 hover:text-boutique-navy hover:bg-gray-50'}`}
                 >
                   EUR €
                 </button>
                 <button 
                   onClick={() => setCurrency('USD')}
-                  className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors ${currency === 'USD' ? 'bg-white text-boutique-navy shadow-sm' : 'text-gray-500 hover:text-boutique-navy'}`}
+                  className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${currency === 'USD' ? 'bg-boutique-navy text-white shadow-md transform scale-[1.02]' : 'text-boutique-navy/60 hover:text-boutique-navy hover:bg-gray-50'}`}
                 >
                   USD $
                 </button>
               </div>
 
-              <div className="flex bg-slate-100 p-1 rounded-full border border-gray-200 items-center">
+              <div className="flex bg-white p-1.5 rounded-full border border-[#B8863B]/30 shadow-[0_8px_30px_-12px_rgba(184,134,59,0.2)] items-center relative">
                 <button 
                   onClick={() => setBillingCycle('monthly')}
-                  className={`px-6 py-2 rounded-full text-sm font-semibold transition-colors ${billingCycle === 'monthly' ? 'bg-white text-boutique-navy shadow-sm' : 'text-gray-500 hover:text-boutique-navy'}`}
+                  className={`px-6 md:px-8 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${billingCycle === 'monthly' ? 'bg-boutique-navy text-white shadow-md transform scale-[1.02]' : 'text-boutique-navy/60 hover:text-boutique-navy hover:bg-gray-50'}`}
                 >
                   {lang === 'es' ? 'Mensual' : lang === 'en' ? 'Monthly' : 'Mensuel'}
                 </button>
                 <button 
                   onClick={() => setBillingCycle('annual')}
-                  className={`flex items-center gap-2 px-6 py-2 rounded-full text-sm font-semibold transition-colors ${billingCycle === 'annual' ? 'bg-boutique-navy text-white shadow-sm' : 'text-gray-500 hover:text-boutique-navy'}`}
+                  className={`flex items-center gap-2.5 px-6 md:px-8 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${billingCycle === 'annual' ? 'bg-boutique-navy text-white shadow-md transform scale-[1.02]' : 'text-boutique-navy/60 hover:text-boutique-navy hover:bg-gray-50'}`}
                 >
                   {lang === 'es' ? 'Anual' : lang === 'en' ? 'Annual' : 'Annuel'}
-                  <span className={`text-[10px] px-2 py-0.5 rounded-full ${billingCycle === 'annual' ? 'bg-[#6E7B4A] text-white' : 'bg-[#6E7B4A]/20 text-[#6E7B4A]'}`}>
+                  <span className={`text-[10px] px-2.5 py-1 rounded-full font-extrabold tracking-wider transition-colors ${billingCycle === 'annual' ? 'bg-[#6E7B4A] text-white shadow-inner' : 'bg-[#6E7B4A]/15 text-[#6E7B4A]'}`}>
                     {lang === 'es' ? 'AHORRA 15%' : lang === 'en' ? 'SAVE 15%' : 'ÉCONOMISEZ 15%'}
                   </span>
                 </button>
