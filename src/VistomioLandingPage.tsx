@@ -374,66 +374,77 @@ const translations = {
       selectedModules: 'Módulos Seleccionados',
       requestQuoteBtn: 'Solicitar cotización de mi plan',
       plans: [
-        {
-          name: 'Esencial',
-          quote: '"Digitaliza tu gestión sin complicaciones."',
-          setupPrice: 'Setup: 400€',
-          monthlyPrice: '250€',
-          period: '/mes',
-          features: [
-            { name: 'Dashboard General', desc: 'vista general en tiempo real de la operación' },
-            { name: 'Motor de Reservas y Channel Manager', desc: 'calendario multicanal o conexión API del PMS' },
-            { name: 'Check-in y Gestión de Huéspedes', desc: 'llegadas, firmas, idioma del huésped' }
-          ],
-          baseText: 'Ideal para reemplazar sistemas caseros o hojas de cálculo.',
-          cta: 'Comenzar',
-          highlight: false
-        },
-        {
-          name: 'Crecimiento',
-          quote: '"Toma el control financiero de un vistazo."',
-          setupPrice: 'Setup: 500€',
-          monthlyPrice: '400€',
-          period: '/mes',
-          features: [
-            { name: 'Todo el plan Esencial', desc: '' },
-            { name: 'Pagos y Facturación', desc: 'cobros, pasarelas digitales, facturación' },
-            { name: 'Administración y Finanzas', desc: 'resumen ejecutivo, rentabilidad por departamento' }
-          ],
-          baseText: 'Para el propietario-gerente enfocado en rentabilidad.',
-          cta: 'Comenzar',
-          highlight: false
-        },
-        {
-          name: 'Signature',
-          quote: '"Más tiempo para tus huéspedes, menos papeleo."',
-          setupPrice: 'Setup: 700€',
-          monthlyPrice: '600€',
-          period: '/mes',
-          features: [
-            { name: 'Todo el plan Crecimiento', desc: '' },
-            { name: 'Restaurante / Bar', desc: 'POS integrado, ventas, división de cuentas' },
-            { name: 'Operaciones Diarias y Recursos', desc: 'inventario, alertas de personal y de stock' },
-            { name: 'Reportes', desc: 'informes personalizados a medida' }
-          ],
-          baseText: 'Gestión integral sin fisuras para hoteles boutique.',
-          cta: 'Comenzar',
-          highlight: false
-        }
-      ],
-      addon: {
-        name: 'Add-on transversal — Chatbot IA',
-        quote: '"Una atención disponible en todo momento, a la altura de tu reputación."',
-        features: [
-          'Asistente multicanal (WhatsApp, Instagram, Messenger, Web Chat).',
-          'Responde a consultas de disponibilidad y tarifas de forma continua.',
-          'Compatible con cualquier plan (solo o complemento).'
+          {
+            name: 'Esencial',
+            quote: '"Sal del caos de Excel o papel, sin cambiar tu forma de trabajar."',
+            setup: '550',
+            monthlyPrice: '260',
+            annualPrice: '221',
+            savings: '468',
+            period: '/mes',
+            features: [
+              { name: 'Dashboard General', desc: 'vista general en tiempo real de la operación' },
+              { name: 'Motor de Reservas y Channel Manager', desc: 'calendario de reservas multicanal' },
+              { name: 'Check-in y Gestión de Huéspedes', desc: 'llegadas, documentos, idioma' }
+            ],
+            baseText: 'El punto de entrada natural: reemplaza el sistema casero o la hoja de cálculo. No incluye visibilidad financiera consolidada.',
+            cta: 'Comenzar',
+            highlight: false
+          },
+          {
+            name: 'Crecimiento',
+            quote: '"Toma el control: sabe dónde ganas y dónde pierdes, y haz crecer tu rentabilidad."',
+            setup: '750',
+            monthlyPrice: '440',
+            annualPrice: '374',
+            savings: '792',
+            period: '/mes',
+            features: [
+              { name: 'Todo el plan Esencial', desc: '' },
+              { name: 'Pagos y Facturación', desc: 'cobros, pasarelas digitales, facturación' },
+              { name: 'Administración y Finanzas', desc: 'resumen ejecutivo, rentabilidad' }
+            ],
+            baseText: 'El plan central: pensado para el propietario-gerente que quiere gestionar activamente su rentabilidad, no solo sus reservas.',
+            cta: 'Comenzar',
+            highlight: true
+          },
+          {
+            name: 'Signature',
+            quote: '"Convierte la excelencia operativa en tu estándar, de la trastienda a la recepción."',
+            setup: '1100',
+            monthlyPrice: '890',
+            annualPrice: '757',
+            savings: '1602',
+            period: '/mes',
+            features: [
+              { name: 'Todo el plan Crecimiento', desc: '' },
+              { name: 'Restaurante / Bar', desc: 'POS integrado, ventas, división de cuentas' },
+              { name: 'Operaciones Diarias y Recursos', desc: 'inventario, alertas de stock' },
+              { name: 'Reportes', desc: 'informes personalizados a medida' }
+            ],
+            baseText: 'La vitrina premium de Vistomio: para el hotel boutique completo que busca una gestión sin fisuras.',
+            cta: 'Comenzar',
+            highlight: false
+          }
         ],
-        baseText: 'La primera pieza del servicio al cliente automatizado de alta gama.',
-        price: 'Desde 150€/mes',
-        cta: 'Ver Demo'
-      },
-      enterprise: {
+        addon: {
+          name: 'Plan Independiente — Mesa',
+          quote: '',
+          features: [
+            'POS Vistomio',
+            'Dashboard financiero',
+            'Módulo para pagos y Facturación',
+            'Seguimiento de inventario'
+          ],
+          baseText: 'Pensado para negocios de restauración independientes (restaurantes, bares, beach clubs) que buscan la misma exigencia operativa, sin los módulos hoteleros.',
+          setup: '400',
+          monthlyPrice: '190',
+          annualPrice: '162',
+          savings: '342',
+          period: '/mes',
+          cta: 'Ver Demo'
+        },
+        enterprise: {
         title: '¿Necesitas algo a la medida?',
         desc: 'Construimos una arquitectura de software única para cadenas boutique o propiedades con operaciones complejas.',
         cta: '¡Hablemos!'
@@ -781,66 +792,77 @@ const translations = {
       selectedModules: 'Selected Modules',
       requestQuoteBtn: 'Request quote for my plan',
       plans: [
-        {
-          name: 'Essential',
-          quote: '"Digitize your management without complications."',
-          setupPrice: 'Setup: 400€',
-          monthlyPrice: '250€',
-          period: '/mo',
-          features: [
-            { name: 'General Dashboard', desc: 'real-time operation overview' },
-            { name: 'Booking Engine & Channel Manager', desc: 'multi-channel calendar or PMS API connection' },
-            { name: 'Check-in & Guest Management', desc: 'arrivals, document signing, guest language' }
-          ],
-          baseText: 'Ideal for replacing homegrown systems or spreadsheets.',
-          cta: 'Start',
-          highlight: false
-        },
-        {
-          name: 'Growth',
-          quote: '"Take financial control at a glance."',
-          setupPrice: 'Setup: 500€',
-          monthlyPrice: '400€',
-          period: '/mo',
-          features: [
-            { name: 'Everything in Essential', desc: '' },
-            { name: 'Payments & Invoicing', desc: 'collections, digital gateways, invoicing' },
-            { name: 'Administration & Finance', desc: 'executive summary, profitability by department' }
-          ],
-          baseText: 'For the owner-manager focused on profitability.',
-          cta: 'Start',
-          highlight: false
-        },
-        {
-          name: 'Signature',
-          quote: '"More time for guests, less paperwork."',
-          setupPrice: 'Setup: 700€',
-          monthlyPrice: '600€',
-          period: '/mo',
-          features: [
-            { name: 'Everything in Growth', desc: '' },
-            { name: 'Restaurant / Bar', desc: 'Integrated POS, sales, bill splitting' },
-            { name: 'Daily Operations & Resources', desc: 'inventory, staff and stock alerts' },
-            { name: 'Reporting', desc: 'custom tailored reports' }
-          ],
-          baseText: 'Seamless comprehensive management for boutique hotels.',
-          cta: 'Start',
-          highlight: false
-        }
-      ],
-      addon: {
-        name: 'Transversal Add-on — AI Chatbot',
-        quote: '"Always-on service, matching your reputation."',
-        features: [
-          'Multi-channel assistant (WhatsApp, Instagram, Messenger, Web Chat).',
-          'Answers availability and rate queries continuously.',
-          'Compatible with any plan (sold alone or as an add-on).'
+          {
+            name: 'Essential',
+            quote: '"Escape Excel chaos without changing how you work."',
+            setup: '550',
+            monthlyPrice: '260',
+            annualPrice: '221',
+            savings: '468',
+            period: '/mo',
+            features: [
+              { name: 'General Dashboard', desc: 'real-time overview of the operation' },
+              { name: 'Booking Engine & Channel Manager', desc: 'multi-channel reservation calendar' },
+              { name: 'Check-in & Guest Management', desc: 'arrivals, documents, language' }
+            ],
+            baseText: 'The natural entry point: replaces homegrown systems or spreadsheets. No consolidated financial visibility.',
+            cta: 'Start',
+            highlight: false
+          },
+          {
+            name: 'Growth',
+            quote: '"Take control: know where you win and lose, and grow your profitability."',
+            setup: '750',
+            monthlyPrice: '440',
+            annualPrice: '374',
+            savings: '792',
+            period: '/mo',
+            features: [
+              { name: 'Everything in Essential', desc: '' },
+              { name: 'Payments & Invoicing', desc: 'collections, digital gateways, invoicing' },
+              { name: 'Administration & Finance', desc: 'executive summary, profitability' }
+            ],
+            baseText: 'The core plan: for the owner-manager who wants to actively manage profitability, not just reservations.',
+            cta: 'Start',
+            highlight: true
+          },
+          {
+            name: 'Signature',
+            quote: '"Make operational excellence your standard, from back office to front desk."',
+            setup: '1100',
+            monthlyPrice: '890',
+            annualPrice: '757',
+            savings: '1602',
+            period: '/mo',
+            features: [
+              { name: 'Everything in Growth', desc: '' },
+              { name: 'Restaurant / Bar', desc: 'Integrated POS, sales, bill splitting' },
+              { name: 'Daily Operations & Resources', desc: 'inventory, stock alerts' },
+              { name: 'Reporting', desc: 'custom tailored reports' }
+            ],
+            baseText: 'Vistomio\'s premium showcase: for the complete boutique hotel seeking seamless management.',
+            cta: 'Start',
+            highlight: false
+          }
         ],
-        baseText: 'The first piece of high-end automated customer service.',
-        price: 'From 150€/mo',
-        cta: 'View Demo'
-      },
-      enterprise: {
+        addon: {
+          name: 'Independent Plan — Table',
+          quote: '',
+          features: [
+            'Vistomio POS',
+            'Financial dashboard',
+            'Payments & Invoicing module',
+            'Inventory tracking'
+          ],
+          baseText: 'Designed for independent food & beverage businesses (restaurants, bars, beach clubs) seeking the same operational excellence, without hotel modules.',
+          setup: '400',
+          monthlyPrice: '190',
+          annualPrice: '162',
+          savings: '342',
+          period: '/mo',
+          cta: 'View Demo'
+        },
+        enterprise: {
         title: 'Need a custom solution?',
         desc: 'We build unique software architectures for boutique chains or properties with complex operations.',
         cta: "Let's talk!"
@@ -1186,66 +1208,77 @@ const translations = {
       selectedModules: 'Modules Sélectionnés',
       requestQuoteBtn: 'Demander un devis pour mon plan',
       plans: [
-        {
-          name: 'Essentiel',
-          quote: '"Digitalisez votre gestion sans complications."',
-          setupPrice: 'Installation: 400€',
-          monthlyPrice: '250€',
-          period: '/mois',
-          features: [
-            { name: 'Tableau de bord général', desc: 'aperçu en temps réel de l\'opération' },
-            { name: 'Moteur de réservation & Channel Manager', desc: 'calendrier multicanal ou connexion API PMS' },
-            { name: 'Check-in et Gestion des hôtes', desc: 'arrivées, signatures, langue de l\'hôte' }
-          ],
-          baseText: 'Idéal pour remplacer les systèmes maison ou les feuilles de calcul.',
-          cta: 'Démarrer',
-          highlight: false
-        },
-        {
-          name: 'Croissance',
-          quote: '"Prenez le contrôle financier en un coup d\'œil."',
-          setupPrice: 'Installation: 500€',
-          monthlyPrice: '400€',
-          period: '/mois',
-          features: [
-            { name: 'Tout le plan Essentiel', desc: '' },
-            { name: 'Paiements & Facturation', desc: 'encaissements, passerelles numériques, facturation' },
-            { name: 'Administration et Finances', desc: 'résumé exécutif, rentabilité par département' }
-          ],
-          baseText: 'Pour le propriétaire-gérant axé sur la rentabilité.',
-          cta: 'Démarrer',
-          highlight: false
-        },
-        {
-          name: 'Signature',
-          quote: '"Plus de temps pour les clients, moins de paperasse."',
-          setupPrice: 'Installation: 700€',
-          monthlyPrice: '600€',
-          period: '/mois',
-          features: [
-            { name: 'Tout le plan Croissance', desc: '' },
-            { name: 'Restaurant / Bar', desc: 'POS intégré, ventes, partage de notes' },
-            { name: 'Opérations quotidiennes', desc: 'inventaire, alertes de personnel et de stock' },
-            { name: 'Rapports', desc: 'rapports personnalisés sur mesure' }
-          ],
-          baseText: 'Gestion complète et fluide pour les hôtels-boutiques.',
-          cta: 'Démarrer',
-          highlight: false
-        }
-      ],
-      addon: {
-        name: 'Add-on Transversal — Chatbot IA',
-        quote: '"Un service toujours disponible, à la hauteur de votre réputation."',
-        features: [
-          'Assistant multicanal (WhatsApp, Instagram, Messenger, Web Chat).',
-          'Répond aux demandes de disponibilité et de tarifs en continu.',
-          'Compatible avec tout plan (vendu seul ou en complément).'
+          {
+            name: 'Essentiel',
+            quote: '"Sortez du chaos d\'Excel sans changer votre façon de travailler."',
+            setup: '550',
+            monthlyPrice: '260',
+            annualPrice: '221',
+            savings: '468',
+            period: '/mois',
+            features: [
+              { name: 'Tableau de bord général', desc: 'aperçu en temps réel de l\'opération' },
+              { name: 'Moteur de Réservation & Channel Manager', desc: 'calendrier de réservations multicanal' },
+              { name: 'Check-in et Gestion des Hôtes', desc: 'arrivées, documents, langue' }
+            ],
+            baseText: 'Le point d\'entrée naturel : remplace le système maison ou le tableur. N\'inclut pas de visibilité financière consolidée.',
+            cta: 'Démarrer',
+            highlight: false
+          },
+          {
+            name: 'Croissance',
+            quote: '"Prenez le contrôle : sachez où vous gagnez et perdez, et augmentez votre rentabilité."',
+            setup: '750',
+            monthlyPrice: '440',
+            annualPrice: '374',
+            savings: '792',
+            period: '/mois',
+            features: [
+              { name: 'Tout le plan Essentiel', desc: '' },
+              { name: 'Paiements & Facturation', desc: 'encaissements, passerelles numériques, facturation' },
+              { name: 'Administration et Finances', desc: 'résumé exécutif, rentabilité' }
+            ],
+            baseText: 'Le plan central : pensé pour le propriétaire-gérant qui veut gérer activement sa rentabilité, pas seulement ses réservations.',
+            cta: 'Démarrer',
+            highlight: true
+          },
+          {
+            name: 'Signature',
+            quote: '"Faites de l\'excellence opérationnelle votre norme, du back-office à la réception."',
+            setup: '1100',
+            monthlyPrice: '890',
+            annualPrice: '757',
+            savings: '1602',
+            period: '/mois',
+            features: [
+              { name: 'Tout le plan Croissance', desc: '' },
+              { name: 'Restaurant / Bar', desc: 'POS intégré, ventes, partage de notes' },
+              { name: 'Opérations Quotidiennes & Ressources', desc: 'inventaire, alertes de stock' },
+              { name: 'Rapports', desc: 'rapports personnalisés sur mesure' }
+            ],
+            baseText: 'La vitrine premium de Vistomio : pour l\'hôtel boutique complet qui cherche une gestion sans faille.',
+            cta: 'Démarrer',
+            highlight: false
+          }
         ],
-        baseText: 'La première pièce du service client automatisé haut de gamme.',
-        price: 'Dès 150€/mois',
-        cta: 'Voir Démo'
-      },
-      enterprise: {
+        addon: {
+          name: 'Plan Indépendant — Table',
+          quote: '',
+          features: [
+            'POS Vistomio',
+            'Tableau de bord financier',
+            'Module de paiements et facturation',
+            'Suivi des stocks'
+          ],
+          baseText: 'Pensé pour les entreprises de restauration indépendantes (restaurants, bars, clubs de plage) cherchant la même exigence opérationnelle, sans les modules hôteliers.',
+          setup: '400',
+          monthlyPrice: '190',
+          annualPrice: '162',
+          savings: '342',
+          period: '/mois',
+          cta: 'Voir Démo'
+        },
+        enterprise: {
         title: 'Besoin de sur-mesure ?',
         desc: 'Nous concevons une architecture logicielles uniques pour les chaînes de boutiques ou les propriétés avec des opérations complexes.',
         cta: 'Parlons-en !'
@@ -1279,6 +1312,9 @@ const GalloAzulLogo: React.FC<{size?: number, className?: string}> = ({ size = 2
 
 const VistomioLandingPage: React.FC = () => {
   const [lang, setLang] = useState<Language>('es');
+  const [billingCycle, setBillingCycle] = useState<'monthly'|'annual'>('annual');
+  const [currency, setCurrency] = useState<'EUR'|'USD'>('EUR');
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [productsMenuOpen, setProductsMenuOpen] = useState(false);
@@ -2133,92 +2169,168 @@ const VistomioLandingPage: React.FC = () => {
 
       <section id="precios" className="scroll-mt-24 py-32 relative bg-white border-t border-gray-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex items-center justify-center mb-16">
-            <div className="flex items-center gap-4">
+          <div className="flex flex-col items-center justify-center mb-16">
+            <div className="flex items-center gap-4 mb-8">
               <div className="w-12 h-px bg-[#B8863B]"></div>
               <span className="text-[#B8863B] font-bold tracking-[0.25em] text-sm md:text-base uppercase">
                 {lang === 'es' ? 'PRECIOS Y PLANES' : lang === 'en' ? 'PRICING & PLANS' : 'PRIX ET FORFAITS'}
               </span>
             </div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
-            {t.pricing.plans.map((plan: any, idx: number) => (
-              <div key={idx} className={`rounded-[2.5rem] p-8 lg:p-10 bg-boutique-navy border ${plan.highlight ? 'border-[#B8863B] shadow-2xl  lg:scale-105 z-10 relative' : 'border-gray-800 hover:border-[#B8863B]/50 shadow-lg relative'} overflow-hidden transition-all duration-300 flex flex-col`}>
-                
-                <h3 className={`text-2xl font-bold ${plan.highlight ? 'text-[#B8863B]' : 'text-white'} mb-3 pr-2`}>{plan.name}</h3>
-                
-
-                <div className="text-[11px] font-bold text-[#B8863B] uppercase tracking-widest mb-6 border border-[#B8863B]/30 bg-[#B8863B]/10 inline-block px-4 py-1.5 rounded-full self-start">
-                  {plan.setupPrice}
-                </div>
-                
-                <div className="flex items-baseline gap-1 mb-8">
-                  <div className={`text-5xl font-extrabold ${plan.highlight ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#B8863B] to-[#FCE69B]' : 'text-white'}`}>
-                    {plan.monthlyPrice}
-                  </div>
-                  <span className="text-gray-400 font-medium">{plan.period}</span>
-                </div>
-                
-                <div className="space-y-4 mb-8 flex-grow">
-                  {plan.features.map((feat: any, i: number) => (
-                    <div key={i} className="flex items-start gap-4 text-gray-300">
-                      <CheckCircle2 className={`${plan.highlight ? 'text-[#B8863B]' : 'text-gray-500'} shrink-0 mt-1`} size={20} />
-                      <div className="flex flex-col">
-                        <span className="text-base font-medium leading-snug text-white">{feat.name}</span>
-                        {feat.desc && <span className="text-sm text-gray-400 mt-1 leading-snug">{feat.desc}</span>}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                
-                <p className="text-sm text-gray-400 mb-8 border-t border-gray-800 pt-6">
-                  {plan.baseText}
-                </p>
-
-                <button onClick={() => setIsContactModalOpen(true)} className={`w-full py-4 rounded-2xl font-semibold text-lg transition-colors ${plan.highlight ? 'bg-gradient-to-r from-[#B8863B] to-[#B38822] hover:from-[#FCE69B] hover:to-[#B8863B] text-boutique-navy shadow-lg ' : 'bg-boutique-sand hover:bg-white text-boutique-navy shadow-sm'}`}>
-                  {plan.cta}
+            
+            <div className="flex flex-col md:flex-row items-center gap-6">
+              <div className="flex bg-slate-100 p-1 rounded-full border border-gray-200">
+                <button 
+                  onClick={() => setCurrency('EUR')}
+                  className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors ${currency === 'EUR' ? 'bg-white text-boutique-navy shadow-sm' : 'text-gray-500 hover:text-boutique-navy'}`}
+                >
+                  EUR €
+                </button>
+                <button 
+                  onClick={() => setCurrency('USD')}
+                  className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors ${currency === 'USD' ? 'bg-white text-boutique-navy shadow-sm' : 'text-gray-500 hover:text-boutique-navy'}`}
+                >
+                  USD $
                 </button>
               </div>
-            ))}
-          </div>
 
-          {/* Chatbot Add-on Banner */}
-          <div className="max-w-6xl mx-auto mb-16 bg-gradient-to-br from-boutique-sand/20 to-transparent border border-[#B8863B]/20 rounded-[2rem] p-8 md:p-10 flex flex-col md:flex-row gap-8 relative overflow-hidden items-stretch">
-            <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#B8863B]/10 blur-[0px] hidden rounded-full pointer-events-none"></div>
-            
-            <div className="flex-1 relative z-10">
-              <div className="inline-block px-3 py-1 bg-boutique-navy text-[#B8863B] text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">
-                ADD-ON
-              </div>
-              <h3 className="text-2xl md:text-3xl font-normal text-boutique-navy mb-3 font-serif tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">
-                {t.pricing.addon.name}
-              </h3>
-
-              
-              <ul className="space-y-3 mb-6">
-                {t.pricing.addon.features.map((feature: string, idx: number) => (
-                  <li key={idx} className="flex items-start text-boutique-navy/90">
-                    <CheckCircle2 className="w-5 h-5 text-[#B8863B] mr-3 shrink-0 mt-0.5" />
-                    <span className="leading-relaxed">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <p className="text-sm text-gray-500 border-t border-[#B8863B]/20 pt-4">
-                {t.pricing.addon.baseText}
-              </p>
-            </div>
-            
-            <div className="md:w-72 shrink-0 bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center justify-center text-center relative z-10">
-              <div className="text-3xl md:text-4xl font-extrabold text-boutique-navy">
-                {t.pricing.addon.price}
+              <div className="flex bg-slate-100 p-1 rounded-full border border-gray-200 items-center">
+                <button 
+                  onClick={() => setBillingCycle('monthly')}
+                  className={`px-6 py-2 rounded-full text-sm font-semibold transition-colors ${billingCycle === 'monthly' ? 'bg-white text-boutique-navy shadow-sm' : 'text-gray-500 hover:text-boutique-navy'}`}
+                >
+                  {lang === 'es' ? 'Mensual' : lang === 'en' ? 'Monthly' : 'Mensuel'}
+                </button>
+                <button 
+                  onClick={() => setBillingCycle('annual')}
+                  className={`flex items-center gap-2 px-6 py-2 rounded-full text-sm font-semibold transition-colors ${billingCycle === 'annual' ? 'bg-boutique-navy text-white shadow-sm' : 'text-gray-500 hover:text-boutique-navy'}`}
+                >
+                  {lang === 'es' ? 'Anual' : lang === 'en' ? 'Annual' : 'Annuel'}
+                  <span className={`text-[10px] px-2 py-0.5 rounded-full ${billingCycle === 'annual' ? 'bg-[#4CAF50] text-white' : 'bg-[#4CAF50]/20 text-[#4CAF50]'}`}>
+                    {lang === 'es' ? 'AHORRA 15%' : lang === 'en' ? 'SAVE 15%' : 'ÉCONOMISEZ 15%'}
+                  </span>
+                </button>
               </div>
             </div>
           </div>
+\n\n          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+            {t.pricing.plans.map((plan: any, idx: number) => {
+              const symbol = currency === 'EUR' ? '€' : '$';
+              const price = billingCycle === 'annual' ? plan.annualPrice : plan.monthlyPrice;
+              const savings = plan.savings;
+              const setup = plan.setup;
 
+              return (
+                <div key={idx} className={`rounded-[2rem] p-8 bg-white border ${plan.highlight ? 'border-[#B8863B] shadow-xl relative mt-0 lg:-mt-4 lg:mb-4' : 'border-gray-200 shadow-sm relative mt-4'} overflow-hidden transition-all duration-300 flex flex-col`}>
+                  
+                  {plan.highlight && (
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-[#B8863B] text-white text-[11px] font-bold uppercase tracking-[0.1em] py-1.5 px-6 rounded-b-lg flex items-center gap-1.5">
+                      <Zap size={14} fill="currentColor" /> {lang === 'es' ? 'RECOMENDADO' : lang === 'en' ? 'RECOMMENDED' : 'RECOMMANDÉ'}
+                    </div>
+                  )}
+                  
+                  <div className={`${plan.highlight ? 'pt-6' : ''}`}>
+                    <h3 className="text-3xl font-bold text-boutique-navy mb-2 font-serif">{plan.name}</h3>
+                    <p className="text-gray-500 italic text-[13px] mb-8 min-h-[3rem] leading-relaxed">
+                      {plan.quote}
+                    </p>
+                    
+                    <div className="mb-2 flex items-baseline gap-1">
+                      <span className="text-5xl font-extrabold text-boutique-navy">{price}</span>
+                      <span className="text-xl font-semibold text-boutique-navy">{symbol}</span>
+                      <span className="text-gray-400 text-sm">{plan.period}</span>
+                    </div>
 
-          {/* Enterprise Section */}
+                    {billingCycle === 'annual' ? (
+                      <div className="bg-[#4CAF50] text-white text-xs font-bold px-3 py-1.5 rounded-md inline-flex items-center mb-8">
+                        <CheckCircle2 className="w-3.5 h-3.5 mr-1.5" />
+                        {lang === 'es' ? 'Ahorras' : lang === 'en' ? 'Save' : 'Économisez'} {savings}{symbol} / {lang === 'es' ? 'año' : lang === 'en' ? 'year' : 'an'}
+                      </div>
+                    ) : (
+                      <div className="h-8 mb-8"></div>
+                    )}
+
+                    <div className="mb-6">
+                      <h4 className="text-[11px] font-extrabold text-boutique-navy tracking-[0.1em] uppercase mb-4">
+                        {lang === 'es' ? 'CAPACIDADES INCLUIDAS' : lang === 'en' ? 'CAPABILITIES INCLUDED' : 'CAPACITÉS INCLUSES'}
+                      </h4>
+                      <ul className="space-y-4">
+                        {plan.features.map((feature: any, fIdx: number) => (
+                          <li key={fIdx} className="flex items-start text-sm">
+                            <Check className="w-5 h-5 text-[#4CAF50] mr-3 shrink-0" />
+                            <span className="text-boutique-navy/90 leading-relaxed">
+                              {feature.name ? <span className="font-bold">{feature.name}: </span> : null}
+                              {feature.desc || feature.name}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-auto pt-6 border-t border-gray-100 flex flex-col gap-6">
+                    <p className="text-[13px] text-gray-500 italic leading-relaxed">
+                      {plan.baseText}
+                    </p>
+                    <div className="flex justify-between items-center text-sm font-semibold text-boutique-navy">
+                      <span>Setup ({lang === 'es' ? 'pago único' : lang === 'en' ? 'one-time' : 'paiement unique'})</span>
+                      <span>{setup}{symbol}</span>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+\n\n          {/* Independent Plan Banner */}
+          <div className="max-w-6xl mx-auto mb-16 relative">
+            <div className="bg-white rounded-[2rem] p-6 lg:p-10 border border-[#B8863B] shadow-sm flex flex-col md:flex-row gap-8 items-stretch">
+              
+              <div className="flex-1">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 bg-boutique-plum text-white rounded-xl flex items-center justify-center shrink-0">
+                    <Utensils size={24} />
+                  </div>
+                  <h3 className="text-2xl font-bold text-boutique-navy font-serif">
+                    {t.pricing.addon.name}
+                  </h3>
+                </div>
+                
+                <p className="text-[13px] text-gray-500 mb-8 leading-relaxed">
+                  {t.pricing.addon.baseText}
+                </p>
+                
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {t.pricing.addon.features.map((feature: string, idx: number) => (
+                    <li key={idx} className="flex items-center text-sm text-boutique-navy/90">
+                      <CheckCircle2 className="w-5 h-5 text-[#6E7B4A] mr-3 shrink-0" />
+                      <span className="leading-relaxed">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              <div className="md:w-72 shrink-0 bg-[#A8986B] p-8 rounded-3xl text-white flex flex-col items-center justify-center text-center relative shadow-inner">
+                <div className="mb-2 flex items-baseline gap-1">
+                  <span className="text-5xl font-extrabold">{billingCycle === 'annual' ? t.pricing.addon.annualPrice : t.pricing.addon.monthlyPrice}</span>
+                  <span className="text-2xl font-semibold">{currency === 'EUR' ? '€' : '$'}</span>
+                  <span className="text-white/80 text-sm">{t.pricing.addon.period}</span>
+                </div>
+                
+                {billingCycle === 'annual' ? (
+                  <div className="bg-white text-boutique-navy text-[11px] font-bold px-3 py-1.5 rounded-md inline-flex items-center mb-6">
+                    {lang === 'es' ? 'Ahorras' : lang === 'en' ? 'Save' : 'Économisez'} {t.pricing.addon.savings}{currency === 'EUR' ? '€' : '$'} / {lang === 'es' ? 'año' : lang === 'en' ? 'year' : 'an'}
+                  </div>
+                ) : (
+                  <div className="h-7 mb-6"></div>
+                )}
+                
+                <div className="w-full border-t border-white/20 pt-4 mt-auto flex justify-between items-center text-sm font-semibold">
+                  <span className="text-white/90">Setup:</span>
+                  <span>{t.pricing.addon.setup}{currency === 'EUR' ? '€' : '$'}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+\n\n          {/* Enterprise Section */}
           <div className="max-w-6xl mx-auto bg-boutique-navy rounded-[2rem] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden border border-[#B8863B]/20">
              <div className="absolute top-0 right-0 w-96 h-96 bg-[#B8863B]/10 blur-[0px] hidden rounded-full pointer-events-none"></div>
              <div className="absolute bottom-0 left-0 w-64 h-64 bg-boutique-sand/10 blur-[60px] rounded-full pointer-events-none"></div>
