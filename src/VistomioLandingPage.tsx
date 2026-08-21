@@ -2431,7 +2431,7 @@ const VistomioLandingPage: React.FC = () => {
               const setup = convertPrice(plan.setup);
 
               return (
-                <div key={idx} className={`rounded-[2rem] p-8 bg-white border ${plan.highlight ? 'border-[#B8863B] shadow-xl relative mt-0 lg:-mt-4 lg:mb-4' : 'border-gray-200 shadow-sm relative mt-4'} overflow-hidden transition-all duration-300 flex flex-col`}>
+                <div key={idx} className={`rounded-[2rem] p-8 bg-white border ${plan.highlight ? 'border-[#B8863B] shadow-xl relative mt-0 lg:-mt-4 lg:mb-4' : 'border-[#13203A]/20 shadow-sm relative mt-4'} overflow-hidden transition-all duration-300 flex flex-col`}>
                   
                   {plan.highlight && (
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-[#B8863B] text-white text-[11px] font-bold uppercase tracking-[0.1em] py-1.5 px-6 rounded-b-lg flex items-center gap-1.5">
