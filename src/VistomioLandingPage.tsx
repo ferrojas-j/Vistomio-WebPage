@@ -1475,27 +1475,68 @@ const GalloAzulLogo: React.FC<{size?: number, className?: string}> = ({ size = 2
 const VistomioLandingPage: React.FC = () => {
   const [lang, setLang] = useState<Language>('es');
   const [billingCycle, setBillingCycle] = useState<'monthly'|'annual'>('annual');
+  const [region, setRegion] = useState<'EU'|'US'|'LATAM'>('EU');
   const [currency, setCurrency] = useState<'EUR'|'USD'>('EUR');
-  const [usdRate, setUsdRate] = useState<number>(1.08);
 
   useEffect(() => {
-    fetch('https://open.er-api.com/v6/latest/EUR')
+    fetch('https://ipapi.co/json/')
       .then(res => res.json())
       .then(data => {
-        if (data && data.rates && data.rates.USD) {
-          setUsdRate(data.rates.USD);
+        if (data && data.country_code) {
+          const latam = ['AR', 'BO', 'BR', 'CL', 'CO', 'CR', 'CU', 'DO', 'EC', 'SV', 'GT', 'HN', 'MX', 'NI', 'PA', 'PY', 'PE', 'PR', 'UY', 'VE'];
+          if (['US', 'CA'].includes(data.country_code)) {
+            setRegion('US');
+            setCurrency('USD');
+          } else if (latam.includes(data.country_code)) {
+            setRegion('LATAM');
+            setCurrency('USD');
+          } else {
+            setRegion('EU');
+            setCurrency('EUR');
+          }
         }
       })
-      .catch(err => console.error("Error fetching exchange rate:", err));
+      .catch(err => console.error("Error fetching IP:", err));
   }, []);
 
+  const regionalPrices = {
+    EU: {
+      hotel: [260, 440, 890],
+      addon: 190,
+      chatbot: [210, 390, 590]
+    },
+    US: {
+      hotel: [339, 579, 1199],
+      addon: 250,
+      chatbot: [279, 529, 799]
+    },
+    LATAM: {
+      hotel: [182, 374, 756],
+      addon: 170,
+      chatbot: [147, 332, 502]
+    }
+  };
+
+  const getPriceInfo = (type: 'hotel'|'addon'|'chatbot', idx: number = 0) => {
+    const baseMonthly = type === 'addon' ? regionalPrices[region].addon : regionalPrices[region][type][idx];
+    const monthly = baseMonthly;
+    const annual = Math.round(baseMonthly * 0.85);
+    const savings = (monthly * 12) - (annual * 12);
+    
+    return {
+      monthly,
+      annual,
+      savings,
+      current: billingCycle === 'annual' ? annual : monthly
+    };
+  };
+
   const convertPrice = (priceStr: string) => {
-    if (!priceStr) return priceStr;
     const priceNum = parseInt(priceStr, 10);
     if (isNaN(priceNum)) return priceStr;
     if (currency === 'EUR') return priceStr;
-    return Math.round(priceNum * usdRate).toString();
-  };
+    return Math.round(priceNum * 1.08).toString();
+  }
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -2360,21 +2401,6 @@ const VistomioLandingPage: React.FC = () => {
             </div>
             
             <div className="flex flex-col md:flex-row items-center gap-6">
-              <div className="flex bg-white p-1.5 rounded-full border border-[#B8863B]/30 shadow-[0_8px_30px_-12px_rgba(184,134,59,0.2)] relative">
-                <button 
-                  onClick={() => setCurrency('EUR')}
-                  className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${currency === 'EUR' ? 'bg-boutique-navy text-white shadow-md transform scale-[1.02]' : 'text-boutique-navy/60 hover:text-boutique-navy hover:bg-gray-50'}`}
-                >
-                  EUR €
-                </button>
-                <button 
-                  onClick={() => setCurrency('USD')}
-                  className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${currency === 'USD' ? 'bg-boutique-navy text-white shadow-md transform scale-[1.02]' : 'text-boutique-navy/60 hover:text-boutique-navy hover:bg-gray-50'}`}
-                >
-                  USD $
-                </button>
-              </div>
-
               <div className="flex bg-white p-1.5 rounded-full border border-[#B8863B]/30 shadow-[0_8px_30px_-12px_rgba(184,134,59,0.2)] items-center relative">
                 <button 
                   onClick={() => setBillingCycle('monthly')}
@@ -2399,8 +2425,9 @@ const VistomioLandingPage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
             {t.pricing.plans.map((plan: any, idx: number) => {
               const symbol = currency === 'EUR' ? '€' : '$';
-              const price = convertPrice(billingCycle === 'annual' ? plan.annualPrice : plan.monthlyPrice);
-              const savings = convertPrice(plan.savings);
+              const pInfo = getPriceInfo('hotel', idx);
+              const price = pInfo.current;
+              const savings = pInfo.savings;
               const setup = convertPrice(plan.setup);
 
               return (
@@ -2499,7 +2526,7 @@ const VistomioLandingPage: React.FC = () => {
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-40 bg-[#B8863B]/15 blur-[30px] rounded-full pointer-events-none"></div>
 
                   <div className="mb-4 flex items-baseline gap-1 relative z-10">
-                    <span className="text-5xl font-extrabold text-white">{convertPrice(billingCycle === 'annual' ? t.pricing.addon.annualPrice : t.pricing.addon.monthlyPrice)}</span>
+                    <span className="text-5xl font-extrabold text-white">{getPriceInfo('addon').current}</span>
                     <span className="text-2xl font-bold text-[#B8863B]">{currency === 'EUR' ? '€' : '$'}</span>
                     <span className="text-gray-400 text-sm ml-1">{t.pricing.addon.period}</span>
                   </div>
@@ -2507,7 +2534,7 @@ const VistomioLandingPage: React.FC = () => {
                   {billingCycle === 'annual' ? (
                     <div className="bg-[#6E7B4A] text-white text-xs font-bold px-4 py-2 rounded-full inline-flex items-center gap-1.5 mb-6 relative z-10 shadow-lg shadow-[#6E7B4A]/30 border border-white/10">
                       <CheckCircle2 className="w-3.5 h-3.5" />
-                      {lang === 'es' ? 'Ahorras' : lang === 'en' ? 'Save' : 'Économisez'} {convertPrice(t.pricing.addon.savings)}{currency === 'EUR' ? '€' : '$'} / {lang === 'es' ? 'año' : lang === 'en' ? 'year' : 'an'}
+                      {lang === 'es' ? 'Ahorras' : lang === 'en' ? 'Save' : 'Économisez'} {getPriceInfo('addon').savings}{currency === 'EUR' ? '€' : '$'} / {lang === 'es' ? 'año' : lang === 'en' ? 'year' : 'an'}
                     </div>
                   ) : (
                     <div className="h-10 mb-6"></div>
@@ -2551,7 +2578,7 @@ const VistomioLandingPage: React.FC = () => {
                     </div>
 
                     <div className="mb-4 flex items-baseline gap-1">
-                      <span className="text-5xl font-extrabold text-boutique-navy">{convertPrice(billingCycle === 'annual' ? plan.annualPrice : plan.monthlyPrice)}</span>
+                      <span className="text-5xl font-extrabold text-boutique-navy">{getPriceInfo('chatbot', idx).current}</span>
                       <span className="text-xl font-semibold text-boutique-navy">{currency === 'EUR' ? '€' : '$'}</span>
                       <span className="text-gray-400 text-sm">{plan.period}</span>
                     </div>
@@ -2559,7 +2586,7 @@ const VistomioLandingPage: React.FC = () => {
                     {billingCycle === 'annual' ? (
                       <div className="bg-[#6E7B4A] text-white text-[11px] font-bold px-3 py-1.5 rounded-md inline-flex items-center mb-8 self-start">
                         <CheckCircle2 className="w-3.5 h-3.5 mr-1.5" />
-                        {lang === 'es' ? 'Ahorras' : lang === 'en' ? 'Save' : 'Économisez'} {convertPrice(plan.savings)}{currency === 'EUR' ? '€' : '$'} / {lang === 'es' ? 'año' : lang === 'en' ? 'year' : 'an'}
+                        {lang === 'es' ? 'Ahorras' : lang === 'en' ? 'Save' : 'Économisez'} {getPriceInfo('chatbot', idx).savings}{currency === 'EUR' ? '€' : '$'} / {lang === 'es' ? 'año' : lang === 'en' ? 'year' : 'an'}
                       </div>
                     ) : (
                       <div className="h-8 mb-8"></div>
