@@ -1737,43 +1737,7 @@ const VistomioLandingPage: React.FC = () => {
         </div>
       </section>
 
-{/* --- SOCIAL PROOF --- */}
-      <section className="py-12 border-y border-gray-300 bg-boutique-offwhite relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-sm font-semibold text-boutique-navy/80 uppercase tracking-widest mb-10">
-            {t.socialProof}
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-14 lg:gap-24 opacity-100 transition-all duration-500">
-            <div className="flex flex-col items-center gap-2">
-              <div className="flex items-center gap-3 text-2xl font-semibold text-boutique-navy">
-                <span className="w-10 h-10 rounded-xl bg-boutique-sand flex items-center justify-center text-sm border border-boutique-sand shadow-sm text-boutique-navy">HN</span> Noga
-              </div>
-              <span className="text-xs font-semibold text-boutique-navy/80 uppercase tracking-widest">{t.locations.noga}</span>
-            </div>
 
-            <div className="flex flex-col items-center gap-2">
-              <div className="flex items-center gap-2 text-2xl font-semibold text-boutique-navy">
-                <GalloAzulLogo className="text-boutique-navy" size={28} /> Gallo Azul
-              </div>
-              <span className="text-xs font-semibold text-boutique-navy/80 uppercase tracking-widest">{t.locations.galloAzul}</span>
-            </div>
-
-            <div className="flex flex-col items-center gap-2">
-              <div className="flex items-center gap-2 text-2xl font-black text-boutique-navy tracking-[0.2em]">
-                LA MORA
-              </div>
-              <span className="text-xs font-semibold text-boutique-navy/80 uppercase tracking-widest">{t.locations.laMora}</span>
-            </div>
-
-            <div className="flex flex-col items-center gap-2">
-              <div className="flex items-center gap-3 text-2xl font-semibold text-boutique-navy">
-                <span className="border-2 border-[#B8863B] p-1.5 text-[#B8863B] text-sm">JC</span> Hoteles
-              </div>
-              <span className="text-xs font-semibold text-boutique-navy/80 uppercase tracking-widest">{t.locations.jc}</span>
-            </div>
-          </div>
-        </div>
-      </section>
 
             {/* --- BOUTIQUE NICHE SECTION (NEW) --- */}
       <section className="py-24 bg-white border-b border-gray-300 relative overflow-hidden">
@@ -2272,7 +2236,47 @@ const VistomioLandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* --- CTA FINAL --- */}
+      
+
+        {/* --- SOCIAL PROOF --- */}
+      <section className="py-12 border-y border-gray-300 bg-boutique-offwhite relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-center text-sm font-semibold text-boutique-navy/80 uppercase tracking-widest mb-10">
+            {t.socialProof}
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-14 lg:gap-24 opacity-100 transition-all duration-500">
+            <div className="flex flex-col items-center gap-2">
+              <div className="flex items-center gap-3 text-2xl font-semibold text-boutique-navy">
+                <span className="w-10 h-10 rounded-xl bg-boutique-sand flex items-center justify-center text-sm border border-boutique-sand shadow-sm text-boutique-navy">HN</span> Noga
+              </div>
+              <span className="text-xs font-semibold text-boutique-navy/80 uppercase tracking-widest">{t.locations.noga}</span>
+            </div>
+
+            <div className="flex flex-col items-center gap-2">
+              <div className="flex items-center gap-2 text-2xl font-semibold text-boutique-navy">
+                <GalloAzulLogo className="text-boutique-navy" size={28} /> Gallo Azul
+              </div>
+              <span className="text-xs font-semibold text-boutique-navy/80 uppercase tracking-widest">{t.locations.galloAzul}</span>
+            </div>
+
+            <div className="flex flex-col items-center gap-2">
+              <div className="flex items-center gap-2 text-2xl font-black text-boutique-navy tracking-[0.2em]">
+                LA MORA
+              </div>
+              <span className="text-xs font-semibold text-boutique-navy/80 uppercase tracking-widest">{t.locations.laMora}</span>
+            </div>
+
+            <div className="flex flex-col items-center gap-2">
+              <div className="flex items-center gap-3 text-2xl font-semibold text-boutique-navy">
+                <span className="border-2 border-[#B8863B] p-1.5 text-[#B8863B] text-sm">JC</span> Hoteles
+              </div>
+              <span className="text-xs font-semibold text-boutique-navy/80 uppercase tracking-widest">{t.locations.jc}</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+        {/* --- CTA FINAL --- */}
       <section className="py-24 md:py-32 relative bg-boutique-navy overflow-hidden">
         {/* Background Accents */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-boutique-gold/10 blur-[0px] hidden rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
