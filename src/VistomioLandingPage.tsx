@@ -2564,9 +2564,8 @@ const VistomioLandingPage: React.FC = () => {
                 const isPremium = idx === 2;
                 const isPro = idx === 1;
                 return (
-                  <div key={idx} className="bg-[#FAF9F6] rounded-[2rem] p-8 border border-gray-200 shadow-sm flex flex-col relative overflow-hidden">
-                    {/* Top Accent Line */}
-                    <div className="absolute top-0 left-0 right-0 h-1 bg-[#B8863B]"></div>
+                  <div key={idx} className="bg-white rounded-[2rem] p-8 border-[#13203A] border-[1.5px] shadow-sm flex flex-col relative mt-4 overflow-hidden transition-all duration-300">
+                    
 
                     <div className="flex items-center gap-4 mb-8">
                       <div className="bg-white p-3 rounded-xl shadow-sm border border-gray-100 flex items-center justify-center">
