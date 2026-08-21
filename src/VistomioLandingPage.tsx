@@ -2575,9 +2575,9 @@ const VistomioLandingPage: React.FC = () => {
                     
 
                     <div className="flex items-center gap-4 mb-8">
-                      <div className="bg-white p-2.5 rounded-xl shadow-sm border border-gray-100 flex items-center justify-center">
+                      <div className="bg-boutique-navy p-3.5 rounded-2xl shadow-md border border-boutique-navy flex items-center justify-center text-white">
                         {(!isPro && !isPremium) ? (
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="text-boutique-navy">
+                          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="text-white">
                             <rect x="6" y="9" width="12" height="9" rx="2" ry="2"/>
                             <line x1="3" y1="13.5" x2="6" y2="13.5"/>
                             <line x1="18" y1="13.5" x2="21" y2="13.5"/>
@@ -2586,7 +2586,7 @@ const VistomioLandingPage: React.FC = () => {
                             <path d="M11 9V5h3"/>
                           </svg>
                         ) : (
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="text-boutique-navy">
+                          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="text-white">
                             <rect x="4.5" y="8" width="11.5" height="8.5" rx="2" ry="2"/>
                             <line x1="1.5" y1="12.25" x2="4.5" y2="12.25"/>
                             <line x1="16" y1="12.25" x2="19" y2="12.25"/>
