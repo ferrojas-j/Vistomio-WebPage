@@ -2387,7 +2387,7 @@ const VistomioLandingPage: React.FC = () => {
                   className={`flex items-center gap-2 px-6 py-2 rounded-full text-sm font-semibold transition-colors ${billingCycle === 'annual' ? 'bg-boutique-navy text-white shadow-sm' : 'text-gray-500 hover:text-boutique-navy'}`}
                 >
                   {lang === 'es' ? 'Anual' : lang === 'en' ? 'Annual' : 'Annuel'}
-                  <span className={`text-[10px] px-2 py-0.5 rounded-full ${billingCycle === 'annual' ? 'bg-[#4CAF50] text-white' : 'bg-[#4CAF50]/20 text-[#4CAF50]'}`}>
+                  <span className={`text-[10px] px-2 py-0.5 rounded-full ${billingCycle === 'annual' ? 'bg-[#6E7B4A] text-white' : 'bg-[#6E7B4A]/20 text-[#6E7B4A]'}`}>
                     {lang === 'es' ? 'AHORRA 15%' : lang === 'en' ? 'SAVE 15%' : 'ÉCONOMISEZ 15%'}
                   </span>
                 </button>
@@ -2425,7 +2425,7 @@ const VistomioLandingPage: React.FC = () => {
                     </div>
 
                     {billingCycle === 'annual' ? (
-                      <div className="bg-[#4CAF50] text-white text-xs font-bold px-3 py-1.5 rounded-md inline-flex items-center mb-8">
+                      <div className="bg-[#6E7B4A] text-white text-xs font-bold px-3 py-1.5 rounded-md inline-flex items-center mb-8">
                         <CheckCircle2 className="w-3.5 h-3.5 mr-1.5" />
                         {lang === 'es' ? 'Ahorras' : lang === 'en' ? 'Save' : 'Économisez'} {savings}{symbol} / {lang === 'es' ? 'año' : lang === 'en' ? 'year' : 'an'}
                       </div>
@@ -2440,7 +2440,7 @@ const VistomioLandingPage: React.FC = () => {
                       <ul className="space-y-4">
                         {plan.features.map((feature: any, fIdx: number) => (
                           <li key={fIdx} className="flex items-start text-sm">
-                            <Check className="w-5 h-5 text-[#4CAF50] mr-3 shrink-0" />
+                            <Check className="w-5 h-5 text-[#6E7B4A] mr-3 shrink-0" />
                             <span className="text-boutique-navy/90 leading-relaxed">
                               {feature.name ? <span className="font-bold">{feature.name}: </span> : null}
                               {feature.desc || feature.name}
@@ -2553,7 +2553,7 @@ const VistomioLandingPage: React.FC = () => {
                     </div>
 
                     {billingCycle === 'annual' ? (
-                      <div className="bg-[#4CAF50] text-white text-[11px] font-bold px-3 py-1.5 rounded-md inline-flex items-center mb-8 self-start">
+                      <div className="bg-[#6E7B4A] text-white text-[11px] font-bold px-3 py-1.5 rounded-md inline-flex items-center mb-8 self-start">
                         <CheckCircle2 className="w-3.5 h-3.5 mr-1.5" />
                         {lang === 'es' ? 'Ahorras' : lang === 'en' ? 'Save' : 'Économisez'} {convertPrice(plan.savings)}{currency === 'EUR' ? '€' : '$'} / {lang === 'es' ? 'año' : lang === 'en' ? 'year' : 'an'}
                       </div>
