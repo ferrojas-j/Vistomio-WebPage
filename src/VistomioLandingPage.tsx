@@ -2374,7 +2374,9 @@ const VistomioLandingPage: React.FC = () => {
               </div>
             </div>
           </div>
-\n\n          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
             {t.pricing.plans.map((plan: any, idx: number) => {
               const symbol = currency === 'EUR' ? '€' : '$';
               const price = billingCycle === 'annual' ? plan.annualPrice : plan.monthlyPrice;
@@ -2442,7 +2444,9 @@ const VistomioLandingPage: React.FC = () => {
               );
             })}
           </div>
-\n\n          {/* Independent Plan Banner */}
+
+
+          {/* Independent Plan Banner */}
           <div className="max-w-6xl mx-auto mb-16 relative">
             <div className="bg-white rounded-[2rem] p-6 lg:p-10 border border-[#B8863B] shadow-sm flex flex-col md:flex-row gap-8 items-stretch">
               
@@ -2492,7 +2496,9 @@ const VistomioLandingPage: React.FC = () => {
               </div>
             </div>
           </div>
-\n\n          {/* Chatbot Pricing Section */}
+
+
+          {/* Chatbot Pricing Section */}
           <div className="max-w-6xl mx-auto mb-16">
             <div className="flex items-center gap-4 mb-8 justify-center">
               <div className="w-12 h-px bg-[#B8863B]"></div>
@@ -2569,7 +2575,9 @@ const VistomioLandingPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Enterprise Section */}\n\n          
+          {/* Enterprise Section */}
+
+          
           <div className="max-w-6xl mx-auto bg-boutique-navy rounded-[2rem] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden border border-[#B8863B]/20">
              <div className="absolute top-0 right-0 w-96 h-96 bg-[#B8863B]/10 blur-[0px] hidden rounded-full pointer-events-none"></div>
              <div className="absolute bottom-0 left-0 w-64 h-64 bg-boutique-sand/10 blur-[60px] rounded-full pointer-events-none"></div>
