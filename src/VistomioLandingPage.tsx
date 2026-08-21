@@ -4,7 +4,7 @@ import StaffAppSimulator from './StaffAppSimulator';
 import MockVistomioApp from './MockVistomioApp';
 import React, { useState, useEffect, useRef } from 'react';
 import {  
-  Check,
+  Check, Monitor, MessageCircle, Plane, Image,
   CreditCard, 
   Utensils, 
   Smartphone, 
@@ -444,6 +444,60 @@ const translations = {
           period: '/mes',
           cta: 'Ver Demo'
         },
+        chatbotTitle: 'Chatbot con Inteligencia Artificial',
+        chatbotPlans: [
+          {
+            name: 'Básico',
+            monthlyPrice: '140',
+            annualPrice: '119',
+            savings: '252',
+            period: '/mes',
+            features: [
+              'Automatización de FAQs',
+              'Personalización de tono y personalidad',
+              'Disponibilidad 24/7',
+              'Soporte de cliente básico',
+              'Integración en página web'
+            ],
+            channels: ['web'],
+            setupText: 'Setup (por cada 3 propiedades)',
+            setupPrice: '90'
+          },
+          {
+            name: 'Pro',
+            monthlyPrice: '210',
+            annualPrice: '179',
+            savings: '378',
+            period: '/mes',
+            features: [
+              'Todo lo incluido en básico',
+              'Integración omnicanal (4 canales)',
+              'Bandeja de entrada centralizada',
+              'Envío de documentos, links e imágenes',
+              'Soporte de cliente dedicado'
+            ],
+            channels: ['web', 'facebook', 'instagram', 'whatsapp'],
+            setupText: 'Setup (por cada 3 propiedades)',
+            setupPrice: '390'
+          },
+          {
+            name: 'Premium',
+            monthlyPrice: '590',
+            annualPrice: '502',
+            savings: '1062',
+            period: '/mes',
+            features: [
+              'Todo lo incluido en Pro',
+              'Campañas de marketing automatizadas',
+              'Capacidad de generar, editar y cancelar reservas',
+              'Peticiones y tickets de huéspedes',
+              'Escalamiento a agentes humanos'
+            ],
+            channels: ['web', 'facebook', 'instagram', 'whatsapp', 'booking', 'ota'],
+            setupText: 'Setup (por cada 3 propiedades)',
+            setupPrice: '590'
+          }
+        ],
         enterprise: {
         title: '¿Necesitas algo a la medida?',
         desc: 'Construimos una arquitectura de software única para cadenas boutique o propiedades con operaciones complejas.',
@@ -862,6 +916,60 @@ const translations = {
           period: '/mo',
           cta: 'View Demo'
         },
+        chatbotTitle: 'AI Chatbot Plans',
+        chatbotPlans: [
+          {
+            name: 'Basic',
+            monthlyPrice: '140',
+            annualPrice: '119',
+            savings: '252',
+            period: '/mo',
+            features: [
+              'FAQs Automation',
+              'Tone and personality customization',
+              '24/7 Availability',
+              'Basic customer support',
+              'Website integration'
+            ],
+            channels: ['web'],
+            setupText: 'Setup (per 3 properties)',
+            setupPrice: '90'
+          },
+          {
+            name: 'Pro',
+            monthlyPrice: '210',
+            annualPrice: '179',
+            savings: '378',
+            period: '/mo',
+            features: [
+              'Everything in Basic',
+              'Omnichannel integration (4 channels)',
+              'Centralized inbox',
+              'Send documents, links, and images',
+              'Dedicated customer support'
+            ],
+            channels: ['web', 'facebook', 'instagram', 'whatsapp'],
+            setupText: 'Setup (per 3 properties)',
+            setupPrice: '390'
+          },
+          {
+            name: 'Premium',
+            monthlyPrice: '590',
+            annualPrice: '502',
+            savings: '1062',
+            period: '/mo',
+            features: [
+              'Everything in Pro',
+              'Automated marketing campaigns',
+              'Ability to generate, edit, and cancel reservations',
+              'Guest requests and tickets',
+              'Escalation to human agents'
+            ],
+            channels: ['web', 'facebook', 'instagram', 'whatsapp', 'booking', 'ota'],
+            setupText: 'Setup (per 3 properties)',
+            setupPrice: '590'
+          }
+        ],
         enterprise: {
         title: 'Need a custom solution?',
         desc: 'We build unique software architectures for boutique chains or properties with complex operations.',
@@ -1278,6 +1386,60 @@ const translations = {
           period: '/mois',
           cta: 'Voir Démo'
         },
+        chatbotTitle: 'Forfaits Chatbot IA',
+        chatbotPlans: [
+          {
+            name: 'Basique',
+            monthlyPrice: '140',
+            annualPrice: '119',
+            savings: '252',
+            period: '/mois',
+            features: [
+              'Automatisation des FAQ',
+              'Personnalisation du ton et de la personnalité',
+              'Disponibilité 24/7',
+              'Support client de base',
+              'Intégration au site web'
+            ],
+            channels: ['web'],
+            setupText: 'Setup (pour 3 propriétés)',
+            setupPrice: '90'
+          },
+          {
+            name: 'Pro',
+            monthlyPrice: '210',
+            annualPrice: '179',
+            savings: '378',
+            period: '/mois',
+            features: [
+              'Tout ce qui est inclus dans Basique',
+              'Intégration omnicanale (4 canaux)',
+              'Boîte de réception centralisée',
+              'Envoi de documents, liens et images',
+              'Support client dédié'
+            ],
+            channels: ['web', 'facebook', 'instagram', 'whatsapp'],
+            setupText: 'Setup (pour 3 propriétés)',
+            setupPrice: '390'
+          },
+          {
+            name: 'Premium',
+            monthlyPrice: '590',
+            annualPrice: '502',
+            savings: '1062',
+            period: '/mois',
+            features: [
+              'Tout ce qui est inclus dans Pro',
+              'Campagnes de marketing automatisées',
+              'Capacité à générer, éditer et annuler des réservations',
+              'Demandes et tickets des clients',
+              'Escalade vers des agents humains'
+            ],
+            channels: ['web', 'facebook', 'instagram', 'whatsapp', 'booking', 'ota'],
+            setupText: 'Setup (pour 3 propriétés)',
+            setupPrice: '590'
+          }
+        ],
         enterprise: {
         title: 'Besoin de sur-mesure ?',
         desc: 'Nous concevons une architecture logicielles uniques pour les chaînes de boutiques ou les propriétés avec des opérations complexes.',
@@ -2330,7 +2492,84 @@ const VistomioLandingPage: React.FC = () => {
               </div>
             </div>
           </div>
-\n\n          {/* Enterprise Section */}
+\n\n          {/* Chatbot Pricing Section */}
+          <div className="max-w-6xl mx-auto mb-16">
+            <div className="flex items-center gap-4 mb-8 justify-center">
+              <div className="w-12 h-px bg-[#B8863B]"></div>
+              <span className="text-[#B8863B] font-bold tracking-[0.25em] text-sm md:text-base uppercase">
+                {t.pricing.chatbotTitle}
+              </span>
+              <div className="w-12 h-px bg-[#B8863B]"></div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {t.pricing.chatbotPlans.map((plan: any, idx: number) => {
+                const isPremium = idx === 2;
+                const isPro = idx === 1;
+                return (
+                  <div key={idx} className="bg-[#FAF9F6] rounded-[2rem] p-8 border border-gray-200 shadow-sm flex flex-col relative overflow-hidden">
+                    {/* Top Accent Line */}
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-[#B8863B]"></div>
+
+                    <div className="flex items-center gap-4 mb-8">
+                      <div className="bg-white p-3 rounded-xl shadow-sm border border-gray-100 flex items-center justify-center">
+                        <Bot className="w-6 h-6 text-boutique-navy" />
+                        {isPro && <Zap className="w-4 h-4 text-[#B8863B] absolute -top-1 -right-1" />}
+                        {isPremium && <Zap className="w-4 h-4 text-[#B8863B] absolute -top-1 -right-1" />}
+                      </div>
+                      <h3 className="text-2xl font-bold text-boutique-navy font-serif">{plan.name}</h3>
+                    </div>
+
+                    <div className="mb-4 flex items-baseline gap-1">
+                      <span className="text-5xl font-extrabold text-boutique-navy">{billingCycle === 'annual' ? plan.annualPrice : plan.monthlyPrice}</span>
+                      <span className="text-xl font-semibold text-boutique-navy">{currency === 'EUR' ? '€' : '$'}</span>
+                      <span className="text-gray-400 text-sm">{plan.period}</span>
+                    </div>
+
+                    {billingCycle === 'annual' ? (
+                      <div className="bg-[#4CAF50] text-white text-[11px] font-bold px-3 py-1.5 rounded-md inline-flex items-center mb-8 self-start">
+                        <CheckCircle2 className="w-3.5 h-3.5 mr-1.5" />
+                        {lang === 'es' ? 'Ahorras' : lang === 'en' ? 'Save' : 'Économisez'} {plan.savings}{currency === 'EUR' ? '€' : '$'} / {lang === 'es' ? 'año' : lang === 'en' ? 'year' : 'an'}
+                      </div>
+                    ) : (
+                      <div className="h-8 mb-8"></div>
+                    )}
+
+                    <ul className="space-y-4 mb-8 flex-1">
+                      {plan.features.map((feature: string, fIdx: number) => (
+                        <li key={fIdx} className="flex items-start text-sm">
+                          <div className="w-5 h-5 rounded-full border-[1.5px] border-[#B8863B] flex items-center justify-center mr-3 shrink-0 mt-0.5">
+                            <Check className="w-3 h-3 text-[#B8863B]" />
+                          </div>
+                          <span className="text-boutique-navy/90 leading-relaxed">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="mt-auto pt-6 border-t border-gray-200/60">
+                      <h4 className="text-[10px] font-bold text-boutique-navy tracking-widest uppercase mb-4">{lang === "es" ? "CANALES INCLUIDOS" : lang === "en" ? "CHANNELS INCLUDED" : "CANAUX INCLUS"}</h4>
+                      <div className="flex gap-3 mb-6">
+                        {plan.channels.includes('web') && <Monitor className="w-5 h-5 text-gray-400" />}
+                        {plan.channels.includes('facebook') && <Globe className="w-5 h-5 text-gray-400" />}
+                        {plan.channels.includes('instagram') && <Image className="w-5 h-5 text-gray-400" />}
+                        {plan.channels.includes('whatsapp') && <MessageCircle className="w-5 h-5 text-gray-400" />}
+                        {plan.channels.includes('booking') && <BedDouble className="w-5 h-5 text-gray-400" />}
+                        {plan.channels.includes('ota') && <Plane className="w-5 h-5 text-gray-400" />}
+                      </div>
+
+                      <div className="flex justify-between items-end text-[13px] font-semibold text-boutique-navy/80">
+                        <span>{plan.setupText}</span>
+                        <span className="text-base font-bold text-boutique-navy">{plan.setupPrice}{currency === 'EUR' ? '€' : '$'}</span>
+                      </div>
+                    </div>
+
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Enterprise Section */}\n\n          
           <div className="max-w-6xl mx-auto bg-boutique-navy rounded-[2rem] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden border border-[#B8863B]/20">
              <div className="absolute top-0 right-0 w-96 h-96 bg-[#B8863B]/10 blur-[0px] hidden rounded-full pointer-events-none"></div>
              <div className="absolute bottom-0 left-0 w-64 h-64 bg-boutique-sand/10 blur-[60px] rounded-full pointer-events-none"></div>
