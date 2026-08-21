@@ -1476,6 +1476,26 @@ const VistomioLandingPage: React.FC = () => {
   const [lang, setLang] = useState<Language>('es');
   const [billingCycle, setBillingCycle] = useState<'monthly'|'annual'>('annual');
   const [currency, setCurrency] = useState<'EUR'|'USD'>('EUR');
+  const [usdRate, setUsdRate] = useState<number>(1.08);
+
+  useEffect(() => {
+    fetch('https://open.er-api.com/v6/latest/EUR')
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.rates && data.rates.USD) {
+          setUsdRate(data.rates.USD);
+        }
+      })
+      .catch(err => console.error("Error fetching exchange rate:", err));
+  }, []);
+
+  const convertPrice = (priceStr: string) => {
+    if (!priceStr) return priceStr;
+    const priceNum = parseInt(priceStr, 10);
+    if (isNaN(priceNum)) return priceStr;
+    if (currency === 'EUR') return priceStr;
+    return Math.round(priceNum * usdRate).toString();
+  };
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -2379,9 +2399,9 @@ const VistomioLandingPage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
             {t.pricing.plans.map((plan: any, idx: number) => {
               const symbol = currency === 'EUR' ? '€' : '$';
-              const price = billingCycle === 'annual' ? plan.annualPrice : plan.monthlyPrice;
-              const savings = plan.savings;
-              const setup = plan.setup;
+              const price = convertPrice(billingCycle === 'annual' ? plan.annualPrice : plan.monthlyPrice);
+              const savings = convertPrice(plan.savings);
+              const setup = convertPrice(plan.setup);
 
               return (
                 <div key={idx} className={`rounded-[2rem] p-8 bg-white border ${plan.highlight ? 'border-[#B8863B] shadow-xl relative mt-0 lg:-mt-4 lg:mb-4' : 'border-gray-200 shadow-sm relative mt-4'} overflow-hidden transition-all duration-300 flex flex-col`}>
@@ -2476,14 +2496,14 @@ const VistomioLandingPage: React.FC = () => {
               
               <div className="md:w-72 shrink-0 bg-[#A8986B] p-8 rounded-3xl text-white flex flex-col items-center justify-center text-center relative shadow-inner">
                 <div className="mb-2 flex items-baseline gap-1">
-                  <span className="text-5xl font-extrabold">{billingCycle === 'annual' ? t.pricing.addon.annualPrice : t.pricing.addon.monthlyPrice}</span>
+                  <span className="text-5xl font-extrabold">{convertPrice(billingCycle === 'annual' ? t.pricing.addon.annualPrice : t.pricing.addon.monthlyPrice)}</span>
                   <span className="text-2xl font-semibold">{currency === 'EUR' ? '€' : '$'}</span>
                   <span className="text-white/80 text-sm">{t.pricing.addon.period}</span>
                 </div>
                 
                 {billingCycle === 'annual' ? (
                   <div className="bg-white text-boutique-navy text-[11px] font-bold px-3 py-1.5 rounded-md inline-flex items-center mb-6">
-                    {lang === 'es' ? 'Ahorras' : lang === 'en' ? 'Save' : 'Économisez'} {t.pricing.addon.savings}{currency === 'EUR' ? '€' : '$'} / {lang === 'es' ? 'año' : lang === 'en' ? 'year' : 'an'}
+                    {lang === 'es' ? 'Ahorras' : lang === 'en' ? 'Save' : 'Économisez'} {convertPrice(t.pricing.addon.savings)}{currency === 'EUR' ? '€' : '$'} / {lang === 'es' ? 'año' : lang === 'en' ? 'year' : 'an'}
                   </div>
                 ) : (
                   <div className="h-7 mb-6"></div>
@@ -2491,7 +2511,7 @@ const VistomioLandingPage: React.FC = () => {
                 
                 <div className="w-full border-t border-white/20 pt-4 mt-auto flex justify-between items-center text-sm font-semibold">
                   <span className="text-white/90">Setup:</span>
-                  <span>{t.pricing.addon.setup}{currency === 'EUR' ? '€' : '$'}</span>
+                  <span>{convertPrice(t.pricing.addon.setup)}{currency === 'EUR' ? '€' : '$'}</span>
                 </div>
               </div>
             </div>
@@ -2527,7 +2547,7 @@ const VistomioLandingPage: React.FC = () => {
                     </div>
 
                     <div className="mb-4 flex items-baseline gap-1">
-                      <span className="text-5xl font-extrabold text-boutique-navy">{billingCycle === 'annual' ? plan.annualPrice : plan.monthlyPrice}</span>
+                      <span className="text-5xl font-extrabold text-boutique-navy">{convertPrice(billingCycle === 'annual' ? plan.annualPrice : plan.monthlyPrice)}</span>
                       <span className="text-xl font-semibold text-boutique-navy">{currency === 'EUR' ? '€' : '$'}</span>
                       <span className="text-gray-400 text-sm">{plan.period}</span>
                     </div>
@@ -2535,7 +2555,7 @@ const VistomioLandingPage: React.FC = () => {
                     {billingCycle === 'annual' ? (
                       <div className="bg-[#4CAF50] text-white text-[11px] font-bold px-3 py-1.5 rounded-md inline-flex items-center mb-8 self-start">
                         <CheckCircle2 className="w-3.5 h-3.5 mr-1.5" />
-                        {lang === 'es' ? 'Ahorras' : lang === 'en' ? 'Save' : 'Économisez'} {plan.savings}{currency === 'EUR' ? '€' : '$'} / {lang === 'es' ? 'año' : lang === 'en' ? 'year' : 'an'}
+                        {lang === 'es' ? 'Ahorras' : lang === 'en' ? 'Save' : 'Économisez'} {convertPrice(plan.savings)}{currency === 'EUR' ? '€' : '$'} / {lang === 'es' ? 'año' : lang === 'en' ? 'year' : 'an'}
                       </div>
                     ) : (
                       <div className="h-8 mb-8"></div>
@@ -2565,7 +2585,7 @@ const VistomioLandingPage: React.FC = () => {
 
                       <div className="flex justify-between items-end text-[13px] font-semibold text-boutique-navy/80">
                         <span>{plan.setupText}</span>
-                        <span className="text-base font-bold text-boutique-navy">{plan.setupPrice}{currency === 'EUR' ? '€' : '$'}</span>
+                        <span className="text-base font-bold text-boutique-navy">{convertPrice(plan.setupPrice)}{currency === 'EUR' ? '€' : '$'}</span>
                       </div>
                     </div>
 
