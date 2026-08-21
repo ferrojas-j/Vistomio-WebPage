@@ -176,7 +176,7 @@ const translations = {
 };
 
 export default function ChatbotSimulator({ currentLanguage = 'es' }: { currentLanguage?: 'es' | 'en' | 'fr' }) {
-  const [tone, setTone] = useState<Tone>('friendly');
+  const [tone, setTone] = useState<Tone>('formal');
   const [messages, setMessages] = useState<Message[]>([]);
   const chatEndRef = useRef<HTMLDivElement>(null);
 
