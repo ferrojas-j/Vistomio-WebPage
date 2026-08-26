@@ -2919,11 +2919,7 @@ const VistomioLandingPage: React.FC = () => {
             <span className="text-white font-medium tracking-[0.25em] text-sm md:text-base uppercase">VISTOMIO</span>
           </div>
           
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-8 text-sm font-medium">
-            <a href="#" className="hover:text-white transition-colors">{t.footer.legal}</a>
-            <a href="#" className="hover:text-white transition-colors">{t.footer.privacy}</a>
-            <a href="mailto:hola@vistomio.com" className="hover:text-white transition-colors">{t.footer.contact}</a>
-          </div>
+
 
           <div className="text-sm text-white/50">
             {t.footer.rights}
