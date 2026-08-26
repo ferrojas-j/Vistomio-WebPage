@@ -1,0 +1,529 @@
+
+
+
+
+Vistomio
+
+
+Aviso de 
+privacidad
+ / Politique de confidentialité — texte prêt à publier sur vistomio.com
+
+VERSIÓN EN ESPAÑOL
+
+
+Aviso de Privacidad y Protección de Datos
+
+
+Vistomio
+ ("nosotros", "nuestro") es una plataforma de gestión hotelera (PMS, motor de reservas, gestión de restaurante/POS y 
+chatbot
+ de atención al huésped) editada por Le 
+Filament
+, SAS. Este aviso explica qué datos personales tratamos a través del sitio web vistomio.com y de la plataforma 
+Vistomio
+, con qué finalidad, durante cuánto tiempo y con qué garantías, de conformidad con el Reglamento (UE) 2016/679 (RGPD) y, cuando resulte aplicable a usuarios situados en México, con la normativa mexicana de protección de datos personales.
+
+
+1. ¿Quiénes somos? — Responsable del tratamiento
+
+Le 
+Filament
+, SAS (marca comercial: 
+Vistomio
+)
+
+Inscrita en el RCS de París con el número 983 337 791.
+
+Domicilio social: 32 Rue Guillaume Tell, 75017 París, Francia.
+
+(Dirección a actualizar en cuanto el traslado de sede social en curso sea efectivo en el 
+Kbis
+.)
+
+Contacto para cuestiones de privacidad y protección de datos: hello@vistomio.com
+
+
+2. Qué datos recopilamos, para qué y con qué base legal
+
+Categoría
+ de 
+datos
+
+
+Finalidad
+
+Base 
+legal
+
+
+Ejemplos
+ de 
+datos
+ 
+tratados
+
+Visitantes 
+del
+ 
+sitio
+ web
+
+Hacer funcionar el sitio, medir la audiencia, mejorar la experiencia
+
+Interés legítimo / consentimiento (cookies no esenciales)
+
+Datos de navegación, dirección IP, tipo de navegador, cookies
+
+Prospectos y contactos comerciales (formulario de contacto, solicitud de demo, 
+newsletter
+)
+
+Responder a la solicitud, realizar el seguimiento comercial, enviar comunicaciones si se ha dado consentimiento
+
+Interés legítimo (prospección B2B) / consentimiento (
+newsletter
+)
+
+Nombre, apellidos, correo electrónico, teléfono, nombre del hotel, país, contenido del mensaje
+
+Clientes: cuenta y facturación (hoteles que contratan 
+Vistomio
+)
+
+Crear y gestionar la cuenta, ejecutar el contrato de suscripción, facturar, dar soporte, cumplir obligaciones legales y fiscales
+
+Ejecución del contrato / obligación legal
+
+Datos de identificación de la empresa, nombre y correo de los usuarios autorizados, credenciales de acceso, dirección de facturación, datos fiscales, historial de pagos (gestionado por Stripe; no almacenamos el número completo de la tarjeta)
+
+
+3. ¿Cuánto tiempo conservamos tus datos?
+
+Categoría
+ de 
+datos
+
+
+Duración
+ de 
+conservación
+ 
+propuesta
+
+Datos de 
+navegación
+ / cookies
+
+13 meses (recomendación CNIL); registros técnicos de seguridad: 12 meses
+
+Prospectos que no se convierten en clientes
+
+3 años desde el último contacto
+
+Datos de cuenta de clientes activos
+
+Durante toda la duración de la relación contractual
+
+Datos contables y fiscales de clientes
+
+Hasta 10 años tras el cierre del ejercicio, conforme a la normativa contable y fiscal francesa aplicable a Le 
+Filament
+
+
+Datos tras la finalización del contrato (fuera de las obligaciones contables/fiscales)
+
+Eliminación o anonimización en un plazo razonable, salvo obligación legal de conservación más larga
+
+Estas duraciones son las habituales en derecho francés/RGPD para una actividad B2B como la de 
+Vistomio
+; indícanos si prefieres cifras distintos.
+
+
+4. ¿Con quién compartimos tus datos? — Proveedores tecnológicos
+
+Utilizamos infraestructura segura y certificada, con datos cifrados tanto en tránsito como en reposo. Aplicamos respaldos (copias de seguridad) automáticos y controles de acceso estrictos para garantizar que tu información sea privada y esté siempre protegida.
+
+Para el funcionamiento del sitio web y de la plataforma 
+Vistomio
+, trabajamos en particular con los siguientes proveedores tecnológicos, que actúan como encargados del tratamiento en virtud de un contrato que fija sus obligaciones en materia de protección de datos:
+
+
+Hostinger — proveedor de alojamiento (hosting) del sitio web y/o de los servidores de la aplicación.
+
+
+
+Supabase
+ — proveedor de base de datos y de servicios 
+backend
+ (autenticación, base de datos, almacenamiento de archivos) utilizados por la plataforma 
+Vistomio
+.
+
+
+Stripe — procesador de pagos para la gestión de las suscripciones y la facturación de nuestros clientes.
+
+También podemos compartir datos con las administraciones competentes cuando la ley así lo exija, o con nuestros asesores (contable, abogado) sujetos a un deber de confidencialidad.
+
+
+4 bis. Datos de los huéspedes de los hoteles clientes (rol de encargado del tratamiento)
+
+Cuando un hotel utiliza los módulos de 
+Vistomio
+ (PMS, motor de reservas, restaurante/POS, 
+chatbot
+), la plataforma también trata datos de los huéspedes/clientes finales del hotel: nombre, apellidos, correo electrónico, teléfono, fechas de estancia, en su caso documento de identidad/pasaporte, preferencias, y datos de pago necesarios para procesar la reserva o el consumo.
+
+Para estos datos, 
+Vistomio
+ actúa como encargado del tratamiento ("
+processor
+"): el hotel cliente es el responsable del tratamiento y define las finalidades, la base legal y las duraciones de conservación aplicables a sus propios huéspedes, en el marco de un contrato/acuerdo de tratamiento de datos firmado con 
+Vistomio
+. Los mismos proveedores tecnológicos (Hostinger, 
+Supabase
+, Stripe) intervienen como 
+subencargados
+ para estos datos, con las mismas garantías de seguridad descritas en la sección 4.
+
+Si el sitio se dirige también a huéspedes finales (no solo a hoteles), esta sección debería completarse o desplegarse en una política dedicada — indícanoslo si es el caso.
+
+
+5. Transferencias internacionales de datos
+
+Damos prioridad, en la medida de lo posible, a proveedores y centros de datos ubicados en la Unión Europea. Si alguno de nuestros proveedores tecnológicos (incluidos Hostinger, 
+Supabase
+ o Stripe) llegara a tratar datos fuera del Espacio Económico Europeo, dicha transferencia se realiza con las garantías previstas por el RGPD (en particular, cláusulas contractuales tipo de la Comisión Europea o decisión de adecuación aplicable).
+
+Recomendamos confirmar con Hostinger y 
+Supabase
+ la región exacta donde alojan los datos de 
+Vistomio
+ (UE u otra), para poder precisar esta sección con exactitud.
+
+
+6. Tus derechos
+
+De conformidad con el RGPD, dispones de los siguientes derechos sobre tus datos personales:
+
+
+Derecho de acceso a tus datos
+
+
+Derecho de rectificación de datos inexactos
+
+
+Derecho de supresión ("derecho al olvido"), cuando proceda
+
+
+Derecho a la limitación del tratamiento
+
+
+Derecho a la portabilidad de tus datos
+
+
+Derecho de oposición al tratamiento, en particular con fines de prospección comercial
+
+
+Derecho a definir instrucciones sobre el destino de tus datos tras tu fallecimiento
+
+Para ejercer estos derechos, escríbenos a hello@vistomio.com. Responderemos en un plazo razonable y, en cualquier caso, dentro de los plazos legales aplicables.
+
+Si consideras que el tratamiento de tus datos no respeta la normativa aplicable, también puedes presentar una reclamación ante la autoridad de control competente, en particular la CNIL (Comisión Nacional de Informática y Libertades, Francia — www.cnil.fr).
+
+
+7. Cookies y tecnologías similares
+
+El sitio vistomio.com puede utilizar cookies técnicas necesarias para su funcionamiento y, en su caso, cookies de medición de audiencia o de marketing, sujetas a tu consentimiento previo cuando no sean estrictamente necesarias. Puedes gestionar tus preferencias en cualquier momento a través del panel de configuración de cookies del sitio (si está disponible) o desde la configuración de tu navegador.
+
+Si actualmente no existe un banner/gestor de cookies en el sitio y se utilizan herramientas de analítica (Google 
+Analytics
+ u otras), es necesario añadir uno para cumplir con la normativa — indícanoslo si quieres que preparemos esa sección/ese banner.
+
+
+8. Seguridad de los datos
+
+Aplicamos medidas técnicas y organizativas razonables para proteger tus datos: cifrado de los datos en tránsito y en reposo, copias de seguridad automáticas, control estricto de los accesos a nuestros sistemas, y contratos con nuestros proveedores tecnológicos que incluyen obligaciones de seguridad y confidencialidad.
+
+
+9. Menores de edad
+
+
+Vistomio
+ es una plataforma dirigida a profesionales del sector hotelero (empresas y sus empleados) y no está destinada a menores de edad. No recopilamos conscientemente datos de menores a través del sitio web.
+
+
+10. Modificaciones de este aviso
+
+Podemos actualizar este aviso de privacidad para reflejar cambios en nuestras prácticas o en la normativa aplicable. La fecha de la última actualización se indicará al pie de esta página.
+
+
+11. Contacto
+
+Para cualquier pregunta sobre este aviso o sobre el tratamiento de tus datos personales: hello@vistomio.com
+
+
+
+VERSION FRANÇAISE
+
+
+Politique de confidentialité et de protection des données
+
+
+Vistomio
+ (« nous ») est une plateforme de gestion hôtelière (PMS, moteur de réservation, gestion restaurant/point de vente et 
+chatbot
+ d'accueil des clients) éditée par Le Filament, SAS. Cette politique explique quelles données personnelles nous traitons via le site vistomio.com et la plateforme 
+Vistomio
+, dans quel but, pendant combien de temps et avec quelles garanties, conformément au Règlement (UE) 2016/679 (RGPD) et, le cas échéant pour les utilisateurs situés au Mexique, à la réglementation mexicaine applicable en matière de protection des données personnelles.
+
+
+1. Qui sommes-nous ? — Responsable du traitement
+
+Le Filament, SAS (marque commerciale : 
+Vistomio
+)
+
+Immatriculée au RCS de Paris sous le numéro 983 337 791.
+
+Siège social : 32 Rue Guillaume Tell, 75017 Paris, France.
+
+(Adresse à mettre à jour dès que le transfert de siège social en cours sera effectif au 
+Kbis
+.)
+
+Contact pour toute question relative à la confidentialité et à la protection des données : hello@vistomio.com
+
+
+2. Quelles données nous collectons, pour quoi faire et sur quelle base légale
+Catégorie de données
+Finalité
+Base légale
+Exemples de données traitées
+Visiteurs du site web
+Faire fonctionner le site, mesurer l'audience, améliorer l'expérience
+Intérêt légitime / consentement (cookies non essentiels)
+Données de navigation, adresse IP, type de navigateur, cookies
+Prospects et contacts commerciaux (formulaire de contact, demande de démo, newsletter)
+Répondre à la demande, assurer le suivi commercial, envoyer des communications sur consentement
+Intérêt légitime (prospection B2B) / consentement (newsletter)
+Nom, prénom, e-mail, téléphone, nom de l'hôtel, pays, contenu du message
+Clients : compte et facturation (hôtels qui souscrivent à 
+Vistomio
+)
+Créer et gérer le compte, exécuter le contrat d'abonnement, facturer, assurer le support, respecter les obligations légales et fiscales
+Exécution du contrat / obligation légale
+Données d'identification de l'entreprise, nom et e-mail des utilisateurs autorisés, identifiants de connexion, adresse de facturation, données fiscales, historique de paiement (géré par Stripe ; nous ne stockons pas le numéro complet de la carte)
+
+
+3. Combien de temps conservons-nous vos données ?
+Catégorie de données
+Durée de conservation proposée
+Données de navigation / cookies
+13 mois (recommandation CNIL) ; journaux techniques de sécurité : 12 mois
+Prospects non convertis en clients
+3 ans à compter du dernier contact
+Données de compte des clients actifs
+Pendant toute la durée de la relation contractuelle
+Données comptables et fiscales des clients
+Jusqu'à 10 ans après la clôture de l'exercice, conformément à la réglementation comptable et fiscale française applicable au Filament
+Données après la fin du contrat (hors obligations comptables/fiscales)
+Suppression ou anonymisation dans un délai raisonnable, sauf obligation légale de conservation plus longue
+
+Ces durées correspondent aux durées usuelles en droit français/RGPD pour une activité B2B comme celle de 
+Vistomio
+ ; indiquez-nous si vous préférez des durées différentes.
+
+
+4. Avec qui partageons-nous vos données ? — Prestataires technologiques
+
+Nous utilisons une infrastructure sécurisée et certifiée, avec des données chiffrées aussi bien en transit qu'au repos. Nous appliquons des sauvegardes automatiques et des contrôles d'accès stricts afin de garantir que vos informations restent privées et protégées en permanence.
+
+Pour le fonctionnement du site et de la plateforme 
+Vistomio
+, nous travaillons notamment avec les prestataires technologiques suivants, qui agissent en tant que sous-traitants au sens du RGPD, dans le cadre d'un contrat encadrant leurs obligations en matière de protection des données :
+
+
+
+Hostinger
+ — prestataire d'hébergement (
+hosting
+) du site web et/ou des serveurs de l'application.
+
+
+
+Supabase
+ — prestataire de base de données et de services backend (authentification, base de données, stockage de fichiers) utilisés par la plateforme 
+Vistomio
+.
+
+
+Stripe — prestataire de paiement pour la gestion des abonnements et la facturation de nos clients.
+
+Nous pouvons également partager des données avec les administrations compétentes lorsque la loi l'exige, ou avec nos conseils (expert-comptable, avocat) soumis à une obligation de confidentialité.
+
+
+4 bis. Données des clients finaux des hôtels (rôle de sous-traitant)
+
+Lorsqu'un hôtel utilise les modules de 
+Vistomio
+ (PMS, moteur de réservation, restaurant/point de vente, 
+chatbot
+), la plateforme traite également des données des clients finaux de l'hôtel : nom, prénom, e-mail, téléphone, dates de séjour, le cas échéant pièce d'identité/passeport, préférences, et données de paiement nécessaires au traitement de la réservation ou de la consommation.
+
+Pour ces données, 
+Vistomio
+ agit en tant que sous-traitant au sens du RGPD : l'hôtel client est responsable du traitement et détermine les finalités, la base légale et les durées de conservation applicables à ses propres clients, dans le cadre d'un contrat/accord de sous-traitance signé avec 
+Vistomio
+. Les mêmes prestataires technologiques (
+Hostinger
+, 
+Supabase
+, Stripe) interviennent en tant que sous-traitants ultérieurs pour ces données, avec les mêmes garanties de sécurité décrites à la section 4.
+
+Si le site s'adresse aussi directement aux clients finaux des hôtels (et non uniquement aux hôtels), cette section devrait être complétée ou faire l'objet d'une politique dédiée — dites-le-nous si c'est le cas.
+
+
+5. Transferts internationaux de données
+
+Nous privilégions, dans la mesure du possible, des prestataires et centres de données situés dans l'Union européenne. Si l'un de nos prestataires technologiques (y compris 
+Hostinger
+, 
+Supabase
+ ou Stripe) venait à traiter des données en dehors de l'Espace économique européen, ce transfert est encadré par les garanties prévues par le RGPD (notamment clauses contractuelles types de la Commission européenne ou décision d'adéquation applicable).
+
+Nous recommandons de confirmer auprès de 
+Hostinger
+ et 
+Supabase
+ la région exacte d'hébergement des données de 
+Vistomio
+ (UE ou ailleurs), afin de préciser cette section avec exactitude.
+
+
+6. Vos droits
+
+Conformément au RGPD, vous disposez des droits suivants sur vos données personnelles :
+
+
+Droit d'accès à vos données
+
+
+Droit de rectification des données inexactes
+
+
+Droit à l'effacement (« droit à l'oubli »), lorsque applicable
+
+
+Droit à la limitation du traitement
+
+
+Droit à la portabilité de vos données
+
+
+Droit d'opposition au traitement, notamment à des fins de prospection commerciale
+
+
+Droit de définir des directives sur le sort de vos données après votre décès
+
+Pour exercer ces droits, écrivez-nous à hello@vistomio.com. Nous répondrons dans un délai raisonnable et, en tout état de cause, dans les délais légaux applicables.
+
+Si vous estimez que le traitement de vos données ne respecte pas la réglementation applicable, vous pouvez également introduire une réclamation auprès de l'autorité de contrôle compétente, en particulier la CNIL (Commission Nationale de l'Informatique et des Libertés — www.cnil.fr).
+
+
+7. Cookies et technologies similaires
+
+Le site vistomio.com peut utiliser des cookies techniques nécessaires à son fonctionnement et, le cas échéant, des cookies de mesure d'audience ou marketing, soumis à votre consentement préalable lorsqu'ils ne sont pas strictement nécessaires. Vous pouvez gérer vos préférences à tout moment via le panneau de gestion des cookies du site (s'il est disponible) ou depuis les paramètres de votre navigateur.
+
+S'il n'existe pas encore de bandeau/gestionnaire de cookies sur le site et que des outils d'analyse (Google Analytics ou autres) sont utilisés, il est nécessaire d'en ajouter un pour être en conformité — dites-le-nous si vous souhaitez que nous préparions cette section/ce bandeau.
+
+
+8. Sécurité des données
+
+Nous mettons en œuvre des mesures techniques et organisationnelles raisonnables pour protéger vos données : chiffrement des données en transit et au repos, sauvegardes automatiques, contrôle strict des accès à nos systèmes, et contrats avec nos prestataires technologiques incluant des obligations de sécurité et de confidentialité.
+
+
+9. Mineurs
+
+
+Vistomio
+ est une plateforme destinée aux professionnels du secteur hôtelier (entreprises et leurs salariés) et n'est pas destinée aux mineurs. Nous ne collectons pas sciemment de données concernant des mineurs via le site.
+
+
+10. Modifications de cette politique
+
+Nous pouvons mettre à jour cette politique de confidentialité afin de refléter des évolutions de nos pratiques ou de la réglementation applicable. La date de dernière mise à jour sera indiquée en bas de cette page.
+
+
+11. Contact
+
+Pour toute question sur cette politique ou sur le traitement de vos données personnelles : hello@vistomio.com
+
+
+
+Note interne pour Perrine (à ne pas publier sur le site)
+
+Ce qui est déjà couvert :
+
+
+Identité du responsable de traitement (Le Filament SAS), avec le numéro RCS relevé dans le dossier de suivi SAS.
+
+
+Catégories de données, finalités, bases légales et durées de conservation, avec des durées standards RGPD/droit français par défaut.
+
+
+Mention explicite de 
+Hostinger
+, 
+Supabase
+ et Stripe en tant que prestataires/sous-traitants, avec le paragraphe sécurité que vous aviez rédigé (repris en ES et traduit en FR).
+
+
+Un volet "4 bis" spécifique au rôle de sous-traitant de 
+Vistomio
+ pour les données des clients finaux des hôtels — ce point n'était pas explicitement demandé mais découle directement du fait que 
+Vistomio
+ est un PMS ; à confirmer si vous voulez le garder, l'alléger ou le renvoyer vers une politique séparée destinée aux hôtels (DPA).
+
+
+
+Points à vérifier ou compléter avant publication :
+
+
+Adresse du siège social : le dossier de suivi indique un déménagement en cours vers le 12 rue Riquet, 75019 Paris, pas encore effectif au 
+Kbis
+ — à mettre à jour dès qu'il le sera.
+
+
+Région d'hébergement exacte chez 
+Hostinger
+ et 
+Supabase
+ (UE ou hors UE) — nécessaire pour finaliser la section 5 (transferts internationaux) avec précision plutôt qu'une formulation générique.
+
+
+Présence ou non d'un outil d'analyse/cookies sur le site (Google Analytics, Plausible, etc.) — si oui, un bandeau de consentement cookies est nécessaire pour être pleinement conforme.
+
+
+Durées de conservation : j'ai utilisé les durées standards (3 ans prospects, 10 ans comptable/fiscal, 13 mois cookies) faute de chiffres internes précis — à ajuster si vous en avez de différents.
+
+
+Une relecture par votre avocat (déjà mobilisé sur le pacte d'associés) est recommandée avant mise en ligne, notamment sur le statut de sous-traitant vis-à-vis des hôtels clients et sur l'articulation avec vos futurs contrats/DPA avec les hôtels.
+
+
+Pas de DPO désigné mentionné dans ce texte : à ce stade de la société, ce n'est en principe pas obligatoire (sauf traitement à grande échelle de données sensibles) — le contact hello@vistomio.com fait office de point de contact.
+
+
+
+Comment publier :
+
+Vous pouvez publier les deux versions (ES et FR) sur deux pages distinctes (ex. /es/
+privacidad
+ et /
+fr
+/
+confidentialite
+), ou sur une seule page avec un sélecteur de langue. Pensez à ajouter la date de dernière mise à jour en bas de page une fois publiée, et à faire un lien depuis le 
+footer
+ du site et depuis tout formulaire de collecte de données (contact, demande de démo, création de compte).
+

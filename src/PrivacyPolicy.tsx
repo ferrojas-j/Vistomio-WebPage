@@ -18,167 +18,290 @@ const PrivacyPolicy: React.FC = () => {
 
   const t = {
     es: {
-      title: 'Política de Privacidad y Tratamiento de Datos',
-      updated: 'Última actualización: 26 de agosto de 2026',
-      intro1: 'En Le Filament ("nosotros", "nuestro" o "la Plataforma"), valoramos la privacidad de nuestros usuarios y nos comprometemos a proteger los datos personales de acuerdo con el Reglamento General de Protección de Datos (RGPD) de la Unión Europea y demás normativas aplicables.',
-      intro2: 'Esta política explica cómo recopilamos, usamos, procesamos y protegemos la información cuando utilizas nuestro software de gestión hotelera (PMS, POS y ERP).',
-      section1: '1. Identidad del Responsable del Tratamiento',
-      s1Titular: 'Titular legal:',
-      s1TitularDesc: 'Le Filament (Empresa registrada en Francia)',
-      s1Correo: 'Correo de contacto para privacidad:',
-      section2: '2. Nuestro Rol en el Procesamiento de Datos',
-      s2Intro: 'Dado que nuestro software es una herramienta de gestión para hoteles, operamos bajo dos roles distintos según el RGPD:',
-      s2Resp: 'Como Responsable del Tratamiento:',
-      s2RespDesc: 'Cuando recopilamos la información personal y de facturación de los usuarios (administradores o propietarios de hoteles) que registran una cuenta en nuestra plataforma.',
-      s2Enc: 'Como Encargado del Tratamiento:',
-      s2EncDesc: 'Cuando procesamos datos de los huéspedes finales, inventario, habitaciones y tarifas en nombre del hotel. El hotel (nuestro cliente) es el Responsable del Tratamiento de estos datos.',
-      section3: '3. Qué datos recopilamos y de dónde provienen',
-      s3Intro: 'Recopilamos información de las siguientes maneras:',
-      s3Reg: 'Datos de registro y cuenta:',
-      s3RegDesc: 'Nombre, correo electrónico, datos de contacto y detalles del establecimiento hotelero al crear una cuenta.',
-      s3Op: 'Datos de gestión operativa:',
-      s3OpDesc: 'Información sobre habitaciones, tarifas, disponibilidad y operativas diarias. Para esto, podemos conectarnos a las herramientas y canales preexistentes del usuario, importando y consolidando esta información en nuestro sistema.',
-      s3Opt: 'Datos de terceros (Optativos):',
-      s3OptDesc: 'Si el usuario decide habilitar integraciones adicionales, procesaremos los datos necesarios para su funcionamiento (por ejemplo, tokens de conexión).',
-      section4: '4. Finalidad: ¿Para qué usamos los datos?',
-      s4Intro: 'Utilizamos la información exclusivamente para garantizar el funcionamiento del servicio, incluyendo:',
-      s4L1: 'Proveer el software PMS, POS y ERP, procesando la información para consolidarla y mostrarla de manera sencilla en el día a día.',
-      s4L2: 'Facilitar la gestión de reservas, inventario y facturación del establecimiento.',
-      s4L3: 'Mantener la seguridad de la plataforma, evitar fraudes y proporcionar soporte técnico.',
-      section5: '5. Integraciones de Terceros y Proveedores de Infraestructura',
-      s5Intro: 'No vendemos ni alquilamos datos a terceros. Solo compartimos la información estrictamente necesaria con proveedores tecnológicos que nos ayudan a operar, quienes también cumplen con los más altos estándares de seguridad y el RGPD:',
-      s5Inf: 'Infraestructura:',
-      s5InfDesc: 'Nuestros servidores y bases de datos están alojados en Hostinger y Supabase, utilizando conexiones cifradas para garantizar la seguridad de la información.',
-      s5Int: 'Integraciones opcionales a petición del usuario:',
-      s5IntDesc: 'Si el usuario decide habilitar funciones adicionales, los datos pueden transitar por servicios de terceros. Por ejemplo:',
-      s5Stripe: 'Stripe:',
-      s5StripeDesc: 'Si el usuario conecta su cuenta para procesar pagos de forma directa.',
-      s5Wa: 'WhatsApp Business API:',
-      s5WaDesc: 'Si el usuario decide activar el chatbot o la mensajería automatizada para sus huéspedes.',
-      s5Note: '(Estas integraciones solo se activan por voluntad y configuración explícita del usuario).',
-      section6: '6. Seguridad de los Datos',
-      s6Desc: 'Aplicamos medidas técnicas y organizativas para proteger la información contra accesos no autorizados, pérdida o alteración. Esto incluye el cifrado de datos, respaldos regulares y controles de acceso estrictos en nuestras bases de datos.',
-      section7: '7. Retención de los Datos',
-      s7Desc: 'Conservaremos los datos personales de la cuenta mientras el usuario mantenga una suscripción activa. Si el usuario decide darse de baja, los datos se eliminarán o anonimizarán en un plazo razonable, salvo aquellos que debamos retener por obligaciones legales, fiscales o contables en Francia.',
-      section8: '8. Derechos de los Usuarios (Derechos ARCO y RGPD)',
-      s8Intro: 'Los usuarios (titulares de la cuenta en Le Filament) tienen derecho en cualquier momento a:',
-      s8L1: 'Acceder a los datos personales que tenemos sobre ellos.',
-      s8L2: 'Rectificar cualquier dato inexacto o incompleto.',
-      s8L3: 'Solicitar la eliminación de su cuenta y sus datos (Derecho al olvido).',
-      s8L4: 'Oponerse al procesamiento o solicitar la restricción del mismo.',
-      s8L5: 'Solicitar la portabilidad de sus datos en un formato estructurado.',
-      s8Outro1: 'Para ejercer cualquiera de estos derechos, el usuario debe enviar una solicitud detallada a',
-      s8Outro2: 'Responderemos en el plazo establecido por la ley.',
-      back: '← Volver a la página principal'
-    },
+      title: "Aviso de Privacidad y Protección de Datos",
+      updated: "Última actualización: 26 de agosto de 2026",
+      intro1: "Vistomio (\"nosotros\", \"nuestro\") es una plataforma de gestión hotelera (PMS, motor de reservas, gestión de restaurante/POS y chatbot de atención al huésped) editada por Le Filament, SAS. Este aviso explica qué datos personales tratamos a través del sitio web vistomio.com y de la plataforma Vistomio, con qué finalidad, durante cuánto tiempo y con qué garantías, de conformidad con el Reglamento (UE) 2016/679 (RGPD) y, cuando resulte aplicable a usuarios situados en México, con la normativa mexicana de protección de datos personales.",
+      sections: [
+            {
+                  title: "1. ¿Quiénes somos? — Responsable del tratamiento",
+                  content: [
+                        "Le Filament, SAS (marca comercial: Vistomio)",
+                        "Inscrita en el RCS de París con el número 983 337 791.",
+                        "Domicilio social: 12 rue Riquet, 75019 Paris, Francia.",
+                        "Contacto para cuestiones de privacidad y protección de datos: hello@vistomio.com"
+                  ]
+            },
+            {
+                  title: "2. Qué datos recopilamos, para qué y con qué base legal",
+                  content: [
+                        "Visitantes del sitio web: Para hacer funcionar el sitio, medir la audiencia y mejorar la experiencia (Base legal: Interés legítimo / consentimiento para cookies no esenciales). Datos: Datos de navegación, dirección IP, tipo de navegador, cookies.",
+                        "Prospectos y contactos comerciales: Para responder a solicitudes, realizar seguimiento comercial y enviar comunicaciones (Base legal: Interés legítimo / consentimiento). Datos: Nombre, apellidos, correo electrónico, teléfono, nombre del hotel, país, contenido del mensaje.",
+                        "Clientes (cuenta y facturación): Para crear y gestionar la cuenta, ejecutar el contrato, facturar, dar soporte y cumplir obligaciones legales (Base legal: Ejecución del contrato / obligación legal). Datos: Datos de identificación, nombre y correo de usuarios, credenciales, dirección de facturación, datos fiscales, historial de pagos (gestionado por Stripe)."
+                  ]
+            },
+            {
+                  title: "3. ¿Cuánto tiempo conservamos tus datos?",
+                  content: [
+                        "Datos de navegación / cookies: 13 meses; registros técnicos de seguridad: 12 meses.",
+                        "Prospectos que no se convierten en clientes: 3 años desde el último contacto.",
+                        "Datos de cuenta de clientes activos: Durante toda la duración de la relación contractual.",
+                        "Datos contables y fiscales de clientes: Hasta 10 años tras el cierre del ejercicio.",
+                        "Datos tras la finalización del contrato: Eliminación o anonimización en un plazo razonable, salvo obligación legal."
+                  ]
+            },
+            {
+                  title: "4. ¿Con quién compartimos tus datos? — Proveedores tecnológicos",
+                  content: [
+                        "Utilizamos infraestructura segura y certificada, con datos cifrados tanto en tránsito como en reposo. Aplicamos respaldos automáticos y controles de acceso estrictos.",
+                        "Para el funcionamiento de Vistomio, trabajamos con:",
+                        "• Hostinger: proveedor de alojamiento (hosting).",
+                        "• Supabase: proveedor de base de datos y backend.",
+                        "• Stripe: procesador de pagos.",
+                        "También podemos compartir datos con administraciones competentes cuando la ley lo exija."
+                  ]
+            },
+            {
+                  title: "4 bis. Datos de los huéspedes de los hoteles clientes (rol de encargado)",
+                  content: [
+                        "Cuando un hotel utiliza Vistomio, la plataforma trata datos de los huéspedes finales. Para estos datos, Vistomio actúa como encargado del tratamiento. El hotel cliente es el responsable del tratamiento y define las finalidades y bases legales en el marco de un contrato de tratamiento de datos con Vistomio. Hostinger, Supabase y Stripe intervienen como subencargados con las mismas garantías de seguridad."
+                  ]
+            },
+            {
+                  title: "5. Transferencias internacionales de datos",
+                  content: [
+                        "Damos prioridad a proveedores y centros de datos en la Unión Europea. Si algún proveedor (Hostinger, Supabase o Stripe) trata datos fuera del Espacio Económico Europeo, la transferencia se realiza con las garantías del RGPD (cláusulas contractuales tipo o decisión de adecuación)."
+                  ]
+            },
+            {
+                  title: "6. Tus derechos",
+                  content: [
+                        "De conformidad con el RGPD, dispones de los siguientes derechos: acceso, rectificación, supresión (\"derecho al olvido\"), limitación, portabilidad, oposición, y a definir instrucciones tras tu fallecimiento.",
+                        "Para ejercer estos derechos, escríbenos a hello@vistomio.com. También puedes presentar una reclamación ante la CNIL (www.cnil.fr)."
+                  ]
+            },
+            {
+                  title: "7. Cookies y tecnologías similares",
+                  content: [
+                        "El sitio vistomio.com puede utilizar cookies técnicas necesarias y, sujeta a tu consentimiento, cookies de medición de audiencia o marketing. Puedes gestionar tus preferencias en tu navegador."
+                  ]
+            },
+            {
+                  title: "8. Seguridad de los datos",
+                  content: [
+                        "Aplicamos medidas razonables para proteger tus datos: cifrado en tránsito y en reposo, copias de seguridad automáticas, control estricto de accesos y contratos con obligaciones de seguridad."
+                  ]
+            },
+            {
+                  title: "9. Menores de edad",
+                  content: [
+                        "Vistomio es una plataforma dirigida a profesionales (empresas y empleados) y no está destinada a menores de edad. No recopilamos conscientemente datos de menores."
+                  ]
+            },
+            {
+                  title: "10. Modificaciones de este aviso",
+                  content: [
+                        "Podemos actualizar este aviso para reflejar cambios en nuestras prácticas. La fecha de la última actualización se indica al principio de esta página."
+                  ]
+            },
+            {
+                  title: "11. Contacto",
+                  content: [
+                        "Para cualquier pregunta: hello@vistomio.com"
+                  ]
+            }
+      ],
+      back: "← Volver a la página principal"
+},
     en: {
-      title: 'Privacy Policy and Data Processing',
-      updated: 'Last updated: August 26, 2026',
-      intro1: 'At Le Filament ("we", "our" or "the Platform"), we value the privacy of our users and are committed to protecting personal data in accordance with the General Data Protection Regulation (GDPR) of the European Union and other applicable regulations.',
-      intro2: 'This policy explains how we collect, use, process and protect information when you use our hotel management software (PMS, POS and ERP).',
-      section1: '1. Identity of the Data Controller',
-      s1Titular: 'Legal owner:',
-      s1TitularDesc: 'Le Filament (Company registered in France)',
-      s1Correo: 'Privacy contact email:',
-      section2: '2. Our Role in Data Processing',
-      s2Intro: 'Since our software is a management tool for hotels, we operate under two distinct roles under the GDPR:',
-      s2Resp: 'As Data Controller:',
-      s2RespDesc: 'When we collect the personal and billing information of the users (administrators or hotel owners) who register an account on our platform.',
-      s2Enc: 'As Data Processor:',
-      s2EncDesc: 'When we process data of final guests, inventory, rooms and rates on behalf of the hotel. The hotel (our client) is the Data Controller of this data.',
-      section3: '3. What data we collect and where it comes from',
-      s3Intro: 'We collect information in the following ways:',
-      s3Reg: 'Registration and account data:',
-      s3RegDesc: 'Name, email, contact details and details of the hotel establishment when creating an account.',
-      s3Op: 'Operational management data:',
-      s3OpDesc: 'Information on rooms, rates, availability and daily operations. For this, we can connect to the user\'s pre-existing tools and channels, importing and consolidating this information into our system.',
-      s3Opt: 'Third-party data (Optional):',
-      s3OptDesc: 'If the user decides to enable additional integrations, we will process the necessary data for their operation (for example, connection tokens).',
-      section4: '4. Purpose: What do we use the data for?',
-      s4Intro: 'We use the information exclusively to ensure the operation of the service, including:',
-      s4L1: 'Providing the PMS, POS and ERP software, processing the information to consolidate it and display it easily on a daily basis.',
-      s4L2: 'Facilitating the management of reservations, inventory and billing of the establishment.',
-      s4L3: 'Maintaining the security of the platform, preventing fraud and providing technical support.',
-      section5: '5. Third-Party Integrations and Infrastructure Providers',
-      s5Intro: 'We do not sell or rent data to third parties. We only share strictly necessary information with technology providers who help us operate, who also comply with the highest security standards and the GDPR:',
-      s5Inf: 'Infrastructure:',
-      s5InfDesc: 'Our servers and databases are hosted on Hostinger and Supabase, using encrypted connections to ensure the security of the information.',
-      s5Int: 'Optional user-requested integrations:',
-      s5IntDesc: 'If the user decides to enable additional features, the data may pass through third-party services. For example:',
-      s5Stripe: 'Stripe:',
-      s5StripeDesc: 'If the user connects their account to process payments directly.',
-      s5Wa: 'WhatsApp Business API:',
-      s5WaDesc: 'If the user decides to activate the chatbot or automated messaging for their guests.',
-      s5Note: '(These integrations are only activated by the express will and configuration of the user).',
-      section6: '6. Data Security',
-      s6Desc: 'We apply technical and organizational measures to protect information against unauthorized access, loss or alteration. This includes data encryption, regular backups and strict access controls in our databases.',
-      section7: '7. Data Retention',
-      s7Desc: 'We will retain the personal data of the account as long as the user maintains an active subscription. If the user decides to unsubscribe, the data will be deleted or anonymized within a reasonable period, except for those we must retain due to legal, tax or accounting obligations in France.',
-      section8: '8. User Rights (GDPR Rights)',
-      s8Intro: 'Users (Le Filament account holders) have the right at any time to:',
-      s8L1: 'Access the personal data we hold about them.',
-      s8L2: 'Rectify any inaccurate or incomplete data.',
-      s8L3: 'Request the deletion of their account and data (Right to be forgotten).',
-      s8L4: 'Object to processing or request the restriction of processing.',
-      s8L5: 'Request the portability of their data in a structured format.',
-      s8Outro1: 'To exercise any of these rights, the user must send a detailed request to',
-      s8Outro2: 'We will respond within the timeframe established by law.',
-      back: '← Back to home page'
-    },
+      title: "Privacy and Data Protection Policy",
+      updated: "Last updated: August 26, 2026",
+      intro1: "Vistomio (\"we\", \"our\") is a hotel management platform published by Le Filament, SAS. This policy explains what personal data we process through vistomio.com and the Vistomio platform, for what purpose, for how long and with what guarantees, in accordance with the GDPR and applicable regulations.",
+      sections: [
+            {
+                  title: "1. Who are we? — Data Controller",
+                  content: [
+                        "Le Filament, SAS (trademark: Vistomio)",
+                        "Registered in the Paris RCS under number 983 337 791.",
+                        "Registered office: 12 rue Riquet, 75019 Paris, France.",
+                        "Contact: hello@vistomio.com"
+                  ]
+            },
+            {
+                  title: "2. What data we collect, for what purpose and on what legal basis",
+                  content: [
+                        "Website visitors: To operate the site and measure audience (Legitimate interest / consent). Data: Browsing data, IP address, cookies.",
+                        "Prospects and commercial contacts: To respond to requests and ensure commercial follow-up (Legitimate interest / consent). Data: Name, email, phone, hotel name, country.",
+                        "Clients: To create and manage the account, execute the contract and bill (Contract execution / legal obligation). Data: Identification data, users, billing address, payment history (managed by Stripe)."
+                  ]
+            },
+            {
+                  title: "3. How long do we keep your data?",
+                  content: [
+                        "Browsing data / cookies: 13 months; technical logs: 12 months.",
+                        "Prospects: 3 years from the last contact.",
+                        "Client account data: For the duration of the contract.",
+                        "Accounting/tax data: Up to 10 years after the close of the financial year.",
+                        "Data after contract termination: Deletion or anonymization within a reasonable time."
+                  ]
+            },
+            {
+                  title: "4. Who do we share your data with? — Providers",
+                  content: [
+                        "We use a secure infrastructure with data encrypted in transit and at rest.",
+                        "We work with:",
+                        "• Hostinger: hosting.",
+                        "• Supabase: database and backend.",
+                        "• Stripe: payments.",
+                        "We may also share data with competent authorities when required."
+                  ]
+            },
+            {
+                  title: "4 bis. End-guest data from client hotels (Data Processor role)",
+                  content: [
+                        "When a hotel uses Vistomio, the platform processes end-guest data. Vistomio acts as a data processor: the hotel is the data controller and determines the purposes under an agreement signed with Vistomio. Hostinger, Supabase and Stripe act as sub-processors."
+                  ]
+            },
+            {
+                  title: "5. International data transfers",
+                  content: [
+                        "We prioritize providers in the European Union. If a provider processes data outside the EEA, this transfer is framed by GDPR guarantees."
+                  ]
+            },
+            {
+                  title: "6. Your rights",
+                  content: [
+                        "You have the following rights: access, rectification, erasure, restriction, portability, opposition.",
+                        "To exercise them, email us at hello@vistomio.com. You can also file a complaint with the CNIL (www.cnil.fr)."
+                  ]
+            },
+            {
+                  title: "7. Cookies and similar technologies",
+                  content: [
+                        "The site may use technical and audience measurement cookies, subject to your consent. You can manage your preferences via your browser."
+                  ]
+            },
+            {
+                  title: "8. Data security",
+                  content: [
+                        "We implement reasonable measures to protect your data: encryption, backups, strict access control, and security contracts."
+                  ]
+            },
+            {
+                  title: "9. Minors",
+                  content: [
+                        "Vistomio is intended for professionals and is not intended for minors. We do not knowingly collect data from minors."
+                  ]
+            },
+            {
+                  title: "10. Changes to this policy",
+                  content: [
+                        "We may update this policy to reflect changes in our practices."
+                  ]
+            },
+            {
+                  title: "11. Contact",
+                  content: [
+                        "For any questions: hello@vistomio.com"
+                  ]
+            }
+      ],
+      back: "← Back to home page"
+},
     fr: {
-      title: 'Politique de Confidentialité et Traitement des Données',
-      updated: 'Dernière mise à jour : 26 août 2026',
-      intro1: 'Chez Le Filament ("nous", "notre" ou "la Plateforme"), nous accordons une grande importance à la confidentialité de nos utilisateurs et nous nous engageons à protéger les données personnelles conformément au Règlement Général sur la Protection des Données (RGPD) de l\'Union Européenne et aux autres réglementations applicables.',
-      intro2: 'Cette politique explique comment nous recueillons, utilisons, traitons et protégeons les informations lorsque vous utilisez notre logiciel de gestion hôtelière (PMS, POS et ERP).',
-      section1: '1. Identité du Responsable du Traitement',
-      s1Titular: 'Titulaire légal :',
-      s1TitularDesc: 'Le Filament (Entreprise immatriculée en France)',
-      s1Correo: 'Email de contact pour la confidentialité :',
-      section2: '2. Notre Rôle dans le Traitement des Données',
-      s2Intro: 'Étant donné que notre logiciel est un outil de gestion pour les hôtels, nous opérons sous deux rôles distincts selon le RGPD :',
-      s2Resp: 'En tant que Responsable du Traitement :',
-      s2RespDesc: 'Lorsque nous recueillons les informations personnelles et de facturation des utilisateurs (administrateurs ou propriétaires d\'hôtels) qui créent un compte sur notre plateforme.',
-      s2Enc: 'En tant que Sous-traitant :',
-      s2EncDesc: 'Lorsque nous traitons les données des clients finaux, de l\'inventaire, des chambres et des tarifs pour le compte de l\'hôtel. L\'hôtel (notre client) est le Responsable du Traitement de ces données.',
-      section3: '3. Quelles données nous recueillons et d\'où elles proviennent',
-      s3Intro: 'Nous recueillons des informations de la manière suivante :',
-      s3Reg: 'Données d\'inscription et de compte :',
-      s3RegDesc: 'Nom, adresse e-mail, coordonnées et détails de l\'établissement hôtelier lors de la création d\'un compte.',
-      s3Op: 'Données de gestion opérationnelle :',
-      s3OpDesc: 'Informations sur les chambres, les tarifs, la disponibilité et les opérations quotidiennes. Pour cela, nous pouvons nous connecter aux outils et canaux préexistants de l\'utilisateur, en important et en consolidant ces informations dans notre système.',
-      s3Opt: 'Données de tiers (Optionnel) :',
-      s3OptDesc: 'Si l\'utilisateur décide d\'activer des intégrations supplémentaires, nous traiterons les données nécessaires à leur fonctionnement (par exemple, les jetons de connexion).',
-      section4: '4. Finalité : À quoi servent les données ?',
-      s4Intro: 'Nous utilisons les informations exclusivement pour garantir le fonctionnement du service, y compris :',
-      s4L1: 'Fournir le logiciel PMS, POS et ERP, en traitant les informations pour les consolider et les afficher de manière simple au quotidien.',
-      s4L2: 'Faciliter la gestion des réservations, de l\'inventaire et de la facturation de l\'établissement.',
-      s4L3: 'Maintenir la sécurité de la plateforme, prévenir la fraude et fournir une assistance technique.',
-      section5: '5. Intégrations Tiers et Fournisseurs d\'Infrastructure',
-      s5Intro: 'Nous ne vendons ni ne louons de données à des tiers. Nous ne partageons les informations strictement nécessaires qu\'avec les fournisseurs technologiques qui nous aident à opérer, et qui respectent également les normes de sécurité les plus élevées et le RGPD :',
-      s5Inf: 'Infrastructure :',
-      s5InfDesc: 'Nos serveurs et bases de données sont hébergés sur Hostinger et Supabase, utilisant des connexions cryptées pour garantir la sécurité des informations.',
-      s5Int: 'Intégrations optionnelles à la demande de l\'utilisateur :',
-      s5IntDesc: 'Si l\'utilisateur décide d\'activer des fonctions supplémentaires, les données peuvent transiter par des services tiers. Par exemple :',
-      s5Stripe: 'Stripe :',
-      s5StripeDesc: 'Si l\'utilisateur connecte son compte pour traiter les paiements directement.',
-      s5Wa: 'WhatsApp Business API :',
-      s5WaDesc: 'Si l\'utilisateur décide d\'activer le chatbot ou la messagerie automatisée pour ses clients.',
-      s5Note: '(Ces intégrations ne sont activées que par la volonté explicite et la configuration de l\'utilisateur).',
-      section6: '6. Sécurité des Données',
-      s6Desc: 'Nous appliquons des mesures techniques et organisationnelles pour protéger les informations contre l\'accès non autorisé, la perte ou l\'altération. Cela comprend le cryptage des données, des sauvegardes régulières et des contrôles d\'accès stricts dans nos bases de données.',
-      section7: '7. Conservation des Données',
-      s7Desc: 'Nous conserverons les données personnelles du compte tant que l\'utilisateur maintiendra un abonnement actif. Si l\'utilisateur décide de se désinscrire, les données seront supprimées ou anonymisées dans un délai raisonnable, à l\'exception de celles que nous devons conserver en raison d\'obligations légales, fiscales ou comptables en France.',
-      section8: '8. Droits des Utilisateurs (Droits RGPD)',
-      s8Intro: 'Les utilisateurs (titulaires du compte Le Filament) ont le droit à tout moment de :',
-      s8L1: 'Accéder aux données personnelles que nous détenons à leur sujet.',
-      s8L2: 'Rectifier toute donnée inexacte ou incomplète.',
-      s8L3: 'Demander la suppression de leur compte et de leurs données (Droit à l\'oubli).',
-      s8L4: 'S\'opposer au traitement ou en demander la limitation.',
-      s8L5: 'Demander la portabilité de leurs données dans un format structuré.',
-      s8Outro1: 'Pour exercer l\'un de ces droits, l\'utilisateur doit envoyer une demande détaillée à',
-      s8Outro2: 'Nous répondrons dans les délais fixés par la loi.',
-      back: '← Retour à la page d\'accueil'
-    }
+      title: "Politique de confidentialité et de protection des données",
+      updated: "Dernière mise à jour : 26 août 2026",
+      intro1: "Vistomio (« nous ») est une plateforme de gestion hôtelière éditée par Le Filament, SAS. Cette politique explique quelles données personnelles nous traitons via le site vistomio.com et la plateforme Vistomio, dans quel but, pendant combien de temps et avec quelles garanties, conformément au RGPD et à la réglementation applicable.",
+      sections: [
+            {
+                  title: "1. Qui sommes-nous ? — Responsable du traitement",
+                  content: [
+                        "Le Filament, SAS (marque commerciale : Vistomio)",
+                        "Immatriculée au RCS de Paris sous le numéro 983 337 791.",
+                        "Siège social : 12 rue Riquet, 75019 Paris, France.",
+                        "Contact : hello@vistomio.com"
+                  ]
+            },
+            {
+                  title: "2. Quelles données nous collectons, pour quoi faire et sur quelle base légale",
+                  content: [
+                        "Visiteurs du site web : Pour faire fonctionner le site et mesurer l'audience (Intérêt légitime / consentement). Données : Données de navigation, adresse IP, cookies.",
+                        "Prospects et contacts commerciaux : Pour répondre aux demandes et assurer le suivi commercial (Intérêt légitime / consentement). Données : Nom, e-mail, téléphone, nom de l'hôtel, pays.",
+                        "Clients : Pour créer et gérer le compte, exécuter le contrat et facturer (Exécution du contrat / obligation légale). Données : Données d'identification, utilisateurs, adresse de facturation, historique de paiement (géré par Stripe)."
+                  ]
+            },
+            {
+                  title: "3. Combien de temps conservons-nous vos données ?",
+                  content: [
+                        "Données de navigation / cookies : 13 mois ; journaux techniques : 12 mois.",
+                        "Prospects : 3 ans à compter du dernier contact.",
+                        "Données de compte clients : Pendant toute la durée du contrat.",
+                        "Données comptables/fiscales : Jusqu'à 10 ans après la clôture de l'exercice.",
+                        "Données après la fin du contrat : Suppression ou anonymisation dans un délai raisonnable."
+                  ]
+            },
+            {
+                  title: "4. Avec qui partageons-nous vos données ? — Prestataires",
+                  content: [
+                        "Nous utilisons une infrastructure sécurisée avec des données chiffrées en transit et au repos.",
+                        "Nous travaillons avec :",
+                        "• Hostinger : hébergement.",
+                        "• Supabase : base de données et backend.",
+                        "• Stripe : paiements.",
+                        "Nous pouvons également partager des données avec les administrations compétentes."
+                  ]
+            },
+            {
+                  title: "4 bis. Données des clients finaux des hôtels (rôle de sous-traitant)",
+                  content: [
+                        "Lorsqu'un hôtel utilise Vistomio, la plateforme traite des données des clients finaux. Vistomio agit en tant que sous-traitant : l'hôtel est responsable du traitement et détermine les finalités dans le cadre d'un accord signé avec Vistomio. Hostinger, Supabase et Stripe interviennent en tant que sous-traitants ultérieurs."
+                  ]
+            },
+            {
+                  title: "5. Transferts internationaux de données",
+                  content: [
+                        "Nous privilégions des prestataires dans l'Union européenne. Si un prestataire traite des données hors de l'EEE, ce transfert est encadré par les garanties du RGPD."
+                  ]
+            },
+            {
+                  title: "6. Vos droits",
+                  content: [
+                        "Vous disposez des droits suivants : accès, rectification, effacement, limitation, portabilité, opposition.",
+                        "Pour les exercer, écrivez-nous à hello@vistomio.com. Vous pouvez également introduire une réclamation auprès de la CNIL (www.cnil.fr)."
+                  ]
+            },
+            {
+                  title: "7. Cookies et technologies similaires",
+                  content: [
+                        "Le site peut utiliser des cookies techniques et de mesure d'audience, soumis à votre consentement. Vous pouvez gérer vos préférences via votre navigateur."
+                  ]
+            },
+            {
+                  title: "8. Sécurité des données",
+                  content: [
+                        "Nous mettons en œuvre des mesures raisonnables pour protéger vos données : chiffrement, sauvegardes, contrôle strict des accès et contrats de sécurité."
+                  ]
+            },
+            {
+                  title: "9. Mineurs",
+                  content: [
+                        "Vistomio est destinée aux professionnels et n'est pas destinée aux mineurs. Nous ne collectons pas sciemment de données de mineurs."
+                  ]
+            },
+            {
+                  title: "10. Modifications de cette politique",
+                  content: [
+                        "Nous pouvons mettre à jour cette politique pour refléter des évolutions de nos pratiques."
+                  ]
+            },
+            {
+                  title: "11. Contact",
+                  content: [
+                        "Pour toute question : hello@vistomio.com"
+                  ]
+            }
+      ],
+      back: "← Retour à la page d'accueil"
+}
   };
 
   const curr = t[lang];
@@ -220,83 +343,19 @@ const PrivacyPolicy: React.FC = () => {
 
         <div className="space-y-8 text-boutique-navy/80 leading-relaxed">
           <p>{curr.intro1}</p>
-          <p>{curr.intro2}</p>
-
-          <section>
-            <h2 className="text-xl font-bold font-serif mb-3 text-boutique-navy">{curr.section1}</h2>
-            <p><strong>{curr.s1Titular}</strong> {curr.s1TitularDesc}</p>
-            <p><strong>{curr.s1Correo}</strong> <a href="mailto:hello@vistomio.com" className="text-[#C6A15B] hover:underline">hello@vistomio.com</a></p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-bold font-serif mb-3 text-boutique-navy">{curr.section2}</h2>
-            <p className="mb-2">{curr.s2Intro}</p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li><strong>{curr.s2Resp}</strong> {curr.s2RespDesc}</li>
-              <li><strong>{curr.s2Enc}</strong> {curr.s2EncDesc}</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-bold font-serif mb-3 text-boutique-navy">{curr.section3}</h2>
-            <p className="mb-2">{curr.s3Intro}</p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li><strong>{curr.s3Reg}</strong> {curr.s3RegDesc}</li>
-              <li><strong>{curr.s3Op}</strong> {curr.s3OpDesc}</li>
-              <li><strong>{curr.s3Opt}</strong> {curr.s3OptDesc}</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-bold font-serif mb-3 text-boutique-navy">{curr.section4}</h2>
-            <p className="mb-2">{curr.s4Intro}</p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>{curr.s4L1}</li>
-              <li>{curr.s4L2}</li>
-              <li>{curr.s4L3}</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-bold font-serif mb-3 text-boutique-navy">{curr.section5}</h2>
-            <p className="mb-2">{curr.s5Intro}</p>
-            <ul className="list-disc pl-6 space-y-4">
-              <li><strong>{curr.s5Inf}</strong> {curr.s5InfDesc}</li>
-              <li>
-                <strong>{curr.s5Int}</strong> {curr.s5IntDesc}
-                <ul className="list-[circle] pl-6 mt-2 space-y-2 text-sm">
-                  <li><strong>{curr.s5Stripe}</strong> {curr.s5StripeDesc}</li>
-                  <li><strong>{curr.s5Wa}</strong> {curr.s5WaDesc}</li>
-                </ul>
-                <p className="text-sm italic mt-2">{curr.s5Note}</p>
-              </li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-bold font-serif mb-3 text-boutique-navy">{curr.section6}</h2>
-            <p>{curr.s6Desc}</p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-bold font-serif mb-3 text-boutique-navy">{curr.section7}</h2>
-            <p>{curr.s7Desc}</p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-bold font-serif mb-3 text-boutique-navy">{curr.section8}</h2>
-            <p className="mb-2">{curr.s8Intro}</p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>{curr.s8L1}</li>
-              <li>{curr.s8L2}</li>
-              <li>{curr.s8L3}</li>
-              <li>{curr.s8L4}</li>
-              <li>{curr.s8L5}</li>
-            </ul>
-            <p className="mt-4">
-              {curr.s8Outro1} <a href="mailto:hello@vistomio.com" className="text-[#C6A15B] hover:underline">hello@vistomio.com</a>. {curr.s8Outro2}
-            </p>
-          </section>
+          
+          {curr.sections.map((section, idx) => (
+            <section key={idx}>
+              <h2 className="text-xl font-bold font-serif mb-3 text-boutique-navy">{section.title}</h2>
+              <div className="space-y-2">
+                {section.content.map((p, pIdx) => (
+                  <p key={pIdx} className={p.startsWith('•') ? 'ml-6' : ''}>
+                    {p}
+                  </p>
+                ))}
+              </div>
+            </section>
+          ))}
         </div>
         
         <div className="mt-12 pt-8 border-t border-gray-100 flex justify-center">
