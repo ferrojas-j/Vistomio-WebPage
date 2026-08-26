@@ -1499,25 +1499,30 @@ const VistomioLandingPage: React.FC = () => {
     EU: {
       hotel: [260, 440, 890],
       addon: 190,
-      chatbot: [210, 390, 590]
+      chatbot: [210, 390, 590],
+      hotelSetup: [715, 975, 1430]
     },
     US: {
       hotel: [339, 579, 1199],
       addon: 250,
-      chatbot: [279, 529, 799]
+      chatbot: [279, 529, 799],
+      hotelSetup: [660, 910, 1460]
     },
     LATAM: {
       hotel: [182, 374, 756],
       addon: 170,
-      chatbot: [147, 332, 502]
+      chatbot: [147, 332, 502],
+      hotelSetup: [350, 590, 855]
     }
   };
 
   const getPriceInfo = (type: 'hotel'|'addon'|'chatbot', idx: number = 0) => {
-    let baseMonthly = type === 'addon' ? regionalPrices['EU'].addon : regionalPrices['EU'][type][idx];
+    let baseMonthly = type === 'addon' ? regionalPrices[region].addon : regionalPrices[region][type][idx];
+    let baseSetup = type === 'hotel' ? regionalPrices[region].hotelSetup[idx] : 0;
     
     if (currency === 'USD') {
       baseMonthly = Math.round((baseMonthly * exchangeRate) / 10) * 10;
+      baseSetup = Math.round((baseSetup * exchangeRate) / 10) * 10;
     }
 
     const monthly = baseMonthly;
@@ -1528,6 +1533,7 @@ const VistomioLandingPage: React.FC = () => {
       monthly,
       annual,
       savings,
+      setup: baseSetup,
       current: billingCycle === 'annual' ? annual : monthly
     };
   };
@@ -2531,7 +2537,7 @@ const VistomioLandingPage: React.FC = () => {
               const pInfo = getPriceInfo('hotel', idx);
               const price = pInfo.current;
               const savings = pInfo.savings;
-              const setup = convertPrice(plan.setup);
+              const setup = pInfo.setup;
 
               return (
                 <div key={idx} className={`rounded-[2rem] p-8 bg-white border ${plan.highlight ? 'border-[#B8863B] shadow-xl relative mt-0 lg:-mt-4 lg:mb-4' : 'border-[#13203A] border-[1.5px] shadow-sm relative mt-4'} overflow-hidden transition-all duration-300 flex flex-col`}>
