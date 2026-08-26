@@ -1897,7 +1897,7 @@ const VistomioLandingPage: React.FC = () => {
                 <div className="absolute top-12 -left-4 lg:-left-12 bg-white px-5 py-3.5 rounded-full shadow-lg border-[1.5px] border-[#B8863B] flex items-center gap-3 z-20 animate-[float_6s_ease-in-out_infinite] scale-[1.05]">
                   <Check size={18} strokeWidth={2.5} className="text-[#B8863B]" />
                   <div className="text-[13px] md:text-sm font-bold text-boutique-navy leading-none">
-                     {lang === 'es' ? 'Administración automatizada' : lang === 'en' ? 'Automated management' : 'Administration automatisée'}
+                     {lang === 'es' ? 'Hotel + Restaurante unificados' : lang === 'en' ? 'Hotel + Restaurant unified' : 'Hôtel + Restaurant unifiés'}
                   </div>
                 </div>
 
@@ -1905,7 +1905,7 @@ const VistomioLandingPage: React.FC = () => {
                 <div className="absolute top-8 -right-4 lg:-right-16 bg-white px-5 py-3.5 rounded-full shadow-lg border-[1.5px] border-[#B8863B] flex items-center gap-3 z-20 animate-[float_5s_ease-in-out_infinite_1s] scale-[1.05]">
                   <Check size={18} strokeWidth={2.5} className="text-[#B8863B]" />
                   <div className="text-[13px] md:text-sm font-bold text-boutique-navy leading-none">
-                     {lang === 'es' ? 'Operación optimizada' : lang === 'en' ? 'Optimized operation' : 'Opération optimisée'}
+                     {lang === 'es' ? 'Chatbot IA disponible' : lang === 'en' ? 'AI chatbot available' : 'Chatbot IA disponible'}
                   </div>
                 </div>
 
@@ -1913,7 +1913,7 @@ const VistomioLandingPage: React.FC = () => {
                 <div className="absolute bottom-16 -right-4 lg:-right-12 bg-white px-5 py-3.5 rounded-full shadow-lg border-[1.5px] border-[#B8863B] flex items-center gap-3 z-20 animate-[float_7s_ease-in-out_infinite_2s] scale-[1.05]">
                   <Check size={18} strokeWidth={2.5} className="text-[#B8863B]" />
                   <div className="text-[13px] md:text-sm font-bold text-boutique-navy leading-none">
-                     {lang === 'es' ? 'Más tiempo para lo importante' : lang === 'en' ? 'More time for what matters' : 'Plus de temps pour l\'essentiel'}
+                     {lang === 'es' ? '0 doble captura' : lang === 'en' ? 'Zero double entry' : '0 double saisie'}
                   </div>
                 </div>
 
