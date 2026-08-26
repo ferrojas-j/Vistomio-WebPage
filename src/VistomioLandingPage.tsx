@@ -2469,7 +2469,24 @@ const VistomioLandingPage: React.FC = () => {
               </span>
             </div>
             
-            <div className="flex flex-col items-center gap-2">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+              {/* Currency Toggle */}
+              <div className="flex bg-white p-1.5 rounded-full border border-gray-200 shadow-sm items-center">
+                <button 
+                  onClick={() => setCurrency('EUR')}
+                  className={`px-5 py-2 rounded-full text-sm font-bold transition-all duration-300 ${currency === 'EUR' ? 'bg-gray-100 text-boutique-navy shadow-sm' : 'text-gray-400 hover:text-boutique-navy'}`}
+                >
+                  € EUR
+                </button>
+                <button 
+                  onClick={() => setCurrency('USD')}
+                  className={`px-5 py-2 rounded-full text-sm font-bold transition-all duration-300 ${currency === 'USD' ? 'bg-gray-100 text-boutique-navy shadow-sm' : 'text-gray-400 hover:text-boutique-navy'}`}
+                >
+                  $ USD
+                </button>
+              </div>
+
+              {/* Billing Cycle Toggle */}
               <div className="flex bg-white p-1.5 rounded-full border border-[#B8863B]/30 shadow-[0_8px_30px_-12px_rgba(184,134,59,0.2)] items-center relative">
                 <button 
                   onClick={() => setBillingCycle('monthly')}
