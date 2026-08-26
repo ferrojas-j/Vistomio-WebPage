@@ -2919,7 +2919,11 @@ const VistomioLandingPage: React.FC = () => {
             <span className="text-white font-medium tracking-[0.25em] text-sm md:text-base uppercase">VISTOMIO</span>
           </div>
           
-
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-8 text-sm font-medium">
+            <a href="#privacidad" className="hover:text-white transition-colors">
+              {lang === 'es' ? 'Política de Privacidad y Tratamiento de Datos' : lang === 'en' ? 'Privacy Policy and Data Processing' : 'Politique de Confidentialité et Traitement des Données'}
+            </a>
+          </div>
 
           <div className="text-sm text-white/50">
             {t.footer.rights}
