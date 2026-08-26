@@ -455,7 +455,7 @@ const translations = {
               'Integración en página web'
             ],
             channels: ['web'],
-            setupText: 'Setup (hasta 3 propiedades incluidas)',
+            setupText: 'Hasta 3 propiedades incluidas',
             setupPrice: '90'
           },
           {
@@ -472,7 +472,7 @@ const translations = {
               'Soporte de cliente dedicado'
             ],
             channels: ['web', 'facebook', 'instagram', 'whatsapp'],
-            setupText: 'Setup (hasta 3 propiedades incluidas)',
+            setupText: 'Hasta 3 propiedades incluidas',
             setupPrice: '390'
           },
           {
@@ -489,7 +489,7 @@ const translations = {
               'Escalamiento a agentes humanos'
             ],
             channels: ['web', 'facebook', 'instagram', 'whatsapp', 'booking', 'ota'],
-            setupText: 'Setup (hasta 3 propiedades incluidas)',
+            setupText: 'Hasta 3 propiedades incluidas',
             setupPrice: '590'
           }
         ],
@@ -922,7 +922,7 @@ const translations = {
               'Website integration'
             ],
             channels: ['web'],
-            setupText: 'Setup (up to 3 properties included)',
+            setupText: 'Up to 3 properties included',
             setupPrice: '90'
           },
           {
@@ -939,7 +939,7 @@ const translations = {
               'Dedicated customer support'
             ],
             channels: ['web', 'facebook', 'instagram', 'whatsapp'],
-            setupText: 'Setup (up to 3 properties included)',
+            setupText: 'Up to 3 properties included',
             setupPrice: '390'
           },
           {
@@ -956,7 +956,7 @@ const translations = {
               'Escalation to human agents'
             ],
             channels: ['web', 'facebook', 'instagram', 'whatsapp', 'booking', 'ota'],
-            setupText: 'Setup (up to 3 properties included)',
+            setupText: 'Up to 3 properties included',
             setupPrice: '590'
           }
         ],
@@ -1387,7 +1387,7 @@ const translations = {
               'Intégration au site web'
             ],
             channels: ['web'],
-            setupText: 'Setup (jusqu\'à 3 propriétés incluses)',
+            setupText: 'Jusqu\'à 3 propriétés incluses',
             setupPrice: '90'
           },
           {
@@ -1404,7 +1404,7 @@ const translations = {
               'Support client dédié'
             ],
             channels: ['web', 'facebook', 'instagram', 'whatsapp'],
-            setupText: 'Setup (jusqu\'à 3 propriétés incluses)',
+            setupText: 'Jusqu\'à 3 propriétés incluses',
             setupPrice: '390'
           },
           {
@@ -1421,7 +1421,7 @@ const translations = {
               'Escalade vers des agents humains'
             ],
             channels: ['web', 'facebook', 'instagram', 'whatsapp', 'booking', 'ota'],
-            setupText: 'Setup (jusqu\'à 3 propriétés incluses)',
+            setupText: 'Jusqu\'à 3 propriétés incluses',
             setupPrice: '590'
           }
         ],
