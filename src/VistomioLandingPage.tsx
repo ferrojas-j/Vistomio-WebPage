@@ -1662,25 +1662,28 @@ const VistomioLandingPage: React.FC = () => {
       hotel: [260, 440, 890],
       addon: 190,
       chatbot: [129, 170, 380],
+      chatbotSetup: [120, 450, 690],
       hotelSetup: [715, 975, 1430]
     },
     US: {
       hotel: [339, 579, 1199],
       addon: 230,
       chatbot: [169, 219, 499],
+      chatbotSetup: [150, 490, 750],
       hotelSetup: [660, 910, 1460]
     },
     LATAM: {
       hotel: [182, 374, 756],
       addon: 155,
       chatbot: [89, 145, 329],
+      chatbotSetup: [100, 400, 670],
       hotelSetup: [350, 590, 855]
     }
   };
 
   const getPriceInfo = (type: 'hotel'|'addon'|'chatbot', idx: number = 0) => {
     let baseMonthly = type === 'addon' ? regionalPrices[region].addon : regionalPrices[region][type][idx];
-    let baseSetup = type === 'hotel' ? regionalPrices[region].hotelSetup[idx] : 0;
+    let baseSetup = type === 'hotel' ? regionalPrices[region].hotelSetup[idx] : type === 'chatbot' ? regionalPrices[region].chatbotSetup[idx] : 0;
     
     if (currency === 'USD') {
       baseMonthly = Math.round((baseMonthly * exchangeRate) / 10) * 10;
@@ -2937,7 +2940,7 @@ const VistomioLandingPage: React.FC = () => {
 
                       <div className="flex justify-between items-end text-[13px] font-semibold text-boutique-navy/80">
                         <span>{plan.setupText}</span>
-                        <span className="text-base font-bold text-boutique-navy">{convertPrice(plan.setupPrice)}{currency === 'EUR' ? '€' : '$'}</span>
+                        <span className="text-base font-bold text-boutique-navy">{getPriceInfo('chatbot', idx).setup}{currency === 'EUR' ? '€' : '$'}</span>
                       </div>
                     </div>
 
