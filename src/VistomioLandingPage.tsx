@@ -1499,19 +1499,19 @@ const VistomioLandingPage: React.FC = () => {
     EU: {
       hotel: [260, 440, 890],
       addon: 190,
-      chatbot: [210, 390, 590],
+      chatbot: [129, 170, 380],
       hotelSetup: [715, 975, 1430]
     },
     US: {
       hotel: [339, 579, 1199],
       addon: 230,
-      chatbot: [279, 529, 799],
+      chatbot: [169, 219, 499],
       hotelSetup: [660, 910, 1460]
     },
     LATAM: {
       hotel: [182, 374, 756],
       addon: 155,
-      chatbot: [147, 332, 502],
+      chatbot: [89, 145, 329],
       hotelSetup: [350, 590, 855]
     }
   };
