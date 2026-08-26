@@ -2447,9 +2447,6 @@ const VistomioLandingPage: React.FC = () => {
                   </span>
                 </button>
               </div>
-              <p className="text-xs text-gray-400 font-medium tracking-wide">
-                {lang === 'es' ? '* La facturación se realiza en euros (€)' : lang === 'en' ? '* Billing is done in euros (€)' : '* La facturation est effectuée en euros (€)'}
-              </p>
             </div>
           </div>
 
@@ -2521,13 +2518,16 @@ const VistomioLandingPage: React.FC = () => {
             })}
           </div>
 
-          <div className="max-w-4xl mx-auto mt-6 mb-16 text-center px-4">
+          <div className="max-w-4xl mx-auto mt-6 mb-16 text-center px-4 flex flex-col gap-2">
             <p className="text-[13px] text-gray-500 italic">
               {lang === 'es' 
                 ? '* Precio para hoteles de hasta 25 habitaciones. A partir de ahí, +1,5 % del precio base por habitación adicional.' 
                 : lang === 'en' 
                 ? '* Price for hotels up to 25 rooms. Beyond that, +1.5% of the base price per additional room.' 
                 : '* Prix pour hôtels jusqu\'à 25 chambres. Au-delà, +1,5 % du prix de base par chambre supplémentaire.'}
+            </p>
+            <p className="text-[13px] text-gray-500 italic">
+              {lang === 'es' ? '* La facturación se realiza en euros (€)' : lang === 'en' ? '* Billing is done in euros (€)' : '* La facturation est effectuée en euros (€)'}
             </p>
           </div>
 
