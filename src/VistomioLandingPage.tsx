@@ -1674,7 +1674,7 @@ const VistomioLandingPage: React.FC = () => {
                                 <Icon size={14} />
                               </div>
                               <div className="flex flex-col">
-                                <span className="text-sm font-medium text-boutique-navy group-hover:text-white transition-colors leading-tight">{item.title}</span>
+                                <span className="text-sm font-medium text-boutique-navy transition-colors leading-tight">{item.title}</span>
                               </div>
                             </a>
                           )
