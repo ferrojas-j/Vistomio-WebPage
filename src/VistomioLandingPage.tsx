@@ -1621,7 +1621,7 @@ const GalloAzulLogo: React.FC<{size?: number, className?: string}> = ({ size = 2
 
 const VistomioLandingPage: React.FC = () => {
   const [lang, setLang] = useState<Language>('es');
-  const [billingCycle, setBillingCycle] = useState<'monthly'|'annual'>('annual');
+  const [billingCycle, setBillingCycle] = useState<'monthly'|'annual'>('monthly');
   const [region, setRegion] = useState<'EU'|'US'|'LATAM'>('EU');
   const [currency, setCurrency] = useState<'EUR'|'USD'>('EUR');
   const [exchangeRate, setExchangeRate] = useState(1.08);
