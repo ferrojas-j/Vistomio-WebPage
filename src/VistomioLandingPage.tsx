@@ -2186,10 +2186,10 @@ const VistomioLandingPage: React.FC = () => {
                         {t.seeHowItWorks} <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
                       </a>
                       <a 
-                        href="#category-3" 
+                        href="#precios-chatbot" 
                         onClick={(e) => {
                           e.preventDefault();
-                          document.getElementById('category-3')?.scrollIntoView({ behavior: 'smooth' });
+                          document.getElementById('precios-chatbot')?.scrollIntoView({ behavior: 'smooth' });
                         }}
                         className="inline-flex items-center gap-2 text-sm font-bold text-boutique-navy hover:text-[#B8863B] transition-colors group/btn2 uppercase tracking-widest"
                       >
@@ -2628,7 +2628,7 @@ const VistomioLandingPage: React.FC = () => {
 
 
           {/* Chatbot Pricing Section */}
-          <div className="max-w-6xl mx-auto mb-16">
+          <div id="precios-chatbot" className="max-w-6xl mx-auto mb-16 scroll-mt-24">
             <div className="flex items-center gap-4 mb-8 justify-center">
               <div className="w-12 h-px bg-[#B8863B]"></div>
               <span className="text-[#B8863B] font-bold tracking-[0.25em] text-sm md:text-base uppercase">
