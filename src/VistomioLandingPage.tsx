@@ -1462,7 +1462,18 @@ const VistomioLandingPage: React.FC = () => {
   const [billingCycle, setBillingCycle] = useState<'monthly'|'annual'>('annual');
   const [region, setRegion] = useState<'EU'|'US'|'LATAM'>('EU');
   const [currency, setCurrency] = useState<'EUR'|'USD'>('EUR');
+  const [exchangeRate, setExchangeRate] = useState(1.08);
 
+  useEffect(() => {
+    fetch('https://api.exchangerate-api.com/v4/latest/EUR')
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.rates && data.rates.USD) {
+          setExchangeRate(data.rates.USD);
+        }
+      })
+      .catch(err => console.error("Error fetching exchange rate:", err));
+  }, []);
   useEffect(() => {
     fetch('https://ipapi.co/json/')
       .then(res => res.json())
@@ -1520,7 +1531,7 @@ const VistomioLandingPage: React.FC = () => {
     const priceNum = parseInt(priceStr, 10);
     if (isNaN(priceNum)) return priceStr;
     if (currency === 'EUR') return priceStr;
-    return (Math.round((priceNum * 1.08) / 10) * 10).toString();
+    return (Math.round((priceNum * exchangeRate) / 10) * 10).toString();
   }
 
   const [isScrolled, setIsScrolled] = useState(false);
