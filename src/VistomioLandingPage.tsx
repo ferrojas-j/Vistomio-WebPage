@@ -1504,13 +1504,13 @@ const VistomioLandingPage: React.FC = () => {
     },
     US: {
       hotel: [339, 579, 1199],
-      addon: 250,
+      addon: 230,
       chatbot: [279, 529, 799],
       hotelSetup: [660, 910, 1460]
     },
     LATAM: {
       hotel: [182, 374, 756],
-      addon: 170,
+      addon: 155,
       chatbot: [147, 332, 502],
       hotelSetup: [350, 590, 855]
     }
