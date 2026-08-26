@@ -2768,7 +2768,7 @@ const VistomioLandingPage: React.FC = () => {
       <footer id="contacto" className="bg-boutique-navy text-white/80 py-16 border-t border-boutique-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex flex-col items-center justify-center cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <img src="/logo-icon-transparent.png" alt="Vistomio Logo Icon" className="h-[52px] md:h-[62px] w-auto object-contain mb-1 brightness-0 invert" />
+            <img src="/logo-icon-transparent.png" alt="Vistomio Logo Icon" className="h-[52px] md:h-[62px] w-auto object-contain mb-1" />
             <span className="text-white font-medium tracking-[0.25em] text-sm md:text-base uppercase">VISTOMIO</span>
           </div>
           
