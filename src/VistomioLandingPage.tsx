@@ -264,31 +264,37 @@ const translations = {
       talkBtn: 'Hablemos',
       plans: [
         {
-          name: 'Chatbot estándar',
-            features: [
-              'Conexión multicanal 24/7',
-              'Personalización de tono y personalidad',
-              'Entrenado con información interna de tu negocio',
-              'Responde todo tipo de preguntas frecuentes'
-            ]
+          name: 'Básico',
+          features: [
+            'Automatización de FAQs',
+            'Personalización de tono y personalidad',
+            'Disponibilidad 24/7',
+            'Soporte de cliente básico',
+            'Integración en página web'
+          ],
+          channels: ['web']
         },
         {
-          name: 'Chatbot proactivo',
+          name: 'Pro',
           features: [
-            'Lo de estándar + capacidad de iniciar conversaciones proactivamente',
-            'Envío automatizado de campañas de marketing',
-            'Ofertas especiales',
-            'Fichas anticipadas de check-in, bienvenidas, etc.'
-          ]
+            'Todo lo incluido en básico',
+            'Integración omnicanal (4 canales)',
+            'Bandeja de entrada centralizada',
+            'Envío de documentos, links e imágenes',
+            'Soporte de cliente dedicado'
+          ],
+          channels: ['web', 'facebook', 'instagram', 'whatsapp']
         },
         {
-          name: 'Agente autónomo',
+          name: 'Premium',
           features: [
-            'Todo lo anterior + agente de ventas proactivo',
-            'Sincronización con Booking Engine para ejecutar reservas',
-            'Cambiar fechas',
-            'Extender estancias, etc.'
-          ]
+            'Todo lo incluido en Pro',
+            'Campañas de marketing automatizadas',
+            'Capacidad de generar, editar y cancelar reservas',
+            'Peticiones y tickets de huéspedes',
+            'Escalamiento a agentes humanos'
+          ],
+          channels: ['web', 'facebook', 'instagram', 'whatsapp', 'booking', 'ota']
         }
       ]
     },
@@ -722,35 +728,41 @@ const translations = {
     chatbotPlans: {
       badge: 'Standalone Product',
       title: 'Multichannel AI Chatbot',
-        subtitle: 'Automate customer service, increase direct bookings, and offer 24/7 support across all your channels with our AI agents.',
+      subtitle: 'Automate customer service, increase direct bookings, and offer 24/7 support across all your channels with our AI agents.',
       talkBtn: 'Let\'s Talk',
       plans: [
         {
-          name: 'Standard Chatbot',
-            features: [
-              '24/7 multi-channel connection',
-              'Tone and personality customization',
-              'Trained with your business internal information',
-              'Answers all types of frequently asked questions'
-            ]
+          name: 'Basic',
+          features: [
+            'FAQs Automation',
+            'Tone and personality customization',
+            '24/7 Availability',
+            'Basic customer support',
+            'Website integration'
+          ],
+          channels: ['web']
         },
         {
-          name: 'Proactive Chatbot',
+          name: 'Pro',
           features: [
-            'Standard features + proactive conversation initiation',
+            'Everything in Basic',
+            'Omnichannel integration (4 channels)',
+            'Centralized inbox',
+            'Send documents, links, and images',
+            'Dedicated customer support'
+          ],
+          channels: ['web', 'facebook', 'instagram', 'whatsapp']
+        },
+        {
+          name: 'Premium',
+          features: [
+            'Everything in Pro',
             'Automated marketing campaigns',
-            'Special offers',
-            'Pre-arrival check-in cards, welcomes, etc.'
-          ]
-        },
-        {
-          name: 'Autonomous Agent',
-          features: [
-            'All the above + proactive sales agent',
-            'Synchronization with Booking Engine to execute reservations',
-            'Change dates',
-            'Extend stays, etc.'
-          ]
+            'Ability to generate, edit, and cancel reservations',
+            'Guest requests and tickets',
+            'Escalation to human agents'
+          ],
+          channels: ['web', 'facebook', 'instagram', 'whatsapp', 'booking', 'ota']
         }
       ]
     },
@@ -1185,31 +1197,37 @@ const translations = {
       talkBtn: 'Parlons-en',
       plans: [
         {
-          name: 'Chatbot standard',
-            features: [
-              'Connexion multicanale 24/7',
-              'Personnalisation du ton et de la personnalité',
-              'Formé avec les informations internes de votre entreprise',
-              'Répond à tous types de questions fréquentes'
-            ]
+          name: 'Basique',
+          features: [
+            'Automatisation des FAQ',
+            'Personnalisation du ton et de la personnalité',
+            'Disponibilité 24/7',
+            'Support client de base',
+            'Intégration au site web'
+          ],
+          channels: ['web']
         },
         {
-          name: 'Chatbot proactif',
+          name: 'Pro',
           features: [
-            'Tout le standard + initiation proactive de conversations',
-            'Campagnes marketing automatisées',
-            'Offres spéciales',
-            'Fiches de check-in anticipées, bienvenues, etc.'
-          ]
+            'Tout ce qui est inclus dans Basique',
+            'Intégration omnicanale (4 canaux)',
+            'Boîte de réception centralisée',
+            'Envoi de documents, liens et images',
+            'Support client dédié'
+          ],
+          channels: ['web', 'facebook', 'instagram', 'whatsapp']
         },
         {
-          name: 'Agent autonome',
+          name: 'Premium',
           features: [
-            'Tout ce qui précède + agent de vente proactif',
-            'Synchronisation avec le moteur de réservation',
-            'Modifier les dates',
-            'Prolonger les séjours, etc.'
-          ]
+            'Tout ce qui est inclus dans Pro',
+            'Campagnes de marketing automatisées',
+            'Capacité à générer, éditer et annuler des réservations',
+            'Demandes et tickets des clients',
+            'Escalade vers des agents humains'
+          ],
+          channels: ['web', 'facebook', 'instagram', 'whatsapp', 'booking', 'ota']
         }
       ]
     },
@@ -2177,7 +2195,7 @@ const VistomioLandingPage: React.FC = () => {
                           <h3 className="text-xl font-normal text-boutique-navy font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.chatbotPlans.plans[0].name}</h3>
                         </div>
                         <div className="w-full h-px bg-gray-100 mb-6"></div>
-                        <ul className="flex flex-col gap-4 flex-grow">
+                        <ul className="flex flex-col gap-4 flex-grow mb-6">
                           {t.chatbotPlans.plans[0].features.map((feature, idx) => (
                             <li key={idx} className="flex gap-3">
                               <div className="mt-0.5 min-w-[18px] text-[#B8863B]"> <CheckCircle2 size={18} /> </div>
@@ -2185,6 +2203,17 @@ const VistomioLandingPage: React.FC = () => {
                             </li>
                           ))}
                         </ul>
+                        <div className="mt-auto pt-6 border-t border-gray-200/60">
+                          <h4 className="text-[10px] font-bold text-boutique-navy tracking-widest uppercase mb-4">{lang === "es" ? "CANALES INCLUIDOS" : lang === "en" ? "CHANNELS INCLUDED" : "CANAUX INCLUS"}</h4>
+                          <div className="flex gap-2.5 text-[#303c4f]">
+                            {t.chatbotPlans.plans[0].channels?.includes('web') && <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>}
+                            {t.chatbotPlans.plans[0].channels?.includes('facebook') && <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>}
+                            {t.chatbotPlans.plans[0].channels?.includes('instagram') && <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.555.556.9 1.11 1.152 1.772.247.637.415 1.363.465 2.428.048 1.067.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.152 1.772c-.556.555-1.11.9-1.772 1.152-.638.247-1.363.415-2.428.465-1.066.048-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.152 4.904 4.904 0 0 1-1.153-1.772c-.248-.638-.416-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.363-.416 2.428-.465C8.944 2.013 9.283 2 12 2zm0 2.16c-2.67 0-3.003.01-4.053.058-.975.045-1.505.207-1.858.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.05-.057 1.383-.057 4.053 0 2.67.01 3.003.057 4.053.045.975.207 1.505.344 1.858.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.387.058 4.053.058 2.67 0 3.003-.01 4.053-.058.975-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.386.058-4.053 0-2.67-.01-3.003-.058-4.053-.045-.974-.207-1.505-.344-1.858a3.097 3.097 0 0 0-.748-1.15 3.098 3.098 0 0 0-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.05-.048-1.382-.058-4.053-.058zm0 2.676a5.164 5.164 0 1 1 0 10.328 5.164 5.164 0 0 1 0-10.328zm0 2.16a3.004 3.004 0 1 0 0 6.008 3.004 3.004 0 0 0 0-6.008zm5.23-3.66a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg>}
+                            {t.chatbotPlans.plans[0].channels?.includes('whatsapp') && <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.014 2c-5.513 0-9.99 4.477-9.99 9.99 0 1.765.46 3.486 1.336 5.004L2 22l5.137-1.347a9.94 9.94 0 0 0 4.877 1.272h.004c5.51 0 9.987-4.478 9.987-9.99 0-2.673-1.04-5.184-2.93-7.073A9.932 9.932 0 0 0 12.014 2zm5.485 14.437c-.234.66-1.353 1.274-1.865 1.319-.481.043-1.092.148-3.155-.707-2.488-1.028-4.084-3.568-4.208-3.734-.124-.166-1.002-1.335-1.002-2.545s.627-1.808.843-2.04c.216-.232.47-.291.627-.291.157 0 .314 0 .452.008.144.007.337-.056.526.402.196.474.666 1.624.725 1.741.059.116.098.253.02.408-.078.155-.117.253-.235.39-.118.138-.248.3-.353.403-.118.116-.242.243-.105.479.137.236.61 1.008 1.313 1.634.908.81 1.666 1.059 1.882 1.176.216.117.343.097.47-.04.128-.137.549-.64.697-.86.147-.22.294-.183.51-.102.216.08 1.373.647 1.608.764.236.117.393.176.451.274.059.098.059.569-.176 1.229z"/></svg>}
+                            {t.chatbotPlans.plans[0].channels?.includes('booking') && <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="4" /><path d="M7 6h4.5c1.5 0 2.5.3 3.1.8.6.5.9 1.3.9 2.2 0 .8-.3 1.5-1 2 .8.2 1.3.8 1.6 1.5.3.7.3 1.5.3 2.4 0 1.2-.4 2.1-1.1 2.8-.7.7-1.7 1-3.2 1H7V6zm3 4.8h1.2c.7 0 1.2-.1 1.5-.4.3-.3.4-.6.4-1.1 0-.4-.1-.8-.4-1-.3-.2-.7-.3-1.4-.3H10v2.8zm0 5.4h1.5c1 0 1.6-.2 2-.5.4-.3.6-.8.6-1.4 0-.6-.2-1.1-.6-1.4-.4-.3-1-.4-2-.4H10v3.7zm8.5-.2a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4z" fill="white"/></svg>}
+                            {t.chatbotPlans.plans[0].channels?.includes('ota') && <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="4" /><path d="M16 8H9.5a1 1 0 0 0 0 2h3.1l-6.3 6.3a1 1 0 0 0 1.4 1.4L14 11.4v3.1a1 1 0 0 0 2 0V8z" fill="white"/></svg>}
+                          </div>
+                        </div>
                       </div>
 
                       {/* Premium Plan */}
@@ -2200,7 +2229,7 @@ const VistomioLandingPage: React.FC = () => {
                           <h3 className="text-xl font-normal text-boutique-navy font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.chatbotPlans.plans[1].name}</h3>
                         </div>
                         <div className="w-full h-px bg-gray-100 mb-6"></div>
-                        <ul className="flex flex-col gap-4 flex-grow">
+                        <ul className="flex flex-col gap-4 flex-grow mb-6">
                           {t.chatbotPlans.plans[1].features.map((feature, idx) => (
                             <li key={idx} className="flex gap-3">
                               <div className="mt-0.5 min-w-[18px] text-[#B8863B]"> <CheckCircle2 size={18} /> </div>
@@ -2208,6 +2237,17 @@ const VistomioLandingPage: React.FC = () => {
                             </li>
                           ))}
                         </ul>
+                        <div className="mt-auto pt-6 border-t border-gray-200/60">
+                          <h4 className="text-[10px] font-bold text-boutique-navy tracking-widest uppercase mb-4">{lang === "es" ? "CANALES INCLUIDOS" : lang === "en" ? "CHANNELS INCLUDED" : "CANAUX INCLUS"}</h4>
+                          <div className="flex gap-2.5 text-[#303c4f]">
+                            {t.chatbotPlans.plans[1].channels?.includes('web') && <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>}
+                            {t.chatbotPlans.plans[1].channels?.includes('facebook') && <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>}
+                            {t.chatbotPlans.plans[1].channels?.includes('instagram') && <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.555.556.9 1.11 1.152 1.772.247.637.415 1.363.465 2.428.048 1.067.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.152 1.772c-.556.555-1.11.9-1.772 1.152-.638.247-1.363.415-2.428.465-1.066.048-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.152 4.904 4.904 0 0 1-1.153-1.772c-.248-.638-.416-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.363-.416 2.428-.465C8.944 2.013 9.283 2 12 2zm0 2.16c-2.67 0-3.003.01-4.053.058-.975.045-1.505.207-1.858.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.05-.057 1.383-.057 4.053 0 2.67.01 3.003.057 4.053.045.975.207 1.505.344 1.858.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.387.058 4.053.058 2.67 0 3.003-.01 4.053-.058.975-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.386.058-4.053 0-2.67-.01-3.003-.058-4.053-.045-.974-.207-1.505-.344-1.858a3.097 3.097 0 0 0-.748-1.15 3.098 3.098 0 0 0-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.05-.048-1.382-.058-4.053-.058zm0 2.676a5.164 5.164 0 1 1 0 10.328 5.164 5.164 0 0 1 0-10.328zm0 2.16a3.004 3.004 0 1 0 0 6.008 3.004 3.004 0 0 0 0-6.008zm5.23-3.66a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg>}
+                            {t.chatbotPlans.plans[1].channels?.includes('whatsapp') && <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.014 2c-5.513 0-9.99 4.477-9.99 9.99 0 1.765.46 3.486 1.336 5.004L2 22l5.137-1.347a9.94 9.94 0 0 0 4.877 1.272h.004c5.51 0 9.987-4.478 9.987-9.99 0-2.673-1.04-5.184-2.93-7.073A9.932 9.932 0 0 0 12.014 2zm5.485 14.437c-.234.66-1.353 1.274-1.865 1.319-.481.043-1.092.148-3.155-.707-2.488-1.028-4.084-3.568-4.208-3.734-.124-.166-1.002-1.335-1.002-2.545s.627-1.808.843-2.04c.216-.232.47-.291.627-.291.157 0 .314 0 .452.008.144.007.337-.056.526.402.196.474.666 1.624.725 1.741.059.116.098.253.02.408-.078.155-.117.253-.235.39-.118.138-.248.3-.353.403-.118.116-.242.243-.105.479.137.236.61 1.008 1.313 1.634.908.81 1.666 1.059 1.882 1.176.216.117.343.097.47-.04.128-.137.549-.64.697-.86.147-.22.294-.183.51-.102.216.08 1.373.647 1.608.764.236.117.393.176.451.274.059.098.059.569-.176 1.229z"/></svg>}
+                            {t.chatbotPlans.plans[1].channels?.includes('booking') && <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="4" /><path d="M7 6h4.5c1.5 0 2.5.3 3.1.8.6.5.9 1.3.9 2.2 0 .8-.3 1.5-1 2 .8.2 1.3.8 1.6 1.5.3.7.3 1.5.3 2.4 0 1.2-.4 2.1-1.1 2.8-.7.7-1.7 1-3.2 1H7V6zm3 4.8h1.2c.7 0 1.2-.1 1.5-.4.3-.3.4-.6.4-1.1 0-.4-.1-.8-.4-1-.3-.2-.7-.3-1.4-.3H10v2.8zm0 5.4h1.5c1 0 1.6-.2 2-.5.4-.3.6-.8.6-1.4 0-.6-.2-1.1-.6-1.4-.4-.3-1-.4-2-.4H10v3.7zm8.5-.2a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4z" fill="white"/></svg>}
+                            {t.chatbotPlans.plans[1].channels?.includes('ota') && <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="4" /><path d="M16 8H9.5a1 1 0 0 0 0 2h3.1l-6.3 6.3a1 1 0 0 0 1.4 1.4L14 11.4v3.1a1 1 0 0 0 2 0V8z" fill="white"/></svg>}
+                          </div>
+                        </div>
                       </div>
 
                       {/* Autonomous Plan */}
@@ -2223,7 +2263,7 @@ const VistomioLandingPage: React.FC = () => {
                           <h3 className="text-xl font-normal text-boutique-navy font-serif md:tracking-[0.05em] tracking-[0.03em] leading-relaxed">{t.chatbotPlans.plans[2].name}</h3>
                         </div>
                         <div className="w-full h-px bg-gray-100 mb-6"></div>
-                        <ul className="flex flex-col gap-4 flex-grow">
+                        <ul className="flex flex-col gap-4 flex-grow mb-6">
                           {t.chatbotPlans.plans[2].features.map((feature, idx) => (
                             <li key={idx} className="flex gap-3">
                               <div className="mt-0.5 min-w-[18px] text-[#B8863B]"> <CheckCircle2 size={18} /> </div>
@@ -2231,6 +2271,17 @@ const VistomioLandingPage: React.FC = () => {
                             </li>
                           ))}
                         </ul>
+                        <div className="mt-auto pt-6 border-t border-gray-200/60">
+                          <h4 className="text-[10px] font-bold text-boutique-navy tracking-widest uppercase mb-4">{lang === "es" ? "CANALES INCLUIDOS" : lang === "en" ? "CHANNELS INCLUDED" : "CANAUX INCLUS"}</h4>
+                          <div className="flex gap-2.5 text-[#303c4f]">
+                            {t.chatbotPlans.plans[2].channels?.includes('web') && <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>}
+                            {t.chatbotPlans.plans[2].channels?.includes('facebook') && <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>}
+                            {t.chatbotPlans.plans[2].channels?.includes('instagram') && <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.555.556.9 1.11 1.152 1.772.247.637.415 1.363.465 2.428.048 1.067.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.152 1.772c-.556.555-1.11.9-1.772 1.152-.638.247-1.363.415-2.428.465-1.066.048-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.152 4.904 4.904 0 0 1-1.153-1.772c-.248-.638-.416-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.363-.416 2.428-.465C8.944 2.013 9.283 2 12 2zm0 2.16c-2.67 0-3.003.01-4.053.058-.975.045-1.505.207-1.858.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.05-.057 1.383-.057 4.053 0 2.67.01 3.003.057 4.053.045.975.207 1.505.344 1.858.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.387.058 4.053.058 2.67 0 3.003-.01 4.053-.058.975-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.386.058-4.053 0-2.67-.01-3.003-.058-4.053-.045-.974-.207-1.505-.344-1.858a3.097 3.097 0 0 0-.748-1.15 3.098 3.098 0 0 0-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.05-.048-1.382-.058-4.053-.058zm0 2.676a5.164 5.164 0 1 1 0 10.328 5.164 5.164 0 0 1 0-10.328zm0 2.16a3.004 3.004 0 1 0 0 6.008 3.004 3.004 0 0 0 0-6.008zm5.23-3.66a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg>}
+                            {t.chatbotPlans.plans[2].channels?.includes('whatsapp') && <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.014 2c-5.513 0-9.99 4.477-9.99 9.99 0 1.765.46 3.486 1.336 5.004L2 22l5.137-1.347a9.94 9.94 0 0 0 4.877 1.272h.004c5.51 0 9.987-4.478 9.987-9.99 0-2.673-1.04-5.184-2.93-7.073A9.932 9.932 0 0 0 12.014 2zm5.485 14.437c-.234.66-1.353 1.274-1.865 1.319-.481.043-1.092.148-3.155-.707-2.488-1.028-4.084-3.568-4.208-3.734-.124-.166-1.002-1.335-1.002-2.545s.627-1.808.843-2.04c.216-.232.47-.291.627-.291.157 0 .314 0 .452.008.144.007.337-.056.526.402.196.474.666 1.624.725 1.741.059.116.098.253.02.408-.078.155-.117.253-.235.39-.118.138-.248.3-.353.403-.118.116-.242.243-.105.479.137.236.61 1.008 1.313 1.634.908.81 1.666 1.059 1.882 1.176.216.117.343.097.47-.04.128-.137.549-.64.697-.86.147-.22.294-.183.51-.102.216.08 1.373.647 1.608.764.236.117.393.176.451.274.059.098.059.569-.176 1.229z"/></svg>}
+                            {t.chatbotPlans.plans[2].channels?.includes('booking') && <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="4" /><path d="M7 6h4.5c1.5 0 2.5.3 3.1.8.6.5.9 1.3.9 2.2 0 .8-.3 1.5-1 2 .8.2 1.3.8 1.6 1.5.3.7.3 1.5.3 2.4 0 1.2-.4 2.1-1.1 2.8-.7.7-1.7 1-3.2 1H7V6zm3 4.8h1.2c.7 0 1.2-.1 1.5-.4.3-.3.4-.6.4-1.1 0-.4-.1-.8-.4-1-.3-.2-.7-.3-1.4-.3H10v2.8zm0 5.4h1.5c1 0 1.6-.2 2-.5.4-.3.6-.8.6-1.4 0-.6-.2-1.1-.6-1.4-.4-.3-1-.4-2-.4H10v3.7zm8.5-.2a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4z" fill="white"/></svg>}
+                            {t.chatbotPlans.plans[2].channels?.includes('ota') && <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="4" /><path d="M16 8H9.5a1 1 0 0 0 0 2h3.1l-6.3 6.3a1 1 0 0 0 1.4 1.4L14 11.4v3.1a1 1 0 0 0 2 0V8z" fill="white"/></svg>}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
