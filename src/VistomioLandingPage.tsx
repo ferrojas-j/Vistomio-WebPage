@@ -1845,33 +1845,34 @@ const VistomioLandingPage: React.FC = () => {
                 {t.hero.subtitle}
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-                <a 
-                  href="https://demo.vistomio.com" target="_blank" rel="noopener noreferrer" 
-                  className="w-full sm:w-auto bg-[#C6A15B] hover:bg-[#B5914A] text-white font-semibold text-sm px-8 py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2"
-                >
-                  {t.hero.ctaPrimary} <ArrowRight size={16} />
-                </a>
-                <a 
-                  href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} 
-                  className="w-full sm:w-auto bg-boutique-navy text-white hover:bg-boutique-navy/90 font-semibold text-sm px-8 py-3.5 rounded-lg transition-colors text-center border-none"
-                >
-                  {t.hero.ctaSecondary}
-                </a>
-              </div>
-
-              <div className="mt-5 w-full sm:w-auto text-center sm:text-left">
-                <a 
-                  href="#category-3"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('category-3')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="w-full sm:w-auto border border-[#C6A15B] bg-transparent hover:bg-[#EDE3D0] text-boutique-navy font-semibold text-sm px-8 py-3.5 rounded-lg transition-colors inline-flex items-center justify-center gap-2"
-                >
-                  <MessageSquareText size={16} className="text-[#C6A15B]" />
-                  {lang === 'es' ? 'Empieza con el Chatbot IA' : lang === 'en' ? 'Start with the AI Chatbot' : 'Commencer par le Chatbot IA'}
-                </a>
+              <div className="flex flex-col w-full sm:w-auto">
+                <div className="flex flex-col sm:flex-row items-center gap-4 w-full">
+                  <a 
+                    href="https://demo.vistomio.com" target="_blank" rel="noopener noreferrer" 
+                    className="w-full sm:w-auto flex-1 bg-[#C6A15B] hover:bg-[#B5914A] text-white font-semibold text-sm px-8 py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2"
+                  >
+                    {t.hero.ctaPrimary} <ArrowRight size={16} />
+                  </a>
+                  <a 
+                    href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} 
+                    className="w-full sm:w-auto flex-1 bg-boutique-navy text-white hover:bg-boutique-navy/90 font-semibold text-sm px-8 py-3.5 rounded-lg transition-colors text-center border-none"
+                  >
+                    {t.hero.ctaSecondary}
+                  </a>
+                </div>
+                <div className="mt-10 w-full flex justify-center">
+                  <a 
+                    href="#category-3"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById('category-3')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="w-full sm:w-auto border border-[#C6A15B] bg-transparent hover:bg-[#EDE3D0] text-boutique-navy font-semibold text-sm px-8 py-3.5 rounded-lg transition-colors inline-flex items-center justify-center gap-2"
+                  >
+                    <MessageSquareText size={16} className="text-[#C6A15B]" />
+                    {lang === 'es' ? 'Empieza con el Chatbot IA' : lang === 'en' ? 'Start with the AI Chatbot' : 'Commencer par le Chatbot IA'}
+                  </a>
+                </div>
               </div>
             </div>
 
