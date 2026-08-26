@@ -1844,16 +1844,19 @@ const VistomioLandingPage: React.FC = () => {
                 </a>
               </div>
 
-              <a 
-                href="#category-3"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById('category-3')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="mt-6 text-[14px] md:text-[15px] font-medium text-boutique-navy/70 hover:text-[#B8863B] underline decoration-transparent hover:decoration-[#B8863B] underline-offset-4 transition-all inline-block w-full sm:w-auto text-center sm:text-left"
-              >
-                {lang === 'es' ? '¿Aún no estás listo para cambiar todo? Empieza con el Chatbot de IA.' : lang === 'en' ? 'Not ready to change everything yet? Start with the AI Chatbot.' : 'Pas encore prêt à tout changer ? Commencez par le Chatbot IA.'}
-              </a>
+              <div className="mt-5 w-full sm:w-auto text-center sm:text-left">
+                <a 
+                  href="#category-3"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('category-3')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="w-full sm:w-auto border border-[#C6A15B] bg-transparent hover:bg-[#EDE3D0] text-boutique-navy font-semibold text-sm px-8 py-3.5 rounded-lg transition-colors inline-flex items-center justify-center gap-2"
+                >
+                  <MessageSquareText size={16} className="text-[#C6A15B]" />
+                  {lang === 'es' ? 'Empieza con el Chatbot IA' : lang === 'en' ? 'Start with the AI Chatbot' : 'Commencer par le Chatbot IA'}
+                </a>
+              </div>
             </div>
 
             {/* Right Image with Badges */}
