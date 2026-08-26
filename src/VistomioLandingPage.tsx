@@ -2600,6 +2600,13 @@ const VistomioLandingPage: React.FC = () => {
                 : '* Prix pour hôtels jusqu\'à 25 chambres. Au-delà, +1,5 % du prix de base par chambre supplémentaire.'}
             </p>
             <p className="text-[13px] text-gray-500 italic">
+              {lang === 'es' 
+                ? '* Compromiso mínimo de 6 meses (pago mensual) o 12 meses (pago anual, -15%).' 
+                : lang === 'en' 
+                ? '* Minimum commitment of 6 months (monthly payment) or 12 months (annual payment, -15%).' 
+                : '* Engagement minimum de 6 mois (paiement mensuel) ou 12 mois (paiement annuel, -15%).'}
+            </p>
+            <p className="text-[13px] text-gray-500 italic">
               {lang === 'es' ? '* La facturación se realiza en euros (€)' : lang === 'en' ? '* Billing is done in euros (€)' : '* La facturation est effectuée en euros (€)'}
             </p>
           </div>
