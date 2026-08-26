@@ -2181,9 +2181,19 @@ const VistomioLandingPage: React.FC = () => {
                       {t.chatbotPlans.subtitle}
                     </p>
                     
-                    <div className="mb-12">
+                    <div className="mb-12 flex flex-wrap items-center gap-8">
                       <a href="#demo-chatbot" className="inline-flex items-center gap-2 text-sm font-bold text-[#B8863B] hover:text-[#C6A15B] transition-colors group/btn uppercase tracking-widest">
                         {t.seeHowItWorks} <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
+                      </a>
+                      <a 
+                        href="#category-3" 
+                        onClick={(e) => {
+                          e.preventDefault();
+                          document.getElementById('category-3')?.scrollIntoView({ behavior: 'smooth' });
+                        }}
+                        className="inline-flex items-center gap-2 text-sm font-bold text-boutique-navy hover:text-[#B8863B] transition-colors group/btn2 uppercase tracking-widest"
+                      >
+                        {lang === 'es' ? 'Ver planes y tarifas' : lang === 'en' ? 'View plans and pricing' : 'Voir les plans et tarifs'} <ArrowRight size={16} className="group-hover/btn2:translate-x-1 transition-transform" />
                       </a>
                     </div>
 
