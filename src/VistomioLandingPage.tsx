@@ -2658,6 +2658,36 @@ const VistomioLandingPage: React.FC = () => {
 
       
 
+
+
+        {/* --- CTA FINAL --- */}
+      <section className="py-24 md:py-32 relative bg-boutique-navy overflow-hidden">
+        {/* Background Accents */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-boutique-gold/10 blur-[0px] hidden rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-boutique-sand/10 blur-[0px] hidden rounded-full -translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
+
+        <div className="max-w-4xl mx-auto px-4 relative z-10 text-center flex flex-col items-center">
+          <div className="flex items-center gap-4 mb-6 justify-center">
+            <div className="w-12 h-[2px] bg-[#B8863B]"></div>
+            <span className="text-[#B8863B] font-bold tracking-[0.25em] text-sm md:text-base uppercase">VISTOMIO</span>
+            <div className="w-12 h-[2px] bg-[#B8863B]"></div>
+          </div>
+          
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white font-normal mb-8 tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">
+            {t.ctaFinal.title}
+          </h2>
+          
+          <p className="text-xl md:text-2xl text-gray-300 mb-14 max-w-2xl mx-auto font-light leading-relaxed">
+            {t.ctaFinal.subtitle}
+          </p>
+          
+          <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="inline-flex items-center gap-2 bg-[#B8863B] text-white font-semibold text-lg md:text-xl px-10 py-5 rounded-full hover:bg-[#b5932d] transition-all hover:-translate-y-1">
+            {t.ctaFinal.button}
+            <ArrowRight className="w-5 h-5" />
+          </a>
+        </div>
+      </section>
+
         {/* --- SOCIAL PROOF --- */}
       <section className="py-12 border-y border-gray-300 bg-boutique-offwhite relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -2693,34 +2723,6 @@ const VistomioLandingPage: React.FC = () => {
               <span className="text-xs font-semibold text-boutique-navy/80 uppercase tracking-widest">{t.locations.jc}</span>
             </div>
           </div>
-        </div>
-      </section>
-
-        {/* --- CTA FINAL --- */}
-      <section className="py-24 md:py-32 relative bg-boutique-navy overflow-hidden">
-        {/* Background Accents */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-boutique-gold/10 blur-[0px] hidden rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-boutique-sand/10 blur-[0px] hidden rounded-full -translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
-
-        <div className="max-w-4xl mx-auto px-4 relative z-10 text-center flex flex-col items-center">
-          <div className="flex items-center gap-4 mb-6 justify-center">
-            <div className="w-12 h-[2px] bg-[#B8863B]"></div>
-            <span className="text-[#B8863B] font-bold tracking-[0.25em] text-sm md:text-base uppercase">VISTOMIO</span>
-            <div className="w-12 h-[2px] bg-[#B8863B]"></div>
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white font-normal mb-8 tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">
-            {t.ctaFinal.title}
-          </h2>
-          
-          <p className="text-xl md:text-2xl text-gray-300 mb-14 max-w-2xl mx-auto font-light leading-relaxed">
-            {t.ctaFinal.subtitle}
-          </p>
-          
-          <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="inline-flex items-center gap-2 bg-[#B8863B] text-white font-semibold text-lg md:text-xl px-10 py-5 rounded-full hover:bg-[#b5932d] transition-all hover:-translate-y-1">
-            {t.ctaFinal.button}
-            <ArrowRight className="w-5 h-5" />
-          </a>
         </div>
       </section>
 
