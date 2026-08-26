@@ -19,7 +19,7 @@ import {
   CheckCircle2
 } from 'lucide-react';
 
-export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
+export default function MockVistomioApp({ t, lang = 'es' }: { t: any, lang?: string }) {
   return (
     <div className="w-full h-full flex bg-[#13203A] text-left text-boutique-navy font-sans py-3 md:py-5 pr-3 md:pr-5 pl-2 md:pl-3 gap-3 md:gap-5">
       
@@ -59,14 +59,14 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
             
             <h1 className="text-[18px] md:text-[24px] text-boutique-navy flex items-center gap-2 md:gap-3 font-serif font-normal whitespace-nowrap">
               <CalendarDays className="w-6 h-6 md:w-7 md:h-7 text-[#C6A15B]" />
-              Calendario
+              {t?.toolbar?.calendar?.split(' ')[0] || 'Calendario'}
             </h1>
 
             {/* Date Selectors & Navigation */}
             <div className="flex flex-row items-center gap-3 md:gap-4">
               <div className="flex gap-2 hidden lg:flex">
                 <div className="bg-white border border-gray-200 rounded-full px-4 py-2 text-[11px] md:text-[13px] font-bold text-boutique-navy flex items-center gap-2 shadow-sm whitespace-nowrap">
-                  Agosto <ChevronDown className="w-4 h-4 text-gray-400" />
+                  {t?.toolbar?.august || 'Agosto'} <ChevronDown className="w-4 h-4 text-gray-400" />
                 </div>
                 <div className="bg-white border border-gray-200 rounded-full px-4 py-2 text-[11px] md:text-[13px] font-bold text-boutique-navy flex items-center gap-2 shadow-sm whitespace-nowrap">
                   2026 <ChevronDown className="w-4 h-4 text-gray-400" />
@@ -74,7 +74,7 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
               </div>
               <div className="bg-white border border-gray-200 rounded-full flex items-center shadow-sm">
                 <button className="px-3 py-2 text-gray-400 hover:text-boutique-navy transition-colors"><ChevronLeft className="w-4 h-4" strokeWidth={3} /></button>
-                <div className="px-3 py-2 text-[11px] md:text-[13px] font-bold text-boutique-navy tracking-widest text-[#2A75D3] whitespace-nowrap">HOY</div>
+                <div className="px-3 py-2 text-[11px] md:text-[13px] font-bold text-boutique-navy tracking-widest text-[#2A75D3] whitespace-nowrap">{t?.toolbar?.today || 'HOY'}</div>
                 <button className="px-3 py-2 text-gray-400 hover:text-boutique-navy transition-colors"><ChevronRight className="w-4 h-4" strokeWidth={3} /></button>
               </div>
             </div>
@@ -86,10 +86,18 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
             {/* Header Row */}
             <div className="flex border-b border-gray-100 bg-white">
               <div className="w-[120px] md:w-[180px] flex-shrink-0 px-4 py-3 border-r border-gray-100 flex items-end">
-                <span className="text-[10px] md:text-[12px] font-bold text-gray-400 tracking-widest uppercase">ROOM</span>
+                <span className="text-[10px] md:text-[12px] font-bold text-gray-400 tracking-widest uppercase">{t?.grid?.room || 'ROOM'}</span>
               </div>
               <div className="flex-1 grid grid-cols-7 relative">
-                {['LUN 17', 'MAR 18', 'MIÉ 19', 'JUE 20', 'VIE 21', 'SÁB 22', 'DOM 23'].map((day: string, i: number) => (
+                {[
+                  `${t?.grid?.days?.[5] || 'LUN'} 17`, 
+                  `${t?.grid?.days?.[6] || 'MAR'} 18`, 
+                  `${t?.grid?.days?.[0] || 'MIÉ'} 19`, 
+                  `${t?.grid?.days?.[1] || 'JUE'} 20`, 
+                  `${t?.grid?.days?.[2] || 'VIE'} 21`, 
+                  `${t?.grid?.days?.[3] || 'SÁB'} 22`, 
+                  `${t?.grid?.days?.[4] || 'DOM'} 23`
+                ].map((day: string, i: number) => (
                   <div key={i} className={`flex flex-col items-center justify-center py-2 md:py-3 border-r border-gray-100 ${i === 1 ? 'bg-[#FFF9E5]' : ''}`}>
                     <span className={`text-[11px] md:text-[13px] font-bold text-center leading-tight whitespace-nowrap ${i === 1 ? 'text-[#C6A15B]' : 'text-gray-500'}`}>
                       {day}
@@ -105,33 +113,33 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
             {/* Grid Body (6 rows) */}
             <div className="flex-1 flex flex-col overflow-y-auto scrollbar-hide [&::-webkit-scrollbar]:hidden bg-gray-50/30">
               
-              <GanttRow name="Suite Deluxe Terraza">
+              <GanttRow name={t?.grid?.rooms?.[0] || "Suite Deluxe Terraza"}>
                    <BookingPill colStart={1} colSpan={2} color="green" icon="home" name="Ashley T..." />
                    <BookingPill colStart={3.2} colSpan={3.8} color="blue" icon="user" name="Paul Thompson" />
               </GanttRow>
 
-              <GanttRow name="Suite Deluxe Jardín">
+              <GanttRow name={t?.grid?.rooms?.[1] || "Suite Deluxe Jardín"}>
                    <BookingPill colStart={0} colSpan={3} color="green" icon="user" name="Emily Gonzalez" />
                    <BookingPill colStart={3.2} colSpan={3.8} color="blue" icon="user" name="Ashley A..." />
               </GanttRow>
 
-              <GanttRow name="Habitación Deluxe 301">
+              <GanttRow name={t?.grid?.rooms?.[2] || "Habitación Deluxe 301"}>
                    <BookingPill colStart={0} colSpan={1.8} color="green" icon="home" name="Sophia T..." />
                    <BookingPill colStart={2.2} colSpan={1} color="blue" icon="user" name="C." />
                    <BookingPill colStart={3.5} colSpan={3.5} color="blue" icon="user" name="Robert Jones" />
               </GanttRow>
 
-              <GanttRow name="Habitación Jardín 201">
+              <GanttRow name={lang === 'es' ? 'Habitación Jardín 201' : lang === 'en' ? 'Garden Room 201' : 'Chambre Jardin 201'}>
                    <BookingPill colStart={0} colSpan={2} color="green" icon="home" name="Olivia Miller" />
                    <BookingPill colStart={2.2} colSpan={3.8} color="blue" icon="home" name="Jane Martinez" />
               </GanttRow>
               
-              <GanttRow name="Loft Terraza 01">
+              <GanttRow name={lang === 'es' ? 'Loft Terraza 01' : lang === 'en' ? 'Terrace Loft 01' : 'Loft Terrasse 01'}>
                    <BookingPill colStart={0} colSpan={1.8} color="green" icon="home" name="Elias G..." />
                    <BookingPill colStart={2.2} colSpan={4.8} color="blue" icon="user" name="Thomas Jones" />
               </GanttRow>
               
-              <GanttRow name="Loft Terraza 02">
+              <GanttRow name={lang === 'es' ? 'Loft Terraza 02' : lang === 'en' ? 'Terrace Loft 02' : 'Loft Terrasse 02'}>
                    <BookingPill colStart={0} colSpan={2} color="green" icon="home" name="Sophia Garcia" />
                    <BookingPill colStart={2.2} colSpan={4.8} color="blue" icon="user" name="Olivia Johnson" />
               </GanttRow>
@@ -144,15 +152,15 @@ export default function MockVistomioApp({ t }: { t: any, lang?: string }) {
         <div className="bg-white rounded-[12px] md:rounded-[16px] p-3 md:p-4 shadow-xl flex-shrink-0 flex flex-col overflow-hidden shrink-0 h-auto">
           <div className="flex items-center gap-2 mb-2 md:mb-3 px-1">
             <Globe className="w-4 h-4 text-boutique-navy" />
-            <h3 className="text-sm md:text-base text-boutique-navy font-serif font-bold tracking-[0.02em] whitespace-nowrap">{t.channels?.title || 'Channel Manager'}</h3>
+            <h3 className="text-sm md:text-base text-boutique-navy font-serif font-bold tracking-[0.02em] whitespace-nowrap">{t?.channels?.title || 'Channel Manager'}</h3>
           </div>
           
           <div className="flex justify-between gap-2 md:gap-3 w-full overflow-hidden">
-            <ChannelCard name="Booking" color="blue" subtitle="Conectado" rooms="8 Hab." />
-            <ChannelCard name="Airbnb" color="red" subtitle="Conectado" rooms="6 Hab." />
-            <ChannelCard name="Expedia" color="black" subtitle="Conectado" rooms="8 Hab." />
-            <ChannelCard name="Web Directa" color="purple" subtitle="Conectado" rooms="8 Hab." className="hidden md:flex" />
-            <ChannelCard name="Venta Directa" color="gold" subtitle="Manual" rooms="8 Hab." className="hidden xl:flex" />
+            <ChannelCard name="Booking" color="blue" subtitle={t?.channels?.synced || "Conectado"} rooms={`8 ${lang === 'es' ? 'Hab.' : lang === 'en' ? 'Rooms' : 'Ch.'}`} />
+            <ChannelCard name="Airbnb" color="red" subtitle={t?.channels?.synced || "Conectado"} rooms={`6 ${lang === 'es' ? 'Hab.' : lang === 'en' ? 'Rooms' : 'Ch.'}`} />
+            <ChannelCard name="Expedia" color="black" subtitle={t?.channels?.synced || "Conectado"} rooms={`8 ${lang === 'es' ? 'Hab.' : lang === 'en' ? 'Rooms' : 'Ch.'}`} />
+            <ChannelCard name={t?.channels?.directWeb || "Web Directa"} color="purple" subtitle={t?.channels?.synced || "Conectado"} rooms={`8 ${lang === 'es' ? 'Hab.' : lang === 'en' ? 'Rooms' : 'Ch.'}`} className="hidden md:flex" />
+            <ChannelCard name={t?.channels?.directSale || "Venta Directa"} color="gold" subtitle={lang === 'es' ? 'Manual' : lang === 'en' ? 'Manual' : 'Manuel'} rooms={`8 ${lang === 'es' ? 'Hab.' : lang === 'en' ? 'Rooms' : 'Ch.'}`} className="hidden xl:flex" />
           </div>
         </div>
 

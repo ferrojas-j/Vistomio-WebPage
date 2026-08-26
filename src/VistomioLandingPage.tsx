@@ -135,7 +135,7 @@ const translations = {
         items: [
           {
             title: 'Booking Engine & Channel Manager',
-            desc: 'Sincronización instantánea de disponibilidad y tarifas. Nunca más un overbooking.',
+            desc: 'Sincronización instantánea de disponibilidad y tarifas. Nunca más un overbooking, y recupera el control de tus reservas directas sin depender de las comisiones de las OTA.',
             icon: CalendarCheck
           },
           {
@@ -607,7 +607,7 @@ const translations = {
         items: [
           {
             title: 'Booking Engine & Channel Manager',
-            desc: 'Instant synchronization of availability and rates. Never experience overbooking again.',
+            desc: 'Instant synchronization of availability and rates. Never experience overbooking again, and take back control of your direct bookings without depending on OTA commissions.',
             icon: CalendarCheck
           },
           {
@@ -1079,7 +1079,7 @@ const translations = {
         items: [
           {
             title: 'Moteur de Réservation & Channel Manager',
-            desc: 'Synchronisation instantanée des disponibilités et tarifs. Fini le surbooking.',
+            desc: 'Synchronisation instantanée des disponibilités et tarifs. Fini le surbooking, et reprenez le contrôle sur vos réservations directes, sans dépendre des commissions OTA.',
             icon: CalendarCheck
           },
           {
@@ -1520,7 +1520,7 @@ const VistomioLandingPage: React.FC = () => {
   const getPriceInfo = (type: 'hotel'|'addon'|'chatbot', idx: number = 0) => {
     const baseMonthly = type === 'addon' ? regionalPrices[region].addon : regionalPrices[region][type][idx];
     const monthly = baseMonthly;
-    const annual = Math.round(baseMonthly * 0.85);
+    const annual = Math.round((baseMonthly * 0.85) / 10) * 10;
     const savings = (monthly * 12) - (annual * 12);
     
     return {
@@ -1535,7 +1535,7 @@ const VistomioLandingPage: React.FC = () => {
     const priceNum = parseInt(priceStr, 10);
     if (isNaN(priceNum)) return priceStr;
     if (currency === 'EUR') return priceStr;
-    return Math.round(priceNum * 1.08).toString();
+    return (Math.round((priceNum * 1.08) / 10) * 10).toString();
   }
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -1856,6 +1856,17 @@ const VistomioLandingPage: React.FC = () => {
                   {t.hero.ctaSecondary}
                 </a>
               </div>
+
+              <a 
+                href="#category-3"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('category-3')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="mt-6 text-[14px] md:text-[15px] font-medium text-boutique-navy/70 hover:text-[#B8863B] underline decoration-transparent hover:decoration-[#B8863B] underline-offset-4 transition-all inline-block w-full sm:w-auto text-center sm:text-left"
+              >
+                {lang === 'es' ? '¿Aún no estás listo para cambiar todo? Empieza con el Chatbot de IA.' : lang === 'en' ? 'Not ready to change everything yet? Start with the AI Chatbot.' : 'Pas encore prêt à tout changer ? Commencez par le Chatbot IA.'}
+              </a>
             </div>
 
             {/* Right Image with Badges */}
@@ -2115,9 +2126,7 @@ const VistomioLandingPage: React.FC = () => {
               return (
               <div key={catIdx} id={`category-${catIdx}`} className="flex flex-col scroll-mt-32">
                 <div className="mb-10 flex items-center gap-5">
-                  <div className="w-10 h-10 rounded-full bg-[#A63D2E]/10 flex shrink-0 items-center justify-center border border-[#A63D2E]/20 shadow-sm">
-                     <div className="w-2.5 h-2.5 rounded-full bg-[#A63D2E]"></div>
-                  </div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#556B2F] shrink-0"></div>
                   <h3 className="text-2xl md:text-3xl font-normal text-boutique-navy font-serif tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">
                     {category.name.includes('&') ? (
                       category.name.split('&').map((part: any, i: number, arr: any[]) => (
@@ -2400,7 +2409,7 @@ const VistomioLandingPage: React.FC = () => {
               </span>
             </div>
             
-            <div className="flex flex-col md:flex-row items-center gap-6">
+            <div className="flex flex-col items-center gap-2">
               <div className="flex bg-white p-1.5 rounded-full border border-[#B8863B]/30 shadow-[0_8px_30px_-12px_rgba(184,134,59,0.2)] items-center relative">
                 <button 
                   onClick={() => setBillingCycle('monthly')}
@@ -2418,6 +2427,9 @@ const VistomioLandingPage: React.FC = () => {
                   </span>
                 </button>
               </div>
+              <p className="text-xs text-gray-400 font-medium tracking-wide">
+                {lang === 'es' ? '* La facturación se realiza en euros (€)' : lang === 'en' ? '* Billing is done in euros (€)' : '* La facturation est effectuée en euros (€)'}
+              </p>
             </div>
           </div>
 
@@ -2479,9 +2491,6 @@ const VistomioLandingPage: React.FC = () => {
                   </div>
                   
                   <div className="mt-auto pt-6 border-t border-gray-100 flex flex-col gap-6">
-                    <p className="text-[13px] text-gray-500 italic leading-relaxed">
-                      {plan.baseText}
-                    </p>
                     <div className="flex justify-between items-center text-sm font-semibold text-boutique-navy">
                       <span>Setup ({lang === 'es' ? 'pago único' : lang === 'en' ? 'one-time' : 'paiement unique'})</span>
                       <span>{setup}{symbol}</span>
@@ -2492,6 +2501,15 @@ const VistomioLandingPage: React.FC = () => {
             })}
           </div>
 
+          <div className="max-w-4xl mx-auto mt-6 mb-16 text-center px-4">
+            <p className="text-[13px] text-gray-500 italic">
+              {lang === 'es' 
+                ? '* Precio para hoteles de hasta 25 habitaciones. A partir de ahí, +1,5 % del precio base por habitación adicional.' 
+                : lang === 'en' 
+                ? '* Price for hotels up to 25 rooms. Beyond that, +1.5% of the base price per additional room.' 
+                : '* Prix pour hôtels jusqu\'à 25 chambres. Au-delà, +1,5 % du prix de base par chambre supplémentaire.'}
+            </p>
+          </div>
 
           {/* Independent Plan Banner */}
           <div className="max-w-6xl mx-auto mb-16 relative">
@@ -2654,16 +2672,14 @@ const VistomioLandingPage: React.FC = () => {
           {/* Enterprise Section */}
 
           
-          <div className="max-w-6xl mx-auto bg-boutique-navy rounded-[2rem] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden border border-[#B8863B]/20">
-             <div className="absolute top-0 right-0 w-96 h-96 bg-[#B8863B]/10 blur-[0px] hidden rounded-full pointer-events-none"></div>
-             <div className="absolute bottom-0 left-0 w-64 h-64 bg-boutique-sand/10 blur-[60px] rounded-full pointer-events-none"></div>
+          <div className="max-w-6xl mx-auto bg-white rounded-[2rem] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden border-[1.5px] border-[#B8863B]">
              
              <div className="relative z-10 md:w-2/3">
                 <h3 className="text-3xl md:text-4xl font-normal text-[#B8863B] mb-4 font-serif tracking-[0.03em] md:tracking-[0.05em] leading-relaxed">{t.pricing.enterprise.title}</h3>
-                <p className="text-gray-300 text-lg leading-relaxed font-light">{t.pricing.enterprise.desc}</p>
+                <p className="text-boutique-navy text-lg leading-relaxed font-light">{t.pricing.enterprise.desc}</p>
              </div>
              <div className="relative z-10 md:w-1/3 flex justify-end w-full">
-                <button onClick={() => setIsContactModalOpen(true)} className="w-full md:w-auto px-8 py-4 bg-gradient-to-r from-[#B8863B] to-[#B38822] hover:from-[#FCE69B] hover:to-[#B8863B] text-boutique-navy font-semibold text-lg rounded-2xl transition-colors shadow-lg">
+                <button onClick={() => setIsContactModalOpen(true)} className="w-full md:w-auto px-8 py-4 bg-[#B8863B] hover:bg-[#A37533] text-white font-semibold text-lg rounded-2xl transition-colors shadow-lg">
                   {t.pricing.enterprise.cta}
                 </button>
              </div>
@@ -2736,6 +2752,44 @@ const VistomioLandingPage: React.FC = () => {
             {t.ctaFinal.button}
             <ArrowRight className="w-5 h-5" />
           </a>
+        </div>
+      </section>
+
+      {/* --- FAQs --- */}
+      <section className="bg-white py-16 md:py-24 border-t border-gray-100">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-sm font-extrabold text-boutique-navy tracking-[0.2em] uppercase mb-4">
+              {lang === 'es' ? 'Preguntas Frecuentes' : lang === 'en' ? 'Frequent Questions' : 'Questions Fréquentes'}
+            </h2>
+            <div className="w-12 h-0.5 bg-[#B8863B] mx-auto"></div>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 md:gap-10">
+            <div className="bg-white p-8 md:p-10 rounded-[2rem] border-[1.5px] border-boutique-navy transition-colors shadow-sm">
+              <h3 className="text-xl font-bold text-boutique-navy mb-4 font-serif">
+                {lang === 'es' ? '¿Ya tienes un PMS?' : lang === 'en' ? 'Already have a PMS?' : <>Vous avez déjà un PMS&nbsp;?</>}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {lang === 'es' 
+                  ? 'Vistomio no reemplaza tu PMS, complementa lo que este no hace: visibilidad financiera consolidada, chatbot, control de rentabilidad. Mantienes tus costumbres, nosotros añadimos la inteligencia que falta.' 
+                  : lang === 'en' 
+                  ? "Vistomio doesn't replace your PMS, it complements what it doesn't do: consolidated financial visibility, chatbot, profitability management. You keep your habits, we add the missing intelligence." 
+                  : "Vistomio ne remplace pas votre PMS, il complète ce qu'il ne fait pas : visibilité financière consolidée, chatbot, pilotage de la rentabilité. Vous gardez vos habitudes, on ajoute l'intelligence qui manque."}
+              </p>
+            </div>
+            <div className="bg-white p-8 md:p-10 rounded-[2rem] border-[1.5px] border-boutique-navy transition-colors shadow-sm">
+              <h3 className="text-xl font-bold text-boutique-navy mb-4 font-serif">
+                {lang === 'es' ? '¿Aún gestionas en Excel o papel?' : lang === 'en' ? 'Still managing on Excel or paper?' : <>Vous gérez encore sur Excel ou papier&nbsp;?</>}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {lang === 'es' 
+                  ? 'Cada reserva gestionada a mano es un riesgo de error o sobreventa. Vistomio se convierte en tu primer sistema real, con acompañamiento en la implementación incluido.' 
+                  : lang === 'en' 
+                  ? 'Every booking managed by hand is a risk of error or double booking. Vistomio becomes your first real system, with implementation support included.' 
+                  : 'Chaque réservation gérée à la main est un risque d\'erreur ou de double réservation. Vistomio devient votre premier vrai système, avec un accompagnement à la mise en place inclus.'}
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
