@@ -1691,7 +1691,7 @@ const VistomioLandingPage: React.FC = () => {
     }
 
     const monthly = baseMonthly;
-    const annual = Math.round((baseMonthly * 0.85) / 10) * 10;
+    const annual = Math.round(baseMonthly * 0.85);
     const savings = (monthly * 12) - (annual * 12);
     
     return {
