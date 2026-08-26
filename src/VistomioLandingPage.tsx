@@ -1514,7 +1514,12 @@ const VistomioLandingPage: React.FC = () => {
   };
 
   const getPriceInfo = (type: 'hotel'|'addon'|'chatbot', idx: number = 0) => {
-    const baseMonthly = type === 'addon' ? regionalPrices[region].addon : regionalPrices[region][type][idx];
+    let baseMonthly = type === 'addon' ? regionalPrices['EU'].addon : regionalPrices['EU'][type][idx];
+    
+    if (currency === 'USD') {
+      baseMonthly = Math.round((baseMonthly * exchangeRate) / 10) * 10;
+    }
+
     const monthly = baseMonthly;
     const annual = Math.round((baseMonthly * 0.85) / 10) * 10;
     const savings = (monthly * 12) - (annual * 12);
