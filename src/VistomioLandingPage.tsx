@@ -2661,7 +2661,7 @@ const VistomioLandingPage: React.FC = () => {
 
 
         {/* --- CTA FINAL --- */}
-      <section className="py-24 md:py-32 relative bg-boutique-navy overflow-hidden">
+      <section className="py-24 md:py-32 relative bg-boutique-plum overflow-hidden">
         {/* Background Accents */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-boutique-gold/10 blur-[0px] hidden rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-boutique-sand/10 blur-[0px] hidden rounded-full -translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
@@ -2677,7 +2677,7 @@ const VistomioLandingPage: React.FC = () => {
             {t.ctaFinal.title}
           </h2>
           
-          <p className="text-xl md:text-2xl text-gray-300 mb-14 max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-300 mb-14 max-w-4xl mx-auto font-light leading-relaxed">
             {t.ctaFinal.subtitle}
           </p>
           
