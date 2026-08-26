@@ -2765,20 +2765,20 @@ const VistomioLandingPage: React.FC = () => {
       </section>
 
       {/* --- FOOTER --- */}
-      <footer id="contacto" className="bg-white text-boutique-navy/80 py-16 border-t border-gray-300">
+      <footer id="contacto" className="bg-boutique-navy text-white/80 py-16 border-t border-boutique-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex flex-col items-center justify-center cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <img src="/logo-icon-transparent.png" alt="Vistomio Logo Icon" className="h-[52px] md:h-[62px] w-auto object-contain mb-1" />
-            <span className="text-boutique-navy font-medium tracking-[0.25em] text-sm md:text-base uppercase">VISTOMIO</span>
+            <img src="/logo-icon-transparent.png" alt="Vistomio Logo Icon" className="h-[52px] md:h-[62px] w-auto object-contain mb-1 brightness-0 invert" />
+            <span className="text-white font-medium tracking-[0.25em] text-sm md:text-base uppercase">VISTOMIO</span>
           </div>
           
           <div className="flex flex-wrap justify-center gap-4 sm:gap-8 text-sm font-medium">
-            <a href="#" className="hover:text-boutique-navy transition-colors">{t.footer.legal}</a>
-            <a href="#" className="hover:text-boutique-navy transition-colors">{t.footer.privacy}</a>
-            <a href="mailto:hola@vistomio.com" className="hover:text-boutique-navy transition-colors">{t.footer.contact}</a>
+            <a href="#" className="hover:text-white transition-colors">{t.footer.legal}</a>
+            <a href="#" className="hover:text-white transition-colors">{t.footer.privacy}</a>
+            <a href="mailto:hola@vistomio.com" className="hover:text-white transition-colors">{t.footer.contact}</a>
           </div>
 
-          <div className="text-sm text-gray-500">
+          <div className="text-sm text-white/50">
             {t.footer.rights}
           </div>
         </div>
