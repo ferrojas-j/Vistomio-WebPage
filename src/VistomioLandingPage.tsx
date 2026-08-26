@@ -68,9 +68,9 @@ const translations = {
     },
     hero: {
       badge: 'Sistemas boutique para negocios boutique',
-      title: 'Su hotel es único, gestiónalo de manera única',
-      titleHighlight: '',
-      subtitle: 'Si usted no acepta concesiones en el servicio que ofrece a sus huéspedes, su sistema de gestión tampoco debería hacerlo.',
+      title: 'Hecho para hoteles con carácter,',
+      titleHighlight: 'no para cadenas',
+      subtitle: 'Un solo sistema, a su medida, que libera su tiempo para lo que de verdad importa: sus huéspedes.',
       ctaPrimary: 'Explora la app de Vistomio',
       ctaSecondary: 'Solicita un diagnóstico gratuito'
     },
@@ -537,9 +537,9 @@ const translations = {
     },
     hero: {
         badge: 'Boutique systems for boutique businesses',
-        title: 'Your hotel is unique, manage it uniquely',
-        titleHighlight: '',
-        subtitle: 'If you do not accept concessions in the service you offer your guests, your management system shouldn\'t either.',
+        title: 'Built for hotels with character,',
+        titleHighlight: 'not chains',
+        subtitle: 'One system, shaped to you, freeing your time for what truly matters: your guests.',
         ctaPrimary: 'Explore the Vistomio app',
         ctaSecondary: 'Request a free diagnostic'
       },
@@ -1004,9 +1004,9 @@ const translations = {
     },
     hero: {
         badge: 'Systèmes sur mesure pour lieux d\'exception',
-        title: 'Votre hôtel est unique, gérez-le de façon unique',
-          titleHighlight: '',
-          subtitle: 'Vous n\'acceptez aucun compromis sur l\'expérience que vous offrez à vos clients. Votre outil de gestion ne devrait pas en accepter non plus.',
+        title: 'Conçu pour les hôtels avec du caractère,',
+          titleHighlight: 'pas pour les chaînes',
+          subtitle: 'Un seul système, à votre mesure, qui vous libère du temps pour l\'essentiel : vos clients.',
         ctaPrimary: 'Explorez l\'app Vistomio',
         ctaSecondary: 'Demandez un diagnostic gratuit'
       },
