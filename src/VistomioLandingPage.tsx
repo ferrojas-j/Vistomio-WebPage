@@ -1107,55 +1107,55 @@ const translations = {
       faqs: 'FAQ',
     faqList: [
       {
-        q: 'J\'ai déjà un PMS, dois-je le remplacer ?',
+        q: 'J\'ai déjà un PMS, dois-je le remplacer ?',
         a: 'Non. Vistomio se connecte à votre PMS actuel via API, vous n\'avez pas besoin de remplacer ce qui fonctionne déjà. Nous ajoutons ce que votre système actuel ne fait pas : chatbot IA, restaurant unifié, visibilité financière consolidée. Et si vous souhaitez un jour passer à la suite complète, le changement est progressif, pas une migration forcée.'
       },
       {
-        q: 'Comment puis-je migrer mes données depuis mon système actuel ?',
+        q: 'Comment puis-je migrer mes données depuis mon système actuel ?',
         a: 'Notre équipe se charge de la migration de vos réservations et des données clients lors de la mise en œuvre, sans frais supplémentaires.'
       },
       {
-        q: 'Qu\'est-ce qui est inclus dans l\'abonnement ? Y a-t-il des coûts cachés ?',
+        q: 'Qu\'est-ce qui est inclus dans l\'abonnement ? Y a-t-il des coûts cachés ?',
         a: 'Le prix indiqué inclut les capacités du plan choisi. Le seul coût supplémentaire est la configuration initiale (setup), indiquée de manière transparente dans chaque plan, sans surprises après la signature.'
       },
       {
-        q: 'Y a-t-il une durée d\'engagement ou dois-je signer un contrat à long terme ?',
+        q: 'Y a-t-il une durée d\'engagement ou dois-je signer un contrat à long terme ?',
         a: 'Cela dépend du plan. Le plan mensuel comporte un engagement initial de 6 mois (le premier mois est sans engagement, voir question suivante) puis se poursuit mois par mois, sans engagement à long terme. Le plan annuel implique un engagement d\'un an, avec la réduction de 15% déjà indiquée dans nos prix.'
       },
       {
-        q: 'Puis-je essayer Vistomio avant de souscrire ?',
+        q: 'Puis-je essayer Vistomio avant de souscrire ?',
         a: 'Oui. Vous pouvez explorer une démo interactive sur demo.vistomio.com, et le premier mois après la mise en œuvre est sans engagement : si vous n\'êtes pas satisfait, vous pouvez annuler sans pénalité.'
       },
       {
-        q: 'Le chatbot IA est-il inclus ?',
+        q: 'Le chatbot IA est-il inclus ?',
         a: 'Non, c\'est un module indépendant. Vous pouvez commencer uniquement avec le chatbot et ajouter le reste de Vistomio quand vous en avez besoin, ou vice versa.'
       },
       {
-        q: 'Le chatbot est-il personnalisé pour mon hôtel ?',
+        q: 'Le chatbot est-il personnalisé pour mon hôtel ?',
         a: 'Ce n\'est pas un chatbot générique. Il est spécialisé dans l\'hôtellerie et la restauration, entraîné avec les informations réelles de votre établissement, et personnalisé avec le ton exact que vous choisissez : élégant et formel, accessible, jeune ou axé sur les ventes.'
       },
       {
-        q: 'Vistomio fonctionne-t-il si mon hôtel n\'a pas de restaurant ?',
+        q: 'Vistomio fonctionne-t-il si mon hôtel n\'a pas de restaurant ?',
         a: 'Oui. La fusion hôtel-restaurant est une capacité, pas une obligation, elle n\'active que les modules dont votre propriété a besoin.'
       },
       {
-        q: 'Je ne suis intéressé que par un module spécifique, est-ce possible ?',
+        q: 'Je ne suis intéressé que par un module spécifique, est-ce possible ?',
         a: 'Oui. Vistomio est 100% modulaire : vous pouvez commencer avec un seul module et ajouter le reste quand vous en avez besoin. Si votre cas est particulier, contactez-nous pour établir ensemble un devis adapté à votre opération.'
       },
       {
-        q: 'Le système de paiement est-il sécurisé ?',
+        q: 'Le système de paiement est-il sécurisé ?',
         a: 'Oui. Les paiements sont traités via des plateformes approuvées et certifiées telles que Stripe Business ou PayPal, Vistomio ne stocke ni ne gère directement les données de vos cartes.'
       },
       {
-        q: 'Dans quelle devise la facturation est-elle effectuée ?',
+        q: 'Dans quelle devise la facturation est-elle effectuée ?',
         a: 'L\'abonnement Vistomio est facturé en euros (€). Pour les paiements de vos propres clients, nous disposons de passerelles de paiement qui permettent aux clients étrangers de payer dans leur devise locale.'
       },
       {
-        q: 'Quel support vais-je recevoir pendant la mise en œuvre ?',
+        q: 'Quel support vais-je recevoir pendant la mise en œuvre ?',
         a: 'Un accompagnement direct, disponible 7 jours sur 7, pas un ticket perdu dans une file d\'attente de support, mais un accès à l\'équipe qui a construit votre système.'
       },
       {
-        q: 'Comment protégez-vous les données de mes clients ?',
+        q: 'Comment protégez-vous les données de mes clients ?',
         a: 'Toutes les données sont hébergées de manière sécurisée sur des serveurs européens (Hostinger/Supabase). Nous appliquons un chiffrement en transit et au repos, effectuons des sauvegardes continues et nous conformons strictement aux réglementations RGPD pour garantir une confidentialité et une sécurité maximales.'
       }
     ],
