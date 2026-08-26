@@ -1855,13 +1855,13 @@ const VistomioLandingPage: React.FC = () => {
                 <div className="flex flex-col sm:flex-row items-center gap-4 w-full">
                   <a 
                     href="https://demo.vistomio.com" target="_blank" rel="noopener noreferrer" 
-                    className="w-full sm:w-auto flex-1 bg-[#C6A15B] hover:bg-[#B5914A] text-white font-semibold text-sm px-8 py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2"
+                    className="w-full sm:w-auto flex-1 bg-[#C6A15B] hover:bg-[#B5914A] text-white font-semibold text-sm px-8 py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
                   >
                     {t.hero.ctaPrimary} <ArrowRight size={16} />
                   </a>
                   <a 
                     href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} 
-                    className="w-full sm:w-auto flex-1 bg-boutique-navy text-white hover:bg-boutique-navy/90 font-semibold text-sm px-8 py-3.5 rounded-lg transition-colors text-center border-none"
+                    className="w-full sm:w-auto flex-1 bg-boutique-navy text-white hover:bg-boutique-navy/90 font-semibold text-sm px-8 py-3.5 rounded-lg transition-colors flex items-center justify-center border-none whitespace-nowrap"
                   >
                     {t.hero.ctaSecondary}
                   </a>
