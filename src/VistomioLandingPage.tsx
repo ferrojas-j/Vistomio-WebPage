@@ -60,6 +60,7 @@ const translations = {
     },
     nav: {
       products: 'Productos',
+      faqs: 'FAQs',
       pricing: 'Precios',
       contact: 'Contacto',
       demo: 'Ver Demo',
@@ -193,20 +194,8 @@ const translations = {
         name: 'Atención al Cliente y Ventas',
         items: [
           {
-            title: 'Chatbot IA (Nivel 1)',
-            desc: 'Respuestas automáticas a preguntas frecuentes y envíos de links.',
-            icon: Bot,
-            standalone: true
-          },
-          {
-            title: 'Chatbot IA (Nivel 2)',
-            desc: 'Ventas proactivas, campañas de marketing y ofertas especiales.',
-            icon: Bot,
-            standalone: true
-          },
-          {
-            title: 'Chatbot IA (Nivel 3)',
-            desc: 'Autonomía total con sincronización con Booking Engine para reservaciones.',
+            title: 'Chatbots IA',
+            desc: 'Respuestas automáticas, ventas proactivas y reservas directas sin intervención humana.',
             icon: Bot,
             standalone: true
           }
@@ -534,6 +523,7 @@ const translations = {
     },
     nav: {
       products: 'Products',
+      faqs: 'FAQs',
       pricing: 'Pricing',
       contact: 'Contact',
       demo: 'View Demo',
@@ -666,20 +656,8 @@ const translations = {
         name: 'Customer Service & Sales Boosters',
         items: [
           {
-            title: 'AI Chatbot (Level 1)',
-            desc: 'Automated responses to FAQs and link sharing.',
-            icon: Bot,
-            standalone: true
-          },
-          {
-            title: 'AI Chatbot (Level 2)',
-            desc: 'Proactive sales, marketing campaigns, and special offers.',
-            icon: Bot,
-            standalone: true
-          },
-          {
-            title: 'AI Chatbot (Level 3)',
-            desc: 'Total autonomy with Booking Engine synchronization for reservations.',
+            title: 'AI Chatbots',
+            desc: 'Automated responses, proactive sales, and direct bookings without human intervention.',
             icon: Bot,
             standalone: true
           }
@@ -1006,6 +984,7 @@ const translations = {
     },
     nav: {
       products: 'Produits',
+      faqs: 'FAQ',
       pricing: 'Tarifs',
       contact: 'Contact',
       demo: 'Voir Démo',
@@ -1136,20 +1115,8 @@ const translations = {
         name: 'Service Client & Ventes',
         items: [
           {
-            title: 'Chatbot IA (Niveau 1)',
-            desc: 'Réponses automatisées aux FAQ et partage de liens.',
-            icon: Bot,
-            standalone: true
-          },
-          {
-            title: 'Chatbot IA (Niveau 2)',
-            desc: 'Ventes proactives, campagnes marketing et offres spéciales.',
-            icon: Bot,
-            standalone: true
-          },
-          {
-            title: 'Chatbot IA (Niveau 3)',
-            desc: 'Autonomie totale avec synchronisation du Booking Engine pour les réservations.',
+            title: 'Chatbots IA',
+            desc: 'Réponses automatisées, ventes proactives et réservations directes sans intervention humaine.',
             icon: Bot,
             standalone: true
           }
@@ -1759,7 +1726,8 @@ const VistomioLandingPage: React.FC = () => {
             </div>
             
             <a href="#precios" className="text-sm font-medium text-boutique-navy hover:text-[#B8863B] transition-colors">{t.nav.pricing}</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="text-sm font-medium text-boutique-navy hover:text-[#B8863B] transition-colors">{t.nav.contact}</a>
+            <a href="#faqs" className="text-sm font-medium text-boutique-navy hover:text-[#B8863B] transition-colors">{t.nav.faqs}</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); }} className="text-sm font-semibold text-boutique-navy border-[1.5px] border-boutique-navy/20 hover:border-boutique-navy hover:bg-boutique-navy hover:text-white px-5 py-2 rounded-full transition-all">{t.nav.contact}</a>
 
             {/* Custom Language Selector */}
             <div 
@@ -1809,7 +1777,8 @@ const VistomioLandingPage: React.FC = () => {
           <div className="md:hidden absolute top-full left-0 w-full bg-[#0B1121]/95 backdrop-blur-xl border-b border-black/10 py-6 px-6 flex flex-col gap-6 shadow-md">
             <a href="#productos" className="text-lg font-medium text-boutique-navy" onClick={() => setMobileMenuOpen(false)}>{t.nav.products}</a>
             <a href="#precios" className="text-lg font-medium text-boutique-navy" onClick={() => setMobileMenuOpen(false)}>{t.nav.pricing}</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); setMobileMenuOpen(false); }} className="text-lg font-medium text-boutique-navy">{t.nav.contact}</a>
+            <a href="#faqs" className="text-lg font-medium text-boutique-navy" onClick={() => setMobileMenuOpen(false)}>{t.nav.faqs}</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); setIsContactModalOpen(true); setMobileMenuOpen(false); }} className="text-lg font-semibold text-boutique-navy border-[1.5px] border-boutique-navy/20 px-5 py-3 rounded-xl text-center hover:bg-gray-50">{t.nav.contact}</a>
             <div className="h-px bg-black/10 w-full my-2"></div>
             <div className="flex gap-4">
                <button onClick={() => {setLang('es'); setMobileMenuOpen(false);}} className={`font-medium px-4 py-2 rounded-lg flex-1 ${lang === 'es' ? 'bg-slate-800 border border-slate-700/20 text-[#B8863B]' : 'text-slate-400'}`}>Español</button>
@@ -2756,7 +2725,7 @@ const VistomioLandingPage: React.FC = () => {
       </section>
 
       {/* --- FAQs --- */}
-      <section className="bg-white py-16 md:py-24 border-t border-gray-100">
+      <section id="faqs" className="bg-white py-16 md:py-24 border-t border-gray-100">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-sm font-extrabold text-boutique-navy tracking-[0.2em] uppercase mb-4">
